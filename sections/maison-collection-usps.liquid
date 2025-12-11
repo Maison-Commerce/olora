@@ -425,11 +425,6 @@
           slidesPerView: 1,
           spaceBetween: {{ section.settings.gap_mobile | default: 12 }},
           loop: true,
-          autoplay: {
-            delay: {{ section.settings.autoplay_delay | default: 3000 }},
-            disableOnInteraction: false,
-          },
-          speed: 500,
           allowTouchMove: true,
         });
       }
