@@ -156,17 +156,18 @@
         "padding_bottom_mobile": 20,
         "padding_left_mobile": 40,
         "padding_right_mobile": 40,
-        "section_bg_color": "#FCF5F4",
-        "icon_bg_color": "#FBF3F1",
-        "icon_border_color": "#C4858E",
-        "checkmark_color": "#C4858E",
+        "section_bg_color": "#fcf5f4",
+        "icon_bg_color": "#fbf3f1",
+        "icon_border_color": "#c4858e",
+        "checkmark_color": "#c4858e",
         "text_font_size_desktop": 16,
         "text_font_size_mobile": 14,
         "text_color": "#151515",
-        "icon_size_desktop": 24,
+        "icon_size_desktop": 16,
         "icon_size_mobile": 20,
         "gap_desktop": 16,
-        "gap_mobile": 12
+        "gap_mobile": 12,
+        "autoplay_delay": 3000
       }
     },
     "main-collection-product-grid": {
