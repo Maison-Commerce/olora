@@ -312,7 +312,7 @@
 }
 {% endschema %}
 
-<section class="maison_commerce_collection_banner" style="background-color: {{ section.settings.section_bg_color_start }}; background-image: linear-gradient(to left, {{ section.settings.section_bg_color_end }}, {{ section.settings.section_bg_color_start }});">
+<section class="maison_commerce_collection_banner" style="background-color: {{ section.settings.section_bg_color_start }}; background-image: linear-gradient(to left, {{ section.settings.section_bg_color_end }}, {{ section.settings.section_bg_color_start }}); padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px; padding-left: {{ section.settings.padding_left_desktop }}px; padding-right: {{ section.settings.padding_right_desktop }}px;">
   <div class="maison_commerce_collection_banner__bg">
     {% if section.settings.background_image %}
       <div class="maison_commerce_collection_banner__bg-image">
