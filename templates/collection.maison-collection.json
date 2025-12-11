@@ -166,7 +166,7 @@
         "icon_size_desktop": 16,
         "icon_size_mobile": 20,
         "gap_desktop": 16,
-        "gap_mobile": 12,
+        "gap_mobile": 24,
         "autoplay_delay": 3000
       }
     },
