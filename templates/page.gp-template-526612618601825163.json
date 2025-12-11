@@ -1,1 +1,183 @@
-{"layout":"theme.gempages.footer","sections":{"gp_global_section_546733385976906976-1":{"type":"gp-global-section-546733385976906976","settings":{"section_preload":"true"}},"gp_section_526612618954146699":{"type":"gp-section-526612618954146699","settings":{"checksum":"95e96044adbd57ee40dc0b70c67ecb5a6ab18d72ab95a9ad2aaca8fe68c24018_1_1"}},"gp_section_526612618937369483":{"type":"gp-section-526612618937369483","settings":{"checksum":"9e8036fd8b72a7e100ad5ae650fa475eb77ad1295a75bd05f93172972134c2c8_1_1"}},"gp_section_526612618786374539":{"type":"gp-section-526612618786374539","settings":{"checksum":"022cbfd89d1bb0c7e37a1086627740740ea834b03f78829cae7ff02a703fb477_1_1"}},"gp_section_526612618786440075":{"type":"gp-section-526612618786440075","settings":{"checksum":"658c4bb253c863bd06a3c9e03142020c78f444b787fe940fb5a48352eb318a41_1_1"}},"gp_section_526612618920592267":{"type":"gp-section-526612618920592267","settings":{"checksum":"a2b0c5cf6c3b18c5a8ffea6fc039b7defafd48b0852f3e7dcecb3ba05cd344b7_1_1"}},"gp_section_526612618769597323":{"type":"gp-section-526612618769597323","settings":{"checksum":"39be4ef379f164baed773a95a165000e23999e811325d352e35a1d5f4c772973_1_1"}},"gp_section_526612618736108427":{"type":"gp-section-526612618736108427","settings":{"checksum":"676de69e8ad27bfa439fb3ee0d56d65fa9a6289b79385fed92d2259d2ea84630_1_1"}},"gp_section_526612618685711243":{"type":"gp-section-526612618685711243","settings":{"checksum":"ab7a1cd97cde3d5a83a8b4b1ef65c7e5930aa1fb731f08f9a903fe33d33f1c8c_1_1"}},"gp_section_540625065536914303":{"type":"gp-section-540625065536914303","settings":{"checksum":"42362669733dc5d65987666d2aac0476637e82a202819b3d003f43db6a827328_1_1"}},"gp_section_526612618719265675":{"type":"gp-section-526612618719265675","settings":{"checksum":"e8ef3fe79261f92f3534c5a0783d9192aee4eeba1017ea406a003409981ad9fe_1_1"}},"gp_section_526612618836706187":{"type":"gp-section-526612618836706187","settings":{"checksum":"c871e591504954aeedb95e07b78e9e14b8f3057fdbe6779a08f379bf58a22ea5_1_1"}},"gp_section_526612618736042891":{"type":"gp-section-526612618736042891","settings":{"checksum":"a989d40539be84ca89de0c80d4fb9d234081c8f7b29723ae53916bc3ff8335aa_1_1"}}},"order":["gp_global_section_546733385976906976-1","gp_section_526612618954146699","gp_section_526612618937369483","gp_section_526612618786374539","gp_section_526612618786440075","gp_section_526612618920592267","gp_section_526612618769597323","gp_section_526612618736108427","gp_section_526612618685711243","gp_section_540625065536914303","gp_section_526612618719265675","gp_section_526612618836706187","gp_section_526612618736042891"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gp_global_section_546733385976906976-1": {
+      "settings": {
+        "checksum": "",
+        "section_preload": "false"
+      },
+      "type": "gp-global-section-546733385976906976"
+    },
+    "gp_section_526612618685711243": {
+      "settings": {
+        "checksum": "ab7a1cd97cde3d5a83a8b4b1ef65c7e5930aa1fb731f08f9a903fe33d33f1c8c_1_1_0_0__1",
+        "gg4CpHtXBbm_text": "<p>Hands down the best underwear</p>",
+        "ggD3wVH04TM_text": "<p>Daniela A. - Verified Buyer</p>",
+        "ggFl4941W60_text": "<p>Gracie J. - Verified Buyer</p>",
+        "ggIETsxLJzR_text": "<p>Exactly as they say they are!</p>",
+        "ggVCCyj1QbQ_text": "<p>I feel so much more confident and comfortable</p>",
+        "ggeyrt44MHs_text": "<p>I feel so much more confident and comfortable in these. Would definitely recommend. Oh and I love not having to do gusset checks anymore!!</p>",
+        "ggoeWUwE8QU_text": "<p>Rachel D. - Verified buyer</p>",
+        "ggplLiMIN_u_text": "<p>These are exactly as they say they are! I wear them daily to the gym and have no more camel toe!</p>",
+        "ggrASrtsBCD_text": "<p>These are hands down the best underwear to wear under any leggings. I no longer feel exposed! Super comfy and don’t show any seam lines. Off to buy some more!</p>"
+      },
+      "type": "gp-section-526612618685711243"
+    },
+    "gp_section_526612618719265675": {
+      "settings": {
+        "checksum": "e8ef3fe79261f92f3534c5a0783d9192aee4eeba1017ea406a003409981ad9fe_1_1_0_0__1",
+        "gg-TtT6B1eO_text": "<p>1</p>",
+        "gg0kDamUEKV_text": "<p><span style=\"font-size:16px;\"><strong>No More Camel Toe:</strong></span><br><span style=\"font-size:16px;\">Our thong contains a comfy padded insert that keeps your privates... private.</span></p>",
+        "gg6m41wYLN5_text": "<p><span style=\"font-size:16px;\"><strong>Wide Sweat Proof Gusset:</strong></span><br><span style=\"font-size:16px;\">You asked, we answered x2. Our biggest request was a wider gusset, but we went even further and made it absorbent so you also won't have to worry about sweat patches down there!</span></p>",
+        "ggBtKUdY921_text": "<p>3</p>",
+        "ggCSMnNzG-o_text": "<span style=\"font-size:21px;\"><strong>what are the features &amp; benefits?</strong></span>",
+        "ggSXB4n52-m_text": "<p>2</p>",
+        "ggTLhpvpoZP_text": "<p><span style=\"font-size:16px;\"><strong>No More Visible Panty Lines:</strong></span><br><span style=\"font-size:16px;\">Designed from seamless fabrics our thong is undetectable under any leggings, so you won't have any visible panty lines!</span></p>"
+      },
+      "type": "gp-section-526612618719265675"
+    },
+    "gp_section_526612618736042891": {
+      "settings": {
+        "checksum": "a989d40539be84ca89de0c80d4fb9d234081c8f7b29723ae53916bc3ff8335aa_1_1_0_0__1",
+        "gg7D90mKWlH_text": "<p>Underwear that’s too tight will ride up and underwear that’s too loose will bunch up. Luckily Olora has sizes from xs - xxxl and a size calculator to help you find the perfect size based on your dimensions so they stay in place throughout your entire workout.</p>",
+        "ggIPMHLP60D_text": "<span style=\"font-size:36px;\"><strong>FAQs</strong></span>",
+        "ggKPC-1Qmpo_text": "<p>We offer a 90 day money back guarantee, so if you're not fully satisfied with your purchase within 90 days, simply contact us for a refund or free exchange.</p>",
+        "ggbmgQhYBp-_childItem_0": "<p><strong>What size should I get?</strong></p>",
+        "ggbmgQhYBp-_childItem_1": "<p><strong>Are they only for wearing to the gym?</strong></p>",
+        "ggbmgQhYBp-_childItem_2": "<p><strong>Are they machine washable?</strong></p>",
+        "ggbmgQhYBp-_childItem_3": "<p><strong>Do you offer refund and returns?</strong></p>",
+        "gged1twSq_y_text": "<p>Nope! Our customers love wearing Olora to work, horse riding, pilates, dance, muy thai, bars/nightclubs and many more places!</p>",
+        "ggyq597MKNA_text": "<p>Yes our thongs are machine washable.</p>"
+      },
+      "type": "gp-section-526612618736042891"
+    },
+    "gp_section_526612618736108427": {
+      "settings": {
+        "checksum": "676de69e8ad27bfa439fb3ee0d56d65fa9a6289b79385fed92d2259d2ea84630_1_1_0_0__1",
+        "gg5oYt4GfWk_text": "<p><span style=\"font-size:14px;\"><strong>The reviews speak for themselves</strong></span></p>",
+        "gglMaIVqtfW_text": "<p><span style=\"font-size:14px;\">4.8 /5 (1500 + Reviews )</span></p>"
+      },
+      "type": "gp-section-526612618736108427"
+    },
+    "gp_section_526612618769597323": {
+      "settings": {
+        "checksum": "39be4ef379f164baed773a95a165000e23999e811325d352e35a1d5f4c772973_1_1_0_0__1"
+      },
+      "type": "gp-section-526612618769597323"
+    },
+    "gp_section_526612618786374539": {
+      "settings": {
+        "checksum": "022cbfd89d1bb0c7e37a1086627740740ea834b03f78829cae7ff02a703fb477_1_1_0_0__1",
+        "ggp8LcE6Ov5_text": "<p><span style=\"color:#111111;font-size:15px;\">Our signature thong is putting a stop to embarrassing sweaty crotch and butt prints that make it look like you've wet yourself.</span></p>",
+        "ggzkQWNllFi_text": "<span style=\"background-color:#ffffff;color:#000000;font-size:29px;\">Say Goodbye To <strong><u>Embarrassing Sweaty Crotch</u></strong> Forever!</span>"
+      },
+      "type": "gp-section-526612618786374539"
+    },
+    "gp_section_526612618786440075": {
+      "settings": {
+        "checksum": "658c4bb253c863bd06a3c9e03142020c78f444b787fe940fb5a48352eb318a41_1_1_0_0__1",
+        "gg1DeHhaGOp_text": "<p>The moisture-wicking fabric helps prevent unsightly sweat patches, keeping you fresh and comfortable throughout the day, whether you’re at the gym or on the go.</p>",
+        "gg5dvi48hCF_text": "<p>All-Day Comfort</p>",
+        "ggBSJMZaC4T_text": "<p><strong>No More \"Have I Wet Myself?\" Moments</strong></p>",
+        "ggIR3ajeKS9_text": "<p><strong>No More Sweaty Crotch</strong></p>",
+        "ggUhihB5Dxx_text": "<p>No More Butt Prints</p>",
+        "ggaVoiSbIJu_text": "<p>The absence of sweat patches means you'll no longer have to worry about leaving awkward butt prints on every machine or matt you sit on.</p>",
+        "ggfOYEKIhKv_text": "<p>Ever had that heart stopping moment when you catch a glimpse of your crotch in the gym mirror and it looks like you've just peed yourself? Yeah, no more of that.</p>",
+        "ggsOCPaF0wZ_text": "<p>Crafted from soft, breathable materials, our thong provides all-day comfort without compromising on style or function.</p>"
+      },
+      "type": "gp-section-526612618786440075"
+    },
+    "gp_section_526612618836706187": {
+      "settings": {
+        "checksum": "c871e591504954aeedb95e07b78e9e14b8f3057fdbe6779a08f379bf58a22ea5_1_1_0_0__1",
+        "gg1tuankDme_text": "<p><strong>No Camel Toe</strong></p>",
+        "gg6spAODmTg_text": "<p>Others</p>",
+        "ggCcHykOthQ_text": "<span style=\"font-size:36px;\">How Do We Compare To Other Thongs?</span>",
+        "ggKOzi5Iwp5_text": "<p><strong>No Visible Panty Lines</strong></p>",
+        "ggPF1nU3mwd_text": "<p><strong>Absorbent</strong></p>",
+        "ggoZS1g8W5q_text": "<p><strong>Wider gusset</strong></p>",
+        "ggygNPPsMLb_text": "<p><strong>High Quality Fabric</strong></p>"
+      },
+      "type": "gp-section-526612618836706187"
+    },
+    "gp_section_526612618920592267": {
+      "settings": {
+        "checksum": "a2b0c5cf6c3b18c5a8ffea6fc039b7defafd48b0852f3e7dcecb3ba05cd344b7_1_1_0_0__1",
+        "gg-8hRT0YTI_text": "<span style=\"color:#050505;font-size:36px;\"><strong><u>We're Saving Active Girls&nbsp;</u></strong></span><br><span style=\"color:#050505;font-size:36px;\">From Sweaty Crotch!</span>"
+      },
+      "type": "gp-section-526612618920592267"
+    },
+    "gp_section_526612618937369483": {
+      "settings": {
+        "checksum": "9e8036fd8b72a7e100ad5ae650fa475eb77ad1295a75bd05f93172972134c2c8_1_1_0_0__1",
+        "ggBVtIxDVya_text": "<p>4.8 /5 (1500 + Reviews )</p>",
+        "ggQet8e8mo9_childItem_0": "<p><strong>&nbsp;Wide sweat proof gusset</strong></p>",
+        "ggQet8e8mo9_childItem_1": "<p><strong>Camel Toe Proof Technology</strong></p>",
+        "ggQet8e8mo9_childItem_2": "<p><strong>&nbsp;No visible panty lines</strong></p>",
+        "ggZ5nXAZIeN_label": "<p><span style=\"color:#232323;\">TRY NOW</span></p>",
+        "gga66T8pOXH_text": "<p><span style=\"background-color:rgba(255,5,5,0);color:#000000;font-size:36px;\">try the invisible camel toe thong that's eliminating sweaty Crotch</span></p>",
+        "gggKw760N_f_text": "<p><span style=\"font-size:18px;\"><strong>No More Embarrassing Sweaty Crotch, No More Camel Toe, No More Visible Panty Lines</strong></span></p>"
+      },
+      "type": "gp-section-526612618937369483"
+    },
+    "gp_section_526612618954146699": {
+      "settings": {
+        "checksum": "95e96044adbd57ee40dc0b70c67ecb5a6ab18d72ab95a9ad2aaca8fe68c24018_1_1_0_0__1",
+        "gNPCFfTabVpyq_text": "<p><strong>The #1 Sweat Proof Thong 2025</strong></p>",
+        "gakdfAkjxNHFD_text": "Offer Ends Very Soon....",
+        "gbVddMYhkgayz_text": "<p>4.8/5 (950+ Reviews)</p>",
+        "gdIKQBkLHXDvw_text": "<span style=\"font-size:21px;\">Buy 3 Get 3 FREE</span>",
+        "gg3pkr8nEDC_label": "<p>TRY NOW</p>",
+        "ggZo1Gdnw4T_childItem_0": "<p><strong>Wide sweat proof gusset</strong></p>",
+        "ggZo1Gdnw4T_childItem_1": "<p><strong>Camel toe proof technology</strong></p>",
+        "ggZo1Gdnw4T_childItem_2": "<p><strong>No visible panty lines</strong></p>"
+      },
+      "type": "gp-section-526612618954146699"
+    },
+    "gp_section_540625065536914303": {
+      "settings": {
+        "checksum": "42362669733dc5d65987666d2aac0476637e82a202819b3d003f43db6a827328_1_1_0_0__1",
+        "ggCyleWDUuD_label": "<p>BUY 3 GET 3 FREE</p>",
+        "ggDl804wFL0_text": "<p><strong>-50% OFF ON ALL ORDERS-</strong></p>",
+        "ggHpYoOY6mx_text": "<p><span style=\"font-size:17px;\"><strong>&nbsp; Sell-Out Risk: </strong></span><span style=\"color:#FF0000;font-size:17px;\"><strong>High</strong></span></p>",
+        "ggV8x0BR5bq_text": "<p><span style=\"font-size:16px;\">Buy 3 Get 3<strong> FREE</strong></span></p>",
+        "ggXOo9lkPay_text": "<p><span style=\"font-size:13px;\"><strong>&nbsp; Sell-Out Risk: </strong></span><span style=\"color:#FF0000;font-size:13px;\"><strong>High</strong></span></p>",
+        "gg_BnC69q3V_text": "<p><span style=\"font-size:14px;\">Experience peace of mind with our 90 days free guarantee.</span></p>",
+        "ggdXJMD0eF__text": "DEAL ENDING IN:",
+        "ggpO3eygdiO_text": "<p><span style=\"background-color:rgba(255,5,5,0);color:#FF0509;\">BUY 3 GET 3 FREE </span>FOR&nbsp;<br>A LIMITED TIME&nbsp;<br>ONLY!</p>",
+        "gguTznHw3g0_dayLabel": "Days",
+        "gguTznHw3g0_hourLabel": "Hours",
+        "gguTznHw3g0_minuteLabel": "Minutes",
+        "gguTznHw3g0_secondLabel": "Seconds",
+        "gguTznHw3g0_weekLabel": "Weeks",
+        "ggvV06QBWd7_text": "<p><span style=\"font-size:14px;\">Buy 3 Get 3<strong> FREE</strong></span></p>",
+        "ggzyHGPYTw1_text": "This limited-time deal is in high demand and stock keeps selling out.."
+      },
+      "type": "gp-section-540625065536914303"
+    }
+  },
+  "order": [
+    "gp_global_section_546733385976906976-1",
+    "gp_section_526612618954146699",
+    "gp_section_526612618937369483",
+    "gp_section_526612618786374539",
+    "gp_section_526612618786440075",
+    "gp_section_526612618920592267",
+    "gp_section_526612618769597323",
+    "gp_section_526612618736108427",
+    "gp_section_526612618685711243",
+    "gp_section_540625065536914303",
+    "gp_section_526612618719265675",
+    "gp_section_526612618836706187",
+    "gp_section_526612618736042891"
+  ],
+  "layout": "theme.gempages.footer"
+}
