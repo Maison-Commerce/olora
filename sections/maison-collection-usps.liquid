@@ -171,6 +171,17 @@
       "unit": "px",
       "label": "Gap Between Items (Mobile)",
       "default": 12
+    },
+    {
+      "type": "range",
+      "id": "autoplay_delay",
+      "min": 2000,
+      "max": 9500,
+      "step": 500,
+      "unit": "ms",
+      "label": "Autoplay Delay (Mobile)",
+      "default": 3000,
+      "info": "Time between slides in milliseconds"
     }
   ],
   "blocks": [
@@ -217,6 +228,7 @@
 
 <section class="maison_commerce_collection_usps">
   <div class="maison_commerce_collection_usps__container">
+    <!-- Desktop Layout -->
     <div class="maison_commerce_collection_usps__items">
       {% for block in section.blocks %}
         {% if block.type == 'usp' %}
@@ -234,6 +246,30 @@
           {% endif %}
         {% endif %}
       {% endfor %}
+    </div>
+
+    <!-- Mobile Swiper -->
+    <div class="swiper maison_commerce_collection_usps__swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% if block.type == 'usp' %}
+            {% if block.settings.usp_text != blank %}
+              <div class="swiper-slide maison_commerce_collection_usps__slide" {{ block.shopify_attributes }}>
+                <div class="maison_commerce_collection_usps__item">
+                  <div class="maison_commerce_collection_usps__icon-wrapper">
+                    <svg class="maison_commerce_collection_usps__checkmark" width="{{ section.settings.icon_size_mobile }}" height="{{ section.settings.icon_size_mobile }}" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 12L11 14L15 10" stroke="{{ section.settings.checkmark_color }}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <p class="maison_commerce_collection_usps__text">
+                    {{ block.settings.usp_text }}
+                  </p>
+                </div>
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
     </div>
   </div>
 </section>
@@ -263,7 +299,7 @@
     margin: 0 auto;
   }
 
-  /* Items Container */
+  /* Items Container - Desktop */
   .maison_commerce_collection_usps__items {
     display: flex;
     align-items: center;
@@ -274,8 +310,7 @@
 
   @media (max-width: 768px) {
     .maison_commerce_collection_usps__items {
-      gap: {{ section.settings.gap_mobile }}px;
-      justify-content: center;
+      display: none;
     }
   }
 
@@ -337,10 +372,29 @@
     }
   }
 
-  /* Responsive adjustments */
+  /* Swiper - Mobile */
+  .maison_commerce_collection_usps__swiper {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_collection_usps__swiper {
+      display: block;
+      overflow: hidden;
+    }
+  }
+
+  .maison_commerce_collection_usps__slide {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   @media (max-width: 768px) {
     .maison_commerce_collection_usps__item {
       flex: 0 1 auto;
+      justify-content: center;
     }
 
     .maison_commerce_collection_usps__text {
@@ -348,4 +402,52 @@
     }
   }
 </style>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  (function() {
+    let swiperInstance = null;
+    
+    function initSwiper() {
+      const swiperContainer = document.querySelector('.maison_commerce_collection_usps__swiper');
+      
+      if (!swiperContainer) return;
+      
+      // Destroy existing swiper if it exists
+      if (swiperInstance) {
+        swiperInstance.destroy(true, true);
+        swiperInstance = null;
+      }
+      
+      // Only initialize on mobile
+      if (window.innerWidth <= 768) {
+        swiperInstance = new Swiper('.maison_commerce_collection_usps__swiper', {
+          slidesPerView: 1,
+          spaceBetween: {{ section.settings.gap_mobile | default: 12 }},
+          loop: true,
+          autoplay: {
+            delay: {{ section.settings.autoplay_delay | default: 3000 }},
+            disableOnInteraction: false,
+          },
+          speed: 500,
+          allowTouchMove: true,
+        });
+      }
+    }
+    
+    // Initialize on DOM ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initSwiper);
+    } else {
+      initSwiper();
+    }
+    
+    // Reinitialize on window resize (debounced)
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(initSwiper, 250);
+    });
+  })();
+</script>
 
