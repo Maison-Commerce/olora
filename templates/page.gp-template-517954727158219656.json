@@ -1,1 +1,154 @@
-{"layout":"theme.gempages.footer","sections":{"gp_section_517954727258882952":{"type":"gp-section-517954727258882952","settings":{"section_preload":"true","checksum":"d2677d857f4d94f5b82083a72d87b7253c7e54d5aa1f43cb2b72f830baf94d4e_1_1"}},"gp_section_517954727510541192":{"type":"gp-section-517954727510541192","settings":{"checksum":"579acf4008811f8193ce07845d3e601c446bed827694c4936716e3b266e38795_1_1"}},"gp_section_517954727393100680":{"type":"gp-section-517954727393100680","settings":{"checksum":"a0cc10df7d326739b4d64a69913a27c97440a8bf36c6aff13dc452412e4224a7_1_1"}},"gp_section_517954727460209544":{"type":"gp-section-517954727460209544","settings":{"checksum":"5539579c98ba705aa75f724346fc50c8f75c9e6ddda61e2958d4a78758de9385_1_1"}},"gp_section_517954727292437384":{"type":"gp-section-517954727292437384","settings":{"checksum":"8c009a3bf1278b82ab7af1905b550913c3584d4fadf6bde9dd9e11358967cc07_1_1"}},"gp_section_517954727493763976":{"type":"gp-section-517954727493763976","settings":{"checksum":"99d356a2b5b7dd19104f7453e8dc7d50a5ffcde26b3cc894b5c9d9b74395dd45_1_1"}},"gp_section_517954727426655112":{"type":"gp-section-517954727426655112","settings":{"checksum":"a26bc6ed27c07230c1f3b4638ba11400ee27158dfcc08416b10db5a52ee7589b_1_1"}},"gp_section_517954727275660168":{"type":"gp-section-517954727275660168","settings":{"checksum":"6bc0d600f2e950f36f1ce48875d0c1d93ca482cd8ae50413ff7d3a4a090ec986_1_1"}},"gp_section_517954727476986760":{"type":"gp-section-517954727476986760","settings":{"checksum":"39b9a09f2c4b54909b27890710bc0f9f69144f7779dbdd32be742eeaae83459e_1_1"}},"gp_section_517954727309214600":{"type":"gp-section-517954727309214600","settings":{"checksum":"7a34de016b08911f0f0bec3aa966bd94626df7fc7ec1762cccac10d3de1c8804_1_1"}}},"order":["gp_section_517954727258882952","gp_section_517954727510541192","gp_section_517954727393100680","gp_section_517954727460209544","gp_section_517954727292437384","gp_section_517954727493763976","gp_section_517954727426655112","gp_section_517954727275660168","gp_section_517954727476986760","gp_section_517954727309214600"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gp_section_517954727258882952": {
+      "settings": {
+        "checksum": "d2677d857f4d94f5b82083a72d87b7253c7e54d5aa1f43cb2b72f830baf94d4e_1_1_0_0__1",
+        "gg-o-7NvzzP_text": "<span style=\"color:#FCFCFC;font-size:19px;\"><strong>BUY 3 GET 3 FREE</strong></span>",
+        "ggFU-TzI-eW_dayLabel": "Days",
+        "ggFU-TzI-eW_hourLabel": "HRS",
+        "ggFU-TzI-eW_minuteLabel": "MIN",
+        "ggFU-TzI-eW_secondLabel": "SEC",
+        "ggFU-TzI-eW_weekLabel": "Weeks",
+        "section_preload": "true"
+      },
+      "type": "gp-section-517954727258882952"
+    },
+    "gp_section_517954727275660168": {
+      "settings": {
+        "checksum": "6bc0d600f2e950f36f1ce48875d0c1d93ca482cd8ae50413ff7d3a4a090ec986_1_1_0_0__1",
+        "gg6C_KqWPFV_text": "<p><span style=\"background-color:transparent;color:#000000;font-size:16px;\">I feel so much more confident and comfortable in these. I love not having to keep doing gusset checks anymore!!!</span></p>",
+        "ggBgVs_O4Sk_text": "<p><strong>I feel so much more confident and comfortable.</strong></p>",
+        "ggV7Dabh03p_text": "<i><strong>Rachel D</strong></i><span style=\"font-size:14px;\"><i><strong>. - Verified buyer</strong></i></span>",
+        "ggWfQ97j8Qd_text": "<p><strong>Exactly as they say they are!</strong></p>",
+        "ggXvIhLCCC9_text": "<i><strong>Gracie J</strong></i><span style=\"font-size:14px;\"><i><strong>. - Verified Buyer</strong></i></span>",
+        "ggbRhSwgIyr_text": "<p><strong>Hands down the best underwear</strong></p>",
+        "ggeiWTuw4yG_text": "<p>These are hands down the best underwear to wear under any leggings. I no longer feel exposed! Super comfy and don't show any seam lines. Off to buy some more!</p>",
+        "ggfZUBfkIo9_text": "<p>These are exactly as they say they are! I wear them daily to the gym and have no more camel toe!</p>",
+        "ggqGMlt64cv_text": "<i><strong>Daniela A.</strong></i><span style=\"font-size:14px;\"><i><strong> - Verified Buyer</strong></i></span>"
+      },
+      "type": "gp-section-517954727275660168"
+    },
+    "gp_section_517954727292437384": {
+      "settings": {
+        "checksum": "8c009a3bf1278b82ab7af1905b550913c3584d4fadf6bde9dd9e11358967cc07_1_1_0_0__1",
+        "gg1bgbRmOea_text": "<span style=\"color:#000000;font-size:44px;\"><strong>no more gusset checks! why gym girls are obsessed with this invisible camel toe thong</strong></span>",
+        "ggJoElbUEB3_text": "<p><span style=\"font-size:10px;\"><strong>4.73/5</strong> 20,000</span></p>",
+        "ggVTYvPcrnd_text": "<p><span style=\"font-size:12px;\">By <strong>Zara M</strong>,&nbsp;</span><br><span style=\"background-color:rgba(255,255,255,0);color:rgb(0,0,0);font-size:12px;\">Last Updated July 16, 2024</span></p>",
+        "ggvGdE7WMch_text": "<p><span style=\"font-size:18px;\"><strong>Summary: </strong>Picture this, you’ve just finished a tough set of squats and your legs are feeling pretty toasted. You catch a glimpse of yourself in one of the gym’s mirrors and you see it: <strong>the</strong> <strong>dreaded camel toe</strong>.<strong> </strong>Ladies, if you never want to worry about camel toes, panty lines and sweat patches again, keep reading...</span></p>"
+      },
+      "type": "gp-section-517954727292437384"
+    },
+    "gp_section_517954727309214600": {
+      "settings": {
+        "checksum": "7a34de016b08911f0f0bec3aa966bd94626df7fc7ec1762cccac10d3de1c8804_1_1_0_0__1",
+        "gg7-t64RwWv_dayLabel": "Days",
+        "gg7-t64RwWv_hourLabel": "Hours",
+        "gg7-t64RwWv_minuteLabel": "Minutes",
+        "gg7-t64RwWv_secondLabel": "Seconds",
+        "gg7-t64RwWv_weekLabel": "Weeks",
+        "ggNZlPMNBPB_text": "<p><span style=\"font-size:10px;\"><strong>Buy 3 Get 3 FREE</strong></span></p>",
+        "ggWruArk3MW_text": "<p>This limited-time deal is in high demand and stock keeps selling out.</p>",
+        "ggY_Mcj1388_text": "<p><span style=\"font-size:10px;\"><strong>&nbsp; Sell-Out Risk: </strong></span><span style=\"color:#F93600;font-size:10px;\"><strong>High</strong></span></p>",
+        "ggiBo_0bbw4_text": "DEAL ENDING IN:",
+        "ggjqjxNMsCB_text": "<p><span style=\"background-color:rgba(255,0,0,0);color:#F0D3CB;font-size:30px;\"><strong>BUY 3</strong></span><span style=\"background-color:rgba(255,0,0,0);color:#02D8E9;font-size:30px;\"><strong> </strong></span><span style=\"background-color:rgba(255,0,0,0);color:#050505;font-size:30px;\"><strong>GET 3 FREE</strong></span></p>",
+        "ggv9oarwpnZ_text": "<p><span style=\"font-size:9px;\">Experience peace of mind with our 90 days free guarantee.</span></p>",
+        "ggzVjJFN6gM_label": "<p><span style=\"color:#191919;\">CLAIM OFFER</span></p>"
+      },
+      "type": "gp-section-517954727309214600"
+    },
+    "gp_section_517954727393100680": {
+      "settings": {
+        "checksum": "a0cc10df7d326739b4d64a69913a27c97440a8bf36c6aff13dc452412e4224a7_1_1_0_0__1",
+        "gaSkrWxwULjRd_text": "<p><span style=\"font-size:12px;\">By <strong>Zara M</strong>,&nbsp;</span><br><span style=\"background-color:rgba(255,255,255,0);color:rgb(0,0,0);font-size:12px;\">Last Updated July 16, 2024</span></p>",
+        "ggEDjMSPGuS_text": "<p><span style=\"font-size:9px;\"><strong>4.82/5</strong> 20,000</span></p>",
+        "ggPp1VavDbI_text": "<span style=\"color:#000000;font-size:36px;\"><strong>No More Gusset Checks! Why Gym Girls Are Obsessed With This Invisible Camel Toe Thong</strong></span>",
+        "ggU7V1GB009_text": "<p><span style=\"font-size:13px;\"><strong>Summary: </strong>Picture this, you’ve just finished a tough set of squats and your legs are feeling pretty toasted. You catch a glimpse of yourself in one of the gym’s mirrors and you see it: <strong>the</strong> <strong>dreaded camel toe</strong>.<strong> </strong>Ladies, if you never want to worry about camel toes, panty lines and sweat patches again, keep reading...</span></p>"
+      },
+      "type": "gp-section-517954727393100680"
+    },
+    "gp_section_517954727426655112": {
+      "settings": {
+        "checksum": "a26bc6ed27c07230c1f3b4638ba11400ee27158dfcc08416b10db5a52ee7589b_1_1_0_0__1",
+        "ggJRokq9M6I_text": "<strong>I feel so much more confident and comfortable.</strong>",
+        "ggLj35XxgH9_text": "<span style=\"font-size:14px;\"><i><strong>Daniela A. - Verified Buyer</strong></i></span>",
+        "ggPS2JZoDBV_text": "<span style=\"font-size:14px;\"><i><strong>Rachel D. - Verified buyer</strong></i></span>",
+        "ggV0KMDf8Mt_text": "<strong>Exactly as they say they are!</strong>",
+        "gg_giIRd0G8_text": "<p><span style=\"background-color:transparent;color:#000000;font-size:16px;\">I feel so much more confident and comfortable in these. Would definitely recommend. Oh and I love not having to do gusset checks anymore!!</span></p>",
+        "ggbSduxW7yT_text": "<p><span style=\"font-size:16px;\">These are exactly as they say they are! I wear them daily to the gym and have no more camel toe!</span></p>",
+        "ggfWdJr_pVX_text": "<p><span style=\"font-size:18px;\">These are hands down the best underwear to wear under any leggings. I no longer feel exposed! Super comfy and don’t show any seam lines. Off to buy some more!</span></p>",
+        "ggmpwhX1z_x_text": "<span style=\"font-size:14px;\"><i><strong>Gracie J. - Verified Buyer</strong></i></span>",
+        "ggxwi7anHq4_text": "<strong>Hands down the best underwear</strong>"
+      },
+      "type": "gp-section-517954727426655112"
+    },
+    "gp_section_517954727460209544": {
+      "settings": {
+        "checksum": "5539579c98ba705aa75f724346fc50c8f75c9e6ddda61e2958d4a78758de9385_1_1_0_0__1",
+        "gg4ogrAX_7W_text": "<p><span style=\"font-size:16px;\"><strong>4.82/5</strong> 5,800+</span></p>",
+        "ggAKXt9Ib_e_text": "<p><span style=\"font-size:18px;\"><strong>Summary: </strong>Picture this, you’ve just finished a tough set of squats and your legs are feeling pretty toasted. You catch a glimpse of yourself in one of the gym’s mirrors and you see it: <strong>the</strong> <strong>dreaded camel toe</strong>.<strong> </strong>Ladies, if you never want to worry about camel toes, panty lines and sweat patches again, keep reading...</span></p>",
+        "ggB9_SE4Kk7_text": "<span style=\"color:#000000;font-size:44px;\"><strong>No More Gusset Checks! Why Gym Girls Are Obsessed With This Invisible Camel Toe Thong</strong></span>",
+        "ggzI3UVyEQ8_text": "<p><span style=\"font-size:13px;\">By <strong>Zara M</strong>,&nbsp;</span><br><span style=\"background-color:rgba(255,255,255,0);color:rgb(0,0,0);font-size:13px;\">Last Updated July 16, 2024</span></p>"
+      },
+      "type": "gp-section-517954727460209544"
+    },
+    "gp_section_517954727476986760": {
+      "settings": {
+        "checksum": "39b9a09f2c4b54909b27890710bc0f9f69144f7779dbdd32be742eeaae83459e_1_1_0_0__1",
+        "gKPjORKrLFWir_text": "<p><span style=\"font-size:28px;\"><strong>6. They Come With A 90 Day Money Back Guarantee</strong></span></p>",
+        "gQOozegFgmtZw_text": "<p>So you can try them 100% risk-free and if you're not satisfied they'll give you your money back. If you ask me, it's a no-brainer for any gym girl out there!</p>",
+        "gaNvsqcYtrpbz_text": "<p>We all know Nike Pro's are the worst for camel toe, especially with that front seam. So Olora made it their mission to make sure their thong was tried and tested in Nike Pro's, Gymshark and Lululemon.</p>",
+        "gg1c06VKU0e_text": "<p><span style=\"font-size:28px;\"><strong>6. They Come With A 90 Day Money Back Guarantee</strong></span></p>",
+        "ggFiREkaw_Q_text": "<p><span style=\"font-size:26px;\"><strong>4. They're Absorbent</strong></span></p>",
+        "ggfLsoFFcFA_text": "<span style=\"font-size:26px;\"><strong>5. They Even Work In Nike Pro's!</strong></span>",
+        "giDpbKcTeJdwq_text": "<p>Whilst we were waiting for gym clothing brands to make sweat proof leggings, Olora went ahead and made their thongs absorbent. So no more dreaded sweat patches down there!</p>",
+        "gwnRyjBkuUICo_text": "<p><span style=\"font-size:26px;\"><strong>4. They're Absorbent</strong></span></p>",
+        "gymKitmAnAsqL_text": "<span style=\"font-size:26px;\"><strong>5. They Even Work In Nike Pro's!</strong></span>"
+      },
+      "type": "gp-section-517954727476986760"
+    },
+    "gp_section_517954727493763976": {
+      "settings": {
+        "checksum": "99d356a2b5b7dd19104f7453e8dc7d50a5ffcde26b3cc894b5c9d9b74395dd45_1_1_0_0__1",
+        "gMujvfveEWDpr_text": "<p><span style=\"font-size:26px;\"><strong>3. They Made The Gusset Wide!</strong></span></p>",
+        "gg-aMfEZZz5_text": "<p><span style=\"font-size:26px;\"><strong>3. They Made The Gusset Wide!</strong></span></p>",
+        "ggArkq2zgaQ_text": "<p><span style=\"font-size:26px;\"><strong>2. No Visible Panty Lines</strong></span></p>",
+        "ggEOyBjZhTs_text": "<p><span style=\"font-size:26px;\"><strong>1. Camel Toe Proof Technology</strong></span></p>",
+        "ggEqBFvwwzQ_text": "<p>Gym leggings are notorious for visible panty lines, which is why so many of us don't bother with underwear in the first place. But, Olora decided to make their thong invisible, so you can get all the benefits of wearing it, with a seamless look.</p>",
+        "ggfudJXJPpY_text": "<p><span style=\"font-size:26px;\"><strong>2. No Visible Panty Lines</strong></span></p>",
+        "ghfoSgrcDBnrm_text": "<p><span style=\"font-size:26px;\"><strong>1. Camel Toe Proof Technology</strong></span></p>",
+        "gldwbURlRcgHJ_text": "<p><span style=\"background-color:rgba(255,255,255,0);color:rgb(13,13,13);font-size:18px;\">Olora have spent the last 2 years developing their own camel toe proof insert that actually keeps your privates... private. The before and after pictures speak for themselves!</span></p>",
+        "gmCykmPiFyWii_text": "<p><span style=\"font-size:17px;\">Not only does this maximise comfort but it also means that every girl is fully covered... if you know what I mean! You can also size up for an even wider gusset if you wish.</span></p>"
+      },
+      "type": "gp-section-517954727493763976"
+    },
+    "gp_section_517954727510541192": {
+      "settings": {
+        "checksum": "579acf4008811f8193ce07845d3e601c446bed827694c4936716e3b266e38795_1_1_0_0__1",
+        "gg1P_8OACdt_text": "<span style=\"color:#282828;font-size:11px;\">OUR SIGNATURE THONGS ARE BACK IN STOCK!</span>"
+      },
+      "type": "gp-section-517954727510541192"
+    }
+  },
+  "order": [
+    "gp_section_517954727258882952",
+    "gp_section_517954727510541192",
+    "gp_section_517954727393100680",
+    "gp_section_517954727460209544",
+    "gp_section_517954727292437384",
+    "gp_section_517954727493763976",
+    "gp_section_517954727426655112",
+    "gp_section_517954727275660168",
+    "gp_section_517954727476986760",
+    "gp_section_517954727309214600"
+  ],
+  "layout": "theme.gempages.footer"
+}
