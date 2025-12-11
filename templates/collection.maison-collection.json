@@ -12,6 +12,7 @@
     "image_banner_garaYC",
     "main-collection-banner",
     "maison_collection_banner_mkrWrK",
+    "maison_collection_usps_wh3c8H",
     "main-collection-product-grid",
     "newsletter"
   ],
@@ -116,6 +117,56 @@
         "features_font_size_desktop": 18,
         "features_font_size_mobile": 14,
         "features_color": "#151515bf"
+      }
+    },
+    "maison_collection_usps_wh3c8H": {
+      "type": "maison-collection-usps",
+      "blocks": {
+        "usp_HgYtCY": {
+          "type": "usp",
+          "settings": {
+            "usp_text": "Camel Toe Proof Technology"
+          }
+        },
+        "usp_RPN4FV": {
+          "type": "usp",
+          "settings": {
+            "usp_text": "Wide Absorbent Gusset"
+          }
+        },
+        "usp_tQnraz": {
+          "type": "usp",
+          "settings": {
+            "usp_text": "FREE Worldwide Shipping"
+          }
+        }
+      },
+      "block_order": [
+        "usp_HgYtCY",
+        "usp_RPN4FV",
+        "usp_tQnraz"
+      ],
+      "name": "Collection USPs",
+      "settings": {
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 20,
+        "padding_left_desktop": 40,
+        "padding_right_desktop": 40,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "padding_left_mobile": 40,
+        "padding_right_mobile": 40,
+        "section_bg_color": "#FCF5F4",
+        "icon_bg_color": "#FBF3F1",
+        "icon_border_color": "#C4858E",
+        "checkmark_color": "#C4858E",
+        "text_font_size_desktop": 16,
+        "text_font_size_mobile": 14,
+        "text_color": "#151515",
+        "icon_size_desktop": 24,
+        "icon_size_mobile": 20,
+        "gap_desktop": 16,
+        "gap_mobile": 12
       }
     },
     "main-collection-product-grid": {
