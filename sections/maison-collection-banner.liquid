@@ -312,7 +312,7 @@
 }
 {% endschema %}
 
-<section class="maison_commerce_collection_banner" style="background-color: {{ section.settings.section_bg_color_start }}; background-image: linear-gradient(to left, {{ section.settings.section_bg_color_end }}, {{ section.settings.section_bg_color_start }}); padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px; padding-left: {{ section.settings.padding_left_desktop }}px; padding-right: {{ section.settings.padding_right_desktop }}px;">
+<section class="maison_commerce_collection_banner" style="background-color: {{ section.settings.section_bg_color_start }}; background-image: linear-gradient(to left, {{ section.settings.section_bg_color_end }}, {{ section.settings.section_bg_color_start }});">
   <div class="maison_commerce_collection_banner__bg">
     {% if section.settings.background_image %}
       <div class="maison_commerce_collection_banner__bg-image">
@@ -386,6 +386,10 @@
   .maison_commerce_collection_banner {
     position: relative;
     overflow: hidden;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    padding-left: {{ section.settings.padding_left }}px;
+    padding-right: {{ section.settings.padding_right }}px;
   }
 
   @media (max-width: 768px) {
