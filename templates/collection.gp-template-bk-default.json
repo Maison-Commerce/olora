@@ -16,94 +16,94 @@
   ],
   "sections": {
     "image_banner_garaYC": {
-      "type": "image-banner",
       "disabled": true,
       "settings": {
+        "color_scheme": "background-1",
+        "desktop_content_alignment": "center",
+        "desktop_content_position": "middle-center",
         "display_id": false,
-        "visibility": "always-display",
         "image": "shopify://shop_images/Desktop.jpg",
         "image_1_visibility": "mobile-hidden",
         "image_2": "shopify://shop_images/Mobile_2.jpg",
         "image_2_visibility": "desktop-hidden",
-        "image_overlay_opacity": 0,
         "image_height": "adapt",
-        "url": "",
-        "desktop_content_position": "middle-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "background-1",
-        "transparent_container_color": "white",
+        "image_overlay_opacity": 0,
         "mobile_content_alignment": "center",
+        "show_text_below": false,
+        "show_text_box": false,
         "stack_images_on_mobile": true,
-        "show_text_below": false
-      }
+        "transparent_container_color": "white",
+        "url": "",
+        "visibility": "always-display"
+      },
+      "type": "image-banner"
     },
     "main-collection-banner": {
-      "type": "main-collection-banner",
       "settings": {
+        "color_scheme": "background-1",
         "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
-      }
+        "show_collection_image": false
+      },
+      "type": "main-collection-banner"
     },
     "main-collection-product-grid": {
-      "type": "main-collection-product-grid",
       "custom_css": [],
       "settings": {
-        "products_per_page": 20,
-        "columns_desktop": 4,
-        "stretch_cards": true,
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
         "badges": "regular",
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "enable_filtering": true,
-        "filter_type": "horizontal",
-        "enable_sorting": true,
+        "columns_desktop": 4,
         "columns_mobile": "2",
+        "enable_filtering": true,
+        "enable_quick_add": false,
+        "enable_sorting": true,
+        "filter_type": "horizontal",
+        "image_ratio": "adapt",
+        "padding_bottom": 100,
         "padding_top": 0,
-        "padding_bottom": 100
-      }
+        "products_per_page": 20,
+        "show_rating": false,
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "stretch_cards": true
+      },
+      "type": "main-collection-product-grid"
     },
     "newsletter": {
-      "type": "newsletter",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Subscribe to our emails",
-            "heading_size": "h1"
-          }
-        },
-        "paragraph": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>Join our email list for exclusive offers and the latest news. </p>"
-          }
-        },
-        "email-form": {
-          "type": "email_form",
-          "settings": {}
-        }
-      },
       "block_order": [
         "heading",
         "paragraph",
         "email-form"
       ],
+      "blocks": {
+        "email-form": {
+          "settings": {},
+          "type": "email_form"
+        },
+        "heading": {
+          "settings": {
+            "heading": "Subscribe to our emails",
+            "heading_size": "h1"
+          },
+          "type": "heading"
+        },
+        "paragraph": {
+          "settings": {
+            "text": "<p>Join our email list for exclusive offers and the latest news. </p>"
+          },
+          "type": "paragraph"
+        }
+      },
       "settings": {
-        "display_id": false,
-        "visibility": "always-display",
-        "button_type": "solid",
         "button_label": "Sign up",
         "button_style_secondary": false,
+        "button_type": "solid",
         "color_scheme": "background-2",
+        "display_id": false,
         "full_width": true,
+        "padding_bottom": 52,
         "padding_top": 68,
-        "padding_bottom": 52
-      }
+        "visibility": "always-display"
+      },
+      "type": "newsletter"
     }
   }
 }
