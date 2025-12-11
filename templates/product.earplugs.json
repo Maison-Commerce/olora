@@ -1,0 +1,1361 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "text_size": "h1",
+            "title_alignment": "left",
+            "uppercase_title": false,
+            "margin_top": 6,
+            "margin_bottom": 0
+          }
+        },
+        "vitals_reviews_stars_d6QPWe": {
+          "type": "shopify://apps/vitals/blocks/reviews-stars/aeb48102-2a5a-4f39-bdbd-d8d49f4e20b8",
+          "disabled": true,
+          "settings": {}
+        },
+        "a6eb81db-40e4-43e0-972f-32db010a4a56": {
+          "type": "rating_stars",
+          "settings": {
+            "rating": 4.4,
+            "star_color": "#000000",
+            "bg_stars_style": "full",
+            "bg_star_color": "#ececec",
+            "label": "(535 Reviews)",
+            "size": 16,
+            "alignment": "flex-start",
+            "scroll_id": "",
+            "margin_top": 0,
+            "margin_bottom": 9
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "layout": "price_first",
+            "price_color": "text",
+            "compare_price_color": "text",
+            "hide_sale_badge": false,
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        },
+        "text_iV6TR6": {
+          "type": "text",
+          "settings": {
+            "mobile_text_size": 14,
+            "desktop_text_size": 16,
+            "alignment": "left",
+            "text_color": "#121212",
+            "text_1": "Ultra-comfy earplugs designed for better sleep, deeper focus and hearing protection.",
+            "text_2": "",
+            "text_3": "",
+            "icon_scale": 120,
+            "icon_color": "#121212",
+            "icon_1": "",
+            "filled_icon_1": false,
+            "icon_2": "check_circle",
+            "filled_icon_2": false,
+            "icon_3": "check_circle",
+            "filled_icon_3": false,
+            "width": "100%",
+            "direction": "horizontal",
+            "column_gap": 3,
+            "enable_bg": false,
+            "bg_color": "#f3f3f3",
+            "corner_radius": 40,
+            "padding": 3,
+            "border_size": 0,
+            "border_color": "#b7b7b7",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "text_3HHTAh": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "mobile_text_size": 14,
+            "desktop_text_size": 16,
+            "alignment": "left",
+            "text_color": "#121212",
+            "text_1": "<strong>Reduce sensory overload</strong>",
+            "text_2": "<strong>Enhance focus</strong>",
+            "text_3": "<strong>Improve sleep</strong>",
+            "icon_scale": 110,
+            "icon_color": "#121212",
+            "icon_1": "check_circle",
+            "filled_icon_1": false,
+            "icon_2": "check_circle",
+            "filled_icon_2": false,
+            "icon_3": "check_circle",
+            "filled_icon_3": false,
+            "width": "100%",
+            "direction": "vertical",
+            "column_gap": 3,
+            "enable_bg": false,
+            "bg_color": "#f3f3f3",
+            "corner_radius": 40,
+            "padding": 3,
+            "border_size": 0,
+            "border_color": "#b7b7b7",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "emoji_benefits_pncPBX": {
+          "type": "emoji_benefits",
+          "disabled": true,
+          "settings": {
+            "benefits": "<p><strong>Reduces sensory overload</strong></p><p><strong>Deeper focus</strong></p><p><strong>Improves sleep</strong></p>",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "5fcc0428-e768-4cb7-bea3-eb0274198dd1": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_types": "Swatches",
+            "custom_labels": "[name] - [selected]",
+            "swatches_size": "small",
+            "swatches_border_radius": 100,
+            "swatches_custom_colors": "disabled",
+            "swatches_custom_colors_list": "",
+            "full_width_dropdowns": false,
+            "breaks_style": "normal",
+            "breaks_headline": "BUNDLE & SAVE",
+            "breaks_color_scheme": "accent-1",
+            "breaks_badges": "[empty], Most popular, [empty]",
+            "breaks_displayed_images": "variant_images",
+            "breaks_custom_images": "",
+            "breaks_image_width": 70,
+            "breaks_space_images": true,
+            "breaks_labels": "[name], [name], [name]",
+            "breaks_benefits": "[empty], Free Shipping, Free Shipping",
+            "breaks_captions": "Variant 1 caption, Variant 2 caption, Variant 3 caption",
+            "breaks_price_texts": "[price], [price], [price]",
+            "breaks_compare_price_texts": "[compare_price], [compare_price], [compare_price]",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "04ba004e-2f54-4936-8b1c-8bcadf6573f6": {
+          "type": "quantity_selector",
+          "settings": {
+            "enable_quantity_discounts": true,
+            "style": "normal",
+            "headline": "OFFER ENDS TONIGHT",
+            "preselected": "option_1",
+            "enable_variant_selectors": true,
+            "enable_variant_selectors_on_quantity_of_1": true,
+            "hide_pickers_overlay": false,
+            "image_width": 70,
+            "space_images": true,
+            "color_scheme": "accent-1",
+            "option_1_quantity": 1,
+            "option_1_badge": "",
+            "option_1_label": "Buy 1 Get 1 FREE",
+            "option_1_benefit": "",
+            "option_1_caption": "50% OFF",
+            "option_1_percentage_off_text": "",
+            "option_1_fixed_amount_off": "0",
+            "option_1_price_text": "[price]",
+            "option_1_compare_price": "compare_price",
+            "option_1_compare_price_text": "[compare_price]",
+            "option_2_quantity": 2,
+            "option_2_badge": "",
+            "option_2_label": "Buy 2 Get 2 FREE",
+            "option_2_benefit": "",
+            "option_2_caption": "Extra 10% OFF",
+            "option_2_percentage_off_text": "10",
+            "option_2_fixed_amount_off": "0",
+            "option_2_price_text": "[price]",
+            "option_2_compare_price": "compare_price",
+            "option_2_compare_price_text": "[compare_price]",
+            "option_3_quantity": 0,
+            "option_3_badge": "",
+            "option_3_label": "Buy 2 Get 2 Free",
+            "option_3_benefit": "",
+            "option_3_caption": "Extra 10% OFF",
+            "option_3_percentage_off_text": "",
+            "option_3_fixed_amount_off": "49.98",
+            "option_3_price_text": "49.99",
+            "option_3_compare_price": "compare_price",
+            "option_3_compare_price_text": "99.99",
+            "option_4_quantity": 0,
+            "option_4_badge": "",
+            "option_4_label": "Buy [quantity]",
+            "option_4_benefit": "",
+            "option_4_caption": "You save [amount_saved]",
+            "option_4_percentage_off_text": "0",
+            "option_4_fixed_amount_off": "0",
+            "option_4_price_text": "[price]",
+            "option_4_compare_price": "compare_price",
+            "option_4_compare_price_text": "[compare_price]",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "skip_cart": false,
+            "uppercase_text": true,
+            "display_price": false,
+            "enable_custom_color": true,
+            "custom_color": "#02d8e9",
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
+        },
+        "custom_liquid_Vrakmn": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<style>\n        #countdownss {\n           font-size:20px;\n            color: red;\n            transition: opacity 0.5s, transform 0.5s;\n            opacity: 1;\n        }\n\n        .fade {\n            opacity: 0;\n            transform: scale(1.2);\n\n\n        }\n\n.off-txt {\n\n       \n    font-size: 17px;\n    margin: 6px 0px;\n    font-weight: 600;\n}\n\n.off-img{\nwidth:10%;\n\n}\n.off-div {\n  \n    border-radius: 5px;\n    border: 1px solid;\n    display: flex;\n    align-items: center;\n    column-gap: 10px;\n    justify-content: center;\n}\n\n@media only screen and (max-width: 600px) {\n.off-txt {\n    font-size: 13px;\n    margin: 6px 0px;\n    font-weight: 600;\n}\n #countdownss {\n           font-size:18px;\n            color: red;\n            transition: opacity 0.5s, transform 0.5s;\n            opacity: 1;\n        }\n}\n    </style>\n\n<div class=\"off-div\">\n<img src=\"https://cdn.shopify.com/s/files/1/0824/1882/7590/files/fast-time.png?v=1716797320\" class=\"off-img\">\n<p class=\"off-txt\">50% OFF for the next </p>\n\n    <div class=\"off-txt\"   id=\"countdownss\">65</div>\n\n<p class=\"off-txt\">orders</p>\n\n</div>\n\n\n\n\n    <script>\n        // Initialize the countdown number\n        let number = 65;\n\n        // Function to decrease the number and reset if it reaches zero\n        function countdown() {\n            // Get the countdown element\n            let countdownElement = document.getElementById(\"countdownss\");\n            \n            // Add the fade class to apply the fade out effect\n            countdownElement.classList.add(\"fade\");\n\n            // After the fade-out transition, update the number and fade in\n            setTimeout(() => {\n                // Decrease the number by 1\n                number--;\n\n                // Update the countdown display\n                countdownElement.innerText = number;\n\n                // Remove the fade class to apply the fade in effect\n                countdownElement.classList.remove(\"fade\");\n\n                // Check if the number has reached zero\n                if (number <= 0) {\n                    // Reset the number to 65\n                    number = 65;\n                    countdownElement.innerText = number;\n                }\n            }, 500); // Match the duration of the fade-out transition\n        }\n\n        // Set an interval to run the countdown function every 5 seconds (5000 milliseconds)\n        setInterval(countdown, 5000);\n    </script>"
+          }
+        },
+        "text_AY4D8H": {
+          "type": "text",
+          "settings": {
+            "mobile_text_size": 16,
+            "desktop_text_size": 16,
+            "alignment": "left",
+            "text_color": "#121212",
+            "text_1": "<strong>Peace Plugs reduce unwanted noise without blocking out sound completely, perfect for...</strong>",
+            "text_2": "",
+            "text_3": "",
+            "icon_scale": 120,
+            "icon_color": "#121212",
+            "icon_1": "",
+            "filled_icon_1": false,
+            "icon_2": "check_circle",
+            "filled_icon_2": false,
+            "icon_3": "check_circle",
+            "filled_icon_3": false,
+            "width": "100%",
+            "direction": "horizontal",
+            "column_gap": 3,
+            "enable_bg": false,
+            "bg_color": "#f3f3f3",
+            "corner_radius": 40,
+            "padding": 3,
+            "border_size": 0,
+            "border_color": "#b7b7b7",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "text_HpQiaq": {
+          "type": "text",
+          "settings": {
+            "mobile_text_size": 14,
+            "desktop_text_size": 16,
+            "alignment": "left",
+            "text_color": "#121212",
+            "text_1": "<strong>Students</strong>",
+            "text_2": "Who want to reduce noise distractions for enhanced focus and learning",
+            "text_3": "",
+            "icon_scale": 120,
+            "icon_color": "#121212",
+            "icon_1": "check",
+            "filled_icon_1": false,
+            "icon_2": "",
+            "filled_icon_2": false,
+            "icon_3": "check_circle",
+            "filled_icon_3": false,
+            "width": "100%",
+            "direction": "vertical",
+            "column_gap": 3,
+            "enable_bg": false,
+            "bg_color": "#f3f3f3",
+            "corner_radius": 40,
+            "padding": 3,
+            "border_size": 0,
+            "border_color": "#b7b7b7",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "text_nYWnKU": {
+          "type": "text",
+          "settings": {
+            "mobile_text_size": 14,
+            "desktop_text_size": 16,
+            "alignment": "left",
+            "text_color": "#121212",
+            "text_1": "<strong>Sleep</strong>",
+            "text_2": "Block out the noise of a snoring partner and still hear your morning alarm",
+            "text_3": "",
+            "icon_scale": 120,
+            "icon_color": "#121212",
+            "icon_1": "check",
+            "filled_icon_1": false,
+            "icon_2": "",
+            "filled_icon_2": false,
+            "icon_3": "check_circle",
+            "filled_icon_3": false,
+            "width": "100%",
+            "direction": "vertical",
+            "column_gap": 3,
+            "enable_bg": false,
+            "bg_color": "#f3f3f3",
+            "corner_radius": 40,
+            "padding": 3,
+            "border_size": 0,
+            "border_color": "#b7b7b7",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "text_gtyRYH": {
+          "type": "text",
+          "settings": {
+            "mobile_text_size": 14,
+            "desktop_text_size": 16,
+            "alignment": "left",
+            "text_color": "#121212",
+            "text_1": "<strong>Loud Occupations</strong>",
+            "text_2": "Airport staff, nightclub & music venue staff can protect their hearing whilst still communicating clearly",
+            "text_3": "",
+            "icon_scale": 120,
+            "icon_color": "#121212",
+            "icon_1": "check",
+            "filled_icon_1": false,
+            "icon_2": "",
+            "filled_icon_2": false,
+            "icon_3": "check_circle",
+            "filled_icon_3": false,
+            "width": "100%",
+            "direction": "vertical",
+            "column_gap": 3,
+            "enable_bg": false,
+            "bg_color": "#f3f3f3",
+            "corner_radius": 40,
+            "padding": 3,
+            "border_size": 0,
+            "border_color": "#b7b7b7",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "text_XRdnaL": {
+          "type": "text",
+          "settings": {
+            "mobile_text_size": 14,
+            "desktop_text_size": 16,
+            "alignment": "left",
+            "text_color": "#121212",
+            "text_1": "<strong>Preventing Migraines</strong>",
+            "text_2": "Individuals with sensitive ears can reduce noise that triggers migraines",
+            "text_3": "",
+            "icon_scale": 120,
+            "icon_color": "#121212",
+            "icon_1": "check",
+            "filled_icon_1": false,
+            "icon_2": "",
+            "filled_icon_2": false,
+            "icon_3": "check_circle",
+            "filled_icon_3": false,
+            "width": "100%",
+            "direction": "vertical",
+            "column_gap": 3,
+            "enable_bg": false,
+            "bg_color": "#f3f3f3",
+            "corner_radius": 40,
+            "padding": 3,
+            "border_size": 0,
+            "border_color": "#b7b7b7",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "collapsible_tab_H3yndW": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What you get",
+            "heading_size": "medium",
+            "icon": "",
+            "filled_icon": false,
+            "collapse_icon": "carret",
+            "display_top_border": false,
+            "content": "<ul><li>1 set of Peace Plugs earplugs</li><li>3 sets of silicone ear tips (S + M + L included)</li><li>Protective carry case</li></ul>",
+            "page": "",
+            "margin_top": 24,
+            "margin_bottom": 0
+          }
+        },
+        "collapsible_tab_XC3B6U": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "100 Day Money Back Guarantee",
+            "heading_size": "medium",
+            "icon": "",
+            "filled_icon": false,
+            "collapse_icon": "carret",
+            "display_top_border": false,
+            "content": "<p>Olora prides itself on quality, so if for any reason you're not completely satisfied with your Peace Plugs within 100 days of purchasing, we'd be happy to offer a refund or free exchange.</p>",
+            "page": "",
+            "margin_top": 24,
+            "margin_bottom": 0
+          }
+        },
+        "sticky_atc_GV6Lfa": {
+          "type": "sticky_atc",
+          "settings": {
+            "function": "add_to_cart",
+            "display_when": "after_scroll",
+            "button_label": "Add to Cart",
+            "enable_custom_btn_color": true,
+            "custom_btn_color": "#02d8e9",
+            "color_scheme": "background-1",
+            "star_color": "#ffcc00",
+            "stars_label": "(xxxx Reviews)",
+            "picker_type": "combined",
+            "desktop_show_image": false,
+            "desktop_show_title": true,
+            "desktop_rating_stars": false,
+            "desktop_show_price": true,
+            "desktop_show_sale_badge": true,
+            "desktop_variant_picker": false,
+            "desktop_full_button_width": false,
+            "desktop_show_price_in_button": false,
+            "desktop_transparent_bg": false,
+            "mobile_show_image": false,
+            "mobile_show_title": true,
+            "mobile_rating_stars": false,
+            "mobile_show_price": true,
+            "mobile_show_sale_badge": true,
+            "mobile_variant_picker": false,
+            "mobile_full_button_width": false,
+            "mobile_show_price_in_button": false,
+            "mobile_transparent_bg": false
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "vitals_reviews_stars_d6QPWe",
+        "a6eb81db-40e4-43e0-972f-32db010a4a56",
+        "price",
+        "text_iV6TR6",
+        "text_3HHTAh",
+        "emoji_benefits_pncPBX",
+        "5fcc0428-e768-4cb7-bea3-eb0274198dd1",
+        "04ba004e-2f54-4936-8b1c-8bcadf6573f6",
+        "buy_buttons",
+        "custom_liquid_Vrakmn",
+        "text_AY4D8H",
+        "text_HpQiaq",
+        "text_nYWnKU",
+        "text_gtyRYH",
+        "text_XRdnaL",
+        "collapsible_tab_H3yndW",
+        "collapsible_tab_XC3B6U",
+        "sticky_atc_GV6Lfa"
+      ],
+      "custom_css": [],
+      "settings": {
+        "enable_sticky_info": true,
+        "display_variant_image_first": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "desktop_thumbnails_count": 5,
+        "mobile_thumbnails": "show",
+        "mobile_media_corner_radius": 0,
+        "mobile_spacing": false,
+        "mobile_preview_media": false,
+        "mobile_thumbnails_count": 5,
+        "mobile_pagination": "dots_overlay",
+        "hide_arrows": true,
+        "dots_color_scheme": "inverse",
+        "trust_badge_position": "top-right",
+        "trust_badge_size": "medium",
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 16,
+        "desktop_padding_top": 36,
+        "desktop_padding_bottom": 52
+      }
+    },
+    "horizontal_ticker_CizpyK": {
+      "type": "horizontal-ticker",
+      "blocks": {
+        "text_RAeKNC": {
+          "type": "text",
+          "settings": {
+            "title": "⭐12,500+ HAPPY CUSTOMERS⭐"
+          }
+        },
+        "text_czYc3N": {
+          "type": "text",
+          "settings": {
+            "title": "💖Preserves hairstyles for the next day💖"
+          }
+        },
+        "text_RFaQET": {
+          "type": "text",
+          "settings": {
+            "title": "📦 HASSLE FREE RETURNS📦"
+          }
+        }
+      },
+      "block_order": [
+        "text_RAeKNC",
+        "text_czYc3N",
+        "text_RFaQET"
+      ],
+      "disabled": true,
+      "settings": {
+        "visibility": "always-display",
+        "speed": 3,
+        "mobile_spacing": 60,
+        "desktop_spacing": 60,
+        "color_scheme": "accent-1",
+        "mobile_text_size": 18,
+        "desktop_text_size": 23,
+        "italic_text": true,
+        "uppercase_text": true,
+        "bold_text": true,
+        "mobile_image_height": 10,
+        "desktop_image_height": 12,
+        "hidden_products": "",
+        "enable_specific_display": false,
+        "displayed_products": "",
+        "mobile_padding_top": 12,
+        "mobile_padding_bottom": 12,
+        "desktop_padding_top": 16,
+        "desktop_padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "display_id": false,
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 24
+      }
+    },
+    "multicolumn_TnP3WQ": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_p7YrJ4": {
+          "type": "column",
+          "settings": {
+            "video": "shopify://files/videos/Creative 3 copy.mp4",
+            "muted_autoplay": false,
+            "title": "How Heather Uses Peace Plugs For Her Husband's Snoring",
+            "text": "<p>Peace Plugs have allowed Heather to finally sleep peacefully next to her husband again.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_wyAeNJ": {
+          "type": "column",
+          "settings": {
+            "video": "shopify://files/videos/Copy of Script1.mp4",
+            "muted_autoplay": false,
+            "title": "How Amy Uses Peace Plugs For Her Migraines",
+            "text": "<p>Amy has sensitive ears so Peace Plugs help her reduce noise that can trigger her migraines.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_q7P48q": {
+          "type": "column",
+          "settings": {
+            "video": "shopify://files/videos/Copy of Script1_678b5a36-2e36-44a8-801e-4728f5a2ea31.mp4",
+            "muted_autoplay": false,
+            "title": "Why Phillip Uses Peace Plugs During His Shift",
+            "text": "<p>Phillip works in a nightclub and uses Peace Plugs to protect his hearing and enjoy his shift better.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_p7YrJ4",
+        "column_wyAeNJ",
+        "column_q7P48q"
+      ],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "Why Peace Plugs?",
+        "heading_size": "h1",
+        "button_label": "",
+        "button_link": "",
+        "atc_button_label": "",
+        "atc_product": "",
+        "atc_skip_cart": false,
+        "color_scheme": "background-1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "column_alignment": "left",
+        "cards_color_scheme": "background-1",
+        "type": "slide",
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "arrows_color_scheme": "accent-1",
+        "transparent_arrows": true,
+        "dots_color_scheme": "accent-1",
+        "desktop_full_page": false,
+        "columns_desktop": 3,
+        "slider_desktop": false,
+        "per_move_desktop": 1,
+        "desktop_spacing": 52,
+        "desktop_side_padding": 0,
+        "desktop_padding_calc": true,
+        "desktop_adaptive_height": false,
+        "desktop_dots_position": "under",
+        "desktop_arrows_position": "sides",
+        "columns_mobile": "1",
+        "slider_mobile": true,
+        "enable_mobile_preview": false,
+        "mobile_adaptive_height": true,
+        "mobile_dots_position": "under",
+        "mobile_arrows_position": "under",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_TxCibt": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_fPWEme": {
+          "type": "heading",
+          "settings": {
+            "heading": "Find Your Peace",
+            "heading_size": "h1"
+          }
+        },
+        "text_kgUwHn": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our earplugs are designed to improve the quality of your life. Partner snores? We got you. Loud background noise distracting your focus? No problem.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_fPWEme",
+        "text_kgUwHn"
+      ],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "image": "shopify://shop_images/08.png",
+        "height": "adapt",
+        "content_layout": "no-overlap",
+        "color_scheme": "accent-2",
+        "section_color_scheme": "background-1",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_full_media_width": false,
+        "mobile_direction": "normal",
+        "mobile_content_alignment": "left",
+        "padding_top": 52,
+        "padding_bottom": 36
+      }
+    },
+    "section_divider_rgbFzK": {
+      "type": "section-divider",
+      "disabled": true,
+      "settings": {
+        "shape": "waves_3",
+        "flip_horizontal": false,
+        "flip_vertical": false,
+        "shape_color": "accent-1",
+        "background_color": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_dLjdxN": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_zF8kbc": {
+          "type": "heading",
+          "settings": {
+            "heading": "Preserving Precious Hearing",
+            "heading_size": "h1"
+          }
+        },
+        "text_eN3iCT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Protecting your ears while hearing crystal-clear sound, with Patented filter technology</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_zF8kbc",
+        "text_eN3iCT"
+      ],
+      "disabled": true,
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "video": "shopify://files/videos/f561a8e8669f4c999fad2263bd9eff75.HD-1080p-7.2Mbps-28383098.mp4",
+        "height": "adapt",
+        "content_layout": "no-overlap",
+        "color_scheme": "accent-1",
+        "section_color_scheme": "accent-1",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_full_media_width": false,
+        "mobile_direction": "normal",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "product_features_KMdbgt": {
+      "type": "product-features",
+      "blocks": {
+        "hotspot_gheKkA": {
+          "type": "hotspot",
+          "settings": {
+            "offset_x": 42,
+            "offset_y": 20,
+            "enable_mobile_position": false,
+            "mobile_offset_x": 30,
+            "mobile_offset_y": 30,
+            "title": "Patented Filter Technology",
+            "text": "<p>Our earplugs use patented filters for clear sound and ear protection.</p>",
+            "alignment": "center"
+          }
+        },
+        "hotspot_MK7XtX": {
+          "type": "hotspot",
+          "settings": {
+            "offset_x": 70,
+            "offset_y": 70,
+            "enable_mobile_position": false,
+            "mobile_offset_x": 30,
+            "mobile_offset_y": 30,
+            "title": "Comfortable Fit",
+            "text": "<p>Soft, hypoallergenic materials ensure comfortable, secure fit for all-day wear.</p>",
+            "alignment": "center"
+          }
+        },
+        "hotspot_pyCQg8": {
+          "type": "hotspot",
+          "settings": {
+            "offset_x": 70,
+            "offset_y": 27,
+            "enable_mobile_position": false,
+            "mobile_offset_x": 30,
+            "mobile_offset_y": 30,
+            "title": "Versatile Usage",
+            "text": "<p>Our earplugs provide adaptable protection for various noisy environments.</p>",
+            "alignment": "center"
+          }
+        },
+        "hotspot_ziGynw": {
+          "type": "hotspot",
+          "settings": {
+            "offset_x": 20,
+            "offset_y": 60,
+            "enable_mobile_position": false,
+            "mobile_offset_x": 30,
+            "mobile_offset_y": 30,
+            "title": "Reusable and Easy to Clean",
+            "text": "<p>Easy to clean, ensuring long-lasting protection and hygiene for your ears.</p>",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "hotspot_gheKkA",
+        "hotspot_MK7XtX",
+        "hotspot_pyCQg8",
+        "hotspot_ziGynw"
+      ],
+      "disabled": true,
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "Product features",
+        "heading_size": "h1",
+        "text": "<p>Use this section to hightlight key features and benefits of your product</p>",
+        "button_label": "",
+        "link": "",
+        "button_style_secondary": false,
+        "atc_button_label": "",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "center",
+        "hide_content_on_mobile": false,
+        "mobile_content_position": "top",
+        "content_corner_radius": true,
+        "content_color_scheme": "background-1",
+        "color_scheme": "background-1",
+        "image": "shopify://shop_images/freepik-export-20240516120157zQS5.jpg",
+        "desktop_image_width": "limited",
+        "image_max_width": 900,
+        "full_page_width": false,
+        "image_corner_radius": true,
+        "hotspot_open_event": "hover",
+        "hotspots_color_scheme": "background-1",
+        "display_hotspots_animation": true,
+        "hotspot_content_color_scheme": "background-1",
+        "hotspot_image_size": "full",
+        "contain_hotspot_modal": false,
+        "hotspot_modal_desktop_width": 340,
+        "hotspot_modal_mobile_width": 200,
+        "bullet_points_color": "background-1",
+        "contain_bullet_points": false,
+        "bullet_point_desktop_width": 400,
+        "bullet_point_mobile_width": 60,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "comparison_table_G9b3zC": {
+      "type": "comparison-table",
+      "blocks": {
+        "row_J8mwpE": {
+          "type": "row",
+          "settings": {
+            "benefit": "-30dB Noise Reduction",
+            "us": true,
+            "others": false
+          }
+        },
+        "row_idrMQf": {
+          "type": "row",
+          "settings": {
+            "benefit": "Unique Filter Design",
+            "us": true,
+            "others": false
+          }
+        },
+        "row_87eRwd": {
+          "type": "row",
+          "settings": {
+            "benefit": "Comfort",
+            "us": true,
+            "others": false
+          }
+        },
+        "row_rVWQkg": {
+          "type": "row",
+          "settings": {
+            "benefit": "Research Backed",
+            "us": true,
+            "others": false
+          }
+        },
+        "row_4G3GXm": {
+          "type": "row",
+          "settings": {
+            "benefit": "100 Day Guarantee",
+            "us": true,
+            "others": false
+          }
+        }
+      },
+      "block_order": [
+        "row_J8mwpE",
+        "row_idrMQf",
+        "row_87eRwd",
+        "row_rVWQkg",
+        "row_4G3GXm"
+      ],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "How Do We Compare To Other Earplugs?",
+        "heading_size": "h1",
+        "text": "",
+        "button_label": "",
+        "link": "",
+        "button_style_secondary": false,
+        "atc_button_label": "",
+        "atc_product": "",
+        "atc_skip_cart": false,
+        "color_scheme": "background-1",
+        "layout": "table_second",
+        "style": "centered",
+        "logo_width": 90,
+        "mobile_logo_width": 60,
+        "us_label": "[shop_name]",
+        "us_label_size": 18,
+        "others_label": "Others",
+        "others_label_size": 18,
+        "checkmark_style": "regular",
+        "checkmark_color": "#53af01",
+        "checkmark_bg_color": "#53af01",
+        "x_style": "regular",
+        "x_color": "#121212",
+        "x_bg_color": "#dbdbdb",
+        "opposite_icon_colors": "original",
+        "highlighted_color_scheme": "accent-1",
+        "highlighted_separator_opacity": 0,
+        "highlighted_overlay_opacity": 0,
+        "other_cells_color_scheme": "background-1",
+        "regular_separator_opacity": 10,
+        "regular_overlay_opacity": 0,
+        "minimalistic_border_opacity": 16,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "parallax_hero_4YrkUG": {
+      "type": "parallax-hero",
+      "blocks": {
+        "content_G7HKnr": {
+          "type": "content",
+          "settings": {
+            "vertical_scrollng_speed": 0,
+            "horizontal_scrollng_speed": 0,
+            "zoom_level": 100,
+            "rotation": 0,
+            "z_index": 0,
+            "heading_prefix": "",
+            "heading": "",
+            "heading_size": 80,
+            "mobile_heading_size": 36,
+            "heading_suffix": "",
+            "heading_prefix_size": "h2",
+            "text": "<h1>Protecting your ears while hearing crystal-clear sound, with Patented filter technology</h1>",
+            "button_label_1": "",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false,
+            "color_scheme": "accent-2",
+            "full_page_width": false,
+            "content_max_width": "unlimited",
+            "content_pixels_max_width": 500,
+            "content_percentage_max_width": 50,
+            "content_vertical_position": "center",
+            "content_horizontal_position": "center",
+            "content_text_alignment": "center",
+            "mobile_content_vertical_position": "center",
+            "mobile_content_text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "content_G7HKnr"
+      ],
+      "disabled": true,
+      "settings": {
+        "min_desktop_height_type": "pixels",
+        "desktop_pixels_height": 600,
+        "min_mobile_height_type": "pixels",
+        "mobile_pixels_height": 400,
+        "transparent_header": false,
+        "transparent_header_text_color": "text",
+        "transparent_header_highlighted_link_color": "background-1",
+        "transparent_header_hover_link_color": "accent-1",
+        "transparent_header_logo": "main",
+        "hide_announcement_bars": false,
+        "desktop_bg_video": "shopify://files/videos/f561a8e8669f4c999fad2263bd9eff75.HD-1080p-7.2Mbps-28383098.mp4",
+        "overlay_color": "#000000",
+        "overlay_opacity": 25,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "icon_bar_cVUAfh": {
+      "type": "icon-bar",
+      "blocks": {
+        "column_hP7Ynf": {
+          "type": "column",
+          "settings": {
+            "icon": "local_shipping",
+            "filled_icon": false,
+            "title": "Free Shipping",
+            "text": "<p></p><p></p>"
+          }
+        },
+        "column_t6iTT8": {
+          "type": "column",
+          "settings": {
+            "icon": "verified_user",
+            "filled_icon": false,
+            "title": "2-year warranty",
+            "text": ""
+          }
+        },
+        "column_bKA8kc": {
+          "type": "column",
+          "settings": {
+            "icon": "check_circle",
+            "filled_icon": false,
+            "title": "100-day free returns",
+            "text": ""
+          }
+        },
+        "column_Y7gGHN": {
+          "type": "column",
+          "settings": {
+            "icon": "stars",
+            "filled_icon": false,
+            "title": "55,000+ 5 star reviews",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_hP7Ynf",
+        "column_t6iTT8",
+        "column_bKA8kc",
+        "column_Y7gGHN"
+      ],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "2 million+ satisfied customers",
+        "heading_size": "h2",
+        "text": "",
+        "color_scheme": "background-1",
+        "icon_layout": "vertical",
+        "icon_size": "medium",
+        "icon_color": "accent-1",
+        "cards_color_scheme": "background-1",
+        "type": "slide",
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "arrows_color_scheme": "inverse",
+        "transparent_arrows": true,
+        "dots_color_scheme": "inverse",
+        "desktop_full_page": false,
+        "columns_desktop": 4,
+        "slider_desktop": false,
+        "per_move_desktop": 1,
+        "desktop_spacing": 40,
+        "desktop_side_padding": 0,
+        "desktop_padding_calc": true,
+        "desktop_adaptive_height": false,
+        "desktop_dots_position": "under",
+        "desktop_arrows_position": "sides",
+        "columns_mobile": "1",
+        "slider_mobile": true,
+        "enable_mobile_preview": false,
+        "mobile_adaptive_height": false,
+        "mobile_dots_position": "under",
+        "mobile_arrows_position": "under",
+        "padding_top": 56,
+        "padding_bottom": 36
+      }
+    },
+    "testimonials_GzNGtt": {
+      "type": "testimonials",
+      "blocks": {
+        "column_ThbYP4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/gempages_510135694635565882-111855ce-b74b-4a76-872b-8a55bab503db.png",
+            "title": "My husband's snoring was keeping me awake EVERY NIGHT",
+            "text": "<p>I’m an ER nurse and I need my sleep when I work back to back shifts, my husband’s snoring was keeping me awake EVERY NIGHT. Thankfully I’m able to put Peace Plugs in and sleep. I can still hear slight sounds and my alarm, but not my husband’s snoring.</p>",
+            "author": "<em><strong>Heather H. - Verified Buyer</strong></em>"
+          }
+        },
+        "column_AEQhLG": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2024-05-26_at_12.32.25.png",
+            "title": "So much more confident for my upcoming exams!",
+            "text": "<p>Highly recommend for any student!! I'm currently living in dorms and all the noise is really effecting my ability to focus when studying. A friend recommended Peace Plugs and they have been a game changer. So much more confident for my upcoming exams!</p>",
+            "author": "<em><strong>Amy P. - Verified buyer</strong></em>"
+          }
+        },
+        "column_Gqc9VY": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/gempages_510135694635565882-be4c9f6d-2d24-4280-a1ad-93846cdf3883.jpg",
+            "title": "My shifts have completely changed!",
+            "text": "<p>I've been a bartender for about 3 months and was already starting to develop tinnitus and I'd looked into regular earplugs but they look so silly and block out too much noise so I won't be able to hear customers. Found Peace Plugs through insta and now my shifts have completely changed! No more ringing ears after shifts and I'm so much more focussed too!</p>",
+            "author": "<em><strong>Maddie S. - Verified Buyer</strong></em>"
+          }
+        }
+      },
+      "block_order": [
+        "column_ThbYP4",
+        "column_AEQhLG",
+        "column_Gqc9VY"
+      ],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "See Olora's Peace Plugs In Action",
+        "heading_size": "h1",
+        "text": "",
+        "color_scheme": "background-1",
+        "style": "cards",
+        "image_width": "full",
+        "image_ratio": "square",
+        "column_alignment": "center",
+        "show_stars": true,
+        "stars_color": "#ffd700",
+        "show_quotes": true,
+        "quotes_color_scheme": "accent-2",
+        "cards_color_scheme": "bg-overlay",
+        "type": "slide",
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "arrows_color_scheme": "inverse",
+        "transparent_arrows": true,
+        "dots_color_scheme": "inverse",
+        "desktop_full_page": false,
+        "columns_desktop": 3,
+        "slider_desktop": false,
+        "per_move_desktop": 1,
+        "desktop_spacing": 40,
+        "desktop_side_padding": 0,
+        "desktop_padding_calc": true,
+        "desktop_adaptive_height": false,
+        "desktop_dots_position": "under",
+        "desktop_arrows_position": "sides",
+        "slider_mobile": true,
+        "enable_mobile_preview": false,
+        "mobile_adaptive_height": false,
+        "mobile_dots_position": "under",
+        "mobile_arrows_position": "under",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collapsible_content_LPwjJD": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_7P4zzN": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How do Peace Plugs work?",
+            "icon": "",
+            "filled_icon": false,
+            "custom_icon": "shopify://shop_images/help_24dp_FILL0_wght400_GRAD0_opsz24_f917da71-661d-42aa-8cfd-0d180c131565.png",
+            "row_content": "<p>Peace Plugs contain a unique filter that sifts out annoying & loud background noise, without blocking out sound completely. This means you can reduce unwanted noise and still communicate clearly with those around you.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_AFJckT": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will they block out all sound completely?",
+            "icon": "",
+            "filled_icon": false,
+            "custom_icon": "shopify://shop_images/help_24dp_FILL0_wght400_GRAD0_opsz24_f917da71-661d-42aa-8cfd-0d180c131565.png",
+            "row_content": "<p>No, Peace Plugs contain a unique filter that reduces unwanted background noise, without blocking out sound completely.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_fBwYz6": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Why don't I just use my Airpods or headphones?",
+            "icon": "",
+            "filled_icon": false,
+            "custom_icon": "shopify://shop_images/help_24dp_FILL0_wght400_GRAD0_opsz24_f917da71-661d-42aa-8cfd-0d180c131565.png",
+            "row_content": "<p>Many people do not know that bluetooth emits ionising radiation. Although a small amount, we are yet to fully understand it's effects on the human brain and if it could potentially cause long term damage with overuse.<br/><br/>Headphones are notoriously known for becoming increasingly uncomfortable with prolonged use.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_d8GeBT": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do they get uncomfortable after a while?",
+            "icon": "",
+            "filled_icon": false,
+            "custom_icon": "shopify://shop_images/help_24dp_FILL0_wght400_GRAD0_opsz24_f917da71-661d-42aa-8cfd-0d180c131565.png",
+            "row_content": "<p>Olora have designed Peace Plugs with prolonged use in mind. 96% of our customers reported that they were the comfiest earplugs they had tried and 81% reported that after several hours of use they forgot they had them in.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_kJq6BH": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will I still be able to hear conversations?",
+            "icon": "",
+            "filled_icon": false,
+            "custom_icon": "shopify://shop_images/help_24dp_FILL0_wght400_GRAD0_opsz24_f917da71-661d-42aa-8cfd-0d180c131565.png",
+            "row_content": "<p>Yes, because of the unique sound filter you will still be able to hear and engage in conversations around you. </p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_Kz8aGK": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will they fall out during the night?",
+            "icon": "",
+            "filled_icon": false,
+            "custom_icon": "shopify://shop_images/help_24dp_FILL0_wght400_GRAD0_opsz24_f917da71-661d-42aa-8cfd-0d180c131565.png",
+            "row_content": "<p>Peace Plugs have a slight ribbed surface on the outside of the filter, preventing them from slipping out, even when you're tossing and turning.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_tnq6gp": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will I be able to hear my alarm in the morning if I wear them to sleep?",
+            "icon": "",
+            "filled_icon": false,
+            "custom_icon": "shopify://shop_images/help_24dp_FILL0_wght400_GRAD0_opsz24_f917da71-661d-42aa-8cfd-0d180c131565.png",
+            "row_content": "<p>Everyone's biggest worry when wearing earplugs to sleep is sleeping through their alarm in the morning. Olora's Peace Plugs contain a unique filter, which will effectively block out your nighttime noise, whilst still being able to hear your alarm in the morning.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_8NT4nL": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will I be able to sleep on my side?",
+            "icon": "",
+            "filled_icon": false,
+            "custom_icon": "shopify://shop_images/help_24dp_FILL0_wght400_GRAD0_opsz24_f917da71-661d-42aa-8cfd-0d180c131565.png",
+            "row_content": "<p>Yes, many of our customers are side sleepers and report no discomfort wearing their Peace Plugs to sleep.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_VKmQFH": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will they elevate internal noise like breathing & swallowing?",
+            "icon": "",
+            "filled_icon": false,
+            "custom_icon": "shopify://shop_images/help_24dp_FILL0_wght400_GRAD0_opsz24_f917da71-661d-42aa-8cfd-0d180c131565.png",
+            "row_content": "<p>Unlike standard noise cancelling earplugs, Peace Plugs contain a unique sound filter, which prevents internal noise from increasing.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_fcLaiC": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will they fall out easily?",
+            "icon": "",
+            "filled_icon": false,
+            "custom_icon": "shopify://shop_images/help_24dp_FILL0_wght400_GRAD0_opsz24_f917da71-661d-42aa-8cfd-0d180c131565.png",
+            "row_content": "<p>Peace Plugs have a slightly ribbed surface on the outside of the filter, preventing them from falling out easily, even when you're tossing and turning at night.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_7P4zzN",
+        "collapsible_row_AFJckT",
+        "collapsible_row_fBwYz6",
+        "collapsible_row_d8GeBT",
+        "collapsible_row_kJq6BH",
+        "collapsible_row_Kz8aGK",
+        "collapsible_row_tnq6gp",
+        "collapsible_row_8NT4nL",
+        "collapsible_row_VKmQFH",
+        "collapsible_row_fcLaiC"
+      ],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "caption": "",
+        "heading": "Frequently Asked Questions",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "section",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-1",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "row_heading_size": "medium",
+        "collapse_icon": "plus",
+        "display_top_border": true,
+        "padding_top": 36,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_TTTXEE": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_xnqE74": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Customer Reviews</p>",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xnqE74"
+      ],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "1715870417ed4878bf": {
+      "type": "apps",
+      "blocks": {
+        "vitals_product_reviews_TGwG9D": {
+          "type": "shopify://apps/vitals/blocks/product-reviews/aeb48102-2a5a-4f39-bdbd-d8d49f4e20b8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "vitals_product_reviews_TGwG9D"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "horizontal_ticker_CizpyK",
+    "related-products",
+    "multicolumn_TnP3WQ",
+    "image_with_text_TxCibt",
+    "section_divider_rgbFzK",
+    "image_with_text_dLjdxN",
+    "product_features_KMdbgt",
+    "comparison_table_G9b3zC",
+    "parallax_hero_4YrkUG",
+    "icon_bar_cVUAfh",
+    "testimonials_GzNGtt",
+    "collapsible_content_LPwjJD",
+    "rich_text_TTTXEE",
+    "1715870417ed4878bf"
+  ]
+}

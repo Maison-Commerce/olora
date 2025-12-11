@@ -1,0 +1,440 @@
+<div
+  class="review-items-container"
+  {{ section.shopify_attributes }}
+  style="--star-color:{{ section.settings.star_color }};--margin-top: {{ section.settings.margin_top | divided_by: 10.0 }}rem;--margin-bottom: {{ section.settings.margin_bottom | divided_by: 10.0 }}rem;"
+  {{ section.shopify_attributes }}
+>
+  {%- assign items_count = 0 -%}
+  {%- if section.settings.text_1 != blank -%}
+    {%- assign items_count = items_count | plus: 1 -%}
+  {%- endif -%}
+  {%- if section.settings.text_2 != blank -%}
+    {%- assign items_count = items_count | plus: 1 -%}
+  {%- endif -%}
+  {%- if section.settings.text_3 != blank -%}
+    {%- assign items_count = items_count | plus: 1 -%}
+  {%- endif -%}
+  {%- if section.settings.text_4 != blank -%}
+    {%- assign items_count = items_count | plus: 1 -%}
+  {%- endif -%}
+  {%- if section.settings.text_5 != blank -%}
+    {%- assign items_count = items_count | plus: 1 -%}
+  {%- endif -%}
+
+  <slideshow-component
+    class="slider-mobile-gutter section-reviews"
+    role="region"
+    aria-roledescription="{{ 'sections.slideshow.carousel' | t }}"
+    aria-label="Customer reviews"
+  >
+    <div
+      class="slideshow banner grid grid--1-col slider slider--everywhere"
+      id="Slider-{{ section.id }}"
+      aria-live="polite"
+      aria-atomic="true"
+      data-autoplay="false"
+      data-speed="5"
+    >
+      {%- unless section.settings.text_1 == blank -%}
+        <div
+          class="slideshow__slide grid__item grid--1-col slider__slide"
+          id="Slide-{{ section.id }}-1"
+          role="group"
+          aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
+          aria-label="1 {{ 'general.slider.of' | t }} 3"
+          tabindex="-1"
+        >
+          <div class="review-item review-item--{{ section.settings.avatar_alignment }}">
+            {%- unless section.settings.image_1 == blank -%}
+              <div class="review-item__image media media--transparent">
+                <img
+                  src="{{ section.settings.image_1 | image_url }}"
+                  alt="{{ section.settings.author_1 }}"
+                  width="auto"
+                  height="auto"
+                  loading="lazy"
+                >
+              </div>
+            {%- endunless -%}
+            <div class="review-item__right">
+              <div class="review-item__text">
+                {{ section.settings.text_1 }}
+              </div>
+              {%- unless section.settings.author_1 == blank and section.settings.display_stars == false -%}
+                <div class="review-item__author-and-stars">
+                  {%- unless section.settings.author_1 == blank -%}
+                    <p class="review-item__author">
+                      {{ section.settings.author_1 }}
+                    </p>
+                  {%- endunless -%}
+                  {%- if section.settings.display_stars -%}
+                    <span class="review-item__stars"><img alt="" src="https://cdn.instant.so/sites/mojN5nsBLS70GrkT/assets/IlAgLhi5AS4KTbx7/cb4893f575eceb48cc32203e055d9c82668651e2.svg" width="60" height="16" class="instant-fill" decoding="async" fetchpriority="auto" loading="eager"></span>
+                  {%- endif -%}
+                </div>
+              {%- endunless -%}
+            </div>
+          </div>
+        </div>
+      {%- endunless -%}
+      {%- unless section.settings.text_2 == blank -%}
+        <div
+          class="slideshow__slide grid__item grid--1-col slider__slide"
+          id="Slide-{{ section.id }}-2"
+          role="group"
+          aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
+          aria-label="2 {{ 'general.slider.of' | t }} 3"
+          tabindex="-1"
+        >
+          <div class="review-item review-item--{{ section.settings.avatar_alignment }}">
+            {%- unless section.settings.image_2 == blank -%}
+              <div class="review-item__image media media--transparent">
+                <img
+                  src="{{ section.settings.image_2 | image_url }}"
+                  alt="{{ section.settings.author_2 }}"
+                  width="auto"
+                  height="auto"
+                  loading="lazy"
+                >
+              </div>
+            {%- endunless -%}
+            <div class="review-item__right">
+              <div class="review-item__text">
+                {{ section.settings.text_2 }}
+              </div>
+              {%- unless section.settings.author_2 == blank and section.settings.display_stars == false -%}
+                <div class="review-item__author-and-stars">
+                  {%- unless section.settings.author_2 == blank -%}
+                    <p class="review-item__author">
+                      {{ section.settings.author_2 }}
+                    </p>
+                  {%- endunless -%}
+                  {%- if section.settings.display_stars -%}
+                    <span class="review-item__stars"><img alt="" src="https://cdn.instant.so/sites/mojN5nsBLS70GrkT/assets/IlAgLhi5AS4KTbx7/cb4893f575eceb48cc32203e055d9c82668651e2.svg" width="60" height="16" class="instant-fill" decoding="async" fetchpriority="auto" loading="eager"></span>
+                  {%- endif -%}
+                </div>
+              {%- endunless -%}
+            </div>
+          </div>
+        </div>
+      {%- endunless -%}
+
+      {%- unless section.settings.text_3 == blank -%}
+        <div
+          class="slideshow__slide grid__item grid--1-col slider__slide"
+          id="Slide-{{ section.id }}-1"
+          role="group"
+          aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
+          aria-label="3 {{ 'general.slider.of' | t }} 3"
+          tabindex="-1"
+        >
+          <div class="review-item review-item--{{ section.settings.avatar_alignment }}">
+            {%- unless section.settings.image_3 == blank -%}
+              <div class="review-item__image media media--transparent">
+                <img
+                  src="{{ section.settings.image_3 | image_url }}"
+                  alt="{{ section.settings.author_3 }}"
+                  width="auto"
+                  height="auto"
+                  loading="lazy"
+                >
+              </div>
+            {%- endunless -%}
+            <div class="review-item__right">
+              <div class="review-item__text">
+                {{ section.settings.text_3 }}
+              </div>
+              {%- unless section.settings.author_3 == blank and section.settings.display_stars == false -%}
+                <div class="review-item__author-and-stars">
+                  {%- unless section.settings.author_3 == blank -%}
+                    <p class="review-item__author">
+                      {{ section.settings.author_3 }}
+                    </p>
+                  {%- endunless -%}
+                  {%- if section.settings.display_stars -%}
+                    <span class="review-item__stars"><img alt="" src="https://cdn.instant.so/sites/mojN5nsBLS70GrkT/assets/IlAgLhi5AS4KTbx7/cb4893f575eceb48cc32203e055d9c82668651e2.svg" width="60" height="16" class="instant-fill" decoding="async" fetchpriority="auto" loading="eager"></span>
+                  {%- endif -%}
+                </div>
+              {%- endunless -%}
+            </div>
+          </div>
+        </div>
+      {%- endunless -%}
+
+      {%- unless section.settings.text_4 == blank -%}
+        <div
+          class="slideshow__slide grid__item grid--1-col slider__slide"
+          id="Slide-{{ section.id }}-4"
+          role="group"
+          aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
+          aria-label="4 {{ 'general.slider.of' | t }} 5"
+          tabindex="-1"
+        >
+          <div class="review-item review-item--{{ section.settings.avatar_alignment }}">
+            {%- unless section.settings.image_4 == blank -%}
+              <div class="review-item__image media media--transparent">
+                <img
+                  src="{{ section.settings.image_4 | image_url }}"
+                  alt="{{ section.settings.author_4 }}"
+                  width="auto"
+                  height="auto"
+                  loading="lazy"
+                >
+              </div>
+            {%- endunless -%}
+            <div class="review-item__right">
+              <div class="review-item__text">
+                {{ section.settings.text_4 }}
+              </div>
+              {%- unless section.settings.author_4 == blank and section.settings.display_stars == false -%}
+                <div class="review-item__author-and-stars">
+                  {%- unless section.settings.author_4 == blank -%}
+                    <p class="review-item__author">
+                      {{ section.settings.author_4 }}
+                    </p>
+                  {%- endunless -%}
+                  {%- if section.settings.display_stars -%}
+                    <span class="review-item__stars"><img alt="" src="https://cdn.instant.so/sites/mojN5nsBLS70GrkT/assets/IlAgLhi5AS4KTbx7/cb4893f575eceb48cc32203e055d9c82668651e2.svg" width="60" height="16" class="instant-fill" decoding="async" fetchpriority="auto" loading="eager"></span>
+                  {%- endif -%}
+                </div>
+              {%- endunless -%}
+            </div>
+          </div>
+        </div>
+      {%- endunless -%}
+
+      {%- unless section.settings.text_5 == blank -%}
+        <div
+          class="slideshow__slide grid__item grid--1-col slider__slide"
+          id="Slide-{{ section.id }}-5"
+          role="group"
+          aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
+          aria-label="5 {{ 'general.slider.of' | t }} 5"
+          tabindex="-1"
+        >
+          <div class="review-item review-item--{{ section.settings.avatar_alignment }}">
+            {%- unless section.settings.image_5 == blank -%}
+              <div class="review-item__image media media--transparent">
+                <img
+                  src="{{ section.settings.image_5 | image_url }}"
+                  alt="{{ section.settings.author_5 }}"
+                  width="auto"
+                  height="auto"
+                  loading="lazy"
+                >
+              </div>
+            {%- endunless -%}
+            <div class="review-item__right">
+              <div class="review-item__text">
+                {{ section.settings.text_5 }}
+              </div>
+              {%- unless section.settings.author_5 == blank and section.settings.display_stars == false -%}
+                <div class="review-item__author-and-stars">
+                  {%- unless section.settings.author_5 == blank -%}
+                    <p class="review-item__author">
+                      {{ section.settings.author_5 }}
+                    </p>
+                  {%- endunless -%}
+                  {%- if section.settings.display_stars -%}
+                    <span class="review-item__stars"><img alt="" src="https://cdn.instant.so/sites/mojN5nsBLS70GrkT/assets/IlAgLhi5AS4KTbx7/cb4893f575eceb48cc32203e055d9c82668651e2.svg" width="60" height="16" class="instant-fill" decoding="async" fetchpriority="auto" loading="eager"></span>
+                  {%- endif -%}
+                </div>
+              {%- endunless -%}
+            </div>
+          </div>
+        </div>
+      {%- endunless -%}
+    </div>
+
+    {%- if items_count > 1 -%}
+      <div class="slideshow__controls slider-buttons no-js-hidden slideshow__controls--border-radius-mobile">
+        <button
+          type="button"
+          class="slider-button slider-button--prev"
+          name="previous"
+          aria-label="{{ 'sections.slideshow.previous_slideshow' | t }}"
+          aria-controls="Slider-{{ section.id }}"
+        >
+          {% render 'icon-caret' %}
+        </button>
+        <div class="slider-counter slider-counter--dots">
+          <div class="slideshow__control-wrapper">
+            {%- unless section.settings.text_1 == blank -%}
+              <button
+                class="slider-counter__link slider-counter__link--dots link"
+                aria-label="{{ 'sections.slideshow.load_slide' | t }} 1 {{ 'general.slider.of' | t }} 3"
+                aria-controls="Slider-{{ section.id }}"
+              >
+                <span class="dot"></span>
+              </button>
+            {%- endunless -%}
+            {%- unless section.settings.text_2 == blank -%}
+              <button
+                class="slider-counter__link slider-counter__link--dots link"
+                aria-label="{{ 'sections.slideshow.load_slide' | t }} 2 {{ 'general.slider.of' | t }} 3"
+                aria-controls="Slider-{{ section.id }}"
+              >
+                <span class="dot"></span>
+              </button>
+            {%- endunless -%}
+            {%- unless section.settings.text_3 == blank -%}
+              <button
+                class="slider-counter__link slider-counter__link--dots link"
+                aria-label="{{ 'sections.slideshow.load_slide' | t }} 3 {{ 'general.slider.of' | t }} 3"
+                aria-controls="Slider-{{ section.id }}"
+              >
+                <span class="dot"></span>
+              </button>
+            {%- endunless -%}
+            {%- unless section.settings.text_4 == blank -%}
+              <button
+                class="slider-counter__link slider-counter__link--dots link"
+                aria-label="{{ 'sections.slideshow.load_slide' | t }} 4 {{ 'general.slider.of' | t }} 5"
+                aria-controls="Slider-{{ section.id }}"
+              >
+                <span class="dot"></span>
+              </button>
+            {%- endunless -%}
+            {%- unless section.settings.text_5 == blank -%}
+              <button
+                class="slider-counter__link slider-counter__link--dots link"
+                aria-label="{{ 'sections.slideshow.load_slide' | t }} 5 {{ 'general.slider.of' | t }} 5"
+                aria-controls="Slider-{{ section.id }}"
+              >
+                <span class="dot"></span>
+              </button>
+            {%- endunless -%}
+          </div>
+        </div>
+        <button
+          type="button"
+          class="slider-button slider-button--next"
+          name="next"
+          aria-label="{{ 'sections.slideshow.next_slideshow' | t }}"
+          aria-controls="Slider-{{ section.id }}"
+        >
+          {% render 'icon-caret' %}
+        </button>
+      </div>
+    {%- endif -%}
+    <noscript>
+      {%- if items_count > 1 -%}
+        <div class="slider-buttons">
+          <div class="slider-counter">
+            {%- unless section.settings.text_1 == blank -%}
+              <a
+                href="#Slide-{{ section.id }}-1"
+                class="slider-counter__link link"
+                aria-label="{{ 'sections.slideshow.load_slide' | t }} 1 {{ 'general.slider.of' | t }} 3"
+              >
+                1
+              </a>
+            {%- endunless -%}
+            {%- unless section.settings.text_2 == blank -%}
+              <a
+                href="#Slide-{{ section.id }}-2"
+                class="slider-counter__link link"
+                aria-label="{{ 'sections.slideshow.load_slide' | t }} 2 {{ 'general.slider.of' | t }} 3"
+              >
+                2
+              </a>
+            {%- endunless -%}
+            {%- unless section.settings.text_3 == blank -%}
+              <a
+                href="#Slide-{{ section.id }}-3"
+                class="slider-counter__link link"
+                aria-label="{{ 'sections.slideshow.load_slide' | t }} 3 {{ 'general.slider.of' | t }} 3"
+              >
+                3
+              </a>
+            {%- endunless -%}
+            {%- unless section.settings.text_4 == blank -%}
+              <a
+                href="#Slide-{{ section.id }}-4"
+                class="slider-counter__link link"
+                aria-label="{{ 'sections.slideshow.load_slide' | t }} 4 {{ 'general.slider.of' | t }} 5"
+              >
+                4
+              </a>
+            {%- endunless -%}
+            {%- unless section.settings.text_5 == blank -%}
+              <a
+                href="#Slide-{{ section.id }}-5"
+                class="slider-counter__link link"
+                aria-label="{{ 'sections.slideshow.load_slide' | t }} 5 {{ 'general.slider.of' | t }} 5"
+              >
+                5
+              </a>
+            {%- endunless -%}
+          </div>
+        </div>
+      {%- endif -%}
+    </noscript>
+  </slideshow-component>
+</div>
+
+<style>
+  .sec-rev .slider-button--prev,
+  .sec-rev .slider-button--next {
+    display: none;
+  }
+  .instant-rich-text.iPV3LAUfdiqRZpMtK .slider-button--prev,
+  .instant-rich-text.iPV3LAUfdiqRZpMtK .slider-button--next {
+    display: none !important;
+  }
+  .review-item__text p{
+    margin-top: 0 !important;
+    line-height: 1.3em !important;
+    font-size: 1.4rem !important;
+    color: rgb(var(--color-foreground)) !important;
+  }
+  .review-item__author{
+     margin-top: 0 !important;
+    line-height: 2em !important;
+    font-size: 1.3rem !important;
+    color: rgba(var(--color-foreground),.5) !important;
+  }
+  .review-items-container .slideshow__slide {
+    height: fit-content
+  }
+
+  /* Add this to ensure smooth transitions */
+  .slideshow.banner {
+    transition: height 0.3s ease-in-out;
+  }
+
+  slideshow-component.section-reviews {
+    gap: 10px
+  }
+</style>
+
+<script>
+  class SlideshowHeight {
+    constructor() {
+      this.slideshow = document.querySelector('.slideshow.banner');
+      this.slides = this.slideshow.querySelectorAll('.slideshow__slide');
+      this.init();
+    }
+
+    updateHeight() {
+      const activeSlide = this.slideshow.querySelector('.slideshow__slide[aria-hidden="false"]') || this.slides[0];
+      if (activeSlide) {
+        this.slideshow.style.height = `${activeSlide.offsetHeight}px`;
+      }
+    }
+
+    init() {
+      // Update height on initialization
+      this.updateHeight();
+
+      // Update height when slides change
+      const observer = new MutationObserver(() => this.updateHeight());
+      observer.observe(this.slideshow, { attributes: true, subtree: true });
+
+      // Update on window resize
+      window.addEventListener('resize', () => this.updateHeight());
+    }
+  }
+
+  // Initialize when DOM is ready
+  window.addEventListener('DOMContentLoaded', () => new SlideshowHeight());
+</script>

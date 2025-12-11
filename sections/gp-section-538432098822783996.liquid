@@ -1,0 +1,800 @@
+
+
+<style {% if section.settings.section_preload == "false" %} class="gps-link gps-style" type="text/disabled-css" {% endif %}>.gps-538432098822783996.gps.gpsil [style*="--aspect:"]{aspect-ratio:var(--aspect)}.gps-538432098822783996.gps.gpsil [style*="--bg:"]{background:var(--bg)}.gps-538432098822783996.gps.gpsil [style*="--hvr-bg:"]:hover{background:var(--hvr-bg)}.gps-538432098822783996.gps.gpsil [style*="--bga:"]{background-attachment:var(--bga)}.gps-538432098822783996.gps.gpsil [style*="--bgc:"]{background-color:var(--bgc)}.gps-538432098822783996.gps.gpsil [style*="--bgi:"]{background-image:var(--bgi)}.gps-538432098822783996.gps.gpsil [style*="--bgp:"]{background-position:var(--bgp)}.gps-538432098822783996.gps.gpsil [style*="--bgr:"]{background-repeat:var(--bgr)}.gps-538432098822783996.gps.gpsil [style*="--bgs:"]{background-size:var(--bgs)}.gps-538432098822783996.gps.gpsil [style*="--b:"]{border:var(--b)}.gps-538432098822783996.gps.gpsil [style*="--hvr-b:"]:hover{border:var(--hvr-b)}.gps-538432098822783996.gps.gpsil [style*="--bb:"]{border-bottom:var(--bb)}.gps-538432098822783996.gps.gpsil [style*="--bc:"]{border-color:var(--bc)}.gps-538432098822783996.gps.gpsil [style*="--bblr:"]{border-bottom-left-radius:var(--bblr)}.gps-538432098822783996.gps.gpsil [style*="--bbrr:"]{border-bottom-right-radius:var(--bbrr)}.gps-538432098822783996.gps.gpsil [style*="--radius:"]{border-radius:var(--radius)}.gps-538432098822783996.gps.gpsil [style*="--bs:"]{border-style:var(--bs)}.gps-538432098822783996.gps.gpsil [style*="--bt:"]{border-top:var(--bt)}.gps-538432098822783996.gps.gpsil [style*="--btlr:"]{border-top-left-radius:var(--btlr)}.gps-538432098822783996.gps.gpsil [style*="--btrr:"]{border-top-right-radius:var(--btrr)}.gps-538432098822783996.gps.gpsil [style*="--bw:"]{border-width:var(--bw)}.gps-538432098822783996.gps.gpsil [style*="--shadow:"]{box-shadow:var(--shadow)}.gps-538432098822783996.gps.gpsil [style*="--c:"]{color:var(--c)}.gps-538432098822783996.gps.gpsil [style*="--hvr-c:"]:hover{color:var(--hvr-c)}.gps-538432098822783996.gps.gpsil [style*="--cg:"]{-moz-column-gap:var(--cg);column-gap:var(--cg)}.gps-538432098822783996.gps.gpsil [style*="--ff:"]{font-family:var(--ff)}.gps-538432098822783996.gps.gpsil [style*="--size:"]{font-size:var(--size)}.gps-538432098822783996.gps.gpsil [style*="--weight:"]{font-weight:var(--weight)}.gps-538432098822783996.gps.gpsil [style*="--gtc:"]{grid-template-columns:var(--gtc)}.gps-538432098822783996.gps.gpsil [style*="--h:"]{height:var(--h)}.gps-538432098822783996.gps.gpsil [style*="--jc:"]{justify-content:var(--jc)}.gps-538432098822783996.gps.gpsil [style*="--lh:"]{line-height:var(--lh)}.gps-538432098822783996.gps.gpsil [style*="--m:"]{margin:var(--m)}.gps-538432098822783996.gps.gpsil [style*="--mb:"]{margin-bottom:var(--mb)}.gps-538432098822783996.gps.gpsil [style*="--ml:"]{margin-left:var(--ml)}.gps-538432098822783996.gps.gpsil [style*="--mr:"]{margin-right:var(--mr)}.gps-538432098822783996.gps.gpsil [style*="--mt:"]{margin-top:var(--mt)}.gps-538432098822783996.gps.gpsil [style*="--objf:"]{-o-object-fit:var(--objf);object-fit:var(--objf)}.gps-538432098822783996.gps.gpsil [style*="--op:"]{opacity:var(--op)}.gps-538432098822783996.gps.gpsil [style*="--o:"]{order:var(--o)}.gps-538432098822783996.gps.gpsil [style*="--pc:"]{place-content:var(--pc)}.gps-538432098822783996.gps.gpsil [style*="--p:"]{padding:var(--p)}.gps-538432098822783996.gps.gpsil [style*="--pb:"]{padding-bottom:var(--pb)}.gps-538432098822783996.gps.gpsil [style*="--pl:"]{padding-left:var(--pl)}.gps-538432098822783996.gps.gpsil [style*="--pr:"]{padding-right:var(--pr)}.gps-538432098822783996.gps.gpsil [style*="--pt:"]{padding-top:var(--pt)}.gps-538432098822783996.gps.gpsil [style*="--pos:"]{position:var(--pos)}.gps-538432098822783996.gps.gpsil [style*="--ta:"]{text-align:var(--ta)}.gps-538432098822783996.gps.gpsil [style*="--ts:"]{text-shadow:var(--ts)}.gps-538432098822783996.gps.gpsil [style*="--tt:"]{text-transform:var(--tt)}.gps-538432098822783996.gps.gpsil [style*="--t:"]{transform:var(--t)}.gps-538432098822783996.gps.gpsil [style*="--w:"]{width:var(--w)}.gps-538432098822783996.gps.gpsil [style*="--z:"]{z-index:var(--z)}.gps-538432098822783996.gps.gpsil [style*="--line-clamp:"]{-webkit-box-orient:vertical;-webkit-line-clamp:var(--line-clamp);display:-webkit-box;overflow:hidden}@media only screen and (max-width:1024px){.gps-538432098822783996.gps.gpsil [style*="--aspect-tablet:"]{aspect-ratio:var(--aspect-tablet)}.gps-538432098822783996.gps.gpsil [style*="--cg-tablet:"]{-moz-column-gap:var(--cg-tablet);column-gap:var(--cg-tablet)}.gps-538432098822783996.gps.gpsil [style*="--size-tablet:"]{font-size:var(--size-tablet)}.gps-538432098822783996.gps.gpsil [style*="--gtc-tablet:"]{grid-template-columns:var(--gtc-tablet)}.gps-538432098822783996.gps.gpsil [style*="--h-tablet:"]{height:var(--h-tablet)}.gps-538432098822783996.gps.gpsil [style*="--lh-tablet:"]{line-height:var(--lh-tablet)}.gps-538432098822783996.gps.gpsil [style*="--pl-tablet:"]{padding-left:var(--pl-tablet)}.gps-538432098822783996.gps.gpsil [style*="--pr-tablet:"]{padding-right:var(--pr-tablet)}.gps-538432098822783996.gps.gpsil [style*="--w-tablet:"]{width:var(--w-tablet)}.gps-538432098822783996.gps.gpsil [style*="--line-clamp-tablet:"]{-webkit-box-orient:vertical;-webkit-line-clamp:var(--line-clamp-tablet);display:-webkit-box;overflow:hidden}}@media only screen and (max-width:767px){.gps-538432098822783996.gps.gpsil [style*="--aspect-mobile:"]{aspect-ratio:var(--aspect-mobile)}.gps-538432098822783996.gps.gpsil [style*="--bgc-mobile:"]{background-color:var(--bgc-mobile)}.gps-538432098822783996.gps.gpsil [style*="--bblr-mobile:"]{border-bottom-left-radius:var(--bblr-mobile)}.gps-538432098822783996.gps.gpsil [style*="--bbrr-mobile:"]{border-bottom-right-radius:var(--bbrr-mobile)}.gps-538432098822783996.gps.gpsil [style*="--btlr-mobile:"]{border-top-left-radius:var(--btlr-mobile)}.gps-538432098822783996.gps.gpsil [style*="--btrr-mobile:"]{border-top-right-radius:var(--btrr-mobile)}.gps-538432098822783996.gps.gpsil [style*="--size-mobile:"]{font-size:var(--size-mobile)}.gps-538432098822783996.gps.gpsil [style*="--gtc-mobile:"]{grid-template-columns:var(--gtc-mobile)}.gps-538432098822783996.gps.gpsil [style*="--h-mobile:"]{height:var(--h-mobile)}.gps-538432098822783996.gps.gpsil [style*="--jc-mobile:"]{justify-content:var(--jc-mobile)}.gps-538432098822783996.gps.gpsil [style*="--lh-mobile:"]{line-height:var(--lh-mobile)}.gps-538432098822783996.gps.gpsil [style*="--mb-mobile:"]{margin-bottom:var(--mb-mobile)}.gps-538432098822783996.gps.gpsil [style*="--ml-mobile:"]{margin-left:var(--ml-mobile)}.gps-538432098822783996.gps.gpsil [style*="--mr-mobile:"]{margin-right:var(--mr-mobile)}.gps-538432098822783996.gps.gpsil [style*="--mt-mobile:"]{margin-top:var(--mt-mobile)}.gps-538432098822783996.gps.gpsil [style*="--op-mobile:"]{opacity:var(--op-mobile)}.gps-538432098822783996.gps.gpsil [style*="--pc-mobile:"]{place-content:var(--pc-mobile)}.gps-538432098822783996.gps.gpsil [style*="--pb-mobile:"]{padding-bottom:var(--pb-mobile)}.gps-538432098822783996.gps.gpsil [style*="--pl-mobile:"]{padding-left:var(--pl-mobile)}.gps-538432098822783996.gps.gpsil [style*="--pr-mobile:"]{padding-right:var(--pr-mobile)}.gps-538432098822783996.gps.gpsil [style*="--pt-mobile:"]{padding-top:var(--pt-mobile)}.gps-538432098822783996.gps.gpsil [style*="--ta-mobile:"]{text-align:var(--ta-mobile)}.gps-538432098822783996.gps.gpsil [style*="--w-mobile:"]{width:var(--w-mobile)}.gps-538432098822783996.gps.gpsil [style*="--line-clamp-mobile:"]{-webkit-box-orient:vertical;-webkit-line-clamp:var(--line-clamp-mobile);display:-webkit-box;overflow:hidden}}.gps-538432098822783996 .gp-g-paragraph-1{font-family:var(--g-p1-ff);font-size:var(--g-p1-size);font-style:var(--g-p1-fs);font-weight:var(--g-p1-weight);letter-spacing:var(--g-p1-ls);line-height:var(--g-p1-lh)}.gps-538432098822783996 .gp-absolute{position:absolute}.gps-538432098822783996 .gp-relative{position:relative}.gps-538432098822783996 .gp-inset-0{inset:0}.gps-538432098822783996 .gp-z-1{z-index:1}.gps-538432098822783996 .gp-mx-auto{margin-left:auto;margin-right:auto}.gps-538432098822783996 .gp-mb-0{margin-bottom:0}.gps-538432098822783996 .gp-flex{display:flex}.gps-538432098822783996 .gp-inline-flex{display:inline-flex}.gps-538432098822783996 .gp-grid{display:grid}.gps-538432098822783996 .gp-contents{display:contents}.gps-538432098822783996 .\!gp-hidden{display:none!important}.gps-538432098822783996 .gp-hidden{display:none}.gps-538432098822783996 .gp-h-auto{height:auto}.gps-538432098822783996 .gp-h-full{height:100%}.gps-538432098822783996 .gp-w-full{width:100%}.gps-538432098822783996 .gp-w-max{width:-moz-max-content;width:max-content}.gps-538432098822783996 .gp-min-w-max{min-width:-moz-max-content;min-width:max-content}.gps-538432098822783996 .\!gp-max-w-max{max-width:-moz-max-content!important;max-width:max-content!important}.gps-538432098822783996 .gp-max-w-full{max-width:100%}.gps-538432098822783996 .gp-flex-1{flex:1 1 0%}.gps-538432098822783996 .gp-flex-none{flex:none}.gps-538432098822783996 .gp-grid-rows-\[1fr\]{grid-template-rows:1fr}.gps-538432098822783996 .gp-flex-col{flex-direction:column}.gps-538432098822783996 .gp-flex-wrap{flex-wrap:wrap}.gps-538432098822783996 .gp-items-center{align-items:center}.gps-538432098822783996 .gp-justify-center{justify-content:center}.gps-538432098822783996 .gp-gap-y-0{row-gap:0}.gps-538432098822783996 .gp-overflow-hidden{overflow:hidden}.gps-538432098822783996 .gp-break-words{overflow-wrap:break-word}.gps-538432098822783996 .gp-rounded-none{border-radius:0}.gps-538432098822783996 .gp-bg-g-brand{background-color:var(--g-c-brand)}.gps-538432098822783996 .gp-text-center{text-align:center}.gps-538432098822783996 .gp-text-g-text-3{color:var(--g-c-text-3)}.gps-538432098822783996 .gp-no-underline{text-decoration-line:none}.gps-538432098822783996 .gp-transition-colors{transition-duration:.15s;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1)}.gps-538432098822783996 .gp-duration-200{transition-duration:.2s}.gps-538432098822783996 .gp-duration-300{transition-duration:.3s}.gps-538432098822783996 .gp-ease-in-out{transition-timing-function:cubic-bezier(.4,0,.2,1)}.gps-538432098822783996 .disabled\:gp-btn-disabled:disabled{cursor:default}@media (hover:hover) and (pointer:fine){.gps-538432098822783996 .hover\:gp-bg-g-highlight:hover{background-color:var(--g-c-highlight)}}.gps-538432098822783996 .disabled\:gp-pointer-events-none:disabled{pointer-events:none}.gps-538432098822783996 .disabled\:gp-opacity-30:disabled{opacity:.3}@media (hover:hover) and (pointer:fine){.gps-538432098822783996 .gp-group\/button:hover .group-hover\/button\:\!gp-text-inherit{color:inherit!important}}.gps-538432098822783996 .gp-group\/button:active .group-active\/button\:\!gp-text-inherit{color:inherit!important}.gps-538432098822783996 .gp-group\/button[data-state=loading] .group-data-\[state\=loading\]\/button\:gp-invisible{visibility:hidden}@media (max-width:1024px){.gps-538432098822783996 .tablet\:\!gp-hidden{display:none!important}.gps-538432098822783996 .tablet\:gp-hidden{display:none}.gps-538432098822783996 .tablet\:gp-h-auto{height:auto}.gps-538432098822783996 .tablet\:gp-flex-none{flex:none}}@media (max-width:767px){.gps-538432098822783996 .mobile\:\!gp-hidden{display:none!important}.gps-538432098822783996 .mobile\:gp-hidden{display:none}.gps-538432098822783996 .mobile\:gp-h-auto{height:auto}.gps-538432098822783996 .mobile\:gp-flex-none{flex:none}}.gps-538432098822783996 .\[\&_\*\]\:gp-max-w-full *{max-width:100%}.gps-538432098822783996 .\[\&_p\]\:gp-inline p{display:inline}.gps-538432098822783996 .\[\&_p\]\:gp-whitespace-pre-line p{white-space:pre-line}.gps-538432098822783996 .\[\&_p\]\:after\:gp-whitespace-pre-wrap p:after{content:var(--tw-content);white-space:pre-wrap}.gps-538432098822783996 .\[\&_p\]\:after\:gp-content-\[\'\\A\'\] p:after{--tw-content:"\A";content:var(--tw-content)}</style>
+
+       
+      
+            <section
+              class="gp-mx-auto gp-max-w-full {% if section.settings.section_preload == "false" %}gps-lazy {% endif %}"
+              style="--w:100%;--w-tablet:100%;--w-mobile:100%;--pl:0px;--pl-tablet:0px;--pl-mobile:0px;--pr:0px;--pr-tablet:0px;--pr-mobile:0px"
+            >
+              
+    <div
+      enableLazyloadImage="true" id="gD1i94QEku" data-id="gD1i94QEku"
+        style="--mt:0px;--ml:auto;--mb:0px;--mr:auto;--pt:30px;--pl:var(--g-s-m);--pb:30px;--pr:var(--g-s-m);--mt-mobile:0px;--ml-mobile:auto;--mb-mobile:0px;--mr-mobile:auto;--pt-mobile:1px;--pl-mobile:var(--g-s-m);--pb-mobile:30px;--pr-mobile:var(--g-s-m);--cg:32px;--cg-tablet:32px;--pc:center;--gtc:minmax(0, 12fr);--gtc-tablet:minmax(0, 12fr);--gtc-mobile:minmax(0, 12fr);--w:100%;--w-tablet:100%;--w-mobile:100%;--bgc:#ffffff;--bgi:url()"
+        class="gD1i94QEku gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-gap-y-0 gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]"
+    >
+    <div
+      enableLazyloadImage="true" label="Block" tag="Col" type="component"
+      style="--jc:start"
+      class="gX3Md501Bs gp-relative gp-flex gp-flex-col"
+    >
+      
+    {%- assign gpBkProduct = product -%}
+    
+        {%- liquid
+          if request.page_type == 'product'
+            if 'static' == 'static'
+              if '9014950461766' == 'latest'
+                paginate collections.all.products by 100000
+                  assign product = collections.all.products | sort: 'created_at' | reverse | first
+                endpaginate
+              else
+                assign product = all_products['aura-invisible-camel-toe-thong']
+                assign productId = '9014950461766' | times: 1
+                if product == empty or product == null
+                  paginate collections.all.products by 100000
+                    for item in collections.all.products
+                      if item.id == productId
+                        assign product = item
+                      endif
+                    endfor
+                  endpaginate
+                endif
+              endif
+            endif
+          else
+            if '9014950461766' == 'latest'
+              paginate collections.all.products by 100000
+                assign product = collections.all.products | sort: 'created_at'| reverse | first
+              endpaginate
+            else
+              assign product = all_products['aura-invisible-camel-toe-thong']
+              assign productId = '9014950461766' | times: 1
+              if product == empty or product == null
+                paginate collections.all.products by 100000
+                  for item in collections.all.products
+                    if item.id == productId
+                      assign product = item
+                    endif
+                  endfor
+                endpaginate
+              endif
+            endif
+          endif
+        -%}
+      
+
+    {%-if product != empty and product != null -%}
+      {%- assign initVariantId = 49825107673414 -%}
+      {%- assign product_form_id = 'product-form-' | append: "g_Kfi1iVI3" -%}
+      {%- assign variant = product.variants | where: 'id', initVariantId | first -%}
+      {%- assign productSelectedVariant = product.variants | where: 'id', initVariantId | first -%}
+      {%-if productSelectedVariant == empty or productSelectedVariant == null -%}
+        {%- assign productSelectedVariant = product.selected_or_first_available_variant -%}
+      {%- endif -%}
+      {%-if variant == empty or variant == null -%}
+        {%- assign variant = product.selected_or_first_available_variant -%}
+      {%- endif -%}
+      <gp-product data-uid="g_Kfi1iVI3" data-id="g_Kfi1iVI3"   gp-context='{"productId": {{ product.id }}, "preSelectedOptionIds": [], "isSyncProduct": "true", "variantSelected": {{ variant | json | escape }}, "inventoryQuantity": {{ variant.inventory_quantity }}, "quantity": 1, "formId": "{{ product_form_id }}" }'
+        gp-data='{"variantSelected": {{ variant | json | escape }}, "quantity": 1, "productUrl":{{ product.url | json | escape }}, "productHandle":{{ product.handle | json | escape }}, "collectionUrl": {{ collection.url | json | escape }}, "collectionHandle": {{ collection.handle | json | escape }}}'>
+        <product-form class="product-form">
+          {%- form 'product', product, id: product_form_id, class: 'form contents', data-type: 'add-to-cart-form', autocomplete: 'off'  -%}
+            <input type="hidden" name="id" value="{{ variant.id }}" />
+            <input type="hidden" name="quantity" value="{{ quantity }}" />
+            <button type="submit" onclick="return false;" style="display:none;"></button>
+            
+       
+      
+    <div
+      id="g_Kfi1iVI3" data-id="g_Kfi1iVI3-row"
+        style="--mt:0px;--ml:auto;--mr:auto;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--mt-mobile:0px;--ml-mobile:auto;--mb-mobile:0px;--mr-mobile:auto;--pt-mobile:0px;--pl-mobile:auto;--pb-mobile:0px;--pr-mobile:auto;--cg:32px;--cg-tablet:32px;--pc:start;--gtc:minmax(0, 12fr);--gtc-tablet:minmax(0, 12fr);--gtc-mobile:minmax(0, 12fr);--w:1000px;--w-tablet:100%;--w-mobile:100%"
+        class="g_Kfi1iVI3 gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-gap-y-0 gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]"
+    >
+    <div
+      enableLazyloadImage="true" label="Block" tag="Col" type="component"
+      style="--jc:start"
+      class="gKy4E5_NTM gp-relative gp-flex gp-flex-col"
+    >
+      
+  <gp-button style="--pos:relative;--z:1">
+  <div
+    style="--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--mb:0px;--ta:center"
+    class="btn-holoben"
+  >
+    <style>
+    .ggePDlqBFC.gp-button-base::before {
+      content: "";
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      pointer-events: none;
+      border-style: none;
+  border-width: 1px 1px 1px 1px;
+  
+  
+      
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      
+    }
+
+    .ggePDlqBFC:hover::before {
+      
+      
+    }
+
+    .ggePDlqBFC:hover .gp-button-icon {
+      color: undefined;
+    }
+
+     .ggePDlqBFC .gp-button-icon {
+      color: var(--g-c-text-3, text-3);
+    }
+
+    .ggePDlqBFC:hover .gp-button-price {
+      color: undefined;
+    }
+
+    .ggePDlqBFC .gp-button-price {
+      color: var(--g-c-text-3, text-3);
+    }
+
+    .ggePDlqBFC .gp-product-dot-price {
+       color: var(--g-c-text-3, text-3);
+    }
+
+    .ggePDlqBFC:hover .gp-product-dot-price {
+      color: undefined;
+    }
+  </style>
+    <button
+      type="button" data-id="ggePDlqBFC" aria-label="<p><span style='background-color:rgba(0,0,0,0);color:#F7F7F7;font-size:14px;'><strong>✨ </strong></span><span style='background-color:rgba(0,0,0,0);color:#ECB631;font-size:14px;'><strong>REBRAND SALE</strong></span><span style='background-color:rgba(0,0,0,0);color:#F7F7F7;font-size:14px;'><strong><sup> </sup></strong></span><span style='color:#F7F7F7;font-size:14px;'><strong><sup>_</sup> NOW LIVE!</strong></span></p>"
+      
+      data-state="idle"
+      class="ggePDlqBFC gp-button-base gp-group/button gp-rounded-none gp-max-w-full gp-relative gp-inline-flex gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-300 disabled:gp-btn-disabled disabled:gp-opacity-30 disabled:gp-pointer-events-none hover:gp-bg-g-highlight gp-bg-g-brand gp-text-g-text-3 gp-g-paragraph-1"
+      style="--hvr-bg:var(--g-c-highlight, highlight);--bg:var(--g-c-brand, brand);--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--shadow:none;--w:Auto;--w-tablet:Auto;--w-mobile:Auto;--h:Auto;--h-tablet:Auto;--h-mobile:Auto;--pl:24px;--pr:24px;--pt:8px;--pb:8px;--c:var(--g-c-text-3, text-3)"
+    >
+      
+    <div
+    class="gp-inline-flex">
+    
+      <span
+        data-gp-text
+        class="gp-content-product-button group-hover/button:!gp-text-inherit group-active/button:!gp-text-inherit  gp-button-text-only gp-break-words group-data-[state=loading]/button:gp-invisible [&_p]:gp-whitespace-pre-line gp-z-1 gp-h-full gp-flex gp-items-center gp-overflow-hidden 
+        "
+        style="--c:var(--g-c-text-3, text-3)"
+      >
+        {{ section.settings.gggePDlqBFC_label }}
+      </span>
+      </div>
+    
+    </button>
+  </div>
+  </gp-button>
+
+       
+      
+    <div
+      enableLazyloadImage="true" parentTag="Col" id="gVQsYeh5oM" data-id="gVQsYeh5oM"
+        style="--bs:dashed;--bw:1px 1px 1px 1px;--bc:#121212;--d:grid;--d-mobile:grid;--d-tablet:grid;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--mt:0px;--ml:auto;--mb:0px;--mr:auto;--pt:2px;--pl:2px;--pb:2px;--pr:2px;--mt-mobile:0px;--ml-mobile:auto;--mr-mobile:auto;--pt-mobile:0px;--pl-mobile:auto;--pb-mobile:var(--g-s-m);--pr-mobile:auto;--cg:32px;--cg-tablet:32px;--pc:start;--gtc:minmax(0, auto) minmax(0, auto);--gtc-tablet:minmax(0, 6fr) minmax(0, 6fr);--gtc-mobile:minmax(0, auto);--w:840px;--w-tablet:100%;--w-mobile:100%;--bgc:#00000000;--bgc-mobile:#00000000;--bgi:url()"
+        class="gVQsYeh5oM exclusive-produ exclusive-one gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-gap-y-0 gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]"
+    >
+    <div
+      enableLazyloadImage="true" label="Block" tag="Col" type="component"
+      style="--jc:center"
+      class="gEM7HYGnLy gp-relative gp-flex gp-flex-col"
+    >
+      <div
+    
+     data-id="gSz3m3RcWD"
+    role="presentation"
+    class="gp-group/image gSz3m3RcWD gp-flex-none gp-h-auto mobile:gp-flex-none mobile:gp-h-auto tablet:gp-flex-none tablet:gp-h-auto"
+    style="--bs:none;--bw:1px 1px 1px 1px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--op-mobile:100%;--bblr:16px;--bbrr:16px;--btlr:16px;--btrr:16px;--bblr-mobile:0px;--bbrr-mobile:0px;--btlr-mobile:0px;--btrr-mobile:0px;--mb:0px;--ml-mobile:auto;--mb-mobile:0px;--mr-mobile:auto;--ta:center"
+    >
+      <div
+        class="pointer-events-auto gp-h-full gp-flex"
+        
+        class="gp-h-full gp-w-full"
+        style="--shadow:none;border-radius:inherit;--jc:center"
+      >
+        
+  <picture style="border-radius: inherit" class="gp-contents">
+  
+      <source media="(max-width: 767px)" data-srcSet="{{ "gempages_510135694635565882-a19e1e1f-cffe-40b4-9b02-dd8a6ee09163.jpg" | file_url }}" srcset="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzM3NSIgaGVpZ2h0PSIzMzc1IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPGRlZnM+CiAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZy0zMzc1LTMzNzUiPgogICAgICAgIDxzdG9wIHN0b3AtY29sb3I9InJnYmEoNTEsIDUxLCA1MSwgMCkiIG9mZnNldD0iMjAlIiAvPgogICAgICAgIDxzdG9wIHN0b3AtY29sb3I9InJnYmEoNTEsIDUxLCA1MSwgMCkiIG9mZnNldD0iNTAlIiAvPgogICAgICAgIDxzdG9wIHN0b3AtY29sb3I9InJnYmEoNTEsIDUxLCA1MSwgMCkiIG9mZnNldD0iNzAlIiAvPgogICAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPC9kZWZzPgogICAgPHJlY3Qgd2lkdGg9IjMzNzUiIGhlaWdodD0iMzM3NSIgZmlsbD0icmdiYSg1MSwgNTEsIDUxLCAwKSIgLz4KICAgIDxyZWN0IGlkPSJyIiB3aWR0aD0iMzM3NSIgaGVpZ2h0PSIzMzc1IiBmaWxsPSJ1cmwoI2ctMzM3NS0zMzc1KSIgLz4KICAgIDxhbmltYXRlIHhsaW5rOmhyZWY9IiNyIiBhdHRyaWJ1dGVOYW1lPSJ4IiBmcm9tPSItMzM3NSIgdG89IjMzNzUiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiAgLz4KICA8L3N2Zz4=" />
+      <source media="(max-width: 1024px)" data-srcSet="{{ "gempages_510135694635565882-a19e1e1f-cffe-40b4-9b02-dd8a6ee09163.jpg" | file_url }}" srcset="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzM3NSIgaGVpZ2h0PSIzMzc1IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPGRlZnM+CiAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZy0zMzc1LTMzNzUiPgogICAgICAgIDxzdG9wIHN0b3AtY29sb3I9InJnYmEoNTEsIDUxLCA1MSwgMCkiIG9mZnNldD0iMjAlIiAvPgogICAgICAgIDxzdG9wIHN0b3AtY29sb3I9InJnYmEoNTEsIDUxLCA1MSwgMCkiIG9mZnNldD0iNTAlIiAvPgogICAgICAgIDxzdG9wIHN0b3AtY29sb3I9InJnYmEoNTEsIDUxLCA1MSwgMCkiIG9mZnNldD0iNzAlIiAvPgogICAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPC9kZWZzPgogICAgPHJlY3Qgd2lkdGg9IjMzNzUiIGhlaWdodD0iMzM3NSIgZmlsbD0icmdiYSg1MSwgNTEsIDUxLCAwKSIgLz4KICAgIDxyZWN0IGlkPSJyIiB3aWR0aD0iMzM3NSIgaGVpZ2h0PSIzMzc1IiBmaWxsPSJ1cmwoI2ctMzM3NS0zMzc1KSIgLz4KICAgIDxhbmltYXRlIHhsaW5rOmhyZWY9IiNyIiBhdHRyaWJ1dGVOYW1lPSJ4IiBmcm9tPSItMzM3NSIgdG89IjMzNzUiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiAgLz4KICA8L3N2Zz4=" />
+      <img
+        
+        class="gp-h-full gp-max-w-full gp-flex gp_lazyload"
+        src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzM3NSIgaGVpZ2h0PSIzMzc1IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPGRlZnM+CiAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZy0zMzc1LTMzNzUiPgogICAgICAgIDxzdG9wIHN0b3AtY29sb3I9InJnYmEoNTEsIDUxLCA1MSwgMCkiIG9mZnNldD0iMjAlIiAvPgogICAgICAgIDxzdG9wIHN0b3AtY29sb3I9InJnYmEoNTEsIDUxLCA1MSwgMCkiIG9mZnNldD0iNTAlIiAvPgogICAgICAgIDxzdG9wIHN0b3AtY29sb3I9InJnYmEoNTEsIDUxLCA1MSwgMCkiIG9mZnNldD0iNzAlIiAvPgogICAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPC9kZWZzPgogICAgPHJlY3Qgd2lkdGg9IjMzNzUiIGhlaWdodD0iMzM3NSIgZmlsbD0icmdiYSg1MSwgNTEsIDUxLCAwKSIgLz4KICAgIDxyZWN0IGlkPSJyIiB3aWR0aD0iMzM3NSIgaGVpZ2h0PSIzMzc1IiBmaWxsPSJ1cmwoI2ctMzM3NS0zMzc1KSIgLz4KICAgIDxhbmltYXRlIHhsaW5rOmhyZWY9IiNyIiBhdHRyaWJ1dGVOYW1lPSJ4IiBmcm9tPSItMzM3NSIgdG89IjMzNzUiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiAgLz4KICA8L3N2Zz4="
+        data-src="{{ "gempages_510135694635565882-a19e1e1f-cffe-40b4-9b02-dd8a6ee09163.jpg" | file_url }}"
+        width="100%"
+        alt=""
+        style="--aspect:1/1;--aspect-tablet:1/1;--aspect-mobile:1/1;--objf:cover;--h:auto;--h-tablet:auto;--h-mobile:auto;--bblr:8px;--bbrr:8px;--btlr:8px;--btrr:8px;--radiusType:custom"
+      />
+    
+  </picture>
+      </div>
+  </div>
+      <style id="custom-css-gSz3m3RcWD">
+        .gSz3m3RcWD {
+
+}
+.gSz3m3RcWD > figure > img {
+
+}
+      </style>
+    
+    </div><div
+      enableLazyloadImage="true" label="Block" tag="Col" type="component"
+      style="--jc:center"
+      class="gTkTQrAqsp gp-relative gp-flex gp-flex-col"
+    >
+      
+       
+      
+    <div
+      enableLazyloadImage="true" parentTag="Col" id="gLujxcArWg" data-id="gLujxcArWg"
+        style="--mt:0px;--ml:auto;--mb:16px;--mr:auto;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--cg:32px;--cg-tablet:32px;--pc:center;--gtc:minmax(0, 12fr);--gtc-tablet:minmax(0, 12fr);--gtc-mobile:minmax(0, 12fr);--w:100%;--w-tablet:100%;--w-mobile:100%;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll"
+        class="gLujxcArWg gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-gap-y-0 gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]"
+    >
+    <div
+      enableLazyloadImage="true" label="Block" tag="Col" type="component"
+      style="--jc:start"
+      class="gINozgR8Zr gp-relative gp-flex gp-flex-col"
+    >
+      
+  {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+  <gp-text data-id="gPR6SXT0we">
+    <div
+      enableLazyloadImage="true" parentTag="Col"
+        class="gPR6SXT0we "
+        style="--ta:center;--mt:30px;--ml:0px;--mb:0px;--mr:0px;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--mt-mobile:0px;--ml-mobile:0px;--mb-mobile:0px;--mr-mobile:0px;--pt-mobile:var(--g-s-m);--pl-mobile:var(--g-s-l);--pb-mobile:0px;--pr-mobile:var(--g-s-l)"
+      >
+      <div class="gp-flex" style="--jc:center">
+        <div
+          
+          data-gp-text
+          class="[&_p]:gp-inline [&_p]:after:gp-whitespace-pre-wrap [&_p]:after:gp-content-['\A'] gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--ts:none;--ta:center;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:400;--size:12px;--size-tablet:14px;--size-mobile:12px;--lh:22px;--lh-tablet:150%;--lh-mobile:150%;--c:rgb(0, 0, 0);--tt:uppercase;word-break:break-word;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;overflow:hidden"
+        >{{ section.settings.ggPR6SXT0we_text | replace: '$locationOrigin', locationOrigin }}</div>
+      </div>
+    </div>
+    </gp-text>
+    
+  {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+  <gp-text data-id="g8fKV6ksLC">
+    <div
+      enableLazyloadImage="true" parentTag="Col"
+        class="g8fKV6ksLC "
+        style="--ta:center;--mt:0px;--ml:0px;--mb:8px;--mr:0px;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--mt-mobile:0px;--ml-mobile:0px;--mb-mobile:8px;--mr-mobile:0px;--pt-mobile:0px;--pl-mobile:var(--g-s-l);--pb-mobile:0px;--pr-mobile:var(--g-s-l)"
+      >
+      <div class="gp-flex" style="--jc:center">
+        <div
+          
+          data-gp-text
+          class="[&_p]:gp-inline [&_p]:after:gp-whitespace-pre-wrap [&_p]:after:gp-content-['\A'] gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--ts:none;--ta:center;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-heading, heading);--size:28px;--size-tablet:25px;--size-mobile:38px;--lh:35px;--lh-tablet:35px;--lh-mobile:35px;--weight:bold;--c:#f6cbb7;--tt:uppercase;word-break:break-word;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;overflow:hidden"
+        >{{ section.settings.gg8fKV6ksLC_text | replace: '$locationOrigin', locationOrigin }}</div>
+      </div>
+    </div>
+    </gp-text>
+    
+      <style id="custom-css-g8fKV6ksLC">
+        .g8fKV6ksLC strong {
+    color: #000 !important;
+}
+      </style>
+    
+  {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+  <gp-text data-id="gNHeo0R6mw">
+    <div
+      enableLazyloadImage="true" parentTag="Col"
+        class="gNHeo0R6mw "
+        style="--ta:center;--mt:0px;--ml:0px;--mr:0px;--pt:0px;--pl:30px;--pb:0px;--pr:30px;--mt-mobile:0px;--ml-mobile:0px;--mr-mobile:0px;--pt-mobile:0px;--pl-mobile:30px;--pb-mobile:0px;--pr-mobile:var(--g-s-l)"
+      >
+      <div class="gp-flex" style="--jc:center">
+        <div
+          
+          data-gp-text
+          class="[&_p]:gp-inline [&_p]:after:gp-whitespace-pre-wrap [&_p]:after:gp-content-['\A'] gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--ta:center;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:400;--size:15px;--size-tablet:14px;--size-mobile:12px;--lh:150%;--lh-tablet:150%;--lh-mobile:150%;--c:rgb(0, 0, 0);word-break:break-word;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;overflow:hidden"
+        >{{ section.settings.ggNHeo0R6mw_text | replace: '$locationOrigin', locationOrigin }}</div>
+      </div>
+    </div>
+    </gp-text>
+    
+    </div>
+    </div>
+   
+    
+       
+      
+    <div
+      enableLazyloadImage="true" parentTag="Col" id="grSYCfJX3r" data-id="grSYCfJX3r"
+        style="--bs:none;--bw:2px 2px 2px 2px;--bc:#121212;--mt:0px;--ml:auto;--mr:auto;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--cg:32px;--cg-tablet:32px;--pc:center;--gtc:minmax(0, 12fr);--gtc-tablet:minmax(0, 12fr);--gtc-mobile:minmax(0, 12fr);--w:100%;--w-tablet:100%;--w-mobile:100%;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll"
+        class="grSYCfJX3r gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-gap-y-0 gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]"
+    >
+    <div
+      enableLazyloadImage="true" label="Block" tag="Col" type="component"
+      style="--jc:start"
+      class="gXvDJfG4BQ gp-relative gp-flex gp-flex-col"
+    >
+      
+  <gp-button >
+  <div
+    style="--mt:0px;--ml:0px;--mb:16px;--mr:0px;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--mt-mobile:0px;--ml-mobile:0px;--mb-mobile:0px;--mr-mobile:0px;--pt-mobile:0px;--pl-mobile:var(--g-s-l);--pb-mobile:0px;--pr-mobile:var(--g-s-l);--ta:center"
+    
+  >
+    <style>
+    .gVixhdEWkV.gp-button-base::before {
+      content: "";
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      pointer-events: none;
+      border-style: solid;
+  border-width: 0px 0px 0px 0px;
+  border-color: #121212;
+  
+      
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      
+    }
+
+    .gVixhdEWkV:hover::before {
+      
+      
+    }
+
+    .gVixhdEWkV:hover .gp-button-icon {
+      color: #000000;
+    }
+
+     .gVixhdEWkV .gp-button-icon {
+      color: #000000;
+    }
+
+    .gVixhdEWkV:hover .gp-button-price {
+      color: #000000;
+    }
+
+    .gVixhdEWkV .gp-button-price {
+      color: #000000;
+    }
+
+    .gVixhdEWkV .gp-product-dot-price {
+       color: #000000;
+    }
+
+    .gVixhdEWkV:hover .gp-product-dot-price {
+      color: #000000;
+    }
+  </style>
+    <a
+      href="https://oloraofficial.com/products/olora-invisible-camel-toe-thong-high-rise-advanced" target="_self" data-id="gVixhdEWkV" aria-label="<p><span style='color:#FFFFFF;'><strong>CLAIM OFFER →</strong></span></p>"
+      
+      data-state="idle"
+      class="gVixhdEWkV gp-button-base gp-group/button gp-rounded-none gp-max-w-full gp-relative gp-inline-flex gp-items-center gp-justify-center gp-no-underline gp-transition-colors gp-duration-300 disabled:gp-btn-disabled disabled:gp-opacity-30 disabled:gp-pointer-events-none gp-text-center"
+      style="--hvr-bg:#F0D3CB;--bg:#000000;--bblr:10px;--bbrr:10px;--btlr:10px;--btrr:10px;--shadow:none;--w:100%;--w-tablet:100%;--w-mobile:100%;--h:57px;--h-tablet:57px;--h-mobile:57px;--pl:24px;--pr:24px;--pt:8px;--pb:8px;--hvr-c:#000000;--c:#000000;--size:18px;--size-tablet:18px;--size-mobile:20px;--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-heading, heading);--weight:400;--lh:22px;--lh-tablet:130%;--lh-mobile:130%;--tt:uppercase"
+    >
+      
+    <div
+    class="gp-inline-flex">
+    
+      <span
+        data-gp-text
+        class="gp-content-product-button group-hover/button:!gp-text-inherit group-active/button:!gp-text-inherit  gp-button-text-only gp-break-words group-data-[state=loading]/button:gp-invisible [&_p]:gp-whitespace-pre-line gp-z-1 gp-h-full gp-flex gp-items-center gp-overflow-hidden 
+        "
+        style="--size:18px;--size-tablet:18px;--size-mobile:20px;--hvr-c:#000000;--c:#000000"
+      >
+        {{ section.settings.ggVixhdEWkV_label }}
+      </span>
+      </div>
+    
+    </a>
+  </div>
+  </gp-button>
+
+       
+      
+    <div
+      enableLazyloadImage="true" parentTag="Col" id="gVk2EGpDNV" data-id="gVk2EGpDNV"
+        style="--mt:0px;--ml:auto;--mb:8px;--mr:auto;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--mt-mobile:0px;--ml-mobile:auto;--mb-mobile:0px;--mr-mobile:auto;--pt-mobile:0px;--pl-mobile:0px;--pb-mobile:0px;--pr-mobile:0px;--cg:8px;--cg-tablet:8px;--pc:center;--gtc:minmax(0, auto) minmax(0, auto);--gtc-tablet:minmax(0, auto) minmax(0, auto);--gtc-mobile:minmax(0, 6fr) minmax(0, 6fr);--w:100%;--w-tablet:100%;--w-mobile:100%;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll"
+        class="gVk2EGpDNV gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-gap-y-0 gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]"
+    >
+    <div
+      enableLazyloadImage="true" label="Block" tag="Col" type="component"
+      style="--jc:center"
+      class="gRYdhkVXrI gp-relative gp-flex gp-flex-col"
+    >
+      
+  {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+  <gp-text data-id="gXOIpjM9Re">
+    <div
+      enableLazyloadImage="true" parentTag="Col"
+        class="gXOIpjM9Re "
+        style="--ta:left;--bs:none;--bw:2px 2px 2px 2px;--bc:#121212;--mt:0px;--ml:0px;--mb:0px;--mr:0px;--pt:0px;--pl:0px;--pb:0px;--pr:0px"
+      >
+      <div class="gp-flex" style="--jc:left">
+        <div
+          
+          data-gp-text
+          class="[&_p]:gp-inline [&_p]:after:gp-whitespace-pre-wrap [&_p]:after:gp-content-['\A'] gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--ts:none;--ta:left;--ta-mobile:right;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--size:13px;--size-tablet:14px;--size-mobile:12px;--lh:180%;--lh-tablet:180%;--lh-mobile:180%;--weight:bold;--c:rgb(1, 1, 1);word-break:break-word;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;overflow:hidden"
+        >{{ section.settings.ggXOIpjM9Re_text | replace: '$locationOrigin', locationOrigin }}</div>
+      </div>
+    </div>
+    </gp-text>
+    
+    </div><div
+      enableLazyloadImage="true" label="Block" tag="Col" type="component"
+      style="--jc:center"
+      class="geMuMCMZxP gp-relative gp-flex gp-flex-col"
+    >
+      <div gp-el-wrapper style="--bs:none;--bw:2px 2px 2px 2px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pt-mobile:var(--g-s-xs);--pb-mobile:var(--g-s-xs)" class="gQZyLd0ZUq ">
+      
+    <gp-countdown-timer
+      data-id="gQZyLd0ZUq"
+     class="gp-flex "
+     gp-data='{"behaviour":"evergreen","dateStandard":1714922987126,"dayLabel":"Days","enableDay":false,"enableHour":true,"enableMinute":true,"enableSecond":true,"enableWeek":false,"hourLabel":"Hours","loopAfterFinish":true,"minuteLabel":"Minutes","redirectUrl":{"link":"#","target":"_self"},"secondLabel":"Seconds","timeZone":"UTC-4","timerDaily":{"format":"am","hours":2,"mins":30},"timerEverygreen":{"days":0,"endTime":1726130855015,"hours":2,"mins":30,"startTime":1714318187126},"translate":"dayLabel,hourLabel,minuteLabel,secondLabel,weekLabel","weekLabel":"Weeks","uid":"gQZyLd0ZUq","builderData":{"advanced":{"border":{"desktop":{"normal":{"border":"none","borderType":"none","borderWidth":"2px","color":"#121212","isCustom":true,"width":"2px 2px 2px 2px"}},"position":"all"},"boxShadow":{"desktop":{"normal":{"angle":90,"blur":"12px","color":"rgba(0, 0, 0, 0.20)","distance":"4px","spread":"0px","type":"shadow-1"}}},"d":{"desktop":true,"mobile":true,"tablet":true},"hasBoxShadow":{"desktop":{"normal":false}},"op":{"desktop":"100%"},"rounded":{"desktop":{"normal":{"bblr":"0px","bbrr":"0px","btlr":"0px","btrr":"0px","radiusType":"none"}}},"spacing-setting":{"desktop":{"margin":{"bottom":0}},"mobile":{"link":false,"margin":{"bottom":0},"padding":{"bottom":"var(--g-s-xs)","top":"var(--g-s-xs)"}}}},"label":"Countdown Timer","settings":{"behaviour":"evergreen","dateStandard":1714922987126,"dayLabel":"Days","enableDay":false,"enableHour":true,"enableMinute":true,"enableSecond":true,"enableWeek":false,"hourLabel":"Hours","loopAfterFinish":true,"minuteLabel":"Minutes","redirectUrl":{"link":"#","target":"_self"},"secondLabel":"Seconds","timeZone":"UTC-4","timerDaily":{"format":"am","hours":2,"mins":30},"timerEverygreen":{"days":0,"endTime":1726130855015,"hours":2,"mins":30,"startTime":1714318187126},"translate":"dayLabel,hourLabel,minuteLabel,secondLabel,weekLabel","weekLabel":"Weeks"},"styles":{"backgroundItemColor":"#00000000","borderState":{"normal":{"border":"none","borderType":"none","borderWidth":"1px","isCustom":false,"width":"1px 1px 1px 1px"}},"colorLabel":"text-1","colorNumber":"text-2","horizontalGap":"6px","itemPadding":{"custom":{"desktop":{"horizontal":"0px","vertical":"0px"},"mobile":{"horizontal":"4px","vertical":"0px"}}},"labelTypo":{"attrs":{"bold":false,"color":"text-1"},"custom":{"fontFamily":"Poppins","fontSize":{"desktop":"12px","mobile":"7px","tablet":"12px"},"fontVariants":["100","100italic","200","200italic","300","300italic","regular","italic","500","500italic","600","600italic","700","700italic","800","800italic","900","900italic"],"fontWeight":"700","lineHeight":{"desktop":"75%","mobile":"75%","tablet":"75%"}},"type":"paragraph-1"},"numTypo":{"attrs":{"bold":true,"color":"#FF0509"},"custom":{"fontFamily":"64e37ad9837e9a29e6445768_filsonprobold-webfont2","fontSize":{"desktop":"15px","mobile":"12px","tablet":"20px"},"fontVariants":["400"],"fontWeight":"400","lineHeight":{"desktop":"130%","mobile":"130%","tablet":"130%"}},"type":"heading-2"},"roundedState":{"normal":{"bblr":"0px","bbrr":"0px","btlr":"0px","btrr":"0px","radiusType":"custom"}},"textAlign":{"desktop":"left","mobile":"left"},"verticalGap":"0px"},"tag":"Countdown","uid":"gQZyLd0ZUq","childrens":[],"type":"component"}}'
+     gp-href="#"
+     style="--jc:left;--jc-mobile:left"
+     >
+      <div id="section-countdown" class="gp-flex gp-flex-wrap gp-w-max gp-relative" style="gap:6px;--jc:left;--jc-mobile:left">
+        <a
+            href="#"
+            target="_self"
+            aria-label="Countdown link"
+            class="gp-absolute gp-inset-0 gp-z-1"
+          > </a>
+          
+          
+          
+    <div
+        style="--pl:0px;--pr:0px;--pt:0px;--pb:0px;--pl-mobile:4px;--pr-mobile:4px;--pt-mobile:0px;--pb-mobile:0px;--bs:none;--bw:1px 1px 1px 1px;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--bg:#00000000"
+    class="gp-flex-1 gp-text-center gp-min-w-max !gp-max-w-max">
+    
+  {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+  <gp-text data-id="gQZyLd0ZUq-text">
+    <div
+      id="hour"
+        class="gQZyLd0ZUq "
+        style="--mb:0px;--c:var(--g-c-text-2, text-2)"
+      >
+      <div  >
+        <div
+          
+          data-gp-text
+          class="[&_p]:gp-inline [&_p]:after:gp-whitespace-pre-wrap [&_p]:after:gp-content-['\A'] gp-countdown-number"
+          style="--w:100%;--ff:var(--g-font-64e37ad9837e9a29e6445768_filsonprobold-webfont2, '64e37ad9837e9a29e6445768_filsonprobold-webfont2'), var(--g-font-heading, heading);--size:15px;--size-tablet:20px;--size-mobile:12px;--lh:130%;--lh-tablet:130%;--lh-mobile:130%;--weight:bold;--c:#FF0509;word-break:break-word;overflow:hidden"
+        >00</div>
+      </div>
+    </div>
+    </gp-text>
+    
+    
+  {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+  <gp-text data-id="gQZyLd0ZUq-text">
+    <div
+      
+        class="gQZyLd0ZUq "
+        style="--c:var(--g-c-text-1, text-1)"
+      >
+      <div  >
+        <div
+          
+          data-gp-text
+          class="[&_p]:gp-inline [&_p]:after:gp-whitespace-pre-wrap [&_p]:after:gp-content-['\A']"
+          style="--w:100%;--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:700;--size:12px;--size-tablet:12px;--size-mobile:7px;--lh:75%;--lh-tablet:75%;--lh-mobile:75%;--c:var(--g-c-text-1, text-1);word-break:break-word;overflow:hidden"
+        >{{ section.settings.ggQZyLd0ZUq_hourLabel }}</div>
+      </div>
+    </div>
+    </gp-text>
+    
+    </div>
+    
+          
+    <div
+        style="--pl:0px;--pr:0px;--pt:0px;--pb:0px;--pl-mobile:4px;--pr-mobile:4px;--pt-mobile:0px;--pb-mobile:0px;--bs:none;--bw:1px 1px 1px 1px;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--bg:#00000000"
+    class="gp-flex-1 gp-text-center gp-min-w-max !gp-max-w-max">
+    
+  {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+  <gp-text data-id="gQZyLd0ZUq-text">
+    <div
+      id="minute"
+        class="gQZyLd0ZUq "
+        style="--mb:0px;--c:var(--g-c-text-2, text-2)"
+      >
+      <div  >
+        <div
+          
+          data-gp-text
+          class="[&_p]:gp-inline [&_p]:after:gp-whitespace-pre-wrap [&_p]:after:gp-content-['\A'] gp-countdown-number"
+          style="--w:100%;--ff:var(--g-font-64e37ad9837e9a29e6445768_filsonprobold-webfont2, '64e37ad9837e9a29e6445768_filsonprobold-webfont2'), var(--g-font-heading, heading);--size:15px;--size-tablet:20px;--size-mobile:12px;--lh:130%;--lh-tablet:130%;--lh-mobile:130%;--weight:bold;--c:#FF0509;word-break:break-word;overflow:hidden"
+        >00</div>
+      </div>
+    </div>
+    </gp-text>
+    
+    
+  {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+  <gp-text data-id="gQZyLd0ZUq-text">
+    <div
+      
+        class="gQZyLd0ZUq "
+        style="--c:var(--g-c-text-1, text-1)"
+      >
+      <div  >
+        <div
+          
+          data-gp-text
+          class="[&_p]:gp-inline [&_p]:after:gp-whitespace-pre-wrap [&_p]:after:gp-content-['\A']"
+          style="--w:100%;--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:700;--size:12px;--size-tablet:12px;--size-mobile:7px;--lh:75%;--lh-tablet:75%;--lh-mobile:75%;--c:var(--g-c-text-1, text-1);word-break:break-word;overflow:hidden"
+        >{{ section.settings.ggQZyLd0ZUq_minuteLabel }}</div>
+      </div>
+    </div>
+    </gp-text>
+    
+    </div>
+    
+          
+    <div
+        style="--pl:0px;--pr:0px;--pt:0px;--pb:0px;--pl-mobile:4px;--pr-mobile:4px;--pt-mobile:0px;--pb-mobile:0px;--bs:none;--bw:1px 1px 1px 1px;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--bg:#00000000"
+    class="gp-flex-1 gp-text-center gp-min-w-max !gp-max-w-max">
+    
+  {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+  <gp-text data-id="gQZyLd0ZUq-text">
+    <div
+      id="second"
+        class="gQZyLd0ZUq "
+        style="--mb:0px;--c:var(--g-c-text-2, text-2)"
+      >
+      <div  >
+        <div
+          
+          data-gp-text
+          class="[&_p]:gp-inline [&_p]:after:gp-whitespace-pre-wrap [&_p]:after:gp-content-['\A'] gp-countdown-number"
+          style="--w:100%;--ff:var(--g-font-64e37ad9837e9a29e6445768_filsonprobold-webfont2, '64e37ad9837e9a29e6445768_filsonprobold-webfont2'), var(--g-font-heading, heading);--size:15px;--size-tablet:20px;--size-mobile:12px;--lh:130%;--lh-tablet:130%;--lh-mobile:130%;--weight:bold;--c:#FF0509;word-break:break-word;overflow:hidden"
+        >00</div>
+      </div>
+    </div>
+    </gp-text>
+    
+    
+  {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+  <gp-text data-id="gQZyLd0ZUq-text">
+    <div
+      
+        class="gQZyLd0ZUq "
+        style="--c:var(--g-c-text-1, text-1)"
+      >
+      <div  >
+        <div
+          
+          data-gp-text
+          class="[&_p]:gp-inline [&_p]:after:gp-whitespace-pre-wrap [&_p]:after:gp-content-['\A']"
+          style="--w:100%;--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:700;--size:12px;--size-tablet:12px;--size-mobile:7px;--lh:75%;--lh-tablet:75%;--lh-mobile:75%;--c:var(--g-c-text-1, text-1);word-break:break-word;overflow:hidden"
+        >{{ section.settings.ggQZyLd0ZUq_secondLabel }}</div>
+      </div>
+    </div>
+    </gp-text>
+    
+    </div>
+    
+      </div>
+     </gp-countdown-timer>
+     <script {% if section.settings.section_preload == "false" %}class="gps-link" delay {% else %}src{% endif %}="https://d2ls1pfffhvy22.cloudfront.net/assets-v2/gp-countdown.js?v={{ shop.metafields.GEMPAGES.ASSETS_VERSION }}" defer="defer"></script>
+  
+      </div>
+    </div>
+    </div>
+   
+    
+       
+      
+    <div
+      enableLazyloadImage="true" parentTag="Col" id="giCkll9yKL" data-id="giCkll9yKL"
+        style="--mt:0px;--ml:auto;--mb:8px;--mr:auto;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--cg:28px;--cg-tablet:28px;--pc:center;--gtc:minmax(0, auto);--gtc-mobile:minmax(0, auto);--w:100%;--w-tablet:100%;--w-mobile:100%;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll"
+        class="giCkll9yKL gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-gap-y-0 gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]"
+    >
+    <div
+      enableLazyloadImage="true" label="Block" tag="Col" type="component"
+      style="--jc:start"
+      class="gi47YxJgE- gp-relative gp-flex gp-flex-col"
+    >
+      
+       
+      
+    <div
+      enableLazyloadImage="true" parentTag="Col" id="gsuOzXZbcE" data-id="gsuOzXZbcE"
+        style="--bs:solid;--bw:0px;--bc:#121212;--shadow:none;--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--bblr:10px;--bbrr:10px;--btlr:10px;--btrr:10px;--pt:var(--g-s-m);--pb:var(--g-s-m);--mb-mobile:0px;--pt-mobile:var(--g-s-m);--pl-mobile:55px;--pb-mobile:var(--g-s-m);--pr-mobile:55px;--cg:8px;--pc:start;--pc-mobile:center;--gtc:minmax(0, 6fr) minmax(0, 6fr);--gtc-mobile:minmax(0, auto) minmax(0, auto);--w:1100px;--w-tablet:var(--g-ct-w, 100%);--w-mobile:200%;--bgc:#F0D3CB;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll"
+        class="gsuOzXZbcE gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-gap-y-0 gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]"
+    >
+    <div
+      enableLazyloadImage="true" label="Block" tag="Col" type="component"
+      style="--jc:start;--jc-mobile:center"
+      class="gFw00FPn4T gp-relative gp-flex gp-flex-col"
+    >
+      
+  {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+  <gp-text data-id="g8ZBhaa1Zh">
+    <div
+      enableLazyloadImage="true" parentTag="Col"
+        class="g8ZBhaa1Zh "
+        style="--ta:left;--bs:solid;--bw:0px 1px 0px 0px;--bc:#121212;--mt:0px;--ml:0px;--mr:0px;--pt:0px;--pl:0px;--pb:0px;--pr:var(--g-s-s);--mt-mobile:0px;--ml-mobile:0px;--mr-mobile:0px;--pt-mobile:0px;--pl-mobile:auto;--pb-mobile:0px;--pr-mobile:var(--g-s-s)"
+      >
+      <div class="gp-flex" style="--jc:left">
+        <div
+          
+          data-gp-text
+          class="[&_p]:gp-inline [&_p]:after:gp-whitespace-pre-wrap [&_p]:after:gp-content-['\A'] gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--ta:right;--ta-mobile:center;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:400;--size:14px;--size-tablet:14px;--size-mobile:12px;--lh:180%;--lh-tablet:180%;--lh-mobile:180%;--c:rgb(0, 0, 0);word-break:break-word;--bgc:#00000000;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;overflow:hidden"
+        >{{ section.settings.gg8ZBhaa1Zh_text | replace: '$locationOrigin', locationOrigin }}</div>
+      </div>
+    </div>
+    </gp-text>
+    
+    </div><div
+      enableLazyloadImage="true" label="Block" tag="Col" type="component"
+      style="--jc:start;--jc-mobile:center"
+      class="gUOZUsU3WX gp-relative gp-flex gp-flex-col"
+    >
+      
+  {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+  <gp-text data-id="g9g_NlfnsZ">
+    <div
+      enableLazyloadImage="true" parentTag="Col"
+        class="g9g_NlfnsZ "
+        style="--ta:left;--mt:0px;--ml:0px;--mr:0px;--pt:0px;--pl:0px;--pb:0px;--pr:0px"
+      >
+      <div class="gp-flex" style="--jc:left">
+        <div
+          
+          data-gp-text
+          class="[&_p]:gp-inline [&_p]:after:gp-whitespace-pre-wrap [&_p]:after:gp-content-['\A'] gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--ta:left;--ta-mobile:center;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:400;--size:14px;--size-tablet:14px;--size-mobile:12px;--lh:180%;--lh-tablet:180%;--lh-mobile:180%;--c:rgb(2, 2, 2);word-break:break-word;--bgc:#00000000;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;overflow:hidden"
+        >{{ section.settings.gg9g_NlfnsZ_text | replace: '$locationOrigin', locationOrigin }}</div>
+      </div>
+    </div>
+    </gp-text>
+    
+    </div>
+    </div>
+   
+    
+    </div>
+    </div>
+   
+    
+  {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+  <gp-text data-id="g8p0HH2Nze">
+    <div
+      enableLazyloadImage="true" parentTag="Col"
+        class="g8p0HH2Nze "
+        style="--ta:center;--mt:-5px;--ml:-5px;--mb:-5px;--mr:-5px;--pt:0px;--pl:0px;--pb:0px;--pr:0px"
+      >
+      <div class="gp-flex" style="--jc:center">
+        <div
+          
+          data-gp-text
+          class="[&_p]:gp-inline [&_p]:after:gp-whitespace-pre-wrap [&_p]:after:gp-content-['\A'] gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--ta:center;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--ff:var(--g-font-Poppins, 'Poppins'), var(--g-font-body, body);--weight:400;--size:15px;--size-tablet:14px;--size-mobile:12px;--lh:130%;--lh-tablet:130%;--lh-mobile:130%;--c:rgb(31, 31, 31);word-break:break-word;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;overflow:hidden"
+        >{{ section.settings.gg8p0HH2Nze_text | replace: '$locationOrigin', locationOrigin }}</div>
+      </div>
+    </div>
+    </gp-text>
+    
+    </div>
+    </div>
+   
+    
+    </div>
+    </div>
+   
+    
+    </div>
+    </div>
+   
+    
+          {%- endform -%}
+        </product-form>
+      </gp-product>
+      {%- assign product = gpBkProduct -%}
+    {% else %}
+      <div class="gp-text-center">{{ "gempages.Product.product_not_found" | t }}</div>
+    {%- endif -%}
+     <script {% if section.settings.section_preload == "false" %}class="gps-link" delay {% else %}src{% endif %}="https://d2ls1pfffhvy22.cloudfront.net/assets-v2/gp-product.v2.js?v={{ shop.metafields.GEMPAGES.ASSETS_VERSION }}" defer="defer"></script>
+  
+    </div>
+    </div>
+  
+            </section>
+           
+    
+<style {% if section.settings.section_preload == "false" %} class="gps-link" type="text/disabled-css" {% endif %}>@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v23/pxiEyp8kv8JHgFVrJJfedA.woff) format('woff');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v23/pxiByp8kv8JHgFVrLCz7Z1xlEw.woff) format('woff');
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v23/pxiEyp8kv8JHgFVrJJbecnFHGPezSQ.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v23/pxiEyp8kv8JHgFVrJJnecnFHGPezSQ.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v23/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v23/pxiByp8kv8JHgFVrLCz7Z11lFd2JQEl8qw.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v23/pxiByp8kv8JHgFVrLCz7Z1JlFd2JQEl8qw.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v23/pxiByp8kv8JHgFVrLCz7Z1xlFd2JQEk.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+
+{% schema %}
+  {
+    
+    "name": "Section 5",
+    "tag": "section",
+    "class": "gps-538432098822783996 gps gpsil",
+    "settings": [{"type":"paragraph","content":"Section design by GemPages. [Click here to start design](https://admin.shopify.com/store/39c3e2-72/apps/gempages-cro/app/shopify/edit?pageType=GP_STATIC&editorId=538432098604680188&sectionId=538432098822783996)"},{"type":"select","label":"Section Preload","id":"section_preload","options":[{"label":"On","value":"true"},{"label":"Off","value":"false"},{"label":"Off Lazy Script","value":"off_lazy_script"}],"default":"false"},{"type":"text","label":"Checksum","id":"checksum"},{"type":"html","id":"gggePDlqBFC_label","label":"gggePDlqBFC_label","default":"<p><span style=\"background-color:rgba(0,0,0,0);color:#F7F7F7;font-size:14px;\"><strong>✨ </strong></span><span style=\"background-color:rgba(0,0,0,0);color:#ECB631;font-size:14px;\"><strong>REBRAND SALE</strong></span><span style=\"background-color:rgba(0,0,0,0);color:#F7F7F7;font-size:14px;\"><strong><sup> </sup></strong></span><span style=\"color:#F7F7F7;font-size:14px;\"><strong><sup>_</sup> NOW LIVE!</strong></span></p>"},{"type":"html","id":"ggPR6SXT0we_text","label":"ggPR6SXT0we_text","default":"<p>OFFER ENDS TONIGHT</p>"},{"type":"html","id":"gg8fKV6ksLC_text","label":"gg8fKV6ksLC_text","default":"<p><span style=\"background-color:rgba(255,0,0,0);color:#F6CBB7;font-size:30px;\"><u>BUY 3 GET 3 FREE</u></span><span style=\"background-color:rgba(255,0,0,0);color:#0F0F0F;font-size:30px;\"> FOR A LIMITED TIME ONLY!</span></p>"},{"type":"html","id":"ggNHeo0R6mw_text","label":"ggNHeo0R6mw_text","default":"<p><span style=\"font-size:13px;\">This exclusive deal is in high demand, and stock keeps selling out.</span></p>"},{"type":"html","id":"ggVixhdEWkV_label","label":"ggVixhdEWkV_label","default":"<p><span style=\"color:#FFFFFF;\"><strong>CLAIM OFFER →</strong></span></p>"},{"type":"html","id":"ggXOIpjM9Re_text","label":"ggXOIpjM9Re_text","default":"DEAL ENDING IN:"},{"type":"html","id":"ggQZyLd0ZUq_dayLabel","label":"ggQZyLd0ZUq_dayLabel","default":"Days"},{"type":"html","id":"ggQZyLd0ZUq_hourLabel","label":"ggQZyLd0ZUq_hourLabel","default":"Hours"},{"type":"html","id":"ggQZyLd0ZUq_minuteLabel","label":"ggQZyLd0ZUq_minuteLabel","default":"Minutes"},{"type":"html","id":"ggQZyLd0ZUq_secondLabel","label":"ggQZyLd0ZUq_secondLabel","default":"Seconds"},{"type":"html","id":"ggQZyLd0ZUq_weekLabel","label":"ggQZyLd0ZUq_weekLabel","default":"Weeks"},{"type":"html","id":"gg8ZBhaa1Zh_text","label":"gg8ZBhaa1Zh_text","default":"<p><span style=\"font-size:10px;\"><strong>&nbsp; Sell-Out Risk: </strong></span><span style=\"color:#F93600;font-size:10px;\"><strong>High</strong></span></p>"},{"type":"html","id":"gg9g_NlfnsZ_text","label":"gg9g_NlfnsZ_text","default":"<p><span style=\"font-size:10px;\"><strong>FREE </strong>Shipping</span></p>"},{"type":"html","id":"gg8p0HH2Nze_text","label":"gg8p0HH2Nze_text","default":"<p><span style=\"font-size:9px;\">Try today with a 90-Day Money Back Guarantee!</span></p>"}],
+    "blocks": [{"type": "@app"}],
+    "locales": {}
+  }
+{% endschema %}

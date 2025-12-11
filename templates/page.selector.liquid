@@ -1,0 +1,671 @@
+{% layout none %}
+
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    [x-cloak] { display: none !important; }
+    
+    .fade-in {
+      opacity: 0;
+      transition: opacity 300ms ease-in-out;
+    }
+    
+    .fade-in.loaded {
+      opacity: 1;
+    }
+  </style>
+<head>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.cdnfonts.com/css/ii-vorkurs" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            vorkurs: ['"II Vorkurs"', 'sans-serif'],
+          },
+          colors: {
+            accent: '#C2818A',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="">
+  <div  class="font-vorkurs"
+    x-data="{
+      loaded: false,
+      activeTab: 'build',
+      isLoading: false,
+      selectedBundle: '5pack',
+      selections: [],
+      currentStep: 'color',
+      tempColor: null,
+      bundlePrices: {
+        '2pack': null,
+        '5pack': null,
+        '10pack': null
+      },
+      bundles: {
+        '2pack': { quantity: 2, savings: '32%', shipping: 4.99 },
+        '5pack': { quantity: 5, savings: '56%', shipping: 0 },
+        '10pack': { quantity: 10, savings: '56%', shipping: 0 }
+      },
+      async init() {
+        try {
+          const response = await fetch('/products/maison-bundle-product-offer-a.json');
+          const data = await response.json();
+          
+          data.product.variants.forEach(variant => {
+            if (variant.title.includes('2 Pack')) {
+              this.bundles['2pack'].price = Number(variant.price);
+            } else if (variant.title.includes('5 Pack')) {
+              this.bundles['5pack'].price = Number(variant.price);
+            } else if (variant.title.includes('10 Pack')) {
+              this.bundles['10pack'].price = Number(variant.price);
+            }
+          });
+        } catch (error) {
+          console.error('Error fetching bundle prices:', error);
+          // Fallback to default prices if fetch fails
+          this.bundles['2pack'].price = 38.99;
+          this.bundles['5pack'].price = 55;
+          this.bundles['10pack'].price = 89;
+        }
+        this.loaded = true;
+      },
+      variantMap: {
+        'sand': {
+          'XS': '53786089980230',
+          'S': '53786090012998',
+          'M': '53786090045766',
+          'L': '53786090078534',
+          'XL': '53786090111302',
+          'XXL': '53786090144070',
+          'XXXL': '53786090176838'
+        },
+        'black': {
+          'XS': '53786090209606',
+          'S': '53786090242374',
+          'M': '53786090275142',
+          'L': '53786090307910',
+          'XL': '53786090340678',
+          'XXL': '53786090373446',
+          'XXXL': '53786090406214'
+        },
+        'moss': {
+          'XS': '53786090438982',
+          'S': '53786090471750',
+          'M': '53786090504518',
+          'L': '53786090537286',
+          'XL': '53786090570054',
+          'XXL': '53786090602822',
+          'XXXL': '53786090635590'
+        },
+        'coffee': {
+          'XS': '53786090668358',
+          'S': '53786090701126',
+          'M': '53786090733894',
+          'L': '53786090766662',
+          'XL': '53786090799430',
+          'XXL': '53786090832198',
+          'XXXL': '53786090864966'
+        }
+      },
+      colors: [
+        { id: 'sand', name: 'Sand', hex: '#E6D2C0', isHot: true },
+        { id: 'black', name: 'Black', hex: '#000000', isHot: false },
+        { id: 'moss', name: 'Moss', hex: '#78866B', isHot: true },
+        { id: 'coffee', name: 'Coffee', hex: '#6F4E37', isHot: false }
+      ],
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
+      
+      selectBundle(key) {
+        const newQuantity = this.bundles[key].quantity;
+        if (this.selections.length > newQuantity) {
+          this.selections = this.selections.slice(0, newQuantity);
+        }
+        this.selectedBundle = key;
+        this.currentStep = 'color';
+        this.tempColor = null;
+      },
+      
+      handleColorClick(colorId) {
+        if (this.currentStep === 'size' && this.tempColor === colorId) {
+          this.tempColor = null;
+          this.currentStep = 'color';
+        } else {
+          this.tempColor = colorId;
+          this.currentStep = 'size';
+        }
+      },
+      
+      addSelection(size) {
+        if (this.selections.length < this.bundles[this.selectedBundle].quantity && this.tempColor) {
+          this.selections.push({ color: this.tempColor, size: size });
+          this.tempColor = null;
+          this.currentStep = 'color';
+        }
+      },
+      
+      removeSelection(index) {
+        this.selections = this.selections.filter((_, i) => i !== index);
+      },
+      
+      cancelSelection() {
+        this.tempColor = null;
+        this.currentStep = 'color';
+      },
+      
+      async addToCart() {
+        this.isLoading = true;
+        try {
+          const items = this.selections.map(selection => ({
+            id: this.variantMap[selection.color][selection.size],
+            quantity: 1
+          }));
+          
+          const response = await fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              items: items
+            })
+          });
+          
+          if (!response.ok) throw new Error('Failed to add items to cart');
+          
+          window.location.href = '/cart';
+        } catch (error) {
+          console.error('Error adding to cart:', error);
+          this.isLoading = false;
+        }
+      }
+    }" 
+    x-cloak
+    x-init="setTimeout(() => loaded = true, 250)"
+    class="max-w-3xl mx-auto p-3 sm:p-6 space-y-6 sm:space-y-8 fade-in"
+    :class="{ 'loaded': loaded, 'opacity-50 pointer-events-none transition-opacity duration-300': isLoading }"
+  >
+    
+    <!-- Tab Navigation -->
+    <div class="max-w-3xl mx-auto p-3 sm:p-6">
+      <div class="flex gap-4 mb-8">
+        <button 
+          @click="activeTab = 'curated'"
+          :class="activeTab === 'curated' ? 'bg-[#F5E9E7] text-black border border-[#F5E9E7]' : 'text-gray-500 border border-gray-300'"
+          class="py-2 px-3 font-bold rounded-full"
+        >
+          Curated Packs
+        </button>
+        <button 
+          @click="activeTab = 'build'"
+          :class="activeTab === 'build' ? 'bg-[#F5E9E7] text-black border border-[#F5E9E7]' : 'text-gray-500 border border-gray-300'"
+          class="py-2 px-3 font-bold rounded-full"
+        >
+          Build My Pack
+        </button>
+        <button 
+          @click="activeTab = 'single'"
+          :class="activeTab === 'single' ? 'bg-[#F5E9E7] text-black border border-[#F5E9E7]' : 'text-gray-500 border border-gray-300'"
+          class="py-2 px-3 font-bold rounded-full"
+        >
+          Singles
+        </button>
+      </div>
+
+      <!-- Tab Panels Container -->
+      <div class="relative">
+        <!-- Build My Bundle Tab -->
+        <div 
+          x-show="activeTab === 'build'"
+          x-transition:enter="transition ease-out duration-300 delay-800"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave="transition ease-in duration-200"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
+          class="w-full"
+        >
+          <!-- Step 1: Bundle Selection -->
+          <div>
+            <h4 class="text-md font-semibold mb-4 flex items-center">
+              <span class="bg-[#FCF5F4] rounded-full w-8 h-8 flex items-center justify-center mr-2">1</span>
+              CHOOSE YOUR BUNDLE SIZE
+            </h4>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+              <template x-for="(bundle, key) in bundles" :key="key">
+                <div 
+                  class="cursor-pointer border rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                  :class="selectedBundle === key ? 'ring-2 ring-accent' : ''"
+                  @click="selectBundle(key)"
+                >
+                  <div class="py-2 px-4">
+                    <div class="flex align-center items-center">
+                      <div>
+                        <div class="font-bold">
+                          <span x-text="`${bundle.quantity} PAIRS`"></span>
+                          <span class="text-accent" x-text="` • SAVE ${bundle.savings}`"></span>
+                        </div>
+                        <div class="text-sm text-gray-400" x-text="bundle.shipping === 0 ? 'FREE Shipping' : `Shipping: {{ shop.currency }}${bundle.shipping}`"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+
+          <!-- Step 2: Item Selection -->
+          <div>
+            <h4 class="text-md font-semibold mb-4 flex items-center">
+              <span class="bg-[#FCF5F4] rounded-full w-8 h-8 flex items-center justify-center mr-2">2</span>
+              <span x-text="`SELECT ITEMS (${selections.length} of ${bundles[selectedBundle].quantity})`"></span>
+            </h4>
+
+            <!-- Selected Items Grid -->
+            <div class="grid grid-cols-5 gap-2 py-2 rounded-lg mb-4">
+              <template x-for="(_, index) in Array(bundles[selectedBundle].quantity)" :key="index">
+                <div
+                  class="w-full h-16 rounded-lg flex items-center justify-center"
+                  :class="selections[index] ? 'bg-white shadow-sm' : 'border-2 border-dashed border-gray-300'"
+                >
+                  <template x-if="selections[index]">
+                    <div class="relative w-full h-full">
+                      <div
+                        class="w-full h-full rounded-lg  overflow-hidden"
+                        :style="`background-color: ${colors.find(c => c.id === selections[index].color).hex}`"
+                      >
+                        <div class="absolute inset-x-0 bottom-0 text-xs text-center py-1 rounded-b-lg bg-white" 
+                          x-text="selections[index].size"></div>
+                      </div>
+                      <button
+                        @click="removeSelection(index)"
+                        class="absolute -top-2 -right-2 bg-white rounded-full p-1 shadow-sm hover:bg-gray-100"
+                      >
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </template>
+                  <template x-if="!selections[index]">
+                    <span class="text-sm text-gray-400" x-text="`Choose #${index + 1} below`"></span>
+                  </template>
+                </div>
+              </template>
+            </div>
+
+
+            <!-- Step 3: Color Selection -->
+            <div>
+              <h4 class="text-md font-semibold mb-4 flex items-center">
+                <span class="bg-[#FCF5F4] rounded-full w-8 h-8 flex items-center justify-center mr-2">3</span>
+                CHOOSE YOUR COLOR
+              </h4>
+              <div class="grid grid-cols-4 gap-2 mb-4">
+                <template x-for="color in colors" :key="color.id">
+                  <div class="relative">
+                    <button
+                      class="w-full h-12 rounded-lg border-2 hover:scale-105 transition-transform"
+                      :class="tempColor === color.id ? 'ring-2 ring-offset-1 ring-accent' : ''"
+                      :style="`background-color: ${color.hex}`"
+                      @click="handleColorClick(color.id)"
+                    >
+                      <span class="sr-only" x-text="color.name"></span>
+                    </button>
+                    <div 
+                      x-show="color.isHot"
+                      class="absolute -top-2 -right-2 bg-[#C2818A] text-white text-xs px-1.5 py-0.5 rounded-full transform rotate-2 font-bold"
+                    >
+                      POPULAR
+                    </div>
+                  </div>
+                </template>
+              </div>
+
+              <!-- Stock Indicator -->
+              <div class="text-sm mb-4" x-show="tempColor">
+                <div x-show="['sand', 'coffee'].includes(tempColor)" 
+                     class="flex items-center text-amber-600">
+                  <div class="w-2 h-2 rounded-full bg-amber-600 mr-2"></div>
+                  Low Stock
+                </div>
+                <div x-show="!['sand', 'coffee'].includes(tempColor)"
+                     class="flex items-center text-green-600">
+                  <div class="w-2 h-2 rounded-full bg-green-600 mr-2"></div>
+                  In Stock
+                </div>
+              </div>
+            </div>
+            
+            <!-- Step 4: Size Selection -->
+            <div>
+              <h4 class="text-md font-semibold mb-4 flex items-center">
+                <span class="bg-[#FCF5F4] rounded-full w-8 h-8 flex items-center justify-center mr-2">4</span>
+                CHOOSE YOUR SIZE
+              </h4>
+              <div class="grid grid-cols-5 gap-2 mb-4">
+                <template x-for="size in sizes" :key="size">
+                  <button
+                    class="px-4 py-2 rounded-lg border hover:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+                    :class="currentStep === 'size' ? 'hover:bg-accent/5' : 'opacity-50'"
+                    @click="addSelection(size)"
+                    :disabled="currentStep === 'color'"
+                    x-text="size"
+                  ></button>
+                </template>
+              </div>
+            </div>
+
+
+            <div 
+          x-show="selections.length === 1"
+          x-transition:enter="transition ease-out duration-300"
+          x-transition:enter-start="opacity-0 transform -translate-y-2"
+          x-transition:enter-end="opacity-100 transform translate-y-0"
+          class="bg-amber-50 mt-2 mb-2 text-amber-700 px-4 py-3 rounded-lg text-center font-medium"
+          >
+            Great choice! Choose your 2nd pair now.
+          </div>
+
+            
+
+            <!-- Price per Thong -->
+            <div class="flex justify-center items-center mb-4">
+              <span class="text-lg font-bold text-black mr-2" x-text="`${(bundles[selectedBundle].price / bundles[selectedBundle].quantity).toFixed(2)} EUR per pair`"></span>
+              <div class="bg-[#C2818A] text-white px-4 py-1 rounded-full text-sm font-bold">
+                <span x-text="`TOTAL: ${bundles[selectedBundle].price.toFixed(2)} EUR`"></span>
+              </div>
+            </div>
+
+            <!-- Add to Cart Button -->
+            <button 
+              class="w-full bg-black text-white py-4 sm:py-4 rounded-lg hover:bg-gray-800 disabled:bg-gray-400 text-sm sm:text-base"
+              :disabled="selections.length !== bundles[selectedBundle].quantity || isLoading"
+              @click="addToCart"
+            >
+              <span x-text="isLoading ? 'Adding...' : `Add to Cart${selections.length === bundles[selectedBundle].quantity ? ` (Save ${bundles[selectedBundle].savings})` : ` (${selections.length}/${bundles[selectedBundle].quantity} Selected)`}`"></span>
+            </button>
+
+            <div 
+            x-show="selections.length === bundles[selectedBundle].quantity"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 transform -translate-y-2"
+            x-transition:enter-end="opacity-100 transform translate-y-0"
+            class="bg-green-50 mt-2 text-green-700 px-4 py-3 rounded-lg text-center font-medium"
+          >
+            Amazing choice! These will fit you perfect!
+          </div>
+
+          
+        </div>
+      </div>
+
+      <!-- Curated Packs Tab -->
+      <div 
+        x-show="activeTab === 'curated'"
+        x-transition:enter="transition ease-out duration-300 delay-200"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        class="w-full"
+      >
+        <div x-data="{
+            selectedSize: 'S',
+            selectedPack: 'blacksand',
+            selectedBundle: '5pack',
+            bundles: {
+              '2pack': { quantity: 2, price: 38.99, shipping: 4.99 },
+              '5pack': { quantity: 5, price: 55, shipping: 0 },
+              '10pack': { quantity: 10, price: 89, shipping: 0 }
+            },
+            curatedPacks: [
+              { id: 'blacksand', name: 'Black & Sand', pattern: ['black', 'black', 'black', 'sand', 'sand'] },
+              { id: 'allblack', name: 'Black', pattern: ['black'] },
+              { id: 'allsand', name: 'Sand', pattern: ['sand'] }
+            ],
+            stockInfo: {
+              'blacksand': 'low',
+              'allblack': 'low',
+              'allsand': 'in'
+            },
+            getStockStatus() {
+              return this.stockInfo[this.selectedPack] || 'in';
+            }
+          }" 
+          class="max-w-3xl mx-auto space-y-6 sm:space-y-8">
+        
+            <!-- Step 1: Size Selection -->
+            <div>
+              <h2 class="text-md font-semibold mb-4 flex items-center">
+                <span class="bg-[#FCF5F4] rounded-full w-8 h-8 flex items-center justify-center mr-2">1</span>
+                CHOOSE YOUR SIZE
+              </h2>
+              
+              <div class="grid grid-cols-5 gap-2">
+                <template x-for="size in ['XS', 'S', 'M', 'L', 'XXL']" :key="size">
+                  <button
+                    class="px-4 py-2 rounded-lg border hover:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+                    :class="selectedSize === size ? 'ring-2 ring-accent bg-accent/5' : ''"
+                    @click="selectedSize = size"
+                    x-text="size"
+                  ></button>
+                </template>
+              </div>
+            </div>
+        
+            <!-- Step 2: Curated Pack Selection -->
+            <div>
+              <h2 class="text-md font-semibold mb-4 flex items-center">
+                <span class="bg-[#FCF5F4] rounded-full w-8 h-8 flex items-center justify-center mr-2">2</span>
+                CHOOSE YOUR COLORS
+              </h2>
+              
+              <div class="grid grid-cols-3 gap-4">
+                <template x-for="pack in curatedPacks" :key="pack.id">
+                  <div 
+                    class="cursor-pointer border rounded-lg shadow-sm hover:shadow-md transition-shadow p-2"
+                    :class="selectedPack === pack.id ? 'ring-2 ring-accent' : ''"
+                    @click="selectedPack = pack.id"
+                  >
+                    <div class="flex gap-1 justify-start flex-wrap items-center">
+                      <template x-for="color in [...new Set(pack.pattern)]" :key="color">
+                        <div class="flex items-center gap-1">
+                          <div 
+                            class="w-4 h-4 rounded-full"
+                            :style="`background-color: ${color === 'black' ? '#000000' : '#E8D0B8'}`"
+                          ></div>
+                          <span class="text-xs text-gray-500" 
+                            x-text="`(${
+                              pack.id === 'blacksand' 
+                                ? (bundles[selectedBundle].quantity === 5
+                                    ? (color === 'black' ? 3 : 2)  // 5-pack: 3 black, 2 sand
+                                    : bundles[selectedBundle].quantity / 2) // 2-pack and 10-pack: equal split
+                                : bundles[selectedBundle].quantity
+                            }x)`">
+                          </span>
+                        </div>
+                      </template>
+                    </div>
+                    <div class="font-bold text-sm mt-2" x-text="pack.name"></div>
+                    
+                    
+                    
+                  </div>
+                </template>
+              </div>
+
+              <!-- Dynamic Stock Indicator -->
+              <div class="mt-2 text-sm">
+                <div x-show="getStockStatus() === 'low'" 
+                     class="flex items-center text-amber-600">
+                  <div class="w-2 h-2 rounded-full bg-amber-600 mr-2"></div>
+                  Low stock, selling fast
+                </div>
+                <div x-show="getStockStatus() === 'in'"
+                     class="flex items-center text-green-600">
+                  <div class="w-2 h-2 rounded-full bg-green-600 mr-2"></div>
+                  In stock, ready to ship
+                </div>
+              </div>
+            </div>
+        
+            <!-- Step 3: Bundle Selection -->
+            <div>
+              <h2 class="text-md font-semibold mb-4 flex items-center">
+                <span class="bg-[#FCF5F4] rounded-full w-8 h-8 flex items-center justify-center mr-2">3</span>
+                CHOOSE YOUR PACK
+              </h2>
+              
+              <div class="grid grid-cols-3 gap-4">
+                <template x-for="(bundle, key) in bundles" :key="key">
+                  <div 
+                    class="cursor-pointer border rounded-lg shadow-sm hover:shadow-md transition-shadow p-4 flex flex-col items-center justify-center text-center"
+                    :class="selectedBundle === key ? 'ring-2 ring-accent' : ''"
+                    @click="selectedBundle = key"
+                  >
+                    <div class="font-bold text-md mb-1" x-text="`${bundle.quantity}x Pairs`"></div>
+                    <div class="text-xs text-gray-400 mb-1" x-text="bundle.shipping === 0 ? 'FREE Shipping' : `Shipping: {{ cart.currency.symbol }} ${bundle.shipping}`"></div>
+                    <div class="text-sm font-bold" x-text="`{{ cart.currency.symbol }} ${(bundle.price / bundle.quantity).toFixed(2)}/pair`"></div>
+                  </div>
+                </template>
+              </div>
+            </div>
+        
+            <!-- Price per Thong -->
+            <div class="flex justify-center items-center mb-4">
+              <span class="text-lg font-bold text-black mr-2" x-text="`${(bundles[selectedBundle].price / bundles[selectedBundle].quantity).toFixed(2)} EUR per pair`"></span>
+              <div class="bg-[#C2818A] text-white px-4 py-1 rounded-full text-sm font-bold">
+                <span x-text="`TOTAL: ${bundles[selectedBundle].price.toFixed(2)} EUR`"></span>
+              </div>
+            </div>
+
+            <!-- Add to Cart Button -->
+            <button 
+              class="w-full bg-black text-white py-4 rounded-lg hover:bg-gray-800 disabled:bg-gray-400 text-sm sm:text-base"
+              :disabled="!selectedSize || !selectedPack || !selectedBundle"
+              x-text="!selectedSize || !selectedPack || !selectedBundle ? 'Finish selection first' : `Add to Cart (Save ${bundles[selectedBundle].quantity >= 5 ? '56%' : '32%'})`"
+            ></button>
+          </div>
+      </div>
+
+      <!-- Single Packs Tab -->
+      <div 
+        x-show="activeTab === 'single'"
+        x-transition:enter="transition ease-out duration-300 delay-200"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        class="w-full"
+      >
+        <div x-data="{
+            selectedSize: null,
+            selectedColor: null,
+            pricePerThong: 12.99,
+            isLoading: false,
+            
+            async addToCart() {
+              if (!this.selectedSize || !this.selectedColor) return;
+              
+              this.isLoading = true;
+              try {
+                const variantId = this.variantMap[this.selectedColor][this.selectedSize];
+                
+                const response = await fetch('/cart/add.js', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({
+                    items: [{
+                      id: variantId,
+                      quantity: 1
+                    }]
+                  })
+                });
+                
+                if (!response.ok) throw new Error('Failed to add item to cart');
+                
+                window.location.href = '/cart';
+              } catch (error) {
+                console.error('Error adding to cart:', error);
+                this.isLoading = false;
+              }
+            }
+          }" 
+          class="max-w-3xl mx-auto space-y-6 sm:space-y-8"
+          :class="{ 'opacity-50 pointer-events-none': isLoading }">
+          
+          <!-- Size Selection -->
+          <div>
+            <h2 class="text-md font-semibold mb-4 flex items-center">
+              <span class="bg-[#FCF5F4] rounded-full w-8 h-8 flex items-center justify-center mr-2">1</span>
+              CHOOSE YOUR SIZE
+            </h2>
+            
+            <div class="grid grid-cols-5 gap-2">
+              <template x-for="size in sizes" :key="size">
+                <button
+                  class="px-4 py-2 rounded-lg border hover:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+                  :class="selectedSize === size ? 'ring-2 ring-accent bg-accent/5' : ''"
+                  @click="selectedSize = size"
+                  x-text="size"
+                ></button>
+              </template>
+            </div>
+          </div>
+
+          <!-- Color Selection -->
+          <div>
+            <h2 class="text-md font-semibold mb-4 flex items-center">
+              <span class="bg-[#FCF5F4] rounded-full w-8 h-8 flex items-center justify-center mr-2">2</span>
+              CHOOSE YOUR COLOR
+            </h2>
+            
+            <div class="grid grid-cols-4 gap-2">
+              <template x-for="color in colors" :key="color.id">
+                <button
+                  class="w-full h-12 rounded-lg border-2 hover:scale-105 transition-transform"
+                  :class="selectedColor === color.id ? 'ring-2 ring-offset-1 ring-accent' : ''"
+                  :style="`background-color: ${color.hex}`"
+                  @click="selectedColor = color.id"
+                >
+                  <span class="sr-only" x-text="color.name"></span>
+                </button>
+              </template>
+            </div>
+          </div>
+
+          <!-- Price Display -->
+          <div class="flex justify-center items-center mb-4">
+            <span class="text-lg font-bold text-black" x-text="`Price: 12.99 EUR per thong`"></span>
+          </div>
+
+          <!-- Add to Cart Button -->
+          <button 
+            class="w-full bg-black text-white py-4 rounded-lg hover:bg-gray-800 disabled:bg-gray-400 text-sm sm:text-base"
+            :disabled="!selectedSize || !selectedColor || isLoading"
+            @click="addToCart"
+            x-text="isLoading ? 'Adding...' : (!selectedSize || !selectedColor ? 'Select size and color' : 'Add to Cart')"
+          ></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</body>
+</html>

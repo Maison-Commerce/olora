@@ -1,0 +1,790 @@
+
+    
+    <style {% if section.settings.section_preload == "false" %} class="gps-link gps-style" type="text/disabled-css" {% endif %}>.gps-586463905518191122.gps.gpsil [style*="--as:"]{align-self:var(--as)}.gps-586463905518191122.gps.gpsil [style*="--aspect:"]{aspect-ratio:var(--aspect)}.gps-586463905518191122.gps.gpsil [style*="--bg:"]{background:var(--bg)}.gps-586463905518191122.gps.gpsil [style*="--bga:"]{background-attachment:var(--bga)}.gps-586463905518191122.gps.gpsil [style*="--bgc:"]{background-color:var(--bgc)}.gps-586463905518191122.gps.gpsil [style*="--bgi:"]{background-image:var(--bgi)}.gps-586463905518191122.gps.gpsil [style*="--bgp:"]{background-position:var(--bgp)}.gps-586463905518191122.gps.gpsil [style*="--bgr:"]{background-repeat:var(--bgr)}.gps-586463905518191122.gps.gpsil [style*="--bgs:"]{background-size:var(--bgs)}.gps-586463905518191122.gps.gpsil [style*="--b:"]{border:var(--b)}.gps-586463905518191122.gps.gpsil [style*="--bb:"]{border-bottom:var(--bb)}.gps-586463905518191122.gps.gpsil [style*="--bc:"]{border-color:var(--bc)}.gps-586463905518191122.gps.gpsil [style*="--bblr:"]{border-bottom-left-radius:var(--bblr)}.gps-586463905518191122.gps.gpsil [style*="--bbrr:"]{border-bottom-right-radius:var(--bbrr)}.gps-586463905518191122.gps.gpsil [style*="--bl:"]{border-left:var(--bl)}.gps-586463905518191122.gps.gpsil [style*="--radius:"]{border-radius:var(--radius)}.gps-586463905518191122.gps.gpsil [style*="--bs:"]{border-style:var(--bs)}.gps-586463905518191122.gps.gpsil [style*="--bt:"]{border-top:var(--bt)}.gps-586463905518191122.gps.gpsil [style*="--btlr:"]{border-top-left-radius:var(--btlr)}.gps-586463905518191122.gps.gpsil [style*="--btrr:"]{border-top-right-radius:var(--btrr)}.gps-586463905518191122.gps.gpsil [style*="--bw:"]{border-width:var(--bw)}.gps-586463905518191122.gps.gpsil [style*="--shadow:"]{box-shadow:var(--shadow)}.gps-586463905518191122.gps.gpsil [style*="--c:"]{color:var(--c)}.gps-586463905518191122.gps.gpsil [style*="--cg:"]{-moz-column-gap:var(--cg);column-gap:var(--cg)}.gps-586463905518191122.gps.gpsil [style*="--fd:"]{flex-direction:var(--fd)}.gps-586463905518191122.gps.gpsil [style*="--ff:"]{font-family:var(--ff)}.gps-586463905518191122.gps.gpsil [style*="--size:"]{font-size:var(--size)}.gps-586463905518191122.gps.gpsil [style*="--weight:"]{font-weight:var(--weight)}.gps-586463905518191122.gps.gpsil [style*="--fs:"]{font-style:var(--fs)}.gps-586463905518191122.gps.gpsil [style*="--gg:"]{grid-gap:var(--gg)}.gps-586463905518191122.gps.gpsil [style*="--gtc:"]{grid-template-columns:var(--gtc)}.gps-586463905518191122.gps.gpsil [style*="--h:"]{height:var(--h)}.gps-586463905518191122.gps.gpsil [style*="--jc:"]{justify-content:var(--jc)}.gps-586463905518191122.gps.gpsil [style*="--ls:"]{letter-spacing:var(--ls)}.gps-586463905518191122.gps.gpsil [style*="--lh:"]{line-height:var(--lh)}.gps-586463905518191122.gps.gpsil [style*="--tdt:"]{text-decoration-thickness:var(--tdt)}.gps-586463905518191122.gps.gpsil [style*="--tdl:"]{text-decoration-line:var(--tdl)}.gps-586463905518191122.gps.gpsil [style*="--m:"]{margin:var(--m)}.gps-586463905518191122.gps.gpsil [style*="--mb:"]{margin-bottom:var(--mb)}.gps-586463905518191122.gps.gpsil [style*="--objf:"]{-o-object-fit:var(--objf);object-fit:var(--objf)}.gps-586463905518191122.gps.gpsil [style*="--op:"]{opacity:var(--op)}.gps-586463905518191122.gps.gpsil [style*="--o:"]{order:var(--o)}.gps-586463905518191122.gps.gpsil [style*="--pc:"]{place-content:var(--pc)}.gps-586463905518191122.gps.gpsil [style*="--p:"]{padding:var(--p)}.gps-586463905518191122.gps.gpsil [style*="--pb:"]{padding-bottom:var(--pb)}.gps-586463905518191122.gps.gpsil [style*="--pl:"]{padding-left:var(--pl)}.gps-586463905518191122.gps.gpsil [style*="--pr:"]{padding-right:var(--pr)}.gps-586463905518191122.gps.gpsil [style*="--pt:"]{padding-top:var(--pt)}.gps-586463905518191122.gps.gpsil [style*="--rg:"]{row-gap:var(--rg)}.gps-586463905518191122.gps.gpsil [style*="--ta:"]{text-align:var(--ta)}.gps-586463905518191122.gps.gpsil [style*="--ts:"]{text-shadow:var(--ts)}.gps-586463905518191122.gps.gpsil [style*="--tt:"]{text-transform:var(--tt)}.gps-586463905518191122.gps.gpsil [style*="--t:"]{transform:var(--t)}.gps-586463905518191122.gps.gpsil [style*="--w:"]{width:var(--w)}.gps-586463905518191122.gps.gpsil [style*="--line-clamp:"]{-webkit-box-orient:vertical;-webkit-line-clamp:var(--line-clamp);display:-webkit-box;overflow:hidden}@media only screen and (max-width:1024px){.gps-586463905518191122.gps.gpsil [style*="--aspect-tablet:"]{aspect-ratio:var(--aspect-tablet)}.gps-586463905518191122.gps.gpsil [style*="--size-tablet:"]{font-size:var(--size-tablet)}.gps-586463905518191122.gps.gpsil [style*="--h-tablet:"]{height:var(--h-tablet)}.gps-586463905518191122.gps.gpsil [style*="--lh-tablet:"]{line-height:var(--lh-tablet)}.gps-586463905518191122.gps.gpsil [style*="--mb-tablet:"]{margin-bottom:var(--mb-tablet)}.gps-586463905518191122.gps.gpsil [style*="--pb-tablet:"]{padding-bottom:var(--pb-tablet)}.gps-586463905518191122.gps.gpsil [style*="--pl-tablet:"]{padding-left:var(--pl-tablet)}.gps-586463905518191122.gps.gpsil [style*="--pr-tablet:"]{padding-right:var(--pr-tablet)}.gps-586463905518191122.gps.gpsil [style*="--pt-tablet:"]{padding-top:var(--pt-tablet)}.gps-586463905518191122.gps.gpsil [style*="--rg-tablet:"]{row-gap:var(--rg-tablet)}.gps-586463905518191122.gps.gpsil [style*="--ta-tablet:"]{text-align:var(--ta-tablet)}.gps-586463905518191122.gps.gpsil [style*="--w-tablet:"]{width:var(--w-tablet)}.gps-586463905518191122.gps.gpsil [style*="--line-clamp-tablet:"]{-webkit-box-orient:vertical;-webkit-line-clamp:var(--line-clamp-tablet);display:-webkit-box;overflow:hidden}}@media only screen and (max-width:767px){.gps-586463905518191122.gps.gpsil [style*="--aspect-mobile:"]{aspect-ratio:var(--aspect-mobile)}.gps-586463905518191122.gps.gpsil [style*="--bg-mobile:"]{background:var(--bg-mobile)}.gps-586463905518191122.gps.gpsil [style*="--bblr-mobile:"]{border-bottom-left-radius:var(--bblr-mobile)}.gps-586463905518191122.gps.gpsil [style*="--bbrr-mobile:"]{border-bottom-right-radius:var(--bbrr-mobile)}.gps-586463905518191122.gps.gpsil [style*="--btlr-mobile:"]{border-top-left-radius:var(--btlr-mobile)}.gps-586463905518191122.gps.gpsil [style*="--btrr-mobile:"]{border-top-right-radius:var(--btrr-mobile)}.gps-586463905518191122.gps.gpsil [style*="--cg-mobile:"]{-moz-column-gap:var(--cg-mobile);column-gap:var(--cg-mobile)}.gps-586463905518191122.gps.gpsil [style*="--size-mobile:"]{font-size:var(--size-mobile)}.gps-586463905518191122.gps.gpsil [style*="--gg-mobile:"]{grid-gap:var(--gg-mobile)}.gps-586463905518191122.gps.gpsil [style*="--gtc-mobile:"]{grid-template-columns:var(--gtc-mobile)}.gps-586463905518191122.gps.gpsil [style*="--h-mobile:"]{height:var(--h-mobile)}.gps-586463905518191122.gps.gpsil [style*="--lh-mobile:"]{line-height:var(--lh-mobile)}.gps-586463905518191122.gps.gpsil [style*="--mb-mobile:"]{margin-bottom:var(--mb-mobile)}.gps-586463905518191122.gps.gpsil [style*="--o-mobile:"]{order:var(--o-mobile)}.gps-586463905518191122.gps.gpsil [style*="--pc-mobile:"]{place-content:var(--pc-mobile)}.gps-586463905518191122.gps.gpsil [style*="--pb-mobile:"]{padding-bottom:var(--pb-mobile)}.gps-586463905518191122.gps.gpsil [style*="--pl-mobile:"]{padding-left:var(--pl-mobile)}.gps-586463905518191122.gps.gpsil [style*="--pr-mobile:"]{padding-right:var(--pr-mobile)}.gps-586463905518191122.gps.gpsil [style*="--pt-mobile:"]{padding-top:var(--pt-mobile)}.gps-586463905518191122.gps.gpsil [style*="--rg-mobile:"]{row-gap:var(--rg-mobile)}.gps-586463905518191122.gps.gpsil [style*="--ta-mobile:"]{text-align:var(--ta-mobile)}.gps-586463905518191122.gps.gpsil [style*="--w-mobile:"]{width:var(--w-mobile)}.gps-586463905518191122.gps.gpsil [style*="--line-clamp-mobile:"]{-webkit-box-orient:vertical;-webkit-line-clamp:var(--line-clamp-mobile);display:-webkit-box;overflow:hidden}}.gps-586463905518191122 .-gp-rotate-90,.gps-586463905518191122 .gp-rotate-180,.gps-586463905518191122 .gp-rotate-90{--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1}.gps-586463905518191122 .gp-relative{position:relative}.gps-586463905518191122 .gp-mx-auto{margin-left:auto;margin-right:auto}.gps-586463905518191122 .gp-mb-0{margin-bottom:0}.gps-586463905518191122 .gp-inline-block{display:inline-block}.gps-586463905518191122 .gp-flex{display:flex}.gps-586463905518191122 .gp-inline-flex{display:inline-flex}.gps-586463905518191122 .gp-grid{display:grid}.gps-586463905518191122 .gp-contents{display:contents}.gps-586463905518191122 .\!gp-hidden{display:none!important}.gps-586463905518191122 .gp-hidden{display:none}.gps-586463905518191122 .gp-h-auto{height:auto}.gps-586463905518191122 .gp-h-full{height:100%}.gps-586463905518191122 .gp-min-h-0{min-height:0}.gps-586463905518191122 .gp-w-full{width:100%}.gps-586463905518191122 .gp-max-w-full{max-width:100%}.gps-586463905518191122 .gp-flex-none{flex:none}.gps-586463905518191122 .-gp-rotate-90{--tw-rotate:-90deg}.gps-586463905518191122 .-gp-rotate-90,.gps-586463905518191122 .gp-rotate-180{transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.gps-586463905518191122 .gp-rotate-180{--tw-rotate:180deg}.gps-586463905518191122 .gp-rotate-90{--tw-rotate:90deg;transform:translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.gps-586463905518191122 .gp-cursor-pointer{cursor:pointer}.gps-586463905518191122 .gp-grid-rows-\[0fr\]{grid-template-rows:0fr}.gps-586463905518191122 .gp-grid-rows-\[1fr\]{grid-template-rows:1fr}.gps-586463905518191122 .gp-flex-col{flex-direction:column}.gps-586463905518191122 .gp-items-center{align-items:center}.gps-586463905518191122 .gp-justify-center{justify-content:center}.gps-586463905518191122 .gp-gap-\[16px\]{gap:16px}.gps-586463905518191122 .gp-overflow-hidden{overflow:hidden}.gps-586463905518191122 .gp-overflow-clip{overflow:clip}.gps-586463905518191122 .gp-break-all{word-break:break-all}.gps-586463905518191122 .gp-transition-all{transition-duration:.15s;transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1)}.gps-586463905518191122 .gp-transition-colors{transition-duration:.15s;transition-property:color,background-color,border-color,text-decoration-color,fill,stroke;transition-timing-function:cubic-bezier(.4,0,.2,1)}.gps-586463905518191122 .gp-duration-200{transition-duration:.2s}.gps-586463905518191122 .gp-duration-500{transition-duration:.5s}.gps-586463905518191122 .gp-ease-in-out{transition-timing-function:cubic-bezier(.4,0,.2,1)}@media (hover:hover) and (pointer:fine){.gps-586463905518191122 .gp-group:hover .group-hover\:\[color\:var\(--icon-expand-hover-color\)\]{color:var(--icon-expand-hover-color)}.gps-586463905518191122 .gp-group:hover .group-hover\:\[color\:var\(--text-hover-color\)\!important\]{color:var(--text-hover-color)!important}}@media (max-width:1024px){.gps-586463905518191122 .tablet\:\!gp-hidden{display:none!important}.gps-586463905518191122 .tablet\:gp-hidden{display:none}.gps-586463905518191122 .tablet\:gp-h-auto{height:auto}.gps-586463905518191122 .tablet\:gp-flex-none{flex:none}}@media (max-width:767px){.gps-586463905518191122 .mobile\:\!gp-hidden{display:none!important}.gps-586463905518191122 .mobile\:gp-hidden{display:none}.gps-586463905518191122 .mobile\:gp-h-auto{height:auto}.gps-586463905518191122 .mobile\:gp-flex-none{flex:none}}.gps-586463905518191122 .\[\&\>svg\]\:\!gp-h-\[var\(--height-iconCollapseSize\)\]>svg{height:var(--height-iconCollapseSize)!important}.gps-586463905518191122 .\[\&\>svg\]\:\!gp-w-full>svg{width:100%!important}.gps-586463905518191122 .\[\&_\*\]\:gp-max-w-full *{max-width:100%}</style>
+    
+    
+    
+
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+
+    
+        <section
+          class="gp-mx-auto gp-max-w-full [&_*]:gp-max-w-full {% if section.settings.section_preload == "false" %}gps-lazy {% endif %}"
+          style="--w:100%;--w-tablet:calc(var(--g-ct-w, 100%) + 2 * var(--g-ct-p, 15px));--w-mobile:calc(var(--g-ct-w, 100%) + 2 * var(--g-ct-p, 15px));--pl:none;--pl-tablet:none;--pl-mobile:none;--pr:none;--pr-tablet:none;--pr-mobile:none"
+        >
+          
+    <gp-row gp-data='{"background":{"desktop":{"attachment":"scroll","color":"transparent","image":{"height":0,"src":"","width":0},"position":{"x":50,"y":50},"repeat":"no-repeat","size":"cover","type":"color"}},"uid":"gM3SXblkf0"}' data-id="gM3SXblkf0" id="gM3SXblkf0" data-same-height-subgrid-container class="gM3SXblkf0 gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]" style="--blockPadding:base;--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--pt:104px;--pl:17px;--pb:83px;--pr:17px;--pt-mobile:35px;--pl-mobile:17px;--pb-mobile:65px;--pr-mobile:17px;--pt-tablet:104px;--pl-tablet:17px;--pb-tablet:83px;--pr-tablet:17px;--cg:16px;--rg:0px;--gtc:minmax(0, 12fr);--w:100%;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;--pc:start">
+      
+
+      <div
+      data-same-height-display-contents
+      style="--jc:start"
+      class="gIekvhVHaq gp-relative gp-flex gp-flex-col"
+    >
+      
+    
+
+    
+
+    
+    <gp-row gp-data='{"uid":"g97piKVTug"}' data-id="g97piKVTug" id="g97piKVTug" data-same-height-subgrid-container class="g97piKVTug gp-relative gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full gp-grid-rows-[1fr]" style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--cg:30px;--cg-mobile:0px;--rg:16px;--rg-tablet:16px;--rg-mobile:0px;--gtc:minmax(0, auto) minmax(0, auto);--gtc-mobile:minmax(0, auto);--w:1365px;--h:auto;--pc:space-between;--pc-mobile:center">
+      
+
+      <div
+      data-same-height-display-contents
+      style="--jc:center;--o-mobile:1"
+      class="gAPxA_LnRA gp-relative gp-flex gp-flex-col"
+    >
+      
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id="gJgYjzbeym"
+        class="gJgYjzbeym"
+        style="--ta:left;--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--mb:20px;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--mb-tablet:20px;--pt-tablet:0px;--pl-tablet:0px;--pb-tablet:0px;--pr-tablet:0px;--mb-mobile:34px;--pt-mobile:0px;--pl-mobile:0px;--pb-mobile:0px;--pr-mobile:0px;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1759093712962"
+      >
+      <div class="gp-flex" style="--jc:left">
+        <h2
+          data-gp-text
+          class=" gp-text-instant gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--tdt:auto;--b:none;--bc:#121212;--bw:1px 1px 1px 1px;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--shadow:none;--ts:none;--ta:left;--ta-tablet:left;--ta-mobile:center;--fs:normal;--ff:var(--g-font-Century-Old-Style-Std, 'Century Old Style Std'), var(--g-font-heading, heading);--weight:400;--ls:0px;--size:145px;--size-tablet:145px;--size-mobile:85px;--lh:110%;--lh-tablet:110%;--lh-mobile:110%;--c:#421B1B;--tt:uppercase;word-break:break-word;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.ggJgYjzbeym_text | replace: '$locationOrigin', locationOrigin }}
+        </h2>
+      </div>
+    </div>
+    <div gp-el-wrapper style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px" class="gpZcK2RmVy ">
+      
+    <gp-accordion data-id="gpZcK2RmVy" class="gp-flex gp-flex-col gp-w-full" style="--gg:0px;--gg-mobile:0px;border-radius:inherit"
+      gp-data='{"uid":"gpZcK2RmVy","setting":{"iconSvg":"<svg width=\"17\" height=\"16\" viewBox=\"0 0 17 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                  <path d=\"M5.64645 2.64645C5.84171 2.45118 6.15829 2.45118 6.35355 2.64645L11.3536 7.64645C11.5488 7.84171 11.5488 8.15829 11.3536 8.35355L6.35355 13.3536C6.15829 13.5488 5.84171 13.5488 5.64645 13.3536C5.45118 13.1583 5.45118 12.8417 5.64645 12.6464L10.2929 8L5.64645 3.35355C5.45118 3.15829 5.45118 2.84171 5.64645 2.64645Z\" fill=\"currentColor\"/>\n                  </svg>","isIconPlus":false,"activeKey":"1","expanded":false,"expandItem":false,"iconPosition":"right","iconGlobalSize":{"desktop":{"gap":"8px"}},"iconCollapse":"<svg height=\"20\" width=\"20\" data-name=\"plus-bold\" xmlns=\"http://www.w3.org/2000/svg\"  viewBox=\"0 0 256 256\" fill=\"currentColor\" data-id=\"508817587901825384\">\n              <path fill=\"currentColor\" strokeLinecap=\"round\" strokeLinejoin=\"round\" fill=\"currentColor\" d=\"M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z\" /></svg>","iconExpand":"<svg height=\"20\" width=\"20\" data-name=\"minus-bold\" xmlns=\"http://www.w3.org/2000/svg\"  viewBox=\"0 0 256 256\" fill=\"currentColor\" data-id=\"508817584339812712\">\n              <path fill=\"currentColor\" strokeLinecap=\"round\" strokeLinejoin=\"round\" fill=\"currentColor\" d=\"M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128Z\" /></svg>","iconCollapseSize":"21","layoutHeader":"text-only","expandedMode":"single","configIconSize":16,"parentUid":"gpZcK2RmVy","childListNumber":[],"chidlrenUid":["gE_eP7A5tC","ytZrkuYf_i","qQRPRyKvmJ","yPR5ws7_sg","HjFGl4Ruul","C8svVFVMko","zShGZy5vdW","OuGIv6C2wQ","UpQ-LAfQ53"]},"styles":{"bgColor":{},"color":{"normal":"#432D2D"},"headerBorder":{},"textColor":{"normal":"#432D2D"},"iconColor":{"normal":"text-1"},"contentSizePadding":{"desktop":{"gap":"0px","padding":{"bottom":"16px","left":"3px","link":false,"right":"8px","top":"0px","type":"medium"}},"mobile":{"gap":"0px","padding":{"bottom":"16px","left":"0px","link":false,"right":"0px","top":"0px","type":"medium"}}},"headerContentPadding":{"desktop":{"padding":{"bottom":"16px","left":"3px","link":false,"right":"8px","top":"19px","type":"medium"}},"mobile":{"padding":{"bottom":"13px","left":"0px","link":false,"right":"0px","top":"16px","type":"medium"}}},"widthHeightSize":{"desktop":{"height":"auto","width":"556px"}}}}'
+        >
+        <div class=" gp-hidden gp-rotate-90 -gp-rotate-90 gp-rotate-180"></div>
+      
+          <div class="gp-flex" style="--jc:left">
+            
+  <div class="gp-overflow-clip gp-group" style="--text-hover-color:#432D2D;--icon-expand-hover-color:#432D2D;--icon-expand-active-color:#432D2D;--icon-active-color:var(--g-c-text-1, text-1);--icon-hover-color:var(--g-c-text-1, text-1);--w:556px;--w-tablet:556px;--w-mobile:556px;--bs:solid;--bw:0px 0px 1px 0px;--bc:#432D2D;--bg-mobile:[object Object]">
+    <div data-index="0" class="gpZcK2RmVy gp-overflow-hidden gp-child-item-gpZcK2RmVy gp-accordion-item">
+      <div aria-hidden uid="gE_eP7A5tC" id="gE_eP7A5tC" data-index="0"
+        class="gp-flex gp-accordion-item_header gp-cursor-pointer gp-items-center gp-gap-[16px] gpZcK2RmVy gp-accordion-item-gpZcK2RmVy-0" style="--pl:3px;--pr:8px;--pt:19px;--pb:16px;--pl-mobile:0px;--pr-mobile:0px;--pt-mobile:16px;--pb-mobile:13px;--h:auto;--h-tablet:auto;--h-mobile:auto;--fd:row-reverse;--jc:space-between">
+        
+          <div class="gp-inline-flex">
+            <span style="--c:#432D2D;width:21px;height:21px"
+            data-index="0"
+            class="group-hover:[color:var(--icon-expand-hover-color)] gp-collapsible-icon gp-accordion-item_icon gp-inline-flex gp-items-center gp-justify-center gp-overflow-hidden gp-transition-all gp-duration-200 [&>svg]:!gp-h-[var(--height-iconCollapseSize)] [&>svg]:!gp-w-full">
+              <svg height="20" width="20" data-name="plus-bold" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 256 256" fill="currentColor" data-id="508817587901825384">
+              <path fill="currentColor" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z" /></svg>
+            </span>
+          </div>
+          
+        <div class="gp-flex gp-w-full gp-items-center gp-break-all" style="--gg:8px;--jc:left">
+          
+          
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id
+        
+        style="--c:#432D2D;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1759093712964"
+      >
+      <div  >
+        <div
+          data-gp-text
+          class="gp-overflow-hidden gp-accordion-text-content group-hover:[color:var(--text-hover-color)!important]  gp-text-instant"
+          style="--w:100%;--tdt:auto;--ts:none;--fs:normal;--ff:var(--g-font-Quarion, 'Quarion'), var(--g-font-body, body);--weight:500;--ls:0px;--size:20px;--size-tablet:20px;--size-mobile:17px;--lh:110%;--lh-tablet:110%;--lh-mobile:110%;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.ggpZcK2RmVy_childItem_0 }}
+        </div>
+      </div>
+    </div>
+    
+          
+        </div>
+      </div>
+      <div data-index="0" data-show="false" class="gp-accordion-item_body gp-transition-all gp-grid gp-duration-500 gp-overflow-hidden gp-grid-rows-[0fr]" style="grid-template-rows:0fr;grid-template-columns:minmax(auto, 100%)">
+        <div data-index="0" class="gp-accordion-item_body-inner gp-transition-all gp-duration-500 gp-min-h-0" style="--pl:3px;--pr:8px;--pl-mobile:0px;--pr-mobile:0px">
+          <div
+      data-same-height-display-contents
+      
+      class="gt5Xb65Anh gp-relative gp-flex gp-flex-col"
+    >
+      
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id="gXgjMY9bml"
+        class="gXgjMY9bml"
+        style="--ta:left;--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1759093712965"
+      >
+      <div class="gp-flex" style="--jc:left">
+        <div
+          data-gp-text
+          class=" gp-text-instant gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--tdt:auto;--b:none;--bc:#121212;--bw:1px 1px 1px 1px;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--shadow:none;--ts:none;--ta:left;--ta-mobile:left;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--fs:normal;--ff:var(--g-font-Quarion, 'Quarion'), var(--g-font-body, body);--weight:400;--ls:0px;--size:18px;--size-tablet:22px;--size-mobile:15px;--lh:120%;--lh-tablet:180%;--lh-mobile:120%;--c:#432D2D;--tt:none;word-break:break-word;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.ggXgjMY9bml_text | replace: '$locationOrigin', locationOrigin }}
+        </div>
+      </div>
+    </div>
+    
+    </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+          </div>
+            
+          <div class="gp-flex" style="--jc:left">
+            
+  <div class="gp-overflow-clip gp-group" style="--text-hover-color:#432D2D;--icon-expand-hover-color:#432D2D;--icon-expand-active-color:#432D2D;--icon-active-color:var(--g-c-text-1, text-1);--icon-hover-color:var(--g-c-text-1, text-1);--w:556px;--w-tablet:556px;--w-mobile:556px;--bs:solid;--bw:0px 0px 1px 0px;--bc:#432D2D;--bg-mobile:[object Object]">
+    <div data-index="1" class="gpZcK2RmVy gp-overflow-hidden gp-child-item-gpZcK2RmVy gp-accordion-item">
+      <div aria-hidden uid="ytZrkuYf_i" id="ytZrkuYf_i" data-index="1"
+        class="gp-flex gp-accordion-item_header gp-cursor-pointer gp-items-center gp-gap-[16px] gpZcK2RmVy gp-accordion-item-gpZcK2RmVy-1" style="--pl:3px;--pr:8px;--pt:19px;--pb:16px;--pl-mobile:0px;--pr-mobile:0px;--pt-mobile:16px;--pb-mobile:13px;--h:auto;--h-tablet:auto;--h-mobile:auto;--fd:row-reverse;--jc:space-between">
+        
+          <div class="gp-inline-flex">
+            <span style="--c:#432D2D;width:21px;height:21px"
+            data-index="1"
+            class="group-hover:[color:var(--icon-expand-hover-color)] gp-collapsible-icon gp-accordion-item_icon gp-inline-flex gp-items-center gp-justify-center gp-overflow-hidden gp-transition-all gp-duration-200 [&>svg]:!gp-h-[var(--height-iconCollapseSize)] [&>svg]:!gp-w-full">
+              <svg height="20" width="20" data-name="plus-bold" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 256 256" fill="currentColor" data-id="508817587901825384">
+              <path fill="currentColor" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z" /></svg>
+            </span>
+          </div>
+          
+        <div class="gp-flex gp-w-full gp-items-center gp-break-all" style="--gg:8px;--jc:left">
+          
+          
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id
+        
+        style="--c:#432D2D;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1759093712966"
+      >
+      <div  >
+        <div
+          data-gp-text
+          class="gp-overflow-hidden gp-accordion-text-content group-hover:[color:var(--text-hover-color)!important]  gp-text-instant"
+          style="--w:100%;--tdt:auto;--ts:none;--fs:normal;--ff:var(--g-font-Quarion, 'Quarion'), var(--g-font-body, body);--weight:500;--ls:0px;--size:20px;--size-tablet:20px;--size-mobile:17px;--lh:110%;--lh-tablet:110%;--lh-mobile:110%;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.ggpZcK2RmVy_childItem_1 }}
+        </div>
+      </div>
+    </div>
+    
+          
+        </div>
+      </div>
+      <div data-index="1" data-show="false" class="gp-accordion-item_body gp-transition-all gp-grid gp-duration-500 gp-overflow-hidden gp-grid-rows-[0fr]" style="grid-template-rows:0fr;grid-template-columns:minmax(auto, 100%)">
+        <div data-index="1" class="gp-accordion-item_body-inner gp-transition-all gp-duration-500 gp-min-h-0" style="--pl:3px;--pr:8px;--pl-mobile:0px;--pr-mobile:0px">
+          <div
+      data-same-height-display-contents
+      
+      class="PMagQJQpU9 gp-relative gp-flex gp-flex-col"
+    >
+      
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id="ZF0E2VXso3"
+        class="ZF0E2VXso3"
+        style="--ta:left;--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1759093712988"
+      >
+      <div class="gp-flex" style="--jc:left">
+        <div
+          data-gp-text
+          class=" gp-text-instant gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--tdt:auto;--b:none;--bc:#121212;--bw:1px 1px 1px 1px;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--shadow:none;--ts:none;--ta:left;--ta-mobile:left;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--fs:normal;--ff:var(--g-font-Quarion, 'Quarion'), var(--g-font-body, body);--weight:400;--ls:0px;--size:18px;--size-tablet:22px;--size-mobile:15px;--lh:120%;--lh-tablet:180%;--lh-mobile:120%;--c:#432D2D;--tt:none;word-break:break-word;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.gZF0E2VXso3_text | replace: '$locationOrigin', locationOrigin }}
+        </div>
+      </div>
+    </div>
+    
+    </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+          </div>
+            
+          <div class="gp-flex" style="--jc:left">
+            
+  <div class="gp-overflow-clip gp-group" style="--text-hover-color:#432D2D;--icon-expand-hover-color:#432D2D;--icon-expand-active-color:#432D2D;--icon-active-color:var(--g-c-text-1, text-1);--icon-hover-color:var(--g-c-text-1, text-1);--w:556px;--w-tablet:556px;--w-mobile:556px;--bs:solid;--bw:0px 0px 1px 0px;--bc:#432D2D;--bg-mobile:[object Object]">
+    <div data-index="2" class="gpZcK2RmVy gp-overflow-hidden gp-child-item-gpZcK2RmVy gp-accordion-item">
+      <div aria-hidden uid="qQRPRyKvmJ" id="qQRPRyKvmJ" data-index="2"
+        class="gp-flex gp-accordion-item_header gp-cursor-pointer gp-items-center gp-gap-[16px] gpZcK2RmVy gp-accordion-item-gpZcK2RmVy-2" style="--pl:3px;--pr:8px;--pt:19px;--pb:16px;--pl-mobile:0px;--pr-mobile:0px;--pt-mobile:16px;--pb-mobile:13px;--h:auto;--h-tablet:auto;--h-mobile:auto;--fd:row-reverse;--jc:space-between">
+        
+          <div class="gp-inline-flex">
+            <span style="--c:#432D2D;width:21px;height:21px"
+            data-index="2"
+            class="group-hover:[color:var(--icon-expand-hover-color)] gp-collapsible-icon gp-accordion-item_icon gp-inline-flex gp-items-center gp-justify-center gp-overflow-hidden gp-transition-all gp-duration-200 [&>svg]:!gp-h-[var(--height-iconCollapseSize)] [&>svg]:!gp-w-full">
+              <svg height="20" width="20" data-name="plus-bold" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 256 256" fill="currentColor" data-id="508817587901825384">
+              <path fill="currentColor" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z" /></svg>
+            </span>
+          </div>
+          
+        <div class="gp-flex gp-w-full gp-items-center gp-break-all" style="--gg:8px;--jc:left">
+          
+          
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id
+        
+        style="--c:#432D2D;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1759093712989"
+      >
+      <div  >
+        <div
+          data-gp-text
+          class="gp-overflow-hidden gp-accordion-text-content group-hover:[color:var(--text-hover-color)!important]  gp-text-instant"
+          style="--w:100%;--tdt:auto;--ts:none;--fs:normal;--ff:var(--g-font-Quarion, 'Quarion'), var(--g-font-body, body);--weight:500;--ls:0px;--size:20px;--size-tablet:20px;--size-mobile:17px;--lh:110%;--lh-tablet:110%;--lh-mobile:110%;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.ggpZcK2RmVy_childItem_2 }}
+        </div>
+      </div>
+    </div>
+    
+          
+        </div>
+      </div>
+      <div data-index="2" data-show="false" class="gp-accordion-item_body gp-transition-all gp-grid gp-duration-500 gp-overflow-hidden gp-grid-rows-[0fr]" style="grid-template-rows:0fr;grid-template-columns:minmax(auto, 100%)">
+        <div data-index="2" class="gp-accordion-item_body-inner gp-transition-all gp-duration-500 gp-min-h-0" style="--pl:3px;--pr:8px;--pl-mobile:0px;--pr-mobile:0px">
+          <div
+      data-same-height-display-contents
+      
+      class="8y4cTgMi2H gp-relative gp-flex gp-flex-col"
+    >
+      
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id="2_AkasdDvQ"
+        class="2_AkasdDvQ"
+        style="--ta:left;--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1759093712991"
+      >
+      <div class="gp-flex" style="--jc:left">
+        <div
+          data-gp-text
+          class=" gp-text-instant gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--tdt:auto;--b:none;--bc:#121212;--bw:1px 1px 1px 1px;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--shadow:none;--ts:none;--ta:left;--ta-mobile:left;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--fs:normal;--ff:var(--g-font-Quarion, 'Quarion'), var(--g-font-body, body);--weight:400;--ls:0px;--size:18px;--size-tablet:22px;--size-mobile:15px;--lh:120%;--lh-tablet:180%;--lh-mobile:120%;--c:#432D2D;--tt:none;word-break:break-word;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.g2_AkasdDvQ_text | replace: '$locationOrigin', locationOrigin }}
+        </div>
+      </div>
+    </div>
+    
+    </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+          </div>
+            
+          <div class="gp-flex" style="--jc:left">
+            
+  <div class="gp-overflow-clip gp-group" style="--text-hover-color:#432D2D;--icon-expand-hover-color:#432D2D;--icon-expand-active-color:#432D2D;--icon-active-color:var(--g-c-text-1, text-1);--icon-hover-color:var(--g-c-text-1, text-1);--w:556px;--w-tablet:556px;--w-mobile:556px;--bs:solid;--bw:0px 0px 1px 0px;--bc:#432D2D;--bg-mobile:[object Object]">
+    <div data-index="3" class="gpZcK2RmVy gp-overflow-hidden gp-child-item-gpZcK2RmVy gp-accordion-item">
+      <div aria-hidden uid="yPR5ws7_sg" id="yPR5ws7_sg" data-index="3"
+        class="gp-flex gp-accordion-item_header gp-cursor-pointer gp-items-center gp-gap-[16px] gpZcK2RmVy gp-accordion-item-gpZcK2RmVy-3" style="--pl:3px;--pr:8px;--pt:19px;--pb:16px;--pl-mobile:0px;--pr-mobile:0px;--pt-mobile:16px;--pb-mobile:13px;--h:auto;--h-tablet:auto;--h-mobile:auto;--fd:row-reverse;--jc:space-between">
+        
+          <div class="gp-inline-flex">
+            <span style="--c:#432D2D;width:21px;height:21px"
+            data-index="3"
+            class="group-hover:[color:var(--icon-expand-hover-color)] gp-collapsible-icon gp-accordion-item_icon gp-inline-flex gp-items-center gp-justify-center gp-overflow-hidden gp-transition-all gp-duration-200 [&>svg]:!gp-h-[var(--height-iconCollapseSize)] [&>svg]:!gp-w-full">
+              <svg height="20" width="20" data-name="plus-bold" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 256 256" fill="currentColor" data-id="508817587901825384">
+              <path fill="currentColor" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z" /></svg>
+            </span>
+          </div>
+          
+        <div class="gp-flex gp-w-full gp-items-center gp-break-all" style="--gg:8px;--jc:left">
+          
+          
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id
+        
+        style="--c:#432D2D;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1759093712992"
+      >
+      <div  >
+        <div
+          data-gp-text
+          class="gp-overflow-hidden gp-accordion-text-content group-hover:[color:var(--text-hover-color)!important]  gp-text-instant"
+          style="--w:100%;--tdt:auto;--ts:none;--fs:normal;--ff:var(--g-font-Quarion, 'Quarion'), var(--g-font-body, body);--weight:500;--ls:0px;--size:20px;--size-tablet:20px;--size-mobile:17px;--lh:110%;--lh-tablet:110%;--lh-mobile:110%;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.ggpZcK2RmVy_childItem_3 }}
+        </div>
+      </div>
+    </div>
+    
+          
+        </div>
+      </div>
+      <div data-index="3" data-show="false" class="gp-accordion-item_body gp-transition-all gp-grid gp-duration-500 gp-overflow-hidden gp-grid-rows-[0fr]" style="grid-template-rows:0fr;grid-template-columns:minmax(auto, 100%)">
+        <div data-index="3" class="gp-accordion-item_body-inner gp-transition-all gp-duration-500 gp-min-h-0" style="--pl:3px;--pr:8px;--pl-mobile:0px;--pr-mobile:0px">
+          <div
+      data-same-height-display-contents
+      
+      class="n17dmSMh5l gp-relative gp-flex gp-flex-col"
+    >
+      
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id="eFRzHzueVr"
+        class="eFRzHzueVr"
+        style="--ta:left;--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1759093712993"
+      >
+      <div class="gp-flex" style="--jc:left">
+        <div
+          data-gp-text
+          class=" gp-text-instant gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--tdt:auto;--b:none;--bc:#121212;--bw:1px 1px 1px 1px;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--shadow:none;--ts:none;--ta:left;--ta-mobile:left;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--fs:normal;--ff:var(--g-font-Quarion, 'Quarion'), var(--g-font-body, body);--weight:400;--ls:0px;--size:18px;--size-tablet:22px;--size-mobile:15px;--lh:120%;--lh-tablet:180%;--lh-mobile:120%;--c:#432D2D;--tt:none;word-break:break-word;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.geFRzHzueVr_text | replace: '$locationOrigin', locationOrigin }}
+        </div>
+      </div>
+    </div>
+    
+    </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+          </div>
+            
+          <div class="gp-flex" style="--jc:left">
+            
+  <div class="gp-overflow-clip gp-group" style="--text-hover-color:#432D2D;--icon-expand-hover-color:#432D2D;--icon-expand-active-color:#432D2D;--icon-active-color:var(--g-c-text-1, text-1);--icon-hover-color:var(--g-c-text-1, text-1);--w:556px;--w-tablet:556px;--w-mobile:556px;--bs:solid;--bw:0px 0px 1px 0px;--bc:#432D2D;--bg-mobile:[object Object]">
+    <div data-index="4" class="gpZcK2RmVy gp-overflow-hidden gp-child-item-gpZcK2RmVy gp-accordion-item">
+      <div aria-hidden uid="HjFGl4Ruul" id="HjFGl4Ruul" data-index="4"
+        class="gp-flex gp-accordion-item_header gp-cursor-pointer gp-items-center gp-gap-[16px] gpZcK2RmVy gp-accordion-item-gpZcK2RmVy-4" style="--pl:3px;--pr:8px;--pt:19px;--pb:16px;--pl-mobile:0px;--pr-mobile:0px;--pt-mobile:16px;--pb-mobile:13px;--h:auto;--h-tablet:auto;--h-mobile:auto;--fd:row-reverse;--jc:space-between">
+        
+          <div class="gp-inline-flex">
+            <span style="--c:#432D2D;width:21px;height:21px"
+            data-index="4"
+            class="group-hover:[color:var(--icon-expand-hover-color)] gp-collapsible-icon gp-accordion-item_icon gp-inline-flex gp-items-center gp-justify-center gp-overflow-hidden gp-transition-all gp-duration-200 [&>svg]:!gp-h-[var(--height-iconCollapseSize)] [&>svg]:!gp-w-full">
+              <svg height="20" width="20" data-name="plus-bold" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 256 256" fill="currentColor" data-id="508817587901825384">
+              <path fill="currentColor" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z" /></svg>
+            </span>
+          </div>
+          
+        <div class="gp-flex gp-w-full gp-items-center gp-break-all" style="--gg:8px;--jc:left">
+          
+          
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id
+        
+        style="--c:#432D2D;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1759093712995"
+      >
+      <div  >
+        <div
+          data-gp-text
+          class="gp-overflow-hidden gp-accordion-text-content group-hover:[color:var(--text-hover-color)!important]  gp-text-instant"
+          style="--w:100%;--tdt:auto;--ts:none;--fs:normal;--ff:var(--g-font-Quarion, 'Quarion'), var(--g-font-body, body);--weight:500;--ls:0px;--size:20px;--size-tablet:20px;--size-mobile:17px;--lh:110%;--lh-tablet:110%;--lh-mobile:110%;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.ggpZcK2RmVy_childItem_4 }}
+        </div>
+      </div>
+    </div>
+    
+          
+        </div>
+      </div>
+      <div data-index="4" data-show="false" class="gp-accordion-item_body gp-transition-all gp-grid gp-duration-500 gp-overflow-hidden gp-grid-rows-[0fr]" style="grid-template-rows:0fr;grid-template-columns:minmax(auto, 100%)">
+        <div data-index="4" class="gp-accordion-item_body-inner gp-transition-all gp-duration-500 gp-min-h-0" style="--pl:3px;--pr:8px;--pl-mobile:0px;--pr-mobile:0px">
+          <div
+      data-same-height-display-contents
+      
+      class="y9vNer7eB1 gp-relative gp-flex gp-flex-col"
+    >
+      
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id="fVZ5x2UjuO"
+        class="fVZ5x2UjuO"
+        style="--ta:left;--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1759093712996"
+      >
+      <div class="gp-flex" style="--jc:left">
+        <div
+          data-gp-text
+          class=" gp-text-instant gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--tdt:auto;--b:none;--bc:#121212;--bw:1px 1px 1px 1px;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--shadow:none;--ts:none;--ta:left;--ta-mobile:left;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--fs:normal;--ff:var(--g-font-Quarion, 'Quarion'), var(--g-font-body, body);--weight:400;--ls:0px;--size:18px;--size-tablet:22px;--size-mobile:15px;--lh:120%;--lh-tablet:180%;--lh-mobile:120%;--c:#432D2D;--tt:none;word-break:break-word;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.gfVZ5x2UjuO_text | replace: '$locationOrigin', locationOrigin }}
+        </div>
+      </div>
+    </div>
+    
+    </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+          </div>
+            
+          <div class="gp-flex" style="--jc:left">
+            
+  <div class="gp-overflow-clip gp-group" style="--text-hover-color:#432D2D;--icon-expand-hover-color:#432D2D;--icon-expand-active-color:#432D2D;--icon-active-color:var(--g-c-text-1, text-1);--icon-hover-color:var(--g-c-text-1, text-1);--w:556px;--w-tablet:556px;--w-mobile:556px;--bs:solid;--bw:0px 0px 1px 0px;--bc:#432D2D;--bg-mobile:[object Object]">
+    <div data-index="5" class="gpZcK2RmVy gp-overflow-hidden gp-child-item-gpZcK2RmVy gp-accordion-item">
+      <div aria-hidden uid="C8svVFVMko" id="C8svVFVMko" data-index="5"
+        class="gp-flex gp-accordion-item_header gp-cursor-pointer gp-items-center gp-gap-[16px] gpZcK2RmVy gp-accordion-item-gpZcK2RmVy-5" style="--pl:3px;--pr:8px;--pt:19px;--pb:16px;--pl-mobile:0px;--pr-mobile:0px;--pt-mobile:16px;--pb-mobile:13px;--h:auto;--h-tablet:auto;--h-mobile:auto;--fd:row-reverse;--jc:space-between">
+        
+          <div class="gp-inline-flex">
+            <span style="--c:#432D2D;width:21px;height:21px"
+            data-index="5"
+            class="group-hover:[color:var(--icon-expand-hover-color)] gp-collapsible-icon gp-accordion-item_icon gp-inline-flex gp-items-center gp-justify-center gp-overflow-hidden gp-transition-all gp-duration-200 [&>svg]:!gp-h-[var(--height-iconCollapseSize)] [&>svg]:!gp-w-full">
+              <svg height="20" width="20" data-name="plus-bold" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 256 256" fill="currentColor" data-id="508817587901825384">
+              <path fill="currentColor" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z" /></svg>
+            </span>
+          </div>
+          
+        <div class="gp-flex gp-w-full gp-items-center gp-break-all" style="--gg:8px;--jc:left">
+          
+          
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id
+        
+        style="--c:#432D2D;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1759093712997"
+      >
+      <div  >
+        <div
+          data-gp-text
+          class="gp-overflow-hidden gp-accordion-text-content group-hover:[color:var(--text-hover-color)!important]  gp-text-instant"
+          style="--w:100%;--tdt:auto;--ts:none;--fs:normal;--ff:var(--g-font-Quarion, 'Quarion'), var(--g-font-body, body);--weight:500;--ls:0px;--size:20px;--size-tablet:20px;--size-mobile:17px;--lh:110%;--lh-tablet:110%;--lh-mobile:110%;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.ggpZcK2RmVy_childItem_5 }}
+        </div>
+      </div>
+    </div>
+    
+          
+        </div>
+      </div>
+      <div data-index="5" data-show="false" class="gp-accordion-item_body gp-transition-all gp-grid gp-duration-500 gp-overflow-hidden gp-grid-rows-[0fr]" style="grid-template-rows:0fr;grid-template-columns:minmax(auto, 100%)">
+        <div data-index="5" class="gp-accordion-item_body-inner gp-transition-all gp-duration-500 gp-min-h-0" style="--pl:3px;--pr:8px;--pl-mobile:0px;--pr-mobile:0px">
+          <div
+      data-same-height-display-contents
+      
+      class="hNd4VLRc9o gp-relative gp-flex gp-flex-col"
+    >
+      
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id="Qo0XUo0ER3"
+        class="Qo0XUo0ER3"
+        style="--ta:left;--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1759093712999"
+      >
+      <div class="gp-flex" style="--jc:left">
+        <div
+          data-gp-text
+          class=" gp-text-instant gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--tdt:auto;--b:none;--bc:#121212;--bw:1px 1px 1px 1px;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--shadow:none;--ts:none;--ta:left;--ta-mobile:left;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--fs:normal;--ff:var(--g-font-Quarion, 'Quarion'), var(--g-font-body, body);--weight:400;--ls:0px;--size:18px;--size-tablet:22px;--size-mobile:15px;--lh:120%;--lh-tablet:180%;--lh-mobile:120%;--c:#432D2D;--tt:none;word-break:break-word;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.gQo0XUo0ER3_text | replace: '$locationOrigin', locationOrigin }}
+        </div>
+      </div>
+    </div>
+    
+    </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+          </div>
+            
+          <div class="gp-flex" style="--jc:left">
+            
+  <div class="gp-overflow-clip gp-group" style="--text-hover-color:#432D2D;--icon-expand-hover-color:#432D2D;--icon-expand-active-color:#432D2D;--icon-active-color:var(--g-c-text-1, text-1);--icon-hover-color:var(--g-c-text-1, text-1);--w:556px;--w-tablet:556px;--w-mobile:556px;--bs:solid;--bw:0px 0px 1px 0px;--bc:#432D2D;--bg-mobile:[object Object]">
+    <div data-index="6" class="gpZcK2RmVy gp-overflow-hidden gp-child-item-gpZcK2RmVy gp-accordion-item">
+      <div aria-hidden uid="zShGZy5vdW" id="zShGZy5vdW" data-index="6"
+        class="gp-flex gp-accordion-item_header gp-cursor-pointer gp-items-center gp-gap-[16px] gpZcK2RmVy gp-accordion-item-gpZcK2RmVy-6" style="--pl:3px;--pr:8px;--pt:19px;--pb:16px;--pl-mobile:0px;--pr-mobile:0px;--pt-mobile:16px;--pb-mobile:13px;--h:auto;--h-tablet:auto;--h-mobile:auto;--fd:row-reverse;--jc:space-between">
+        
+          <div class="gp-inline-flex">
+            <span style="--c:#432D2D;width:21px;height:21px"
+            data-index="6"
+            class="group-hover:[color:var(--icon-expand-hover-color)] gp-collapsible-icon gp-accordion-item_icon gp-inline-flex gp-items-center gp-justify-center gp-overflow-hidden gp-transition-all gp-duration-200 [&>svg]:!gp-h-[var(--height-iconCollapseSize)] [&>svg]:!gp-w-full">
+              <svg height="20" width="20" data-name="plus-bold" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 256 256" fill="currentColor" data-id="508817587901825384">
+              <path fill="currentColor" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z" /></svg>
+            </span>
+          </div>
+          
+        <div class="gp-flex gp-w-full gp-items-center gp-break-all" style="--gg:8px;--jc:left">
+          
+          
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id
+        
+        style="--c:#432D2D;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1759093713000"
+      >
+      <div  >
+        <div
+          data-gp-text
+          class="gp-overflow-hidden gp-accordion-text-content group-hover:[color:var(--text-hover-color)!important]  gp-text-instant"
+          style="--w:100%;--tdt:auto;--ts:none;--fs:normal;--ff:var(--g-font-Quarion, 'Quarion'), var(--g-font-body, body);--weight:500;--ls:0px;--size:20px;--size-tablet:20px;--size-mobile:17px;--lh:110%;--lh-tablet:110%;--lh-mobile:110%;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.ggpZcK2RmVy_childItem_6 }}
+        </div>
+      </div>
+    </div>
+    
+          
+        </div>
+      </div>
+      <div data-index="6" data-show="false" class="gp-accordion-item_body gp-transition-all gp-grid gp-duration-500 gp-overflow-hidden gp-grid-rows-[0fr]" style="grid-template-rows:0fr;grid-template-columns:minmax(auto, 100%)">
+        <div data-index="6" class="gp-accordion-item_body-inner gp-transition-all gp-duration-500 gp-min-h-0" style="--pl:3px;--pr:8px;--pl-mobile:0px;--pr-mobile:0px">
+          <div
+      data-same-height-display-contents
+      
+      class="nTpYAV-Y7n gp-relative gp-flex gp-flex-col"
+    >
+      
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id="4z1RnMXRl0"
+        class="4z1RnMXRl0"
+        style="--ta:left;--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1759093713001"
+      >
+      <div class="gp-flex" style="--jc:left">
+        <div
+          data-gp-text
+          class=" gp-text-instant gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--tdt:auto;--b:none;--bc:#121212;--bw:1px 1px 1px 1px;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--shadow:none;--ts:none;--ta:left;--ta-mobile:left;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--fs:normal;--ff:var(--g-font-Quarion, 'Quarion'), var(--g-font-body, body);--weight:400;--ls:0px;--size:18px;--size-tablet:22px;--size-mobile:15px;--lh:120%;--lh-tablet:180%;--lh-mobile:120%;--c:#432D2D;--tt:none;word-break:break-word;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.g4z1RnMXRl0_text | replace: '$locationOrigin', locationOrigin }}
+        </div>
+      </div>
+    </div>
+    
+    </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+          </div>
+            
+          <div class="gp-flex" style="--jc:left">
+            
+  <div class="gp-overflow-clip gp-group" style="--text-hover-color:#432D2D;--icon-expand-hover-color:#432D2D;--icon-expand-active-color:#432D2D;--icon-active-color:var(--g-c-text-1, text-1);--icon-hover-color:var(--g-c-text-1, text-1);--w:556px;--w-tablet:556px;--w-mobile:556px;--bs:solid;--bw:0px 0px 1px 0px;--bc:#432D2D;--bg-mobile:[object Object]">
+    <div data-index="7" class="gpZcK2RmVy gp-overflow-hidden gp-child-item-gpZcK2RmVy gp-accordion-item">
+      <div aria-hidden uid="OuGIv6C2wQ" id="OuGIv6C2wQ" data-index="7"
+        class="gp-flex gp-accordion-item_header gp-cursor-pointer gp-items-center gp-gap-[16px] gpZcK2RmVy gp-accordion-item-gpZcK2RmVy-7" style="--pl:3px;--pr:8px;--pt:19px;--pb:16px;--pl-mobile:0px;--pr-mobile:0px;--pt-mobile:16px;--pb-mobile:13px;--h:auto;--h-tablet:auto;--h-mobile:auto;--fd:row-reverse;--jc:space-between">
+        
+          <div class="gp-inline-flex">
+            <span style="--c:#432D2D;width:21px;height:21px"
+            data-index="7"
+            class="group-hover:[color:var(--icon-expand-hover-color)] gp-collapsible-icon gp-accordion-item_icon gp-inline-flex gp-items-center gp-justify-center gp-overflow-hidden gp-transition-all gp-duration-200 [&>svg]:!gp-h-[var(--height-iconCollapseSize)] [&>svg]:!gp-w-full">
+              <svg height="20" width="20" data-name="plus-bold" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 256 256" fill="currentColor" data-id="508817587901825384">
+              <path fill="currentColor" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z" /></svg>
+            </span>
+          </div>
+          
+        <div class="gp-flex gp-w-full gp-items-center gp-break-all" style="--gg:8px;--jc:left">
+          
+          
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id
+        
+        style="--c:#432D2D;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1759093713002"
+      >
+      <div  >
+        <div
+          data-gp-text
+          class="gp-overflow-hidden gp-accordion-text-content group-hover:[color:var(--text-hover-color)!important]  gp-text-instant"
+          style="--w:100%;--tdt:auto;--ts:none;--fs:normal;--ff:var(--g-font-Quarion, 'Quarion'), var(--g-font-body, body);--weight:500;--ls:0px;--size:20px;--size-tablet:20px;--size-mobile:17px;--lh:110%;--lh-tablet:110%;--lh-mobile:110%;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.ggpZcK2RmVy_childItem_7 }}
+        </div>
+      </div>
+    </div>
+    
+          
+        </div>
+      </div>
+      <div data-index="7" data-show="false" class="gp-accordion-item_body gp-transition-all gp-grid gp-duration-500 gp-overflow-hidden gp-grid-rows-[0fr]" style="grid-template-rows:0fr;grid-template-columns:minmax(auto, 100%)">
+        <div data-index="7" class="gp-accordion-item_body-inner gp-transition-all gp-duration-500 gp-min-h-0" style="--pl:3px;--pr:8px;--pl-mobile:0px;--pr-mobile:0px">
+          <div
+      data-same-height-display-contents
+      
+      class="pZbqCz2yFz gp-relative gp-flex gp-flex-col"
+    >
+      
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id="w7iSNn4PnV"
+        class="w7iSNn4PnV"
+        style="--ta:left;--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1759093713004"
+      >
+      <div class="gp-flex" style="--jc:left">
+        <div
+          data-gp-text
+          class=" gp-text-instant gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--tdt:auto;--b:none;--bc:#121212;--bw:1px 1px 1px 1px;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--shadow:none;--ts:none;--ta:left;--ta-mobile:left;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--fs:normal;--ff:var(--g-font-Quarion, 'Quarion'), var(--g-font-body, body);--weight:400;--ls:0px;--size:18px;--size-tablet:22px;--size-mobile:15px;--lh:120%;--lh-tablet:180%;--lh-mobile:120%;--c:#432D2D;--tt:none;word-break:break-word;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.gw7iSNn4PnV_text | replace: '$locationOrigin', locationOrigin }}
+        </div>
+      </div>
+    </div>
+    
+    </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+          </div>
+            
+          <div class="gp-flex" style="--jc:left">
+            
+  <div class="gp-overflow-clip gp-group" style="--text-hover-color:#432D2D;--icon-expand-hover-color:#432D2D;--icon-expand-active-color:#432D2D;--icon-active-color:var(--g-c-text-1, text-1);--icon-hover-color:var(--g-c-text-1, text-1);--w:556px;--w-tablet:556px;--w-mobile:556px;--bs:solid;--bw:0px 0px 1px 0px;--bc:#432D2D;--bg-mobile:[object Object]">
+    <div data-index="8" class="gpZcK2RmVy gp-overflow-hidden gp-child-item-gpZcK2RmVy gp-accordion-item">
+      <div aria-hidden uid="UpQ-LAfQ53" id="UpQ-LAfQ53" data-index="8"
+        class="gp-flex gp-accordion-item_header gp-cursor-pointer gp-items-center gp-gap-[16px] gpZcK2RmVy gp-accordion-item-gpZcK2RmVy-8" style="--pl:3px;--pr:8px;--pt:19px;--pb:16px;--pl-mobile:0px;--pr-mobile:0px;--pt-mobile:16px;--pb-mobile:13px;--h:auto;--h-tablet:auto;--h-mobile:auto;--fd:row-reverse;--jc:space-between">
+        
+          <div class="gp-inline-flex">
+            <span style="--c:#432D2D;width:21px;height:21px"
+            data-index="8"
+            class="group-hover:[color:var(--icon-expand-hover-color)] gp-collapsible-icon gp-accordion-item_icon gp-inline-flex gp-items-center gp-justify-center gp-overflow-hidden gp-transition-all gp-duration-200 [&>svg]:!gp-h-[var(--height-iconCollapseSize)] [&>svg]:!gp-w-full">
+              <svg height="20" width="20" data-name="plus-bold" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 256 256" fill="currentColor" data-id="508817587901825384">
+              <path fill="currentColor" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z" /></svg>
+            </span>
+          </div>
+          
+        <div class="gp-flex gp-w-full gp-items-center gp-break-all" style="--gg:8px;--jc:left">
+          
+          
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id
+        
+        style="--c:#432D2D;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1759093713005"
+      >
+      <div  >
+        <div
+          data-gp-text
+          class="gp-overflow-hidden gp-accordion-text-content group-hover:[color:var(--text-hover-color)!important]  gp-text-instant"
+          style="--w:100%;--tdt:auto;--ts:none;--fs:normal;--ff:var(--g-font-Quarion, 'Quarion'), var(--g-font-body, body);--weight:500;--ls:0px;--size:20px;--size-tablet:20px;--size-mobile:17px;--lh:110%;--lh-tablet:110%;--lh-mobile:110%;word-break:break-word;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.ggpZcK2RmVy_childItem_8 }}
+        </div>
+      </div>
+    </div>
+    
+          
+        </div>
+      </div>
+      <div data-index="8" data-show="false" class="gp-accordion-item_body gp-transition-all gp-grid gp-duration-500 gp-overflow-hidden gp-grid-rows-[0fr]" style="grid-template-rows:0fr;grid-template-columns:minmax(auto, 100%)">
+        <div data-index="8" class="gp-accordion-item_body-inner gp-transition-all gp-duration-500 gp-min-h-0" style="--pl:3px;--pr:8px;--pl-mobile:0px;--pr-mobile:0px">
+          <div
+      data-same-height-display-contents
+      
+      class="IX2csUuMIA gp-relative gp-flex gp-flex-col"
+    >
+      
+    {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+    <div data-id="aTcGufc4ad"
+        class="aTcGufc4ad"
+        style="--ta:left;--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--dynamic-source-color:#F4F4F4"
+        data-test-force-publish="1759093713006"
+      >
+      <div class="gp-flex" style="--jc:left">
+        <div
+          data-gp-text
+          class=" gp-text-instant gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--tdt:auto;--b:none;--bc:#121212;--bw:1px 1px 1px 1px;--bblr:0px;--bbrr:0px;--btlr:0px;--btrr:0px;--shadow:none;--ts:none;--ta:left;--ta-mobile:left;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--fs:normal;--ff:var(--g-font-Quarion, 'Quarion'), var(--g-font-body, body);--weight:400;--ls:0px;--size:18px;--size-tablet:22px;--size-mobile:15px;--lh:120%;--lh-tablet:180%;--lh-mobile:120%;--c:#432D2D;--tt:none;word-break:break-word;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll;overflow:hidden;--tdl:"
+        >
+          {{ section.settings.gaTcGufc4ad_text | replace: '$locationOrigin', locationOrigin }}
+        </div>
+      </div>
+    </div>
+    
+    </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+          </div>
+            
+    </gp-accordion>
+    
+    <script {% if section.settings.section_preload == "false" %}class="gps-link" delay {% else %}src{% endif %}="https://assets.gemcommerce.com/assets-v2/gp-accordion-v7-5.js?v={{ shop.metafields.GEMPAGES.ASSETS_VERSION }}" defer="defer"></script>
+    
+  
+      </div>
+    </div><div
+      data-same-height-display-contents
+      style="--jc:center;--o-mobile:0"
+      class="gE0pyttt1v gp-relative gp-flex gp-flex-col"
+    >
+      
+    <div
+      role="presentation"
+      data-id="gY6-Oe1xhx"
+      style="--bs:none;--bw:1px 1px 1px 1px;--bc:var(--g-c-line-3, line-3);--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--bblr:25px;--bbrr:25px;--btlr:25px;--btrr:25px;--bblr-mobile:11px;--bbrr-mobile:11px;--btlr-mobile:11px;--btrr-mobile:11px;--pt:0px;--pl:0px;--pb:0px;--pr:0px;--mb-mobile:83px;--pt-mobile:0px;--pl-mobile:0px;--pb-mobile:0px;--pr-mobile:0px;--pt-tablet:0px;--pl-tablet:0px;--pb-tablet:0px;--pr-tablet:0px;--ta:right"
+      class="gp-group/image gp-relative force-publish-1759093713009 gp-flex-none gp-h-auto mobile:gp-flex-none mobile:gp-h-auto tablet:gp-flex-none tablet:gp-h-auto gY6-Oe1xhx"
+    >
+      <div
+        
+        style="border-radius:inherit;--jc:right"
+        class="gp-h-full gp-w-full gp-flex pointer-events-auto"
+      >
+        
+    <picture style="border-radius:inherit" class="gp-contents">
+      
+      <source media="(max-width: 767px)" data-srcSet="{{ "gempages_510135694635565882-1a95e9d9-9983-4386-a30c-551bf92abb67.webp" | file_url }}" srcset="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTk0MSIgaGVpZ2h0PSIxOTQxIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPGRlZnM+CiAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZy0xOTQxLTE5NDEiPgogICAgICAgIDxzdG9wIHN0b3AtY29sb3I9InJnYmEoNTEsIDUxLCA1MSwgMCkiIG9mZnNldD0iMjAlIiAvPgogICAgICAgIDxzdG9wIHN0b3AtY29sb3I9InJnYmEoNTEsIDUxLCA1MSwgMCkiIG9mZnNldD0iNTAlIiAvPgogICAgICAgIDxzdG9wIHN0b3AtY29sb3I9InJnYmEoNTEsIDUxLCA1MSwgMCkiIG9mZnNldD0iNzAlIiAvPgogICAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPC9kZWZzPgogICAgPHJlY3Qgd2lkdGg9IjE5NDEiIGhlaWdodD0iMTk0MSIgZmlsbD0icmdiYSg1MSwgNTEsIDUxLCAwKSIgLz4KICAgIDxyZWN0IGlkPSJyIiB3aWR0aD0iMTk0MSIgaGVpZ2h0PSIxOTQxIiBmaWxsPSJ1cmwoI2ctMTk0MS0xOTQxKSIgLz4KICAgIDxhbmltYXRlIHhsaW5rOmhyZWY9IiNyIiBhdHRyaWJ1dGVOYW1lPSJ4IiBmcm9tPSItMTk0MSIgdG89IjE5NDEiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiAgLz4KICA8L3N2Zz4=" />
+      <source media="(max-width: 1024px)" data-srcSet="{{ "gempages_510135694635565882-1a95e9d9-9983-4386-a30c-551bf92abb67.webp" | file_url }}" srcset="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTk0MSIgaGVpZ2h0PSIxOTQxIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPGRlZnM+CiAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZy0xOTQxLTE5NDEiPgogICAgICAgIDxzdG9wIHN0b3AtY29sb3I9InJnYmEoNTEsIDUxLCA1MSwgMCkiIG9mZnNldD0iMjAlIiAvPgogICAgICAgIDxzdG9wIHN0b3AtY29sb3I9InJnYmEoNTEsIDUxLCA1MSwgMCkiIG9mZnNldD0iNTAlIiAvPgogICAgICAgIDxzdG9wIHN0b3AtY29sb3I9InJnYmEoNTEsIDUxLCA1MSwgMCkiIG9mZnNldD0iNzAlIiAvPgogICAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPC9kZWZzPgogICAgPHJlY3Qgd2lkdGg9IjE5NDEiIGhlaWdodD0iMTk0MSIgZmlsbD0icmdiYSg1MSwgNTEsIDUxLCAwKSIgLz4KICAgIDxyZWN0IGlkPSJyIiB3aWR0aD0iMTk0MSIgaGVpZ2h0PSIxOTQxIiBmaWxsPSJ1cmwoI2ctMTk0MS0xOTQxKSIgLz4KICAgIDxhbmltYXRlIHhsaW5rOmhyZWY9IiNyIiBhdHRyaWJ1dGVOYW1lPSJ4IiBmcm9tPSItMTk0MSIgdG89IjE5NDEiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiAgLz4KICA8L3N2Zz4=" />
+    
+      
+      <img
+        base-src="{{ "gempages_510135694635565882-1a95e9d9-9983-4386-a30c-551bf92abb67.webp" | file_url }}" quality-type="{&quot;desktop&quot;:&quot;high&quot;}" quality-percent="{&quot;desktop&quot;:100}"
+        src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTk0MSIgaGVpZ2h0PSIxOTQxIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPGRlZnM+CiAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZy0xOTQxLTE5NDEiPgogICAgICAgIDxzdG9wIHN0b3AtY29sb3I9InJnYmEoNTEsIDUxLCA1MSwgMCkiIG9mZnNldD0iMjAlIiAvPgogICAgICAgIDxzdG9wIHN0b3AtY29sb3I9InJnYmEoNTEsIDUxLCA1MSwgMCkiIG9mZnNldD0iNTAlIiAvPgogICAgICAgIDxzdG9wIHN0b3AtY29sb3I9InJnYmEoNTEsIDUxLCA1MSwgMCkiIG9mZnNldD0iNzAlIiAvPgogICAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPC9kZWZzPgogICAgPHJlY3Qgd2lkdGg9IjE5NDEiIGhlaWdodD0iMTk0MSIgZmlsbD0icmdiYSg1MSwgNTEsIDUxLCAwKSIgLz4KICAgIDxyZWN0IGlkPSJyIiB3aWR0aD0iMTk0MSIgaGVpZ2h0PSIxOTQxIiBmaWxsPSJ1cmwoI2ctMTk0MS0xOTQxKSIgLz4KICAgIDxhbmltYXRlIHhsaW5rOmhyZWY9IiNyIiBhdHRyaWJ1dGVOYW1lPSJ4IiBmcm9tPSItMTk0MSIgdG89IjE5NDEiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiAgLz4KICA8L3N2Zz4=" data-src="{{ "gempages_510135694635565882-1a95e9d9-9983-4386-a30c-551bf92abb67.webp" | file_url }}"
+        alt=""
+        width="100%"
+        style="--aspect:auto;--aspect-tablet:auto;--aspect-mobile:auto;--objf:cover;--w:645px;--w-tablet:645px;--w-mobile:100%;--h:auto;--h-tablet:auto;--h-mobile:auto;--b:none;--bc:#000000;--bw:1px 1px 1px 1px;--radiusType:none;--shadow:none"
+        class="gp-inline-block gp-w-full gp-max-w-full gp_lazyload"
+      />
+    
+    </picture>
+  
+      </div>
+    </div>
+  
+      <style id="custom-css-gY6-Oe1xhx">
+        .gY6-Oe1xhx {
+    overflow: hidden;
+}
+.gY6-Oe1xhx > figure > img {
+
+}
+      </style>
+    
+    </div>
+
+      
+    </gp-row>
+  
+  
+    </div>
+
+      
+    </gp-row>
+  
+        </section>
+      
+  
+    
+    
+{% schema %}
+  {
+    
+    "name": "Section 11",
+    "tag": "section",
+    "class": "gps-586463905518191122 gps gpsil",
+    "settings": [{"type":"paragraph","content":"Section design by GemPages. [Click here to start design](https://admin.shopify.com/store/39c3e2-72/apps/gempages-cro/app/shopify/edit?pageType=GP_PRODUCT&editorId=586463905417527826&sectionId=586463905518191122)"},{"type":"select","label":"Section Preload","id":"section_preload","options":[{"label":"On","value":"true"},{"label":"Off","value":"false"},{"label":"Off Lazy Script","value":"off_lazy_script"}],"default":"false"},{"type":"text","label":"Checksum","id":"checksum"},{"type":"html","id":"ggJgYjzbeym_text","label":"ggJgYjzbeym_text","default":"FAQ"},{"type":"html","id":"ggpZcK2RmVy_childItem_0","label":"ggpZcK2RmVy_childItem_0","default":"<p>What makes Olora different?</p>"},{"type":"html","id":"ggpZcK2RmVy_childItem_1","label":"ggpZcK2RmVy_childItem_1","default":"<p>Does it really help prevent BV &amp; UTIs?</p>"},{"type":"html","id":"ggpZcK2RmVy_childItem_2","label":"ggpZcK2RmVy_childItem_2","default":"<p>Will the zinc wash out?</p>"},{"type":"html","id":"ggpZcK2RmVy_childItem_3","label":"ggpZcK2RmVy_childItem_3","default":"<p>Is it safe for sensitive skin?</p>"},{"type":"html","id":"ggpZcK2RmVy_childItem_4","label":"ggpZcK2RmVy_childItem_4","default":"<p>How long will these last me?</p>"},{"type":"html","id":"ggpZcK2RmVy_childItem_5","label":"ggpZcK2RmVy_childItem_5","default":"<p>Will these ride / bunch up?</p>"},{"type":"html","id":"ggpZcK2RmVy_childItem_6","label":"ggpZcK2RmVy_childItem_6","default":"<p>Is it comfortable for daily use?</p>"},{"type":"html","id":"ggpZcK2RmVy_childItem_7","label":"ggpZcK2RmVy_childItem_7","default":"<p>Why not just use supplements or antibiotics?</p>"},{"type":"html","id":"ggpZcK2RmVy_childItem_8","label":"ggpZcK2RmVy_childItem_8","default":"<p>What if the fit isn’t right?</p>"},{"type":"html","id":"ggXgjMY9bml_text","label":"ggXgjMY9bml_text","default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"},{"type":"html","id":"gZF0E2VXso3_text","label":"gZF0E2VXso3_text","default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"},{"type":"html","id":"g2_AkasdDvQ_text","label":"g2_AkasdDvQ_text","default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"},{"type":"html","id":"geFRzHzueVr_text","label":"geFRzHzueVr_text","default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"},{"type":"html","id":"gfVZ5x2UjuO_text","label":"gfVZ5x2UjuO_text","default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"},{"type":"html","id":"gQo0XUo0ER3_text","label":"gQo0XUo0ER3_text","default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"},{"type":"html","id":"g4z1RnMXRl0_text","label":"g4z1RnMXRl0_text","default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"},{"type":"html","id":"gw7iSNn4PnV_text","label":"gw7iSNn4PnV_text","default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"},{"type":"html","id":"gaTcGufc4ad_text","label":"gaTcGufc4ad_text","default":"<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>"}],
+    "blocks": [{"type": "@app"}],
+    "locales": {}
+  }
+{% endschema %}
+  

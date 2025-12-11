@@ -1,0 +1,589 @@
+<style>
+    img.trust-pilot-badge-new {
+      width: 20%;
+  }
+    .review-item__author-and-stars {
+      display: flex
+  ;
+      justify-content: space-between;
+  }
+      div#Slider-template--24875526816070__instant_xvon_p_fp_wu5_g_vk9o_v_f7NHLC {
+      height: auto !important;
+  }
+  .review-item.review-item--top {
+      background: #FFFFFF;
+      padding: 15px 18px 15px 18px;
+      border-radius: 10px;
+      border: solid 1px #C2818A !important;
+      margin-left: 9px;
+  }
+  .review-item__text p {
+      font-size: 14px;
+      font-family: 'Poppins' !important;
+      letter-spacing: 0;
+      line-height: 20px;
+  }
+    .sec-rev {
+      max-width: 600px;
+  }
+    @media only screen and (max-width: 600px) {
+        img.trust-pilot-badge-new {
+      width: 24% !important;
+
+  }
+      p.star-rat-text {
+      font-size: 10px !important;
+      }
+      img.trust-pilot-badge-new {
+      margin-right: 22px;
+  }
+      .review-item.review-item--top {
+      background: #FFFFFF;
+      padding: 15px 11px 15px 11px !important;
+      }
+    .review-item__right img.instant-fill {
+      width: 29% !important;
+      height: 100% !important;
+  }
+    }
+    .review-item__right img.instant-fill {
+      width: 29%;
+      height: 100% !important;
+  }
+    .review-item__author-and-stars:before {
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 54px;
+      background: #C4C4C4;
+      top: 3px;
+  }
+    div#Slide-template--24928725762374__instant_xvon_p_fp_wu5_g_vk9o_v_f7NHLC-1 {
+      margin: 0px 25px;
+  }
+    .review-item__author-and-stars {
+      position: relative;
+  }
+    p.star-rat-text {
+      font-size: 15px;
+      color: #1B0E04;
+      font-weight: 600;
+      font-family: 'Poppins';
+      letter-spacing: 0;
+      line-height: 22px;
+  }
+    .review-item__text p {
+      margin-top: 10px !important;
+  }
+    .review-item__right img.instant-fill {
+      width: 20%;
+  }
+    span.review-item__stars {
+      display: flex
+  ;
+      column-gap: 11px;
+      justify-content: start;
+      align-items: center;
+  }
+</style>
+<div
+  class="review-items-container"
+  {{ section.shopify_attributes }}
+  style="--star-color:{{ section.settings.star_color }};--margin-top: {{ section.settings.margin_top | divided_by: 10.0 }}rem;--margin-bottom: {{ section.settings.margin_bottom | divided_by: 10.0 }}rem;"
+  {{ section.shopify_attributes }}
+>
+  {%- assign items_count = 0 -%}
+  {%- if section.settings.text_1 != blank -%}
+    {%- assign items_count = items_count | plus: 1 -%}
+  {%- endif -%}
+  {%- if section.settings.text_2 != blank -%}
+    {%- assign items_count = items_count | plus: 1 -%}
+  {%- endif -%}
+  {%- if section.settings.text_3 != blank -%}
+    {%- assign items_count = items_count | plus: 1 -%}
+  {%- endif -%}
+  {%- if section.settings.text_4 != blank -%}
+    {%- assign items_count = items_count | plus: 1 -%}
+  {%- endif -%}
+  {%- if section.settings.text_5 != blank -%}
+    {%- assign items_count = items_count | plus: 1 -%}
+  {%- endif -%}
+
+  <slideshow-component
+    class="slider-mobile-gutter section-reviews"
+    role="region"
+    aria-roledescription="{{ 'sections.slideshow.carousel' | t }}"
+    aria-label="Customer reviews"
+  >
+    <div
+      class="slideshow banner grid grid--1-col slider slider--everywhere"
+      id="Slider-{{ section.id }}"
+      aria-live="polite"
+      aria-atomic="true"
+      data-autoplay="false"
+      data-speed="5"
+    >
+      {%- unless section.settings.text_1 == blank -%}
+        <div
+          class="slideshow__slide grid__item grid--1-col slider__slide"
+          id="Slide-{{ section.id }}-1"
+          role="group"
+          aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
+          aria-label="1 {{ 'general.slider.of' | t }} 3"
+          tabindex="-1"
+        >
+          <div class="review-item review-item--{{ section.settings.avatar_alignment }}">
+            {%- unless section.settings.image_1 == blank -%}
+              <div class="review-item__image media media--transparent">
+                <img
+                  src="{{ section.settings.image_1 | image_url }}"
+                  alt="{{ section.settings.author_1 }}"
+                  width="auto"
+                  height="auto"
+                  loading="lazy"
+                >
+              </div>
+            {%- endunless -%}
+            <div class="review-item__right">
+              {%- if section.settings.display_stars -%}
+                <span class="review-item__stars"
+                  ><img
+                    alt=""
+                    src="https://cdn.shopify.com/s/files/1/0824/1882/7590/files/Trustpilot_ratings_5star_RGB_1.png?v=1747426687"
+                    width="60"
+                    height="16"
+                    class="instant-fill"
+                    decoding="async"
+                    fetchpriority="auto"
+                    loading="eager"
+                  >
+                  <p class="star-rat-text">Rated Excellent 4.6/5 stars</p>
+                </span>
+              {%- endif -%}
+              <div class="review-item__text">
+                {{ section.settings.text_1 }}
+              </div>
+              {%- unless section.settings.author_1 == blank and section.settings.display_stars == false -%}
+                <div class="review-item__author-and-stars">
+                  {%- unless section.settings.author_1 == blank -%}
+                    <p class="review-item__author">
+                      {{ section.settings.author_1 }}
+                    </p>
+                  {%- endunless -%}
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0824/1882/7590/files/Group_7_1.png?v=1747426941"
+                    class="trust-pilot-badge-new"
+                  >
+                </div>
+              {%- endunless -%}
+            </div>
+          </div>
+        </div>
+      {%- endunless -%}
+      {%- unless section.settings.text_2 == blank -%}
+        <div
+          class="slideshow__slide grid__item grid--1-col slider__slide"
+          id="Slide-{{ section.id }}-2"
+          role="group"
+          aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
+          aria-label="2 {{ 'general.slider.of' | t }} 3"
+          tabindex="-1"
+        >
+          <div class="review-item review-item--{{ section.settings.avatar_alignment }}">
+            {%- unless section.settings.image_2 == blank -%}
+              <div class="review-item__image media media--transparent">
+                <img
+                  src="{{ section.settings.image_2 | image_url }}"
+                  alt="{{ section.settings.author_2 }}"
+                  width="auto"
+                  height="auto"
+                  loading="lazy"
+                >
+              </div>
+            {%- endunless -%}
+            <div class="review-item__right">
+              {%- if section.settings.display_stars -%}
+                <span class="review-item__stars"
+                  ><img
+                    alt=""
+                    src="https://cdn.shopify.com/s/files/1/0824/1882/7590/files/Trustpilot_ratings_5star_RGB_1.png?v=1747426687"
+                    width="60"
+                    height="16"
+                    class="instant-fill"
+                    decoding="async"
+                    fetchpriority="auto"
+                    loading="eager"
+                  >
+                  <p class="star-rat-text">Rated Excellent 4.6/5 stars</p>
+                </span>
+              {%- endif -%}
+              <div class="review-item__text">
+                {{ section.settings.text_2 }}
+              </div>
+              {%- unless section.settings.author_2 == blank and section.settings.display_stars == false -%}
+                <div class="review-item__author-and-stars">
+                  {%- unless section.settings.author_2 == blank -%}
+                    <p class="review-item__author">
+                      {{ section.settings.author_2 }}
+                    </p>
+                  {%- endunless -%}
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0824/1882/7590/files/Group_7_1.png?v=1747426941"
+                    class="trust-pilot-badge-new"
+                  >
+                </div>
+              {%- endunless -%}
+            </div>
+          </div>
+        </div>
+      {%- endunless -%}
+
+      {%- unless section.settings.text_3 == blank -%}
+        <div
+          class="slideshow__slide grid__item grid--1-col slider__slide"
+          id="Slide-{{ section.id }}-1"
+          role="group"
+          aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
+          aria-label="3 {{ 'general.slider.of' | t }} 3"
+          tabindex="-1"
+        >
+          <div class="review-item review-item--{{ section.settings.avatar_alignment }}">
+            {%- unless section.settings.image_3 == blank -%}
+              <div class="review-item__image media media--transparent">
+                <img
+                  src="{{ section.settings.image_3 | image_url }}"
+                  alt="{{ section.settings.author_3 }}"
+                  width="auto"
+                  height="auto"
+                  loading="lazy"
+                >
+              </div>
+            {%- endunless -%}
+            <div class="review-item__right">
+              {%- if section.settings.display_stars -%}
+                <span class="review-item__stars"
+                  ><img
+                    alt=""
+                    src="https://cdn.shopify.com/s/files/1/0824/1882/7590/files/Trustpilot_ratings_5star_RGB_1.png?v=1747426687"
+                    width="60"
+                    height="16"
+                    class="instant-fill"
+                    decoding="async"
+                    fetchpriority="auto"
+                    loading="eager"
+                  >
+                  <p class="star-rat-text">Rated Excellent 4.6/5 stars</p>
+                </span>
+              {%- endif -%}
+              <div class="review-item__text">
+                {{ section.settings.text_3 }}
+              </div>
+              {%- unless section.settings.author_3 == blank and section.settings.display_stars == false -%}
+                <div class="review-item__author-and-stars">
+                  {%- unless section.settings.author_3 == blank -%}
+                    <p class="review-item__author">
+                      {{ section.settings.author_3 }}
+                    </p>
+                  {%- endunless -%}
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0824/1882/7590/files/Group_7_1.png?v=1747426941"
+                    class="trust-pilot-badge-new"
+                  >
+                </div>
+              {%- endunless -%}
+            </div>
+          </div>
+        </div>
+      {%- endunless -%}
+
+      {%- unless section.settings.text_4 == blank -%}
+        <div
+          class="slideshow__slide grid__item grid--1-col slider__slide"
+          id="Slide-{{ section.id }}-4"
+          role="group"
+          aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
+          aria-label="4 {{ 'general.slider.of' | t }} 5"
+          tabindex="-1"
+        >
+          <div class="review-item review-item--{{ section.settings.avatar_alignment }}">
+            {%- unless section.settings.image_4 == blank -%}
+              <div class="review-item__image media media--transparent">
+                <img
+                  src="{{ section.settings.image_4 | image_url }}"
+                  alt="{{ section.settings.author_4 }}"
+                  width="auto"
+                  height="auto"
+                  loading="lazy"
+                >
+              </div>
+            {%- endunless -%}
+            <div class="review-item__right">
+              <div class="review-item__text">
+                {{ section.settings.text_4 }}
+              </div>
+              {%- unless section.settings.author_4 == blank and section.settings.display_stars == false -%}
+                <div class="review-item__author-and-stars">
+                  {%- unless section.settings.author_4 == blank -%}
+                    <p class="review-item__author">
+                      {{ section.settings.author_4 }}
+                    </p>
+                  {%- endunless -%}
+                  {%- if section.settings.display_stars -%}
+                    <span class="review-item__stars"
+                      ><img
+                        alt=""
+                        src="https://cdn.instant.so/sites/mojN5nsBLS70GrkT/assets/IlAgLhi5AS4KTbx7/cb4893f575eceb48cc32203e055d9c82668651e2.svg"
+                        width="60"
+                        height="16"
+                        class="instant-fill"
+                        decoding="async"
+                        fetchpriority="auto"
+                        loading="eager"
+                    ></span>
+                  {%- endif -%}
+                </div>
+              {%- endunless -%}
+              <img
+                src="https://cdn.shopify.com/s/files/1/0824/1882/7590/files/Group_7_1.png?v=1747426941"
+                class="trust-pilot-badge-new"
+              >
+            </div>
+          </div>
+        </div>
+      {%- endunless -%}
+
+      {%- unless section.settings.text_5 == blank -%}
+        <div
+          class="slideshow__slide grid__item grid--1-col slider__slide"
+          id="Slide-{{ section.id }}-5"
+          role="group"
+          aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
+          aria-label="5 {{ 'general.slider.of' | t }} 5"
+          tabindex="-1"
+        >
+          <div class="review-item review-item--{{ section.settings.avatar_alignment }}">
+            {%- unless section.settings.image_5 == blank -%}
+              <div class="review-item__image media media--transparent">
+                <img
+                  src="{{ section.settings.image_5 | image_url }}"
+                  alt="{{ section.settings.author_5 }}"
+                  width="auto"
+                  height="auto"
+                  loading="lazy"
+                >
+              </div>
+            {%- endunless -%}
+            <div class="review-item__right">
+              <div class="review-item__text">
+                {{ section.settings.text_5 }}
+              </div>
+              {%- unless section.settings.author_5 == blank and section.settings.display_stars == false -%}
+                <div class="review-item__author-and-stars">
+                  {%- unless section.settings.author_5 == blank -%}
+                    <p class="review-item__author">
+                      {{ section.settings.author_5 }}
+                    </p>
+                  {%- endunless -%}
+                  {%- if section.settings.display_stars -%}
+                    <span class="review-item__stars"
+                      ><img
+                        alt=""
+                        src="https://cdn.instant.so/sites/mojN5nsBLS70GrkT/assets/IlAgLhi5AS4KTbx7/cb4893f575eceb48cc32203e055d9c82668651e2.svg"
+                        width="60"
+                        height="16"
+                        class="instant-fill"
+                        decoding="async"
+                        fetchpriority="auto"
+                        loading="eager"
+                    ></span>
+                  {%- endif -%}
+                </div>
+              {%- endunless -%}
+              <img
+                src="https://cdn.shopify.com/s/files/1/0824/1882/7590/files/Group_7_1.png?v=1747426941"
+                class="trust-pilot-badge-new"
+              >
+            </div>
+          </div>
+        </div>
+      {%- endunless -%}
+    </div>
+
+    {%- if items_count > 1 -%}
+      <div class="slideshow__controls slider-buttons no-js-hidden slideshow__controls--border-radius-mobile">
+        <button
+          type="button"
+          class="slider-button slider-button--prev"
+          name="previous"
+          aria-label="{{ 'sections.slideshow.previous_slideshow' | t }}"
+          aria-controls="Slider-{{ section.id }}"
+        >
+          {% render 'icon-caret' %}
+        </button>
+        <div class="slider-counter slider-counter--dots">
+          <div class="slideshow__control-wrapper">
+            {%- unless section.settings.text_1 == blank -%}
+              <button
+                class="slider-counter__link slider-counter__link--dots link"
+                aria-label="{{ 'sections.slideshow.load_slide' | t }} 1 {{ 'general.slider.of' | t }} 3"
+                aria-controls="Slider-{{ section.id }}"
+              >
+                <span class="dot"></span>
+              </button>
+            {%- endunless -%}
+            {%- unless section.settings.text_2 == blank -%}
+              <button
+                class="slider-counter__link slider-counter__link--dots link"
+                aria-label="{{ 'sections.slideshow.load_slide' | t }} 2 {{ 'general.slider.of' | t }} 3"
+                aria-controls="Slider-{{ section.id }}"
+              >
+                <span class="dot"></span>
+              </button>
+            {%- endunless -%}
+            {%- unless section.settings.text_3 == blank -%}
+              <button
+                class="slider-counter__link slider-counter__link--dots link"
+                aria-label="{{ 'sections.slideshow.load_slide' | t }} 3 {{ 'general.slider.of' | t }} 3"
+                aria-controls="Slider-{{ section.id }}"
+              >
+                <span class="dot"></span>
+              </button>
+            {%- endunless -%}
+            {%- unless section.settings.text_4 == blank -%}
+              <button
+                class="slider-counter__link slider-counter__link--dots link"
+                aria-label="{{ 'sections.slideshow.load_slide' | t }} 4 {{ 'general.slider.of' | t }} 5"
+                aria-controls="Slider-{{ section.id }}"
+              >
+                <span class="dot"></span>
+              </button>
+            {%- endunless -%}
+            {%- unless section.settings.text_5 == blank -%}
+              <button
+                class="slider-counter__link slider-counter__link--dots link"
+                aria-label="{{ 'sections.slideshow.load_slide' | t }} 5 {{ 'general.slider.of' | t }} 5"
+                aria-controls="Slider-{{ section.id }}"
+              >
+                <span class="dot"></span>
+              </button>
+            {%- endunless -%}
+          </div>
+        </div>
+        <button
+          type="button"
+          class="slider-button slider-button--next"
+          name="next"
+          aria-label="{{ 'sections.slideshow.next_slideshow' | t }}"
+          aria-controls="Slider-{{ section.id }}"
+        >
+          {% render 'icon-caret' %}
+        </button>
+      </div>
+    {%- endif -%}
+    <noscript>
+      {%- if items_count > 1 -%}
+        <div class="slider-buttons">
+          <div class="slider-counter">
+            {%- unless section.settings.text_1 == blank -%}
+              <a
+                href="#Slide-{{ section.id }}-1"
+                class="slider-counter__link link"
+                aria-label="{{ 'sections.slideshow.load_slide' | t }} 1 {{ 'general.slider.of' | t }} 3"
+              >
+                1
+              </a>
+            {%- endunless -%}
+            {%- unless section.settings.text_2 == blank -%}
+              <a
+                href="#Slide-{{ section.id }}-2"
+                class="slider-counter__link link"
+                aria-label="{{ 'sections.slideshow.load_slide' | t }} 2 {{ 'general.slider.of' | t }} 3"
+              >
+                2
+              </a>
+            {%- endunless -%}
+            {%- unless section.settings.text_3 == blank -%}
+              <a
+                href="#Slide-{{ section.id }}-3"
+                class="slider-counter__link link"
+                aria-label="{{ 'sections.slideshow.load_slide' | t }} 3 {{ 'general.slider.of' | t }} 3"
+              >
+                3
+              </a>
+            {%- endunless -%}
+            {%- unless section.settings.text_4 == blank -%}
+              <a
+                href="#Slide-{{ section.id }}-4"
+                class="slider-counter__link link"
+                aria-label="{{ 'sections.slideshow.load_slide' | t }} 4 {{ 'general.slider.of' | t }} 5"
+              >
+                4
+              </a>
+            {%- endunless -%}
+            {%- unless section.settings.text_5 == blank -%}
+              <a
+                href="#Slide-{{ section.id }}-5"
+                class="slider-counter__link link"
+                aria-label="{{ 'sections.slideshow.load_slide' | t }} 5 {{ 'general.slider.of' | t }} 5"
+              >
+                5
+              </a>
+            {%- endunless -%}
+          </div>
+        </div>
+      {%- endif -%}
+    </noscript>
+  </slideshow-component>
+</div>
+
+<style>
+  .sec-rev .slider-button--prev,
+  .sec-rev .slider-button--next {
+    display: none
+  }
+
+  .review-items-container .slideshow__slide {
+    height: fit-content
+  }
+
+  /* Add this to ensure smooth transitions */
+  .slideshow.banner {
+    transition: height 0.3s ease-in-out;
+  }
+
+  slideshow-component.section-reviews {
+    gap: 10px
+  }
+</style>
+
+<script>
+  class SlideshowHeight {
+    constructor() {
+      this.slideshow = document.querySelector('.slideshow.banner');
+      this.slides = this.slideshow.querySelectorAll('.slideshow__slide');
+      this.init();
+    }
+
+    updateHeight() {
+      const activeSlide = this.slideshow.querySelector('.slideshow__slide[aria-hidden="false"]') || this.slides[0];
+      if (activeSlide) {
+        this.slideshow.style.height = `${activeSlide.offsetHeight}px`;
+      }
+    }
+
+    init() {
+      // Update height on initialization
+      this.updateHeight();
+
+      // Update height when slides change
+      const observer = new MutationObserver(() => this.updateHeight());
+      observer.observe(this.slideshow, { attributes: true, subtree: true });
+
+      // Update on window resize
+      window.addEventListener('resize', () => this.updateHeight());
+    }
+  }
+
+  // Initialize when DOM is ready
+  window.addEventListener('DOMContentLoaded', () => new SlideshowHeight());
+</script>

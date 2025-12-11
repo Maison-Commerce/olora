@@ -1,0 +1,52 @@
+<div class="icon-pulse icon-pulse-{{ class_name }}">
+  <span class="pulsing"></span>
+  <span class="pulse-text">{{ pulse_text }}</span>
+</div>
+
+<style>
+  .icon-pulse-{{ class_name }} {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .icon-pulse-{{ class_name }} .pulse-text {
+    font-weight: bold;
+    color: {{ pulse_color }};
+  }
+
+  .pulsing {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    position: relative;
+  }
+
+  .icon-pulse-{{ class_name }} .pulsing::before,
+  .icon-pulse-{{ class_name }} .pulsing::after {
+    content: "";
+    background-color: {{ pulse_color }};
+    /*Set the   background color here*/
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    margin: 5px;
+    border-radius: 100%;
+  }
+
+  @keyframes icon-pulsing {
+    0% {
+      opacity: 0.5;
+    }
+
+    to {
+      transform: scale(2.5);
+      opacity: 0;
+    }
+  }
+
+  .pulsing::before {
+    animation: icon-pulsing linear normal 2s infinite;
+  }
+  }
+</style>

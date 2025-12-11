@@ -1,0 +1,115 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */{
+    "sections": {
+        "1726470444ed5aafd2": {
+            "type": "apps",
+            "blocks": {
+                "vitals_featured_reviews_BjXUTV": {
+                    "type": "shopify://apps/vitals/blocks/featured-reviews/aeb48102-2a5a-4f39-bdbd-d8d49f4e20b8",
+                    "disabled": true,
+                    "settings": {}
+                }
+            },
+            "block_order": [
+                "vitals_featured_reviews_BjXUTV"
+            ],
+            "disabled": true,
+            "settings": {
+                "include_margins": true
+            }
+        },
+        "main": {
+            "type": "main-page",
+            "disabled": true,
+            "settings": {
+                "padding_top": 36,
+                "padding_bottom": 36
+            }
+        },
+        "newsletter": {
+            "type": "newsletter",
+            "blocks": {
+                "heading": {
+                    "type": "heading",
+                    "settings": {
+                        "heading": "Subscribe to our emails",
+                        "heading_size": "h1"
+                    }
+                },
+                "paragraph": {
+                    "type": "paragraph",
+                    "settings": {
+                        "text": "<p>Join our email list for exclusive offers and the latest news. </p>"
+                    }
+                },
+                "email-form": {
+                    "type": "email_form",
+                    "settings": {}
+                }
+            },
+            "block_order": [
+                "heading",
+                "paragraph",
+                "email-form"
+            ],
+            "disabled": true,
+            "settings": {
+                "display_id": false,
+                "visibility": "always-display",
+                "button_type": "solid",
+                "button_label": "Sign up",
+                "button_style_secondary": false,
+                "color_scheme": "background-2",
+                "full_width": true,
+                "padding_top": 68,
+                "padding_bottom": 52
+            }
+        },
+        "1727115077c91eb354": {
+            "type": "apps",
+            "blocks": {
+                "reelup_shoppable_videos_reels_reelup_playlist_48BV7n": {
+                    "type": "shopify://apps/reelup-shoppable-videos-reels/blocks/reelup_playlist/a8ec9e4d-d192-44f7-9c23-595f9ee7dd5b",
+                    "settings": {
+                        "playlist_id": ""
+                    }
+                }
+            },
+            "block_order": [
+                "reelup_shoppable_videos_reels_reelup_playlist_48BV7n"
+            ],
+            "settings": {
+                "include_margins": true
+            }
+        },
+        "17271150483ca5d32f": {
+            "type": "apps",
+            "blocks": {
+                "vitals_featured_reviews_yMN8UM": {
+                    "type": "shopify://apps/vitals/blocks/featured-reviews/aeb48102-2a5a-4f39-bdbd-d8d49f4e20b8",
+                    "settings": {}
+                }
+            },
+            "block_order": [
+                "vitals_featured_reviews_yMN8UM"
+            ],
+            "settings": {
+                "include_margins": true
+            }
+        }
+    },
+    "order": [
+        "1726470444ed5aafd2",
+        "main",
+        "newsletter",
+        "1727115077c91eb354",
+        "17271150483ca5d32f"
+    ]
+}

@@ -1,0 +1,192 @@
+<div gp-el-wrapper style="--bs:solid;--bw:0px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--pos:absolute;--right:-1px;--right-tablet:-1px;--top:-1px;--top-tablet:-1px;--z:2;--z-mobile:2;--z-tablet:2" class="gBqOwAzUgE ">
+      
+  {% liquid
+    assign price = variant.price | times: 1.0
+    assign salePrice = variant.compare_at_price | times: 1.0
+    assign priceSave = salePrice | minus: price
+    assign prefixVal = section.settings.ggBqOwAzUgE_customContent_prefix
+    assign suffixVal = 
+    if salePrice == null or price == null
+      assign pricePercentage = prefixVal | money | append: ' ' | append: suffixVal
+    else
+        
+              if priceSave > 0
+                assign priceSaveMoney = priceSave | money
+                assign pricePercentage = prefixVal | append: ' ' | append: priceSaveMoney | append: ' ' | append: suffixVal
+              else
+                assign priceSaveMoney = 0 | money
+                assign pricePercentage = prefixVal | append: ' ' | append: priceSaveMoney | append: ' ' | append: suffixVal
+              endif
+            
+    endif
+  %}
+
+  <gp-product-tag
+  data-id="gBqOwAzUgE"
+    data-disabled="{%- if priceSave > 0 -%} false {%- else -%} true {%- endif -%}"
+    gp-data='{"setting":{"customContent":{"prefix":"Save","suffix":"","unit":"price"},"translate":"customContent"}, "id": "gBqOwAzUgE", "locale": "{{shop.locale}}", "currency": "{{shop.currency}}", "moneyFormat": "{{ shop.money_format | replace: '"', '\"' | escape }}"}'
+    class="gp-block data-[disabled=true]:gp-hidden "
+    style="--ta:right"
+    price-save="{{priceSave}}"
+    data-prefix="{{section.settings.ggBqOwAzUgE_customContent_prefix}}"
+    data-suffix="{{}}"
+  >
+     <div class="gp-inline-flex gp-flex-wrap gp-items-end gp-gap-3" >
+       <div
+         class="gp-flex gp-items-center gp-w-full gp-h-full"
+         style="--pl:15px;--pr:15px;--pt:6px;--pb:6px;--bs:none;--bw:0px;--bc:transparent;--bg:#00D074;--bblr:16px;--bbrr:0px;--btlr:0px;--btrr:16px"
+       >
+         
+  {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+  <gp-text data-id="">
+    <div
+      id="p-tag-gBqOwAzUgE"
+        class=" "
+        
+      >
+      <div  >
+        <div
+          
+          data-gp-text
+          class="[&_p]:gp-inline [&_p]:after:gp-whitespace-pre-wrap [&_p]:after:gp-content-['\A']"
+          style="--w:100%;--ta:right;--fs:normal;--ff:var(--g-font-heading, heading);--weight:700;--ls:normal;--size:21px;--size-tablet:21px;--size-mobile:19px;--lh:150%;--lh-tablet:150%;--lh-mobile:150%;--c:#FFFFFF;--tt:none;word-break:break-word;overflow:hidden"
+        >{{pricePercentage}}</div>
+      </div>
+    </div>
+    </gp-text>
+    
+       </div>
+     </div>
+
+ </gp-product-tag>
+ <script {% if section.settings.section_preload == "false" %}class="gps-link" delay {% else %}src{% endif %}="https://d2ls1pfffhvy22.cloudfront.net/assets-v2/gp-product-tag.js?v={{ shop.metafields.GEMPAGES.ASSETS_VERSION }}" defer="defer"></script>
+   
+      </div>
+       
+      
+    <div
+      enableLazyloadImage="true" parentTag="Col" id="gYMJo6KaVd" data-id="gYMJo6KaVd"
+        style="--bs:solid;--bw:0px;--bc:#121212;--shadow:none;--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--pt:58px;--pl:32px;--pr:32px;--pt-tablet:53px;--pl-tablet:var(--g-s-l);--pr-tablet:var(--g-s-l);--cg:32px;--pc:start;--gtc:minmax(0, 12fr);--w:100%;--w-tablet:100%;--w-mobile:100%;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll"
+        class="gYMJo6KaVd gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-gap-y-0 gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full"
+    >
+    <div
+      enableLazyloadImage="true" label="Block" tag="Col" type="component"
+      style="--jc:start"
+      class="gCouaOZxdO gp-relative gp-flex gp-flex-col"
+    >
+      
+  {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+  <gp-text data-id="g9-WJC8akS">
+    <div
+      enableLazyloadImage="true" parentTag="Col"
+        class="g9-WJC8akS "
+        style="--ta:center;--bs:solid;--bw:0px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--mb:var(--g-s-l)"
+      >
+      <div class="gp-flex" style="--jc:center">
+        <h3
+          
+          data-gp-text
+          class="[&_p]:gp-inline [&_p]:after:gp-whitespace-pre-wrap [&_p]:after:gp-content-['\A'] gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--ta:center;--fs:normal;--ff:var(--g-font-heading, heading);--weight:700;--ls:normal;--size:28px;--size-tablet:28px;--size-mobile:25px;--lh:150%;--lh-tablet:150%;--lh-mobile:150%;--c:#242424;--tt:none;word-break:break-word;overflow:hidden"
+        >{{ section.settings.gg9-WJC8akS_text | replace: '$locationOrigin', locationOrigin }}</h3>
+      </div>
+    </div>
+    </gp-text>
+    
+       
+      
+    <div
+      enableLazyloadImage="true" parentTag="Col" id="gH1HFOVSCE" data-id="gH1HFOVSCE"
+        style="--bs:solid;--bw:0px;--bc:#121212;--shadow:none;--d:grid;--d-mobile:grid;--d-tablet:grid;--op:100%;--mb:var(--g-s-s);--cg:0px;--pc:center;--pc-tablet:center;--gtc:minmax(0, auto) minmax(0, auto);--gtc-tablet:minmax(0, auto) minmax(0, auto);--gtc-mobile:minmax(0, auto) minmax(0, auto);--w:100%;--w-tablet:100%;--w-mobile:100%;--bgc:transparent;--bgi:url();--bgp:50% 50%;--bgs:cover;--bgr:no-repeat;--bga:scroll"
+        class="gH1HFOVSCE gp-mx-auto gp-mb-0 gp-grid gp-max-w-full gp-gap-y-0 gp-transition-colors gp-duration-200 gp-ease-in-out [&_*]:gp-max-w-full"
+    >
+    <div
+      enableLazyloadImage="true" label="Block" tag="Col" type="component"
+      style="--jc:center"
+      class="gTpqjTl6gv gp-relative gp-flex gp-flex-col"
+    >
+      
+      <gp-product-price
+        data-id="gm05shCfa4"
+        class="gm05shCfa4 gp-product-price group-data-[state=loading]:gp-invisible data-[hidden=true]:gp-hidden"
+        gp-data='{"priceType":"regular","uid":"gm05shCfa4","locale":"{{shop.locale}}","currency":"{{shop.currency}}","moneyFormat":"{{ shop.money_format | replace: '"', '\\"' | escape }}"}'
+        
+        style="--bs:solid;--bw:0px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%"
+        data-hidden="false"
+      >
+        
+  {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+  <gp-text data-id="">
+    <div
+      id="p-price-gm05shCfa4"
+        class=" "
+        
+      >
+      <div  >
+        <div
+          type="regular"
+          data-gp-text
+          class="[&_p]:gp-inline [&_p]:after:gp-whitespace-pre-wrap [&_p]:after:gp-content-['\A'] gp-price gp-money gp-decoration-g-text-1"
+          style="--w:100%;--tdc:text-1;--tdt:1;--ta:right;--c:#242424;--fs:normal;--ff:var(--g-font-heading, heading);--weight:400;--ls:normal;--size:28px;--size-tablet:28px;--size-mobile:25px;--lh:150%;--lh-tablet:150%;--lh-mobile:150%;word-break:break-word;overflow:hidden"
+        >
+     {% if variant.price %} 
+       {{ variant.price | money}}
+     {% endif %}
+   </div>
+      </div>
+    </div>
+    </gp-text>
+    
+      </gp-product-price>
+      <script {% if section.settings.section_preload == "false" %}class="gps-link" delay {% else %}src{% endif %}="https://d2ls1pfffhvy22.cloudfront.net/assets-v2/gp-product-price.js?v={{ shop.metafields.GEMPAGES.ASSETS_VERSION }}" defer="defer"></script>
+  
+    </div><div
+      enableLazyloadImage="true" label="Block" tag="Col" type="component"
+      style="--jc:center"
+      class="gPjvqdSlUD gp-relative gp-flex gp-flex-col"
+    >
+      
+  {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+  <gp-text data-id="glWyTNxMVH">
+    <div
+      enableLazyloadImage="true" parentTag="Col"
+        class="glWyTNxMVH "
+        style="--ta:left;--bs:solid;--bw:0px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%"
+      >
+      <div class="gp-flex" style="--jc:left">
+        <div
+          
+          data-gp-text
+          class="[&_p]:gp-inline [&_p]:after:gp-whitespace-pre-wrap [&_p]:after:gp-content-['\A'] gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--ta:left;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--fs:normal;--ff:var(--g-font-body, body);--weight:400;--ls:normal;--size:28px;--size-tablet:28px;--size-mobile:25px;--lh:150%;--lh-tablet:150%;--lh-mobile:150%;--c:#424242;--tt:none;word-break:break-word;overflow:hidden"
+        >{{ section.settings.gglWyTNxMVH_text | replace: '$locationOrigin', locationOrigin }}</div>
+      </div>
+    </div>
+    </gp-text>
+    
+    </div>
+    </div>
+   
+    
+  {% assign locationOrigin = request.origin | append: routes.root_url | split: '/' | join: '/' %}
+  <gp-text data-id="gl8Vfx-j3W">
+    <div
+      enableLazyloadImage="true" parentTag="Col"
+        class="gl8Vfx-j3W "
+        style="--ta:center;--bs:solid;--bw:0px;--bc:#121212;--shadow:none;--d:block;--d-mobile:block;--d-tablet:block;--op:100%;--mb:var(--g-s-l)"
+      >
+      <div class="gp-flex" style="--jc:center">
+        <div
+          
+          data-gp-text
+          class="[&_p]:gp-inline [&_p]:after:gp-whitespace-pre-wrap [&_p]:after:gp-content-['\A'] gp-text"
+          style="--w:100%;--w-tablet:100%;--w-mobile:100%;--ta:center;--line-clamp:unset;--line-clamp-tablet:unset;--line-clamp-mobile:unset;--fs:normal;--ff:var(--g-font-body, body);--weight:400;--ls:normal;--size:16px;--size-tablet:16px;--size-mobile:14px;--lh:150%;--lh-tablet:150%;--lh-mobile:150%;--c:#424242;word-break:break-word;overflow:hidden"
+        >{{ section.settings.ggl8Vfx-j3W_text | replace: '$locationOrigin', locationOrigin }}</div>
+      </div>
+    </div>
+    </gp-text>
+    
+    </div>
+    </div>
+   
+    

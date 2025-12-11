@@ -1,0 +1,908 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "text_size": "h1",
+            "title_alignment": "left",
+            "uppercase_title": false,
+            "margin_top": 6,
+            "margin_bottom": 0
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "layout": "price_first",
+            "price_color": "accent-1",
+            "compare_price_color": "text",
+            "hide_sale_badge": false,
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        },
+        "a6eb81db-40e4-43e0-972f-32db010a4a56": {
+          "type": "rating_stars",
+          "settings": {
+            "rating": 4.6,
+            "star_color": "#ff94bc",
+            "bg_stars_style": "full",
+            "bg_star_color": "#ececec",
+            "label": "<strong>+4.94 (345 reviews</strong>)",
+            "size": 14,
+            "alignment": "flex-start",
+            "scroll_id": "",
+            "margin_top": 0,
+            "margin_bottom": 9
+          }
+        },
+        "emoji_benefits_pncPBX": {
+          "type": "emoji_benefits",
+          "settings": {
+            "benefits": "<p><strong>✨ Enhance jawline, achieve a v-line face</strong></p><p><strong>💪 Lift, tighten & reduce double chin</strong></p><p><strong>🌿 Made with natural ingredients </strong></p>",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "5fcc0428-e768-4cb7-bea3-eb0274198dd1": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "picker_types": "Swatches,pills",
+            "custom_labels": "Available Colors - [selected]",
+            "swatches_size": "medium",
+            "swatches_border_radius": 100,
+            "swatches_custom_colors": "image_alt",
+            "swatches_custom_colors_list": "#000000, #6D388B, #0000FF, #FFCC00",
+            "full_width_dropdowns": false,
+            "breaks_style": "normal",
+            "breaks_headline": "BUNDLE & SAVE",
+            "breaks_color_scheme": "accent-1",
+            "breaks_badges": "[empty], Most popular, [empty]",
+            "breaks_displayed_images": "variant_images",
+            "breaks_custom_images": "",
+            "breaks_image_width": 70,
+            "breaks_space_images": true,
+            "breaks_labels": "[name], [name], [name]",
+            "breaks_benefits": "[empty], Free Shipping, Free Shipping",
+            "breaks_captions": "Variant 1 caption, Variant 2 caption, Variant 3 caption",
+            "breaks_price_texts": "[price], [price], [price]",
+            "breaks_compare_price_texts": "[compare_price], [compare_price], [compare_price]",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "04ba004e-2f54-4936-8b1c-8bcadf6573f6": {
+          "type": "quantity_selector",
+          "settings": {
+            "enable_quantity_discounts": true,
+            "style": "normal",
+            "headline": "OFFER ENDS TONIGHT",
+            "preselected": "option_1",
+            "enable_variant_selectors": true,
+            "enable_variant_selectors_on_quantity_of_1": true,
+            "hide_pickers_overlay": true,
+            "image_width": 70,
+            "space_images": true,
+            "color_scheme": "text",
+            "option_1_quantity": 1,
+            "option_1_badge": "",
+            "option_1_label": "5 Lift Bands",
+            "option_1_benefit": "",
+            "option_1_caption": "50% OFF",
+            "option_1_percentage_off_text": "",
+            "option_1_fixed_amount_off": "0",
+            "option_1_price_text": "[price]",
+            "option_1_compare_price": "compare_price",
+            "option_1_compare_price_text": "[compare_price]",
+            "option_2_quantity": 2,
+            "option_2_badge": "",
+            "option_2_label": "10 Lift Bands",
+            "option_2_benefit": "",
+            "option_2_caption": "Extra 10% OFF",
+            "option_2_percentage_off_text": "10",
+            "option_2_fixed_amount_off": "0",
+            "option_2_price_text": "[price]",
+            "option_2_compare_price": "compare_price",
+            "option_2_compare_price_text": "[compare_price]",
+            "option_3_quantity": 3,
+            "option_3_badge": "",
+            "option_3_label": "30 Lift Bands",
+            "option_3_benefit": "",
+            "option_3_caption": "Extra 15% OFF",
+            "option_3_percentage_off_text": "15",
+            "option_3_fixed_amount_off": "0",
+            "option_3_price_text": "[price]",
+            "option_3_compare_price": "compare_price",
+            "option_3_compare_price_text": "[compare_price]",
+            "option_4_quantity": 0,
+            "option_4_badge": "",
+            "option_4_label": "Buy [quantity]",
+            "option_4_benefit": "",
+            "option_4_caption": "You save [amount_saved]",
+            "option_4_percentage_off_text": "0",
+            "option_4_fixed_amount_off": "0",
+            "option_4_price_text": "[price]",
+            "option_4_compare_price": "compare_price",
+            "option_4_compare_price_text": "[compare_price]",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "skip_cart": false,
+            "uppercase_text": true,
+            "display_price": false,
+            "enable_custom_color": false,
+            "custom_color": "#53af01",
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
+        },
+        "reviews_NHVjci": {
+          "type": "reviews",
+          "settings": {
+            "display_stars": true,
+            "star_color": "#ffab00",
+            "avatar_alignment": "top",
+            "author_1": "<em><strong>-Jannet M</strong></em>",
+            "text_1": "<p>I was skeptical about this lifting band, but wow, it really works! <strong>After just a few uses, my jawline looks more defined, and my skin feels firmer.</strong> I love how easy it is to use, too. This has become my new go-to for a quick confidence boost before big events or nights out. 💕</p>",
+            "image_1": "shopify://shop_images/f2afa8b7fa0aebb4cffd40a6d652eb29.jpg",
+            "author_2": "",
+            "text_2": "",
+            "author_3": "",
+            "text_3": "",
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
+        },
+        "e7a28cbe-03cb-4c9d-a2c4-0e3e76ffb3e5": {
+          "type": "sticky_atc",
+          "settings": {
+            "function": "add_to_cart",
+            "display_when": "always",
+            "button_label": "Add to cart",
+            "enable_custom_btn_color": false,
+            "custom_btn_color": "#dd1d1d",
+            "color_scheme": "background-1",
+            "star_color": "#ffcc00",
+            "stars_label": "(xxxx Reviews)",
+            "picker_type": "combined",
+            "desktop_show_image": true,
+            "desktop_show_title": true,
+            "desktop_rating_stars": false,
+            "desktop_show_price": true,
+            "desktop_show_sale_badge": true,
+            "desktop_variant_picker": true,
+            "desktop_full_button_width": false,
+            "desktop_show_price_in_button": false,
+            "desktop_transparent_bg": false,
+            "mobile_show_image": true,
+            "mobile_show_title": true,
+            "mobile_rating_stars": false,
+            "mobile_show_price": true,
+            "mobile_show_sale_badge": true,
+            "mobile_variant_picker": true,
+            "mobile_full_button_width": false,
+            "mobile_show_price_in_button": false,
+            "mobile_transparent_bg": false
+          }
+        },
+        "collapsible_tab_6HVi9U": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping & Delivery",
+            "heading_size": "large",
+            "icon": "Check Circle",
+            "filled_icon": true,
+            "collapse_icon": "plus",
+            "display_top_border": true,
+            "content": "<p>Shipping & Delivery</p>",
+            "page": "shipping-policy",
+            "margin_top": 24,
+            "margin_bottom": 0
+          }
+        },
+        "collapsible_tab_f9ijQ9": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "30 Days Free Trial",
+            "heading_size": "large",
+            "icon": "Check Circle",
+            "filled_icon": true,
+            "collapse_icon": "plus",
+            "display_top_border": true,
+            "content": "<p>At Olora, we stand behind our products with confidence, which is why we're pleased to offer a 30-day money-back guarantee. If for any reason you're not satisfied with your purchase, please don't hesitate to reach out to us.</p>",
+            "page": "",
+            "margin_top": 24,
+            "margin_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "a6eb81db-40e4-43e0-972f-32db010a4a56",
+        "emoji_benefits_pncPBX",
+        "5fcc0428-e768-4cb7-bea3-eb0274198dd1",
+        "04ba004e-2f54-4936-8b1c-8bcadf6573f6",
+        "buy_buttons",
+        "reviews_NHVjci",
+        "e7a28cbe-03cb-4c9d-a2c4-0e3e76ffb3e5",
+        "collapsible_tab_6HVi9U",
+        "collapsible_tab_f9ijQ9"
+      ],
+      "custom_css": [],
+      "settings": {
+        "enable_sticky_info": true,
+        "display_variant_image_first": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "desktop_thumbnails_count": 5,
+        "mobile_thumbnails": "show",
+        "mobile_media_corner_radius": 0,
+        "mobile_spacing": false,
+        "mobile_preview_media": false,
+        "mobile_thumbnails_count": 5,
+        "mobile_pagination": "dots_overlay",
+        "hide_arrows": true,
+        "dots_color_scheme": "inverse",
+        "trust_badge_position": "top-right",
+        "trust_badge_size": "medium",
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 16,
+        "desktop_padding_top": 36,
+        "desktop_padding_bottom": 36
+      }
+    },
+    "horizontal_ticker_CizpyK": {
+      "type": "horizontal-ticker",
+      "blocks": {
+        "text_RAeKNC": {
+          "type": "text",
+          "settings": {
+            "title": "Natural ingredients"
+          }
+        },
+        "text_czYc3N": {
+          "type": "text",
+          "settings": {
+            "title": "Lifts & tightens"
+          }
+        },
+        "text_RFaQET": {
+          "type": "text",
+          "settings": {
+            "title": "Instant results"
+          }
+        }
+      },
+      "block_order": [
+        "text_RAeKNC",
+        "text_czYc3N",
+        "text_RFaQET"
+      ],
+      "settings": {
+        "visibility": "always-display",
+        "speed": 1,
+        "mobile_spacing": 60,
+        "desktop_spacing": 60,
+        "color_scheme": "accent-1",
+        "mobile_text_size": 18,
+        "desktop_text_size": 23,
+        "italic_text": true,
+        "uppercase_text": true,
+        "bold_text": true,
+        "mobile_image_height": 10,
+        "desktop_image_height": 12,
+        "hidden_products": "",
+        "enable_specific_display": false,
+        "displayed_products": "",
+        "mobile_padding_top": 12,
+        "mobile_padding_bottom": 12,
+        "desktop_padding_top": 16,
+        "desktop_padding_bottom": 12
+      }
+    },
+    "section_divider_49E6Up": {
+      "type": "section-divider",
+      "disabled": true,
+      "settings": {
+        "shape": "waves_3",
+        "flip_horizontal": true,
+        "flip_vertical": true,
+        "shape_color": "accent-1",
+        "background_color": "background-1",
+        "padding_top": 20,
+        "padding_bottom": 16
+      }
+    },
+    "icons_with_content_UxDezj": {
+      "type": "icons-with-content",
+      "blocks": {
+        "video_TcwTz9": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "video": "shopify://files/videos/Fb Ripped 1.0 - Trim (1).mp4"
+          }
+        },
+        "icon_b4py8J": {
+          "type": "icon",
+          "settings": {
+            "icon": "check_circle",
+            "filled_icon": true,
+            "image": "shopify://shop_images/Untitled_design_8_copy_317ec32e-9481-433d-9f09-eaef46841dcf.png",
+            "title": "Lift and tighten sagging skin",
+            "text": "<p>Our lifting band effectively lifts and tightens loose, sagging skin along the jawline and neck, creating a more youthful and defined appearance.</p>"
+          }
+        },
+        "icon_highc9": {
+          "type": "icon",
+          "settings": {
+            "icon": "check_circle",
+            "filled_icon": true,
+            "image": "shopify://shop_images/Untitled_design_8_copy_2.png",
+            "title": "Reduce the appearance of double chin",
+            "text": "<p>By targeting the underlying muscles and promoting collagen production, our lifting band helps minimize the appearance of a double chin for a more sculpted look.</p>"
+          }
+        },
+        "icon_rL6XrE": {
+          "type": "icon",
+          "settings": {
+            "icon": "check_circle",
+            "filled_icon": true,
+            "image": "shopify://shop_images/gifted-baldes_moistureIcon.png",
+            "title": "Nourish and moisturize your skin",
+            "text": "<p>Infused with natural ingredients like Hyaluronic Acid and Aloe Vera Extract, our lifting band not only lifts but also nourishes and hydrates your skin for a healthier, more radiant complexion.</p>"
+          }
+        },
+        "icon_CBYBmK": {
+          "type": "icon",
+          "settings": {
+            "icon": "check_circle",
+            "filled_icon": true,
+            "image": "shopify://shop_images/Untitled_design_8_copy_3.png",
+            "title": "Quick results, lasting confidence",
+            "text": "<p>Experience a firmer, more defined jawline in just minutes with our lifting band. With regular use, you'll enjoy long-lasting results and a newfound sense of confidence in your appearance.</p>"
+          }
+        },
+        "heading_UEpjaL": {
+          "type": "heading",
+          "settings": {
+            "heading": "Your Secret to a Youthful, Defined Jawline",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "video_TcwTz9",
+        "icon_b4py8J",
+        "icon_highc9",
+        "icon_rL6XrE",
+        "icon_CBYBmK",
+        "heading_UEpjaL"
+      ],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "color_scheme": "background-2",
+        "icon_size": "xxl",
+        "icon_position": "next-to-title",
+        "icon_color": "accent-1",
+        "icon_heading_size": "h4",
+        "icon_text_alignment": "left",
+        "icons_desktop_layout": "1-column",
+        "icons_mobile_layout": "1-column",
+        "desktop_content_alignment": "left",
+        "layout": "text_first",
+        "mobile_layout": "text_first",
+        "hide_content_on_mobile": false,
+        "padding_top": 12,
+        "padding_bottom": 20
+      }
+    },
+    "section_divider_3EN48g": {
+      "type": "section-divider",
+      "settings": {
+        "shape": "waves_3",
+        "flip_horizontal": false,
+        "flip_vertical": true,
+        "shape_color": "background-2",
+        "background_color": "background-1",
+        "padding_top": 20,
+        "padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "display_id": false,
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 24
+      }
+    },
+    "comparison_slider_YVBG8W": {
+      "type": "comparison-slider",
+      "custom_css": [],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "Say Hello to a New Jawline",
+        "heading_size": "h1",
+        "text": "<p>Our patented lifting band works its magic to tighten and contour your face, helping you achieve that coveted V-shape for a more youthful, confident appearance.</p>",
+        "button_label": "",
+        "link": "",
+        "button_style_secondary": false,
+        "atc_button_label": "",
+        "atc_product": "",
+        "atc_skip_cart": false,
+        "color_scheme": "background-1",
+        "layout": "slider_first",
+        "before_label": "Before",
+        "after_label": "After",
+        "labels_color_scheme": "background-2",
+        "line_color": "background-2",
+        "arrows_style": "circle",
+        "before_image": "shopify://shop_images/landscape-1460570887-lead_a865eda6-06e4-4590-9557-317bc3d996ce.png",
+        "after_image": "shopify://shop_images/landscape-1460570887-lead.png",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "image_with_text_d9hBhP": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_n4dnHR": {
+          "type": "heading",
+          "settings": {
+            "heading": "Reduce Double Chin, Boost Confidence",
+            "heading_size": "h1"
+          }
+        },
+        "text_LwrJHE": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Restore definition to your jawline and bid farewell to the appearance of a double chin.</p><p>Our lifting band targets the underlying muscles, promoting collagen production and reducing the appearence of sagging skin</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_n4dnHR",
+        "text_LwrJHE"
+      ],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "image": "shopify://shop_images/Untitled_design_3.gif",
+        "height": "medium",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "section_color_scheme": "background-1",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_full_media_width": false,
+        "mobile_direction": "normal",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_Ez3w4P": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_3dEJM8": {
+          "type": "heading",
+          "settings": {
+            "heading": "Boost Collagen for Youthful, Radiant Skin",
+            "heading_size": "h1"
+          }
+        },
+        "text_jiniDA": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Helps stimulate collagen production through gentle exfoliation, helping to firm and smooth your skin for a more youthful, radiant complexion.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_3dEJM8",
+        "text_jiniDA"
+      ],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "image": "shopify://shop_images/Untitled_design_2.gif",
+        "height": "medium",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "section_color_scheme": "background-1",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "center",
+        "mobile_full_media_width": false,
+        "mobile_direction": "normal",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "comparison_table_AH6rac": {
+      "type": "comparison-table",
+      "blocks": {
+        "row_fHkcW6": {
+          "type": "row",
+          "settings": {
+            "benefit": "Non-invasive",
+            "us": true,
+            "others": false
+          }
+        },
+        "row_mB4Wmr": {
+          "type": "row",
+          "settings": {
+            "benefit": "Affordable",
+            "us": true,
+            "others": false
+          }
+        },
+        "row_BypNxV": {
+          "type": "row",
+          "settings": {
+            "benefit": "Quick results",
+            "us": true,
+            "others": false
+          }
+        },
+        "row_cY9BTR": {
+          "type": "row",
+          "settings": {
+            "benefit": "Long recovery time",
+            "us": false,
+            "others": true
+          }
+        },
+        "row_fftDqe": {
+          "type": "row",
+          "settings": {
+            "benefit": "Lifts and tightens skin",
+            "us": true,
+            "others": true
+          }
+        }
+      },
+      "block_order": [
+        "row_fHkcW6",
+        "row_mB4Wmr",
+        "row_BypNxV",
+        "row_cY9BTR",
+        "row_fftDqe"
+      ],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "Why choose us?",
+        "heading_size": "h1",
+        "text": "",
+        "button_label": "",
+        "link": "",
+        "button_style_secondary": false,
+        "atc_button_label": "",
+        "atc_product": "",
+        "atc_skip_cart": false,
+        "color_scheme": "background-1",
+        "layout": "table_second",
+        "style": "classic",
+        "logo_width": 90,
+        "mobile_logo_width": 60,
+        "us_label": "[shop_name]",
+        "us_label_size": 18,
+        "others_label": "Others",
+        "others_label_size": 18,
+        "checkmark_style": "regular",
+        "checkmark_color": "#53af01",
+        "checkmark_bg_color": "#53af01",
+        "x_style": "regular",
+        "x_color": "#121212",
+        "x_bg_color": "#dbdbdb",
+        "opposite_icon_colors": "original",
+        "highlighted_color_scheme": "accent-1",
+        "highlighted_separator_opacity": 0,
+        "highlighted_overlay_opacity": 0,
+        "other_cells_color_scheme": "background-1",
+        "regular_separator_opacity": 10,
+        "regular_overlay_opacity": 0,
+        "minimalistic_border_opacity": 16,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "testimonials_x3jMb9": {
+      "type": "testimonials",
+      "blocks": {
+        "column_tUe4kN": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/main-qimg-2188cb525863ffe8392585afda367097-lq.webp",
+            "title": "\"Weak jawline\"",
+            "text": "<p>\"I never thought I could achieve such a defined jawline without surgery, but this lifting band has proven me wrong! After just a few weeks of use, I've noticed a significant improvement in the contours of my face, and I feel so much more confident. This product is a game-changer!\"</p>",
+            "author": "<em><strong>-Lisa K.</strong></em>"
+          }
+        },
+        "column_AaEYka": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/depuffing-chin-strap-before-and-after-865x865.webp",
+            "title": "\"Double chin\"",
+            "text": "<p>\"As someone with sensitive skin, I was hesitant to try a lifting band, but I'm so glad I did! Not only does it work wonders for tightening and lifting my jawline, but it also feels gentle and nourishing on my skin. I love how it contains natural ingredients like Hyaluronic Acid and Aloe Vera Extract. My skin has never looked better!\"</p>",
+            "author": "<em><strong>-Katie R.</strong></em>"
+          }
+        },
+        "column_zrgcmk": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/NF258LUgE0.jpg",
+            "title": "\"Sagging skin\"",
+            "text": "<p>\"I've been using this lifting band for a few months now, and I'm absolutely thrilled with the results! My double chin has visibly reduced, and my jawline looks so much more sculpted. I've received countless compliments on how youthful and radiant my skin looks. I can't recommend this product enough – it's become an essential part of my skincare routine!\"</p>",
+            "author": "<strong>-Amy C.</strong>"
+          }
+        }
+      },
+      "block_order": [
+        "column_tUe4kN",
+        "column_AaEYka",
+        "column_zrgcmk"
+      ],
+      "custom_css": [
+        "/* Change color of specific text */h2 span {color: #e56399;}"
+      ],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "Real Results",
+        "heading_size": "h1",
+        "text": "<p><br/></p>",
+        "color_scheme": "background-1",
+        "style": "cards",
+        "image_width": "full",
+        "image_ratio": "square",
+        "column_alignment": "center",
+        "show_stars": true,
+        "stars_color": "#ffb700",
+        "show_quotes": true,
+        "quotes_color_scheme": "accent-1",
+        "cards_color_scheme": "background-2",
+        "type": "slide",
+        "autoplay": true,
+        "autoplay_speed": 3.5,
+        "arrows_color_scheme": "inverse",
+        "transparent_arrows": true,
+        "dots_color_scheme": "inverse",
+        "desktop_full_page": false,
+        "columns_desktop": 3,
+        "slider_desktop": false,
+        "per_move_desktop": 1,
+        "desktop_spacing": 40,
+        "desktop_side_padding": 0,
+        "desktop_padding_calc": true,
+        "desktop_adaptive_height": false,
+        "desktop_dots_position": "under",
+        "desktop_arrows_position": "sides",
+        "slider_mobile": true,
+        "enable_mobile_preview": false,
+        "mobile_adaptive_height": false,
+        "mobile_dots_position": "under",
+        "mobile_arrows_position": "under",
+        "padding_top": 36,
+        "padding_bottom": 52
+      }
+    },
+    "rich_text_NgFCJz": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_pLp7Nj": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Love Your Jawline or Your Money Back!</p>",
+            "heading_size": "h1"
+          }
+        },
+        "text_yfrRhx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We're so confident you'll love the results of our Olora Chin Lift V-Line Patch that we offer a 30-day money-back guarantee. Your satisfaction is our guarantee.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_pLp7Nj",
+        "text_yfrRhx"
+      ],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "section_divider_rxiymy": {
+      "type": "section-divider",
+      "settings": {
+        "shape": "waves_3",
+        "flip_horizontal": false,
+        "flip_vertical": false,
+        "shape_color": "accent-1",
+        "background_color": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "collapsible_content_xAPeVn": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_PbYDY9": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How long do I need to wear the ByHer Lifting Band to see results?",
+            "icon": "",
+            "filled_icon": false,
+            "row_content": "<p>Most users report a noticeable difference in their jawline and skin appearance after just one use. However, for optimal and long-lasting results, we recommend using the lifting band consistently as part of your daily skincare routine.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_bppgYq": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is the Lifting Band suitable for all skin types, even sensitive skin?",
+            "icon": "",
+            "filled_icon": false,
+            "row_content": "<p>Yes, our lifting band is made with hypoallergenic materials and is gentle enough for all skin types, including sensitive skin. The natural ingredients, such as Hyaluronic Acid and Aloe Vera Extract, help nourish and soothe the skin while you wear it.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_PFx3gP": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I wear the ByHer Lifting Band overnight?",
+            "icon": "",
+            "filled_icon": false,
+            "row_content": "<p>While you can wear the lifting band for extended periods, we recommend wearing it for no more than 4 hours at a time for comfort and to allow your skin to breathe. It's best to use the band during the day or evening, rather than overnight.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_LENVYC": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will the Lifting Band cause any pain or discomfort during use?",
+            "icon": "",
+            "filled_icon": false,
+            "row_content": "<p>Our lifting band is designed to be comfortable and non-invasive. Most users do not experience any pain or discomfort while wearing the band. However, if you do feel any discomfort, adjust the band's positioning or reduce the wearing time until your skin adapts.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_nyrG4L": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Can I use my regular skincare products while wearing the Olora™ Chin Lift V-Line Patch ?",
+            "icon": "",
+            "filled_icon": false,
+            "row_content": "<p>Yes, you can use your regular skincare products in conjunction with the lifting band. In fact, the band can help your skin better absorb the beneficial ingredients in your skincare products, enhancing their effectiveness.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_PbYDY9",
+        "collapsible_row_bppgYq",
+        "collapsible_row_PFx3gP",
+        "collapsible_row_LENVYC",
+        "collapsible_row_nyrG4L"
+      ],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "caption": "",
+        "heading": "FAQ's",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "accent-1",
+        "container_color_scheme": "background-2",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "row_heading_size": "medium",
+        "collapse_icon": "carret",
+        "display_top_border": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_divider_LDN9zL": {
+      "type": "section-divider",
+      "settings": {
+        "shape": "waves_3",
+        "flip_horizontal": false,
+        "flip_vertical": true,
+        "shape_color": "accent-1",
+        "background_color": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "1715369300b0bb4974": {
+      "type": "apps",
+      "blocks": {
+        "vitals_reviews_stars_qbjqPU": {
+          "type": "shopify://apps/vitals/blocks/reviews-stars/aeb48102-2a5a-4f39-bdbd-d8d49f4e20b8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "vitals_reviews_stars_qbjqPU"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "horizontal_ticker_CizpyK",
+    "section_divider_49E6Up",
+    "icons_with_content_UxDezj",
+    "section_divider_3EN48g",
+    "related-products",
+    "comparison_slider_YVBG8W",
+    "image_with_text_d9hBhP",
+    "image_with_text_Ez3w4P",
+    "comparison_table_AH6rac",
+    "testimonials_x3jMb9",
+    "rich_text_NgFCJz",
+    "section_divider_rxiymy",
+    "collapsible_content_xAPeVn",
+    "section_divider_LDN9zL",
+    "1715369300b0bb4974"
+  ]
+}

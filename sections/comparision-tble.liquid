@@ -1,0 +1,268 @@
+<style>
+      .eu_compare_section {
+          max-width: 520px;
+          margin: 0 auto;
+          margin-top: 20px;
+          padding: 35px 10px;
+      }
+
+      .eu_top_headings {
+          text-align: center;
+          margin-bottom: 21px;
+      }
+
+      .eu_top_headings span {
+          margin: 0 auto;
+          padding: 0 12.2px;
+          border-radius: 5px;
+          color: #fff;
+          height: 35px;
+          font-size: 20px;
+          font-weight: 600;
+          width: fit-content;
+          background-color: #f0d3cb;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+
+      .eu_top_headings h2 {
+          font-size: 35px;
+          word-spacing: -1px;
+          letter-spacing: -2px;
+          font-weight: 600;
+      }
+
+      .eu_top_headings p {
+          font-size: 18px;
+          font-weight: 500;
+          color: #000;
+      }
+
+      .eu_images_compare {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: row;
+          gap: 10px;
+          position: relative;
+          width: 100%;
+      }
+
+
+
+      .eu_images_compare span {
+          position: absolute;
+          font-size: 18px;
+          font-weight: 500;
+          color: #fff;
+          background-color: #000;
+          border-radius: 50px;
+          padding: 10px;
+      }
+  .eu_pro_img {
+      width: 200px;
+     height: 200px;
+  }
+  .eu_pro_img img {
+
+      object-fit: contain;
+      width: 100%;
+
+  }
+
+
+      .eu_right_image img {
+
+         object-fit: contain;
+      }
+
+      .eu_comparisons {
+          margin-top: 20px;
+      }
+
+      .eu_comparison_list {
+         list-style-type: none;
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          justify-content: center;
+          border-radius: 100px;
+          height: 55px;
+          width: 100%;
+          margin-bottom: 10px;
+      }
+
+      .eu_left_compare {
+         line-height: 20px;
+      position: relative;
+      background: transparent linear-gradient(68deg, #ffeae5 0%, #f0d3cb 100%) 0% 0% no-repeat padding-box;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 56px;
+      padding-left: 20px;
+      font-size: 18px;
+      text-align: right;
+      color: #000000;
+      width: 50%;
+      height: 100%;
+      border-bottom-left-radius: 100px;
+      border-top-left-radius: 100px;
+      }
+
+             .eu_left_compare li::after {
+          position: absolute;
+          content: '';
+          background: url(https://cdn.shopify.com/s/files/1/0824/1882/7590/files/icons8-check-30.png?v=1728760035);
+          top: 50%;
+          right: 15px;
+          transform: translateY(-50%);
+          width: 24px;
+          height: 24px;
+          border-radius: 100px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 24px;
+      }
+
+      .eu_right_compare {
+            line-height: 20px;
+
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          font-size: 18px;
+          text-align: left;
+          background-color: #F5F5F5;
+          color: #000;
+          height: 100%;
+          width: 50%;
+          padding-right: 20px;
+          padding-left: 56px;
+          border-bottom-right-radius: 100px;
+          border-top-right-radius: 100px;
+      }
+
+      .eu_right_compare li {
+          position: relative;
+          text-wrap: wrap;
+      }
+
+      .eu_right_compare li::before {
+          position: absolute;
+          content: '';
+          background: url(https://cdn.shopify.com/s/files/1/0824/1882/7590/files/icons8-cancel-50.png?v=1728760035);
+          top: 50%;
+          left: -40px;
+          transform: translateY(-50%);
+          width: 24px;
+          height: 24px;
+          border-radius: 100px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 24px;
+      }
+
+      @media only screen and (max-width: 420px) {
+          .eu_comparison_list li {
+              font-size: 11px;
+          }
+
+    .eu_pro_img img {
+
+        height: 160px;
+    }
+
+        .eu_comparison_list {
+
+      height: 45px;
+        }
+
+
+      }
+</style>
+
+<div class="eu_compare_section">
+  <div class="eu_top_headings">
+    <span>us vs. them</span>
+    <h2>{{ section.settings.section_heading }}</h2>
+    <p>{{ section.settings.subheading }}</p>
+  </div>
+  <div class="eu_main_content">
+    <div class="eu_images_compare">
+      <span>VS.</span>
+      <div class="eu_left_image eu_pro_img"><img src="{{ section.settings.left_image | img_url: '500x' }}" alt=""></div>
+      <div class="eu_right_image eu_pro_img">
+        <img src="{{ section.settings.right_image | img_url: '500x' }}" alt="">
+      </div>
+    </div>
+    <div class="eu_comparisons">
+      {% for block in section.blocks %}
+        <div class="eu_comparison_list">
+          <div class="eu_left_compare">
+            <li>{{ block.settings.left_comparison }}</li>
+          </div>
+          <div class="eu_right_compare">
+            <li>{{ block.settings.right_comparison }}</li>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Coffee Comparison",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section Heading",
+      "default": "Coffee upgrade like no other"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Rainbow Dust - coffee"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": "Right Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "comparison_block",
+      "name": "Comparison Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "left_comparison",
+          "label": "Left Comparison Text",
+          "default": "zero crash or jitters"
+        },
+        {
+          "type": "text",
+          "id": "right_comparison",
+          "label": "Right Comparison Text",
+          "default": "can give major crashes or jitters"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Coffee Comparison Section",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}

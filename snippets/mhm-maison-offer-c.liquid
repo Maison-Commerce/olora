@@ -1,0 +1,1195 @@
+<style>
+  [x-cloak] { display: none !important; }
+
+  .fade-in {
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+  }
+
+  .fade-in.loaded {
+    opacity: 1;
+  }
+
+  .mc-font-vorkurs {
+    font-family: 'II Vorkurs', sans-serif !important;
+  }
+</style>
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+<link href="{{ 'bundle-builder.css' | asset_url }}" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  window.tailwind = {
+    config: {
+      prefix: 'mc-',
+      theme: {
+        extend: {
+          fontFamily: {
+            vorkurs: ['"II Vorkurs"', 'sans-serif'],
+          },
+          colors: {
+            accent: '#C2818A',
+          }
+        }
+      }
+    }
+  }
+</script>
+
+<div
+  class="mc-font-vorkurs body-offer-thing maison-offer-c"
+  x-data="
+    {
+      loaded: false,
+      activeTab: 'build',
+      isLoading: false,
+      selectedBundle: '5pack',
+      selections: [],
+      currentStep: 'size',
+      selectedSize: null,
+      tempColor: null,
+      bundlePrices: {
+        '2pack': null,
+        '5pack': null,
+        '10pack': null
+      },
+      bundles: {
+        '2pack': { quantity: 2, savings: '48%', shipping: 4.99, price: 29 },
+        '5pack': { quantity: 5, savings: '72%', shipping: 4.99, isHot: true, price: 39 },
+        '10pack': { quantity: 10, savings: '77%', shipping: 0, price: 64 }
+      },
+      async init() {
+        try {
+          const response = await fetch('/products/maison-bundle-product-offer-a.json');
+          const data = await response.json();
+
+          data.product.variants.forEach(variant => {
+            if (variant.title.includes('2 Pack-c')) {
+              this.bundles['2pack'].price = Number(variant.price);
+            } else if (variant.title.includes('5 Pack-c')) {
+              this.bundles['5pack'].price = Number(variant.price);
+            } else if (variant.title.includes('10 Pack-c')) {
+              this.bundles['10pack'].price = Number(variant.price);
+            }
+          });
+        } catch (error) {
+          console.error('Error fetching bundle prices:', error);
+          // Fallback to default prices if fetch fails
+          this.bundles['2pack'].price = 29.00;
+          this.bundles['5pack'].price = 39.00;
+          this.bundles['10pack'].price = 64.00;
+        }
+        this.loaded = true;
+      },
+      variantMap: {
+        'sand': {
+          'XS': '53790812438854',
+          'S': '53790812471622',
+          'M': '53790812504390',
+          'L': '53790812537158',
+          'XL': '53790812569926',
+          'XXL': '53790812602694',
+          'XXXL': '53790812635462'
+        },
+        'black': {
+          'XS': '53790812668230',
+          'S': '53790812700998',
+          'M': '53790812733766',
+          'L': '53790812766534',
+          'XL': '53790812799302',
+          'XXL': '53790812832070',
+          'XXXL': '53790812864838'
+        },
+        'moss': {
+          'XS': '53790812897606',
+          'S': '53790812930374',
+          'M': '53790812963142',
+          'L': '53790812995910',
+          'XL': '53790813028678',
+          'XXL': '53790813061446',
+          'XXXL': '53790813094214'
+        },
+        'coffee': {
+          'XS': '53790813126982',
+          'S': '53790813159750',
+          'M': '53790813192518',
+          'L': '53790813225286',
+          'XL': '53790813258054',
+          'XXL': '53790813290822',
+          'XXXL': '53790813323590'
+        },
+        'blacksand': {
+          'XS': {
+            '2pack': null,
+            '5pack': null,
+            '10pack': null
+          },
+          'S': {
+            '2pack': null,
+            '5pack': null,
+            '10pack': null
+          },
+          'M': {
+            '2pack': null,
+            '5pack': null,
+            '10pack': null
+          },
+          'L': {
+            '2pack': null,
+            '5pack': null,
+            '10pack': null
+          },
+          'XL': {
+            '2pack': null,
+            '5pack': null,
+            '10pack': null
+          },
+          'XXL': {
+            '2pack': null,
+            '5pack': null,
+            '10pack': null
+          },
+          'XXXL': {
+            '2pack': null,
+            '5pack': null,
+            '10pack': null
+          }
+        }
+      },
+      colors: [
+        { id: 'sand', name: 'Sand', hex: '#E6D2C0', isHot: true },
+        { id: 'black', name: 'Black', hex: '#000000', isHot: false },
+        { id: 'moss', name: 'Moss', hex: '#78866B', isHot: true },
+        { id: 'coffee', name: 'Coffee', hex: '#6F4E37', isHot: false }
+      ],
+      sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
+
+      selectBundle(key) {
+        const newQuantity = this.bundles[key].quantity;
+        if (this.selections.length > newQuantity) {
+          this.selections = this.selections.slice(0, newQuantity);
+        }
+        this.selectedBundle = key;
+        this.currentStep = 'size';
+        this.tempColor = null;
+      },
+
+      handleColorClick(colorId) {
+        if (this.currentStep === 'color') {
+          this.tempColor = colorId;
+          if (this.selectedSize) {
+            this.selections.push({ color: colorId, size: this.selectedSize });
+            this.tempColor = null;
+            this.selectedSize = null;
+            this.currentStep = 'size';
+          }
+        }
+      },
+
+      addSelection(size) {
+        if (this.currentStep === 'size') {
+          this.selectedSize = size;
+          this.currentStep = 'color';
+        }
+      },
+
+      removeSelection(index) {
+        this.selections = this.selections.filter((_, i) => i !== index);
+      },
+
+      cancelSelection() {
+        this.tempColor = null;
+        this.selectedSize = null;
+        this.currentStep = 'size';
+      },
+
+      async addToCart() {
+        this.isLoading = true;
+        try {
+          const items = this.selections.map(selection => ({
+            id: this.variantMap[selection.color][selection.size],
+            quantity: 1
+          }));
+
+          const response = await fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              items: items
+            })
+          });
+
+          if (!response.ok) throw new Error('Failed to add items to cart');
+
+        } catch (error) {
+          console.error('Error adding to cart:', error);
+          this.isLoading = false;
+        } finally {
+            this.isLoading = false;
+        }
+      }
+    }
+  "
+  x-cloak
+  x-init="setTimeout(() => loaded = true, 250)"
+  class="w-full mc-mx-auto mc-p-3 sm:mc-p-6 mc-space-y-6 sm:mc-space-y-8 mc-fade-in"
+  :class="{ 'mc-loaded': loaded, 'mc-opacity-50 mc-pointer-events-none mc-transition-opacity duration-300': isLoading }"
+>
+  <!-- Tab Navigation -->
+  <div class="mc-w-full mc-mx-auto mc-p-3 sm:mc-p-6">
+    <div class="mc-flex mc-gap-4 mc-mb-8 mc-justify-center packs-nav mc-border">
+      <button
+        @click="activeTab = 'curated'"
+        :class="activeTab === 'curated' ? 'mc-bg-F5E9E7 mc-text-black mc-border mc-border-F5E9E7 custom-tab--active' : 'mc-text-gray-500'"
+        class="mc-py-2 mc-px-3 mc-font-bold mc-rounded-full packs__nav-item"
+        style="text-transform: uppercase"
+      >
+        Curated Packs
+      </button>
+      <button
+        @click="activeTab = 'build'"
+        :class="activeTab === 'build' ? 'mc-bg-F5E9E7 mc-text-black mc-border mc-border-F5E9E7 custom-tab--active' : 'mc-text-gray-500'"
+        class="mc-py-2 mc-px-3 mc-font-bold mc-rounded-full packs__nav-item"
+        style="text-transform: uppercase"
+      >
+        Build My Pack
+      </button>
+      <button
+        @click="activeTab = 'single'"
+        :class="activeTab === 'single' ? 'mc-bg-F5E9E7 mc-text-black mc-border mc-border-F5E9E7 custom-tab--active' : 'mc-text-gray-500'"
+        class="mc-py-2 mc-px-3 mc-font-bold mc-rounded-full packs__nav-item"
+        style="text-transform: uppercase"
+      >
+        Singles
+      </button>
+    </div>
+
+    <!-- Tab Panels Container -->
+    <div class="mc-relative">
+      <!-- Build My Bundle Tab -->
+      <div
+        x-show="activeTab === 'build'"
+        x-transition:enter="transition ease-out duration-300 delay-800"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        class="mc-w-full"
+      >
+        <!-- Step 1: Bundle Selection -->
+        <div>
+          <h4 class="mc-text-md mc-font-semibold mc-mb-4 mc-flex mc-items-center" style="color: #635553">
+            <span class="bg-[#FCF5F4] mc-rounded-full mc-h-8 mc-flex mc-items-center mc-justify-center mc-mr-2"
+              >STEP 1 -</span
+            >
+            CHOOSE YOUR PACK
+          </h4>
+
+          <div class="mc-grid mc-text-center mc-grid-cols-3 mc-gap-3 mc-mb-4">
+            <template x-for="(bundle, key) in bundles" :key="key">
+              <div
+                class="pack-button mc-cursor-pointer mc-bg-white mc-border mc-shadow-sm hover:mc-shadow-md mc-transition-shadow"
+                style="border-radius: 12px; position: relative; padding-top: 10px"
+                :class="selectedBundle === key ? 'custom-selected-pack' : ''"
+                @click="selectBundle(key)"
+              >
+                <!-- Add this span with a conditional render -->
+                <span
+                  x-text="`SAVE ${bundle.savings}`"
+                  style="border-radius: 0px 0px 8px 8px; background: #C2818A; position: absolute; right: 50%; top: 0; color: white; font-size: 8px; padding: 2px 5px; transform: translateX(50%); min-width: max-content"
+                  >MOST POPULAR</span
+                >
+
+                <div class="mc-py-4 mc-px-2 mc-h-full">
+                  <div class="mc-flex mc-align-center mc-items-center mc-justify-center mc-h-full">
+                    <div class="mc-flex mc-flex-col mc-items-center mc-h-full" style="justify-content: center">
+                      <div class="mc-font-bold mc-text-sm">
+                        <span x-text="`${bundle.quantity} PAIRS`"></span>
+                        <!-- <span class="mc-text-accent" x-text="` • SAVE ${bundle.savings}`"></span> -->
+                      </div>
+                      <div
+                        class="mc-text-xs mc-text-gray-400 mc-mt-6"
+                        style="margin-block: 4px; color: #C2818A !important;"
+                        x-show="bundle.shipping === 0"
+                        x-html="bundle.shipping === 0 ? '<span style=\'color: #8D8681\'>SHIPPING:</span> <span style=\'color: #059DA4\'>FREE!</span>' : `Shipping: {{ shop.currency }}${bundle.shipping}`"
+                      ></div>
+
+                      <div
+                        class="mc-text-sm mc-font-bold mc-mt-6"
+                        x-html="`{{ cart.currency.symbol }}${(bundle.price / bundle.quantity).toFixed(2)} <span style='font-size: 10px; color: #1B0E04; opacity: 0.5; font-weight: 500;'>per pair</span>`"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </template>
+          </div>
+        </div>
+
+        <!-- Step 2: Item Selection -->
+        <div>
+
+          <!-- Step 2: Size Selection -->
+          <div>
+            <h4 class="mc-text-md mc-font-semibold mc-mb-4 mc-flex mc-items-center" style="color: #635553">
+              <span class="bg-[#FCF5F4] mc-rounded-full mc-h-8 mc-flex mc-items-center mc-justify-center mc-mr-2"
+                >STEP 2 -</span
+              >
+              CHOOSE YOUR SIZE
+            </h4>
+            <div class="mc-grid mc-grid-cols-5 mc-gap-2 mc-mb-4">
+              <template x-for="size in sizes" :key="size">
+                <button
+                  class="mc-px-4 mc-py-4 mc-rounded-lg mc-border hover:mc-border-accent focus-custom-selected-pack mc-bg-white"
+                  :class="currentStep === 'color' && selectedSize ? 'hover:mc-bg-accent/5' : ''"
+                  @click="addSelection(size)"
+                  x-text="size"
+                ></button>
+              </template>
+            </div>
+          </div>
+
+          <!-- Step 3: Color Selection -->
+          <div>
+            <h4 class="mc-text-md mc-font-semibold mc-flex mc-items-center" style="color: #635553">
+              <span class="bg-[#FCF5F4] mc-rounded-full mc-h-8 mc-flex mc-items-center mc-justify-center mc-mr-2"
+                >STEP 3 -</span
+              >
+              CHOOSE YOUR COLOR
+            </h4>
+            <div class="mc-grid mc-grid-cols-4 mc-gap-4 mc-py-2 mc-mb-4">
+              <template x-for="color in colors" :key="color.id">
+                <div class="mc-relative">
+                  <button
+                    class="mc-font-bold mc-text-sm mc-mt-2 mc-text-center mc-cursor-pointer mc-border mc-rounded-lg mc-shadow-sm hover:mc-shadow-md mc-transition-shadow mc-p-4 mc-w-full mc-bg-white mc-flex mc-flex-col mc-items-center focus-custom-selected-pack"
+                    :class="tempColor === color.id ? 'custom-selected-pack' : ''"
+                    @click="handleColorClick(color.id)"
+                    :disabled="currentStep === 'size'"
+                  >
+                    <div
+                      class="mc-w-6 mc-h-6 mc-rounded-full mc-border mc-border-gray-200"
+                      :style="`background-color: ${color.hex};display:block;height:12px;width:12px`"
+                    ></div>
+                    <span x-text="color.name"></span>
+                  </button>
+                </div>
+              </template>
+            </div>
+
+            <!-- Stock Indicator -->
+            <!-- <div class="mc-text-sm mc-mb-4" x-show="tempColor || selections.length > 0">
+              <div
+                x-show="['black'].includes(tempColor || (selections.length > 0 && selections[selections.length-1].color))"
+                class="mc-flex mc-items-center mc-text-amber-600"
+              >
+                <div class="mc-w-2 mc-h-2 mc-rounded-full mc-bg-amber-600 mc-mr-2"></div>
+                {% render 'pulsing-text',
+                  class_name: 'low-stock',
+                  pulse_text: 'Low Stock, selling fast',
+                  pulse_color: '#d97706'
+                %}
+              </div>
+              <div
+                x-show="!['black'].includes(tempColor || (selections.length > 0 && selections[selections.length-1].color))"
+                class="mc-flex mc-items-center mc-text-green-600"
+              >
+                <div class="mc-w-2 mc-h-2 mc-rounded-full mc-bg-green-600 mc-mr-2"></div>
+                {% render 'pulsing-text',
+                  class_name: 'in-stock',
+                  pulse_text: 'In Stock, ready to ship',
+                  pulse_color: 'rgb(22, 163, 74)'
+                %}
+              </div>
+            </div> -->
+          </div>
+
+          <h4 class="mc-text-md mc-font-semibold mc-mb-4 mc-flex mc-items-center" style="color: #635553">
+            <span class="bg-[#FCF5F4] mc-rounded-full mc-h-8 mc-flex mc-items-center mc-justify-center mc-mr-2"
+              >STEP 4 -</span
+            >
+            <span x-text="`SELECTED ITEMS (${selections.length} of ${bundles[selectedBundle].quantity})`"></span>
+          </h4>
+
+            <div
+              x-show="selections.length < bundles[selectedBundle].quantity"
+              style="margin-bottom: 10px"
+            >
+              <div 
+              x-show="selections.length === 0"
+              >
+                {% render 'pulsing-text',
+                  class_name: 'choose-size',
+                  pulse_text: 'Choose your first size!',
+                  pulse_color: '#d97706'
+                %}
+              </div>
+              
+              <div 
+              x-show="selections.length > 0"
+              >
+                {% render 'pulsing-text',
+                  class_name: 'next-size',
+                  pulse_text: 'Great choice! Choose your next size',
+                  pulse_color: '#d97706'
+                %}
+              </div>
+            </div>
+
+          <!-- Selected Items Grid -->
+          <div class="mc-grid mc-grid-cols-5 mc-gap-2 mc-rounded-lg mc-mb-4">
+            <template x-for="(_, index) in Array(bundles[selectedBundle].quantity)" :key="index">
+              <div
+                class="mc-w-full mc-h-16 mc-rounded-lg mc-flex mc-items-center mc-justify-center"
+                style="padding: 5px; height: auto !important"
+                :class="selections[index] ? 'shadow-sm' : 'mc-border-2 mc-border-dashed border-gray-300'"
+              >
+                <template x-if="selections[index]">
+                  <div class="mc-relative mc-w-full mc-h-full" style="height: fit-content !important">
+                    <div style="display: grid; gap: 5px; padding-block: 5px; place-items: center; border: 1px solid black !important; border-radius: 12px;background-color: white !important;">
+                      <div
+                        class="mc-w-full mc-h-full mc-rounded-lg  mc-overflow-hidden color-swatch-custom"
+                        :style="`background-color: ${colors.find(c => c.id === selections[index].color).hex}!important;`"
+                      ></div>
+
+                      <div
+                        class="mc-text-xs mc-text-center mc-py-1 mc-rounded-b-lg"
+                        x-text="selections[index].size"
+                      ></div>
+                    </div>
+
+                    <button
+                      @click="removeSelection(index)"
+                      class="mc-absolute -mc-top-2 -mc-right-2 mc-rounded-full mc-p-1 mc-shadow-sm hover:mc-bg-gray-100"
+                    >
+                      <svg class="mc-w-3 mc-h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                      </svg>
+                    </button>
+                  </div>
+                </template>
+                <template x-if="!selections[index]">
+                  <span
+                    class="mc-text-center mc-text-xs sm:mc-text-sm mc-text-gray-400"
+                    x-text="`Choose #${index + 1}`"
+                  ></span>
+                </template>
+              </div>
+            </template>
+          </div>
+
+          <!--
+            <div
+              x-show="selections.length === 1"
+              x-transition:enter="transition ease-out duration-300"
+              x-transition:enter-start="opacity-0 transform -translate-y-2"
+              x-transition:enter-end="opacity-100 transform translate-y-0"
+              class="mc-bg-amber-50 mc-mt-2 mc-mb-2 mc-text-amber-700 mc-px-4 mc-py-3 mc-rounded-lg mc-text-center mc-font-medium"
+            >
+              Great choice! Choose your 2nd pair now.
+            </div>
+          -->
+
+          <!-- Price per Thong -->
+          <div class="mc-flex mc-items-center mc-gap-2 mc-mb-6" style="margin-block: 10px">
+            <span class="mc-font-bold mc-mr-2" style="color: #1B0E04 !important; opacity: 0.5; font-size: 11px !important">
+              Total:
+            </span>
+            <span
+              class="mc-text-[16px] mc-font-bold mc-leading-none mc-text-[#C2818A] mc-line-through"
+              style="color: #C2818A; font-weight: 500; line-height: 100%; text-decoration-line: line-through;"
+              x-text="`{{ cart.currency.symbol }}${({{ product.price | divided_by: 100.00 }} * bundles[selectedBundle].quantity).toFixed(2)}`"
+            ></span>
+            <div class="mc-text-black mc-font-bold">
+              <span x-text="`{{ cart.currency.symbol }}${bundles[selectedBundle].price.toFixed(2)}`"></span>
+            </div>
+          </div>
+
+          <!-- Add to Cart Button -->
+          <button
+            style="padding: 2.5rem 0 !important;"
+            class="maison__atc-button mc-w-full mc-bg-black mc-text-white mc-py-4 sm:mc-py-4 mc-rounded-lg hover:mc-bg-gray-800 disabled:mc-bg-gray-400 mc-text-md"
+            :disabled="selections.length !== bundles[selectedBundle].quantity || isLoading"
+            @click="addToCart"
+          >
+            <span
+              x-text="isLoading ? 'Adding...' : `Add to Cart${selections.length === bundles[selectedBundle].quantity ? ` (Save ${bundles[selectedBundle].savings})` : ` (${selections.length}/${bundles[selectedBundle].quantity} Selected)`}`"
+            ></span>
+          </button>
+
+          <!--
+            <div
+              x-show="selections.length === bundles[selectedBundle].quantity"
+              x-transition:enter="transition ease-out duration-300"
+              x-transition:enter-start="opacity-0 transform -translate-y-2"
+              x-transition:enter-end="opacity-100 transform translate-y-0"
+              class="mc-bg-green-50 mc-mt-2 mc-text-green-700 mc-px-4 mc-py-3 mc-rounded-lg mc-text-center mc-font-medium"
+            >
+              Amazing choice! These will fit you perfect!
+            </div>
+          -->
+        </div>
+      </div>
+
+      <!-- Curated Packs Tab -->
+      <div
+        x-show="activeTab === 'curated'"
+        x-transition:enter="transition ease-out duration-300 delay-200"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        class="mc-w-full"
+      >
+        <div
+          x-data="
+            {
+              selectedSize: null,
+              selectedPack: null,
+              selectedBundle: '5pack',
+              bundles: {
+                '2pack': { quantity: 2, savings: '48%', shipping: 4.99 },
+                '5pack': { quantity: 5, savings: '72%', shipping: 4.99 },
+                '10pack': { quantity: 10, savings: '77%', shipping: 0 }
+              },
+              async init() {
+                try {
+                  const response = await fetch('/products/maison-bundle-product-offer-a.json');
+                  const data = await response.json();
+
+                  data.product.variants.forEach(variant => {
+                    if (variant.title.includes('2 Pack-c')) {
+                      this.bundles['2pack'].price = Number(variant.price);
+                    } else if (variant.title.includes('5 Pack-c')) {
+                      this.bundles['5pack'].price = Number(variant.price);
+                    } else if (variant.title.includes('10 Pack-c')) {
+                      this.bundles['10pack'].price = Number(variant.price);
+                    }
+                  });
+          this.updateBundlePrice();
+                } catch (error) {
+                  console.error('Error fetching bundle prices:', error);
+                  // Fallback to default prices if fetch fails
+                  this.bundles['2pack'].price = 29.00;
+                  this.bundles['5pack'].price = 39.00;
+                  this.bundles['10pack'].price = 64.00;
+                }
+              },
+              curatedPacks: [
+                { id: 'blacksand', name: 'Black & Sand', pattern: ['black', 'black', 'black', 'sand', 'sand'], hex: '#242424' },
+                { id: 'allblack', name: 'Black', pattern: ['black'], hex: '#242424' },
+                { id: 'allsand', name: 'Sand', pattern: ['sand'], hex: '#EFD6B7' }
+              ],
+              stockInfo: {
+                'blacksand': 'low',
+                'allblack': 'low',
+                'allsand': 'in'
+              },
+              isLoading: false,
+
+              // Add variant mapping for curated packs
+              curatedVariantMap: {
+                'allsand': {
+                  'XS': {
+                    '2pack': '54089866084678',
+                    '5pack': '54330766098758',
+                    '10pack': '54330766131526'
+                  },
+                  'S': {
+                    '2pack': '54089866117446',
+                    '5pack': '54330766164294',
+                    '10pack': '54330766197062'
+                  },
+                  'M': {
+                    '2pack': '54089866150214',
+                    '5pack': '54330766229830',
+                    '10pack': '54330766262598'
+                  },
+                  'L': {
+                    '2pack': '54089866182982',
+                    '5pack': '54330766295366',
+                    '10pack': '54330766328134'
+                  },
+                  'XL': {
+                    '2pack': '54089866215750',
+                    '5pack': '54330766360902',
+                    '10pack': '54330766393670'
+                  },
+                  'XXL': {
+                    '2pack': '54089866248518',
+                    '5pack': '54330766426438',
+                    '10pack': '54330766459206'
+                  },
+                  'XXXL': {
+                    '2pack': '54089866281286',
+                    '5pack': '54330766491974',
+                    '10pack': '54330766524742'
+                  }
+                },
+                'allblack': {
+                  'XS': {
+                    '2pack': '54089866314054',
+                    '5pack': '54330766557510',
+                    '10pack': '54330766590278'
+                  },
+                  'S': {
+                    '2pack': '54089866346822',
+                    '5pack': '54330766623046',
+                    '10pack': '54330766655814'
+                  },
+                  'M': {
+                    '2pack': '54089866379590',
+                    '5pack': '54330766688582',
+                    '10pack': '54330766721350'
+                  },
+                  'L': {
+                    '2pack': '54089866412358',
+                    '5pack': '54330766754118',
+                    '10pack': '54330766786886'
+                  },
+                  'XL': {
+                    '2pack': '54089866445126',
+                    '5pack': '54330766819654',
+                    '10pack': '54330766852422'
+                  },
+                  'XXL': {
+                    '2pack': '54089866477894',
+                    '5pack': '54330766885190',
+                    '10pack': '54330766917958'
+                  },
+                  'XXXL': {
+                    '2pack': '54089866510662',
+                    '5pack': '54330766950726',
+                    '10pack': '54330766983494'
+                  }
+                },
+                'blacksand': {
+                  'XS': {
+                    '2pack': '54098659639622',
+                    '5pack': '54330767016262',
+                    '10pack': '54330767049030'
+                  },
+                  'S': {
+                    '2pack': '54098659672390',
+                    '5pack': '54330767081798',
+                    '10pack': '54330767114566'
+                  },
+                  'M': {
+                    '2pack': '54098659705158',
+                    '5pack': '54330767147334',
+                    '10pack': '54330767180102'
+                  },
+                  'L': {
+                    '2pack': '54098659737926',
+                    '5pack': '54330767212870',
+                    '10pack': '54330767245638'
+                  },
+                  'XL': {
+                    '2pack': '54098659770694',
+                    '5pack': '54330767278406',
+                    '10pack': '54330767311174'
+                  },
+                  'XXL': {
+                    '2pack': '54098659803462',
+                    '5pack': '54330767343942',
+                    '10pack': '54330767376710'
+                  },
+                  'XXXL': {
+                    '2pack': '54098659836230',
+                    '5pack': '54330767409478',
+                    '10pack': '54330767442246'
+                  }
+                }
+              },
+// Function to update the bundle price based on selectedPack and selectedBundle
+            updateBundlePrice() {
+              if (this.selectedPack === 'blacksand') {
+                this.bundles['2pack'].price = 29; // Default for black and sand combo
+                this.bundles['5pack'].price = 39; // Default price for 5pack
+                this.bundles['10pack'].price = 64; // Default price for 10pack
+              } else if (this.selectedPack === 'allblack') {
+                this.bundles['2pack'].price = 29; // Default price for black
+                this.bundles['5pack'].price = 39; // Default price for 5pack
+                this.bundles['10pack'].price = 64; // Default price for 10pack
+              } else if (this.selectedPack === 'allsand') {
+                this.bundles['2pack'].price = 29; // Default price for sand
+                this.bundles['5pack'].price = 39; // Default price for 5pack
+                this.bundles['10pack'].price = 64; // Default price for 10pack
+              }
+            },
+              async addToCartCurated() {
+                if (!this.selectedSize || !this.selectedPack || !this.selectedBundle) return;
+
+                this.isLoading = true;
+                try {
+                  let variantId;
+                  let quantity = 1;
+                     
+                  // Handle different pack types
+                  if (this.selectedPack === 'blacksand') {
+                    // For black and sand mix, we need to add multiple variants
+                    const items = [];
+                    if (this.selectedBundle === '5pack') {
+                      // 3 black, 2 sand for 5-pack
+                  
+                      items.push({
+                        id: this.curatedVariantMap['allblack'][this.selectedSize]['5pack'],
+                        quantity: 3
+                      });
+               items.push({
+                        id: this.curatedVariantMap['allsand'][this.selectedSize]['5pack'],
+                        quantity: 2
+                      });
+                    } else {
+                      // Equal split for 2-pack and 10-pack
+                     const packQuantity = this.bundles[this.selectedBundle].quantity/2 ;
+                      items.push({
+                        id: this.curatedVariantMap['allblack'][this.selectedSize][this.selectedBundle],
+                        quantity: packQuantity
+                      });
+                      items.push({
+                        id: this.curatedVariantMap['allsand'][this.selectedSize][this.selectedBundle],
+                        quantity: packQuantity
+                      });
+                    }
+
+                    const response = await fetch('/cart/add.js', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json'
+                      },
+                      body: JSON.stringify({ items })
+                    });
+
+                    if (!response.ok) throw new Error('Failed to add items to cart');
+
+                  } else {
+                    // For single color packs (allblack or allsand)
+                    variantId = this.curatedVariantMap[this.selectedPack][this.selectedSize][this.selectedBundle];
+const packQuantity = this.bundles[this.selectedBundle].quantity ;
+                    const response = await fetch('/cart/add.js', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json'
+                      },
+                      body: JSON.stringify({
+                        items: [{
+                          id: variantId,
+                          quantity: packQuantity
+                        }]
+                      })
+                    });
+
+                    if (!response.ok) throw new Error('Failed to add items to cart');
+                  }
+
+                  // Open cart drawer (assuming you have a cart-drawer element)
+                  document.dispatchEvent(new CustomEvent('cart:open'));
+
+                } catch (error) {
+                  console.error('Error adding to cart:', error);
+                } finally {
+                  this.isLoading = false;
+                }
+              }
+            }
+          "
+          class="mc-w-full mc-mx-auto mc-space-y-6 sm:mc-space-y-8"
+          :class="{ 'mc-opacity-50 pointer-events-none': mc-isLoading }"
+        >
+          <!-- Step 1: Bundle Selection -->
+          <div>
+            <h2 class="mc-text-md mc-font-semibold mc-mb-4 mc-flex mc-items-center" style="color: #635553">
+              <span class="bg-[#FCF5F4] mc-rounded-full mc-w-8 mc-h-8 mc-flex mc-items-center mc-justify-center mc-mr-2"
+                >1</span
+              >
+              CHOOSE YOUR PACK
+            </h2>
+
+            <div class="mc-grid mc-grid-cols-3 mc-gap-4">
+              <template x-for="(bundle, key) in bundles" :key="key">
+                <div
+                  class="mc-cursor-pointer mc-py-4 mc-px-2 mc-border mc-rounded-lg mc-shadow-sm hover:mc-shadow-md mc-transition-shadow mc-flex mc-flex-col mc-items-center mc-justify-center mc-text-center mc-bg-white"
+                  style="border-radius: 12px !important; position: relative; padding-top: 18px !important; height: 100%;"
+                  :class="selectedBundle === key ? 'custom-selected-pack' : ''"
+                  @click="selectedBundle = key"
+                >
+                  <span
+                    x-text="`SAVE ${bundle.savings}`"
+                    style="border-radius: 0px 0px 8px 8px; background: #C2818A; position: absolute; right: 50%; top: 0; color: white; font-size: 8px; padding: 2px 5px; transform: translateX(50%); min-width: max-content"
+                    >MOST POPULAR</span
+                  >
+                  <div class="mc-font-bold mc-text-sm">
+                    <span x-text="`${bundle.quantity} PAIRS`"></span>
+                    <!-- <span class="mc-text-accent" x-text="` • SAVE ${bundle.savings}`"></span> -->
+                  </div>
+                  <div
+                    class="mc-text-xs mc-text-gray-400 mc-mb-1"
+                    style="color: #C2818A !important;"
+                    x-show="bundle.shipping === 0"
+                    x-html="bundle.shipping === 0 ? '<span style=\'color: #8D8681\'>SHIPPING:</span> <span style=\'color: #059DA4\'>FREE!</span>' : `Shipping: {{ shop.currency }}${bundle.shipping}`"
+                  ></div>
+                  <div
+                    class="mc-text-sm mc-font-bold mc-mt-6"
+                    x-html="`{{ cart.currency.symbol }}${(bundle.price / bundle.quantity).toFixed(2)} <span style='font-size: 10px; color: #1B0E04; opacity: 0.5; font-weight: 500;'>per pair</span>`"
+                  ></div>
+                </div>
+              </template>
+            </div>
+          </div>
+
+          <!-- Step 2: Size Selection -->
+          <div>
+            <h2 class="mc-text-md mc-font-semibold mc-mb-4 mc-flex mc-items-center" style="color: #635553">
+              <span class="bg-[#FCF5F4] mc-rounded-full mc-w-8 mc-h-8 mc-flex mc-items-center mc-justify-center mc-mr-2"
+                >2</span
+              >
+              CHOOSE YOUR SIZE
+            </h2>
+
+            <div class="mc-grid mc-grid-cols-5 mc-gap-2">
+              <template x-for="size in ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL']" :key="size">
+                <button
+                  class="mc-px-4 mc-py-4 mc-rounded-lg mc-bg-white mc-border hover:mc-border-accent"
+                  style="border-radius: 12px !important;"
+                  :class="selectedSize === size ? 'custom-selected-pack' : ''"
+                  @click="selectedSize = size"
+                  x-text="size"
+                ></button>
+              </template>
+            </div>
+          </div>
+
+          <!-- Step 3: Curated Pack Selection -->
+          <div>
+            <h2 class="mc-text-md mc-font-semibold mc-mb-4 mc-flex mc-items-center" style="color: #635553">
+              <span class="bg-[#FCF5F4] mc-rounded-full mc-w-8 mc-h-8 mc-flex mc-items-center mc-justify-center mc-mr-2"
+                >3</span
+              >
+              CHOOSE YOUR COLORS
+            </h2>
+
+            <div class="mc-grid mc-grid-cols-3 mc-gap-4">
+              <template x-for="pack in curatedPacks" :key="pack.id">
+                <div
+                  class="mc-text-center mc-cursor-pointer mc-border mc-rounded-lg mc-shadow-sm hover:mc-shadow-md mc-transition-shadow mc-p-2 mc-bg-white"
+                  style="border-radius: 12px !important;"
+                  :class="selectedPack === pack.id ? 'custom-selected-pack' : ''"
+                  @click="selectedPack = pack.id; updateBundlePrice()"
+                >
+                  <div class="mc-justify-center mc-flex mc-gap-1 mc-justify-start mc-flex-wrap mc-items-center">
+                    <template x-for="color in [...new Set(pack.pattern)]" :key="color">
+                      <div class="mc-flex mc-items-center mc-gap-1">
+                        <div
+                          class="mc-w-4 mc-h-4 mc-rounded-full"
+                          :style="`background-color: ${color === 'black' ? '#000000' : '#E8D0B8'}`"
+                        ></div>
+                        <span
+                          class="mc-text-xs mc-text-gray-500"
+                          x-text="
+                            `(${
+                              pack.id === 'blacksand'
+                                ? (bundles[selectedBundle].quantity === 5
+                                    ? (color === 'black' ? 3 : 2)  // 5-pack: 3 black, 2 sand
+                                    : bundles[selectedBundle].quantity / 2) // 2-pack and 10-pack: equal split
+                                : bundles[selectedBundle].quantity
+                            }x)`
+                          "
+                        >
+                        </span>
+                      </div>
+                    </template>
+                  </div>
+                  <div
+                    class="mc-w-full mc-h-full mc-rounded-lg  mc-overflow-hidden color-swatch-custom"
+                    :style="
+                      pack.id === 'blacksand' ?
+                      `background: linear-gradient(to right, #000000 50%, #EFD6B7 50%); margin-top: 5px` :
+                      `background-color: ${pack.hex}; margin-top: 5px`
+                    "
+                  ></div>
+                  <div class="mc-font-bold mc-text-sm mc-mt-2" x-text="pack.name"></div>
+                </div>
+              </template>
+            </div>
+
+            <!-- Dynamic Stock Indicator -->
+            <div class="mc-mt-2 mc-text-sm">
+              <div
+                x-show="['blacksand', 'allblack'].includes(selectedPack)"
+                class="mc-flex mc-items-center mc-text-amber-600"
+              >
+                <div class="mc-w-2 mc-h-2 mc-rounded-full mc-bg-amber-600 mc-mr-2"></div>
+                {% render 'pulsing-text',
+                  class_name: 'low-stock-2',
+                  pulse_text: 'Low Stock, selling fast',
+                  pulse_color: '#d97706'
+                %}
+              </div>
+              <div
+                x-show="selectedPack === 'allsand'"
+                class="mc-flex mc-items-center mc-text-green-600"
+              >
+                <div class="mc-w-2 mc-h-2 mc-rounded-full mc-bg-green-600 mc-mr-2"></div>
+                {% render 'pulsing-text',
+                  class_name: 'in-stock-2',
+                  pulse_text: 'In Stock, ready to ship',
+                  pulse_color: 'rgb(22, 163, 74)'
+                %}
+              </div>
+            </div>
+          </div>
+
+          <!-- Price per Thong -->
+          <div class="mc-flex mc-justify-start mc-items-center mc-mb-4" style="margin-block: 10px">
+            <span
+              class="mc-font-bold mc-mr-2"
+              style="color: #1B0E04 !important; opacity: 0.5; font-size: 11px !important"
+            >
+              Total:
+            </span>
+
+            <div class="mc-flex mc-items-center mc-gap-2 mc-mb-6">
+              <span
+                class="mc-text-[16px] mc-font-bold mc-leading-none mc-text-[#C2818A] mc-line-through"
+                style="color: #C2818A; font-weight: 500; line-height: 100%; text-decoration-line: line-through;"
+                x-text="`{{ cart.currency.symbol }}${({{ product.price | divided_by: 100.00 }} * bundles[selectedBundle].quantity).toFixed(2)}`"
+              ></span>
+              <div class="mc-text-black mc-font-bold">
+                <span x-text="`{{ cart.currency.symbol }}${bundles[selectedBundle].price.toFixed(2)}`"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add to Cart Button -->
+          <button
+            style="padding: 2.5rem 0 !important;"
+            class="maison__atc-button mc-w-full mc-bg-black mc-text-white mc-py-4 sm:mc-py-4 mc-rounded-lg hover:mc-bg-gray-800 disabled:mc-bg-gray-400 mc-text-md"
+            :disabled="!selectedSize || !selectedPack || !selectedBundle || isLoading"
+            @click="addToCartCurated"
+            x-text="isLoading ? 'Adding...' : (!selectedSize || !selectedPack || !selectedBundle ? 'Finish selection first' : `Add to Cart (Save ${bundles[selectedBundle].savings})`)"
+          ></button>
+        </div>
+      </div>
+
+      <!-- Single Packs Tab -->
+      <div
+        x-show="activeTab === 'single'"
+        x-transition:enter="transition ease-out duration-300 delay-200"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        class="mc-w-full"
+      >
+        <div
+          x-data="
+            {
+              selectedSize: null,
+              selectedColor: null,
+              pricePerThong: 21.33,
+              isLoading: false,
+
+              async addToCart() {
+                if (!this.selectedSize || !this.selectedColor) return;
+
+                this.isLoading = true;
+                try {
+                  const variantId = this.variantMap[this.selectedColor][this.selectedSize];
+
+                  const response = await fetch('/cart/add.js', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                      items: [{
+                        id: variantId,
+                        quantity: 1
+                      }]
+                    })
+                  });
+
+                  if (!response.ok) throw new Error('Failed to add item to cart');
+
+                } catch (error) {
+                  console.error('Error adding to cart:', error);
+                  this.isLoading = false;
+                } finally {
+                    this.isLoading = false;
+                }
+              }
+            }
+          "
+          class="mc-w-full mc-mx-auto mc-space-y-6 sm:mc-space-y-8"
+          :class="{ 'mc-opacity-50 pointer-events-none': mc-isLoading }"
+        >
+          <!-- Size Selection -->
+          <div>
+            <h2 class="mc-text-md mc-font-semibold mc-mb-4 mc-flex mc-items-center" style="color: #635553">
+              <span class="bg-[#FCF5F4] mc-rounded-full mc-w-8 mc-h-8 mc-flex mc-items-center mc-justify-center mc-mr-2"
+                >1</span
+              >
+              CHOOSE YOUR SIZE
+            </h2>
+
+            <div class="mc-grid mc-grid-cols-5 mc-gap-2">
+              <template x-for="size in sizes" :key="size">
+                <button
+                  class="mc-px-4 mc-py-4 mc-rounded-lg mc-border hover:mc-border-accent mc-bg-white"
+                  style="border-radius: 12px !important;"
+                  :class="selectedSize === size ? 'custom-selected-pack' : ''"
+                  @click="selectedSize = size"
+                  x-text="size"
+                ></button>
+              </template>
+            </div>
+          </div>
+
+          <!-- Color Selection -->
+          <div>
+            <h2 class="mc-text-md mc-font-semibold mc-mb-4 mc-flex mc-items-center" style="color: #635553">
+              <span class="bg-[#FCF5F4] mc-rounded-full mc-w-8 mc-h-8 mc-flex mc-items-center mc-justify-center mc-mr-2"
+                >2</span
+              >
+              CHOOSE YOUR COLOR
+            </h2>
+
+            <div class="mc-grid mc-grid-cols-4 mc-gap-4 mc-py-2 mc-mb-4">
+              <template x-for="color in colors" :key="color.id">
+                <button
+                  class="mc-font-bold mc-text-sm mc-mt-2 mc-text-center mc-cursor-pointer focus-custom-selected-pack mc-border mc-rounded-lg mc-shadow-sm hover:mc-shadow-md mc-transition-shadow mc-p-2 mc-w-full mc-bg-white"
+                  :class="selectedColor === color.id ? 'custom-selected-pack' : ''"
+                  @click="selectedColor = color.id"
+                >
+                  <div class="mc-flex mc-flex-col mc-items-center mc-gap-1">
+                    <div 
+                      class="mc-border mc-border-gray-200 mc-rounded-full"
+                      :style="`background-color: ${color.hex}; height: 12px; width: 12px; display: block`"
+                    ></div>
+                    <span x-text="color.name"></span>
+                  </div>
+                </button>
+              </template>
+            </div>
+
+            <!-- Stock Indicator -->
+            <div class="mc-text-sm mc-mb-4" x-show="selectedColor">
+              <div
+                x-show="['black'].includes(selectedColor)"
+                class="mc-flex mc-items-center mc-text-amber-600"
+              >
+                <div class="mc-w-2 mc-h-2 mc-rounded-full mc-bg-amber-600 mc-mr-2"></div>
+                {% render 'pulsing-text',
+                  class_name: 'low-stock-single',
+                  pulse_text: 'Low Stock, selling fast',
+                  pulse_color: '#d97706'
+                %}
+              </div>
+              <div
+                x-show="!['black'].includes(selectedColor)"
+                class="mc-flex mc-items-center mc-text-green-600"
+              >
+                <div class="mc-w-2 mc-h-2 mc-rounded-full mc-bg-green-600 mc-mr-2"></div>
+                {% render 'pulsing-text',
+                  class_name: 'in-stock-single',
+                  pulse_text: 'In Stock, ready to ship',
+                  pulse_color: 'rgb(22, 163, 74)'
+                %}
+              </div>
+            </div>
+          </div>
+
+          <!-- Price Display -->
+          <div class="mc-flex mc-items-center mc-gap-2 mc-mb-6" style="margin-block: 10px">
+            <span class="mc-font-bold mc-mr-2" style="color: #1B0E04 !important; opacity: 0.5; font-size: 11px !important">
+              Total:
+            </span>
+            <!-- <span
+              class="mc-text-[16px] mc-font-bold mc-leading-none mc-text-[#C2818A] mc-line-through"
+              style="color: #C2818A; font-weight: 500; line-height: 100%; text-decoration-line: line-through;"
+              x-text="`{{ cart.currency.symbol }}${({{ product.price | divided_by: 100.00 }} * 1.4).toFixed(2)}`"
+            ></span> -->
+            <div class="mc-text-black mc-font-bold">
+              <span x-text="`{{ product.price | money }}`"></span>
+            </div>
+          </div>
+
+          <!-- Add to Cart Button -->
+          <button
+            style="padding: 2.5rem 0 !important;"
+            class="maison__atc-button mc-w-full mc-bg-black mc-text-white mc-py-4 sm:mc-py-4 mc-rounded-lg hover:mc-bg-gray-800 disabled:mc-bg-gray-400 mc-text-md"
+            :disabled="!selectedSize || !selectedColor || isLoading"
+            @click="addToCart"
+            x-text="isLoading ? 'Adding...' : (!selectedSize || !selectedColor ? 'Select size and color' : 'Add to Cart')"
+          ></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .custom-tab--active {
+    border-radius: 999px !important;
+    border: 1px solid #C2818A !important;
+    background: #FCF5F4 !important;
+    color: #1B0E04 !important;
+    box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  .custom-selected-pack {
+    border: 1px solid #C2818A !important;
+    background: #FCF5F4 !important;
+    box-shadow: 0px 4px 8px -2px #F2D1CC, 0px 2px 4px -2px rgba(0, 0, 0, 0.06) !important;
+  }
+
+  .focus-custom-selected-pack:focus,
+  .focus-custom-selected-pack:hover {
+    border: 1px solid #C2818A !important;
+    background: #FCF5F4 !important;
+    box-shadow: 0px 4px 8px -2px #F2D1CC, 0px 2px 4px -2px rgba(0, 0, 0, 0.06) !important;
+  }
+
+  .color-bar-selected {
+    padding: 4px;
+    outline: 2px solid #C2818A !important;
+    box-shadow: 0px 4px 8px -2px #F2D1CC, 0px 2px 4px -2px rgba(0, 0, 0, 0.06) !important;
+  }
+
+
+  .color-swatch-custom {
+    width: 20px !important;
+    height: 20px !important;
+    margin-inline: auto !important;
+    border-radius: 50% !important;
+    display:block!important;
+  }
+
+  .pack-button:has([x-show="bundle.isHot"]) {
+    padding-top: 8px
+  }
+
+  .packs-nav {
+    border-radius: 100vmax !important;
+    padding: 5px 10px !important;
+    width: 100% !important;
+    margin-inline: auto !important;
+    background: #fff !important;
+    justify-content: space-between !important
+  }
+
+  .maison__atc-button {
+    padding-block: 16px !important
+  }
+
+  @media (max-width: 47em) {
+    .packs__nav-item {
+      font-size: 10px !important
+    }
+  }
+</style>

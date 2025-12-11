@@ -1,0 +1,513 @@
+
+  {%- liquid
+       
+      assign product_G1tCxWVWNvO4tPC5_image = product_G1tCxWVWNvO4tPC5_variant.featured_image | default: product_G1tCxWVWNvO4tPC5.featured_image
+      assign product_G1tCxWVWNvO4tPC5_handle = 'aura-invisible-camel-toe-thong-test'
+      assign product_G1tCxWVWNvO4tPC5 = product | default: all_products[product_G1tCxWVWNvO4tPC5_handle]
+      assign product_G1tCxWVWNvO4tPC5_variant = product_G1tCxWVWNvO4tPC5.selected_or_first_available_variant
+
+      if product_G1tCxWVWNvO4tPC5.selected_variant
+        assign product_G1tCxWVWNvO4tPC5_variant = product_G1tCxWVWNvO4tPC5.selected_variant
+      endif
+
+    -%}
+    <!-- {%- liquid
+  assign product_G1tCxWVWNvO4tPC5 = product_G1tCxWVWNvO4tPC5
+ assign product_G1tCxWVWNvO4tPC5_variant = product_G1tCxWVWNvO4tPC5
+ assign image_4sHrpo6GLFwj8YgU = image_
+
+  
+ -%} -->
+<script>
+  
+  console.log('product', {{ product_G1tCxWVWNvO4tPC5 | json }});
+  console.log('variant', {{ product_G1tCxWVWNvO4tPC5_variant | json }});
+</script>
+    {% comment %} assign product_G1tCxWVWNvO4tPC5 = section.settings.product_G1tCxWVWNvO4tPC5 | default: all_products[product_G1tCxWVWNvO4tPC5_handle] {% endcomment %}
+  <form
+      class=""
+      data-instant-type="container"
+      id="iG1tCxWVWNvO4tPC5"
+      action="/cart/add"
+      data-instant-form-product-url="{{ product_G1tCxWVWNvO4tPC5.url }}"
+      data-instant-form-variant-id="{{ product_G1tCxWVWNvO4tPC5_variant.id }}"
+    >
+        <div data-instant-type="text" class="instant-rich-text i4PzjHDCCo47mv3vn" style="margin-bottom: -16px;">
+            <div><p>Size - we recommend sizing down</p></div>
+          </div>
+        <div class="it7Pat5FT9C3gsEgA" data-instant-type="container">
+          <div class="i7wsMe31zwl3cdfeU" data-instant-type="container">
+            <div
+              class="iHkZI3l74qxBhvoM0"
+              data-instant-type="accordion-container"
+              data-is-first-open="false"
+              data-is-multi-open-enabled="false"
+            >
+              <div data-state="closed" class="izzcccMUmY4MysCnx" data-instant-type="accordion-item">
+                <!--
+                  <button class="i2OadCWKgRuPSQvpm" data-instant-type="accordion-header" type="button">
+                    <div data-instant-type="text" class="instant-rich-text izCZZlnTPaG1Knozr">
+                      <div>{{ section.settings.text_zCZZlnTPaG1Knozr }}</div>
+                    </div>
+                    <div class="i28bCbUiapxCESSON" data-instant-type="container">
+                      <div class="i90EBXcqk9HfMpwkO" data-instant-type="container">
+                        {% if section.settings.image_90EBXcqk9HfMpwkO
+                          and section.settings.image_90EBXcqk9HfMpwkO != blank
+                        %}
+                     
+                          {{
+                            section.settings.image_90EBXcqk9HfMpwkO
+                            | image_url: width: 1280
+                            | image_tag:
+                              class: 'instant-fill',
+                              alt: section.settings.image_90EBXcqk9HfMpwkO.alt,
+                              fetchpriority: fetchpriority,
+                              loading: loading,
+                              decoding: 'async'
+                          }}
+                        {% else %}
+                          <img
+                            alt=""
+                            src="https://cdn.instant.so/sites/mojN5nsBLS70GrkT/assets/hfL44lwX93uWSdwR/3f2029df09a46d24fd654da1b1229b66f6e22b11.svg"
+                            width="24"
+                            height="24"
+                            class="instant-fill"
+                            decoding="async"
+                            fetchpriority="{{ fetchpriority }}"
+                            loading="{{ loading }}"
+                          >
+                        {% endif %}
+                      </div>
+                      <div data-instant-type="text" class="instant-rich-text iYR0kj76PWoz0pxOR">
+                        <div>{{ section.settings.text_YR0kj76PWoz0pxOR }}</div>
+                      </div>
+                    </div>
+                  </button>
+                -->
+
+                <div
+                  class="irqQ3AjaGJ0CEYLM5"
+                  data-instant-type="accordion-content"
+                  style="--instant-accordion-content-height:auto;--instant-accordion-content-width:auto"
+                >
+                  {% if section.settings.image_5775gkj8HdXKlFVL and section.settings.image_5775gkj8HdXKlFVL != blank %}
+                    {{
+                      section.settings.image_5775gkj8HdXKlFVL
+                      | image_url: width: 1280
+                      | image_tag:
+                        class: 'i5775gkj8HdXKlFVL',
+                        alt: section.settings.image_5775gkj8HdXKlFVL.alt,
+                        fetchpriority: fetchpriority,
+                        loading: loading,
+                        decoding: 'async'
+                    }}
+                  {% else %}
+                    <img
+                      alt=""
+                      sizes="(max-width: 1280px) 100vw, 1280px"
+                      srcSet="https://cdn.instant.so/sites/mojN5nsBLS70GrkT/assets/6wqap5419jAPwIdO/66b0a4e37b3e7-1.jpg?width=1080 1080w, https://cdn.instant.so/sites/mojN5nsBLS70GrkT/assets/6wqap5419jAPwIdO/66b0a4e37b3e7-1.jpg?width=828 828w, https://cdn.instant.so/sites/mojN5nsBLS70GrkT/assets/6wqap5419jAPwIdO/66b0a4e37b3e7-1.jpg?width=750 750w, https://cdn.instant.so/sites/mojN5nsBLS70GrkT/assets/6wqap5419jAPwIdO/66b0a4e37b3e7-1.jpg?width=640 640w, https://cdn.instant.so/sites/mojN5nsBLS70GrkT/assets/6wqap5419jAPwIdO/66b0a4e37b3e7-1.jpg?width=360 360w, https://cdn.instant.so/sites/mojN5nsBLS70GrkT/assets/6wqap5419jAPwIdO/66b0a4e37b3e7-1.jpg?width=1280 1280w"
+                      src="https://cdn.instant.so/sites/mojN5nsBLS70GrkT/assets/6wqap5419jAPwIdO/66b0a4e37b3e7-1.jpg?width=1280"
+                      width="950"
+                      height="950"
+                      data-instant-type="image"
+                      class="i5775gkj8HdXKlFVL"
+                      decoding="async"
+                      fetchpriority="{{ fetchpriority }}"
+                      loading="{{ loading }}"
+                    >
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            {%- liquid
+              assign selected_options = product_G1tCxWVWNvO4tPC5_variant.options
+              assign variants_option1 = product_G1tCxWVWNvO4tPC5.variants | map: 'option1'
+              assign variants_option2 = product_G1tCxWVWNvO4tPC5.variants | map: 'option2'
+              assign variants_option3 = product_G1tCxWVWNvO4tPC5.variants | map: 'option3'
+              assign selected_option = product_G1tCxWVWNvO4tPC5.options_with_values | where: 'name', 'Size' | first
+
+              if selected_option == null
+                assign selected_option = product_G1tCxWVWNvO4tPC5.options_with_values[1]
+              endif
+
+              assign hide_variant_picker = false
+
+              if product_G1tCxWVWNvO4tPC5.has_only_default_variant or selected_option == null
+                assign hide_variant_picker = true
+              endif
+            -%}
+            {%- unless hide_variant_picker -%}
+              <fieldset class="instant-variant-picker iUNgmwHvLjLkQr5H4" data-instant-type="VARIANT_PICKER">
+                <legend class="instant-visually-hidden">{{ option.name }}</legend>
+
+                {%- for value in selected_option.values -%}
+                  {%- liquid
+                    assign option_disabled = false
+
+                    for option1_name in variants_option1
+                      if selected_option.position == 1 and option1_name == value and variants_option2[forloop.index0] == selected_options[1] and variants_option3[forloop.index0] == selected_options[2]
+                        assign option_disabled = false
+                      elsif selected_option.position == 2 and option1_name == selected_options[0] and variants_option2[forloop.index0] == value and variants_option3[forloop.index0] == selected_options[2]
+                        assign option_disabled = false
+                      elsif selected_option.position == 3 and option1_name == selected_options[0] and variants_option2[forloop.index0] == selected_options[1] and variants_option3[forloop.index0] == value
+                        assign option_disabled = false
+                      endif
+                    endfor
+
+                    assign is_in_stock = true
+
+                    unless product_G1tCxWVWNvO4tPC5_variant.inventory_management != 'shopify'
+                      assign selected_variant = ''
+
+                      for variant in product_G1tCxWVWNvO4tPC5.variants
+                        if selected_option.position == 1 and variant.option1 == value and variant.option2 == selected_options[1] and variant.option3 == selected_options[2]
+                          assign selected_variant = variant
+                        elsif selected_option.position == 2 and variant.option1 == selected_options[0] and variant.option2 == value and variant.option3 == selected_options[2]
+                          assign selected_variant = variant
+                        elsif selected_option.position == 3 and variant.option1 == selected_options[0] and variant.option2 == selected_options[1] and variant.option3 == value
+                          assign selected_variant = variant
+                        endif
+                      endfor
+
+                      if selected_variant != '' and selected_variant.available == false
+                        assign is_in_stock = false
+                      endif
+                    endunless
+
+                    assign title = value
+
+                    if option_disabled or is_in_stock == false
+                      assign title = title | append: ' - Unavailable'
+                    endif
+                  -%}
+
+                  <script>
+                   var opt1 = {{variants_option1 | json}}
+                   var opt2 = {{variants_option2 | json}}
+                   var opt3 = {{variants_option3 | json}}
+                   var opt4 = {{selected_options | json}}
+                    console.log('option1',opt1)
+                    console.log('option2',opt2)
+                    console.log('option3',opt3)
+                    console.log('option4',opt4)
+                  </script>
+                  <input
+                    data-available="{{ is_in_stock }}"
+                    data-available2="{{ option_disabled }}"
+                    id="UNgmwHvLjLkQr5H4-{{ selected_option.position }}-{{ forloop.index0 }}"
+                    value="{{ value | escape }}"
+                    name="G1tCxWVWNvO4tPC5__{{ selected_option.name | escape }}"
+                    type="radio"
+                    {% if selected_options[1] == value %}
+                      checked
+                    {% endif %}
+                    {% if option_disabled or is_in_stock == false %}
+                      data-instant-disabled="true"
+                    {% endif %}
+                  >
+                  <label
+                    for="UNgmwHvLjLkQr5H4-{{ selected_option.position }}-{{ forloop.index0 }}"
+                    class="ia359yDAr3Q8fJFiN"
+                    title="{{ title }}"
+                    {% if selected_options[1] == value %}
+                      aria-checked="true"
+                      data-default="true"
+                    {% endif %}
+                  >
+                    {{ value }}
+                  </label>
+                {%- endfor -%}
+              </fieldset>
+            {%- endunless -%}
+          </div>
+          <div class="ij4cgzKqoxFL4FDeR" data-instant-type="container">
+            <div data-instant-type="text" class="instant-rich-text i4PzjHDCCo47mv3vn">
+              <div>{{ section.settings.text_4PzjHDCCo47mv3vn }}</div>
+            </div>
+            {%- liquid
+              assign selected_options = product_G1tCxWVWNvO4tPC5_variant.options
+              assign variants_option1 = product_G1tCxWVWNvO4tPC5.variants | map: 'option1'
+              assign variants_option2 = product_G1tCxWVWNvO4tPC5.variants | map: 'option2'
+              assign variants_option3 = product_G1tCxWVWNvO4tPC5.variants | map: 'option3'
+              assign selected_option = product_G1tCxWVWNvO4tPC5.options_with_values | where: 'name', 'Color' | first
+
+              if selected_option == null
+                assign selected_option = product_G1tCxWVWNvO4tPC5.options_with_values[0]
+              endif
+
+              assign hide_variant_picker = false
+
+              if product_G1tCxWVWNvO4tPC5.has_only_default_variant or selected_option == null
+                assign hide_variant_picker = true
+              endif
+            -%}
+            {%- unless hide_variant_picker -%}
+              <fieldset class="instant-variant-picker iQWbQyTjUbvKrHeE6" data-instant-type="VARIANT_PICKER">
+                <legend class="instant-visually-hidden">{{ option.name }}</legend>
+
+                {%- for value in selected_option.values -%}
+                  {%- liquid
+                    assign option_disabled = false
+
+                    for option1_name in variants_option1
+                      if selected_option.position == 1 and option1_name == value and variants_option2[forloop.index0] == selected_options[1] and variants_option3[forloop.index0] == selected_options[2]
+                        assign option_disabled = false
+                      elsif selected_option.position == 2 and option1_name == selected_options[0] and variants_option2[forloop.index0] == value and variants_option3[forloop.index0] == selected_options[2]
+                        assign option_disabled = false
+                      elsif selected_option.position == 3 and option1_name == selected_options[0] and variants_option2[forloop.index0] == selected_options[1] and variants_option3[forloop.index0] == value
+                        assign option_disabled = false
+                      endif
+                    endfor
+
+                    assign is_in_stock = true
+
+                    unless product_G1tCxWVWNvO4tPC5_variant.inventory_management != 'shopify'
+                      assign selected_variant = ''
+
+                      for variant in product_G1tCxWVWNvO4tPC5.variants
+                        if selected_option.position == 1 and variant.option1 == value and variant.option2 == selected_options[1] and variant.option3 == selected_options[2]
+                          assign selected_variant = variant
+                        elsif selected_option.position == 2 and variant.option1 == selected_options[0] and variant.option2 == value and variant.option3 == selected_options[2]
+                          assign selected_variant = variant
+                        elsif selected_option.position == 3 and variant.option1 == selected_options[0] and variant.option2 == selected_options[1] and variant.option3 == value
+                          assign selected_variant = variant
+                        endif
+                      endfor
+
+                      if selected_variant != '' and selected_variant.available == false
+                        assign is_in_stock = false
+                      endif
+                    endunless
+
+                    assign title = value
+
+                    if option_disabled or is_in_stock == false
+                      assign title = title | append: ' - Unavailable'
+                    endif
+                  -%}
+
+                  <input
+                    id="QWbQyTjUbvKrHeE6-{{ selected_option.position }}-{{ forloop.index0 }}"
+                    value="{{ value | escape }}"
+                    name="G1tCxWVWNvO4tPC5__{{ selected_option.name | escape }}"
+                    type="radio"
+                    {% if selected_options[0] == value %}
+                      checked
+                    {% endif %}
+                    {% if option_disabled or is_in_stock == false %}
+                      data-instant-disabled="true"
+                    {% endif %}
+                    data-variant-color="{{ value | downcase }}"
+                  >
+                  <label
+                    for="QWbQyTjUbvKrHeE6-{{ selected_option.position }}-{{ forloop.index0 }}"
+                    class="ieIpN9xXJdK7NvSz4"
+                    title="{{ title }}"
+                    {% if selected_options[0] == value %}
+                      aria-checked="true"
+                      data-default="true"
+                    {% endif %}
+                  >
+                    {{ value }}
+                  </label>
+                {%- endfor -%}
+              </fieldset>
+            {%- endunless -%}
+
+            <!-- Stock indicator -->
+            <div
+              id="stock-indicator"
+              class="stock-indicator"
+              style="
+                background: #FFF0F5;
+                padding: 5px 10px
+              "
+            >
+              <!--
+                <span
+                  class="in-stock"
+                  style="background: #FFF0F5; font-size: 14px; color: #000000; display: inline; display: none;"
+                  >🟢 In stock, ready to ship</span
+                >
+              -->
+
+              <span
+                class="low-stock-2"
+                style=" font-size: 14px; color: #000000;align-items: center; display: flex; display: none;"
+              >
+                <div class="pulse-circle-2"></div>
+                In stock, ready to ship
+              </span>
+
+              <span
+                class="low-stock"
+                style=" font-size: 14px; color: #000000;align-items: center; display: flex; display: none;"
+              >
+                <div class="pulse-circle"></div>
+                Low stock, selling fast
+              </span>
+            </div>
+
+            <div data-instant-type="app-island" class="iEDfuktWLmS8XKaku">
+              <kaching-bundle product-id="{{ product.id }}"></kaching-bundle>
+            </div>
+          
+          </div>
+          <style>
+                        div:empty{
+
+            display:block !important;
+            }
+
+
+              .pulse-circle-2 {
+                          display: inline-block;
+                          width: 10px;
+                          height: 10px;
+                          background-color: #4bd050;
+                          border-radius: 50%;
+                          box-shadow: 0 0 0px 0px rgba(255, 0, 0, 0.6);
+                          margin-right: 10px;
+                          position: relative;
+                        }
+
+                        .pulse-circle-2::after {
+                          content: '';
+                          position: absolute;
+                          top: -5px;
+                          left: -5px;
+                          width: 20px;
+                          height: 20px;
+                          border-radius: 50%;
+                          background-color:#4bd05033;
+
+                        }
+
+
+                        .pulse-circle {
+                          display: inline-block;
+                          width: 10px;
+                          height: 10px;
+                          background-color: red;
+                          border-radius: 50%;
+                          box-shadow: 0 0 0px 0px rgba(255, 0, 0, 0.6);
+                          margin-right: 10px;
+                          position: relative;
+                        }
+
+                        .pulse-circle::after {
+                          content: '';
+                          position: absolute;
+                          top: -5px;
+                          left: -5px;
+                          width: 20px;
+                          height: 20px;
+                          border-radius: 50%;
+                          background-color: #ff000021;
+
+                        }
+          </style>
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              const stockIndicator = document.getElementById('stock-indicator');
+              const inStock = stockIndicator.querySelector('.low-stock-2');
+              const lowStock = stockIndicator.querySelector('.low-stock');
+
+              document.querySelectorAll('input[name="G1tCxWVWNvO4tPC5__{{ selected_option.name | escape }}"]').forEach((radio) => {
+                radio.addEventListener('change', function () {
+                  if (radio.checked) {
+                    if (radio.getAttribute('data-variant-color') === 'black') {
+                      inStock.style.display = 'none';
+                      lowStock.style.display = 'flex';
+                    } else {
+                      lowStock.style.display = 'none';
+                      inStock.style.display = 'flex';
+                    }
+                  }
+                });
+              });
+
+              // Trigger initial state based on the default selection
+              const checkedRadio = document.querySelector('input[name="G1tCxWVWNvO4tPC5__{{ selected_option.name | escape }}"]:checked');
+              if (checkedRadio) {
+                if (checkedRadio.getAttribute('data-variant-color') === 'black') {
+                  inStock.style.display = 'none';
+                  lowStock.style.display = 'flex';
+                } else {
+                  lowStock.style.display = 'none';
+                  inStock.style.display = 'flex';
+                }
+              }
+            });
+          </script>
+        </div>
+        <div class="igYnrVgzuLKt1ICMF" data-instant-type="container">
+            <button
+              class="iFnCeJGu0LJSCsENm"
+              data-instant-type="container"
+              type="submit"
+            >
+              <div data-instant-type="text" class="instant-rich-text iCeOeVV4kC4jRVFCi">
+                <div>{{ section.settings.text_CeOeVV4kC4jRVFCi }}</div>
+              </div>
+              <div class="i4sHrpo6GLFwj8YgU" data-instant-type="container">
+                {% if section.settings.image_4sHrpo6GLFwj8YgU and section.settings.image_4sHrpo6GLFwj8YgU != blank %}
+                  {{
+                    section.settings.image_4sHrpo6GLFwj8YgU
+                    | image_url: width: 1280
+                    | image_tag:
+                      class: 'instant-fill',
+                      alt: section.settings.image_4sHrpo6GLFwj8YgU.alt,
+                      fetchpriority: fetchpriority,
+                      loading: loading,
+                      decoding: 'async'
+                  }}
+                {% else %}
+                  <img
+                    alt=""
+                    src="https://cdn.instant.so/sites/mojN5nsBLS70GrkT/assets/sOfVcB86QBSLPP8a/3379334b18bc7294bd99faa50e9d05c6b0d9a0dc.svg"
+                    width="24"
+                    height="24"
+                    class="instant-fill"
+                    decoding="async"
+                    fetchpriority="{{ fetchpriority }}"
+                    loading="{{ loading }}"
+                  >
+                {% endif %}
+              </div>
+            </button>
+          </div>
+    </form>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/swiper@11.0.3/swiper-bundle.min.js"
+    defer=""
+    onload="Instant.initSwiper()"
+  ></script><script>
+  window.addEventListener('load', () => {
+    const kachingBundlesBlock = document.querySelector('kaching-bundles-block');
+    console.log('bundles show',kachingBundlesBlock);
+
+    if (kachingBundlesBlock) {
+      kachingBundlesBlock.addEventListener('deal-bar-selected', (event) => {
+        console.log('deal-bar-selected', event.detail.dealBarId);
+
+        const notBestDealElements = document.querySelectorAll('.notbestdeal');
+        const bestDealElements = document.querySelectorAll('.bestdeal');
+        if (event.detail.dealBarId === '8415f96c-78a6-4b1c-9609-0bcfd42ecb86') {
+          // Show "notbestdeal" elements and hide "bestdeal" elements
+          notBestDealElements.forEach(elem => elem.style.display = 'block');
+          bestDealElements.forEach(elem => elem.style.display = 'none');
+        }
+        else {
+          // Show "bestdeal" elements and hide "notbestdeal" elements
+          notBestDealElements.forEach(elem => elem.style.display = 'none');
+          bestDealElements.forEach(elem => elem.style.display = 'block');
+        }
+      });
+    } else {
+      console.error('kaching-bundles-block element not found');
+    }
+  });
+</script>
+

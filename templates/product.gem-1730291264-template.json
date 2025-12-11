@@ -1,0 +1,1131 @@
+{
+  "order": [
+    "main",
+    "custom_liquid_XAyybM",
+    "horizontal_ticker_CizpyK",
+    "section_divider_49E6Up",
+    "image_with_text_dricGk",
+    "section_divider_Ja6wUx",
+    "rich_text_CpAk4j",
+    "icons_with_content_UxDezj",
+    "section_divider_3EN48g",
+    "testimonials_x3jMb9",
+    "related-products",
+    "section_divider_E8btfq",
+    "comparison_slider_YVBG8W",
+    "section_divider_WG8Wh7",
+    "results_kJgxFM",
+    "image_with_text_X43nQt",
+    "comparison_table_q4MFRL",
+    "image_slider_xbJkpg",
+    "collapsible_content_femLMW"
+  ],
+  "sections": {
+    "collapsible_content_femLMW": {
+      "block_order": [
+        "collapsible_row_eG7ej8",
+        "collapsible_row_ncDzE4",
+        "collapsible_row_cKGxtw"
+      ],
+      "blocks": {
+        "collapsible_row_cKGxtw": {
+          "settings": {
+            "filled_icon": false,
+            "heading": "How Does The Heated Lash Curler Differ From Traditional Eyelash Curlers?",
+            "icon": "chevron_right",
+            "page": "",
+            "row_content": "<p>Traditional curlers often use a clamp-like mechanism which can sometimes be harsh on the lashes, leading to potential damage or even pulling lashes out if not used carefully. <\/p><p> <\/p><p>The Heated Lash Curler, on the other hand, uses a gentle heat technology that curls the lashes without any harsh physical force. This innovative approach is less invasive and reduces the risk of damaging or inadvertently removing lashes. <\/p><p>It provides a smooth, even curl that traditional mechanical curlers may not achieve, especially for those with delicate or sparse lashes.<\/p>"
+          },
+          "type": "collapsible_row"
+        },
+        "collapsible_row_eG7ej8": {
+          "settings": {
+            "filled_icon": true,
+            "heading": "Is It Suitable For All Types Of Lashes, Including Extensions?",
+            "icon": "chevron_right",
+            "page": "",
+            "row_content": "<p>The Lash Lift Pro is specifically designed for use on natural eyelashes. Its gentle heating mechanism is optimized to curl and lift your natural lashes without causing damage or discomfort. <\/p><p> <\/p><p>We don't recommend using the Lash Lift Pro on eyelash extensions, as the heat may weaken the glue bond or alter the shape and quality of the extensions. <\/p>"
+          },
+          "type": "collapsible_row"
+        },
+        "collapsible_row_ncDzE4": {
+          "settings": {
+            "filled_icon": false,
+            "heading": "Is There A Risk Of Burning My Eyelids?",
+            "icon": "chevron_right",
+            "page": "",
+            "row_content": "<p><strong>NO!<\/strong> The heating element is carefully shielded by specially designed grooves that protect the skin of your eyelids from direct heat. <\/p>"
+          },
+          "type": "collapsible_row"
+        }
+      },
+      "settings": {
+        "caption": "",
+        "collapse_icon": "carret",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-2",
+        "desktop_layout": "image_second",
+        "display_id": false,
+        "display_top_border": true,
+        "heading": "FAQs",
+        "heading_alignment": "center",
+        "heading_size": "h1",
+        "image_ratio": "adapt",
+        "layout": "row",
+        "open_first_collapsible_row": false,
+        "padding_bottom": 0,
+        "padding_top": 20,
+        "row_heading_size": "medium",
+        "visibility": "always-display"
+      },
+      "type": "collapsible-content"
+    },
+    "comparison_slider_YVBG8W": {
+      "custom_css": [
+
+      ],
+      "settings": {
+        "after_image": "shopify:\/\/shop_images\/Fauget_4.png",
+        "after_label": "After",
+        "arrows_style": "circle",
+        "atc_button_label": "",
+        "atc_product": "",
+        "atc_skip_cart": false,
+        "before_image": "shopify:\/\/shop_images\/Fauget_5.png",
+        "before_label": "Before",
+        "button_label": "",
+        "button_style_secondary": false,
+        "color_scheme": "background-2",
+        "display_id": false,
+        "heading_size": "h0",
+        "labels_color_scheme": "accent-1",
+        "layout": "slider_second",
+        "line_color": "background-2",
+        "link": "",
+        "padding_bottom": 52,
+        "padding_top": 52,
+        "text": "<p>Bonnet part is made of good texture <strong>silky satin,<\/strong> which is breathable and smoothy, and can keep<strong> hair moisture<\/strong> too. Long band is made of <strong>stretchy spandex <\/strong>material, comparing common elastic band Bonnet, this Bonnet wouldnot make you feel tight and leave imprint on head, and much <strong>more cosy.<\/strong><\/p>",
+        "title": "RESTORE, RENEW, REJOICE",
+        "visibility": "always-display"
+      },
+      "type": "comparison-slider"
+    },
+    "comparison_table_q4MFRL": {
+      "block_order": [
+        "row_UAK3A4",
+        "row_pN6EBW",
+        "row_L7MMhG",
+        "row_4xnpxG",
+        "row_iYHtny"
+      ],
+      "blocks": {
+        "row_4xnpxG": {
+          "settings": {
+            "benefit": "Saves Money",
+            "others": false,
+            "us": true
+          },
+          "type": "row"
+        },
+        "row_L7MMhG": {
+          "settings": {
+            "benefit": "Saves Time",
+            "others": false,
+            "us": true
+          },
+          "type": "row"
+        },
+        "row_UAK3A4": {
+          "settings": {
+            "benefit": "Long Lasting Curls",
+            "others": false,
+            "us": true
+          },
+          "type": "row"
+        },
+        "row_iYHtny": {
+          "settings": {
+            "benefit": "Damage Your Eyelashes",
+            "others": true,
+            "us": false
+          },
+          "type": "row"
+        },
+        "row_pN6EBW": {
+          "settings": {
+            "benefit": "Curl To Your Own Preference",
+            "others": false,
+            "us": true
+          },
+          "type": "row"
+        }
+      },
+      "custom_css": [
+        "\/* Change color of specific text *\/h2 span {color: #e56399;}"
+      ],
+      "settings": {
+        "atc_button_label": "",
+        "atc_product": "",
+        "atc_skip_cart": false,
+        "button_label": "",
+        "button_style_secondary": false,
+        "checkmark_bg_color": "#d74f87",
+        "checkmark_color": "#ffffff",
+        "checkmark_style": "solid",
+        "color_scheme": "background-1",
+        "display_id": false,
+        "heading_size": "h1",
+        "highlighted_color_scheme": "background-2",
+        "highlighted_overlay_opacity": 0,
+        "highlighted_separator_opacity": 0,
+        "layout": "table_second",
+        "link": "",
+        "logo_width": 110,
+        "minimalistic_border_opacity": 10,
+        "mobile_logo_width": 55,
+        "opposite_icon_colors": "original",
+        "other_cells_color_scheme": "accent-2",
+        "others_label": "Others",
+        "others_label_size": 18,
+        "padding_bottom": 52,
+        "padding_top": 52,
+        "regular_overlay_opacity": 0,
+        "regular_separator_opacity": 10,
+        "style": "centered",
+        "text": "<p>Say goodbye to pinching and pulling, and hello to beautifully curled lashes that enhance your natural beauty without any hassle or discomfort.<\/p>",
+        "title": "WHY <span style=\"color:#E56399;\">CHOOSE<\/span> US?",
+        "us_label": "[shop_name] Grounding Sheet",
+        "us_label_size": 18,
+        "visibility": "always-display",
+        "x_bg_color": "#363636",
+        "x_color": "#ffffff",
+        "x_style": "solid"
+      },
+      "type": "comparison-table"
+    },
+    "custom_liquid_XAyybM": {
+      "settings": {
+        "color_scheme": "background-1",
+        "custom_liquid": "<script >\n  window.addEventListener('load', function() {\n  var _learnq = window._learnq || [];\n  function addedToCart() {\n   fetch(`${window.location.origin}\/cart.js`)\n   .then(res => res.clone().json().then(data => {\n    var cart = {\n      total_price: data.total_price\/100,\n      $value: data.total_price\/100,\n      total_discount: data.total_discount,\n      original_total_price: data.original_total_price\/100,\n      items: data.items\n    }\n    if (item !== 'undefined') {\n      cart = Object.assign(cart, item)\n    }\n    if (klAjax) {\n       _learnq.push(['track', 'Added to Cart', cart]);\n       klAjax = false;\n      }\n   }))\n  };\n  (function (ns, fetch) {\n    ns.fetch = function() {\n      const response = fetch.apply(this, arguments);\n      response.then(res => {\n        if (`${window.location.origin}\/cart\/add.js`\n          .includes(res.url) && res.url !== '') {\n              addedToCart()\n        }\n      });\n      return response\n     }\n  }(window, window.fetch));\n  var klAjax = true;\n  var atcButtons = document.querySelectorAll(\"form[action*='\/cart\/add'] button[type='submit']\");\n  for (var i = 0; i < atcButtons.length; i++) { \n    atcButtons[i].addEventListener(\"click\", function() {\n      if (klAjax) {\n        _learnq.push(['track', 'Added to Cart', item]);\n        klAjax = false;\n      }\n    })\n  }\n  });\n  <\/script>",
+        "display_id": false,
+        "padding_bottom": 0,
+        "padding_top": 0,
+        "visibility": "always-display"
+      },
+      "type": "custom-liquid"
+    },
+    "horizontal_ticker_CizpyK": {
+      "block_order": [
+        "text_RAeKNC",
+        "text_czYc3N",
+        "text_RFaQET"
+      ],
+      "blocks": {
+        "text_RAeKNC": {
+          "settings": {
+            "title": "⭐12,500+ HAPPY CUSTOMERS⭐"
+          },
+          "type": "text"
+        },
+        "text_RFaQET": {
+          "settings": {
+            "title": "📦 HASSLE FREE RETURNS📦"
+          },
+          "type": "text"
+        },
+        "text_czYc3N": {
+          "settings": {
+            "title": "💖Preserves hairstyles for the next day💖"
+          },
+          "type": "text"
+        }
+      },
+      "settings": {
+        "bold_text": true,
+        "color_scheme": "accent-1",
+        "desktop_image_height": 12,
+        "desktop_padding_bottom": 12,
+        "desktop_padding_top": 16,
+        "desktop_spacing": 60,
+        "desktop_text_size": 23,
+        "displayed_products": "",
+        "enable_specific_display": false,
+        "hidden_products": "",
+        "italic_text": true,
+        "mobile_image_height": 10,
+        "mobile_padding_bottom": 12,
+        "mobile_padding_top": 12,
+        "mobile_spacing": 60,
+        "mobile_text_size": 18,
+        "speed": 3,
+        "uppercase_text": true,
+        "visibility": "always-display"
+      },
+      "type": "horizontal-ticker"
+    },
+    "icons_with_content_UxDezj": {
+      "block_order": [
+        "heading_RNRF6h",
+        "video_TcwTz9",
+        "icon_b4py8J",
+        "icon_CBYBmK",
+        "icon_highc9",
+        "icon_rL6XrE"
+      ],
+      "blocks": {
+        "heading_RNRF6h": {
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          },
+          "type": "heading"
+        },
+        "icon_CBYBmK": {
+          "settings": {
+            "filled_icon": true,
+            "icon": "check_circle",
+            "text": "<p> Ready to use in just 10 to 15 seconds for swift touch-ups.<\/p>",
+            "title": "QUICK HEATING MECHANISM:"
+          },
+          "type": "icon"
+        },
+        "icon_b4py8J": {
+          "settings": {
+            "filled_icon": true,
+            "icon": "check_circle",
+            "text": "<p>Achieve natural-looking curls that last for up to 24 hours.<\/p>",
+            "title": "EFFORTLESS AND LONG-LASTING CURLS:"
+          },
+          "type": "icon"
+        },
+        "icon_highc9": {
+          "settings": {
+            "filled_icon": true,
+            "icon": "check_circle",
+            "text": "<p>Helps separate and define lashes for a natural look.<\/p>",
+            "title": "GENTLE LASH COMB"
+          },
+          "type": "icon"
+        },
+        "icon_rL6XrE": {
+          "settings": {
+            "filled_icon": true,
+            "icon": "check_circle",
+            "text": "<p> Choose from three heat settings for a personalized curling experience.<\/p>",
+            "title": "CUSTOMIZABLE TEMPERATURE SETTINGS:"
+          },
+          "type": "icon"
+        },
+        "video_TcwTz9": {
+          "settings": {
+            "video": "shopify:\/\/files\/videos\/Fb Ripped 1.0 - Trim (1).mp4"
+          },
+          "type": "video"
+        }
+      },
+      "settings": {
+        "color_scheme": "background-2",
+        "desktop_content_alignment": "left",
+        "display_id": false,
+        "hide_content_on_mobile": false,
+        "icon_color": "accent-1",
+        "icon_heading_size": "h4",
+        "icon_position": "next-to-title",
+        "icon_size": "m",
+        "icon_text_alignment": "left",
+        "icons_desktop_layout": "1-column",
+        "icons_mobile_layout": "1-column",
+        "layout": "text_first",
+        "mobile_layout": "text_first",
+        "padding_bottom": 20,
+        "padding_top": 12,
+        "visibility": "always-display"
+      },
+      "type": "icons-with-content"
+    },
+    "image_slider_xbJkpg": {
+      "block_order": [
+        "video_slide_TgfV3G",
+        "video_slide_ezNEwx",
+        "video_slide_xmpd8E",
+        "video_slide_DtdzNc"
+      ],
+      "blocks": {
+        "video_slide_DtdzNc": {
+          "settings": {
+            "btn_animation": false,
+            "btn_color_scheme": "accent-1",
+            "desc_alignment": "center",
+            "desc_color_scheme": "background-2",
+            "description": "",
+            "display_play_btn": true,
+            "display_sound_btn": false,
+            "display_timeline": false,
+            "loop": true,
+            "muted_autoplay": true,
+            "sound_btn_color_scheme": "inverse",
+            "timeline_color": "accent-1"
+          },
+          "type": "video_slide"
+        },
+        "video_slide_TgfV3G": {
+          "settings": {
+            "btn_animation": false,
+            "btn_color_scheme": "accent-1",
+            "desc_alignment": "center",
+            "desc_color_scheme": "background-2",
+            "description": "",
+            "display_play_btn": true,
+            "display_sound_btn": false,
+            "display_timeline": false,
+            "loop": true,
+            "muted_autoplay": true,
+            "sound_btn_color_scheme": "inverse",
+            "timeline_color": "accent-1",
+            "video": "shopify:\/\/files\/videos\/Fb Ripped 1.0.mp4"
+          },
+          "type": "video_slide"
+        },
+        "video_slide_ezNEwx": {
+          "settings": {
+            "btn_animation": false,
+            "btn_color_scheme": "accent-1",
+            "desc_alignment": "center",
+            "desc_color_scheme": "background-2",
+            "description": "",
+            "display_play_btn": true,
+            "display_sound_btn": false,
+            "display_timeline": false,
+            "loop": true,
+            "muted_autoplay": true,
+            "sound_btn_color_scheme": "inverse",
+            "timeline_color": "accent-1"
+          },
+          "type": "video_slide"
+        },
+        "video_slide_xmpd8E": {
+          "settings": {
+            "btn_animation": false,
+            "btn_color_scheme": "accent-1",
+            "desc_alignment": "center",
+            "desc_color_scheme": "background-2",
+            "description": "",
+            "display_play_btn": true,
+            "display_sound_btn": false,
+            "display_timeline": false,
+            "loop": true,
+            "muted_autoplay": true,
+            "sound_btn_color_scheme": "inverse",
+            "timeline_color": "accent-1"
+          },
+          "type": "video_slide"
+        }
+      },
+      "settings": {
+        "arrows_color_scheme": "inverse",
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "center_mode": false,
+        "color_scheme": "background-1",
+        "desktop_adaptive_height": false,
+        "desktop_arrows_position": "sides",
+        "desktop_border_radius": 0,
+        "desktop_dots_position": "under",
+        "desktop_full_page": false,
+        "desktop_padding_calc": true,
+        "desktop_side_padding": 0,
+        "desktop_spacing": 28,
+        "display_id": false,
+        "dots_color_scheme": "inverse",
+        "drag": "enabled",
+        "heading_size": "h1",
+        "mobile_adaptive_height": false,
+        "mobile_arrows_position": "sides",
+        "mobile_border_radius": 0,
+        "mobile_dots_position": "under",
+        "mobile_full_page": false,
+        "mobile_padding_calc": true,
+        "mobile_side_padding": 0,
+        "mobile_spacing": 12,
+        "padding_bottom": 36,
+        "padding_top": 36,
+        "per_move_desktop": 1,
+        "per_move_mobile": 1,
+        "slides_desktop": 3,
+        "slides_mobile": 2,
+        "title": "Image\/Video Slider",
+        "transparent_arrows": false,
+        "type": "slide",
+        "visibility": "always-display"
+      },
+      "type": "image-slider"
+    },
+    "image_with_text_X43nQt": {
+      "block_order": [
+        "heading_9YBMTP",
+        "text_QtXjNb"
+      ],
+      "blocks": {
+        "heading_9YBMTP": {
+          "settings": {
+            "heading": "OUT WITH THE OLD, IN WITH THE NEW...",
+            "heading_size": "h1"
+          },
+          "type": "heading"
+        },
+        "text_QtXjNb": {
+          "settings": {
+            "text": "<p><strong>Traditional Lash Curlers use manual force <\/strong>that can often bend and break lashes, Our <strong>Lash Curler uses advanced, precision heat technology <\/strong>to gently and effectively curl lashes without any tugging or pulling. This innovative approach not only <strong>protects your lashes from damage <\/strong>but also ensures a <strong>longer-lasting curl <\/strong>that manual curlers simply can't compete with. <\/p>",
+            "text_style": "body"
+          },
+          "type": "text"
+        }
+      },
+      "settings": {
+        "color_scheme": "accent-1",
+        "content_layout": "no-overlap",
+        "desktop_content_alignment": "left",
+        "desktop_content_position": "middle",
+        "desktop_image_width": "medium",
+        "display_id": false,
+        "height": "adapt",
+        "layout": "image_first",
+        "mobile_content_alignment": "left",
+        "mobile_direction": "normal",
+        "mobile_full_media_width": false,
+        "padding_bottom": 36,
+        "padding_top": 36,
+        "section_color_scheme": "background-1",
+        "visibility": "always-display"
+      },
+      "type": "image-with-text"
+    },
+    "image_with_text_dricGk": {
+      "block_order": [
+        "heading_eVxcgy",
+        "text_wPDmkV"
+      ],
+      "blocks": {
+        "heading_eVxcgy": {
+          "settings": {
+            "heading": "THE ULTIMATE HAIR REHAB",
+            "heading_size": "h1"
+          },
+          "type": "heading"
+        },
+        "text_wPDmkV": {
+          "settings": {
+            "text": "<p><strong>Bonnet always disappear while opening your eyes?<\/strong> Here come a non-slip Bonnet to solve this headache problem, this satin Bonnets featured with stretchy long band, wide soft, high elastic and skin friendly, you can wrap on head, adjust tightness and then tie to fix Bonnet on head, which can stay on over night, prevent hair from messy, well protect your hair.<\/p>",
+            "text_style": "body"
+          },
+          "type": "text"
+        }
+      },
+      "settings": {
+        "color_scheme": "background-2",
+        "content_layout": "no-overlap",
+        "desktop_content_alignment": "left",
+        "desktop_content_position": "middle",
+        "desktop_image_width": "medium",
+        "display_id": false,
+        "height": "adapt",
+        "image": "shopify:\/\/shop_images\/Fauget_2.png",
+        "layout": "image_first",
+        "mobile_content_alignment": "left",
+        "mobile_direction": "normal",
+        "mobile_full_media_width": false,
+        "padding_bottom": 52,
+        "padding_top": 52,
+        "section_color_scheme": "background-1",
+        "visibility": "always-display"
+      },
+      "type": "image-with-text"
+    },
+    "main": {
+      "block_order": [
+        "title",
+        "price",
+        "a6eb81db-40e4-43e0-972f-32db010a4a56",
+        "emoji_benefits_pncPBX",
+        "5fcc0428-e768-4cb7-bea3-eb0274198dd1",
+        "04ba004e-2f54-4936-8b1c-8bcadf6573f6",
+        "buy_buttons",
+        "product_upsell_VFVHRx",
+        "icon_with_text_VmbJUJ",
+        "e7a28cbe-03cb-4c9d-a2c4-0e3e76ffb3e5",
+        "collapsible_tab_PTkzrr",
+        "collapsible_tab_6HVi9U",
+        "collapsible_tab_f9ijQ9",
+        "custom_liquid_ygDpKy"
+      ],
+      "blocks": {
+        "04ba004e-2f54-4936-8b1c-8bcadf6573f6": {
+          "settings": {
+            "color_scheme": "accent-1",
+            "enable_quantity_discounts": false,
+            "enable_variant_selectors": false,
+            "enable_variant_selectors_on_quantity_of_1": false,
+            "headline": "OFFER ENDS TONIGHT",
+            "hide_pickers_overlay": true,
+            "image_width": 70,
+            "margin_bottom": 15,
+            "margin_top": 15,
+            "option_1_badge": "",
+            "option_1_benefit": "",
+            "option_1_caption": "2 Months Supply",
+            "option_1_compare_price": "compare_price",
+            "option_1_compare_price_text": "[compare_price]",
+            "option_1_fixed_amount_off": "0",
+            "option_1_label": "Buy 1 & Get 1 FREE",
+            "option_1_percentage_off_text": "50",
+            "option_1_price_text": "[price]",
+            "option_1_quantity": 2,
+            "option_2_badge": "",
+            "option_2_benefit": "",
+            "option_2_caption": "You save [amount_saved]",
+            "option_2_compare_price": "compare_price",
+            "option_2_compare_price_text": "[compare_price]",
+            "option_2_fixed_amount_off": "0",
+            "option_2_label": "Buy [quantity]",
+            "option_2_percentage_off_text": "0",
+            "option_2_price_text": "[price]",
+            "option_2_quantity": 0,
+            "option_3_badge": "",
+            "option_3_benefit": "",
+            "option_3_caption": "You save [amount_saved]",
+            "option_3_compare_price": "compare_price",
+            "option_3_compare_price_text": "[compare_price]",
+            "option_3_fixed_amount_off": "0",
+            "option_3_label": "Buy [quantity]",
+            "option_3_percentage_off_text": "0",
+            "option_3_price_text": "[price]",
+            "option_3_quantity": 0,
+            "option_4_badge": "",
+            "option_4_benefit": "",
+            "option_4_caption": "You save [amount_saved]",
+            "option_4_compare_price": "compare_price",
+            "option_4_compare_price_text": "[compare_price]",
+            "option_4_fixed_amount_off": "0",
+            "option_4_label": "Buy [quantity]",
+            "option_4_percentage_off_text": "0",
+            "option_4_price_text": "[price]",
+            "option_4_quantity": 0,
+            "preselected": "option_1",
+            "space_images": true,
+            "style": "normal"
+          },
+          "type": "quantity_selector"
+        },
+        "5fcc0428-e768-4cb7-bea3-eb0274198dd1": {
+          "settings": {
+            "breaks_badges": "[empty], Most popular, [empty]",
+            "breaks_benefits": "[empty], Free Shipping, Free Shipping",
+            "breaks_captions": "Variant 1 caption, Variant 2 caption, Variant 3 caption",
+            "breaks_color_scheme": "accent-1",
+            "breaks_compare_price_texts": "[compare_price], [compare_price], [compare_price]",
+            "breaks_custom_images": "",
+            "breaks_displayed_images": "variant_images",
+            "breaks_headline": "BUNDLE & SAVE",
+            "breaks_image_width": 70,
+            "breaks_labels": "[name], [name], [name]",
+            "breaks_price_texts": "[price], [price], [price]",
+            "breaks_space_images": true,
+            "breaks_style": "normal",
+            "custom_labels": "[name] - [selected]",
+            "full_width_dropdowns": false,
+            "margin_bottom": 15,
+            "margin_top": 15,
+            "picker_types": "Swatches,pills",
+            "swatches_border_radius": 20,
+            "swatches_custom_colors": "disabled",
+            "swatches_custom_colors_list": "#000000, #6D388B, #0000FF, #FFCC00",
+            "swatches_size": "large"
+          },
+          "type": "variant_picker"
+        },
+        "a6eb81db-40e4-43e0-972f-32db010a4a56": {
+          "disabled": true,
+          "settings": {
+            "alignment": "flex-start",
+            "bg_star_color": "#ececec",
+            "bg_stars_style": "full",
+            "label": "(xxxx Reviews)",
+            "margin_bottom": 9,
+            "margin_top": 0,
+            "rating": 4.4,
+            "scroll_id": "",
+            "size": 16,
+            "star_color": "#ffcc00"
+          },
+          "type": "rating_stars"
+        },
+        "buy_buttons": {
+          "settings": {
+            "custom_color": "#53af01",
+            "display_price": false,
+            "enable_custom_color": false,
+            "margin_bottom": 24,
+            "margin_top": 24,
+            "show_dynamic_checkout": true,
+            "skip_cart": false,
+            "uppercase_text": true
+          },
+          "type": "buy_buttons"
+        },
+        "collapsible_tab_6HVi9U": {
+          "settings": {
+            "collapse_icon": "plus",
+            "content": "<p>1x Non-slip Satin Hair Bonnet<\/p>",
+            "display_top_border": true,
+            "filled_icon": true,
+            "heading": "What's In The Box?",
+            "heading_size": "large",
+            "icon": "Check Circle",
+            "margin_bottom": 0,
+            "margin_top": 24,
+            "page": ""
+          },
+          "type": "collapsible_tab"
+        },
+        "collapsible_tab_PTkzrr": {
+          "settings": {
+            "collapse_icon": "plus",
+            "content": "<ul><li>Trusted by over 30,000 women worldwide (check out our 5-star reviews below)!<\/li><li>Ensures a gentle, non-invasive curling experience, without pulling or snagging hair.<\/li><li>Engineered with precision heat control for optimal styling without causing damage to your hair.<\/li><li>Delivers a consistent, long-lasting style, transforming your hair routine.<\/li><li>Features a protective barrier to prevent any heat contact with the skin, ensuring safety and comfort.<\/li><\/ul>",
+            "display_top_border": true,
+            "filled_icon": true,
+            "heading": "Details & Benefits",
+            "heading_size": "large",
+            "icon": "Check Circle",
+            "margin_bottom": 0,
+            "margin_top": 24,
+            "page": ""
+          },
+          "type": "collapsible_tab"
+        },
+        "collapsible_tab_f9ijQ9": {
+          "settings": {
+            "collapse_icon": "plus",
+            "content": "",
+            "display_top_border": true,
+            "filled_icon": true,
+            "heading": "Shipping & Delivery",
+            "heading_size": "large",
+            "icon": "Check Circle",
+            "margin_bottom": 0,
+            "margin_top": 24,
+            "page": "shipping-policy"
+          },
+          "type": "collapsible_tab"
+        },
+        "custom_liquid_ygDpKy": {
+          "settings": {
+            "custom_liquid": "<script type=\"text\/javascript\">\nvar _learnq = _learnq || [];\n\tdocument.getElementById(\"AddToCart\").addEventListener('click',function (){\n \t\t_learnq.push(['track', 'Added to Cart', item]);\n\t});<\/script>"
+          },
+          "type": "custom_liquid"
+        },
+        "e7a28cbe-03cb-4c9d-a2c4-0e3e76ffb3e5": {
+          "settings": {
+            "button_label": "Add to cart",
+            "color_scheme": "background-1",
+            "custom_btn_color": "#dd1d1d",
+            "desktop_full_button_width": false,
+            "desktop_rating_stars": false,
+            "desktop_show_image": true,
+            "desktop_show_price": true,
+            "desktop_show_price_in_button": false,
+            "desktop_show_sale_badge": true,
+            "desktop_show_title": true,
+            "desktop_transparent_bg": false,
+            "desktop_variant_picker": true,
+            "display_when": "always",
+            "enable_custom_btn_color": false,
+            "function": "add_to_cart",
+            "mobile_full_button_width": false,
+            "mobile_rating_stars": false,
+            "mobile_show_image": true,
+            "mobile_show_price": true,
+            "mobile_show_price_in_button": false,
+            "mobile_show_sale_badge": true,
+            "mobile_show_title": true,
+            "mobile_transparent_bg": false,
+            "mobile_variant_picker": true,
+            "picker_type": "combined",
+            "star_color": "#ffcc00",
+            "stars_label": "(xxxx Reviews)"
+          },
+          "type": "sticky_atc"
+        },
+        "emoji_benefits_pncPBX": {
+          "settings": {
+            "benefits": "<p>🎀<strong> Tie band to prevent slippage <\/strong><\/p><p>🎀<strong> Double layered & reversible<\/strong><\/p><p>🎀<strong> Premium satin silk material<\/strong><\/p><p>🎀<strong> For all hair types & head sizes<\/strong><\/p>",
+            "margin_bottom": 15,
+            "margin_top": 15
+          },
+          "type": "emoji_benefits"
+        },
+        "icon_with_text_VmbJUJ": {
+          "settings": {
+            "desktop_icon_size": 60,
+            "desktop_spacing": 12,
+            "desktop_text_size": 12,
+            "heading_1": "CURL LASHES IN SECONDS",
+            "heading_2": "MONEY BACK GUARANTEE",
+            "heading_3": "LASH SAFE TECHNOLOGY",
+            "icon_1": "favorite",
+            "icon_1_fill": false,
+            "icon_2": "undo",
+            "icon_2_fill": false,
+            "icon_3": "local_shipping",
+            "icon_3_fill": false,
+            "icon_color": "accent-1",
+            "layout": "horizontal",
+            "margin_bottom": 24,
+            "margin_top": 24,
+            "mobile_icon_size": 40,
+            "mobile_spacing": 10,
+            "mobile_text_size": 12
+          },
+          "type": "icon_with_text"
+        },
+        "price": {
+          "settings": {
+            "compare_price_color": "text",
+            "hide_sale_badge": false,
+            "layout": "price_first",
+            "margin_bottom": 0,
+            "margin_top": 0,
+            "price_color": "accent-1"
+          },
+          "type": "price"
+        },
+        "product_upsell_VFVHRx": {
+          "settings": {
+            "accent_color": "accent-1",
+            "btn_position": "right",
+            "color_scheme": "background-2",
+            "corner_radius": 0,
+            "desc_size": "1.2",
+            "hide_compare_price": true,
+            "images_corner_radius": 0,
+            "images_size": "5",
+            "margin_bottom": 21,
+            "margin_top": 21,
+            "prdouct_1_preselected": true,
+            "prdouct_2_preselected": false,
+            "prdouct_3_preselected": false,
+            "price_position": "separate",
+            "price_size": "1.4",
+            "product_1_desc": "<strong>FREE GIFT🎁<\/strong>",
+            "product_1_fixed_amount_discount": "0",
+            "product_1_percentage_discount": "100",
+            "product_2_desc": "",
+            "product_2_fixed_amount_discount": "0",
+            "product_2_percentage_discount": "100",
+            "product_3_desc": "",
+            "product_3_fixed_amount_discount": "0",
+            "product_3_percentage_discount": "0",
+            "product_list": [
+              "norishing-eyelash-growth-serum"
+            ],
+            "regular_bg_color": "#f2f2f2",
+            "regular_border_color": "#e56399",
+            "selected_bg_color": "#f2f2f2",
+            "selected_border_color": "#6d388b",
+            "show_border": true,
+            "show_box_shadow": true,
+            "show_custom_bg": false,
+            "show_images": true,
+            "show_variant_picker": true,
+            "stacking": "row",
+            "style": "toggle_switch",
+            "title_link": false,
+            "title_size": "1.4",
+            "toggle_element": "button"
+          },
+          "type": "product_upsell"
+        },
+        "title": {
+          "settings": {
+            "margin_bottom": 0,
+            "margin_top": 6,
+            "text_size": "h1",
+            "title_alignment": "left",
+            "uppercase_title": false
+          },
+          "type": "title"
+        }
+      },
+      "custom_css": [
+
+      ],
+      "settings": {
+        "constrain_to_viewport": true,
+        "desktop_padding_bottom": 36,
+        "desktop_padding_top": 36,
+        "desktop_thumbnails_count": 5,
+        "display_variant_image_first": false,
+        "dots_color_scheme": "inverse",
+        "enable_sticky_info": true,
+        "enable_video_looping": false,
+        "gallery_layout": "thumbnail_slider",
+        "hide_arrows": true,
+        "hide_variants": false,
+        "image_zoom": "none",
+        "media_fit": "contain",
+        "media_position": "left",
+        "media_size": "medium",
+        "mobile_media_corner_radius": 0,
+        "mobile_padding_bottom": 16,
+        "mobile_padding_top": 0,
+        "mobile_pagination": "dots_overlay",
+        "mobile_preview_media": false,
+        "mobile_spacing": false,
+        "mobile_thumbnails": "show",
+        "mobile_thumbnails_count": 5,
+        "trust_badge_position": "top-right",
+        "trust_badge_size": "medium"
+      },
+      "type": "main-product"
+    },
+    "related-products": {
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-1",
+        "columns_desktop": 4,
+        "columns_mobile": "2",
+        "display_id": false,
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "image_ratio": "adapt",
+        "padding_bottom": 24,
+        "padding_top": 36,
+        "products_to_show": 4,
+        "show_rating": false,
+        "show_secondary_image": false,
+        "show_vendor": false
+      },
+      "type": "related-products"
+    },
+    "results_kJgxFM": {
+      "block_order": [
+        "row_eYRmVW",
+        "row_acGNVV",
+        "row_kLLHXi"
+      ],
+      "blocks": {
+        "row_acGNVV": {
+          "settings": {
+            "percentage": 92,
+            "row_text": "<p>of customers reported experiencing improvements in hair health and better sleep.<\/p>"
+          },
+          "type": "row"
+        },
+        "row_eYRmVW": {
+          "settings": {
+            "percentage": 96,
+            "row_text": "<p>of customers have experienced a decrease in fizzy hair and split ends.<\/p>"
+          },
+          "type": "row"
+        },
+        "row_kLLHXi": {
+          "settings": {
+            "percentage": 88,
+            "row_text": "<p>have found this hair bonnet to be save time saving in the morning as it preserve their hairstyle throughout the night.<\/p>"
+          },
+          "type": "row"
+        }
+      },
+      "custom_css": [
+        ".vtl-pr-review-stars-snippet {display: none;}"
+      ],
+      "settings": {
+        "atc_button_label": "",
+        "atc_product": "",
+        "atc_skip_cart": false,
+        "button_label": "",
+        "button_style_secondary": false,
+        "caption": "<p>* Survey Results Based On A 200 Person Sample-Size Test Via Email. Percentages Are Rounded Down.<\/p>",
+        "color_scheme": "background-1",
+        "display_id": false,
+        "heading_size": "h1",
+        "layout": "results_first",
+        "link": "shopify:\/\/products\/vivella-grounding-sheets-fitted",
+        "padding_bottom": 52,
+        "padding_top": 72,
+        "results_headline": "SEE WHAT OUR  CUSTOMERS  HAVE TO SAY....",
+        "results_headline_alignment": "left",
+        "results_headline_size": "h1",
+        "text": "",
+        "title": "",
+        "video": "shopify:\/\/files\/videos\/TT Ripped 3.0 - Trim for gif (1).mp4",
+        "visibility": "always-display"
+      },
+      "type": "results"
+    },
+    "rich_text_CpAk4j": {
+      "block_order": [
+        "heading_H8mqmy"
+      ],
+      "blocks": {
+        "heading_H8mqmy": {
+          "settings": {
+            "heading": "<p>PERFECT LASHES IN 60 SECONDS.<\/p>",
+            "heading_size": "h1"
+          },
+          "type": "heading"
+        }
+      },
+      "settings": {
+        "color_scheme": "background-2",
+        "content_alignment": "center",
+        "desktop_content_position": "center",
+        "display_id": false,
+        "full_width": true,
+        "padding_bottom": 0,
+        "padding_top": 40,
+        "visibility": "always-display"
+      },
+      "type": "rich-text"
+    },
+    "section_divider_3EN48g": {
+      "settings": {
+        "background_color": "background-1",
+        "flip_horizontal": false,
+        "flip_vertical": true,
+        "padding_bottom": 12,
+        "padding_top": 20,
+        "shape": "random_1",
+        "shape_color": "background-2"
+      },
+      "type": "section-divider"
+    },
+    "section_divider_49E6Up": {
+      "settings": {
+        "background_color": "background-1",
+        "flip_horizontal": true,
+        "flip_vertical": true,
+        "padding_bottom": 16,
+        "padding_top": 20,
+        "shape": "waves_3",
+        "shape_color": "accent-1"
+      },
+      "type": "section-divider"
+    },
+    "section_divider_E8btfq": {
+      "settings": {
+        "background_color": "background-1",
+        "flip_horizontal": false,
+        "flip_vertical": false,
+        "padding_bottom": 0,
+        "padding_top": 0,
+        "shape": "waves_3",
+        "shape_color": "accent-2"
+      },
+      "type": "section-divider"
+    },
+    "section_divider_Ja6wUx": {
+      "settings": {
+        "background_color": "background-1",
+        "flip_horizontal": true,
+        "flip_vertical": false,
+        "padding_bottom": 0,
+        "padding_top": 0,
+        "shape": "random_1",
+        "shape_color": "background-2"
+      },
+      "type": "section-divider"
+    },
+    "section_divider_WG8Wh7": {
+      "settings": {
+        "background_color": "background-1",
+        "flip_horizontal": false,
+        "flip_vertical": true,
+        "padding_bottom": 0,
+        "padding_top": 0,
+        "shape": "waves_3",
+        "shape_color": "accent-2"
+      },
+      "type": "section-divider"
+    },
+    "testimonials_x3jMb9": {
+      "block_order": [
+        "column_AaEYka",
+        "column_tUe4kN",
+        "column_zrgcmk"
+      ],
+      "blocks": {
+        "column_AaEYka": {
+          "settings": {
+            "author": "<em><strong>-Katie R.<\/strong><\/em>",
+            "image": "shopify:\/\/shop_images\/61JXBCw_BhL.jpg",
+            "text": "<p>This bonnet is soooo comfortable to sleep on and I love the way it’s designed compared to all the other silk rags and bonnets I’ve used. This is so much better to sleep in and doesn’t give me a headache.Love this bonnet fits great silky smooth and stays all night!<\/p>",
+            "title": "\"I liked this satin bonnet\""
+          },
+          "type": "column"
+        },
+        "column_tUe4kN": {
+          "settings": {
+            "author": "<em><strong>-lisa K.<\/strong><\/em>",
+            "image": "shopify:\/\/shop_images\/61nQXlDZb9L.jpg",
+            "text": "<p>Love this!!It stays on so well, it’s super comfy except around the ears. Other than that I love this! It has changed the game for my hair! I naturally have frizzy hair.. now when I wake up it’s like I brushed and strained it! Also love that it came with directions for washing.<\/p>",
+            "title": "\"Absolutely yes\""
+          },
+          "type": "column"
+        },
+        "column_zrgcmk": {
+          "settings": {
+            "author": "<strong>-Amy C.<\/strong>",
+            "image": "shopify:\/\/shop_images\/71ZH9OoiQuL.jpg",
+            "text": "<p>First of all I need EVERY color and some for my grandma! Honeyyyyyy the fact that the packaging is boxed and well-carded was right up my alley ! Let’s not start with the Sage color which adds beauty to any item!. I felt the love in the packaging and I love how fashion met luxury.<\/p>",
+            "title": "\"When I say Luxury honey\""
+          },
+          "type": "column"
+        }
+      },
+      "custom_css": [
+        "\/* Change color of specific text *\/h2 span {color: #e56399;}"
+      ],
+      "settings": {
+        "arrows_color_scheme": "inverse",
+        "autoplay": true,
+        "autoplay_speed": 3.5,
+        "cards_color_scheme": "background-2",
+        "color_scheme": "background-1",
+        "column_alignment": "center",
+        "columns_desktop": 3,
+        "desktop_adaptive_height": false,
+        "desktop_arrows_position": "sides",
+        "desktop_dots_position": "under",
+        "desktop_full_page": false,
+        "desktop_padding_calc": true,
+        "desktop_side_padding": 0,
+        "desktop_spacing": 40,
+        "display_id": false,
+        "dots_color_scheme": "inverse",
+        "enable_mobile_preview": false,
+        "heading_size": "h1",
+        "image_ratio": "portrait",
+        "image_width": "full",
+        "mobile_adaptive_height": false,
+        "mobile_arrows_position": "under",
+        "mobile_dots_position": "under",
+        "padding_bottom": 52,
+        "padding_top": 36,
+        "per_move_desktop": 1,
+        "quotes_color_scheme": "accent-1",
+        "show_quotes": true,
+        "show_stars": true,
+        "slider_desktop": false,
+        "slider_mobile": true,
+        "stars_color": "#ffb700",
+        "style": "cards",
+        "text": "<p>Restore, Strengthen, and Smooth Your Hairs.<br\/><br\/><\/p>",
+        "title": "BREAK FREE FROM BREAKAGE",
+        "transparent_arrows": true,
+        "type": "slide",
+        "visibility": "always-display"
+      },
+      "type": "testimonials"
+    }
+  }
+}

@@ -1,0 +1,318 @@
+<div
+  class="product-carousel-container"
+  style="--margin-top: {{ section.settings.margin_top | divided_by: 10.0 }}rem;--margin-bottom: {{ section.settings.margin_bottom | divided_by: 10.0 }}rem;"
+>
+  {%- assign collection = collections[section.settings.collection] -%}
+  {%- assign max_products = section.settings.products_to_show | default: 5 -%}
+  {%- assign products_shown = 0 -%}
+
+  {%- assign product_1 = all_products['aura-invisible-camel-toe-thong-mid-rise'] -%}
+  {%- assign product_2 = all_products['aura-invisible-camel-toe-thong-low-rise'] -%}
+  {%- assign product_handles = 'aura-invisible-camel-toe-thong-mid-rise,aura-invisible-camel-toe-thong-low-rise' | split: ',' -%}
+
+  <h3 class="cross-sells__title">{{ section.settings.cross_sells_title }}</h3>
+
+  <div class="cross-sells-grid">
+    {%- for product in product_handles -%}
+      
+      
+      {%- assign current_product = all_products[product] -%}
+        <div class="product-card {% unless current_product.price != current_product.compare_at_price %}price-is-equal{% endunless %}" {% if forloop.first %}style="display: none;"{% endif %}>
+          <a href="{{ current_product.url }}" class="product-card-link">
+            <div class="product-card__image">
+              <img
+                src="{{ current_product.featured_image | image_url: width: 533 }}"
+                alt="{{ current_product.featured_image.alt | escape }}"
+                width="533"
+                height="{{ 533 | divided_by: current_product.featured_image.aspect_ratio | round }}"
+                loading="lazy"
+              >
+            </div>
+          </a>
+          <div class="product-card__info">
+            <h3 class="product-card__title">{{ current_product.title }}</h3>
+            <div class="product-card__price">
+              {%- render 'price', product: current_product -%}
+            </div>
+            
+            <form method="post" action="/cart/add" class="crossels__product-form">
+              <input type="hidden" name="id" value="{{ current_product.first_available_variant.id }}">
+              
+              <select class="product-card__variant-select" name="id" data-product-id="{{ current_product.id }}">
+                {% for variant in current_product.variants %}
+                  <option 
+                    value="{{ variant.id }}"
+                    {% if variant.available == false %}disabled{% endif %}
+                  >
+                    {{ variant.title }}
+                  </option>
+                {% endfor %}
+              </select>
+              
+              <button 
+                type="submit"
+                class="maison__atc-button mc-w-full mc-bg-black mc-text-white mc-py-4 sm:mc-py-4 mc-rounded-lg hover:mc-bg-gray-800"
+                data-product-id="{{ current_product.id }}"
+                {% if current_product.available == false %}disabled{% endif %}
+              >
+                {% if current_product.available %}
+                  Add to Cart
+                {% else %}
+                  Sold Out
+                {% endif %}
+              </button>
+            </form>
+          </div>
+        </div>
+      {% if forloop.first %}
+        <div class="product-card {% unless current_product.price != current_product.compare_at_price %}price-is-equal{% endunless %}">
+          <a href="{{ current_product.url }}" class="product-card-link">
+            <div class="product-card__image">
+              <img
+                src="{{ current_product.featured_image | image_url: width: 533 }}"
+                alt="{{ current_product.featured_image.alt | escape }}"
+                width="533"
+                height="{{ 533 | divided_by: current_product.featured_image.aspect_ratio | round }}"
+                loading="lazy"
+              >
+            </div>
+          </a>
+          <div class="product-card__info">
+            <h3 class="product-card__title">{{ current_product.title }}</h3>
+            <div class="product-card__price">
+              {%- render 'price', product: current_product -%}
+            </div>
+            
+            <form method="post" action="/cart/add" class="crossels__product-form">
+              <input type="hidden" name="id" value="{{ current_product.first_available_variant.id }}">
+              
+              <select class="product-card__variant-select" name="id" data-product-id="{{ current_product.id }}">
+                {% for variant in current_product.variants %}
+                  <option 
+                    value="{{ variant.id }}"
+                    {% if variant.available == false %}disabled{% endif %}
+                  >
+                    {{ variant.title }}
+                  </option>
+                {% endfor %}
+              </select>
+              
+              <button 
+                type="submit"
+                class="maison__atc-button mc-w-full mc-bg-black mc-text-white mc-py-4 sm:mc-py-4 mc-rounded-lg hover:mc-bg-gray-800"
+                data-product-id="{{ current_product.id }}"
+                {% if current_product.available == false %}disabled{% endif %}
+              >
+                {% if current_product.available %}
+                  Add to Cart
+                {% else %}
+                  Sold Out
+                {% endif %}
+              </button>
+            </form>
+          </div>
+        </div>
+      {% endif %}
+    {%- endfor -%}
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.crossels__product-form').forEach(form => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(form);
+      
+      try {
+        // First add the item to cart
+        const addToCartResponse = await fetch('/cart/add.js', {
+          method: 'POST',
+          body: formData
+        });
+        
+        if (!addToCartResponse.ok) throw new Error('Add to cart failed');
+        
+        // Then update the cart drawer
+        const cartResponse = await fetch("/cart/update.js", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ 
+            updates: {}, 
+            sections: ["cart-drawer", "cart-icon-bubble"] 
+          }),
+        });
+        
+        if (!cartResponse.ok) throw new Error('Cart update failed');
+        
+        const cart = await cartResponse.json();
+        
+        // Update the cart drawer
+        document.querySelector("cart-drawer").renderContents(cart);
+        document.querySelector("cart-drawer.drawer").classList.remove("is-empty");
+        
+        // Open the cart drawer
+        document.querySelector("cart-drawer").open();
+        
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    });
+  });
+</script>
+
+<style>
+  .cross-sells .slider-button--prev,
+  .cross-sells .slider-button--next {
+    display: none
+  }
+
+  .product-carousel-container {
+    display: grid;
+    gap: 16px
+  }
+  
+  .cross-sells__title {
+    text-align: start;
+    font-size: 16px;
+  }
+
+  .slider-counter__link .dot {
+    width: .7rem;
+    height: .7rem;
+    background-color: #4a4a4a4d
+  }
+
+  .product-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .product-card__image {
+    flex: 0 0 105px;
+    width: 105px;
+    height: auto;
+    border-radius: 12px;
+    overflow: hidden;   
+  }
+
+  .product-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .product-card__info {
+    flex: 1;
+  }
+
+  .product-card__title {
+    margin: 0 0 1rem;
+    font-size: 18px !important;
+    font-family: 'II Vorkurs', sans-serif !important
+  }
+
+  .maison__atc-button {
+    font-family: 'II Vorkurs', sans-serif !important
+  }
+
+  .product-card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .slideshow__slide {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .cross-sells-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 0 auto;
+    max-width: var(--page-width);
+  }
+  
+  .product-card__add-to-cart {
+    width: 100% !important
+  }
+
+   @media screen and (max-width: 749px) {
+    .product-card {
+      text-align: start;
+      gap: 1rem;
+      align-items: start;
+      justify-content: start
+    }
+
+    .product-card__image {
+      margin: 0 auto;
+    }
+
+    .product-card__info {
+      display: grid;
+      place-items: start
+    }
+
+    .product-card__title {
+      font-size: 16px !important
+    }
+
+    .cross-sells__title {
+      text-align: center !important
+    }
+
+    .cross-sells-grid .price__compare-price,
+    .cross-sells-grid .price-item {
+      font-size: 12px !important
+    }
+
+    .cross-sells-grid {
+      grid-template-columns: 1fr;
+      place-items: start
+    }
+  }
+
+  .product-card__variant-select {
+    width: 100%;
+    margin-bottom: 12px !important;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .product-card__variant-select {
+    width: 100% !important;
+    margin-bottom: 12px
+  }
+
+  .product-carousel-container kaching-bundle {
+    display: none !important
+  }
+
+  .product-carousel-container .price-item--sale {
+    color: rgba(var(--color-foreground), .9);
+  }
+  
+  .product-carousel-container .price-item--regular {
+    color: #C2818A !important
+  }
+
+  .product-carousel-container .price .price__sale {
+    flex-direction: row-reverse !important;
+    display: flex;
+    column-gap: 5px;
+    justify-content: start
+  }
+
+  .product-carousel-container .price__regular:has(.visually-hidden) {
+    display: none !important
+  }
+
+
+  .price-is-equal .price__compare-price {
+    display: none !important
+  }
+</style>
