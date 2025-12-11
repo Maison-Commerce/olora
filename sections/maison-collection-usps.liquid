@@ -420,7 +420,7 @@
       }
       
       // Only initialize on mobile
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth <= 1000) {
         swiperInstance = new Swiper('.maison_commerce_collection_usps__swiper', {
           slidesPerView: 1,
           spaceBetween: {{ section.settings.gap_mobile | default: 12 }},
