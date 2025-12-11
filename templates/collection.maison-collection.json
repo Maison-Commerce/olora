@@ -90,6 +90,7 @@
         "rating_value": "4.8",
         "rating_max": "5",
         "customer_count": "5,841",
+        "background_image": "shopify://shop_images/BG.png",
         "padding_top_desktop": 64,
         "padding_bottom_desktop": 64,
         "padding_left_desktop": 80,
