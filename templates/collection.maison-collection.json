@@ -11,6 +11,7 @@
   "order": [
     "image_banner_garaYC",
     "main-collection-banner",
+    "maison_collection_banner_mkrWrK",
     "main-collection-product-grid",
     "newsletter"
   ],
@@ -40,10 +41,79 @@
     },
     "main-collection-banner": {
       "type": "main-collection-banner",
+      "disabled": true,
       "settings": {
         "show_collection_description": true,
         "show_collection_image": false,
         "color_scheme": "background-1"
+      }
+    },
+    "maison_collection_banner_mkrWrK": {
+      "type": "maison-collection-banner",
+      "blocks": {
+        "feature_K3rakH": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Camel Toe Proof Technology"
+          }
+        },
+        "feature_iPh6BL": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Seamless"
+          }
+        },
+        "feature_6BKA8U": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Wide Absorbent Gusset"
+          }
+        },
+        "feature_KNKnFR": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "High Rise"
+          }
+        }
+      },
+      "block_order": [
+        "feature_K3rakH",
+        "feature_iPh6BL",
+        "feature_6BKA8U",
+        "feature_KNKnFR"
+      ],
+      "name": "Collection Banner",
+      "settings": {
+        "badge_text": "Special Sale",
+        "heading": "Autumn Sale is here!",
+        "subheading": "Buy 1, Get 1 Free",
+        "rating_value": "4.8",
+        "rating_max": "5",
+        "customer_count": "5,841",
+        "padding_top_desktop": 64,
+        "padding_bottom_desktop": 64,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 0,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "section_bg_color_start": "#FCF5F4",
+        "section_bg_color_end": "#F0D3CB",
+        "badge_bg_color": "#F7E6E2",
+        "badge_border_color": "#F0D3CB",
+        "heading_font_size_desktop": 32,
+        "heading_font_size_mobile": 24,
+        "heading_color": "#151515",
+        "rating_text_font_size_desktop": 12,
+        "rating_text_font_size_mobile": 10,
+        "rating_text_color": "#151515",
+        "star_color": "#FEC84B",
+        "star_size_desktop": 16,
+        "star_size_mobile": 12,
+        "features_font_size_desktop": 18,
+        "features_font_size_mobile": 14,
+        "features_color": "rgba(21,21,21,0.75)"
       }
     },
     "main-collection-product-grid": {
