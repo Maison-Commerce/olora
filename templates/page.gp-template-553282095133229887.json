@@ -1,1 +1,230 @@
-{"layout":"theme.gempages.blank","sections":{"gp_global_section_546733385976906976-1":{"type":"gp-global-section-546733385976906976","settings":{"section_preload":"true"}},"gp_section_553282095284814655":{"type":"gp-section-553282095284814655","settings":{"checksum":"d93f33ab0ce97944e907f2f781fc04d0e3db9fe409f1e772c9a1808a858c0d5e_1_1"}},"gp_section_553282095284945727":{"type":"gp-section-553282095284945727","settings":{"checksum":"01e15b6530204d9ecbf87c40e1c7383574c17103782ccaeee352f5a8816d6f7c_1_1"}},"gp_section_553282095284224831":{"type":"gp-section-553282095284224831","settings":{"checksum":"5fe06553784477a794848f919dd0b3f73af6450633f03e7785f52caf0e0b1e0a_1_1"}},"gp_section_553282095284486975":{"type":"gp-section-553282095284486975","settings":{"checksum":"b25560a7f9aa5914cd6be2b98e5f2cfe63d62db4fa79111d8d8a6392f9ea7209_1_1"}},"gp_section_553282095284618047":{"type":"gp-section-553282095284618047","settings":{"checksum":"952b9a2baf4a7bc8ca0a9f67f66f80325044bb15ebb9c1cced71837a26ba9ac3_1_1"}},"gp_section_553282095284880191":{"type":"gp-section-553282095284880191","settings":{"checksum":"c344513b62c6a0919ad97fe839a46ad7b65bca170198bd6a3a9f55791955c314_1_1"}},"gp_section_553282095284355903":{"type":"gp-section-553282095284355903","settings":{"checksum":"7dd6d6f2ffc19343e599f7b663c0a116805b53ae317ffb22a748c7e5da042ba4_1_1"}},"gp_section_553282095284290367":{"type":"gp-section-553282095284290367","settings":{"checksum":"4fd49cdb441309911f50343e827f6bc136a133dc8cd83e6dec6d4535eb203f0c_1_1"}},"gp_section_553282095284421439":{"type":"gp-section-553282095284421439","settings":{"checksum":"6e79775ce5fcc8674123afe3c12261ab5075d6724d96d01f039f084bf422a18c_1_1"}},"gp_section_553282095284749119":{"type":"gp-section-553282095284749119","settings":{"checksum":"73c177fcdf3827b378590b990c61059bc5d3a4064f4b099b34f64e2ff793a5ae_1_1"}},"gp_section_553282095284683583":{"type":"gp-section-553282095284683583","settings":{"checksum":"c5ed5771bf6ede4f37dcea2eff3a7869aa4b68d66b16488e3d40289f728f6bbe_1_1"}},"gp_section_553282095284552511":{"type":"gp-section-553282095284552511","settings":{"checksum":"6b4ffbda3efeabe66a67e715fad8b6e7ab5a0994c15eaea9b93f5b21038929c7_1_1"}},"gp_section_553282095285011263":{"type":"gp-section-553282095285011263","settings":{"checksum":"5fbcb9d6c54d4e16108c4332f59cc1532513c5d4d90275433482930d3f68fff9_1_1"}}},"order":["gp_global_section_546733385976906976-1","gp_section_553282095284814655","gp_section_553282095284945727","gp_section_553282095284224831","gp_section_553282095284486975","gp_section_553282095284618047","gp_section_553282095284880191","gp_section_553282095284355903","gp_section_553282095284290367","gp_section_553282095284421439","gp_section_553282095284749119","gp_section_553282095284683583","gp_section_553282095284552511","gp_section_553282095285011263"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gp_global_section_546733385976906976-1": {
+      "settings": {
+        "checksum": "",
+        "section_preload": "false"
+      },
+      "type": "gp-global-section-546733385976906976"
+    },
+    "gp_section_553282095284224831": {
+      "settings": {
+        "checksum": "5fe06553784477a794848f919dd0b3f73af6450633f03e7785f52caf0e0b1e0a_1_1_0_0__1",
+        "ggqC-1ZtbmD_text": "<span style=\"background-color:#ffffff;color:#000000;font-size:34px;\"><strong>All Day Freshness, Comfort &amp; Protection</strong>&nbsp;</span><br><span style=\"background-color:#ffffff;color:#000000;font-size:30px;\"><u>3 Reasons Why You Need To Try It Yourself.</u></span>",
+        "ggyBIbVsqgh_leftImageLabel": "Before",
+        "ggyBIbVsqgh_rightImageLabel": "After",
+        "ggzkQWNllFi_text": "<span style=\"background-color:#ffffff;color:#000000;font-size:26px;\"><strong>All Day Freshness, Comfort &amp; Protection</strong>&nbsp;</span><br><span style=\"background-color:#ffffff;color:#000000;font-size:21px;\"><u>3 Reasons Why You Need</u></span><br><span style=\"background-color:#ffffff;color:#000000;font-size:21px;\"><u>To Try It Yourself.</u></span>"
+      },
+      "type": "gp-section-553282095284224831"
+    },
+    "gp_section_553282095284290367": {
+      "settings": {
+        "checksum": "4fd49cdb441309911f50343e827f6bc136a133dc8cd83e6dec6d4535eb203f0c_1_1_0_0__1",
+        "gg5oYt4GfWk_text": "<p><span style=\"font-size:14px;\">Join thousands of women around the world who no longer worry about sweaty, smelly crotch, and bacteria build up down there!</span></p>",
+        "gglMaIVqtfW_text": "<p><span style=\"font-size:14px;\">4.8 /5 (5,841 + Reviews )</span></p>",
+        "ggsfebp3qeW_text": "<span style=\"color:#050505;font-size:36px;\"><strong><u>5,841+ women are #oloraproof</u></strong></span>"
+      },
+      "type": "gp-section-553282095284290367"
+    },
+    "gp_section_553282095284355903": {
+      "settings": {
+        "checksum": "7dd6d6f2ffc19343e599f7b663c0a116805b53ae317ffb22a748c7e5da042ba4_1_1_0_0__1"
+      },
+      "type": "gp-section-553282095284355903"
+    },
+    "gp_section_553282095284421439": {
+      "settings": {
+        "checksum": "6e79775ce5fcc8674123afe3c12261ab5075d6724d96d01f039f084bf422a18c_1_1_0_0__1",
+        "gg-516Uk4NK_text": "<p>Daniella T.&nbsp;<i> verified buyer</i></p>",
+        "gg4CpHtXBbm_text": "<p>It actually worked!!!</p>",
+        "gg551Ge4sP8_text": "<p>Would definitely recommend</p>",
+        "ggIETsxLJzR_text": "<p>The best thongs I have found to date!</p>",
+        "ggNtSnQc4Bz_text": "<p>Daniella T.&nbsp;<i> verified buyer</i></p>",
+        "ggSOVyhHpv1_text": "<p>Cassy A.&nbsp;<i> verified buyer</i></p>",
+        "ggUEKJ37MCS_text": "<p>It actually worked!!!</p>",
+        "ggVCCyj1QbQ_text": "<p>Would definitely recommend</p>",
+        "ggZEk-AqUZf_text": "<p>I was excited to try these for the “sweat control” problem! It actually worked!!!</p>",
+        "ggZoJeb9ReD_text": "<p>Would definitely recommend to anyone who wants a comfortable, no camel toe, no VPL thong.</p>",
+        "ggeyrt44MHs_text": "<p>Would definitely recommend to anyone who wants a comfortable, no camel toe, no VPL thong.</p>",
+        "ggikXoyz-s8_text": "<p>Cassy A.&nbsp;<i> verified buyer</i></p>",
+        "ggnaIZ_qxOS_text": "<p>Lesley T.&nbsp;<i> verified buyer</i></p>",
+        "ggoeWUwE8QU_text": "<p>Lesley T.&nbsp;<i> verified buyer</i></p>",
+        "ggplLiMIN_u_text": "<p>These are hands down the best thongs I have found to date! 10/10 would recommend and will buy again!</p>",
+        "ggrASrtsBCD_text": "<p>I was excited to try these for the “sweat control” problem! It actually worked!!!</p>",
+        "ggrjXGedpm5_text": "<p>These are hands down the best thongs I have found to date! 10/10 would recommend and will buy again!</p>",
+        "ggvfGRblsS7_text": "<p>The best thongs I have found to date!</p>"
+      },
+      "type": "gp-section-553282095284421439"
+    },
+    "gp_section_553282095284486975": {
+      "settings": {
+        "checksum": "b25560a7f9aa5914cd6be2b98e5f2cfe63d62db4fa79111d8d8a6392f9ea7209_1_1_0_0__1",
+        "gg1DeHhaGOp_text": "<p>Olora's thong is made from 100% breathable and moisture wicking materials, keeping you dry even throughout your most intense days.</p>",
+        "ggEs2IE_eML_text": "<p>Olora's thong is made from 100% breathable and moisture wicking materials, keeping you dry even throughout your most intense days.</p>",
+        "ggIR3ajeKS9_text": "<p><span style=\"font-size:18px;\">1. No More Sweaty Crotch</span></p>",
+        "ggQiFQu3KcM_text": "<p>Sweat creates a breading ground for bacteria, increasing the risk of infections such as bacterial vaginosis and vaginal yeast infections.</p>",
+        "ggUhihB5Dxx_text": "<p><span style=\"font-size:18px;\">2. No More Smelly Crotch</span></p>",
+        "ggWd15rKAWO_text": "<p><span style=\"font-size:23px;\">3. Reduce Risk Of Bacterial Infections</span></p>",
+        "ggaVoiSbIJu_text": "<p>According to Healthline.com \"Sweating in the groin area can attract fungus and bacteria that can lead to a bad smell.\"</p>",
+        "ggfOYEKIhKv_text": "<p>Sweat creates a breading ground for bacteria, increasing the risk of infections such as bacterial vaginosis and vaginal yeast infections.</p>",
+        "gghFvOeY56C_text": "<p><span style=\"font-size:23px;\">2. No More Smelly Crotch</span></p>",
+        "ggj8K27RtCA_text": "<p>According to Healthline.com \"Sweating in the groin area can attract fungus and bacteria that can lead to a bad smell.\"</p>",
+        "gglU6o6qYyd_text": "<p><span style=\"font-size:18px;\">3. Reduce Risk Of Bacterial Infections</span></p>",
+        "ggnCk43SYql_text": "<p><span style=\"font-size:23px;\">1. No More Sweaty Crotch</span></p>",
+        "gguU-IOzqe2_label": "<p>TRY NOW</p>"
+      },
+      "type": "gp-section-553282095284486975"
+    },
+    "gp_section_553282095284552511": {
+      "settings": {
+        "checksum": "6b4ffbda3efeabe66a67e715fad8b6e7ab5a0994c15eaea9b93f5b21038929c7_1_1_0_0__1",
+        "gg1tuankDme_text": "<p><strong>No Camel Toe</strong></p>",
+        "gg6spAODmTg_text": "<p>Others</p>",
+        "ggCcHykOthQ_text": "<span style=\"font-size:34px;\">how do They compare to other thongs?</span>",
+        "ggKOzi5Iwp5_text": "<p><strong>No Visible Panty Lines</strong></p>",
+        "ggPF1nU3mwd_text": "<p><strong>Breathable &amp; Moisture Wicking</strong></p>",
+        "ggoZS1g8W5q_text": "<p><strong>Wider gusset</strong></p>",
+        "ggygNPPsMLb_text": "<p><strong>High Quality Fabric</strong></p>"
+      },
+      "type": "gp-section-553282095284552511"
+    },
+    "gp_section_553282095284618047": {
+      "settings": {
+        "checksum": "952b9a2baf4a7bc8ca0a9f67f66f80325044bb15ebb9c1cced71837a26ba9ac3_1_1_0_0__1",
+        "gg-8hRT0YTI_text": "<span style=\"color:#050505;font-size:30px;\"><strong>How Does It Actually Work?</strong></span>",
+        "gg-cvDvCTTT_text": "<span style=\"font-size:18px;\"><strong>Wide Comfy Gusset</strong></span>",
+        "gg2CgOyGWIC_text": "<span style=\"font-size:18px;\"><strong>Breathable Padded Insert</strong></span>",
+        "gg5KwYYvDXB_text": "<p>Allows your privates to breathe, stopping sweaty crotch and front wedgies that lead to bacteria build up and potential infections.</p>",
+        "ggDXSkuMYwK_text": "<span style=\"font-size:20px;\"><strong>100% Seamless</strong></span>",
+        "ggNilrOoYAS_text": "<span style=\"font-size:20px;\"><strong>Wide Comfy Gusset</strong></span>",
+        "ggYnkkJQ3k3_text": "<span style=\"font-size:18px;\"><strong>Premium Moisture Wicking Fabric</strong></span>",
+        "ggcr6_tGWhz_text": "<p>A narrow gusset will give you a front wedgie, causing irritation that can lead to rashes and potentially infections. Olora's gusset is wide enough to actually cover your lady bits. So comfy!</p>",
+        "ggfHByFCyTD_text": "<span style=\"font-size:18px;\"><strong>100% Seamless</strong></span>",
+        "gggxracbG1j_text": "<span style=\"font-size:20px;\"><strong>Premium Moisture Wicking Fabric</strong></span>",
+        "ggiTM9ZZjfA_text": "<p>No visible panty lines, so you stay undetectable under any outfit.</p>",
+        "ggip4r8H6iD_text": "<span style=\"font-size:20px;\"><strong>Breathable Padded Insert</strong></span>",
+        "ggj6PC-REiu_label": "<p>TRY NOW</p>",
+        "ggmsIR01Lhk_text": "<p>Regulates body temperature and wicks moisture away from the body, keeping you dry even throughout your most intense days.</p>",
+        "ggpus3YX7L1_text": "<p>Regulates body temperature and wicks moisture away from the body, keeping you dry even throughout your most intense days.</p>",
+        "ggrOSbSqInU_text": "<p>Allows your privates to breathe, stopping sweaty crotch and front wedgies that lead to bacteria build up and potential infections.</p>",
+        "ggtpr-Yi46b_text": "<p>No visible panty lines, so you stay undetectable under any outfit.</p>",
+        "ggvjpGeeP1r_text": "<p>A narrow gusset will give you a front wedgie, causing irritation that can lead to rashes and potentially infections. Olora's gusset is wide enough to actually cover your lady bits. So comfy!</p>"
+      },
+      "type": "gp-section-553282095284618047"
+    },
+    "gp_section_553282095284683583": {
+      "settings": {
+        "checksum": "c5ed5771bf6ede4f37dcea2eff3a7869aa4b68d66b16488e3d40289f728f6bbe_1_1_0_0__1",
+        "gg6m41wYLN5_text": "<p><span style=\"font-size:16px;\">You won't even know you have them on. The tech-enabled gusset and premium fabric was designed to be comfy and discreet.&nbsp;</span></p><p>&nbsp;</p><p><span style=\"font-size:16px;\">They will feel exactly like your regular panties, except even more comfy!</span><br><br><span style=\"font-size:16px;\">Use their size calculator to get the perfect fit, ensuring they don't move (ride up or bunch up) when you move.</span></p>",
+        "ggCSMnNzG-o_text": "<span style=\"font-size:30px;\"><strong>What Olora Thongs Are NOT...</strong></span>",
+        "ggFCocZSigp_text": "<p><span style=\"font-size:12px;\"><strong>Rated 4.6/5 On Trust Pilot</strong></span></p>",
+        "ggI3T8gUi0a_text": "<span style=\"font-size:26px;\"><strong><u>Uncomfortable &amp; Bulky</u></strong></span>",
+        "ggJ-GqewXT6_text": "<p><span style=\"font-size:16px;\">You won't even know you have them on. The tech-enabled gusset and premium fabric was designed to be comfy and discreet.&nbsp;</span></p><p>&nbsp;</p><p><span style=\"font-size:16px;\">They will feel exactly like your regular panties, except even more comfy!</span><br><br><span style=\"font-size:16px;\">Use their size calculator to get the perfect fit, ensuring they don't move (ride up or bunch up) when you move.</span></p>",
+        "ggOcshkOmWB_text": "<span style=\"font-size:32px;\"><strong><u>Uncomfortable &amp; Bulky</u></strong></span>",
+        "ggRiqHsc3vi_text": "<span style=\"font-size:34px;\"><strong>What Olora Thongs Are <u>NOT?</u></strong></span>",
+        "ggj-8cchOCq_label": "<p>TRY NOW</p>",
+        "ggzJpbCQlr9_text": "<p><span style=\"font-size:10px;\"><strong>Rated 4.6/5 On Trust Pilot</strong></span></p>"
+      },
+      "type": "gp-section-553282095284683583"
+    },
+    "gp_section_553282095284749119": {
+      "settings": {
+        "checksum": "73c177fcdf3827b378590b990c61059bc5d3a4064f4b099b34f64e2ff793a5ae_1_1_0_0__1",
+        "ggCyleWDUuD_label": "<p>CLAIM OFFER</p>",
+        "ggHpYoOY6mx_text": "<p><span style=\"font-size:17px;\"><strong>&nbsp; Sell-Out Risk: </strong></span><span style=\"color:#FF0000;font-size:17px;\"><strong>High</strong></span></p>",
+        "ggV8x0BR5bq_text": "<p><span style=\"font-size:16px;\">Buy 3 Get 3<strong> FREE</strong></span></p>",
+        "ggXOo9lkPay_text": "<p><span style=\"font-size:13px;\"><strong>&nbsp; Sell-Out Risk: </strong></span><span style=\"color:#FF0000;font-size:13px;\"><strong>High</strong></span></p>",
+        "gg_BnC69q3V_text": "<p><span style=\"font-size:14px;\">Experience peace of mind with our 90 fit exchange guarantee.</span></p>",
+        "ggdXJMD0eF__text": "DEAL ENDING IN:",
+        "gggHTAwl7Ob_text": "<p><span style=\"background-color:rgba(255,5,5,0);color:#000000;font-size:57px;\"><strong>BUY 3 </strong></span><span style=\"background-color:rgba(255,5,5,0);color:#21CE0E;font-size:57px;\"><strong><u>GET 6</u></strong></span><span style=\"background-color:rgba(255,5,5,0);color:#000000;font-size:57px;\">&nbsp;</span><br><span style=\"color:#000000;font-size:32px;\"><i><strong>FOR&nbsp;A LIMITED TIME&nbsp;ONLY!</strong></i></span></p>",
+        "ggpO3eygdiO_text": "<p><span style=\"background-color:rgba(255,5,5,0);color:#000000;font-size:34px;\"><strong>BUY 3 </strong></span><span style=\"background-color:rgba(255,5,5,0);color:#21CE26;font-size:34px;\"><strong><u>GET 6</u></strong></span><span style=\"background-color:rgba(255,5,5,0);color:#000000;font-size:30px;\">&nbsp;</span><br><span style=\"color:#000000;font-size:19px;\"><i><strong>FOR&nbsp;A LIMITED TIME&nbsp;ONLY!</strong></i></span></p>",
+        "gguTznHw3g0_dayLabel": "Days",
+        "gguTznHw3g0_hourLabel": "Hours",
+        "gguTznHw3g0_minuteLabel": "Minutes",
+        "gguTznHw3g0_secondLabel": "Seconds",
+        "gguTznHw3g0_weekLabel": "Weeks",
+        "ggvV06QBWd7_text": "<p><span style=\"font-size:14px;\">Buy 3 Get 3<strong> FREE</strong></span></p>",
+        "ggzyHGPYTw1_text": "<p>This limited-time deal is in high demand and stock keeps selling out.</p>"
+      },
+      "type": "gp-section-553282095284749119"
+    },
+    "gp_section_553282095284814655": {
+      "settings": {
+        "checksum": "d93f33ab0ce97944e907f2f781fc04d0e3db9fe409f1e772c9a1808a858c0d5e_1_1_0_0__1",
+        "gbVddMYhkgayz_text": "<p>4.8/5 (5,841+ Reviews)</p>",
+        "gdIKQBkLHXDvw_text": "<span style=\"font-size:23px;\"><u>why girls are ditching</u></span><br><span style=\"font-size:23px;\"><u>normal underwear for this hygiene game-changer</u></span><span style=\"font-size:21px;\"><u>&nbsp;</u></span>",
+        "gg3pkr8nEDC_label": "<p>TRY NOW</p>",
+        "ggtQnKIuALg_text": "<p><span style=\"color:#111111;font-size:15px;\">Regular underwear was not designed for hygiene. They are not breathable or moisture wicking, causing sweat and bacteria to build up. Luckily there is a new alternative!</span></p>"
+      },
+      "type": "gp-section-553282095284814655"
+    },
+    "gp_section_553282095284880191": {
+      "settings": {
+        "checksum": "c344513b62c6a0919ad97fe839a46ad7b65bca170198bd6a3a9f55791955c314_1_1_0_0__1",
+        "ggOE0NyCc7N_text": "<span style=\"color:#050505;font-size:42px;\"><strong><u>Loved By&nbsp;</u></strong></span><br><span style=\"color:#050505;font-size:42px;\"><strong><u>150k+ Girls</u></strong></span>",
+        "ggR4v8sQWqu_text": "<span style=\"color:#050505;font-size:36px;\"><strong><u>Loved By&nbsp;</u></strong></span><br><span style=\"color:#050505;font-size:36px;\"><strong><u>150k+ Girls</u></strong></span>"
+      },
+      "type": "gp-section-553282095284880191"
+    },
+    "gp_section_553282095284945727": {
+      "settings": {
+        "checksum": "01e15b6530204d9ecbf87c40e1c7383574c17103782ccaeee352f5a8816d6f7c_1_1_0_0__1",
+        "ggBVtIxDVya_text": "<p>4.8 /5 (5,841 + Reviews )</p>",
+        "ggZ5nXAZIeN_label": "<p><span style=\"color:#FFFFFF;\">TRY NOW</span></p>",
+        "gga66T8pOXH_text": "<p><span style=\"background-color:rgba(255,5,5,0);color:#000000;font-size:33px;\"><u>why girls are ditching normal underwear for this hygiene game-changer&nbsp;</u></span></p>",
+        "gggKw760N_f_text": "<p><span style=\"font-size:18px;\">Regular underwear was not designed for hygiene. They are not breathable or moisture wicking, causing sweat and bacteria to build up. Luckily there is a new alternative!</span></p>"
+      },
+      "type": "gp-section-553282095284945727"
+    },
+    "gp_section_553282095285011263": {
+      "settings": {
+        "checksum": "5fbcb9d6c54d4e16108c4332f59cc1532513c5d4d90275433482930d3f68fff9_1_1_0_0__1",
+        "gg7D90mKWlH_text": "<p><span style=\"background-color:rgb(255,254,254);color:rgb(90,80,73);font-size:16px;\">To keep you 100% protected we offer a 90-day free fit exchange and money-back guarantee. So if you need a different size, we’ll send you an exchange completely free and if you aren’t fully satisfied with your order for whatever reason within 90 days, we’ll offer you a full refund. To qualify for the 90-day money-back guarantee, you’ll just have to fill out a quick feedback form, which helps us improve our product!</span></p>",
+        "ggIPMHLP60D_text": "<span style=\"font-size:36px;\"><strong>FAQs</strong></span>",
+        "ggKPC-1Qmpo_text": "<p>Absolutely! Whether you're hitting the gym, running errands, heading to the office, or relaxing at home, The Olora Everyday Thong is designed to perform so seamlessly that you’ll forget you’re even wearing it.</p>",
+        "ggbmgQhYBp-_childItem_0": "<p><strong>What is their returns / refund policy?</strong></p>",
+        "ggbmgQhYBp-_childItem_1": "<p><strong>How are these different to regular underwear?</strong></p>",
+        "ggbmgQhYBp-_childItem_2": "<p><strong>How does your moisture-wicking technology actually work?</strong></p>",
+        "ggbmgQhYBp-_childItem_3": "<p><strong>Why does it have a breathable padded insert?</strong></p>",
+        "ggbmgQhYBp-_childItem_4": "<p><strong>How do I get the perfect size so they don't ride / bunch up?</strong></p>",
+        "ggbmgQhYBp-_childItem_5": "<p><strong>Are they comfortable to wear all day?</strong></p>",
+        "ggbmgQhYBp-_childItem_6": "<p><strong>How long will they last?</strong></p>",
+        "ggbmgQhYBp-_childItem_7": "<p><strong>Are they only for wearing in the gym?</strong></p>",
+        "gged1twSq_y_text": "<p><span style=\"background-color:rgb(255,254,254);color:rgb(90,80,73);font-size:16px;\">Unlike regular underwear, Olora combines moisture-wicking technology, a breathable insert, and a wide gusset to actively prevent irritation and bacteria buildup, making it the most hygienic choice.</span></p>",
+        "ggiW8zFWf7D_label": "<p>TRY NOW</p>",
+        "ggjJAYs76hz_text": "<p>Provided the proper care is applied, our thongs will keep their quality for more than 1 year, however, for hygiene reasons (especially with regular use when exercising) we would recommend replacing your underwear draw every 6 months.</p>",
+        "gglMxgs_Ngc_text": "<p>Absolutely not! While our Everyday Thong is perfect for the gym, it’s designed to go far beyond just your workouts. Its seamless, lightweight design and invisible protection make it an essential piece for <i>any</i> outfit or occasion.<br><br>Here’s how it shines outside of the gym:<br><br><strong>Everyday Confidence</strong><br>Whether you’re wearing tight jeans, leggings, or form-fitting dresses, the thong ensures a smooth, flawless silhouette so you can step out with confidence. No awkward adjustments, no second-guessing your outfit.</p><p>&nbsp;</p><p><strong>All-Day Comfort</strong><br>Crafted with ultra-soft, breathable, and moisture-wicking fabric, it keeps you comfortable during long days at work, errands, or even travel. The thong stays in place and feels so natural, you’ll forget it’s even there.</p><p>&nbsp;</p><p><strong>Wardrobe Versatility</strong><br>From casual brunches to nights out, this thong works seamlessly with any style, be it bodycon dresses, skirts, or yoga pants. It eliminates visible lines and prevents wardrobe malfunctions, so you’re always photo-ready.</p><p>&nbsp;</p><p><strong>Distraction-Free Lifestyle</strong><br>No matter what your day throws at you, whether you’re chasing after kids, sitting through meetings, or dancing at a party, you’ll stay focused on living your best life without worrying about discomfort or embarrassing mishaps.</p><p>&nbsp;</p><p>Our thong is a solution for <i>every aspect</i> of your day, not just for your workouts. It’s designed to fit into your lifestyle effortlessly, giving you the freedom to wear what you want, when you want, without limits.</p>",
+        "ggoSCX-ntNJ_text": "<p><span style=\"background-color:rgb(255,254,254);color:rgb(90,80,73);font-size:16px;\">Our moisture-wicking technology combines advanced fabrics to keep you dry and comfortable. Nylon fibers are hydrophobic, pulling sweat away from your skin to the fabric’s surface through capillary action. The moisture is then evenly spread across the surface, where it evaporates quickly due to nylon’s breathable and quick-drying properties. Meanwhile, spandex ensures a snug fit, enhancing sweat transfer to the surface for efficient evaporation.</span></p>",
+        "ggvisC0INg0_text": "<p><span style=\"background-color:rgb(255,254,254);color:rgb(90,80,73);font-size:16px;\">The breathable padded insert promotes airflow to reduce heat and moisture buildup, minimizing bacteria and odor. It also prevents front wedgies, helping to avoid irritation for better hygiene and comfort.</span></p>",
+        "ggyq597MKNA_text": "<p><span style=\"background-color:rgb(255,254,254);color:rgb(90,80,73);font-size:16px;\">Underwear that’s too tight will ride up and underwear that’s too loose will bunch up. Luckily Olora has sizes from xs - xxxl and a size calculator to help you find the perfect size based on your dimensions so they stay in place throughout your entire workout.</span></p>"
+      },
+      "type": "gp-section-553282095285011263"
+    }
+  },
+  "order": [
+    "gp_global_section_546733385976906976-1",
+    "gp_section_553282095284814655",
+    "gp_section_553282095284945727",
+    "gp_section_553282095284224831",
+    "gp_section_553282095284486975",
+    "gp_section_553282095284618047",
+    "gp_section_553282095284880191",
+    "gp_section_553282095284355903",
+    "gp_section_553282095284290367",
+    "gp_section_553282095284421439",
+    "gp_section_553282095284749119",
+    "gp_section_553282095284683583",
+    "gp_section_553282095284552511",
+    "gp_section_553282095285011263"
+  ],
+  "layout": "theme.gempages.blank"
+}
