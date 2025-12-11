@@ -1,1 +1,135 @@
-{"layout":"theme.gempages.blank","sections":{"gp_global_section_546733385976906976-1":{"type":"gp-global-section-546733385976906976","settings":{"section_preload":"true"}},"gp_section_538432098789229564":{"type":"gp-section-538432098789229564","settings":{"checksum":"70bfc45c314b0cee61b836f8b07331fe6d5ad9ae7d3caa704ca81c065270332e_1_1"}},"gp_section_538432098772452348":{"type":"gp-section-538432098772452348","settings":{"checksum":"18397a3d46dddd187a40392ff7c509333352a926701e47f05a50a57a3877c9ff_1_1"}},"gp_section_538432098722120700":{"type":"gp-section-538432098722120700","settings":{"checksum":"c3d06e9cb8e9ff281eb6f8930aecccc38a28e9a7296edd63ce368b982bf44270_1_1"}},"gp_section_538432098822783996":{"type":"gp-section-538432098822783996","settings":{"checksum":"9cdd6383a0d0d14e57b823efb455007f2b6f65c3e1fa77730cfd93441cad2e91_1_1"}},"gp_section_538432098705343484":{"type":"gp-section-538432098705343484","settings":{"checksum":"eecc114173ed98a2cf4fa42820baa3ed4d8c1904a9735fada245322c0f38a83d_1_1"}},"gp_section_538432098839561212":{"type":"gp-section-538432098839561212","settings":{"checksum":"1656f27c9610fc57333f28544c2b51672c3145e08956c32be09c964b6a8a85f2_1_1"}},"gp_section_538432098856338428":{"type":"gp-section-538432098856338428","settings":{"checksum":"a2ee85883d7a242cff8683c2a10e542ea54f895a636485e7eb5ed012c8680b56_1_1"}},"gp_section_558409111494984606":{"type":"gp-section-558409111494984606","settings":{"checksum":"03d36a41021eb96c03e29e11a4d4f2d5b05993f24b7fc56b9b1fc0a728a9fd6b_1_1"}}},"order":["gp_global_section_546733385976906976-1","gp_section_538432098789229564","gp_section_538432098772452348","gp_section_538432098722120700","gp_section_538432098822783996","gp_section_538432098705343484","gp_section_538432098839561212","gp_section_538432098856338428","gp_section_558409111494984606"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gp_global_section_546733385976906976-1": {
+      "settings": {
+        "checksum": "",
+        "section_preload": "false"
+      },
+      "type": "gp-global-section-546733385976906976"
+    },
+    "gp_section_538432098705343484": {
+      "settings": {
+        "checksum": "eecc114173ed98a2cf4fa42820baa3ed4d8c1904a9735fada245322c0f38a83d_1_1_0_0__1",
+        "gaNvsqcYtrpbz_text": "<p><span style=\"font-size:18px;\">Olora have an amazing deal right now where you can buy 3 thongs and get an extra 3 for FREE! You can mix &amp; match whichever colors and sizes you like, BUT you might want to hurry because last time they did this they ran out of stock in under 24 hours!</span></p>",
+        "gg-H6Ik40pL_text": "<span style=\"font-size:22px;\"><strong>8. they come with a 90 money back guarantee</strong></span>",
+        "gg9sl1YSkta_text": "<p><span style=\"font-size:18px;\">They are one of the only brands that actually live up to this! You will have to fill out a quick feedback form before they process a refund, but it's just to help them improve the quality of their product. &nbsp;It's so nice having that piece of mind that if the thongs aren't for you, you're actually able to get your money back. And their customer support are so quick to help out, it's a breath of fresh air if you ask me!</span></p>",
+        "ggFiREkaw_Q_text": "<p><span style=\"font-size:22px;\"><strong>5. no more staring - workout in peace!</strong></span></p>",
+        "ggJhGkzprmU_text": "<span style=\"font-size:26px;\"><strong>8. they come with a 90 money back guarantee</strong></span>",
+        "ggUHSESybgK_text": "<p><span style=\"font-size:18px;\">Olora have rigorously tested their thong with the most notorious pants prone to wardrobe malfunctions, and it’s passed every time. Whether you're wearing Nike Pro, Lululemon, tight or thin leggings, biker shorts, or jeans with front seams, you can feel confident without constantly checking what's going on down there.</span></p>",
+        "ggfLsoFFcFA_text": "<span style=\"font-size:22px;\"><strong>7. When You Buy 3 You Get 3 Extra Thongs FREE!</strong></span>",
+        "ggoDD7CLAPs_text": "<p><span style=\"font-size:26px;\"><strong>6. wear your favourite tight pants worry-free again</strong></span></p>",
+        "ggvIM022Qqb_text": "<p><span style=\"font-size:22px;\"><strong>6. wear your favourite tight pants worry-free again</strong></span></p>",
+        "giDpbKcTeJdwq_text": "<p><span style=\"font-size:18px;\">Tired of gym creeps paying you unwanted attention? Now you can workout in peace knowing there's nothing for anyone to stare at - no camel toe, no panty lines, no sweat marks. The only looks you’ll get are from girls wondering how you’re rocking those leggings with total confidence!</span></p>",
+        "gwnRyjBkuUICo_text": "<p><span style=\"font-size:26px;\"><strong>5. no more staring - workout in peace!</strong></span></p>",
+        "gymKitmAnAsqL_text": "<span style=\"font-size:26px;\"><strong>7. When You Buy 3 You Get An Extra 3 Thongs FREE!</strong></span>"
+      },
+      "type": "gp-section-538432098705343484"
+    },
+    "gp_section_538432098722120700": {
+      "settings": {
+        "checksum": "c3d06e9cb8e9ff281eb6f8930aecccc38a28e9a7296edd63ce368b982bf44270_1_1_0_0__1",
+        "gMujvfveEWDpr_text": "<p><span style=\"font-size:26px;\"><strong>3. You Can say goodbye to sweaty crotch</strong></span></p>",
+        "gg-aMfEZZz5_text": "<p><span style=\"font-size:22px;\"><strong>3. you can say goodbye to sweaty crotch</strong></span></p>",
+        "ggArkq2zgaQ_text": "<p><span style=\"font-size:26px;\"><strong>2. no one will know you have them on!</strong></span></p>",
+        "ggBXa-cwxbD_text": "<p><span style=\"font-size:26px;\"><strong>4. All-Day Comfort for Every Shape and Size</strong></span></p>",
+        "ggEOyBjZhTs_text": "<p><span style=\"font-size:22px;\"><strong>1. you'll never have a camel toe again</strong></span></p>",
+        "ggEqBFvwwzQ_text": "<p><span style=\"font-size:18px;\">If you prefer the pantyless look, but dread the consequential crotch malfunctions, then these are definitely for you. Olora crafted these from 100% seamless fabrics so you won't see a single panty line when you're wearing them.&nbsp;</span></p>",
+        "ggIAcWoeA_O_text": "<p><span style=\"font-size:18px;\">Designed to feel like second skin, if you love the comfort and freedom of going commando you'll love Olora's Invisible Camel Toe Thong. Olora describe the fit as 'it molds to the body'.</span></p>",
+        "ggY3PWfVdvw_text": "<p><span style=\"font-size:22px;\"><strong>4. all-day comfort for every shape and size</strong></span></p>",
+        "ggfVzHOzK6I_leftImageLabel": "Before",
+        "ggfVzHOzK6I_rightImageLabel": "After",
+        "ggfudJXJPpY_text": "<p><span style=\"font-size:22px;\"><strong>2. no one will know you have them on!</strong></span></p>",
+        "ghfoSgrcDBnrm_text": "<p><span style=\"font-size:26px;\"><strong>1. you'll never have a camel toe again</strong></span></p>",
+        "gldwbURlRcgHJ_text": "<p><span style=\"font-size:18px;\">Say goodbye to constant gusset checks and awkward adjustments because these things actually work! Wear them under the thinnest of leggings and you won't see a thing. No more camel toes and no more front wedgies ever again!</span></p>",
+        "gmCykmPiFyWii_text": "<p><span style=\"font-size:18px;\">No one wants to deal with sweaty crotch, embarrassing butt prints and looking like you've wet yourself. That’s why Olora designed this thong with active women in mind: featuring an absorbent, breathable gusset and a moisture-wicking fabric blend, it keeps you cool, dry, and worry-free through every workout.</span></p>"
+      },
+      "type": "gp-section-538432098722120700"
+    },
+    "gp_section_538432098772452348": {
+      "settings": {
+        "checksum": "18397a3d46dddd187a40392ff7c509333352a926701e47f05a50a57a3877c9ff_1_1_0_0__1",
+        "ggAKXt9Ib_e_text": "<p><span style=\"font-size:18px;\"><strong>Summary: </strong>Olora have introduced a premium thong to the activewear market that prevents all of those embarrassing wardrobe malfunctions us women get self conscious about, especially when working out. Keep reading to learn more!</span></p>",
+        "ggB9_SE4Kk7_text": "<span style=\"color:#000000;font-size:44px;\"><strong>8 reasons why this invisible thong is revolutionising women's activewear in 2025</strong></span>",
+        "ggzI3UVyEQ8_text": "<p><span style=\"font-size:13px;\">By <strong>Rachel Logan</strong></span><br><span style=\"background-color:rgba(255,255,255,0);color:rgb(0,0,0);font-size:13px;\">Last Updated October 27, 2024</span></p>"
+      },
+      "type": "gp-section-538432098772452348"
+    },
+    "gp_section_538432098789229564": {
+      "settings": {
+        "checksum": "70bfc45c314b0cee61b836f8b07331fe6d5ad9ae7d3caa704ca81c065270332e_1_1_0_0__1",
+        "gaSkrWxwULjRd_text": "<p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);font-size:12px;\">By </span><span style=\"font-size:12px;\"><strong>Tessa Logan</strong></span></p><p><span style=\"background-color:rgb(255,255,255);color:rgb(0,0,0);font-size:13px;\">Last Updated October 27, 2024</span></p>",
+        "ggEDjMSPGuS_text": "<p><span style=\"font-size:9px;\"><strong>4.82/5</strong> 5,841</span></p>",
+        "ggPp1VavDbI_text": "<span style=\"color:rgb(0,0,0);font-size:27px;\"><strong>8 reasons why this invisible thong is revolutionising women's activewear&nbsp;</strong></span><br><span style=\"color:rgb(0,0,0);font-size:27px;\"><strong>in 2025</strong></span>",
+        "ggU7V1GB009_text": "<p><span style=\"font-size:14px;\"><strong>Summary: </strong>Olora have introduced a premium thong to the activewear market that prevents all of those embarrassing wardrobe malfunctions us women get self conscious about, especially when working out. Keep reading to learn more!</span></p>"
+      },
+      "type": "gp-section-538432098789229564"
+    },
+    "gp_section_538432098822783996": {
+      "settings": {
+        "checksum": "9cdd6383a0d0d14e57b823efb455007f2b6f65c3e1fa77730cfd93441cad2e91_1_1_0_0__1",
+        "gg8ZBhaa1Zh_text": "<p><span style=\"font-size:10px;\"><strong>&nbsp; Sell-Out Risk: </strong></span><span style=\"color:#F93600;font-size:10px;\"><strong>High</strong></span></p>",
+        "gg8fKV6ksLC_text": "<p><span style=\"background-color:rgba(255,0,0,0);color:#F6CBB7;font-size:30px;\"><u>BUY 3 GET 3 FREE</u></span><span style=\"background-color:rgba(255,0,0,0);color:#0F0F0F;font-size:30px;\"> FOR A LIMITED TIME ONLY!</span></p>",
+        "gg8p0HH2Nze_text": "<p><span style=\"font-size:9px;\">Try today with a 90-Day Money Back Guarantee!</span></p>",
+        "gg9g_NlfnsZ_text": "<p><span style=\"font-size:10px;\"><strong>FREE </strong>Shipping</span></p>",
+        "ggNHeo0R6mw_text": "<p><span style=\"font-size:13px;\">This exclusive deal is in high demand, and stock keeps selling out.</span></p>",
+        "ggPR6SXT0we_text": "<p>OFFER ENDS TONIGHT</p>",
+        "ggQZyLd0ZUq_dayLabel": "Days",
+        "ggQZyLd0ZUq_hourLabel": "Hours",
+        "ggQZyLd0ZUq_minuteLabel": "Minutes",
+        "ggQZyLd0ZUq_secondLabel": "Seconds",
+        "ggQZyLd0ZUq_weekLabel": "Weeks",
+        "ggVixhdEWkV_label": "<p><span style=\"color:#FFFFFF;\"><strong>CLAIM OFFER →</strong></span></p>",
+        "ggXOIpjM9Re_text": "DEAL ENDING IN:",
+        "gggePDlqBFC_label": "<p><span style=\"background-color:rgba(0,0,0,0);color:#F7F7F7;font-size:14px;\"><strong>✨ </strong></span><span style=\"background-color:rgba(0,0,0,0);color:#ECB631;font-size:14px;\"><strong>REBRAND SALE</strong></span><span style=\"background-color:rgba(0,0,0,0);color:#F7F7F7;font-size:14px;\"><strong><sup> </sup></strong></span><span style=\"color:#F7F7F7;font-size:14px;\"><strong><sup>_</sup> NOW LIVE!</strong></span></p>"
+      },
+      "type": "gp-section-538432098822783996"
+    },
+    "gp_section_538432098839561212": {
+      "settings": {
+        "checksum": "1656f27c9610fc57333f28544c2b51672c3145e08956c32be09c964b6a8a85f2_1_1_0_0__1",
+        "ggAocIQxmDg_viewLessText": "Show less",
+        "ggAocIQxmDg_viewMoreText": "Show more",
+        "ggvEgWZrh68_label": "Buy Now",
+        "ggvEgWZrh68_outOfStockLabel": "Out of stock",
+        "ggvEgWZrh68_unavailableLabel": "Unavailable",
+        "ggvEgWZrh68_variantSelectionRequiredMessage": "Please select a variant to add product to cart"
+      },
+      "type": "gp-section-538432098839561212"
+    },
+    "gp_section_538432098856338428": {
+      "settings": {
+        "checksum": "a2ee85883d7a242cff8683c2a10e542ea54f895a636485e7eb5ed012c8680b56_1_1_0_0__1",
+        "gg2-UCO0S_Z_text": "<p><span style=\"font-size:12px;\">Limited-Time Special Sale! Get an exclusive discount on your first purchase of the Olora Invisible Camel Toe Thong, valid for first-time buyers only. &nbsp;Don’t miss your chance to elevate your activewear wardrobe! Terms and conditions apply; one-time use only, cannot be combined with other promotions.</span></p>",
+        "ggCO804d3Gm_text": "<p>© 2024, Olora</p>"
+      },
+      "type": "gp-section-538432098856338428"
+    },
+    "gp_section_558409111494984606": {
+      "settings": {
+        "checksum": "03d36a41021eb96c03e29e11a4d4f2d5b05993f24b7fc56b9b1fc0a728a9fd6b_1_1_0_0__1"
+      },
+      "type": "gp-section-558409111494984606"
+    }
+  },
+  "order": [
+    "gp_global_section_546733385976906976-1",
+    "gp_section_538432098789229564",
+    "gp_section_538432098772452348",
+    "gp_section_538432098722120700",
+    "gp_section_538432098822783996",
+    "gp_section_538432098705343484",
+    "gp_section_538432098839561212",
+    "gp_section_538432098856338428",
+    "gp_section_558409111494984606"
+  ],
+  "layout": "theme.gempages.blank"
+}
