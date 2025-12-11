@@ -1,1 +1,129 @@
-{"layout":"theme.gempages.footer","sections":{"gp_global_section_546733385976906976-1":{"type":"gp-global-section-546733385976906976","settings":{"section_preload":"true"}},"gp_section_527620508728951832":{"type":"gp-section-527620508728951832","settings":{"checksum":"0984c04584737857bfe69edb0725bdbd2426e47959b756802e96f47b4a8d3336_1_1"}},"gp_section_527620508846457880":{"type":"gp-section-527620508846457880","settings":{"checksum":"663432552d34d39cb3ea0dcb6b651350d0ef2805e927aae41f6d087bca2db8f3_1_1"}},"gp_section_527620508796060696":{"type":"gp-section-527620508796060696","settings":{"checksum":"c0cde2ae5c62abb47243a18b82420317da02181353ea1da7c11252be2eacdf6a_1_1"}},"gp_section_527620508846392344":{"type":"gp-section-527620508846392344","settings":{"checksum":"7bb604d4d8f299814eac51646bbb6734e4e30f8d402ad5a2b2499388f13bdd80_1_1"}},"gp_section_527620508779283480":{"type":"gp-section-527620508779283480","settings":{"checksum":"d27098cc52cec46ee3835966e6efdebad999419182dc4de3f2eb42a03d3a76f5_1_1"}},"gp_section_527620508678620184":{"type":"gp-section-527620508678620184","settings":{"checksum":"acfe8b9ab882dfe555d0ef98d4c10a4573f11a808cca38b8b4ae3d799a9aab2b_1_1"}},"gp_section_527620508712174616":{"type":"gp-section-527620508712174616","settings":{"checksum":"e199f75fbb10fda6e5b899c46aad753d9bfdad5f428a93e1bf74e88b35137e60_1_1"}},"gp_global_section_558349863595541322-2":{"type":"gp-global-section-558349863595541322","settings":{"section_preload":"false"}}},"order":["gp_global_section_546733385976906976-1","gp_section_527620508728951832","gp_section_527620508846457880","gp_section_527620508796060696","gp_section_527620508846392344","gp_section_527620508779283480","gp_section_527620508678620184","gp_section_527620508712174616","gp_global_section_558349863595541322-2"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "gp_global_section_546733385976906976-1": {
+      "settings": {
+        "checksum": "",
+        "section_preload": "false"
+      },
+      "type": "gp-global-section-546733385976906976"
+    },
+    "gp_global_section_558349863595541322-2": {
+      "settings": {
+        "checksum": "",
+        "section_preload": "false"
+      },
+      "type": "gp-global-section-558349863595541322"
+    },
+    "gp_section_527620508678620184": {
+      "settings": {
+        "checksum": "acfe8b9ab882dfe555d0ef98d4c10a4573f11a808cca38b8b4ae3d799a9aab2b_1_1_0_0__1",
+        "gg6C_KqWPFV_text": "<p><span style=\"background-color:transparent;color:#000000;font-size:16px;\">I feel so much more confident and comfortable in these. I love not having to keep doing gusset checks anymore!!!</span></p>",
+        "ggBgVs_O4Sk_text": "<p><strong>I feel so much more confident and comfortable.</strong></p>",
+        "ggV7Dabh03p_text": "<i><strong>Rachel D</strong></i><span style=\"font-size:14px;\"><i><strong>. - Verified buyer</strong></i></span>",
+        "ggWfQ97j8Qd_text": "<p><strong>Exactly as they say they are!</strong></p>",
+        "ggXvIhLCCC9_text": "<i><strong>Gracie J</strong></i><span style=\"font-size:14px;\"><i><strong>. - Verified Buyer</strong></i></span>",
+        "ggbRhSwgIyr_text": "<p><strong>Hands down the best underwear</strong></p>",
+        "ggeiWTuw4yG_text": "<p>These are hands down the best underwear to wear under any leggings. I no longer feel exposed! Super comfy and don't show any seam lines. Off to buy some more!</p>",
+        "ggfZUBfkIo9_text": "<p><span style=\"font-size:16px;\">These are exactly as they say they are! I wear them daily to the gym and have no more camel toe!</span></p>",
+        "ggqGMlt64cv_text": "<i><strong>Daniela A.</strong></i><span style=\"font-size:14px;\"><i><strong> - Verified Buyer</strong></i></span>"
+      },
+      "type": "gp-section-527620508678620184"
+    },
+    "gp_section_527620508712174616": {
+      "settings": {
+        "checksum": "e199f75fbb10fda6e5b899c46aad753d9bfdad5f428a93e1bf74e88b35137e60_1_1_0_0__1",
+        "gKPjORKrLFWir_text": "<p><span style=\"font-size:28px;\"><strong>6. </strong></span><span style=\"font-size:26px;\"><strong>maximize your confidence</strong></span></p>",
+        "gQOozegFgmtZw_text": "<p><span style=\"font-size:16px;\">Wearing these thongs boosts your confidence, making it harder for creeps to undermine your self-esteem. Confident women are less likely to be targeted by those looking to exploit insecurity.</span></p>",
+        "gaNvsqcYtrpbz_text": "<p><span style=\"font-size:16px;\">Without the usual wardrobe malfunctions or visible lines, creeps lose their excuses for making objectifying comments. These thongs keep the conversation focused on your workout, not your appearance.</span></p>",
+        "gg1c06VKU0e_text": "<p><span style=\"font-size:28px;\"><strong>5. </strong></span><span style=\"font-size:26px;\"><strong>maximize your confidence</strong></span></p>",
+        "gg7o8QcxsrD_text": "<p><span style=\"font-size:16px;\">By eliminating fedgies, visible panty lines and sweat patches, these thongs reduce the chances of creeps making 'accidental' glances. There's less for them to claim they were innocently noticing.</span></p>",
+        "ggJvweJj40X_text": "<p><span style=\"font-size:28px;\"><strong>4. no more 'accidental' glances</strong></span></p>",
+        "ggfLsoFFcFA_text": "<span style=\"font-size:26px;\"><strong>5. no more excuses for objectifying comments</strong></span>",
+        "ggzvgCcZNJp_text": "<p><span style=\"font-size:28px;\"><strong>4. No More 'Accidental' Glances</strong></span></p>",
+        "gymKitmAnAsqL_text": "<span style=\"font-size:26px;\"><strong>5. no more excuses for objectifying comments</strong></span>"
+      },
+      "type": "gp-section-527620508712174616"
+    },
+    "gp_section_527620508728951832": {
+      "settings": {
+        "checksum": "0984c04584737857bfe69edb0725bdbd2426e47959b756802e96f47b4a8d3336_1_1_0_0__1",
+        "gaSkrWxwULjRd_text": "<p><span style=\"font-size:12px;\">By <strong>Zara M</strong>,&nbsp;</span><br><span style=\"background-color:rgba(255,255,255,0);color:rgb(0,0,0);font-size:12px;\">Last Updated July 16, 2024</span></p>",
+        "ggEDjMSPGuS_text": "<p><span style=\"font-size:9px;\"><strong>4.82/5</strong> 20,000</span></p>",
+        "ggPp1VavDbI_text": "<span style=\"color:#000000;font-size:31px;\"><strong>6 reasons why gym creeps want these new activewear thongs banned</strong></span>",
+        "ggU7V1GB009_text": "<p><span style=\"font-size:14px;\"><strong>Summary: </strong>Fed up with unwanted attention at the gym? These innovative thongs are designed to eliminate common gym wear issues, making you feel confident and comfortable while keeping gym creeps at bay.&nbsp;</span></p>"
+      },
+      "type": "gp-section-527620508728951832"
+    },
+    "gp_section_527620508779283480": {
+      "settings": {
+        "checksum": "d27098cc52cec46ee3835966e6efdebad999419182dc4de3f2eb42a03d3a76f5_1_1_0_0__1",
+        "ggJRokq9M6I_text": "<strong>I feel so much more confident and comfortable.</strong>",
+        "ggLj35XxgH9_text": "<span style=\"font-size:14px;\"><i><strong>Daniela A. - Verified Buyer</strong></i></span>",
+        "ggPS2JZoDBV_text": "<span style=\"font-size:14px;\"><i><strong>Rachel D. - Verified buyer</strong></i></span>",
+        "ggV0KMDf8Mt_text": "<strong>Exactly as they say they are!</strong>",
+        "gg_giIRd0G8_text": "<p>I feel so much more confident and comfortable in these. I love not having to keep doing gusset checks anymore!!!</p>",
+        "ggbSduxW7yT_text": "<p>These are exactly as they say they are! I wear them daily to the gym and have no more camel toe!</p>",
+        "ggfWdJr_pVX_text": "<p>These are hands down the best underwear to wear under any leggings. I no longer feel exposed! Super comfy and don't show any seam lines. Off to buy some more!</p>",
+        "ggmpwhX1z_x_text": "<span style=\"font-size:14px;\"><i><strong>Gracie J. - Verified Buyer</strong></i></span>",
+        "ggxwi7anHq4_text": "<strong>Hands down the best underwear</strong>"
+      },
+      "type": "gp-section-527620508779283480"
+    },
+    "gp_section_527620508796060696": {
+      "settings": {
+        "checksum": "c0cde2ae5c62abb47243a18b82420317da02181353ea1da7c11252be2eacdf6a_1_1_0_0__1",
+        "gg1bgbRmOea_text": "<span style=\"color:#000000;font-size:43px;\"><strong>6 reasons why Gym Creeps Want These New Activewear Thongs Banned</strong></span>",
+        "ggJoElbUEB3_text": "<p><span style=\"font-size:10px;\"><strong>4.73/5</strong> 20,000</span></p>",
+        "ggVTYvPcrnd_text": "<p><span style=\"font-size:12px;\">By <strong>Zara M</strong>,&nbsp;</span><br><span style=\"background-color:rgba(255,255,255,0);color:rgb(0,0,0);font-size:12px;\">Last Updated July 16, 2024</span></p>",
+        "ggvGdE7WMch_text": "<p><span style=\"font-size:18px;\"><strong>Summary: </strong>Fed up with unwanted attention at the gym? These innovative thongs are designed to eliminate common gym wear issues, making you feel confident and comfortable while keeping gym creeps at bay.&nbsp;</span></p>"
+      },
+      "type": "gp-section-527620508796060696"
+    },
+    "gp_section_527620508846392344": {
+      "settings": {
+        "checksum": "7bb604d4d8f299814eac51646bbb6734e4e30f8d402ad5a2b2499388f13bdd80_1_1_0_0__1",
+        "ggArkq2zgaQ_text": "<p><span style=\"font-size:26px;\"><strong>2. No More Visible Panty Lines</strong></span></p>",
+        "ggEOyBjZhTs_text": "<p><span style=\"font-size:26px;\"><strong>1. no more Fedgies</strong></span></p>",
+        "ggEqBFvwwzQ_text": "<p><span style=\"font-size:16px;\">Seamless thongs mean no visible panty lines, taking away the excuse for unwarranted attention. Creeps can't use panty lines as a reason to stare or assume you're open to being hit on.</span></p>",
+        "ggbdCuDnR_1_text": "<p><span style=\"font-size:28px;\"><strong>3. sweat-free confidence</strong></span></p>",
+        "ggfudJXJPpY_text": "<p><span style=\"font-size:26px;\"><strong>2. no more visible panty lines</strong></span></p>",
+        "ggkp9EuDOE5_text": "<p><span style=\"font-size:26px;\"><strong>3. Sweat-Free Confidence</strong></span></p>",
+        "ggow8nYWckv_text": "<p><span style=\"font-size:16px;\">The absorbent material of these thongs prevents embarrassing sweat patches, ensuring you stay dry and confident. Gym creeps are left without an opportunity to make you feel self-conscious about your workout intensity.</span></p>",
+        "ghfoSgrcDBnrm_text": "<p><span style=\"font-size:26px;\"><strong>1. no more Fedgie distractions</strong></span></p>",
+        "gldwbURlRcgHJ_text": "<p><span style=\"background-color:rgba(255,255,255,0);color:rgb(13,13,13);font-size:16px;\">Without the telltale signs of fedgies, gym creeps lose one of their favorite reasons to stare. These thongs keep things smooth and sleek, removing any unintended visual distractions.</span></p>"
+      },
+      "type": "gp-section-527620508846392344"
+    },
+    "gp_section_527620508846457880": {
+      "settings": {
+        "checksum": "663432552d34d39cb3ea0dcb6b651350d0ef2805e927aae41f6d087bca2db8f3_1_1_0_0__1",
+        "gg4ogrAX_7W_text": "<p><span style=\"font-size:16px;\"><strong>4.82/5</strong> 20,000</span></p>",
+        "ggAKXt9Ib_e_text": "<p><span style=\"font-size:18px;\"><strong>Summary: </strong>Fed up with unwanted attention at the gym? These innovative thongs are designed to eliminate common gym wear issues, making you feel confident and comfortable while keeping gym creeps at bay.&nbsp;</span></p>",
+        "ggB9_SE4Kk7_text": "<span style=\"color:#000000;font-size:39px;\"><strong>6 reasons why gym creeps want these new activewear thongs banned</strong></span>",
+        "ggzI3UVyEQ8_text": "<p><span style=\"font-size:13px;\">By <strong>Zara M</strong>,&nbsp;</span><br><span style=\"background-color:rgba(255,255,255,0);color:rgb(0,0,0);font-size:13px;\">Last Updated July 16, 2024</span></p>"
+      },
+      "type": "gp-section-527620508846457880"
+    }
+  },
+  "order": [
+    "gp_global_section_546733385976906976-1",
+    "gp_section_527620508728951832",
+    "gp_section_527620508846457880",
+    "gp_section_527620508796060696",
+    "gp_section_527620508846392344",
+    "gp_section_527620508779283480",
+    "gp_section_527620508678620184",
+    "gp_section_527620508712174616",
+    "gp_global_section_558349863595541322-2"
+  ],
+  "layout": "theme.gempages.footer"
+}
