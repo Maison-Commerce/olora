@@ -13,6 +13,7 @@
     "main-collection-banner",
     "maison_collection_banner_mkrWrK",
     "maison_collection_usps_wh3c8H",
+    "maison_collection_categories_V3iBKT",
     "main-collection-product-grid",
     "newsletter"
   ],
@@ -168,6 +169,64 @@
         "gap_desktop": 16,
         "gap_mobile": 24,
         "autoplay_delay": 3000
+      }
+    },
+    "maison_collection_categories_V3iBKT": {
+      "type": "maison-collection-categories",
+      "blocks": {
+        "category_QyXJzt": {
+          "type": "category",
+          "settings": {
+            "collection": "",
+            "custom_name": ""
+          }
+        },
+        "category_VapVEH": {
+          "type": "category",
+          "settings": {
+            "collection": "underwear",
+            "custom_name": ""
+          }
+        },
+        "category_KWX3ia": {
+          "type": "category",
+          "settings": {
+            "collection": "activewear",
+            "custom_name": ""
+          }
+        },
+        "category_c6wjat": {
+          "type": "category",
+          "settings": {
+            "collection": "accessories",
+            "custom_name": ""
+          }
+        }
+      },
+      "block_order": [
+        "category_QyXJzt",
+        "category_VapVEH",
+        "category_KWX3ia",
+        "category_c6wjat"
+      ],
+      "name": "Collection Categories",
+      "settings": {
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 0,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 0,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "section_bg_color": "#FFFFFF",
+        "border_color_inactive": "rgba(0,0,0,0.08)",
+        "border_color_active": "#151515",
+        "gap_desktop": 20,
+        "gap_mobile": 4,
+        "image_size": 80,
+        "text_font_size": 14,
+        "text_color": "#151515"
       }
     },
     "main-collection-product-grid": {
