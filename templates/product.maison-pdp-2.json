@@ -9,6 +9,7 @@
  */
 {
   "order": [
+    "maison_pd_bundle_zHD7Rn",
     "main",
     "related-products",
     "17309335580d75643f",
@@ -17,6 +18,29 @@
     "17315167440fd9a629"
   ],
   "sections": {
+    "maison_pd_bundle_zHD7Rn": {
+      "type": "maison-pd-bundle",
+      "name": "Product Bundle",
+      "settings": {
+        "gallery_badge_text": "BUY 1, GET 1 FREE",
+        "gallery_badge_subtext": "Add at least 2 items to your cart. Discount applied automatically.",
+        "price_badge_text": "BUY 1, GET 1 FREE",
+        "features_text": "Camel Toe Proof Technology | Seamless | Wide Absorbent Gusset | High Rise",
+        "protection_title": "Your order is protected by",
+        "protection_heading": "90 Day Fit Exchange & Money Back Guarantee",
+        "protection_description": "<p>If you need to exchange for a different size, or don't like our thong for any reason, we'll send you a new size for free or a full refund.</p>",
+        "loved_by_heading": "Loved by By 5,800+ Happy Customers",
+        "metafield_rating_key": "custom.rating",
+        "metafield_rating_count_key": "custom.rating_count",
+        "section_bg_color": "#FCF5F4",
+        "badge_bg_color": "#F7E6E2",
+        "badge_border_color": "#F0D3CB",
+        "price_badge_bg_color": "#12B76A",
+        "price_badge_text_color": "#F6FEF9",
+        "protection_bg_color": "#F7E6E2",
+        "protection_border_color": "#F0D3CB"
+      }
+    },
     "main": {
       "type": "main-product",
       "blocks": {
