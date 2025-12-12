@@ -226,8 +226,8 @@
       <div class="maison_commerce_pd_bundle__main-image">
         {% if product.featured_image %}
           <div class="maison_commerce_pd_bundle__main-image-wrapper">
-            <img 
-              src="{{ product.featured_image | image_url: width: 1200 }}" 
+            <img
+              src="{{ product.featured_image | image_url: width: 1200 }}"
               alt="{{ product.title | escape }}"
               loading="eager"
               class="maison_commerce_pd_bundle__main-img maison_commerce_pd_bundle__main-img--active"
@@ -238,7 +238,7 @@
             </div>
           </div>
         {% endif %}
-        
+
         {% if product_has_bogo_tag %}
           <div class="maison_commerce_pd_bundle__gallery-badge">
             <p class="maison_commerce_pd_bundle__gallery-badge-text">
@@ -250,7 +250,7 @@
           </div>
         {% endif %}
       </div>
-      
+
       {% comment %} Preload all product images {% endcomment %}
       {% if product.images.size > 1 %}
         <div style="display: none;">
@@ -261,40 +261,40 @@
           {% endfor %}
         </div>
       {% endif %}
-      
+
       {% if product.images.size > 1 %}
         <div class="maison-pd-gallery-slider-wrapper">
-            <div class="swiper-button-prev maison_commerce_pd_bundle__thumb-prev maison-pd-gallery-buttons">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path d="M12.5 15L7.5 10L12.5 5" stroke="#151515" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
-            <div class="swiper maison_commerce_pd_bundle__thumbnails">
+          <div class="swiper-button-prev maison_commerce_pd_bundle__thumb-prev maison-pd-gallery-buttons">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M12.5 15L7.5 10L12.5 5" stroke="#151515" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="swiper maison_commerce_pd_bundle__thumbnails">
             <div class="swiper-wrapper maison-pd-gallery-slider">
-                {% for image in product.images %}
+              {% for image in product.images %}
                 <div class="swiper-slide maison_commerce_pd_bundle__thumbnail-slide">
-                    <button 
+                  <button
                     type="button"
                     class="maison_commerce_pd_bundle__thumbnail {% if forloop.first %}maison_commerce_pd_bundle__thumbnail--active{% endif %}"
                     data-image-index="{{ forloop.index0 }}"
                     data-image-url="{{ image | image_url: width: 1200 }}"
                     @click="changeMainImage('{{ image | image_url: width: 1200 }}', {{ forloop.index0 }})"
+                  >
+                    <img
+                      src="{{ image | image_url: width: 160 }}"
+                      alt="{{ product.title | escape }} - Image {{ forloop.index }}"
+                      loading="lazy"
                     >
-                    <img 
-                        src="{{ image | image_url: width: 160 }}" 
-                        alt="{{ product.title | escape }} - Image {{ forloop.index }}"
-                        loading="lazy"
-                    >
-                    </button>
+                  </button>
                 </div>
-                {% endfor %}
+              {% endfor %}
             </div>
-            </div>
-            <div class="swiper-button-next maison_commerce_pd_bundle__thumb-next maison-pd-gallery-buttons">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path d="M7.5 15L12.5 10L7.5 5" stroke="#151515" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </div>
+          </div>
+          <div class="swiper-button-next maison_commerce_pd_bundle__thumb-next maison-pd-gallery-buttons">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M7.5 15L12.5 10L7.5 5" stroke="#151515" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
         </div>
       {% endif %}
     </div>
@@ -303,75 +303,94 @@
     <div class="maison_commerce_pd_bundle__info">
       <div class="maison_commerce_pd_bundle__info-general">
         <div class="maison_commerce_pd_bundle__info-main">
-            {% if product_rating > 0 %}
-                <div class="maison_commerce_pd_bundle__rating">
-                <div class="maison_commerce_pd_bundle__stars">
-                    {% assign full_stars = product_rating | floor %}
-                    {% assign has_half_star = product_rating | modulo: 1 | times: 1 %}
-                    {% assign next_star_index = full_stars | plus: 1 %}
-                    {% for i in (1..5) %}
-                    {% if i <= full_stars %}
-                        <svg class="maison_commerce_pd_bundle__star" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#FEC84B"/>
-                        </svg>
-                    {% else %}
-                        {% assign is_half_star = false %}
-                        {% if i == next_star_index %}
-                        {% if has_half_star >= 0.5 %}
-                            {% assign is_half_star = true %}
-                        {% endif %}
-                        {% endif %}
-                        {% if is_half_star %}
-                        <svg class="maison_commerce_pd_bundle__star" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#FEC84B" opacity="0.5"/>
-                        </svg>
-                        {% else %}
-                        <svg class="maison_commerce_pd_bundle__star" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#FEC84B" opacity="0.2"/>
-                        </svg>
-                        {% endif %}
+          {% if product_rating > 0 %}
+            <div class="maison_commerce_pd_bundle__rating">
+              <div class="maison_commerce_pd_bundle__stars">
+                {% assign full_stars = product_rating | floor %}
+                {% assign has_half_star = product_rating | modulo: 1 | times: 1 %}
+                {% assign next_star_index = full_stars | plus: 1 %}
+                {% for i in (1..5) %}
+                  {% if i <= full_stars %}
+                    <svg
+                      class="maison_commerce_pd_bundle__star"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#FEC84B"/>
+                    </svg>
+                  {% else %}
+                    {% assign is_half_star = false %}
+                    {% if i == next_star_index %}
+                      {% if has_half_star >= 0.5 %}
+                        {% assign is_half_star = true %}
+                      {% endif %}
                     {% endif %}
-                    {% endfor %}
-                </div>
-                <p class="maison_commerce_pd_bundle__rating-text">
-                    {{ product_rating }}/5 Stars By {{ product_rating_count }} Happy Customers
-                </p>
-                </div>
-            {% endif %}
+                    {% if is_half_star %}
+                      <svg
+                        class="maison_commerce_pd_bundle__star"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#FEC84B" opacity="0.5"/>
+                      </svg>
+                    {% else %}
+                      <svg
+                        class="maison_commerce_pd_bundle__star"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#FEC84B" opacity="0.2"/>
+                      </svg>
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <p class="maison_commerce_pd_bundle__rating-text">
+                {{ product_rating }}/5 Stars By {{ product_rating_count }} Happy Customers
+              </p>
+            </div>
+          {% endif %}
 
-            <h1 class="maison_commerce_pd_bundle__title">
-                {{ product.title }}
-            </h1>
+          <h1 class="maison_commerce_pd_bundle__title">
+            {{ product.title }}
+          </h1>
 
-            {% if section.settings.features_text != blank %}
-                <p class="maison_commerce_pd_bundle__features">
-                {{ section.settings.features_text }}
-                </p>
-            {% endif %}
+          {% if section.settings.features_text != blank %}
+            <p class="maison_commerce_pd_bundle__features">
+              {{ section.settings.features_text }}
+            </p>
+          {% endif %}
         </div>
 
         <div class="maison_commerce_pd_bundle__price">
-            {% if product.compare_at_price > product.price %}
+          {% if product.compare_at_price > product.price %}
             <span class="maison_commerce_pd_bundle__compare-price">
-                {{ product.compare_at_price | money }}
+              {{ product.compare_at_price | money }}
             </span>
-            {% endif %}
-            <span class="maison_commerce_pd_bundle__current-price">
+          {% endif %}
+          <span class="maison_commerce_pd_bundle__current-price">
             {{ product.price | money }}
-            </span>
-            {% if product_has_bogo_tag %}
+          </span>
+          {% if product_has_bogo_tag %}
             <span class="maison_commerce_pd_bundle__price-badge">
-                {{ section.settings.price_badge_text }}
+              {{ section.settings.price_badge_text }}
             </span>
-            {% endif %}
+          {% endif %}
         </div>
       </div>
 
       <!-- Bundle Section Placeholder (for app integration) -->
       <div class="maison_commerce_pd_bundle__bundle-placeholder">
-        <p class="maison_commerce_pd_bundle__bundle-note">
-          SELECT YOUR COLORS AND SIZES:
-        </p>
+        <p class="maison_commerce_pd_bundle__bundle-note">SELECT YOUR COLORS AND SIZES:</p>
         <div id="maison-bundle-app-container">
           <!-- Variant picker app will be injected here -->
         </div>
@@ -381,8 +400,8 @@
       {% if section.settings.protection_title != blank %}
         <div class="maison_commerce_pd_bundle__protection">
           {% if section.settings.protection_icon %}
-            <img 
-              src="{{ section.settings.protection_icon | image_url: width: 56 }}" 
+            <img
+              src="{{ section.settings.protection_icon | image_url: width: 56 }}"
               alt=""
               class="maison_commerce_pd_bundle__protection-icon"
             >
@@ -404,59 +423,73 @@
       <!-- Reviews Slider -->
       {% assign review_blocks = section.blocks | where: 'type', 'review' %}
       {% if review_blocks.size > 0 %}
-        <div class="swiper maison_commerce_pd_bundle__reviews">
-          <div class="swiper-wrapper maison-pd-review-slider">
-            {% for block in review_blocks %}
-              <div class="swiper-slide maison_commerce_pd_bundle__review-slide" {{ block.shopify_attributes }}>
-                <div class="maison_commerce_pd_bundle__review">
-                  {% if block.settings.reviewer_avatar %}
-                    <img 
-                      src="{{ block.settings.reviewer_avatar | image_url: width: 96 }}" 
-                      alt="{{ block.settings.reviewer_name | escape }}"
-                      class="maison_commerce_pd_bundle__review-avatar"
-                    >
-                  {% endif %}
-                  <div class="maison_commerce_pd_bundle__review-content">
-                    <div class="maison_commerce_pd_bundle__review-header">
-                      <div class="maison_commerce_pd_bundle__review-stars">
-                        {% assign review_rating = block.settings.rating | times: 1 %}
-                        {% assign review_full_stars = review_rating | floor %}
-                        {% for i in (1..5) %}
-                          {% if i <= review_full_stars %}
-                            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#12B76A"/>
-                            </svg>
-                          {% else %}
-                            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#12B76A" opacity="0.3"/>
-                            </svg>
-                          {% endif %}
-                        {% endfor %}
-                      </div>
-                      <p class="maison_commerce_pd_bundle__review-rating-text">
-                        {{ block.settings.rating_text }}
-                      </p>
-                    </div>
-                    <div class="maison_commerce_pd_bundle__review-text">
-                      {{ block.settings.review_text }}
-                    </div>
-                    <div class="maison_commerce_pd_bundle__review-footer">
-                      <p class="maison_commerce_pd_bundle__review-name">
-                        {{ block.settings.reviewer_name }}
-                      </p>
-                      {% if block.settings.source != blank %}
-                        <div class="maison_commerce_pd_bundle__review-source">
-                          <span>{{ block.settings.source }}</span>
+        <div class="maison-pd-reviews-slider-wrapper">
+          <div class="swiper maison_commerce_pd_bundle__reviews">
+            <div class="swiper-wrapper maison-pd-review-slider">
+              {% for block in review_blocks %}
+                <div class="swiper-slide maison_commerce_pd_bundle__review-slide" {{ block.shopify_attributes }}>
+                  <div class="maison_commerce_pd_bundle__review">
+                    {% if block.settings.reviewer_avatar %}
+                      <img
+                        src="{{ block.settings.reviewer_avatar | image_url: width: 96 }}"
+                        alt="{{ block.settings.reviewer_name | escape }}"
+                        class="maison_commerce_pd_bundle__review-avatar"
+                      >
+                    {% endif %}
+                    <div class="maison_commerce_pd_bundle__review-content">
+                      <div class="maison_commerce_pd_bundle__review-header">
+                        <div class="maison_commerce_pd_bundle__review-stars">
+                          {% assign review_rating = block.settings.rating | times: 1 %}
+                          {% assign review_full_stars = review_rating | floor %}
+                          {% for i in (1..5) %}
+                            {% if i <= review_full_stars %}
+                              <svg
+                                width="12"
+                                height="12"
+                                viewBox="0 0 16 16"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#12B76A"/>
+                              </svg>
+                            {% else %}
+                              <svg
+                                width="12"
+                                height="12"
+                                viewBox="0 0 16 16"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#12B76A" opacity="0.3"/>
+                              </svg>
+                            {% endif %}
+                          {% endfor %}
                         </div>
-                      {% endif %}
+                        <p class="maison_commerce_pd_bundle__review-rating-text">
+                          {{ block.settings.rating_text }}
+                        </p>
+                      </div>
+                      <div class="maison_commerce_pd_bundle__review-text">
+                        {{ block.settings.review_text }}
+                      </div>
+                      <div class="maison_commerce_pd_bundle__review-footer">
+                        <p class="maison_commerce_pd_bundle__review-name">
+                          {{ block.settings.reviewer_name }}
+                        </p>
+                        {% if block.settings.source != blank %}
+                          <div class="maison_commerce_pd_bundle__review-source">
+                            <span>{{ block.settings.source }}</span>
+                          </div>
+                        {% endif %}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            {% endfor %}
+              {% endfor %}
+            </div>
           </div>
+          <div class="swiper-pagination maison_commerce_pd_bundle__reviews-pagination"></div>
         </div>
-        <div class="swiper-pagination maison_commerce_pd_bundle__reviews-pagination"></div>
       {% endif %}
 
       <!-- FAQs Accordion -->
@@ -465,7 +498,7 @@
         <div class="maison_commerce_pd_bundle__faqs">
           {% for block in faq_blocks %}
             <div class="maison_commerce_pd_bundle__faq" {{ block.shopify_attributes }}>
-              <button 
+              <button
                 type="button"
                 class="maison_commerce_pd_bundle__faq-button"
                 @click="toggleFaq({{ forloop.index0 }})"
@@ -474,11 +507,14 @@
                 <span class="maison_commerce_pd_bundle__faq-question">
                   {{ block.settings.question }}
                 </span>
-                <span class="maison_commerce_pd_bundle__faq-icon" :class="{ 'maison_commerce_pd_bundle__faq-icon--open': openFaq === {{ forloop.index0 }} }">
+                <span
+                  class="maison_commerce_pd_bundle__faq-icon"
+                  :class="{ 'maison_commerce_pd_bundle__faq-icon--open': openFaq === {{ forloop.index0 }} }"
+                >
                   +
                 </span>
               </button>
-              <div 
+              <div
                 class="maison_commerce_pd_bundle__faq-answer"
                 x-show="openFaq === {{ forloop.index0 }}"
                 x-transition
@@ -515,9 +551,12 @@
             <div class="swiper-wrapper">
               {% for block in image_blocks %}
                 {% if block.settings.image %}
-                  <div class="swiper-slide maison_commerce_pd_bundle__customer-image-slide" {{ block.shopify_attributes }}>
-                    <img 
-                      src="{{ block.settings.image | image_url: width: 400 }}" 
+                  <div
+                    class="swiper-slide maison_commerce_pd_bundle__customer-image-slide"
+                    {{ block.shopify_attributes }}
+                  >
+                    <img
+                      src="{{ block.settings.image | image_url: width: 400 }}"
                       alt="Customer image {{ forloop.index }}"
                       loading="lazy"
                       class="maison_commerce_pd_bundle__customer-image"
@@ -1273,28 +1312,28 @@
   function maison_commerce_pd_bundle_init() {
     return {
       openFaq: null,
-      
+
       toggleFaq(index) {
         this.openFaq = this.openFaq === index ? null : index;
       },
-      
+
       changeMainImage(imageUrl, index) {
         const mainImg = document.getElementById('maison-pd-main-image');
         const loader = document.getElementById('maison-pd-image-loader');
-        
+
         if (!mainImg) return;
-        
+
         // Show loader
         if (loader) {
           loader.classList.add('maison_commerce_pd_bundle__image-loader--active');
         }
-        
+
         // Preload the new image
         const newImg = new Image();
-        newImg.onload = function() {
+        newImg.onload = function () {
           // Image loaded, update src
           mainImg.src = imageUrl;
-          
+
           // Hide loader after a brief moment for smooth transition
           setTimeout(() => {
             if (loader) {
@@ -1302,17 +1341,17 @@
             }
           }, 100);
         };
-        
-        newImg.onerror = function() {
+
+        newImg.onerror = function () {
           // If image fails to load, still hide loader
           if (loader) {
             loader.classList.remove('maison_commerce_pd_bundle__image-loader--active');
           }
         };
-        
+
         // Start loading
         newImg.src = imageUrl;
-        
+
         // Update active thumbnail
         document.querySelectorAll('.maison_commerce_pd_bundle__thumbnail').forEach((thumb, i) => {
           if (i === index) {
@@ -1321,11 +1360,11 @@
             thumb.classList.remove('maison_commerce_pd_bundle__thumbnail--active');
           }
         });
-      }
+      },
     };
   }
 
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     // Preload all product images in the background
     const thumbnailButtons = document.querySelectorAll('.maison_commerce_pd_bundle__thumbnail[data-image-url]');
     thumbnailButtons.forEach((button) => {
@@ -1378,7 +1417,7 @@
       // Custom navigation
       const prevBtn = document.querySelector('.maison_commerce_pd_bundle__customer-images-prev');
       const nextBtn = document.querySelector('.maison_commerce_pd_bundle__customer-images-next');
-      
+
       if (prevBtn) {
         prevBtn.addEventListener('click', () => swiper.slidePrev());
       }
@@ -1388,4 +1427,3 @@
     }
   });
 </script>
-
