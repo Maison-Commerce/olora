@@ -466,3 +466,7 @@
   flex-direction: column;
   gap: 16px;
 }
+
+.maison-pd-card .card__information .price .price__container{
+  text-align: left;
+}
