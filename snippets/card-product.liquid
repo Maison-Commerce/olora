@@ -281,9 +281,9 @@
               assign swatch_mapping = settings.color_swatch_mapping | newline_to_br | split: '<br />'
               
               assign color_option_index = -1
-              for option in product.options_with_values
+              for option in card_product.options_with_values
                 assign downcased_option = option.name | downcase
-                if downcased_option == 'color' or downcased_option == 'колір'
+                if downcased_option == 'color'
                   assign color_option_index = forloop.index0
                   assign color_values = option.values
                 endif
@@ -302,11 +302,11 @@
                     endif
                   endfor
 
-                  assign variant_for_link = product.variants | where: "option1", color_name | first
+                  assign variant_for_link = card_product.variants | where: "option1", color_name | first
                 -%}
 
                 {%- if swatch_url != "" -%}
-                  <a href="{{ product.url }}?variant={{ variant_for_link.id }}" 
+                  <a href="{{ card_product.url }}?variant={{ variant_for_link.id }}" 
                     class="swatch-circle" 
                     style="background-image: url('{{ swatch_url }}'); background-size: cover;"
                     title="{{ color_name }}">
