@@ -282,6 +282,12 @@
     gap: {{ section.settings.gap_desktop }}px;
   }
 
+  .maison_commerce_collection_categories__items::-webkit-scrollbar { width: 0; }
+
+  .maison_commerce_collection_categories__items { -ms-overflow-style: none; }
+
+  .maison_commerce_collection_categories__items { overflow: -moz-scrollbars-none; }
+
   @media (max-width: 768px) {
     .maison_commerce_collection_categories__items {
       gap: {{ section.settings.gap_mobile }}px;
