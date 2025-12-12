@@ -301,68 +301,70 @@
 
     <!-- Product Info -->
     <div class="maison_commerce_pd_bundle__info">
-      <div class="maison_commerce_pd_bundle__info-main">
-        {% if product_rating > 0 %}
-            <div class="maison_commerce_pd_bundle__rating">
-            <div class="maison_commerce_pd_bundle__stars">
-                {% assign full_stars = product_rating | floor %}
-                {% assign has_half_star = product_rating | modulo: 1 | times: 1 %}
-                {% assign next_star_index = full_stars | plus: 1 %}
-                {% for i in (1..5) %}
-                {% if i <= full_stars %}
-                    <svg class="maison_commerce_pd_bundle__star" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#FEC84B"/>
-                    </svg>
-                {% else %}
-                    {% assign is_half_star = false %}
-                    {% if i == next_star_index %}
-                    {% if has_half_star >= 0.5 %}
-                        {% assign is_half_star = true %}
-                    {% endif %}
-                    {% endif %}
-                    {% if is_half_star %}
-                    <svg class="maison_commerce_pd_bundle__star" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#FEC84B" opacity="0.5"/>
-                    </svg>
+      <div class="maison_commerce_pd_bundle__info-general">
+        <div class="maison_commerce_pd_bundle__info-main">
+            {% if product_rating > 0 %}
+                <div class="maison_commerce_pd_bundle__rating">
+                <div class="maison_commerce_pd_bundle__stars">
+                    {% assign full_stars = product_rating | floor %}
+                    {% assign has_half_star = product_rating | modulo: 1 | times: 1 %}
+                    {% assign next_star_index = full_stars | plus: 1 %}
+                    {% for i in (1..5) %}
+                    {% if i <= full_stars %}
+                        <svg class="maison_commerce_pd_bundle__star" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#FEC84B"/>
+                        </svg>
                     {% else %}
-                    <svg class="maison_commerce_pd_bundle__star" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#FEC84B" opacity="0.2"/>
-                    </svg>
+                        {% assign is_half_star = false %}
+                        {% if i == next_star_index %}
+                        {% if has_half_star >= 0.5 %}
+                            {% assign is_half_star = true %}
+                        {% endif %}
+                        {% endif %}
+                        {% if is_half_star %}
+                        <svg class="maison_commerce_pd_bundle__star" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#FEC84B" opacity="0.5"/>
+                        </svg>
+                        {% else %}
+                        <svg class="maison_commerce_pd_bundle__star" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#FEC84B" opacity="0.2"/>
+                        </svg>
+                        {% endif %}
                     {% endif %}
-                {% endif %}
-                {% endfor %}
-            </div>
-            <p class="maison_commerce_pd_bundle__rating-text">
-                {{ product_rating }}/5 Stars By {{ product_rating_count }} Happy Customers
-            </p>
-            </div>
-        {% endif %}
+                    {% endfor %}
+                </div>
+                <p class="maison_commerce_pd_bundle__rating-text">
+                    {{ product_rating }}/5 Stars By {{ product_rating_count }} Happy Customers
+                </p>
+                </div>
+            {% endif %}
 
-        <h1 class="maison_commerce_pd_bundle__title">
-            {{ product.title }}
-        </h1>
+            <h1 class="maison_commerce_pd_bundle__title">
+                {{ product.title }}
+            </h1>
 
-        {% if section.settings.features_text != blank %}
-            <p class="maison_commerce_pd_bundle__features">
-            {{ section.settings.features_text }}
-            </p>
-        {% endif %}
-      </div>
+            {% if section.settings.features_text != blank %}
+                <p class="maison_commerce_pd_bundle__features">
+                {{ section.settings.features_text }}
+                </p>
+            {% endif %}
+        </div>
 
-      <div class="maison_commerce_pd_bundle__price">
-        {% if product.compare_at_price > product.price %}
-          <span class="maison_commerce_pd_bundle__compare-price">
-            {{ product.compare_at_price | money }}
-          </span>
-        {% endif %}
-        <span class="maison_commerce_pd_bundle__current-price">
-          {{ product.price | money }}
-        </span>
-        {% if product_has_bogo_tag %}
-          <span class="maison_commerce_pd_bundle__price-badge">
-            {{ section.settings.price_badge_text }}
-          </span>
-        {% endif %}
+        <div class="maison_commerce_pd_bundle__price">
+            {% if product.compare_at_price > product.price %}
+            <span class="maison_commerce_pd_bundle__compare-price">
+                {{ product.compare_at_price | money }}
+            </span>
+            {% endif %}
+            <span class="maison_commerce_pd_bundle__current-price">
+            {{ product.price | money }}
+            </span>
+            {% if product_has_bogo_tag %}
+            <span class="maison_commerce_pd_bundle__price-badge">
+                {{ section.settings.price_badge_text }}
+            </span>
+            {% endif %}
+        </div>
       </div>
 
       <!-- Bundle Section Placeholder (for app integration) -->
