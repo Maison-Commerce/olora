@@ -15686,6 +15686,7 @@ div#gI0R9VRYf5
 .quick-add{
   position: relative;
   z-index: 2!important;
+  grid-column-end: 3;
 }
 
 .quick-add .quick-add__submit{
