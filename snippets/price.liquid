@@ -57,24 +57,26 @@
         {{ money_price }}
       </span>
     </div>
-    <div class="price__sale {% if price_second %} price__sale--price-second{% endif %}">
-      {%- unless product.price_varies == false and product.compare_at_price_varies %}
-        <span class="visually-hidden visually-hidden--inline regular-price-label">
-          {{- 'products.product.price.sale_price' | t -}}
+    {% if target.compare_at_price > target.price %}
+      <div class="price__sale {% if price_second %} price__sale--price-second{% endif %}">
+        {%- unless product.price_varies == false and product.compare_at_price_varies %}
+          <span class="visually-hidden visually-hidden--inline regular-price-label">
+            {{- 'products.product.price.sale_price' | t -}}
+          </span>
+          <span class="price__compare-price">
+            <s class="price-item price-item--regular{% if main_price %} main-comapre-price accent-color-{{ block.settings.compare_price_color }}{% endif %}">
+              {{ money_compare_at_price }}
+            </s>
+          </span>
+        {%- endunless -%}
+        <span class="visually-hidden visually-hidden--inline compare-price-label">
+          {{- 'products.product.price.regular_price' | t -}}
         </span>
-        <span class="price__compare-price">
-          <s class="price-item price-item--regular{% if main_price %} main-comapre-price accent-color-{{ block.settings.compare_price_color }}{% endif %}">
-            {{ money_compare_at_price }}
-          </s>
+        <span class="price-item price-item--sale price-item--last{% if main_price %} main-price accent-color-{{ block.settings.price_color }}{% endif %}">
+          {{ money_price }}
         </span>
-      {%- endunless -%}
-      <span class="visually-hidden visually-hidden--inline compare-price-label">
-        {{- 'products.product.price.regular_price' | t -}}
-      </span>
-      <span class="price-item price-item--sale price-item--last{% if main_price %} main-price accent-color-{{ block.settings.price_color }}{% endif %}">
-        {{ money_price }}
-      </span>
-    </div>
+      </div>
+    {% endif %}
     <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
       <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
       <span class="price-item price-item--last">
