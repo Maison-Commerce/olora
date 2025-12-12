@@ -441,8 +441,8 @@
     overflow: hidden;
     padding-top: {{ section.settings.padding_top_desktop }}px;
     padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: {{ section.settings.padding_left_desktop }}px;
+    padding-right: {{ section.settings.padding_right_desktop }}px;
   }
 
   @media (max-width: 768px) {
@@ -451,8 +451,8 @@
       background-color: {{ section.settings.section_bg_color_start }};
       padding-top: {{ section.settings.padding_top_mobile }}px;
       padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
-      padding-left: {{ section.settings.padding_left_mobile }}px;
-      padding-right: {{ section.settings.padding_right_mobile }}px;
+      padding-left: 0px;
+      padding-right: 0px;
     }
   }
 
