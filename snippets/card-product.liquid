@@ -34,7 +34,7 @@
       assign card_color_scheme = custom_color_scheme
     endif
   -%}
-  <div class="card-wrapper product-card-wrapper underline-links-hover {{ item.object_type }} {% if item.tags contains 'hidden-product' %} hello  {% endif %}">
+  <div class="card-wrapper product-card-wrapper underline-links-hover {{ item.object_type }} {% if item.tags contains 'hidden-product' %} hello  {% endif %} {% if maison_style %}maison-pd-card{% endif %}">
     <div
       class="
         card
