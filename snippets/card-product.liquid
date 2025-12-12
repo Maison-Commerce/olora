@@ -223,6 +223,53 @@
               </p>
             </div>
           </div>
+          <div class="maison-card-variant-colors">
+            {%- liquid
+              assign swatch_mapping = settings.color_swatch_mapping | split: ','
+              
+              assign color_option_index = -1
+              for option in card_product.options_with_values
+                assign downcased_option = option.name | downcase
+                if downcased_option == 'color' or downcased_option == 'колір'
+                  assign color_option_index = forloop.index0
+                  assign color_values = option.values
+                endif
+              endfor
+            -%}
+
+            {%- if color_option_index != -1 -%}
+              {%- for color_name in color_values -%}
+                {%- liquid
+                  assign swatch_value = ""
+                  for line in swatch_mapping
+                    assign pair = line | split: '|'
+                    assign name_in_settings = pair[0] | strip
+                    if name_in_settings == color_name
+                      assign swatch_value = pair[1] | strip
+                    endif
+                  endfor
+
+                  assign variant_for_link = card_product.variants | where: "option1", color_name | first
+                -%}
+
+                {%- if swatch_value != "" -%}
+                  {%- liquid
+                    if swatch_value contains 'http'
+                      assign background_style = "background-image: url('" | append: swatch_value | append: "'); background-size: cover;"
+                    else
+                      assign background_style = "background-color: " | append: swatch_value | append: ";"
+                    endif
+                  -%}
+
+                  <a href="{{ card_product.url }}?variant={{ variant_for_link.id }}" 
+                    class="swatch-circle {% if forloop.first %}active{% endif %}" 
+                    style="{{ background_style }}"
+                    title="{{ color_name }}">
+                  </a>
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endif -%}
+          </div>
           <div class="card-information">
             {%- if show_vendor -%}
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
@@ -274,53 +321,6 @@
                {{ card_product.inventory_quantity }}
                {{ card_product.quantity }}
               <span style="background-color: #F2E5E4; padding: 7px 10px; border-radius: 30px; font-size: 12px;"> Pre-order </span>
-            {%- endif -%}
-          </div>
-          <div class="maison-card-variant-colors">
-            {%- liquid
-              assign swatch_mapping = settings.color_swatch_mapping | split: ','
-              
-              assign color_option_index = -1
-              for option in card_product.options_with_values
-                assign downcased_option = option.name | downcase
-                if downcased_option == 'color' or downcased_option == 'колір'
-                  assign color_option_index = forloop.index0
-                  assign color_values = option.values
-                endif
-              endfor
-            -%}
-
-            {%- if color_option_index != -1 -%}
-              {%- for color_name in color_values -%}
-                {%- liquid
-                  assign swatch_value = ""
-                  for line in swatch_mapping
-                    assign pair = line | split: '|'
-                    assign name_in_settings = pair[0] | strip
-                    if name_in_settings == color_name
-                      assign swatch_value = pair[1] | strip
-                    endif
-                  endfor
-
-                  assign variant_for_link = card_product.variants | where: "option1", color_name | first
-                -%}
-
-                {%- if swatch_value != "" -%}
-                  {%- liquid
-                    if swatch_value contains 'http'
-                      assign background_style = "background-image: url('" | append: swatch_value | append: "'); background-size: cover;"
-                    else
-                      assign background_style = "background-color: " | append: swatch_value | append: ";"
-                    endif
-                  -%}
-
-                  <a href="{{ card_product.url }}?variant={{ variant_for_link.id }}" 
-                    class="swatch-circle {% if forloop.first %}active{% endif %}" 
-                    style="{{ background_style }}"
-                    title="{{ color_name }}">
-                  </a>
-                {%- endif -%}
-              {%- endfor -%}
             {%- endif -%}
           </div>
         </div>
