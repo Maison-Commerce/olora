@@ -15687,3 +15687,7 @@ div#gI0R9VRYf5
   position: relative;
   z-index: 2!important;
 }
+
+.quick-add .quick-add__submit{
+  width: fit-content;
+}
