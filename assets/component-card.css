@@ -479,3 +479,11 @@
   line-height: 150%; /* 18px */
   text-decoration-line: line-through;
 }
+
+.maison-pd-card .card__information .price .price__container .price-item--regular, .maison-pd-card .card__information .price .price__container .price-item--last{
+  color: var(--Text-Primary, #151515);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 24px */
+}
