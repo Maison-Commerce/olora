@@ -58,12 +58,6 @@
       </span>
     </div>
     <div class="price__sale {% if price_second %} price__sale--price-second{% endif %}">
-      <span class="visually-hidden visually-hidden--inline compare-price-label">
-        {{- 'products.product.price.regular_price' | t -}}
-      </span>
-      <span class="price-item price-item--sale price-item--last{% if main_price %} main-price accent-color-{{ block.settings.price_color }}{% endif %}">
-        {{ money_price }}
-      </span>
       {%- unless product.price_varies == false and product.compare_at_price_varies %}
         <span class="visually-hidden visually-hidden--inline regular-price-label">
           {{- 'products.product.price.sale_price' | t -}}
@@ -74,6 +68,12 @@
           </s>
         </span>
       {%- endunless -%}
+      <span class="visually-hidden visually-hidden--inline compare-price-label">
+        {{- 'products.product.price.regular_price' | t -}}
+      </span>
+      <span class="price-item price-item--sale price-item--last{% if main_price %} main-price accent-color-{{ block.settings.price_color }}{% endif %}">
+        {{ money_price }}
+      </span>
     </div>
     <small class="unit-price caption{% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
       <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
