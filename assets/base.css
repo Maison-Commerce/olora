@@ -793,9 +793,9 @@ body {
 summary {
   position: relative;
 }
-::selection {
+/* ::selection {
   background-color: rgba(var(--color-foreground), 0.2);
-}
+} */
 .text-body {
   font-size: 1.5rem;
   letter-spacing: 0.06rem;
