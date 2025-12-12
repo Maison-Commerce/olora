@@ -47,9 +47,12 @@
 
 .facet-filters__label {
   display: block;
-  color: var(--color-foreground-85);
-  font-size: 1.4rem;
   margin: 0 2rem 0 0;
+  color: var(--Text-Primary, #151515);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 21px;
 }
 
 .facet-filters__summary {
