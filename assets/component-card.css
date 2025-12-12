@@ -499,7 +499,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 10px;
   position: relative;
   z-index: 2;
 }
