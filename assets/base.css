@@ -15682,3 +15682,8 @@ div#gI0R9VRYf5
   background: var(--White, #FFF);
   padding: 8px 32px 8px 16px;
 }
+
+.quick-add{
+  position: relative;
+  z-index: 2;
+}
