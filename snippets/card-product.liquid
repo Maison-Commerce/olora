@@ -123,7 +123,7 @@
             </div>
             <div class="maison-card-pd-specifications">
               <p class="maison-card-pd-specifications-text">
-                {%- for spec in card_product.metafields.custom.product_specifications -%}
+                {%- for spec in card_product.metafields.custom.product_specifications.value -%}
                   {{ spec.value }}
                   {% unless forloop.last %}
                     •
