@@ -15689,7 +15689,8 @@ div#gI0R9VRYf5
 }
 
 .quick-add .quick-add__submit{
-  width: fit-content;
+  width: 100%;
+  max-width: 36px;
   min-width: auto;
   padding: var(--8, 8px);
   min-height: auto;
