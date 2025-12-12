@@ -295,7 +295,7 @@
                 {%- liquid
                   assign swatch_url = ""
                   for line in swatch_mapping
-                    assign pair = line | split: ':'
+                    assign pair = line | split: '|'
                     assign name_in_settings = pair[0] | strip
                     if name_in_settings == color_name
                       assign swatch_url = pair[1] | strip
