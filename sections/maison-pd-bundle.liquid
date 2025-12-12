@@ -640,7 +640,7 @@
           {% if section.settings.size_guide_url != blank %}
             <a href="{{ section.settings.size_guide_url }}" class="maison_commerce_pd_bundle__size-guide-link">
               <img 
-                src="{{ 'c0ebbffd60f0a1828f227c21e7071b584eb97405.png' | asset_url }}" 
+                src="{{ section.settings.size_guide_icon | image_url }}" 
                 alt="Size Guide"
                 class="maison_commerce_pd_bundle__size-guide-icon"
                 width="20"
