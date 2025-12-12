@@ -108,6 +108,11 @@
         "badge_border_color": "#f0d3cb",
         "heading_font_size_desktop": 32,
         "heading_font_size_mobile": 24,
+        "subheading_color": "#c4858e",
+        "badge_font_size_desktop": 18,
+        "checkmark_color": "#c4858e",
+        "checkmark_size_desktop": 24,
+        "checkmark_size_mobile": 20,
         "heading_color": "#151515",
         "rating_text_font_size_desktop": 12,
         "rating_text_font_size_mobile": 10,
@@ -147,6 +152,7 @@
         "usp_RPN4FV",
         "usp_tQnraz"
       ],
+      "disabled": true,
       "name": "Collection USPs",
       "settings": {
         "padding_top_desktop": 20,
