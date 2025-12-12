@@ -15668,3 +15668,10 @@ div#gI0R9VRYf5
   .hero-banner-bg-parallax.gp-hero-banner-image-background.gp_lazybg {
   background-color: #fff !important;
 }
+
+.facet-filters .facet-filters__field .facet-filters__field .select{
+  border-radius: var(--12, 12px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: var(--White, #FFF);
+  padding: 8px 16px;
+}
