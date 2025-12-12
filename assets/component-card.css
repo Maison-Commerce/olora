@@ -530,4 +530,12 @@
   .maison-card-pd-specifications-text{
     font-size: 10px;
   }
+
+  .maison-pd-card .card__information .price .price__container .price__compare-price s{
+    font-size: 10px;
+  }
+
+  .maison-pd-card .card__information .price .price__container .price__regular .price-item--regular, .maison-pd-card .card__information .price .price__container .price-item--last{
+    font-size: 12px;
+  }
 }
