@@ -15694,4 +15694,7 @@ div#gI0R9VRYf5
   padding: var(--8, 8px);
   min-height: auto;
   height: 36px;
+  border-radius: var(--8, 8px);
+  background: var(--Color-Brand-3-1800, #151515);
+  border: none;
 }
