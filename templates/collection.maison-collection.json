@@ -110,6 +110,7 @@
         "heading_font_size_mobile": 24,
         "subheading_color": "#c4858e",
         "badge_font_size_desktop": 18,
+        "snowflake_border_image": "shopify://shop_images/Vector.svg",
         "checkmark_color": "#c4858e",
         "checkmark_size_desktop": 24,
         "checkmark_size_mobile": 20,
