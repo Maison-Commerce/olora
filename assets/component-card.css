@@ -527,9 +527,9 @@
   }
 
   .maison-card-variant-colors .swatch-circle{
-    width: 20px;
-    height: 20px;
-    border: 1px solid transparent;
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid transparent;
   }
 
   .maison-card-pd-specifications-text{
