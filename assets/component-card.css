@@ -497,6 +497,7 @@
 
 .maison-card-variant-colors {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   margin-top: 10px;
   position: relative;
