@@ -441,9 +441,10 @@
     overflow: hidden;
     padding-top: {{ section.settings.padding_top_desktop }}px;
     padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
-    padding-left: {{ section.settings.padding_left_desktop }}px;
-    padding-right: {{ section.settings.padding_right_desktop }}px;
   }
+
+  {% comment %} padding-left: {{ section.settings.padding_left_desktop }}px;
+  padding-right: {{ section.settings.padding_right_desktop }}px; {% endcomment %}
 
   @media (max-width: 768px) {
     .maison_commerce_collection_banner {
