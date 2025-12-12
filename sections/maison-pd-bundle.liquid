@@ -272,6 +272,28 @@
       "id": "money_back_text",
       "label": "Money-Back Guarantee Text",
       "default": "14-Day Money-Back Guarantee"
+    },
+    {
+      "type": "header",
+      "content": "Bundle Heading"
+    },
+    {
+      "type": "text",
+      "id": "bundle_heading_text",
+      "label": "Bundle Heading Text",
+      "default": "SELECT YOUR COLORS AND SIZES:"
+    },
+    {
+      "type": "text",
+      "id": "size_guide_text",
+      "label": "Size Guide Text",
+      "default": "Size Guide"
+    },
+    {
+      "type": "url",
+      "id": "size_guide_url",
+      "label": "Size Guide Link URL",
+      "info": "Link to the size guide page"
     }
   ],
   "blocks": [
@@ -614,7 +636,20 @@
       <!-- Bundle Section Placeholder (for app integration) -->
       <div class="maison_commerce_pd_bundle__bundle-placeholder">
         <div class="maison_commerce_pd_bundle__bundle-placeholder-heading-wrapp">
-          <p class="maison_commerce_pd_bundle__bundle-note">SELECT YOUR COLORS AND SIZES:</p>
+          <p class="maison_commerce_pd_bundle__bundle-note">{{ section.settings.bundle_heading_text }}</p>
+          {% if section.settings.size_guide_url != blank %}
+            <a href="{{ section.settings.size_guide_url }}" class="maison_commerce_pd_bundle__size-guide-link">
+              <img 
+                src="{{ 'c0ebbffd60f0a1828f227c21e7071b584eb97405.png' | asset_url }}" 
+                alt="Size Guide"
+                class="maison_commerce_pd_bundle__size-guide-icon"
+                width="20"
+                height="20"
+                loading="lazy"
+              >
+              <span class="maison_commerce_pd_bundle__size-guide-text">{{ section.settings.size_guide_text }}</span>
+            </a>
+          {% endif %}
         </div>
         <div id="maison-bundle-app-container">
           {%- for block in section.blocks -%}
@@ -1426,13 +1461,72 @@
     padding: 20px;
   }
 
+  .maison_commerce_pd_bundle__bundle-placeholder-heading-wrapp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
   .maison_commerce_pd_bundle__bundle-note {
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 12px;
     line-height: 1.5;
     color: #151515;
     opacity: 0.5;
     margin: 0;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__bundle-note {
+      font-size: 10px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__size-guide-link {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .maison_commerce_pd_bundle__size-guide-link:hover {
+    opacity: 0.7;
+  }
+
+  .maison_commerce_pd_bundle__size-guide-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    display: block;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__size-guide-icon {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__size-guide-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #151515;
+    text-decoration: underline;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__size-guide-text {
+      font-size: 10px;
+    }
   }
 
   /* Delivery Information */
