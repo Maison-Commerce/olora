@@ -1321,11 +1321,15 @@
     right: auto!important;
     bottom: auto!important;
     transform: none!important;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
+  }
+  
+  .maison-pd-gallery-buttons.maison-pd-gallery-buttons--visible {
+    display: flex;
   }
 
   .maison-pd-gallery-buttons:hover{
@@ -1415,15 +1419,59 @@
 
     // Thumbnail Swiper
     const thumbnailSwiper = document.querySelector('.maison_commerce_pd_bundle__thumbnails');
+    const thumbPrevBtn = document.querySelector('.maison_commerce_pd_bundle__thumb-prev');
+    const thumbNextBtn = document.querySelector('.maison_commerce_pd_bundle__thumb-next');
+    
     if (thumbnailSwiper) {
-      new Swiper('.maison_commerce_pd_bundle__thumbnails', {
+      const swiperInstance = new Swiper('.maison_commerce_pd_bundle__thumbnails', {
         slidesPerView: 'auto',
         spaceBetween: 8,
         navigation: {
           nextEl: '.maison_commerce_pd_bundle__thumb-next',
           prevEl: '.maison_commerce_pd_bundle__thumb-prev',
         },
+        on: {
+          init: function() {
+            checkThumbnailNavigation(this);
+          },
+          resize: function() {
+            checkThumbnailNavigation(this);
+          },
+          slideChange: function() {
+            checkThumbnailNavigation(this);
+          }
+        }
       });
+      
+      function checkThumbnailNavigation(swiper) {
+        // Check if all slides fit in the container
+        const containerWidth = swiper.width;
+        let totalSlidesWidth = 0;
+        
+        swiper.slides.forEach((slide, index) => {
+          totalSlidesWidth += slide.offsetWidth;
+          if (index < swiper.slides.length - 1) {
+            totalSlidesWidth += 8; // spaceBetween
+          }
+        });
+        
+        const needsNavigation = totalSlidesWidth > containerWidth;
+        
+        if (thumbPrevBtn) {
+          if (needsNavigation) {
+            thumbPrevBtn.classList.add('maison-pd-gallery-buttons--visible');
+          } else {
+            thumbPrevBtn.classList.remove('maison-pd-gallery-buttons--visible');
+          }
+        }
+        if (thumbNextBtn) {
+          if (needsNavigation) {
+            thumbNextBtn.classList.add('maison-pd-gallery-buttons--visible');
+          } else {
+            thumbNextBtn.classList.remove('maison-pd-gallery-buttons--visible');
+          }
+        }
+      }
     }
 
     // Reviews Swiper
