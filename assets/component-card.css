@@ -526,6 +526,12 @@
     font-size: 12px;
   }
 
+  .maison-card-variant-colors .swatch-circle{
+    width: 20px;
+    height: 20px;
+    border: 1px solid transparent;
+  }
+
   .maison-card-pd-specifications-text{
     font-size: 10px;
   }
