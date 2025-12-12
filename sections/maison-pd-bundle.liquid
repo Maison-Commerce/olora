@@ -247,12 +247,12 @@
       </div>
       
       {% if product.images.size > 1 %}
-        <div class="swiper maison_commerce_pd_bundle__thumbnails">
-          <div class="swiper-button-prev maison_commerce_pd_bundle__thumb-prev maison-pd-gallery-buttons">
+        <div class="swiper-button-prev maison_commerce_pd_bundle__thumb-prev maison-pd-gallery-buttons">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M12.5 15L7.5 10L12.5 5" stroke="#151515" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-          </div>
+        </div>
+        <div class="swiper maison_commerce_pd_bundle__thumbnails">
           <div class="swiper-wrapper maison-pd-gallery-slider">
             {% for image in product.images %}
               <div class="swiper-slide maison_commerce_pd_bundle__thumbnail-slide">
@@ -271,11 +271,11 @@
               </div>
             {% endfor %}
           </div>
-          <div class="swiper-button-next maison_commerce_pd_bundle__thumb-next maison-pd-gallery-buttons">
+        </div>
+        <div class="swiper-button-next maison_commerce_pd_bundle__thumb-next maison-pd-gallery-buttons">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M7.5 15L12.5 10L7.5 5" stroke="#151515" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-          </div>
         </div>
       {% endif %}
     </div>
