@@ -470,3 +470,12 @@
 .maison-pd-card .card__information .price .price__container{
   text-align: left;
 }
+
+.maison-pd-card .card__information .price .price__container .price__compare-price{
+  color: var(--Text-Primary, #151515);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 18px */
+  text-decoration-line: line-through;
+}
