@@ -21,6 +21,12 @@
     "maison_pd_bundle_zHD7Rn": {
       "type": "maison-pd-bundle",
       "blocks": {
+        "kaching_bundles_app_block_tHVXgm": {
+          "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
         "review_hzCjd9": {
           "type": "review",
           "settings": {
@@ -111,6 +117,7 @@
         }
       },
       "block_order": [
+        "kaching_bundles_app_block_tHVXgm",
         "review_hzCjd9",
         "review_8JctkQ",
         "faq_nmKPCF",
