@@ -15699,6 +15699,11 @@ div#gI0R9VRYf5
   border: none;
 }
 
+.quick-add .quick-add__submit::after, .quick-add .quick-add__submit::before{
+  box-shadow: none;
+  background-color: transprent;
+}
+
 .maison-add-to-cart-button{
   display: flex;
 }
