@@ -15690,4 +15690,5 @@ div#gI0R9VRYf5
 
 .quick-add .quick-add__submit{
   width: fit-content;
+  min-width: none;
 }
