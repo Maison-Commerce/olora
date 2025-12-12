@@ -79,7 +79,7 @@
     "inputs_shadow_horizontal_offset": 0,
     "inputs_shadow_vertical_offset": 4,
     "inputs_shadow_blur": 5,
-    "color_swatch_mapping": "Beige| https://cdn.shopify.com/s/files/1/0824/1882/7590/files/Beige_color.png?v=1765536768,\nCoffee| https://cdn.shopify.com/s/files/1/0824/1882/7590/files/Coffee_color.png?v=1765536768,\nBlack| https://cdn.shopify.com/s/files/1/0824/1882/7590/files/Block_color.png?v=1765536768,\nMoss| https://cdn.shopify.com/s/files/1/0824/1882/7590/files/Moss_color.png?v=1765536768",
+    "color_swatch_mapping": "Beige| #F0D7B9,\nCoffee| #060607,\nBlack| #028291,\nMoss| #73362A",
     "card_style": "card",
     "card_image_padding": 0,
     "card_text_alignment": "center",
