@@ -21,6 +21,30 @@
     "maison_pd_bundle_zHD7Rn": {
       "type": "maison-pd-bundle",
       "blocks": {
+        "feature_Vqtd78": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Odor Control"
+          }
+        },
+        "feature_n6mNjC": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Sweat Control"
+          }
+        },
+        "feature_hLhcQW": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Wide Comfy Gusset"
+          }
+        },
+        "feature_mngC8z": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Seamless"
+          }
+        },
         "kaching_bundles_app_block_tHVXgm": {
           "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
           "settings": {
@@ -130,6 +154,10 @@
         }
       },
       "block_order": [
+        "feature_Vqtd78",
+        "feature_n6mNjC",
+        "feature_hLhcQW",
+        "feature_mngC8z",
         "kaching_bundles_app_block_tHVXgm",
         "buy_buttons_AeNAVc",
         "review_hzCjd9",
@@ -150,7 +178,7 @@
         "gallery_badge_text": "BUY 1, GET 1 FREE",
         "gallery_badge_subtext": "Add at least 2 items to your cart. Discount applied automatically.",
         "price_badge_text": "BUY 1, GET 1 FREE",
-        "features_text": "Camel Toe Proof Technology | Seamless | Wide Absorbent Gusset | High Rise",
+        "features_text": "",
         "protection_title": "Your order is protected by",
         "protection_heading": "90 Day Fit Exchange & Money Back Guarantee",
         "protection_description": "<p>If you need to exchange for a different size, or don't like our thong for any reason, we'll send you a new size for free or a full refund.</p>",
