@@ -15717,4 +15717,12 @@ div#gI0R9VRYf5
   border-radius: var(--8, 8px);
   border: 1px solid var(--Color-Brand-1-1800, #F0D3CB);
   background: var(--Color-Brand-1-800, #F7E6E2);
+  padding: var(--4, 4px) var(--12, 12px);
+  color: var(--Text-Primary, #151515);
+  leading-trim: both;
+  text-edge: cap;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
 }
