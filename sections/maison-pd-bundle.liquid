@@ -552,7 +552,7 @@
             </div>
           </div>
           <div class="swiper maison_commerce_pd_bundle__customer-images-swiper">
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper maison-pd-image-slider">
               {% for block in image_blocks %}
                 {% if block.settings.image %}
                   <div
@@ -601,6 +601,10 @@
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: flex-start;
+  }
+
+  .maison-pd-image-slider{
+    display: flex;
   }
 
   .maison-pd-gallery-slider-wrapper{
