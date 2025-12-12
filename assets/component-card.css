@@ -513,6 +513,10 @@
   transition: border-color 0.3s ease;
 }
 
+.maison-card-variant-colors .swatch-circle.active{
+  border-color: #151515;
+}
+
 .maison-card-variant-colors .swatch-circle:hover {
   border-color: #151515;
 }

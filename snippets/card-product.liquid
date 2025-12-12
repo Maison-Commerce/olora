@@ -315,7 +315,7 @@
                   -%}
 
                   <a href="{{ card_product.url }}?variant={{ variant_for_link.id }}" 
-                    class="swatch-circle" 
+                    class="swatch-circle {% if forloop.first %}active{% endif %}" 
                     style="{{ background_style }}"
                     title="{{ color_name }}">
                   </a>
