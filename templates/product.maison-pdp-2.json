@@ -20,6 +20,43 @@
   "sections": {
     "maison_pd_bundle_zHD7Rn": {
       "type": "maison-pd-bundle",
+      "blocks": {
+        "review_hzCjd9": {
+          "type": "review",
+          "settings": {
+            "reviewer_name": "Rachel D.",
+            "review_text": "<p>These are hands down the best underwear to wear under any leggings. I no longer feel exposed! Super comfy and don't show any seam lines. Off to buy some more!</p>",
+            "rating": 4.6,
+            "rating_text": "Rated Excellent 4.6/5 stars",
+            "source": "Trustpilot"
+          }
+        },
+        "review_8JctkQ": {
+          "type": "review",
+          "settings": {
+            "reviewer_name": "Rachel D.",
+            "review_text": "<p>These are hands down the best underwear to wear under any leggings. I no longer feel exposed! Super comfy and don't show any seam lines. Off to buy some more!</p>",
+            "rating": 4.6,
+            "rating_text": "Rated Excellent 4.6/5 stars",
+            "source": "Trustpilot"
+          }
+        },
+        "review_PUVwnb": {
+          "type": "review",
+          "settings": {
+            "reviewer_name": "Rachel D.",
+            "review_text": "<p>These are hands down the best underwear to wear under any leggings. I no longer feel exposed! Super comfy and don't show any seam lines. Off to buy some more!</p>",
+            "rating": 4.6,
+            "rating_text": "Rated Excellent 4.6/5 stars",
+            "source": "Trustpilot"
+          }
+        }
+      },
+      "block_order": [
+        "review_hzCjd9",
+        "review_8JctkQ",
+        "review_PUVwnb"
+      ],
       "name": "Product Bundle",
       "settings": {
         "gallery_badge_text": "BUY 1, GET 1 FREE",
