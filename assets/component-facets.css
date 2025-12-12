@@ -20,7 +20,6 @@
 
   .facets__form .product-count {
     grid-column-start: 3;
-    align-self: flex-start;
   }
 }
 
