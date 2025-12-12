@@ -79,7 +79,7 @@
     "inputs_shadow_horizontal_offset": 0,
     "inputs_shadow_vertical_offset": 4,
     "inputs_shadow_blur": 5,
-    "color_swatch_mapping": "Beige| #F0D7B9,\nCoffee| #060607,\nBlack| #028291,\nMoss| #73362A,\nSand| #C2B280,\nCaramel| #C19A6B,\nCocoa| #c7b3b3,\nPink| #FFC0CB,\nWhite| #FFFFFF,\nNavy| #000080,\nGrey| #808080,\nOlive| #556B2F,\nCharcoal| #36454F,\nIvory| #FFFFF0,\nBurgundy| #800020,\nTaupe| #483C32,\nKhaki| #C3B091,\nSage| #BCB88A,\nCream| #FFFDD0,\nTerracotta| #E2725B,\nEmerald| #50C878,\nLavender| #E6E6FA,\nAnthracite| #383E42,\nOatmeal| #E3D9C6,\nRust| #B7410E,\nSky Blue| #87CEEB,\nChocolate| #7B3F00,\nMint| #98FF98",
+    "color_swatch_mapping": "Beige| #F0D7B9,\nCoffee| #060607,\nBlack| #028291,\nMoss| #73362A,\nSand| #C2B280,\nCaramel| #C19A6B,\nCocoa| #c7b3b3,\nPink| #FFC0CB,\nWhite| #FFFFFF,\nNavy| #000080,\nGrey| #808080,\nOlive| #556B2F,\nCharcoal| #36454F,\nIvory| #FFFFF0,\nBurgundy| #800020,\nTaupe| #483C32,\nKhaki| #C3B091,\nSage| #BCB88A,\nCream| #FFFDD0,\nTerracotta| #E2725B,\nEmerald| #50C878,\nLavender| #E6E6FA,\nAnthracite| #383E42,\nOatmeal| #E3D9C6,\nRust| #B7410E,\nSky Blue| #87CEEB,\nChocolate| #7B3F00,\nMint| #98FF98,\nGreen| #00FF00,",
     "card_style": "card",
     "card_image_padding": 0,
     "card_text_alignment": "center",
