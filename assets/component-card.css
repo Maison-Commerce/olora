@@ -471,7 +471,7 @@
   text-align: left;
 }
 
-.maison-pd-card .card__information .price .price__container .price__compare-price{
+.maison-pd-card .card__information .price .price__container .price__compare-price s{
   color: var(--Text-Primary, #151515);
   font-size: 12px;
   font-style: normal;
