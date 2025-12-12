@@ -15692,4 +15692,7 @@ div#gI0R9VRYf5
   width: fit-content;
   min-width: auto;
   padding: var(--8, 8px);
+  min-height: auto;
+  height: auto;
+  aspect-ratio: 1/1;
 }
