@@ -543,4 +543,8 @@
     gap: 12px;
     padding: 0!important;
   }
+
+  .maison-pd-card .card__content{
+    padding: 12px;
+  }
 }
