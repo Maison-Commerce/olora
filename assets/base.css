@@ -15701,7 +15701,7 @@ div#gI0R9VRYf5
 }
 
 .quick-add .quick-add__submit:hover{
-  background-color: rgba(21, 21, 210.7 1)!important;
+  background-color: rgba(21, 21, 21, 0.7)!important;
 }
 
 .quick-add .quick-add__submit::after, .quick-add .quick-add__submit::before{
