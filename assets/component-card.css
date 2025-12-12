@@ -448,3 +448,7 @@
   flex-direction: column;
   gap: 4px;
 }
+
+.maison-pd-card .vtl-pr-review-stars-snippet-container{
+  display: none!important;
+}
