@@ -1347,16 +1347,11 @@
     const reviewsSwiper = document.querySelector('.maison_commerce_pd_bundle__reviews');
     if (reviewsSwiper) {
       new Swiper('.maison_commerce_pd_bundle__reviews', {
-        slidesPerView: 1,
+        slidesPerView: 'auto',
         spaceBetween: 12,
         pagination: {
           el: '.maison_commerce_pd_bundle__reviews-pagination',
           clickable: true,
-        },
-        breakpoints: {
-          768: {
-            slidesPerView: 2,
-          },
         },
       });
     }
