@@ -632,8 +632,8 @@
             <div class="maison_commerce_pd_bundle__features-grid">
               {% for block in feature_blocks %}
                 <div class="maison_commerce_pd_bundle__feature-item" {{ block.shopify_attributes }}>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="maison_commerce_pd_bundle__feature-icon">
-                    <path d="M3 8L6 11L13 4" stroke="#BFA8A1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M13.3334 4L6.00008 11.3333L2.66675 8" stroke="#BFA8A1" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                   <p class="maison_commerce_pd_bundle__feature-text">{{ block.settings.feature_text }}</p>
                 </div>
@@ -648,7 +648,7 @@
           {% endif %}
         </div>
 
-        <div class="maison_commerce_pd_bundle__price">
+        {% comment %} <div class="maison_commerce_pd_bundle__price">
           {% if product.compare_at_price > product.price %}
             <span class="maison_commerce_pd_bundle__compare-price">
               {{ product.compare_at_price | money }}
@@ -662,7 +662,7 @@
               {{ section.settings.price_badge_text }}
             </span>
           {% endif %}
-        </div>
+        </div> {% endcomment %}
       </div>
 
       <!-- Bundle Section Placeholder (for app integration) -->
