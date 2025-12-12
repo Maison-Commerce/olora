@@ -405,7 +405,7 @@
       {% assign review_blocks = section.blocks | where: 'type', 'review' %}
       {% if review_blocks.size > 0 %}
         <div class="swiper maison_commerce_pd_bundle__reviews">
-          <div class="swiper-wrapper">
+          <div class="swiper-wrapper maison-pd-review-slider">
             {% for block in review_blocks %}
               <div class="swiper-slide maison_commerce_pd_bundle__review-slide" {{ block.shopify_attributes }}>
                 <div class="maison_commerce_pd_bundle__review">
@@ -590,6 +590,10 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+  }
+
+  .maison-pd-review-slider{
+    display: flex;
   }
 
   @media (max-width: 768px) {
