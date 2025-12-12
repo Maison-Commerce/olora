@@ -134,6 +134,144 @@
       "id": "protection_border_color",
       "label": "Protection Block Border Color",
       "default": "#F0D3CB"
+    },
+    {
+      "type": "header",
+      "content": "Delivery Information"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_delivery_info",
+      "label": "Show Delivery Information",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "delivery_flag",
+      "label": "Delivery Flag Emoji",
+      "default": "🇺🇸"
+    },
+    {
+      "type": "text",
+      "id": "delivery_prefix",
+      "label": "Delivery Text Prefix",
+      "default": "Delivered on "
+    },
+    {
+      "type": "text",
+      "id": "delivery_date",
+      "label": "Delivery Date",
+      "default": "Friday, 21 November"
+    },
+    {
+      "type": "text",
+      "id": "delivery_suffix",
+      "label": "Delivery Text Suffix",
+      "default": " with Express Shipping"
+    },
+    {
+      "type": "header",
+      "content": "Payment Methods"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_methods",
+      "label": "Show Payment Methods",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_visa",
+      "label": "Show Visa",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_unionpay",
+      "label": "Show UnionPay",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shoppay",
+      "label": "Show Shop Pay",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_mastercard",
+      "label": "Show Mastercard",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_maestro",
+      "label": "Show Maestro",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_googlepay",
+      "label": "Show Google Pay",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_discover",
+      "label": "Show Discover",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dinersclub",
+      "label": "Show Diners Club",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_applepay",
+      "label": "Show Apple Pay",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_amex",
+      "label": "Show American Express",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Shipping Information"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shipping_info",
+      "label": "Show Shipping Information",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_free_shipping",
+      "label": "Show Free Shipping",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "free_shipping_text",
+      "label": "Free Shipping Text",
+      "default": "FREE Worldwide Shipping"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_money_back",
+      "label": "Show Money-Back Guarantee",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "money_back_text",
+      "label": "Money-Back Guarantee Text",
+      "default": "14-Day Money-Back Guarantee"
     }
   ],
   "blocks": [
@@ -487,6 +625,121 @@
             {%- endcase -%}
           {%- endfor -%}
         </div>
+        
+        <!-- Delivery Information -->
+        {% if section.settings.show_delivery_info %}
+          <div class="maison_commerce_pd_bundle__delivery-info">
+            <p class="maison_commerce_pd_bundle__delivery-text">
+              {% if section.settings.delivery_flag != blank %}{{ section.settings.delivery_flag }} {% endif %}
+              <span>{{ section.settings.delivery_prefix }}</span>
+              <span class="maison_commerce_pd_bundle__delivery-date">{{ section.settings.delivery_date }}</span>
+              <span>{{ section.settings.delivery_suffix }}</span>
+            </p>
+          </div>
+        {% endif %}
+        
+        <!-- Payment Methods -->
+        {% if section.settings.show_payment_methods %}
+          <div class="maison_commerce_pd_bundle__payment-methods">
+            {% if section.settings.show_visa %}
+              <div class="maison_commerce_pd_bundle__payment-method">
+                <svg width="23" height="16" viewBox="0 0 23 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" y="0.5" width="22" height="15" rx="3.5" fill="white" stroke="rgba(0,0,0,0.08)"/>
+                  <path d="M10.5 5.5H12.5V10.5H10.5V5.5Z" fill="#1434CB"/>
+                  <path d="M8.5 5.5H10.5V10.5H8.5V5.5Z" fill="#1434CB"/>
+                </svg>
+              </div>
+            {% endif %}
+            {% if section.settings.show_unionpay %}
+              <div class="maison_commerce_pd_bundle__payment-method">
+                <svg width="23" height="16" viewBox="0 0 23 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" y="0.5" width="22" height="15" rx="3.5" fill="white" stroke="rgba(0,0,0,0.08)"/>
+                </svg>
+              </div>
+            {% endif %}
+            {% if section.settings.show_shoppay %}
+              <div class="maison_commerce_pd_bundle__payment-method">
+                <svg width="23" height="16" viewBox="0 0 23 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" y="0.5" width="22" height="15" rx="3.5" fill="#5a31f4" stroke="rgba(0,0,0,0.08)"/>
+                </svg>
+              </div>
+            {% endif %}
+            {% if section.settings.show_mastercard %}
+              <div class="maison_commerce_pd_bundle__payment-method">
+                <svg width="23" height="16" viewBox="0 0 23 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" y="0.5" width="22" height="15" rx="3.5" fill="white" stroke="rgba(0,0,0,0.08)"/>
+                </svg>
+              </div>
+            {% endif %}
+            {% if section.settings.show_maestro %}
+              <div class="maison_commerce_pd_bundle__payment-method">
+                <svg width="23" height="16" viewBox="0 0 23 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" y="0.5" width="22" height="15" rx="3.5" fill="white" stroke="rgba(0,0,0,0.08)"/>
+                </svg>
+              </div>
+            {% endif %}
+            {% if section.settings.show_googlepay %}
+              <div class="maison_commerce_pd_bundle__payment-method">
+                <svg width="23" height="16" viewBox="0 0 23 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" y="0.5" width="22" height="15" rx="3.5" fill="white" stroke="rgba(0,0,0,0.08)"/>
+                </svg>
+              </div>
+            {% endif %}
+            {% if section.settings.show_discover %}
+              <div class="maison_commerce_pd_bundle__payment-method">
+                <svg width="23" height="16" viewBox="0 0 23 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" y="0.5" width="22" height="15" rx="3.5" fill="white" stroke="rgba(0,0,0,0.08)"/>
+                </svg>
+              </div>
+            {% endif %}
+            {% if section.settings.show_dinersclub %}
+              <div class="maison_commerce_pd_bundle__payment-method">
+                <svg width="23" height="16" viewBox="0 0 23 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" y="0.5" width="22" height="15" rx="3.5" fill="white" stroke="rgba(0,0,0,0.08)"/>
+                </svg>
+              </div>
+            {% endif %}
+            {% if section.settings.show_applepay %}
+              <div class="maison_commerce_pd_bundle__payment-method">
+                <svg width="23" height="16" viewBox="0 0 23 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" y="0.5" width="22" height="15" rx="3.5" fill="white" stroke="rgba(0,0,0,0.08)"/>
+                </svg>
+              </div>
+            {% endif %}
+            {% if section.settings.show_amex %}
+              <div class="maison_commerce_pd_bundle__payment-method">
+                <svg width="23" height="16" viewBox="0 0 23 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" y="0.5" width="22" height="15" rx="3.5" fill="#1f72cd" stroke="rgba(0,0,0,0.08)"/>
+                </svg>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+        
+        <!-- Shipping Info -->
+        {% if section.settings.show_shipping_info %}
+          <div class="maison_commerce_pd_bundle__shipping-info">
+            {% if section.settings.show_free_shipping %}
+              <div class="maison_commerce_pd_bundle__shipping-item">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 6L8 2L14 6V12C14 12.5304 13.7893 13.0391 13.4142 13.4142C13.0391 13.7893 12.5304 14 12 14H4C3.46957 14 2.96086 13.7893 2.58579 13.4142C2.21071 13.0391 2 12.5304 2 12V6Z" stroke="#151515" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M6 14V8H10V14" stroke="#151515" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p class="maison_commerce_pd_bundle__shipping-text">{{ section.settings.free_shipping_text }}</p>
+              </div>
+            {% endif %}
+            {% if section.settings.show_money_back %}
+              <div class="maison_commerce_pd_bundle__shipping-item">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 4H15C15.2652 4 15.5196 4.10536 15.7071 4.29289C15.8946 4.48043 16 4.73478 16 5V13C16 13.2652 15.8946 13.5196 15.7071 13.7071C15.5196 13.8946 15.2652 14 15 14H1C0.734784 14 0.48043 13.8946 0.292893 13.7071C0.105357 13.5196 0 13.2652 0 13V5C0 4.73478 0.105357 4.48043 0.292893 4.29289C0.48043 4.10536 0.734784 4 1 4Z" stroke="#151515" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M4 4V2C4 1.73478 4.10536 1.48043 4.29289 1.29289C4.48043 1.10536 4.73478 1 5 1H11C11.2652 1 11.5196 1.10536 11.7071 1.29289C11.8946 1.48043 12 1.73478 12 2V4" stroke="#151515" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M4 8H12" stroke="#151515" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p class="maison_commerce_pd_bundle__shipping-text">{{ section.settings.money_back_text }}</p>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
       </div>
 
       <!-- Protection Block -->
@@ -1047,6 +1300,123 @@
     color: #151515;
     opacity: 0.5;
     margin: 0 0 12px 0;
+  }
+
+  /* Delivery Information */
+  .maison_commerce_pd_bundle__delivery-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 48px;
+    margin-top: 16px;
+  }
+
+  .maison_commerce_pd_bundle__delivery-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #151515;
+    text-align: center;
+    margin: 0;
+  }
+
+  .maison_commerce_pd_bundle__delivery-date {
+    text-decoration: underline;
+    text-underline-position: from-font;
+    font-weight: 700;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__delivery-info {
+      padding: 0 24px;
+    }
+
+    .maison_commerce_pd_bundle__delivery-text {
+      font-size: 10px;
+    }
+  }
+
+  /* Payment Methods */
+  .maison_commerce_pd_bundle__payment-methods {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__payment-methods {
+      gap: 8px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__payment-method {
+    width: 23px;
+    height: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .maison_commerce_pd_bundle__payment-method svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Shipping Info */
+  .maison_commerce_pd_bundle__shipping-info {
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 8px;
+    padding: 8px 16px;
+    margin-top: 16px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__shipping-info {
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-start;
+    }
+  }
+
+  .maison_commerce_pd_bundle__shipping-item {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .maison_commerce_pd_bundle__shipping-item svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .maison_commerce_pd_bundle__shipping-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #151515;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__shipping-text {
+      font-size: 10px;
+    }
   }
 
   /* Protection Block */
