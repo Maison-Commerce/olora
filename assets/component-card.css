@@ -499,6 +499,8 @@
   display: flex;
   gap: 8px;
   margin-top: 10px;
+  position: relative;
+  z-index: 2;
 }
 
 .maison-card-variant-colors .swatch-circle {
