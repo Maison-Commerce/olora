@@ -150,7 +150,7 @@
                 {%- if forloop.index > 2 -%}
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
-                <li class="grid__item animate-item animate-item--child" style='--index: {{ forloop.index0 }};'>
+                <li class="grid__item animate-item animate-item--child maison-pd-card" style='--index: {{ forloop.index0 }};'>
                   {% render 'card-product',
                     card_product: product,
                     media_aspect_ratio: section.settings.image_ratio,
