@@ -21,6 +21,12 @@
     "maison_pd_bundle_zHD7Rn": {
       "type": "maison-pd-bundle",
       "blocks": {
+        "sticky_atc_JXhjka": {
+          "type": "sticky_atc",
+          "settings": {
+            "show_sticky_atc": true
+          }
+        },
         "feature_Vqtd78": {
           "type": "feature",
           "settings": {
@@ -154,6 +160,7 @@
         }
       },
       "block_order": [
+        "sticky_atc_JXhjka",
         "feature_Vqtd78",
         "feature_n6mNjC",
         "feature_hLhcQW",
