@@ -460,3 +460,9 @@
 .maison-pd-card .vtl-pr-review-stars-snippet-container{
   display: none!important;
 }
+
+.maison-pd-card .card__information{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
