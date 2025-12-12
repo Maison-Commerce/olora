@@ -15689,11 +15689,9 @@ div#gI0R9VRYf5
 }
 
 .quick-add .quick-add__submit{
-  width: 100%;
-  max-width: 36px;
+  width: 36px;
   min-width: auto;
   padding: var(--8, 8px);
   min-height: auto;
-  height: auto;
-  aspect-ratio: 1/1;
+  height: 36px;
 }
