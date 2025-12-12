@@ -1,0 +1,1214 @@
+{%- assign product_has_bogo_tag = false -%}
+{%- if product.tags contains 'buy-1-get-free' -%}
+  {%- assign product_has_bogo_tag = true -%}
+{%- endif -%}
+
+{%- comment -%} Get rating from metafield {%- endcomment -%}
+{%- assign rating_metafield_key = section.settings.metafield_rating_key | default: 'custom.rating' -%}
+{%- assign rating_count_metafield_key = section.settings.metafield_rating_count_key | default: 'custom.rating_count' -%}
+{%- assign rating_parts = rating_metafield_key | split: '.' -%}
+{%- assign count_parts = rating_count_metafield_key | split: '.' -%}
+{%- if rating_parts.size == 2 -%}
+  {%- assign product_rating = product.metafields[rating_parts[0]][rating_parts[1]] | default: 0 | times: 1 -%}
+{%- else -%}
+  {%- assign product_rating = 0 -%}
+{%- endif -%}
+{%- if count_parts.size == 2 -%}
+  {%- assign product_rating_count = product.metafields[count_parts[0]][count_parts[1]] | default: '0' -%}
+{%- else -%}
+  {%- assign product_rating_count = '0' -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Product Bundle",
+  "settings": [
+    {
+      "type": "text",
+      "id": "gallery_badge_text",
+      "label": "Gallery Badge Text",
+      "default": "BUY 1, GET 1 FREE",
+      "info": "Badge shown in product gallery"
+    },
+    {
+      "type": "text",
+      "id": "gallery_badge_subtext",
+      "label": "Gallery Badge Subtext",
+      "default": "Add at least 2 items to your cart. Discount applied automatically.",
+      "info": "Smaller text below badge"
+    },
+    {
+      "type": "text",
+      "id": "price_badge_text",
+      "label": "Price Badge Text",
+      "default": "BUY 1, GET 1 FREE",
+      "info": "Badge shown next to price"
+    },
+    {
+      "type": "text",
+      "id": "features_text",
+      "label": "Features Text",
+      "default": "Camel Toe Proof Technology | Seamless | Wide Absorbent Gusset | High Rise"
+    },
+    {
+      "type": "text",
+      "id": "protection_title",
+      "label": "Protection Block Title",
+      "default": "Your order is protected by"
+    },
+    {
+      "type": "text",
+      "id": "protection_heading",
+      "label": "Protection Block Heading",
+      "default": "90 Day Fit Exchange & Money Back Guarantee"
+    },
+    {
+      "type": "richtext",
+      "id": "protection_description",
+      "label": "Protection Block Description",
+      "default": "<p>If you need to exchange for a different size, or don't like our thong for any reason, we'll send you a new size for free or a full refund.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "protection_icon",
+      "label": "Protection Block Icon"
+    },
+    {
+      "type": "text",
+      "id": "loved_by_heading",
+      "label": "Loved By Heading",
+      "default": "Loved by By 5,800+ Happy Customers"
+    },
+    {
+      "type": "text",
+      "id": "metafield_rating_key",
+      "label": "Rating Metafield Key",
+      "default": "custom.rating",
+      "info": "Product metafield namespace.key for rating (e.g., custom.rating)"
+    },
+    {
+      "type": "text",
+      "id": "metafield_rating_count_key",
+      "label": "Rating Count Metafield Key",
+      "default": "custom.rating_count",
+      "info": "Product metafield namespace.key for rating count"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#FCF5F4"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "Badge Background Color",
+      "default": "#F7E6E2"
+    },
+    {
+      "type": "color",
+      "id": "badge_border_color",
+      "label": "Badge Border Color",
+      "default": "#F0D3CB"
+    },
+    {
+      "type": "color",
+      "id": "price_badge_bg_color",
+      "label": "Price Badge Background Color",
+      "default": "#12B76A"
+    },
+    {
+      "type": "color",
+      "id": "price_badge_text_color",
+      "label": "Price Badge Text Color",
+      "default": "#F6FEF9"
+    },
+    {
+      "type": "color",
+      "id": "protection_bg_color",
+      "label": "Protection Block Background Color",
+      "default": "#F7E6E2"
+    },
+    {
+      "type": "color",
+      "id": "protection_border_color",
+      "label": "Protection Block Border Color",
+      "default": "#F0D3CB"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "text",
+          "id": "reviewer_name",
+          "label": "Reviewer Name",
+          "default": "Rachel D."
+        },
+        {
+          "type": "richtext",
+          "id": "review_text",
+          "label": "Review Text",
+          "default": "<p>These are hands down the best underwear to wear under any leggings. I no longer feel exposed! Super comfy and don't show any seam lines. Off to buy some more!</p>"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 1,
+          "max": 5,
+          "step": 0.1,
+          "label": "Rating",
+          "default": 4.6
+        },
+        {
+          "type": "text",
+          "id": "rating_text",
+          "label": "Rating Text",
+          "default": "Rated Excellent 4.6/5 stars"
+        },
+        {
+          "type": "image_picker",
+          "id": "reviewer_avatar",
+          "label": "Reviewer Avatar"
+        },
+        {
+          "type": "text",
+          "id": "source",
+          "label": "Review Source",
+          "default": "Trustpilot",
+          "info": "e.g., Trustpilot, Google Reviews"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Product Details"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    },
+    {
+      "type": "customer_image",
+      "name": "Customer Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Bundle"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="maison_commerce_pd_bundle" x-data="maison_commerce_pd_bundle_init()">
+  <div class="maison_commerce_pd_bundle__container">
+    <!-- Product Gallery -->
+    <div class="maison_commerce_pd_bundle__gallery">
+      <div class="maison_commerce_pd_bundle__main-image">
+        {% if product.featured_image %}
+          <img 
+            src="{{ product.featured_image | image_url: width: 1200 }}" 
+            alt="{{ product.title | escape }}"
+            loading="eager"
+            class="maison_commerce_pd_bundle__main-img"
+            id="maison-pd-main-image"
+          >
+        {% endif %}
+        
+        {% if product_has_bogo_tag %}
+          <div class="maison_commerce_pd_bundle__gallery-badge">
+            <p class="maison_commerce_pd_bundle__gallery-badge-text">
+              {{ section.settings.gallery_badge_text }}
+            </p>
+            <p class="maison_commerce_pd_bundle__gallery-badge-subtext">
+              {{ section.settings.gallery_badge_subtext }}
+            </p>
+          </div>
+        {% endif %}
+      </div>
+      
+      {% if product.images.size > 1 %}
+        <div class="swiper maison_commerce_pd_bundle__thumbnails">
+          <div class="swiper-wrapper">
+            {% for image in product.images %}
+              <div class="swiper-slide maison_commerce_pd_bundle__thumbnail-slide">
+                <button 
+                  type="button"
+                  class="maison_commerce_pd_bundle__thumbnail {% if forloop.first %}maison_commerce_pd_bundle__thumbnail--active{% endif %}"
+                  data-image-index="{{ forloop.index0 }}"
+                  @click="changeMainImage('{{ image | image_url: width: 1200 }}', {{ forloop.index0 }})"
+                >
+                  <img 
+                    src="{{ image | image_url: width: 160 }}" 
+                    alt="{{ product.title | escape }} - Image {{ forloop.index }}"
+                    loading="lazy"
+                  >
+                </button>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="swiper-button-prev maison_commerce_pd_bundle__thumb-prev"></div>
+          <div class="swiper-button-next maison_commerce_pd_bundle__thumb-next"></div>
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Product Info -->
+    <div class="maison_commerce_pd_bundle__info">
+      {% if product_rating > 0 %}
+        <div class="maison_commerce_pd_bundle__rating">
+          <div class="maison_commerce_pd_bundle__stars">
+            {% assign full_stars = product_rating | floor %}
+            {% assign has_half_star = product_rating | modulo: 1 | times: 1 %}
+            {% assign next_star_index = full_stars | plus: 1 %}
+            {% for i in (1..5) %}
+              {% if i <= full_stars %}
+                <svg class="maison_commerce_pd_bundle__star" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#FEC84B"/>
+                </svg>
+              {% else %}
+                {% assign is_half_star = false %}
+                {% if i == next_star_index %}
+                  {% if has_half_star >= 0.5 %}
+                    {% assign is_half_star = true %}
+                  {% endif %}
+                {% endif %}
+                {% if is_half_star %}
+                  <svg class="maison_commerce_pd_bundle__star" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#FEC84B" opacity="0.5"/>
+                  </svg>
+                {% else %}
+                  <svg class="maison_commerce_pd_bundle__star" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#FEC84B" opacity="0.2"/>
+                  </svg>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+          <p class="maison_commerce_pd_bundle__rating-text">
+            {{ product_rating }}/5 Stars By {{ product_rating_count }} Happy Customers
+          </p>
+        </div>
+      {% endif %}
+
+      <h1 class="maison_commerce_pd_bundle__title">
+        {{ product.title }}
+      </h1>
+
+      {% if section.settings.features_text != blank %}
+        <p class="maison_commerce_pd_bundle__features">
+          {{ section.settings.features_text }}
+        </p>
+      {% endif %}
+
+      <div class="maison_commerce_pd_bundle__price">
+        {% if product.compare_at_price > product.price %}
+          <span class="maison_commerce_pd_bundle__compare-price">
+            {{ product.compare_at_price | money }}
+          </span>
+        {% endif %}
+        <span class="maison_commerce_pd_bundle__current-price">
+          {{ product.price | money }}
+        </span>
+        {% if product_has_bogo_tag %}
+          <span class="maison_commerce_pd_bundle__price-badge">
+            {{ section.settings.price_badge_text }}
+          </span>
+        {% endif %}
+      </div>
+
+      <!-- Bundle Section Placeholder (for app integration) -->
+      <div class="maison_commerce_pd_bundle__bundle-placeholder">
+        <p class="maison_commerce_pd_bundle__bundle-note">
+          SELECT YOUR COLORS AND SIZES:
+        </p>
+        <div id="maison-bundle-app-container">
+          <!-- Variant picker app will be injected here -->
+        </div>
+      </div>
+
+      <!-- Protection Block -->
+      {% if section.settings.protection_title != blank %}
+        <div class="maison_commerce_pd_bundle__protection">
+          {% if section.settings.protection_icon %}
+            <img 
+              src="{{ section.settings.protection_icon | image_url: width: 56 }}" 
+              alt=""
+              class="maison_commerce_pd_bundle__protection-icon"
+            >
+          {% endif %}
+          <div class="maison_commerce_pd_bundle__protection-content">
+            <p class="maison_commerce_pd_bundle__protection-title">
+              {{ section.settings.protection_title }}
+            </p>
+            <p class="maison_commerce_pd_bundle__protection-heading">
+              {{ section.settings.protection_heading }}
+            </p>
+            <div class="maison_commerce_pd_bundle__protection-description">
+              {{ section.settings.protection_description }}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      <!-- Reviews Slider -->
+      {% assign review_blocks = section.blocks | where: 'type', 'review' %}
+      {% if review_blocks.size > 0 %}
+        <div class="swiper maison_commerce_pd_bundle__reviews">
+          <div class="swiper-wrapper">
+            {% for block in review_blocks %}
+              <div class="swiper-slide maison_commerce_pd_bundle__review-slide" {{ block.shopify_attributes }}>
+                <div class="maison_commerce_pd_bundle__review">
+                  {% if block.settings.reviewer_avatar %}
+                    <img 
+                      src="{{ block.settings.reviewer_avatar | image_url: width: 96 }}" 
+                      alt="{{ block.settings.reviewer_name | escape }}"
+                      class="maison_commerce_pd_bundle__review-avatar"
+                    >
+                  {% endif %}
+                  <div class="maison_commerce_pd_bundle__review-content">
+                    <div class="maison_commerce_pd_bundle__review-header">
+                      <div class="maison_commerce_pd_bundle__review-stars">
+                        {% assign review_rating = block.settings.rating | times: 1 %}
+                        {% assign review_full_stars = review_rating | floor %}
+                        {% for i in (1..5) %}
+                          {% if i <= review_full_stars %}
+                            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#12B76A"/>
+                            </svg>
+                          {% else %}
+                            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#12B76A" opacity="0.3"/>
+                            </svg>
+                          {% endif %}
+                        {% endfor %}
+                      </div>
+                      <p class="maison_commerce_pd_bundle__review-rating-text">
+                        {{ block.settings.rating_text }}
+                      </p>
+                    </div>
+                    <div class="maison_commerce_pd_bundle__review-text">
+                      {{ block.settings.review_text }}
+                    </div>
+                    <div class="maison_commerce_pd_bundle__review-footer">
+                      <p class="maison_commerce_pd_bundle__review-name">
+                        {{ block.settings.reviewer_name }}
+                      </p>
+                      {% if block.settings.source != blank %}
+                        <div class="maison_commerce_pd_bundle__review-source">
+                          <span>{{ block.settings.source }}</span>
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="swiper-pagination maison_commerce_pd_bundle__reviews-pagination"></div>
+        </div>
+      {% endif %}
+
+      <!-- FAQs Accordion -->
+      {% assign faq_blocks = section.blocks | where: 'type', 'faq' %}
+      {% if faq_blocks.size > 0 %}
+        <div class="maison_commerce_pd_bundle__faqs">
+          {% for block in faq_blocks %}
+            <div class="maison_commerce_pd_bundle__faq" {{ block.shopify_attributes }}>
+              <button 
+                type="button"
+                class="maison_commerce_pd_bundle__faq-button"
+                @click="toggleFaq({{ forloop.index0 }})"
+                :aria-expanded="openFaq === {{ forloop.index0 }}"
+              >
+                <span class="maison_commerce_pd_bundle__faq-question">
+                  {{ block.settings.question }}
+                </span>
+                <span class="maison_commerce_pd_bundle__faq-icon" :class="{ 'maison_commerce_pd_bundle__faq-icon--open': openFaq === {{ forloop.index0 }} }">
+                  +
+                </span>
+              </button>
+              <div 
+                class="maison_commerce_pd_bundle__faq-answer"
+                x-show="openFaq === {{ forloop.index0 }}"
+                x-transition
+              >
+                {{ block.settings.answer }}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <!-- Customer Images Slider -->
+      {% assign image_blocks = section.blocks | where: 'type', 'customer_image' %}
+      {% if image_blocks.size > 0 %}
+        <div class="maison_commerce_pd_bundle__customer-images">
+          <div class="maison_commerce_pd_bundle__customer-images-header">
+            <h2 class="maison_commerce_pd_bundle__customer-images-heading">
+              {{ section.settings.loved_by_heading }}
+            </h2>
+            <div class="maison_commerce_pd_bundle__customer-images-nav">
+              <button class="maison_commerce_pd_bundle__customer-images-prev" type="button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 18L9 12L15 6" stroke="#151515" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <button class="maison_commerce_pd_bundle__customer-images-next" type="button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 18L15 12L9 6" stroke="#151515" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="swiper maison_commerce_pd_bundle__customer-images-swiper">
+            <div class="swiper-wrapper">
+              {% for block in image_blocks %}
+                {% if block.settings.image %}
+                  <div class="swiper-slide maison_commerce_pd_bundle__customer-image-slide" {{ block.shopify_attributes }}>
+                    <img 
+                      src="{{ block.settings.image | image_url: width: 400 }}" 
+                      alt="Customer image {{ forloop.index }}"
+                      loading="lazy"
+                      class="maison_commerce_pd_bundle__customer-image"
+                    >
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .maison_commerce_pd_bundle {
+    background-color: {{ section.settings.section_bg_color }};
+    border-top: 1px solid {{ section.settings.badge_border_color }};
+    border-bottom: 1px solid {{ section.settings.badge_border_color }};
+    padding: 40px 80px;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle {
+      padding: 20px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle__container {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  /* Gallery */
+  .maison_commerce_pd_bundle__gallery {
+    width: 600px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle__gallery {
+      width: 100%;
+      position: static;
+    }
+  }
+
+  .maison_commerce_pd_bundle__main-image {
+    width: 100%;
+    height: 600px;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle__main-image {
+      height: auto;
+      aspect-ratio: 1;
+    }
+  }
+
+  .maison_commerce_pd_bundle__main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .maison_commerce_pd_bundle__gallery-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: {{ section.settings.badge_bg_color }};
+    border: 1px solid {{ section.settings.badge_border_color }};
+    border-radius: 16px;
+    padding: 8px;
+    max-width: 180px;
+  }
+
+  .maison_commerce_pd_bundle__gallery-badge-text {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #151515;
+    margin: 0 0 4px 0;
+  }
+
+  .maison_commerce_pd_bundle__gallery-badge-subtext {
+    font-size: 10px;
+    line-height: 1.5;
+    color: rgba(21, 21, 21, 0.75);
+    margin: 0;
+  }
+
+  /* Thumbnails */
+  .maison_commerce_pd_bundle__thumbnails {
+    position: relative;
+  }
+
+  .maison_commerce_pd_bundle__thumbnail-slide {
+    width: auto;
+  }
+
+  .maison_commerce_pd_bundle__thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    border: 2px solid transparent;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+  }
+
+  .maison_commerce_pd_bundle__thumbnail--active {
+    border-color: #151515;
+  }
+
+  .maison_commerce_pd_bundle__thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .maison_commerce_pd_bundle__thumb-prev,
+  .maison_commerce_pd_bundle__thumb-next {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 999px;
+    margin-top: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .maison_commerce_pd_bundle__thumb-prev {
+    left: -20px;
+  }
+
+  .maison_commerce_pd_bundle__thumb-next {
+    right: -20px;
+  }
+
+  /* Product Info */
+  .maison_commerce_pd_bundle__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle__info {
+      gap: 20px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__rating {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    height: 20px;
+  }
+
+  .maison_commerce_pd_bundle__stars {
+    display: flex;
+    gap: 0;
+  }
+
+  .maison_commerce_pd_bundle__star {
+    width: 16px;
+    height: 16px;
+  }
+
+  .maison_commerce_pd_bundle__rating-text {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #151515;
+    margin: 0;
+  }
+
+  .maison_commerce_pd_bundle__title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.3;
+    color: #151515;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle__title {
+      font-size: 20px;
+      line-height: 1.4;
+    }
+  }
+
+  .maison_commerce_pd_bundle__features {
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(21, 21, 21, 0.75);
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle__features {
+      font-size: 12px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__price {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .maison_commerce_pd_bundle__compare-price {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #151515;
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle__compare-price {
+      font-size: 14px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__current-price {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.4;
+    color: #151515;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle__current-price {
+      font-size: 20px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__price-badge {
+    background-color: {{ section.settings.price_badge_bg_color }};
+    color: {{ section.settings.price_badge_text_color }};
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 4px 12px;
+    border-radius: 8px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Bundle Placeholder */
+  .maison_commerce_pd_bundle__bundle-placeholder {
+    background: white;
+    border: 1px solid {{ section.settings.badge_border_color }};
+    border-radius: 16px;
+    padding: 20px;
+  }
+
+  .maison_commerce_pd_bundle__bundle-note {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #151515;
+    opacity: 0.5;
+    margin: 0 0 12px 0;
+  }
+
+  /* Protection Block */
+  .maison_commerce_pd_bundle__protection {
+    background-color: {{ section.settings.protection_bg_color }};
+    border: 1px solid {{ section.settings.protection_border_color }};
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .maison_commerce_pd_bundle__protection-icon {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle__protection-icon {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__protection-content {
+    flex: 1;
+  }
+
+  .maison_commerce_pd_bundle__protection-title {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #C4858E;
+    margin: 0 0 4px 0;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle__protection-title {
+      font-size: 10px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__protection-heading {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #151515;
+    margin: 0 0 4px 0;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle__protection-heading {
+      font-size: 12px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__protection-description {
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(21, 21, 21, 0.75);
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle__protection-description {
+      font-size: 10px;
+    }
+  }
+
+  /* Reviews */
+  .maison_commerce_pd_bundle__reviews {
+    position: relative;
+  }
+
+  .maison_commerce_pd_bundle__review {
+    background: white;
+    border: 1px solid {{ section.settings.badge_border_color }};
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+  }
+
+  .maison_commerce_pd_bundle__review-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 999px;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle__review-avatar {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__review-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .maison_commerce_pd_bundle__review-header {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .maison_commerce_pd_bundle__review-stars {
+    display: flex;
+    gap: 2px;
+  }
+
+  .maison_commerce_pd_bundle__review-rating-text {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #151515;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle__review-rating-text {
+      font-size: 12px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__review-text {
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(21, 21, 21, 0.75);
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle__review-text {
+      font-size: 10px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__review-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 4px;
+    border-top: 1px solid #D0D5DD;
+  }
+
+  .maison_commerce_pd_bundle__review-name {
+    font-style: italic;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #151515;
+    opacity: 0.5;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle__review-name {
+      font-size: 10px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__review-source {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    font-weight: 500;
+    font-size: 12px;
+    color: #151515;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle__review-source {
+      font-size: 10px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__reviews-pagination {
+    position: static;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .maison_commerce_pd_bundle__reviews-pagination .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: #151515;
+    opacity: 0.2;
+    border-radius: 999px;
+  }
+
+  .maison_commerce_pd_bundle__reviews-pagination .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+
+  /* FAQs */
+  .maison_commerce_pd_bundle__faqs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .maison_commerce_pd_bundle__faq {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .maison_commerce_pd_bundle__faq:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .maison_commerce_pd_bundle__faq-button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 12px;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle__faq-button {
+      padding: 12px 0;
+    }
+  }
+
+  .maison_commerce_pd_bundle__faq-question {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #151515;
+    text-align: left;
+    flex: 1;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle__faq-question {
+      font-size: 12px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__faq-icon {
+    font-size: 24px;
+    font-weight: bold;
+    color: #151515;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .maison_commerce_pd_bundle__faq-icon--open {
+    transform: rotate(45deg);
+  }
+
+  .maison_commerce_pd_bundle__faq-answer {
+    padding-bottom: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(21, 21, 21, 0.75);
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle__faq-answer {
+      font-size: 12px;
+      padding-bottom: 12px;
+    }
+  }
+
+  /* Customer Images */
+  .maison_commerce_pd_bundle__customer-images {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .maison_commerce_pd_bundle__customer-images-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .maison_commerce_pd_bundle__customer-images-heading {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #151515;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle__customer-images-heading {
+      font-size: 18px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__customer-images-nav {
+    display: flex;
+    gap: 8px;
+  }
+
+  .maison_commerce_pd_bundle__customer-images-prev,
+  .maison_commerce_pd_bundle__customer-images-next {
+    width: 32px;
+    height: 32px;
+    background: white;
+    border: 1px solid {{ section.settings.badge_border_color }};
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle__customer-images-prev,
+    .maison_commerce_pd_bundle__customer-images-next {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__customer-images-swiper {
+    overflow: hidden;
+  }
+
+  .maison_commerce_pd_bundle__customer-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_pd_bundle__customer-image {
+      height: 160px;
+    }
+  }
+</style>
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  function maison_commerce_pd_bundle_init() {
+    return {
+      openFaq: null,
+      
+      toggleFaq(index) {
+        this.openFaq = this.openFaq === index ? null : index;
+      },
+      
+      changeMainImage(imageUrl, index) {
+        const mainImg = document.getElementById('maison-pd-main-image');
+        if (mainImg) {
+          mainImg.src = imageUrl;
+        }
+        
+        // Update active thumbnail
+        document.querySelectorAll('.maison_commerce_pd_bundle__thumbnail').forEach((thumb, i) => {
+          if (i === index) {
+            thumb.classList.add('maison_commerce_pd_bundle__thumbnail--active');
+          } else {
+            thumb.classList.remove('maison_commerce_pd_bundle__thumbnail--active');
+          }
+        });
+      }
+    };
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Thumbnail Swiper
+    const thumbnailSwiper = document.querySelector('.maison_commerce_pd_bundle__thumbnails');
+    if (thumbnailSwiper) {
+      new Swiper('.maison_commerce_pd_bundle__thumbnails', {
+        slidesPerView: 'auto',
+        spaceBetween: 8,
+        navigation: {
+          nextEl: '.maison_commerce_pd_bundle__thumb-next',
+          prevEl: '.maison_commerce_pd_bundle__thumb-prev',
+        },
+      });
+    }
+
+    // Reviews Swiper
+    const reviewsSwiper = document.querySelector('.maison_commerce_pd_bundle__reviews');
+    if (reviewsSwiper) {
+      new Swiper('.maison_commerce_pd_bundle__reviews', {
+        slidesPerView: 1,
+        spaceBetween: 12,
+        pagination: {
+          el: '.maison_commerce_pd_bundle__reviews-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: 2,
+          },
+        },
+      });
+    }
+
+    // Customer Images Swiper
+    const customerImagesSwiper = document.querySelector('.maison_commerce_pd_bundle__customer-images-swiper');
+    if (customerImagesSwiper) {
+      const swiper = new Swiper('.maison_commerce_pd_bundle__customer-images-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 12,
+        breakpoints: {
+          768: {
+            slidesPerView: 3,
+          },
+        },
+      });
+
+      // Custom navigation
+      const prevBtn = document.querySelector('.maison_commerce_pd_bundle__customer-images-prev');
+      const nextBtn = document.querySelector('.maison_commerce_pd_bundle__customer-images-next');
+      
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => swiper.slidePrev());
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => swiper.slideNext());
+      }
+    }
+  });
+</script>
+
