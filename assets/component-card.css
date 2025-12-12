@@ -505,12 +505,12 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border: 1px solid #e8e8e8;
+  border: 2px solid transparent;
   display: block;
   cursor: pointer;
   transition: border-color 0.3s ease;
 }
 
 .maison-card-variant-colors .swatch-circle:hover {
-  border-color: #000;
+  border-color: #151515;
 }
