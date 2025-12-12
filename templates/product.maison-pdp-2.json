@@ -29,16 +29,17 @@
         "protection_title": "Your order is protected by",
         "protection_heading": "90 Day Fit Exchange & Money Back Guarantee",
         "protection_description": "<p>If you need to exchange for a different size, or don't like our thong for any reason, we'll send you a new size for free or a full refund.</p>",
+        "protection_icon": "shopify://shop_images/37d7c4144f8bcb292af7a1579c96ba33a6fb1303.png",
         "loved_by_heading": "Loved by By 5,800+ Happy Customers",
         "metafield_rating_key": "custom.rating",
         "metafield_rating_count_key": "custom.rating_count",
-        "section_bg_color": "#FCF5F4",
-        "badge_bg_color": "#F7E6E2",
-        "badge_border_color": "#F0D3CB",
-        "price_badge_bg_color": "#12B76A",
-        "price_badge_text_color": "#F6FEF9",
-        "protection_bg_color": "#F7E6E2",
-        "protection_border_color": "#F0D3CB"
+        "section_bg_color": "#fcf5f4",
+        "badge_bg_color": "#f7e6e2",
+        "badge_border_color": "#f0d3cb",
+        "price_badge_bg_color": "#12b76a",
+        "price_badge_text_color": "#f6fef9",
+        "protection_bg_color": "#f7e6e2",
+        "protection_border_color": "#f0d3cb"
       }
     },
     "main": {
