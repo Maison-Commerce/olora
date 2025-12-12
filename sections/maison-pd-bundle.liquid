@@ -2703,47 +2703,5 @@
         nextBtn.addEventListener('click', () => swiper.slideNext());
       }
     }
-
-    // Sticky Add to Cart form handler
-    const stickyAtcForm = document.querySelector('.maison_commerce_pd_bundle__sticky-atc-form');
-    if (stickyAtcForm) {
-      stickyAtcForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = new FormData(this);
-        const variantId = formData.get('id');
-        
-        if (!variantId) {
-          console.error('No variant ID found');
-          return;
-        }
-
-        // Add to cart using Shopify Cart API
-        fetch('/cart/add.js', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            id: variantId,
-            quantity: 1
-          })
-        })
-        .then(response => response.json())
-        .then(data => {
-          // Trigger cart drawer update if available
-          if (typeof window.theme !== 'undefined' && window.theme.cartDrawer) {
-            window.theme.cartDrawer.open();
-          } else {
-            // Fallback: redirect to cart page
-            window.location.href = '/cart';
-          }
-        })
-        .catch(error => {
-          console.error('Error adding to cart:', error);
-          alert('There was an error adding the product to your cart. Please try again.');
-        });
-      });
-    }
   });
 </script>
