@@ -120,7 +120,18 @@
               </a>
             </h3>
           </div>
-          {% if card_product.tags contains 'buy-1-get-free' %}
+          {%- liquid 
+            assign has_bogo_tag = false
+            for tag in card_product.tags
+              assign downcase_tag = tag | downcase | strip
+              if downcase_tag == 'buy-1-get-free'
+                assign has_bogo_tag = true
+                break
+              endif
+            endfor
+          -%}
+
+          {% if has_bogo_tag %}
             <div class="maison-card-pd-offer-tag">
               BUY 1, GET 1 FREE
             </div>
