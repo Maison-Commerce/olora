@@ -445,9 +445,6 @@
     padding-right: 0px;
   }
 
-  padding-left: {{ section.settings.padding_left_desktop }}px;
-  padding-right: {{ section.settings.padding_right_desktop }}px;
-
   @media (max-width: 768px) {
     .maison_commerce_collection_banner {
       background-image: none !important;
@@ -550,6 +547,8 @@
       width: 100%;
       align-items: center;
       gap: 20px;
+      padding-left: {{ section.settings.padding_left_desktop }}px;
+      padding-right: {{ section.settings.padding_right_desktop }}px;
     }
   }
 
