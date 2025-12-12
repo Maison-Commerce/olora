@@ -120,6 +120,11 @@
               </a>
             </h3>
           </div>
+          {% if card_product.tags contains 'buy-1-get-free' %}
+            <div class="maison-card-pd-offer-tag">
+              
+            </div>
+          {% endif %}
           {%- if show_quick_add -%}
             <div class="quick-add no-js-hidden">
               {%- liquid
