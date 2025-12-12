@@ -248,7 +248,7 @@
       
       {% if product.images.size > 1 %}
         <div class="swiper maison_commerce_pd_bundle__thumbnails">
-          <div class="swiper-wrapper">
+          <div class="swiper-wrapper maison-pd-gallery-slider">
             {% for image in product.images %}
               <div class="swiper-slide maison_commerce_pd_bundle__thumbnail-slide">
                 <button 
@@ -514,6 +514,10 @@
     .maison_commerce_pd_bundle {
       padding: 20px;
     }
+  }
+
+  .maison-pd-gallery-slider{
+    display: flex;
   }
 
   .maison_commerce_pd_bundle__container {
