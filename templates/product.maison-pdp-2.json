@@ -43,22 +43,18 @@
             "source": "Trustpilot"
           }
         },
-        "review_PUVwnb": {
-          "type": "review",
+        "faq_nmKPCF": {
+          "type": "faq",
           "settings": {
-            "reviewer_name": "Rachel D.",
-            "review_text": "<p>These are hands down the best underwear to wear under any leggings. I no longer feel exposed! Super comfy and don't show any seam lines. Off to buy some more!</p>",
-            "rating": 4.6,
-            "rating_text": "Rated Excellent 4.6/5 stars",
-            "reviewer_avatar": "shopify://shop_images/652e1ff39043c8367f8a55fe96e5761c83a5d3c3.png",
-            "source": "Trustpilot"
+            "question": "Product Details",
+            "answer": ""
           }
         }
       },
       "block_order": [
         "review_hzCjd9",
         "review_8JctkQ",
-        "review_PUVwnb"
+        "faq_nmKPCF"
       ],
       "name": "Product Bundle",
       "settings": {
