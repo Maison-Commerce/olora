@@ -84,6 +84,24 @@
             "question": "How Long Will They Last?",
             "answer": ""
           }
+        },
+        "customer_image_tk3f9M": {
+          "type": "customer_image",
+          "settings": {
+            "image": "shopify://shop_images/08c9db8ab037cc86ea267c4d38d6e4433b1084cd.png"
+          }
+        },
+        "customer_image_Wc68MK": {
+          "type": "customer_image",
+          "settings": {
+            "image": "shopify://shop_images/ee84cc20a2a52567740f6e03f49d25d3f1923fa0.png"
+          }
+        },
+        "customer_image_6LhQpK": {
+          "type": "customer_image",
+          "settings": {
+            "image": "shopify://shop_images/2ab7c3e48bc72de838617773dee6918a8b937e78.png"
+          }
         }
       },
       "block_order": [
@@ -94,7 +112,10 @@
         "faq_kzaqf4",
         "faq_A83QpP",
         "faq_pQtngB",
-        "faq_9ramnm"
+        "faq_9ramnm",
+        "customer_image_tk3f9M",
+        "customer_image_Wc68MK",
+        "customer_image_6LhQpK"
       ],
       "name": "Product Bundle",
       "settings": {
