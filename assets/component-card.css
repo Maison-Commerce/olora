@@ -488,3 +488,8 @@
   font-weight: 600;
   line-height: 150%; /* 24px */
 }
+
+.maison-pd-card .card__information .price .price__sale{
+  display: flex;
+  align-items: center;
+}
