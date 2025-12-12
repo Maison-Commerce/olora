@@ -15726,4 +15726,6 @@ div#gI0R9VRYf5
   font-weight: 500;
   line-height: 18px;
   width: fit-content;
+  height: fit-content;
+  grid-row-start: 1;
 }
