@@ -494,3 +494,23 @@
   align-items: center;
   gap: 8px;
 }
+
+.maison-card-variant-colors {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.swatch-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #e8e8e8;
+  display: block;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.swatch-circle:hover {
+  border-color: #000;
+}
