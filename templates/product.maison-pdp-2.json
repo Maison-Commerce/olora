@@ -102,6 +102,12 @@
           "settings": {
             "image": "shopify://shop_images/2ab7c3e48bc72de838617773dee6918a8b937e78.png"
           }
+        },
+        "customer_image_caRVfF": {
+          "type": "customer_image",
+          "settings": {
+            "image": "shopify://shop_images/08c9db8ab037cc86ea267c4d38d6e4433b1084cd.png"
+          }
         }
       },
       "block_order": [
@@ -115,7 +121,8 @@
         "faq_9ramnm",
         "customer_image_tk3f9M",
         "customer_image_Wc68MK",
-        "customer_image_6LhQpK"
+        "customer_image_6LhQpK",
+        "customer_image_caRVfF"
       ],
       "name": "Product Bundle",
       "settings": {
