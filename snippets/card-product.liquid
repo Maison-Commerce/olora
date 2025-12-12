@@ -277,7 +277,43 @@
             {%- endif -%}
           </div>
           <div class="maison-card-variant-colors">
+            {%- liquid
+              assign swatch_mapping = settings.color_swatch_mapping | newline_to_br | split: '<br />'
+              
+              assign color_option_index = -1
+              for option in product.options_with_values
+                assign downcased_option = option.name | downcase
+                if downcased_option == 'color' or downcased_option == 'колір'
+                  assign color_option_index = forloop.index0
+                  assign color_values = option.values
+                endif
+              endfor
+            -%}
 
+            {%- if color_option_index != -1 -%}
+              {%- for color_name in color_values -%}
+                {%- liquid
+                  assign swatch_url = ""
+                  for line in swatch_mapping
+                    assign pair = line | split: ':'
+                    assign name_in_settings = pair[0] | strip
+                    if name_in_settings == color_name
+                      assign swatch_url = pair[1] | strip
+                    endif
+                  endfor
+
+                  assign variant_for_link = product.variants | where: "option1", color_name | first
+                -%}
+
+                {%- if swatch_url != "" -%}
+                  <a href="{{ product.url }}?variant={{ variant_for_link.id }}" 
+                    class="swatch-circle" 
+                    style="background-image: url('{{ swatch_url }}'); background-size: cover;"
+                    title="{{ color_name }}">
+                  </a>
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endif -%}
           </div>
         </div>
         {%- if show_quick_add -%}
