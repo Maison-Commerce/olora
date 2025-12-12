@@ -27,6 +27,19 @@
             "product": "{{product}}"
           }
         },
+        "buy_buttons_AeNAVc": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "skip_cart": false,
+            "uppercase_text": true,
+            "display_price": false,
+            "enable_custom_color": false,
+            "custom_color": "#dd1d1d",
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
+        },
         "review_hzCjd9": {
           "type": "review",
           "settings": {
@@ -118,6 +131,7 @@
       },
       "block_order": [
         "kaching_bundles_app_block_tHVXgm",
+        "buy_buttons_AeNAVc",
         "review_hzCjd9",
         "review_8JctkQ",
         "faq_nmKPCF",
