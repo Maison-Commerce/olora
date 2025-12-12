@@ -122,7 +122,14 @@
               </h3>
             </div>
             <div class="maison-card-pd-specifications">
-              <p></p>
+              <p class="maison-card-pd-specifications-text">
+                {%- for spec in card_product.metafields.custom.product_specifications -%}
+                  {{ spec.value }}
+                  {% unless forloop.last %}
+                    •
+                  {% endunless %}
+                {%- endfor -%}
+              </p>
             </div>
           </div>
           <div class="card__badge {{ settings.product_card_badge_position }}">
