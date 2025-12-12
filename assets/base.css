@@ -15700,8 +15700,8 @@ div#gI0R9VRYf5
 }
 
 .quick-add .quick-add__submit::after, .quick-add .quick-add__submit::before{
-  box-shadow: none;
-  background-color: transprent;
+  box-shadow: none!important;
+  background-color: transparent!important;
 }
 
 .maison-add-to-cart-button{
