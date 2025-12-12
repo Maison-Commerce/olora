@@ -49,12 +49,52 @@
             "question": "Product Details",
             "answer": ""
           }
+        },
+        "faq_bCF9rg": {
+          "type": "faq",
+          "settings": {
+            "question": "Free Returns",
+            "answer": ""
+          }
+        },
+        "faq_kzaqf4": {
+          "type": "faq",
+          "settings": {
+            "question": "Shipping & Delivery",
+            "answer": ""
+          }
+        },
+        "faq_A83QpP": {
+          "type": "faq",
+          "settings": {
+            "question": "How Do I Get The Perfect Size So They Don’t Ride/Bunch Up?",
+            "answer": ""
+          }
+        },
+        "faq_pQtngB": {
+          "type": "faq",
+          "settings": {
+            "question": "How Does Your Camel Toe Proof Technology Actually Work?",
+            "answer": ""
+          }
+        },
+        "faq_9ramnm": {
+          "type": "faq",
+          "settings": {
+            "question": "How Long Will They Last?",
+            "answer": ""
+          }
         }
       },
       "block_order": [
         "review_hzCjd9",
         "review_8JctkQ",
-        "faq_nmKPCF"
+        "faq_nmKPCF",
+        "faq_bCF9rg",
+        "faq_kzaqf4",
+        "faq_A83QpP",
+        "faq_pQtngB",
+        "faq_9ramnm"
       ],
       "name": "Product Bundle",
       "settings": {
