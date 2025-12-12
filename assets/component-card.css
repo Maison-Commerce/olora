@@ -521,3 +521,13 @@
 .maison-card-variant-colors .swatch-circle:hover {
   border-color: #151515;
 }
+
+@media(max-width: 750px){
+  .maison-pd-card .card__information a{
+    font-size: 12px;
+  }
+
+  .maison-card-pd-specifications-text{
+    font-size: 10px;
+  }
+}
