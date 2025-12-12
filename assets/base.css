@@ -15712,3 +15712,9 @@ div#gI0R9VRYf5
 .maison-add-to-cart-button{
   display: flex;
 }
+
+.maison-card-pd-offer-tag{
+  border-radius: var(--8, 8px);
+  border: 1px solid var(--Color-Brand-1-1800, #F0D3CB);
+  background: var(--Color-Brand-1-800, #F7E6E2);
+}
