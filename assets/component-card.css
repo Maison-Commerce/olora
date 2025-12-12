@@ -538,4 +538,9 @@
   .maison-pd-card .card__information .price .price__container .price__regular .price-item--regular, .maison-pd-card .card__information .price .price__container .price-item--last{
     font-size: 12px;
   }
+
+  .maison-pd-card .card__information{
+    gap: 12px;
+    padding: 0!important;
+  }
 }
