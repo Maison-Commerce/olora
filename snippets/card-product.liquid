@@ -278,7 +278,7 @@
           </div>
           <div class="maison-card-variant-colors">
             {%- liquid
-              assign swatch_mapping = settings.color_swatch_mapping | newline_to_br | split: '<br />'
+              assign swatch_mapping = settings.color_swatch_mapping | newline_to_br | split: ','
               
               assign color_option_index = -1
               for option in card_product.options_with_values
