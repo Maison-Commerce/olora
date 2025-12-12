@@ -437,3 +437,8 @@
   text-decoration: none;
   text-align: left;
 }
+
+.maison-card-pd-specifications-text{
+  text-align: left;
+  margin: 0;
+}
