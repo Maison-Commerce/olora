@@ -399,6 +399,9 @@
             {%- case block.type -%}
               {%- when '@app' -%}
                 {% render block %}
+
+              {%- when 'buy_buttons' -%}
+                {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true, main_product: true -%}
             {%- endcase -%}
           {%- endfor -%}
         </div>
@@ -1355,7 +1358,7 @@
   }
 
   .kaching-bundles .kaching-bundles__bar--selected .kaching-bundles__bar-container{
-    box-shadow: none;
+    box-shadow: none!important;
   }
 </style>
 
