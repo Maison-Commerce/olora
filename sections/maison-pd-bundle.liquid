@@ -459,6 +459,18 @@
           "label": "Image"
         }
       ]
+    },
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "feature_text",
+          "label": "Feature Text",
+          "default": "Feature"
+        }
+      ]
     }
   ],
   "presets": [
@@ -613,6 +625,21 @@
           <h1 class="maison_commerce_pd_bundle__title">
             {{ product.title }}
           </h1>
+
+          {% comment %} Feature Blocks {% endcomment %}
+          {% assign feature_blocks = section.blocks | where: 'type', 'feature' %}
+          {% if feature_blocks.size > 0 %}
+            <div class="maison_commerce_pd_bundle__features-grid">
+              {% for block in feature_blocks %}
+                <div class="maison_commerce_pd_bundle__feature-item" {{ block.shopify_attributes }}>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="maison_commerce_pd_bundle__feature-icon">
+                    <path d="M3 8L6 11L13 4" stroke="#BFA8A1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <p class="maison_commerce_pd_bundle__feature-text">{{ block.settings.feature_text }}</p>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
 
           {% if section.settings.features_text != blank %}
             <p class="maison_commerce_pd_bundle__features">
@@ -1394,6 +1421,63 @@
     .maison_commerce_pd_bundle__title {
       font-size: 20px;
       line-height: 1.4;
+    }
+  }
+
+  /* Features Grid */
+  .maison_commerce_pd_bundle__features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .maison_commerce_pd_bundle__feature-item {
+    background: white;
+    border: 1px solid #F0D3CB;
+    border-radius: 999px;
+    padding: 6px 12px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .maison_commerce_pd_bundle__feature-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .maison_commerce_pd_bundle__feature-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #151515;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__features-grid {
+      gap: 4px;
+    }
+
+    .maison_commerce_pd_bundle__feature-item {
+      padding: 6px 12px;
+      gap: 4px;
+    }
+
+    .maison_commerce_pd_bundle__feature-icon {
+      width: 12px;
+      height: 12px;
+    }
+
+    .maison_commerce_pd_bundle__feature-text {
+      font-size: 10px;
     }
   }
 
