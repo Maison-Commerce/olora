@@ -79,7 +79,7 @@
     "inputs_shadow_horizontal_offset": 0,
     "inputs_shadow_vertical_offset": 4,
     "inputs_shadow_blur": 5,
-    "color_swatch_mapping": "Beige| #F0D7B9,\nCoffee| #060607,\nBlack| #028291,\nMoss| #73362A",
+    "color_swatch_mapping": "Beige| #F0D7B9,\nCoffee| #060607,\nBlack| #028291,\nMoss| #73362A,\nSand| #C2B280,\nCaramel| #C19A6B,\nCocoa| #c7b3b3",
     "card_style": "card",
     "card_image_padding": 0,
     "card_text_alignment": "center",
