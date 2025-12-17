@@ -15730,3 +15730,9 @@ div#gI0R9VRYf5
   height: fit-content;
   grid-row-start: 1;
 }
+
+@media(max-width: 768px){
+  .maison-card-pd-offer-tag{
+    font-size: 10px;
+  }
+}
