@@ -92,6 +92,13 @@
     },
     {
       "type": "text",
+      "id": "manual_rating_text",
+      "label": "Manual Rating Text",
+      "default": "4.8/5 Stars By 5,841 Happy Customers",
+      "info": "Show if rating = 0"
+    },
+    {
+      "type": "text",
       "id": "metafield_rating_count_key",
       "label": "Rating Count Metafield Key",
       "default": "custom.rating_count",
@@ -634,7 +641,25 @@
                 {% endfor %}
               </div>
               <p class="maison_commerce_pd_bundle__rating-text">
+                {% for i in (1..5) %}
+                  <svg
+                    class="maison_commerce_pd_bundle__star"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#FEC84B"/>
+                  </svg>
+                {% endfor %}
                 {{ product_rating }}/5 Stars By {{ product_rating_count }} Happy Customers
+              </p>
+            </div>
+          {% else %}
+            <div class="maison_commerce_pd_bundle__rating">
+              <p class="maison_commerce_pd_bundle__rating-text">
+                {{ section.settings.manual_rating_text }}
               </p>
             </div>
           {% endif %}
