@@ -19,6 +19,10 @@
   {%- assign product_rating_count = '0' -%}
 {%- endif -%}
 
+<script>
+  console.log('rating', {{ product.metafields.custom.rating | json }})
+</script>
+
 {% schema %}
 {
   "name": "Product Bundle",
