@@ -15734,5 +15734,7 @@ div#gI0R9VRYf5
 @media(max-width: 768px){
   .maison-card-pd-offer-tag{
     font-size: 10px;
+    height: 20px;
+    padding: var(--4, 4px) var(--8, 8px);
   }
 }
