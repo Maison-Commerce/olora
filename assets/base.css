@@ -15741,3 +15741,7 @@ div#gI0R9VRYf5
   display: flex;
   justify-content: flex-end;
 }
+
+.kaching-bundles .kaching-bundles__bar--selected .kaching-bundles__bar-radio{
+  background: #D5BBB4;
+}
