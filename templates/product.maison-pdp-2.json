@@ -96,7 +96,7 @@
           "type": "faq",
           "settings": {
             "question": "Product Details",
-            "answer": "<ul><li>Fabric: 76/24% premium nylon/spandex</li><li>1.5\" mid rise</li><li>Camel toe proof technology</li><li>Wide gusset</li><li>Seamless (No VPL)</li><li>Breathable</li><li>Moisture wicking</li><li>Lays flat & conforms to the body</li><li>No tags</li></ul>"
+            "answer": "<ul><li>Fabric: 76/24% Premium Nylon/Spandex</li><li>3\" High Rise</li><li>Camel toe proof technology</li><li>Wide gusset</li><li>Seamless (No VPL)</li><li>Breathable</li><li>Moisture wicking</li><li>Lays flat & conforms to the body</li><li>No tags</li></ul>"
           }
         },
         "faq_bCF9rg": {
@@ -110,28 +110,28 @@
           "type": "faq",
           "settings": {
             "question": "Shipping & Delivery",
-            "answer": "<p>Due to the influx of orders from our ongoing sale, there will be a slight delay in order fulfillment. Rest assured, all orders will be shipped within 24-48 hours.<br/><br/>Depending on your geographic location, delivery typically takes 5-12 business days.<br/><br/>We also offer a premium international insured shipping option, which we highly recommend for prioritized fulfilment and faster delivery.</p>"
+            "answer": "<p>Due to the influx of orders from our ongoing sale, there will be a slight delay in order fulfillment. Rest assured, all orders will be shipped within 24-48 hours.</p><p>Depending on your geographic location, delivery typically takes 5-12 business days.</p><p>We also offer a premium international insured shipping option, which we highly recommend for prioritized fulfillment and faster delivery.</p>"
           }
         },
         "faq_A83QpP": {
+          "type": "faq",
+          "settings": {
+            "question": "How Does Your Camel Toe, Sweat Proof & Seamless Technology Work?",
+            "answer": "<p><strong>Camel Toe Proof Technology</strong><br/>Our thong contains a comfy, breathable, padded insert that’s perfectly fitted and stitched into the gusset, resulting in no movement whilst exercising, no camel toe and no sweaty crotch.<br/><br/><strong>Sweat Proof Technology</strong><br/>We've designed our thong with breathable, moisture-wicking fabric to keep you dry and comfortable all day long. The high-performance fabric actively pulls moisture away from your skin, allowing it to evaporate quickly. This prevents sweat from pooling or seeping through your clothing, keeping you fresh and dry.<br/><br/><strong>Seamless Technology</strong><br/>Our invisible stitching method creates a completely seamless look and our insert is specifically designed to be thinner in certain areas, which stops the material around the gusset from bunching up.</p>"
+          }
+        },
+        "faq_pQtngB": {
           "type": "faq",
           "settings": {
             "question": "How Do I Get The Perfect Size So They Don’t Ride/Bunch Up?",
             "answer": "<p>Underwear that’s too tight will ride up and underwear that’s too loose will bunch up. Luckily Olora has sizes from xs - xxxl and a size calculator to help you find the perfect size based on your dimensions so they stay in place throughout your entire workout.</p>"
           }
         },
-        "faq_pQtngB": {
-          "type": "faq",
-          "settings": {
-            "question": "How Are These Different From Regular Underwear?",
-            "answer": "<p>Unlike regular underwear, Olora combines moisture-wicking technology, a breathable insert, and a wide gusset to actively prevent irritation and bacteria buildup, making it the most hygienic choice.</p>"
-          }
-        },
         "faq_9ramnm": {
           "type": "faq",
           "settings": {
             "question": "How Long Will They Last?",
-            "answer": "<p>Provided the proper care is applied, our thongs will keep their quality for more than 1 year, however, for hygiene reasons (especially with regular use when exercising) we would recommend replacing your underwear draw every 6 months.<br/><br/>For more info on how to properly care for your Olora thongs, see our FAQ section at the bottom of this page.</p>"
+            "answer": "<p>Provided the proper care is applied, our thongs will keep their quality for up to 1 year, or even longer, however, for hygiene reasons (especially with regular use when exercising) we would recommend replacing your underwear draw at least every 6 months.<br/><br/>For more info on how to properly care for your Olora thongs, see our FAQ section at the bottom of this page.</p>"
           }
         },
         "customer_image_tk3f9M": {
