@@ -8527,9 +8527,6 @@ fieldset.product-form__input .form__label {
   margin-bottom: 1rem;
   font-size: 1.9rem;
 }
-.product-form__buttons--uppercase .product-form__submit {
-  text-transform: uppercase;
-}
 .shopify-payment-button__button {
   letter-spacing: 0.1rem;
   font-size: 1.9rem;
