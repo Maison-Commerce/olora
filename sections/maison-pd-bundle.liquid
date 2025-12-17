@@ -1143,8 +1143,7 @@
   {% assign sticky_atc_block = section.blocks | where: 'type', 'sticky_atc' | first %}
   {% if sticky_atc_block and sticky_atc_block.settings.show_sticky_atc %}
     <div class="maison_commerce_pd_bundle__sticky-atc" id="maison-sticky-atc">
-      <div class="maison_commerce_pd_bundle__sticky-atc-content">
-        {% if product.featured_image %}
+      {% if product.featured_image %}
           <img 
             src="{{ product.featured_image | image_url: width: 160 }}" 
             alt="{{ product.title | escape }}"
@@ -1152,6 +1151,7 @@
             loading="lazy"
           >
         {% endif %}
+      <div class="maison_commerce_pd_bundle__sticky-atc-content">
         <div class="maison_commerce_pd_bundle__sticky-atc-info">
           <p class="maison_commerce_pd_bundle__sticky-atc-title">{{ product.title }}</p>
           <div class="maison_commerce_pd_bundle__sticky-atc-price">
