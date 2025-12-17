@@ -20,7 +20,7 @@
 {%- endif -%}
 
 <script>
-  console.log('rating', {{ product.metafields.custom.rating | json }})
+  console.log('rating', {{ product.metafields.custom.rating.value | json }})
 </script>
 
 {% schema %}
