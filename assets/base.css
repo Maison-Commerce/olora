@@ -15739,3 +15739,8 @@ div#gI0R9VRYf5
     line-height: 10px;
   }
 }
+
+.maison-quick-add-form-wrapper{
+  display: flex;
+  justify-content: flex-end;
+}
