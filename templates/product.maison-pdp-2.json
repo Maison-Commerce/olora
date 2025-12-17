@@ -96,42 +96,42 @@
           "type": "faq",
           "settings": {
             "question": "Product Details",
-            "answer": ""
+            "answer": "<ul><li>Fabric: 76/24% premium nylon/spandex</li><li>1.5\" mid rise</li><li>Camel toe proof technology</li><li>Wide gusset</li><li>Seamless (No VPL)</li><li>Breathable</li><li>Moisture wicking</li><li>Lays flat & conforms to the body</li><li>No tags</li></ul>"
           }
         },
         "faq_bCF9rg": {
           "type": "faq",
           "settings": {
             "question": "Free Returns",
-            "answer": ""
+            "answer": "<p>To keep you 100% protected we offer a 90 day free fit exchange and money-back guarantee. So if you need a different size, we’ll send you an exchange completely free, and if you aren’t fully satisfied with your order for whatever reason within 90 days, we’ll offer you a full refund. To qualify for the 90-day money-back guarantee, you’ll just have to fill out a quick feedback form, which helps us improve our product!</p>"
           }
         },
         "faq_kzaqf4": {
           "type": "faq",
           "settings": {
             "question": "Shipping & Delivery",
-            "answer": ""
+            "answer": "<p>Due to the influx of orders from our ongoing sale, there will be a slight delay in order fulfillment. Rest assured, all orders will be shipped within 24-48 hours.<br/><br/>Depending on your geographic location, delivery typically takes 5-12 business days.<br/><br/>We also offer a premium international insured shipping option, which we highly recommend for prioritized fulfilment and faster delivery.</p>"
           }
         },
         "faq_A83QpP": {
           "type": "faq",
           "settings": {
             "question": "How Do I Get The Perfect Size So They Don’t Ride/Bunch Up?",
-            "answer": ""
+            "answer": "<p>Underwear that’s too tight will ride up and underwear that’s too loose will bunch up. Luckily Olora has sizes from xs - xxxl and a size calculator to help you find the perfect size based on your dimensions so they stay in place throughout your entire workout.</p>"
           }
         },
         "faq_pQtngB": {
           "type": "faq",
           "settings": {
-            "question": "How Does Your Camel Toe Proof Technology Actually Work?",
-            "answer": ""
+            "question": "How Are These Different From Regular Underwear?",
+            "answer": "<p>Unlike regular underwear, Olora combines moisture-wicking technology, a breathable insert, and a wide gusset to actively prevent irritation and bacteria buildup, making it the most hygienic choice.</p>"
           }
         },
         "faq_9ramnm": {
           "type": "faq",
           "settings": {
             "question": "How Long Will They Last?",
-            "answer": ""
+            "answer": "<p>Provided the proper care is applied, our thongs will keep their quality for more than 1 year, however, for hygiene reasons (especially with regular use when exercising) we would recommend replacing your underwear draw every 6 months.<br/><br/>For more info on how to properly care for your Olora thongs, see our FAQ section at the bottom of this page.</p>"
           }
         },
         "customer_image_tk3f9M": {
@@ -192,6 +192,7 @@
         "protection_icon": "shopify://shop_images/Rectangle_177426.png",
         "loved_by_heading": "Loved by By 5,800+ Happy Customers",
         "metafield_rating_key": "custom.rating",
+        "manual_rating_text": "4.8/5 Stars By 5,841 Happy Customers",
         "metafield_rating_count_key": "custom.rating_count",
         "section_bg_color": "#fcf5f4",
         "badge_bg_color": "#f7e6e2",
