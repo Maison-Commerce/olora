@@ -1873,7 +1873,7 @@
     border-radius: 16px;
     padding: 12px 16px 12px 12px;
     box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
@@ -1881,6 +1881,13 @@
     max-width: 580px;
     min-width: 580px;
     width: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease, display 0.3s ease;
+  }
+
+  .maison_commerce_pd_bundle__sticky-atc--visible {
+    display: flex;
+    opacity: 1;
   }
 
   .maison_commerce_pd_bundle__sticky-atc-content {
@@ -2772,6 +2779,31 @@
       if (nextBtn) {
         nextBtn.addEventListener('click', () => swiper.slideNext());
       }
+    }
+
+    // Sticky Add to Cart visibility control
+    const stickyAtc = document.getElementById('maison-sticky-atc');
+    const bundlePlaceholder = document.querySelector('.maison_commerce_pd_bundle__bundle-placeholder');
+    
+    if (stickyAtc && bundlePlaceholder) {
+      // Use Intersection Observer to detect when bundle placeholder is fully scrolled past
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          // When the bundle placeholder is completely out of view (scrolled past)
+          // entry.boundingClientRect.bottom < 0 means the element is above the viewport
+          if (entry.boundingClientRect.bottom < 0) {
+            stickyAtc.classList.add('maison_commerce_pd_bundle__sticky-atc--visible');
+          } else {
+            stickyAtc.classList.remove('maison_commerce_pd_bundle__sticky-atc--visible');
+          }
+        });
+      }, {
+        root: null, // viewport
+        rootMargin: '0px',
+        threshold: 0 // Trigger when any part of the element leaves the viewport
+      });
+
+      observer.observe(bundlePlaceholder);
     }
 
     // Sticky Add to Cart form handler
