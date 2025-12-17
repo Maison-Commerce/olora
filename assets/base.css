@@ -15742,10 +15742,10 @@ div#gI0R9VRYf5
   justify-content: flex-end;
 }
 
-.kaching-bundles .kaching-bundles__bar--selected .kaching-bundles__bar-radio{
-  background: #D5BBB4!important;
-}
-
 .kaching-bundles .kaching-bundles__bar-radio{
   box-shadow: 0 0 0 2px #D5BBB4!important;
+}
+
+.kaching-bundles .kaching-bundles__bar--selected .kaching-bundles__bar-radio{
+  background: #D5BBB4!important;
 }
