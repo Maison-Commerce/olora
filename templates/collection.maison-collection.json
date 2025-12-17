@@ -184,7 +184,8 @@
         "category_QyXJzt": {
           "type": "category",
           "settings": {
-            "collection": "all-products",
+            "collection": "all",
+            "custom_image": "shopify://shop_images/a7f90ec77214a9a530ff1f78967f2e697a72dbe4.png",
             "custom_name": ""
           }
         },
