@@ -1,1 +1,204 @@
-{"name":"t:sections.header.name","type":"header","sections":{"gp_global_section_538868931104867475_gBJjMD":{"type":"gp-global-section-538868931104867475","disabled":true,"settings":{"section_preload":"off_lazy_script","checksum":""}},"gp_global_section_546733385976906976_7JqD4a":{"type":"gp-global-section-546733385976906976","settings":{"section_preload":"off_lazy_script","checksum":"","gg-o-7NvzzP_text":"<span style=\"color:#000000;font-size:14px;\"><strong>OFFER ENDS TONIGHT<\/strong><\/span>","ggFU-TzI-eW_dayLabel":"Days","ggFU-TzI-eW_hourLabel":"HRS","ggFU-TzI-eW_minuteLabel":"MIN","ggFU-TzI-eW_secondLabel":"SEC","ggFU-TzI-eW_weekLabel":"Weeks","ggZhCgj7GOz_text":"<span style=\"background-color:rgba(0,0,0,0);color:#FFFFFF;font-size:11px;\"><strong>🎉 Black Friday Offer - <\/strong><\/span><span style=\"background-color:rgba(0,0,0,0);color:#ECB631;font-size:11px;\"><strong> BUY 3 GET 3 FREE!<\/strong><\/span>"}},"2c2ec774-3430-481f-b927-e9c035b9d24e":{"type":"horizontal-ticker","blocks":{"sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-0":{"type":"text","settings":{"title":"FLASH SALE | ENDS SOON"}},"sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-1":{"type":"text","disabled":true,"settings":{"title":"50% OFF + FREE SHIPPING"}}},"block_order":["sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-0","sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-1"],"disabled":true,"settings":{"visibility":"always-display","speed":1,"mobile_spacing":100,"desktop_spacing":100,"color_scheme":"accent-2","mobile_text_size":16,"desktop_text_size":18,"italic_text":false,"uppercase_text":false,"bold_text":false,"mobile_image_height":26,"desktop_image_height":40,"hidden_products":"","enable_specific_display":false,"displayed_products":"","mobile_padding_top":12,"mobile_padding_bottom":12,"desktop_padding_top":16,"desktop_padding_bottom":16}},"fe1c8c67-b84c-4466-a515-70df3134c1c0":{"type":"announcement-bar","blocks":{"sections--21450414096679__fe1c8c67-b84c-4466-a515-70df3134c1c0-announcement-1":{"type":"announcement","settings":{"text":"<strong>Spooky Savings 🎃 | Big Discounts + Free Shipping<\/strong>","text_alignment":"center","mobile_text_size":9,"desktop_text_size":12,"icon":"","filled_icon":false,"mobile_icon_size":20,"desktop_icon_size":26,"desktop_layout":"horizontal","mobile_layout":"horizontal","hidden_products":"","enable_specific_display":false,"displayed_products":""}}},"block_order":["sections--21450414096679__fe1c8c67-b84c-4466-a515-70df3134c1c0-announcement-1"],"disabled":true,"settings":{"columns_desktop":1,"columns_mobile":1,"desktop_spacing":28,"mobile_spacing":16,"show_separator":false,"color_scheme":"inverse","slider_mobile":true,"slider_desktop":false,"type":"loop","autoplay":false,"autoplay_speed":3,"hidden_products":"","enable_specific_display":false,"displayed_products":"","padding_top":16,"padding_bottom":16}},"announcement_bar_dMYkpr":{"type":"announcement-bar","blocks":{"announcement_zKe8ct":{"type":"announcement","settings":{"text":"✨<strong> NEW YEAR FLASH SALE - NOW LIVE!<\/strong>","text_alignment":"center","mobile_text_size":9,"desktop_text_size":14,"icon":"","filled_icon":false,"mobile_icon_size":20,"desktop_icon_size":26,"desktop_layout":"horizontal","mobile_layout":"horizontal","hidden_products":"","enable_specific_display":false,"displayed_products":""}}},"block_order":["announcement_zKe8ct"],"disabled":true,"settings":{"columns_desktop":1,"columns_mobile":1,"desktop_spacing":28,"mobile_spacing":16,"show_separator":false,"color_scheme":"inverse","slider_mobile":true,"slider_desktop":false,"type":"loop","autoplay":false,"autoplay_speed":3,"hidden_products":"","enable_specific_display":false,"displayed_products":"","padding_top":16,"padding_bottom":16}},"header":{"type":"header","custom_css":[],"settings":{"sticky_header_type":"on-scroll-up","show_line_separator":true,"color_scheme":"background-1","logo_position":"middle-left","menu":"main-menu","highlight_active_link":false,"highlighted_link_color_scheme":"accent-1","products_mega_menu_links":"","products_mega_menu_display_collection_products":true,"products_mega_menu_display_collection_images":true,"products_mega_menu_display_collection_images_on_mobile":true,"mobile_menu_title":"Menu","secondary_menu":"","menu_color_scheme":"background-1","mobile_logo_position":"center","display_search":true,"margin_bottom":0,"padding_top":20,"padding_bottom":20}}},"order":["gp_global_section_538868931104867475_gBJjMD","gp_global_section_546733385976906976_7JqD4a","2c2ec774-3430-481f-b927-e9c035b9d24e","fe1c8c67-b84c-4466-a515-70df3134c1c0","announcement_bar_dMYkpr","header"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "gp_global_section_538868931104867475_gBJjMD": {
+      "type": "gp-global-section-538868931104867475",
+      "disabled": true,
+      "settings": {
+        "section_preload": "off_lazy_script",
+        "checksum": ""
+      }
+    },
+    "gp_global_section_546733385976906976_7JqD4a": {
+      "type": "gp-global-section-546733385976906976",
+      "settings": {
+        "section_preload": "off_lazy_script",
+        "checksum": "",
+        "gg-o-7NvzzP_text": "<span style=\"color:#000000;font-size:14px;\"><strong>OFFER ENDS TONIGHT</strong></span>",
+        "ggFU-TzI-eW_dayLabel": "Days",
+        "ggFU-TzI-eW_hourLabel": "HRS",
+        "ggFU-TzI-eW_minuteLabel": "MIN",
+        "ggFU-TzI-eW_secondLabel": "SEC",
+        "ggFU-TzI-eW_weekLabel": "Weeks",
+        "ggZhCgj7GOz_text": "<span style=\"background-color:rgba(0,0,0,0);color:#FFFFFF;font-size:11px;\"><strong>🎉  WE'VE REBRANDED TO OLORA - </strong></span><span style=\"background-color:rgba(0,0,0,0);color:#ECB631;font-size:11px;\"><strong> BUY 3 GET 3 FREE!</strong></span>"
+      }
+    },
+    "2c2ec774-3430-481f-b927-e9c035b9d24e": {
+      "type": "horizontal-ticker",
+      "blocks": {
+        "sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-0": {
+          "type": "text",
+          "settings": {
+            "title": "FLASH SALE | ENDS SOON"
+          }
+        },
+        "sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "title": "50% OFF + FREE SHIPPING"
+          }
+        }
+      },
+      "block_order": [
+        "sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-0",
+        "sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "visibility": "always-display",
+        "speed": 1,
+        "mobile_spacing": 100,
+        "desktop_spacing": 100,
+        "color_scheme": "accent-2",
+        "mobile_text_size": 16,
+        "desktop_text_size": 18,
+        "italic_text": false,
+        "uppercase_text": false,
+        "bold_text": false,
+        "mobile_image_height": 26,
+        "desktop_image_height": 40,
+        "hidden_products": "",
+        "enable_specific_display": false,
+        "displayed_products": "",
+        "mobile_padding_top": 12,
+        "mobile_padding_bottom": 12,
+        "desktop_padding_top": 16,
+        "desktop_padding_bottom": 16
+      }
+    },
+    "fe1c8c67-b84c-4466-a515-70df3134c1c0": {
+      "type": "announcement-bar",
+      "blocks": {
+        "sections--21450414096679__fe1c8c67-b84c-4466-a515-70df3134c1c0-announcement-1": {
+          "type": "announcement",
+          "settings": {
+            "text": "<strong>Spooky Savings 🎃 | Big Discounts + Free Shipping</strong>",
+            "text_alignment": "center",
+            "mobile_text_size": 9,
+            "desktop_text_size": 12,
+            "icon": "",
+            "filled_icon": false,
+            "mobile_icon_size": 20,
+            "desktop_icon_size": 26,
+            "desktop_layout": "horizontal",
+            "mobile_layout": "horizontal",
+            "hidden_products": "",
+            "enable_specific_display": false,
+            "displayed_products": ""
+          }
+        }
+      },
+      "block_order": [
+        "sections--21450414096679__fe1c8c67-b84c-4466-a515-70df3134c1c0-announcement-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "columns_desktop": 1,
+        "columns_mobile": 1,
+        "desktop_spacing": 28,
+        "mobile_spacing": 16,
+        "show_separator": false,
+        "color_scheme": "inverse",
+        "slider_mobile": true,
+        "slider_desktop": false,
+        "type": "loop",
+        "autoplay": false,
+        "autoplay_speed": 3,
+        "hidden_products": "",
+        "enable_specific_display": false,
+        "displayed_products": "",
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "announcement_bar_dMYkpr": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_zKe8ct": {
+          "type": "announcement",
+          "settings": {
+            "text": "✨<strong> NEW YEAR FLASH SALE - NOW LIVE!</strong>",
+            "text_alignment": "center",
+            "mobile_text_size": 9,
+            "desktop_text_size": 14,
+            "icon": "",
+            "filled_icon": false,
+            "mobile_icon_size": 20,
+            "desktop_icon_size": 26,
+            "desktop_layout": "horizontal",
+            "mobile_layout": "horizontal",
+            "hidden_products": "",
+            "enable_specific_display": false,
+            "displayed_products": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_zKe8ct"
+      ],
+      "disabled": true,
+      "settings": {
+        "columns_desktop": 1,
+        "columns_mobile": 1,
+        "desktop_spacing": 28,
+        "mobile_spacing": 16,
+        "show_separator": false,
+        "color_scheme": "inverse",
+        "slider_mobile": true,
+        "slider_desktop": false,
+        "type": "loop",
+        "autoplay": false,
+        "autoplay_speed": 3,
+        "hidden_products": "",
+        "enable_specific_display": false,
+        "displayed_products": "",
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "header": {
+      "type": "header",
+      "custom_css": [],
+      "settings": {
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "background-1",
+        "logo_position": "middle-left",
+        "menu": "main-menu",
+        "highlight_active_link": false,
+        "highlighted_link_color_scheme": "accent-1",
+        "products_mega_menu_links": "",
+        "products_mega_menu_display_collection_products": true,
+        "products_mega_menu_display_collection_images": true,
+        "products_mega_menu_display_collection_images_on_mobile": true,
+        "mobile_menu_title": "Menu",
+        "secondary_menu": "",
+        "menu_color_scheme": "background-1",
+        "mobile_logo_position": "center",
+        "display_search": true,
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "gp_global_section_538868931104867475_gBJjMD",
+    "gp_global_section_546733385976906976_7JqD4a",
+    "2c2ec774-3430-481f-b927-e9c035b9d24e",
+    "fe1c8c67-b84c-4466-a515-70df3134c1c0",
+    "announcement_bar_dMYkpr",
+    "header"
+  ]
+}
