@@ -51,10 +51,6 @@
             "feature_text": "Seamless"
           }
         },
-        "vitals_size_chart_73gnfc": {
-          "type": "shopify://apps/vitals/blocks/size-chart/aeb48102-2a5a-4f39-bdbd-d8d49f4e20b8",
-          "settings": {}
-        },
         "kaching_bundles_app_block_tHVXgm": {
           "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
           "settings": {
@@ -169,7 +165,6 @@
         "feature_n6mNjC",
         "feature_hLhcQW",
         "feature_mngC8z",
-        "vitals_size_chart_73gnfc",
         "kaching_bundles_app_block_tHVXgm",
         "buy_buttons_AeNAVc",
         "review_hzCjd9",
