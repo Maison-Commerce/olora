@@ -713,6 +713,14 @@
       <div class="maison_commerce_pd_bundle__bundle-placeholder">
         <div class="maison_commerce_pd_bundle__bundle-placeholder-heading-wrapp">
           <p class="maison_commerce_pd_bundle__bundle-note">{{ section.settings.bundle_heading_text }}</p>
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when '@app' -%}
+                {% if block.id == 'shopify-block-AUXhQTncyWm04TVVib__vitals_size_chart_73gnfc' %}
+                  {% render block %}
+                {% endif %}
+            {%- endcase -%}
+          {%- endfor -%}
           <!-- START KiwiSizing code ! -->
           <div>
             <div id="KiwiSizingChart"></div>
@@ -737,7 +745,9 @@
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when '@app' -%}
+                {% if block.id != 'shopify-block-AUXhQTncyWm04TVVib__vitals_size_chart_73gnfc' %}
                 {% render block %}
+                {% endif %}
             {%- endcase -%}
           {%- endfor -%}
         </div>
