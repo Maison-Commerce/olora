@@ -75,7 +75,7 @@
           "settings": {
             "reviewer_name": "Rachel D.",
             "review_text": "<p>These are hands down the best underwear to wear under any leggings. I no longer feel exposed! Super comfy and don't show any seam lines. Off to buy some more!</p>",
-            "rating": 4.6,
+            "rating": 5,
             "rating_text": "Rated Excellent 4.6/5 stars",
             "reviewer_avatar": "shopify://shop_images/652e1ff39043c8367f8a55fe96e5761c83a5d3c3.png",
             "source": "Trustpilot"
@@ -86,9 +86,20 @@
           "settings": {
             "reviewer_name": "Gracie J.",
             "review_text": "<p>I feel so much more confident and comfortable in these. Would definitely recommend. Oh and I love not having to do gusset checks anymore!!</p>",
-            "rating": 4.8,
+            "rating": 5,
             "rating_text": "Rated Excellent 4.8/5 stars",
             "reviewer_avatar": "shopify://shop_images/87e2bfe95e0cf72094d4f27b77741c5b32edea9d.png",
+            "source": "Trustpilot"
+          }
+        },
+        "review_3H3LnN": {
+          "type": "review",
+          "settings": {
+            "reviewer_name": "Daniela G.",
+            "review_text": "<p>These are exactly as they say they are! I wear them daily to the gym and have no more camel toe!</p>",
+            "rating": 5,
+            "rating_text": "Rated Excellent 4.6/5 stars",
+            "reviewer_avatar": "shopify://shop_images/gempages_510135694635565882-7632b7ac-1fae-43f8-b916-168a6e3ee05d.webp",
             "source": "Trustpilot"
           }
         },
@@ -169,6 +180,7 @@
         "buy_buttons_AeNAVc",
         "review_hzCjd9",
         "review_8JctkQ",
+        "review_3H3LnN",
         "faq_nmKPCF",
         "faq_bCF9rg",
         "faq_kzaqf4",
