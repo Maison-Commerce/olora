@@ -714,24 +714,9 @@
         <div class="maison_commerce_pd_bundle__bundle-placeholder-heading-wrapp">
           <p class="maison_commerce_pd_bundle__bundle-note">{{ section.settings.bundle_heading_text }}</p>
           <!-- START KiwiSizing code ! -->
-          <div>
-            <div id="KiwiSizingChart"></div>
-            {% render 'kiwiSizing' %}
-          </div>
+          <div id="KiwiSizingChart"></div>
+          {% render 'kiwiSizing' %}
           <!-- END KiwiSizing code ! -->
-          {% comment %} {% if section.settings.size_guide_url != blank %}
-            <a href="{{ section.settings.size_guide_url }}" class="maison_commerce_pd_bundle__size-guide-link">
-              <img 
-                src="{{ section.settings.size_guide_icon | image_url }}" 
-                alt="Size Guide"
-                class="maison_commerce_pd_bundle__size-guide-icon"
-                width="20"
-                height="20"
-                loading="lazy"
-              >
-              <span class="maison_commerce_pd_bundle__size-guide-text">{{ section.settings.size_guide_text }}</span>
-            </a>
-          {% endif %} {% endcomment %}
         </div>
         <div id="maison-bundle-app-container">
           {%- for block in section.blocks -%}
