@@ -34,6 +34,34 @@
         "ggZhCgj7GOz_text": "<span style=\"background-color:rgba(0,0,0,0);color:#FFFFFF;font-size:12px; font-weight: 500;\">🎉  WE'VE REBRANDED TO OLORA - </span><span style=\"background-color:rgba(0,0,0,0);color:#ECB631;font-size:12px; font-weight: 500;\">BUY 3 GET 3 FREE!</span>"
       }
     },
+    "announcement_timer_FPCQRy": {
+      "type": "announcement-timer",
+      "name": "Announcement Timer",
+      "settings": {
+        "announcement_text": "OFFER ENDS TONIGHT",
+        "end_date": "",
+        "padding_top_desktop": 12,
+        "padding_bottom_desktop": 12,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 12,
+        "padding_left_mobile": 80,
+        "padding_right_mobile": 80,
+        "section_bg_color": "#F0D3CB",
+        "text_font_size_desktop": 14,
+        "text_font_size_mobile": 14,
+        "text_color": "#151515",
+        "timer_font_size_desktop": 18,
+        "timer_font_size_mobile": 16,
+        "timer_digit_color": "#151515",
+        "timer_box_bg_color": "#FFFEFE",
+        "label_font_size_desktop": 8,
+        "label_font_size_mobile": 8,
+        "label_color": "rgba(21,21,21,0.75)",
+        "colon_color": "#D5BBB4"
+      }
+    },
     "2c2ec774-3430-481f-b927-e9c035b9d24e": {
       "type": "horizontal-ticker",
       "blocks": {
@@ -197,6 +225,7 @@
   "order": [
     "gp_global_section_538868931104867475_gBJjMD",
     "gp_global_section_546733385976906976_7JqD4a",
+    "announcement_timer_FPCQRy",
     "2c2ec774-3430-481f-b927-e9c035b9d24e",
     "fe1c8c67-b84c-4466-a515-70df3134c1c0",
     "announcement_bar_dMYkpr",
