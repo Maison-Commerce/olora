@@ -46,8 +46,8 @@
         "padding_right_desktop": 80,
         "padding_top_mobile": 12,
         "padding_bottom_mobile": 12,
-        "padding_left_mobile": 80,
-        "padding_right_mobile": 80,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
         "section_bg_color": "#f0d3cb",
         "text_font_size_desktop": 14,
         "text_font_size_mobile": 14,
@@ -80,8 +80,8 @@
         "section_bg_color": "#151515",
         "text_font_size_desktop": 12,
         "text_font_size_mobile": 12,
-        "text_color": "#FFFFFF",
-        "highlighted_text_color": "#FEC84B",
+        "text_color": "#ffffff",
+        "highlighted_text_color": "#fec84b",
         "text_gap": 8
       }
     },
