@@ -48,18 +48,41 @@
         "padding_bottom_mobile": 12,
         "padding_left_mobile": 80,
         "padding_right_mobile": 80,
-        "section_bg_color": "#F0D3CB",
+        "section_bg_color": "#f0d3cb",
         "text_font_size_desktop": 14,
         "text_font_size_mobile": 14,
         "text_color": "#151515",
         "timer_font_size_desktop": 18,
         "timer_font_size_mobile": 16,
         "timer_digit_color": "#151515",
-        "timer_box_bg_color": "#FFFEFE",
+        "timer_box_bg_color": "#fffefe",
         "label_font_size_desktop": 8,
         "label_font_size_mobile": 8,
-        "label_color": "rgba(21,21,21,0.75)",
-        "colon_color": "#D5BBB4"
+        "label_color": "#151515bf",
+        "colon_color": "#d5bbb4"
+      }
+    },
+    "maison_announcement_bar_NFQ7np": {
+      "type": "maison-announcement-bar",
+      "name": "Maison Announcement Bar",
+      "settings": {
+        "announcement_text": "🎉 WE'VE REBRANDED TO OLORA -",
+        "highlighted_text": "BUY 3 GET 3 FREE!",
+        "announcement_link": "",
+        "padding_top_desktop": 8,
+        "padding_bottom_desktop": 8,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 8,
+        "padding_bottom_mobile": 8,
+        "padding_left_mobile": 12,
+        "padding_right_mobile": 12,
+        "section_bg_color": "#151515",
+        "text_font_size_desktop": 12,
+        "text_font_size_mobile": 12,
+        "text_color": "#FFFFFF",
+        "highlighted_text_color": "#FEC84B",
+        "text_gap": 8
       }
     },
     "2c2ec774-3430-481f-b927-e9c035b9d24e": {
@@ -226,6 +249,7 @@
     "gp_global_section_538868931104867475_gBJjMD",
     "gp_global_section_546733385976906976_7JqD4a",
     "announcement_timer_FPCQRy",
+    "maison_announcement_bar_NFQ7np",
     "2c2ec774-3430-481f-b927-e9c035b9d24e",
     "fe1c8c67-b84c-4466-a515-70df3134c1c0",
     "announcement_bar_dMYkpr",
