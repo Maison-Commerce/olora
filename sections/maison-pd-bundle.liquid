@@ -3057,5 +3057,31 @@
         });
       });
     }
+
+    // Calculate delivery date based on delivery_time
+    (function() {
+      const deliveryDateElements = document.querySelectorAll('.maison_commerce_pd_bundle__delivery-date[data-delivery-time]');
+      
+      deliveryDateElements.forEach(function(element) {
+        const deliveryTime = parseInt(element.getAttribute('data-delivery-time')) || 3;
+        
+        if (deliveryTime > 0) {
+          const today = new Date();
+          const deliveryDate = new Date(today);
+          deliveryDate.setDate(today.getDate() + deliveryTime);
+          
+          // Format date as "Friday, 21 November"
+          const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+          const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+          
+          const dayOfWeek = daysOfWeek[deliveryDate.getDay()];
+          const day = deliveryDate.getDate();
+          const month = months[deliveryDate.getMonth()];
+          
+          const formattedDate = `${dayOfWeek}, ${day} ${month}`;
+          element.textContent = formattedDate;
+        }
+      });
+    })();
   });
 </script>
