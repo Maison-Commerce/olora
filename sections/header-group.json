@@ -21,6 +21,7 @@
     },
     "gp_global_section_546733385976906976_7JqD4a": {
       "type": "gp-global-section-546733385976906976",
+      "disabled": true,
       "settings": {
         "section_preload": "off_lazy_script",
         "checksum": "",
