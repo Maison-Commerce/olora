@@ -3084,6 +3084,89 @@
       });
     }
 
+    // Country to flag emoji mapping
+    const countryFlags = {
+      'US': '🇺🇸', 'GB': '🇬🇧', 'CA': '🇨🇦', 'AU': '🇦🇺', 'DE': '🇩🇪', 'FR': '🇫🇷',
+      'IT': '🇮🇹', 'ES': '🇪🇸', 'NL': '🇳🇱', 'BE': '🇧🇪', 'CH': '🇨🇭', 'AT': '🇦🇹',
+      'SE': '🇸🇪', 'NO': '🇳🇴', 'DK': '🇩🇰', 'FI': '🇫🇮', 'PL': '🇵🇱', 'CZ': '🇨🇿',
+      'HU': '🇭🇺', 'RO': '🇷🇴', 'GR': '🇬🇷', 'PT': '🇵🇹', 'IE': '🇮🇪', 'NZ': '🇳🇿',
+      'JP': '🇯🇵', 'KR': '🇰🇷', 'CN': '🇨🇳', 'IN': '🇮🇳', 'BR': '🇧🇷', 'MX': '🇲🇽',
+      'AR': '🇦🇷', 'CL': '🇨🇱', 'CO': '🇨🇴', 'PE': '🇵🇪', 'ZA': '🇿🇦', 'AE': '🇦🇪',
+      'SA': '🇸🇦', 'IL': '🇮🇱', 'TR': '🇹🇷', 'RU': '🇷🇺', 'UA': '🇺🇦', 'SG': '🇸🇬',
+      'MY': '🇲🇾', 'TH': '🇹🇭', 'VN': '🇻🇳', 'PH': '🇵🇭', 'ID': '🇮🇩', 'HK': '🇭🇰',
+      'TW': '🇹🇼', 'NO': '🇳🇴', 'IE': '🇮🇪', 'LU': '🇱🇺', 'IS': '🇮🇸', 'MT': '🇲🇹',
+      'CY': '🇨🇾', 'EE': '🇪🇪', 'LV': '🇱🇻', 'LT': '🇱🇹', 'SK': '🇸🇰', 'SI': '🇸🇮',
+      'BG': '🇧🇬', 'HR': '🇭🇷', 'RS': '🇷🇸', 'ME': '🇲🇪', 'MK': '🇲🇰', 'AL': '🇦🇱',
+      'BY': '🇧🇾', 'MD': '🇲🇩', 'GE': '🇬🇪', 'AM': '🇦🇲', 'AZ': '🇦🇿', 'KZ': '🇰🇿'
+    };
+
+    // Auto-detect country flag if not set manually
+    (function() {
+      const flagElements = document.querySelectorAll('.maison_commerce_pd_bundle__delivery-flag[data-auto-detect="true"]');
+      
+      flagElements.forEach(function(element) {
+        const countryCode = element.getAttribute('data-country-code');
+        
+        // If country code is already set from server-side, use it
+        if (countryCode && countryFlags[countryCode.toUpperCase()]) {
+          element.textContent = countryFlags[countryCode.toUpperCase()];
+          return;
+        }
+        
+        // Try to get country from Shopify localization if available
+        if (typeof window.Shopify !== 'undefined' && window.Shopify.locale) {
+          const locale = window.Shopify.locale;
+          const detectedCountry = locale.split('-')[1] || locale.split('_')[1];
+          if (detectedCountry && countryFlags[detectedCountry.toUpperCase()]) {
+            element.textContent = countryFlags[detectedCountry.toUpperCase()];
+            return;
+          }
+        }
+        
+        // Fallback: try to detect from browser language
+        const browserLang = navigator.language || navigator.userLanguage;
+        if (browserLang) {
+          const langCode = browserLang.split('-')[1] || browserLang.split('_')[1];
+          if (langCode && countryFlags[langCode.toUpperCase()]) {
+            element.textContent = countryFlags[langCode.toUpperCase()];
+            return;
+          }
+        }
+        
+        // Final fallback: try to detect from timezone
+        try {
+          const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+          const timezoneCountryMap = {
+            'America/New_York': 'US', 'America/Los_Angeles': 'US', 'America/Chicago': 'US',
+            'America/Denver': 'US', 'America/Phoenix': 'US', 'America/Anchorage': 'US',
+            'Europe/London': 'GB', 'Europe/Paris': 'FR', 'Europe/Berlin': 'DE',
+            'Europe/Rome': 'IT', 'Europe/Madrid': 'ES', 'Europe/Amsterdam': 'NL',
+            'Europe/Brussels': 'BE', 'Europe/Zurich': 'CH', 'Europe/Vienna': 'AT',
+            'Europe/Stockholm': 'SE', 'Europe/Oslo': 'NO', 'Europe/Copenhagen': 'DK',
+            'Europe/Helsinki': 'FI', 'Europe/Warsaw': 'PL', 'Europe/Prague': 'CZ',
+            'Europe/Budapest': 'HU', 'Europe/Bucharest': 'RO', 'Europe/Athens': 'GR',
+            'Europe/Lisbon': 'PT', 'Europe/Dublin': 'IE', 'Asia/Tokyo': 'JP',
+            'Asia/Seoul': 'KR', 'Asia/Shanghai': 'CN', 'Asia/Hong_Kong': 'HK',
+            'Asia/Taipei': 'TW', 'Asia/Singapore': 'SG', 'Asia/Kuala_Lumpur': 'MY',
+            'Asia/Bangkok': 'TH', 'Asia/Ho_Chi_Minh': 'VN', 'Asia/Manila': 'PH',
+            'Asia/Jakarta': 'ID', 'Australia/Sydney': 'AU', 'Australia/Melbourne': 'AU',
+            'Pacific/Auckland': 'NZ', 'America/Toronto': 'CA', 'America/Vancouver': 'CA',
+            'America/Mexico_City': 'MX', 'America/Sao_Paulo': 'BR', 'America/Buenos_Aires': 'AR',
+            'America/Santiago': 'CL', 'America/Bogota': 'CO', 'America/Lima': 'PE',
+            'Africa/Johannesburg': 'ZA', 'Asia/Dubai': 'AE', 'Asia/Riyadh': 'SA',
+            'Asia/Jerusalem': 'IL', 'Europe/Istanbul': 'TR', 'Europe/Moscow': 'RU',
+            'Europe/Kiev': 'UA'
+          };
+          
+          if (timezoneCountryMap[timezone] && countryFlags[timezoneCountryMap[timezone]]) {
+            element.textContent = countryFlags[timezoneCountryMap[timezone]];
+          }
+        } catch (e) {
+          // If timezone detection fails, keep default flag
+        }
+      });
+    })();
+
     // Calculate delivery date based on delivery_time
     (function() {
       const deliveryDateElements = document.querySelectorAll('.maison_commerce_pd_bundle__delivery-date[data-delivery-time]');
