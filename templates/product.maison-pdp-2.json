@@ -54,7 +54,8 @@
         "kaching_bundles_app_block_tHVXgm": {
           "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
           "settings": {
-            "product": "{{product}}"
+            "product": "{{product}}",
+            "manual_deal_block_id": ""
           }
         },
         "buy_buttons_AeNAVc": {
@@ -194,9 +195,9 @@
       ],
       "name": "Product Bundle",
       "settings": {
-        "gallery_badge_text": "BUY 1, GET 1 FREE",
-        "gallery_badge_subtext": "Add at least 2 items to your cart. Discount applied automatically.",
-        "price_badge_text": "BUY 1, GET 1 FREE",
+        "gallery_badge_text": "BUY 3, GET 3 FREE",
+        "gallery_badge_subtext": "Add at least 6 items to your cart. Discount applied automatically.",
+        "price_badge_text": "BUY 3, GET 3 FREE",
         "features_text": "",
         "protection_title": "Your order is protected by",
         "protection_heading": "90 Day Fit Exchange & Money Back Guarantee",
@@ -534,7 +535,7 @@
         "kiwi_size_chart_recommender_kiwi_sizing_Fgepx4": {
           "type": "shopify://apps/kiwi-size-chart-recommender/blocks/kiwiSizing/b7369922-bf15-44ce-a121-a22a8fcbc4b0",
           "settings": {
-            "product": "{{product}}",
+            "fallbackToBlockPosition": false,
             "waitForElementSelector": "",
             "waitForElementDelay": 5
           }
