@@ -214,6 +214,7 @@
         "price_badge_text_color": "#f6fef9",
         "protection_bg_color": "#f7e6e2",
         "protection_border_color": "#f0d3cb",
+        "delivery_time": "3",
         "show_delivery_info": true,
         "delivery_flag": "🇺🇸",
         "delivery_prefix": "Delivered on",
