@@ -165,12 +165,6 @@
     },
     {
       "type": "text",
-      "id": "delivery_flag",
-      "label": "Delivery Flag Emoji",
-      "default": "🇺🇸"
-    },
-    {
-      "type": "text",
       "id": "delivery_prefix",
       "label": "Delivery Text Prefix",
       "default": "Delivered on "
@@ -764,11 +758,6 @@
               {% endif %}
               <span>{{ section.settings.delivery_prefix }}</span>
               <span class="maison_commerce_pd_bundle__delivery-date" {% if section.settings.delivery_time != blank %}data-delivery-time="{{ section.settings.delivery_time }}"{% endif %}>
-                {% if section.settings.delivery_time != blank %}
-                  {{ section.settings.delivery_date }}
-                {% else %}
-                  {{ section.settings.delivery_date }}
-                {% endif %}
               </span>
               <span>{{ section.settings.delivery_suffix }}</span>
             </p>
