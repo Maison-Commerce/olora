@@ -39,7 +39,7 @@
       "name": "Announcement Timer",
       "settings": {
         "announcement_text": "OFFER ENDS TONIGHT",
-        "end_date": "",
+        "end_date": "2025-12-28 23:59:59",
         "padding_top_desktop": 12,
         "padding_bottom_desktop": 12,
         "padding_left_desktop": 80,
