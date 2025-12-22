@@ -1,0 +1,270 @@
+{% schema %}
+{
+  "name": "Maison Announcement Bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "announcement_text",
+      "label": "Announcement Text",
+      "default": "WE'VE REBRANDED TO OLORA -"
+    },
+    {
+      "type": "text",
+      "id": "highlighted_text",
+      "label": "Highlighted Text",
+      "default": "BUY 3 GET 3 FREE!"
+    },
+    {
+      "type": "url",
+      "id": "announcement_link",
+      "label": "Link URL",
+      "info": "Optional: Make the entire announcement bar clickable"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Left (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Right (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Left (Mobile)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Right (Mobile)",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#151515"
+    },
+    {
+      "type": "range",
+      "id": "text_font_size_desktop",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Text Font Size (Desktop)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "text_font_size_mobile",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Text Font Size (Mobile)",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "highlighted_text_color",
+      "label": "Highlighted Text Color",
+      "default": "#FEC84B"
+    },
+    {
+      "type": "range",
+      "id": "text_gap",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Gap Between Text Elements",
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Maison Announcement Bar"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="maison_commerce_maison_announcement_bar" style="background-color: {{ section.settings.section_bg_color }}; padding-top: {{ section.settings.padding_top_desktop }}px; padding-bottom: {{ section.settings.padding_bottom_desktop }}px; padding-left: {{ section.settings.padding_left_desktop }}px; padding-right: {{ section.settings.padding_right_desktop }}px;">
+  <div class="maison_commerce_maison_announcement_bar__container">
+    {% if section.settings.announcement_link %}
+      <a href="{{ section.settings.announcement_link }}" class="maison_commerce_maison_announcement_bar__link">
+    {% endif %}
+    <div class="maison_commerce_maison_announcement_bar__content">
+      {% if section.settings.announcement_text or section.settings.highlighted_text %}
+        <p class="maison_commerce_maison_announcement_bar__text">
+          {% if section.settings.announcement_text %}
+            <span class="maison_commerce_maison_announcement_bar__text-regular">{{ section.settings.announcement_text }}</span>
+          {% endif %}
+          {% if section.settings.highlighted_text %}
+            <span class="maison_commerce_maison_announcement_bar__text-highlighted">{{ section.settings.highlighted_text }}</span>
+          {% endif %}
+        </p>
+      {% endif %}
+    </div>
+    {% if section.settings.announcement_link %}
+      </a>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  /* Section Container */
+  .maison_commerce_maison_announcement_bar {
+    background-color: {{ section.settings.section_bg_color }};
+    padding-top: {{ section.settings.padding_top_desktop }}px;
+    padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    padding-left: {{ section.settings.padding_left_desktop }}px;
+    padding-right: {{ section.settings.padding_right_desktop }}px;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_maison_announcement_bar {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+      padding-left: {{ section.settings.padding_left_mobile }}px;
+      padding-right: {{ section.settings.padding_right_mobile }}px;
+    }
+  }
+
+  /* Container */
+  .maison_commerce_maison_announcement_bar__container {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Link Wrapper */
+  .maison_commerce_maison_announcement_bar__link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  .maison_commerce_maison_announcement_bar__link:hover {
+    opacity: 0.9;
+  }
+
+  /* Content */
+  .maison_commerce_maison_announcement_bar__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: {{ section.settings.text_gap }}px;
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  /* Text */
+  .maison_commerce_maison_announcement_bar__text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: {{ section.settings.text_font_size_desktop }}px;
+    line-height: 1.5;
+    color: {{ section.settings.text_color }};
+    margin: 0;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: {{ section.settings.text_gap }}px;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_maison_announcement_bar__text {
+      font-size: {{ section.settings.text_font_size_mobile }}px;
+    }
+  }
+
+  /* Regular Text */
+  .maison_commerce_maison_announcement_bar__text-regular {
+    color: {{ section.settings.text_color }};
+  }
+
+  /* Highlighted Text */
+  .maison_commerce_maison_announcement_bar__text-highlighted {
+    color: {{ section.settings.highlighted_text_color }};
+  }
+</style>
+
