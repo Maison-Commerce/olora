@@ -8,14 +8,7 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {
-    "maison_pd_bundle_zHD7Rn": {
-      "settings": {
-        "delivery_flag": "🇦🇺"
-      },
-      "blocks": {}
-    }
-  },
+  "sections": {},
   "context": {
     "market": "australia"
   },
