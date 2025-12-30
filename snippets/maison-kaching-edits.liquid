@@ -2,7 +2,7 @@
 <script>
   async function waitForKaching() {
     return new Promise(async (resolve) => {
-      if (document.querySelector('kaching-bundle')) resolve();
+      if (document.querySelector('.kaching-bundles__bar-container')) resolve();
       await new Promise((x) => setTimeout(x, 100));
       console.log('kaching-bundle not found, waiting for 100ms');
     });
