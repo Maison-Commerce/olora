@@ -1,0 +1,26 @@
+<script>
+  {
+    const bars = document.querySelectorAll('.kaching-bundles__bar-container');
+    for (const bar of bars) {
+
+      const containers = Array.from(bar.querySelectorAll('img')).map(img => img.parentElement);
+
+      let i = 1;
+      for (const container of containers) {
+        container.style.position = 'relative';
+
+        const div = document.createElement('div');
+        div.innerText = (i++).toString();
+        div.style.position = 'absolute';
+        div.style.top = '0';
+        div.style.right = '0';
+        div.style.backgroundColor = 'white';
+        div.style.color = 'black';
+        div.style.padding = '4px 8px';
+        div.style.borderRadius = '0';
+
+        container.appendChild(div);
+      }
+    }
+  }
+</script>
