@@ -20,7 +20,7 @@
       const bar = bars[barindex];
       const containers = Array.from(bar.querySelectorAll('img')).map((img) => img.parentElement);
 
-      for (const containerindex = 0; containerindex < containers.length; containerindex++) {
+      for (let containerindex = 0; containerindex < containers.length; containerindex++) {
         const container = containers[containerindex];
         container.style.position = 'relative';
 
