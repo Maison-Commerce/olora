@@ -17,6 +17,7 @@
     setInterval(async () => {
       await waitForKaching();
       const bars = document.querySelectorAll('.kaching-bundles__bar-container');
+      console.log(bars);
       for (let barindex = 0; barindex < bars.length; barindex++) {
         const bar = bars[barindex];
         const containers = Array.from(bar.querySelectorAll('img')).map((img) => img.parentElement);
