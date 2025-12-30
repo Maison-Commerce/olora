@@ -106,7 +106,8 @@
       const mainPrice = bar.querySelector('.kaching-bundles__bar-content').querySelector('.kaching-bundles__bar-price');
       bar.querySelector('.kaching-bundles__bar-full-price').style.display = 'none';
       if (mainPrice.getAttribute('maison-editted')) continue;
-      const priceVal = mainPrice.textContent.trim().replace(/[^0-9\.]/g, '');
+      const originalPrice = mainPrice.textContent;
+      const priceVal = originalPrice.trim().replace(/[^0-9\.]/g, '');
       const float = parseFloat(priceVal);
       const totalProducts = bar.querySelectorAll('.kaching-bundles__bundle-products__product').length;
       const pricePerItem = float / totalProducts;
@@ -118,7 +119,7 @@
       mainPrice.setAttribute('maison-editted', 'true');
 
       if (addTotal === true) {
-        console.log('TODO');
+        mainPrice.innerHTML = `${formattedPrice} Total: ${originalPrice}`;
       }
     }
   }
