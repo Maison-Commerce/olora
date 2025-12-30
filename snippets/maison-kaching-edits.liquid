@@ -143,7 +143,7 @@
 
         const content = product.querySelector('.kaching-bundles__bundle-products__content');
         const price = product.querySelector('.kaching-bundles__bundle-products__pricing');
-        price.style.transform = 'translateY(-10px)';
+        price.style.transform = 'translateY(-18px)';
 
         if (!div) div = document.createElement('div');
         div.id = id;
@@ -190,3 +190,9 @@
     {% endif %}
   }, 10);
 </script>
+
+<style>
+  .kaching-bundles__bundle-products__product {
+    padding-bottom: 8px !important;
+  }
+</style>
