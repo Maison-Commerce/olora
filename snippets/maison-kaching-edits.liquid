@@ -210,9 +210,20 @@
 </style>
 
 <script>
-  if (window.innerWidth < 750) {
-    document.querySelector('.kaching-bundles__bar-content-left').style.display = 'flex';
-    document.querySelector('.kaching-bundles__bar-content-left').style.setProperty('flex-direction', 'column', 'important');
-    document.querySelector('.kaching-bundles__bar-content-left').style.setProperty('align-items', 'flex-start', 'important');
-  }
+  setInterval(() => {
+    const lefts = document.querySelectorAll('.kaching-bundles__bar-content-left');
+    if (window.innerWidth < 750) {
+      lefts.forEach((left) => {
+        left.style.setProperty('display', 'flex', 'important');
+        left.style.setProperty('flex-direction', 'column', 'important');
+        left.style.setProperty('align-items', 'flex-start', 'important');
+      });
+    } else {
+      lefts.forEach((left) => {
+        left.style.removeProperty('display');
+        left.style.removeProperty('flex-direction');
+        left.style.removeProperty('align-items');
+      });
+    }
+  }, 10);
 </script>
