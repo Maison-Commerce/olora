@@ -138,7 +138,7 @@
         const product = products[productindex];
         product.style.position = 'relative';
 
-        const id = `fake-stock-${productindex}`;
+        const id = `bar-${barindex}-product-${productindex}-stock`;
         let div = document.getElementById(id);
 
         const content = product.querySelector('.kaching-bundles__bundle-products__content');
