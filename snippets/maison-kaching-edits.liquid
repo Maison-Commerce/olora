@@ -104,7 +104,7 @@
     for (let barindex = 0; barindex < bars.length; barindex++) {
       const bar = bars[barindex];
       const mainPrice = bar.querySelector('.kaching-bundles__bar-content').querySelector('.kaching-bundles__bar-price');
-      bar.querySelector('.kaching-bundles__bar-full-price').style.setProperty('display', 'none', '!important');
+      bar.querySelector('.kaching-bundles__bar-full-price').style.display = 'none';
       if (mainPrice.getAttribute('maison-editted')) continue;
       const priceVal = mainPrice.textContent.trim().replace(/[^0-9\.]/g, '');
       const float = parseFloat(priceVal);
@@ -116,6 +116,19 @@
       });
       mainPrice.innerHTML = `${formattedPrice}/Item`;
       mainPrice.setAttribute('maison-editted', 'true');
+    }
+  }
+
+  function addFakeStock() {
+    const products = document.querySelectorAll('.kaching-bundles__bundle-products__product');
+
+    for (let productindex = 0; productindex < products.length; productindex++) {
+      const product = products[productindex];
+      product.style.position = 'relative';
+
+      const div = document.createElement('div');
+      div.innerHTML = ;
+      product.appendChild(div);
     }
   }
 
@@ -132,5 +145,6 @@
     addSwatchFunctionality(COLOR_MAP);
     swapPricesForFree();
     swapPriceForPerItem();
+    addFakeStock();
   }, 10);
 </script>
