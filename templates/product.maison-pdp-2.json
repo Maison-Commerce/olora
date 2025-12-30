@@ -200,7 +200,7 @@
         "enable_swap_price_for_per_item": true,
         "enable_add_total_price": false,
         "enable_swatches": true,
-        "color_map": "{ \"SAND\": \"#E6D2C0\", \"BLACK\": \"#000000\", \"MOSS\": \"#78866B\", \"COFFEE\": \"#6F4E37\" }",
+        "color_map": "{ \"SAND\": \"#E6D2C0\", \"BLACK\": \"#000000\", \"MOSS\": \"#04808f\", \"COFFEE\": \"#723329\" }",
         "enable_swap_price_for_free": true,
         "enable_add_fake_stock": true,
         "fake_stock_color": "#fec84b",
