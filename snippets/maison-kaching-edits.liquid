@@ -44,8 +44,53 @@
     }
   }
 
+  function addSwatchFunctionality(COLOR_MAP) {
+    const bars = document.querySelectorAll('.kaching-bundles__bar-container');
+    for (let barindex = 0; barindex < bars.length; barindex++) {
+      const bar = bars[barindex];
+
+      const selects = bar.querySelectorAll('.kaching-bundles__bar-variant-select[data-name="Color"]');
+
+      for (let selectindex = 0; selectindex < selects.length; selectindex++) {
+        const select = selects[selectindex];
+        const container = select.parentElement;
+        container.style.position = 'relative';
+
+        const id = `bar-${barindex}-select-${selectindex}`;
+        if (document.getElementById(id)) continue;
+
+        const div = document.createElement('div');
+        div.style.position = 'absolute';
+        div.style.top = '0';
+        div.style.left = '0';
+        div.style.width = '20px';
+        div.style.height = '20px';
+        div.style.backgroundColor = 'red';
+        div.style.borderRadius = '100%';
+        div.style.zIndex = '1000';
+
+        container.appendChild(div);
+
+        console.log('[MAISON KACHING EDITS] added swatch functionality', `swatch-${select.id}`);
+
+        select.addEventListener('change', (e) => {
+          const div = document.getElementById(id);
+          div.style.backgroundColor = COLOR_MAP[e.target.value.toUpperCase()];
+        });
+      }
+    }
+  }
+
   setInterval(async () => {
+    const COLOR_MAP = {
+      'SAND': '#E6D2C0',
+      'BLACK': '#000000',
+      'MOSS': '#78866B',
+      'COFFEE': '#6F4E37',
+    };
+
     await waitForKaching();
     addNumbers();
+    addSwatchFunctionality(COLOR_MAP);
   }, 10);
 </script>
