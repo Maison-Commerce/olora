@@ -53,7 +53,7 @@
 
       for (let selectindex = 0; selectindex < selects.length; selectindex++) {
         const select = selects[selectindex];
-        select.style.paddingLeft = '40px';
+        select.style.setProperty('padding-left', '40px', 'important');
         const container = select.parentElement;
         container.style.position = 'relative';
 
@@ -71,7 +71,6 @@
         div.style.backgroundColor = COLOR_MAP[select.value.toUpperCase()];
         div.style.borderRadius = '100%';
         div.style.zIndex = '1000';
-
 
         container.appendChild(div);
 
