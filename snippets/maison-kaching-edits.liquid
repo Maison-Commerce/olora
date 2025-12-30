@@ -14,39 +14,39 @@
   }
 
   function addNumbers() {
-    setInterval(async () => {
-      await waitForKaching();
-      const bars = document.querySelectorAll('.kaching-bundles__bar-container');
-      console.log(bars);
-      for (let barindex = 0; barindex < bars.length; barindex++) {
-        const bar = bars[barindex];
-        const containers = Array.from(bar.querySelectorAll('img')).map((img) => img.parentElement);
+    const bars = document.querySelectorAll('.kaching-bundles__bar-container');
+    console.log(bars);
+    for (let barindex = 0; barindex < bars.length; barindex++) {
+      const bar = bars[barindex];
+      const containers = Array.from(bar.querySelectorAll('img')).map((img) => img.parentElement);
 
-        for (const containerindex = 0; containerindex < containers.length; containerindex++) {
-          const container = containers[containerindex];
-          container.style.position = 'relative';
+      for (const containerindex = 0; containerindex < containers.length; containerindex++) {
+        const container = containers[containerindex];
+        container.style.position = 'relative';
 
-          const id = `bar-${barindex}-container-${containerindex}`;
-          if (document.getElementById(id)) continue;
+        const id = `bar-${barindex}-container-${containerindex}`;
+        if (document.getElementById(id)) continue;
 
-          const div = document.createElement('div');
-          div.id = id;
-          div.innerText = (containerindex + 1).toString();
-          div.style.position = 'absolute';
-          div.style.top = '0';
-          div.style.left = '0';
-          div.style.backgroundColor = 'white';
-          div.style.color = 'black';
-          div.style.padding = '4px 8px';
-          div.style.borderRadius = '0 8px 0 0';
+        const div = document.createElement('div');
+        div.id = id;
+        div.innerText = (containerindex + 1).toString();
+        div.style.position = 'absolute';
+        div.style.top = '0';
+        div.style.left = '0';
+        div.style.backgroundColor = 'white';
+        div.style.color = 'black';
+        div.style.padding = '4px 8px';
+        div.style.borderRadius = '0 8px 0 0';
 
-          container.appendChild(div);
+        container.appendChild(div);
 
-          console.log('[MAISON KACHING EDITS] added number', id);
-        }
+        console.log('[MAISON KACHING EDITS] added number', id);
       }
-    }, 100);
+    }
   }
 
-  addNumbers();
+  setInterval(async () => {
+    await waitForKaching();
+    addNumbers();
+  }, 1000);
 </script>
