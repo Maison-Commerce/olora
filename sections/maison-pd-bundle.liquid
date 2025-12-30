@@ -28,6 +28,81 @@
   "name": "Product Bundle",
   "settings": [
     {
+      "type": "header",
+      "content": "Maison Kaching Edits"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_maison_kaching_edits",
+      "label": "Use Maison Kaching Edits",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_numbers",
+      "label": "Enable Numbers",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_swap_price_for_per_item",
+      "label": "Enable Swap Price for Per Item",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_add_total_price",
+      "label": "Add Total Price",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_swatches",
+      "label": "Enable Swatches",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "color_map",
+      "label": "Color Map",
+      "info": "Make sure to use UPPERCASE for the keys",
+      "default": "{ \"SAND\": \"#E6D2C0\", \"BLACK\": \"#000000\", \"MOSS\": \"#78866B\", \"COFFEE\": \"#6F4E37\" }"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_swap_price_for_free",
+      "label": "Enable Swap Price for Free",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_add_fake_stock",
+      "label": "Enable Add Fake Stock",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "fake_stock_color",
+      "label": "Stock Color",
+      "default": "#12B76A"
+    },
+    {
+      "type": "number",
+      "id": "fake_stock_number",
+      "label": "Stock Number",
+      "default": 35
+    },
+    {
+      "type": "number",
+      "id": "fake_stock_percentage",
+      "label": "Stock Percentage",
+      "default": 25
+    },
+    {
+      "type": "header",
+      "content": "Other settings"
+    },
+    {
       "type": "text",
       "id": "gallery_badge_text",
       "label": "Gallery Badge Text",
@@ -392,7 +467,7 @@
           "default": 24
         }
       ]
-    }, 
+    },
     {
       "type": "review",
       "name": "Review",
@@ -687,21 +762,23 @@
           {% endif %}
         </div>
 
-        {% comment %} <div class="maison_commerce_pd_bundle__price">
-          {% if product.compare_at_price > product.price %}
-            <span class="maison_commerce_pd_bundle__compare-price">
-              {{ product.compare_at_price | money }}
+        {% comment %}
+          <div class="maison_commerce_pd_bundle__price">
+            {% if product.compare_at_price > product.price %}
+              <span class="maison_commerce_pd_bundle__compare-price">
+                {{ product.compare_at_price | money }}
+              </span>
+            {% endif %}
+            <span class="maison_commerce_pd_bundle__current-price">
+              {{ product.price | money }}
             </span>
-          {% endif %}
-          <span class="maison_commerce_pd_bundle__current-price">
-            {{ product.price | money }}
-          </span>
-          {% if product_has_bogo_tag %}
-            <span class="maison_commerce_pd_bundle__price-badge">
-              {{ section.settings.price_badge_text }}
-            </span>
-          {% endif %}
-        </div> {% endcomment %}
+            {% if product_has_bogo_tag %}
+              <span class="maison_commerce_pd_bundle__price-badge">
+                {{ section.settings.price_badge_text }}
+              </span>
+            {% endif %}
+          </div>
+        {% endcomment %}
       </div>
 
       <!-- Bundle Section Placeholder (for app integration) -->
@@ -721,7 +798,7 @@
             {%- endcase -%}
           {%- endfor -%}
         </div>
-        
+
         <!-- Delivery Information -->
         {% if section.settings.show_delivery_info %}
           {%- comment -%} Auto-detect country flag {%- endcomment -%}
@@ -732,8 +809,10 @@
               console.log('country_code', {{ country_code | json }})
             </script>
           {%- endif -%}
-          
-          {%- assign country_flags = 'US:🇺🇸,GB:🇬🇧,CA:🇨🇦,AU:🇦🇺,DE:🇩🇪,FR:🇫🇷,IT:🇮🇹,ES:🇪🇸,NL:🇳🇱,BE:🇧🇪,CH:🇨🇭,AT:🇦🇹,SE:🇸🇪,NO:🇳🇴,DK:🇩🇰,FI:🇫🇮,PL:🇵🇱,CZ:🇨🇿,HU:🇭🇺,RO:🇷🇴,GR:🇬🇷,PT:🇵🇹,IE:🇮🇪,NZ:🇳🇿,JP:🇯🇵,KR:🇰🇷,CN:🇨🇳,IN:🇮🇳,BR:🇧🇷,MX:🇲🇽,AR:🇦🇷,CL:🇨🇱,CO:🇨🇴,PE:🇵🇪,ZA:🇿🇦,AE:🇦🇪,SA:🇸🇦,IL:🇮🇱,TR:🇹🇷,RU:🇷🇺,UA:🇺🇦,SG:🇸🇬,MY:🇲🇾,TH:🇹🇭,VN:🇻🇳,PH:🇵🇭,ID:🇮🇩,HK:🇭🇰,TW:🇹🇼,LU:🇱🇺,IS:🇮🇸,MT:🇲🇹,CY:🇨🇾,EE:🇪🇪,LV:🇱🇻,LT:🇱🇹,SK:🇸🇰,SI:🇸🇮,BG:🇧🇬,HR:🇭🇷,RS:🇷🇸,ME:🇲🇪,MK:🇲🇰,AL:🇦🇱,BY:🇧🇾,MD:🇲🇩,GE:🇬🇪,AM:🇦🇲,AZ:🇦🇿,KZ:🇰🇿' | split: ',' -%}
+
+          {%- assign country_flags = 'US:🇺🇸,GB:🇬🇧,CA:🇨🇦,AU:🇦🇺,DE:🇩🇪,FR:🇫🇷,IT:🇮🇹,ES:🇪🇸,NL:🇳🇱,BE:🇧🇪,CH:🇨🇭,AT:🇦🇹,SE:🇸🇪,NO:🇳🇴,DK:🇩🇰,FI:🇫🇮,PL:🇵🇱,CZ:🇨🇿,HU:🇭🇺,RO:🇷🇴,GR:🇬🇷,PT:🇵🇹,IE:🇮🇪,NZ:🇳🇿,JP:🇯🇵,KR:🇰🇷,CN:🇨🇳,IN:🇮🇳,BR:🇧🇷,MX:🇲🇽,AR:🇦🇷,CL:🇨🇱,CO:🇨🇴,PE:🇵🇪,ZA:🇿🇦,AE:🇦🇪,SA:🇸🇦,IL:🇮🇱,TR:🇹🇷,RU:🇷🇺,UA:🇺🇦,SG:🇸🇬,MY:🇲🇾,TH:🇹🇭,VN:🇻🇳,PH:🇵🇭,ID:🇮🇩,HK:🇭🇰,TW:🇹🇼,LU:🇱🇺,IS:🇮🇸,MT:🇲🇹,CY:🇨🇾,EE:🇪🇪,LV:🇱🇻,LT:🇱🇹,SK:🇸🇰,SI:🇸🇮,BG:🇧🇬,HR:🇭🇷,RS:🇷🇸,ME:🇲🇪,MK:🇲🇰,AL:🇦🇱,BY:🇧🇾,MD:🇲🇩,GE:🇬🇪,AM:🇦🇲,AZ:🇦🇿,KZ:🇰🇿'
+            | split: ','
+          -%}
           {%- assign auto_flag = '' -%}
           {%- if country_code != blank -%}
             {%- for flag_pair in country_flags -%}
@@ -747,17 +826,32 @@
           {%- if auto_flag == '' -%}
             {%- assign auto_flag = '🇺🇸' -%}
           {%- endif -%}
-          
+
           {%- comment -%} Use manual flag if set, otherwise use auto-detected flag {%- endcomment -%}
           {%- assign display_flag = section.settings.delivery_flag | default: auto_flag -%}
 
           <div class="maison_commerce_pd_bundle__delivery-info">
             <p class="maison_commerce_pd_bundle__delivery-text">
               {% if display_flag != blank %}
-                <span class="maison_commerce_pd_bundle__delivery-flag" {% if country_code != blank %}data-country-code="{{ country_code }}"{% endif %} {% if section.settings.delivery_flag == blank %}data-auto-detect="true"{% endif %}>{{ display_flag }}</span> 
+                <span
+                  class="maison_commerce_pd_bundle__delivery-flag"
+                  {% if country_code != blank %}
+                    data-country-code="{{ country_code }}"
+                  {% endif %}
+                  {% if section.settings.delivery_flag == blank %}
+                    data-auto-detect="true"
+                  {% endif %}
+                >
+                  {{- display_flag -}}
+                </span>
               {% endif %}
               <span>{{ section.settings.delivery_prefix }}</span>
-              <span class="maison_commerce_pd_bundle__delivery-date" {% if section.settings.delivery_time != blank %}data-delivery-time="{{ section.settings.delivery_time }}"{% endif %}>
+              <span
+                class="maison_commerce_pd_bundle__delivery-date"
+                {% if section.settings.delivery_time != blank %}
+                  data-delivery-time="{{ section.settings.delivery_time }}"
+                {% endif %}
+              >
               </span>
               <span>{{ section.settings.delivery_suffix }}</span>
             </p>
@@ -767,10 +861,18 @@
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {%- when 'buy_buttons' -%}
-              {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true, main_product: true, icon_maison: 'true' -%}
+              {%- render 'buy-buttons',
+                block: block,
+                product: product,
+                product_form_id: product_form_id,
+                section_id: section.id,
+                show_pickup_availability: true,
+                main_product: true,
+                icon_maison: 'true'
+              -%}
           {%- endcase -%}
         {%- endfor -%}
-        
+
         <!-- Payment Methods -->
         {% if section.settings.show_payment_methods %}
           <div class="maison_commerce_pd_bundle__payment-methods">
@@ -952,7 +1054,7 @@
             {% endif %}
           </div>
         {% endif %}
-        
+
         <!-- Shipping Info -->
         {% if section.settings.show_shipping_info %}
           <div class="maison_commerce_pd_bundle__shipping-info">
@@ -1025,18 +1127,36 @@
 
                           {% for i in (1..5) %}
                             {% if i <= full_stars %}
-                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="12"
+                                height="12"
+                                viewBox="0 0 12 12"
+                                fill="none"
+                              >
                                 <rect width="12" height="12" fill="#00B67A"/>
                                 <path d="M6 8.10063L7.7381 7.63522L8.46429 10L6 8.10063ZM10 5.04402H6.94048L6 2L5.05952 5.04402H2L4.47619 6.93082L3.53571 9.97484L6.01191 8.08805L7.53571 6.93082L10 5.04402Z" fill="white"/>
                               </svg>
                             {% elsif i > full_stars and decimal_part >= 0.5 and decimal_part <= 0.9 %}
-                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="12"
+                                height="12"
+                                viewBox="0 0 12 12"
+                                fill="none"
+                              >
                                 <rect width="12" height="12" fill="#00B67A"/>
                                 <rect x="6" width="6" height="12" fill="#EAECF0"/>
                                 <path d="M6 8.10063L7.7381 7.63522L8.46429 10L6 8.10063ZM10 5.04402H6.94048L6 2L5.05952 5.04402H2L4.47619 6.93082L3.53571 9.97484L6.01191 8.08805L7.53571 6.93082L10 5.04402Z" fill="white"/>
                               </svg>
                             {% else %}
-                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="12"
+                                height="12"
+                                viewBox="0 0 12 12"
+                                fill="none"
+                              >
                                 <rect width="12" height="12" fill="#00B67A"/>
                                 <path d="M0 0H12V12H0V0Z" fill="#EAECF0"/>
                                 <path d="M6 8.10063L7.7381 7.63522L8.46429 10L6 8.10063ZM10 5.04403H6.94048L6 2L5.05952 5.04403H2L4.47619 6.93082L3.53571 9.97484L6.01191 8.08805L7.53571 6.93082L10 5.04403Z" fill="white"/>
@@ -1057,7 +1177,13 @@
                         </p>
                         {% if block.settings.source != blank %}
                           <div class="maison_commerce_pd_bundle__review-source">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="14"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              fill="none"
+                            >
                               <path d="M7 10.6761L10.0417 9.86164L11.3125 14L7 10.6761ZM14 5.32704H8.64583L7 0L5.35417 5.32704H0L4.33334 8.62893L2.6875 13.956L7.02083 10.6541L9.6875 8.62893L14 5.32704Z" fill="#00B67A"/>
                             </svg>
                             <span>{{ block.settings.source }}</span>
@@ -1160,13 +1286,13 @@
   {% if sticky_atc_block and sticky_atc_block.settings.show_sticky_atc %}
     <div class="maison_commerce_pd_bundle__sticky-atc" id="maison-sticky-atc">
       {% if product.featured_image %}
-          <img 
-            src="{{ product.featured_image | image_url: width: 160 }}" 
-            alt="{{ product.title | escape }}"
-            class="maison_commerce_pd_bundle__sticky-atc-image"
-            loading="lazy"
-          >
-        {% endif %}
+        <img
+          src="{{ product.featured_image | image_url: width: 160 }}"
+          alt="{{ product.title | escape }}"
+          class="maison_commerce_pd_bundle__sticky-atc-image"
+          loading="lazy"
+        >
+      {% endif %}
       <div class="maison_commerce_pd_bundle__sticky-atc-content">
         <div class="maison_commerce_pd_bundle__sticky-atc-info">
           <p class="maison_commerce_pd_bundle__sticky-atc-title">{{ product.title }}</p>
@@ -1186,7 +1312,12 @@
             {% endif %}
           </div>
         </div>
-        <form action="/cart/add" method="post" enctype="multipart/form-data" class="maison_commerce_pd_bundle__sticky-atc-form">
+        <form
+          action="/cart/add"
+          method="post"
+          enctype="multipart/form-data"
+          class="maison_commerce_pd_bundle__sticky-atc-form"
+        >
           <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
           <button type="submit" class="maison_commerce_pd_bundle__sticky-atc-button">
             <span>Add to Cart</span>
@@ -2728,7 +2859,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
   }
-  
+
   .maison-pd-gallery-buttons.maison-pd-gallery-buttons--visible {
     display: flex;
   }
@@ -2912,7 +3043,7 @@
     const thumbnailSwiper = document.querySelector('.maison_commerce_pd_bundle__thumbnails');
     const thumbPrevBtn = document.querySelector('.maison_commerce_pd_bundle__thumb-prev');
     const thumbNextBtn = document.querySelector('.maison_commerce_pd_bundle__thumb-next');
-    
+
     if (thumbnailSwiper) {
       const swiperInstance = new Swiper('.maison_commerce_pd_bundle__thumbnails', {
         slidesPerView: 'auto',
@@ -2922,32 +3053,32 @@
           prevEl: '.maison_commerce_pd_bundle__thumb-prev',
         },
         on: {
-          init: function() {
+          init: function () {
             checkThumbnailNavigation(this);
           },
-          resize: function() {
+          resize: function () {
             checkThumbnailNavigation(this);
           },
-          slideChange: function() {
+          slideChange: function () {
             checkThumbnailNavigation(this);
-          }
-        }
+          },
+        },
       });
-      
+
       function checkThumbnailNavigation(swiper) {
         // Check if all slides fit in the container
         const containerWidth = swiper.width;
         let totalSlidesWidth = 0;
-        
+
         swiper.slides.forEach((slide, index) => {
           totalSlidesWidth += slide.offsetWidth;
           if (index < swiper.slides.length - 1) {
             totalSlidesWidth += 8; // spaceBetween
           }
         });
-        
+
         const needsNavigation = totalSlidesWidth > containerWidth;
-        
+
         if (thumbPrevBtn) {
           if (needsNavigation) {
             thumbPrevBtn.classList.add('maison-pd-gallery-buttons--visible');
@@ -2979,7 +3110,7 @@
           950: {
             slidesPerView: 1.3,
           },
-        }
+        },
       });
     }
 
@@ -2988,7 +3119,7 @@
     if (customerImagesSwiper) {
       const swiper = new Swiper('.maison_commerce_pd_bundle__customer-images-swiper', {
         slidesPerView: 3,
-        spaceBetween: 12
+        spaceBetween: 12,
       });
 
       // Custom navigation
@@ -3006,24 +3137,27 @@
     // Sticky Add to Cart visibility control
     const stickyAtc = document.getElementById('maison-sticky-atc');
     const bundlePlaceholder = document.querySelector('.maison_commerce_pd_bundle__bundle-placeholder');
-    
+
     if (stickyAtc && bundlePlaceholder) {
       // Use Intersection Observer to detect when bundle placeholder is fully scrolled past
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          // When the bundle placeholder is completely out of view (scrolled past)
-          // entry.boundingClientRect.bottom < 0 means the element is above the viewport
-          if (entry.boundingClientRect.bottom < 0) {
-            stickyAtc.classList.add('maison_commerce_pd_bundle__sticky-atc--visible');
-          } else {
-            stickyAtc.classList.remove('maison_commerce_pd_bundle__sticky-atc--visible');
-          }
-        });
-      }, {
-        root: null, // viewport
-        rootMargin: '0px',
-        threshold: 0 // Trigger when any part of the element leaves the viewport
-      });
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            // When the bundle placeholder is completely out of view (scrolled past)
+            // entry.boundingClientRect.bottom < 0 means the element is above the viewport
+            if (entry.boundingClientRect.bottom < 0) {
+              stickyAtc.classList.add('maison_commerce_pd_bundle__sticky-atc--visible');
+            } else {
+              stickyAtc.classList.remove('maison_commerce_pd_bundle__sticky-atc--visible');
+            }
+          });
+        },
+        {
+          root: null, // viewport
+          rootMargin: '0px',
+          threshold: 0, // Trigger when any part of the element leaves the viewport
+        }
+      );
 
       observer.observe(bundlePlaceholder);
     }
@@ -3031,12 +3165,12 @@
     // Sticky Add to Cart form handler
     const stickyAtcForm = document.querySelector('.maison_commerce_pd_bundle__sticky-atc-form');
     if (stickyAtcForm) {
-      stickyAtcForm.addEventListener('submit', function(e) {
+      stickyAtcForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        
+
         const formData = new FormData(this);
         const variantId = formData.get('id');
-        
+
         if (!variantId) {
           console.error('No variant ID found');
           return;
@@ -3050,55 +3184,116 @@
           },
           body: JSON.stringify({
             id: variantId,
-            quantity: 1
+            quantity: 1,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            // Trigger cart drawer update if available
+            if (typeof window.theme !== 'undefined' && window.theme.cartDrawer) {
+              window.theme.cartDrawer.open();
+            } else {
+              // Fallback: redirect to cart page
+            }
           })
-        })
-        .then(response => response.json())
-        .then(data => {
-          // Trigger cart drawer update if available
-          if (typeof window.theme !== 'undefined' && window.theme.cartDrawer) {
-            window.theme.cartDrawer.open();
-          } else {
-            // Fallback: redirect to cart page
-            
-          }
-        })
-        .catch(error => {
-          console.error('Error adding to cart:', error);
-          alert('There was an error adding the product to your cart. Please try again.');
-        });
+          .catch((error) => {
+            console.error('Error adding to cart:', error);
+            alert('There was an error adding the product to your cart. Please try again.');
+          });
       });
     }
 
     // Country to flag emoji mapping
     const countryFlags = {
-      'US': '🇺🇸', 'GB': '🇬🇧', 'CA': '🇨🇦', 'AU': '🇦🇺', 'DE': '🇩🇪', 'FR': '🇫🇷',
-      'IT': '🇮🇹', 'ES': '🇪🇸', 'NL': '🇳🇱', 'BE': '🇧🇪', 'CH': '🇨🇭', 'AT': '🇦🇹',
-      'SE': '🇸🇪', 'NO': '🇳🇴', 'DK': '🇩🇰', 'FI': '🇫🇮', 'PL': '🇵🇱', 'CZ': '🇨🇿',
-      'HU': '🇭🇺', 'RO': '🇷🇴', 'GR': '🇬🇷', 'PT': '🇵🇹', 'IE': '🇮🇪', 'NZ': '🇳🇿',
-      'JP': '🇯🇵', 'KR': '🇰🇷', 'CN': '🇨🇳', 'IN': '🇮🇳', 'BR': '🇧🇷', 'MX': '🇲🇽',
-      'AR': '🇦🇷', 'CL': '🇨🇱', 'CO': '🇨🇴', 'PE': '🇵🇪', 'ZA': '🇿🇦', 'AE': '🇦🇪',
-      'SA': '🇸🇦', 'IL': '🇮🇱', 'TR': '🇹🇷', 'RU': '🇷🇺', 'UA': '🇺🇦', 'SG': '🇸🇬',
-      'MY': '🇲🇾', 'TH': '🇹🇭', 'VN': '🇻🇳', 'PH': '🇵🇭', 'ID': '🇮🇩', 'HK': '🇭🇰',
-      'TW': '🇹🇼', 'NO': '🇳🇴', 'IE': '🇮🇪', 'LU': '🇱🇺', 'IS': '🇮🇸', 'MT': '🇲🇹',
-      'CY': '🇨🇾', 'EE': '🇪🇪', 'LV': '🇱🇻', 'LT': '🇱🇹', 'SK': '🇸🇰', 'SI': '🇸🇮',
-      'BG': '🇧🇬', 'HR': '🇭🇷', 'RS': '🇷🇸', 'ME': '🇲🇪', 'MK': '🇲🇰', 'AL': '🇦🇱',
-      'BY': '🇧🇾', 'MD': '🇲🇩', 'GE': '🇬🇪', 'AM': '🇦🇲', 'AZ': '🇦🇿', 'KZ': '🇰🇿'
+      US: '🇺🇸',
+      GB: '🇬🇧',
+      CA: '🇨🇦',
+      AU: '🇦🇺',
+      DE: '🇩🇪',
+      FR: '🇫🇷',
+      IT: '🇮🇹',
+      ES: '🇪🇸',
+      NL: '🇳🇱',
+      BE: '🇧🇪',
+      CH: '🇨🇭',
+      AT: '🇦🇹',
+      SE: '🇸🇪',
+      NO: '🇳🇴',
+      DK: '🇩🇰',
+      FI: '🇫🇮',
+      PL: '🇵🇱',
+      CZ: '🇨🇿',
+      HU: '🇭🇺',
+      RO: '🇷🇴',
+      GR: '🇬🇷',
+      PT: '🇵🇹',
+      IE: '🇮🇪',
+      NZ: '🇳🇿',
+      JP: '🇯🇵',
+      KR: '🇰🇷',
+      CN: '🇨🇳',
+      IN: '🇮🇳',
+      BR: '🇧🇷',
+      MX: '🇲🇽',
+      AR: '🇦🇷',
+      CL: '🇨🇱',
+      CO: '🇨🇴',
+      PE: '🇵🇪',
+      ZA: '🇿🇦',
+      AE: '🇦🇪',
+      SA: '🇸🇦',
+      IL: '🇮🇱',
+      TR: '🇹🇷',
+      RU: '🇷🇺',
+      UA: '🇺🇦',
+      SG: '🇸🇬',
+      MY: '🇲🇾',
+      TH: '🇹🇭',
+      VN: '🇻🇳',
+      PH: '🇵🇭',
+      ID: '🇮🇩',
+      HK: '🇭🇰',
+      TW: '🇹🇼',
+      NO: '🇳🇴',
+      IE: '🇮🇪',
+      LU: '🇱🇺',
+      IS: '🇮🇸',
+      MT: '🇲🇹',
+      CY: '🇨🇾',
+      EE: '🇪🇪',
+      LV: '🇱🇻',
+      LT: '🇱🇹',
+      SK: '🇸🇰',
+      SI: '🇸🇮',
+      BG: '🇧🇬',
+      HR: '🇭🇷',
+      RS: '🇷🇸',
+      ME: '🇲🇪',
+      MK: '🇲🇰',
+      AL: '🇦🇱',
+      BY: '🇧🇾',
+      MD: '🇲🇩',
+      GE: '🇬🇪',
+      AM: '🇦🇲',
+      AZ: '🇦🇿',
+      KZ: '🇰🇿',
     };
 
     // Auto-detect country flag if not set manually
-    (function() {
-      const flagElements = document.querySelectorAll('.maison_commerce_pd_bundle__delivery-flag[data-auto-detect="true"]');
-      
-      flagElements.forEach(function(element) {
+    (function () {
+      const flagElements = document.querySelectorAll(
+        '.maison_commerce_pd_bundle__delivery-flag[data-auto-detect="true"]'
+      );
+
+      flagElements.forEach(function (element) {
         const countryCode = element.getAttribute('data-country-code');
-        
+
         // If country code is already set from server-side, use it
         if (countryCode && countryFlags[countryCode.toUpperCase()]) {
           element.textContent = countryFlags[countryCode.toUpperCase()];
           return;
         }
-        
+
         // Try to get country from Shopify localization if available
         if (typeof window.Shopify !== 'undefined' && window.Shopify.locale) {
           const locale = window.Shopify.locale;
@@ -3108,7 +3303,7 @@
             return;
           }
         }
-        
+
         // Fallback: try to detect from browser language
         const browserLang = navigator.language || navigator.userLanguage;
         if (browserLang) {
@@ -3118,32 +3313,68 @@
             return;
           }
         }
-        
+
         // Final fallback: try to detect from timezone
         try {
           const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
           const timezoneCountryMap = {
-            'America/New_York': 'US', 'America/Los_Angeles': 'US', 'America/Chicago': 'US',
-            'America/Denver': 'US', 'America/Phoenix': 'US', 'America/Anchorage': 'US',
-            'Europe/London': 'GB', 'Europe/Paris': 'FR', 'Europe/Berlin': 'DE',
-            'Europe/Rome': 'IT', 'Europe/Madrid': 'ES', 'Europe/Amsterdam': 'NL',
-            'Europe/Brussels': 'BE', 'Europe/Zurich': 'CH', 'Europe/Vienna': 'AT',
-            'Europe/Stockholm': 'SE', 'Europe/Oslo': 'NO', 'Europe/Copenhagen': 'DK',
-            'Europe/Helsinki': 'FI', 'Europe/Warsaw': 'PL', 'Europe/Prague': 'CZ',
-            'Europe/Budapest': 'HU', 'Europe/Bucharest': 'RO', 'Europe/Athens': 'GR',
-            'Europe/Lisbon': 'PT', 'Europe/Dublin': 'IE', 'Asia/Tokyo': 'JP',
-            'Asia/Seoul': 'KR', 'Asia/Shanghai': 'CN', 'Asia/Hong_Kong': 'HK',
-            'Asia/Taipei': 'TW', 'Asia/Singapore': 'SG', 'Asia/Kuala_Lumpur': 'MY',
-            'Asia/Bangkok': 'TH', 'Asia/Ho_Chi_Minh': 'VN', 'Asia/Manila': 'PH',
-            'Asia/Jakarta': 'ID', 'Australia/Sydney': 'AU', 'Australia/Melbourne': 'AU',
-            'Pacific/Auckland': 'NZ', 'America/Toronto': 'CA', 'America/Vancouver': 'CA',
-            'America/Mexico_City': 'MX', 'America/Sao_Paulo': 'BR', 'America/Buenos_Aires': 'AR',
-            'America/Santiago': 'CL', 'America/Bogota': 'CO', 'America/Lima': 'PE',
-            'Africa/Johannesburg': 'ZA', 'Asia/Dubai': 'AE', 'Asia/Riyadh': 'SA',
-            'Asia/Jerusalem': 'IL', 'Europe/Istanbul': 'TR', 'Europe/Moscow': 'RU',
-            'Europe/Kiev': 'UA'
+            'America/New_York': 'US',
+            'America/Los_Angeles': 'US',
+            'America/Chicago': 'US',
+            'America/Denver': 'US',
+            'America/Phoenix': 'US',
+            'America/Anchorage': 'US',
+            'Europe/London': 'GB',
+            'Europe/Paris': 'FR',
+            'Europe/Berlin': 'DE',
+            'Europe/Rome': 'IT',
+            'Europe/Madrid': 'ES',
+            'Europe/Amsterdam': 'NL',
+            'Europe/Brussels': 'BE',
+            'Europe/Zurich': 'CH',
+            'Europe/Vienna': 'AT',
+            'Europe/Stockholm': 'SE',
+            'Europe/Oslo': 'NO',
+            'Europe/Copenhagen': 'DK',
+            'Europe/Helsinki': 'FI',
+            'Europe/Warsaw': 'PL',
+            'Europe/Prague': 'CZ',
+            'Europe/Budapest': 'HU',
+            'Europe/Bucharest': 'RO',
+            'Europe/Athens': 'GR',
+            'Europe/Lisbon': 'PT',
+            'Europe/Dublin': 'IE',
+            'Asia/Tokyo': 'JP',
+            'Asia/Seoul': 'KR',
+            'Asia/Shanghai': 'CN',
+            'Asia/Hong_Kong': 'HK',
+            'Asia/Taipei': 'TW',
+            'Asia/Singapore': 'SG',
+            'Asia/Kuala_Lumpur': 'MY',
+            'Asia/Bangkok': 'TH',
+            'Asia/Ho_Chi_Minh': 'VN',
+            'Asia/Manila': 'PH',
+            'Asia/Jakarta': 'ID',
+            'Australia/Sydney': 'AU',
+            'Australia/Melbourne': 'AU',
+            'Pacific/Auckland': 'NZ',
+            'America/Toronto': 'CA',
+            'America/Vancouver': 'CA',
+            'America/Mexico_City': 'MX',
+            'America/Sao_Paulo': 'BR',
+            'America/Buenos_Aires': 'AR',
+            'America/Santiago': 'CL',
+            'America/Bogota': 'CO',
+            'America/Lima': 'PE',
+            'Africa/Johannesburg': 'ZA',
+            'Asia/Dubai': 'AE',
+            'Asia/Riyadh': 'SA',
+            'Asia/Jerusalem': 'IL',
+            'Europe/Istanbul': 'TR',
+            'Europe/Moscow': 'RU',
+            'Europe/Kiev': 'UA',
           };
-          
+
           if (timezoneCountryMap[timezone] && countryFlags[timezoneCountryMap[timezone]]) {
             element.textContent = countryFlags[timezoneCountryMap[timezone]];
           }
@@ -3154,25 +3385,40 @@
     })();
 
     // Calculate delivery date based on delivery_time
-    (function() {
-      const deliveryDateElements = document.querySelectorAll('.maison_commerce_pd_bundle__delivery-date[data-delivery-time]');
-      
-      deliveryDateElements.forEach(function(element) {
+    (function () {
+      const deliveryDateElements = document.querySelectorAll(
+        '.maison_commerce_pd_bundle__delivery-date[data-delivery-time]'
+      );
+
+      deliveryDateElements.forEach(function (element) {
         const deliveryTime = parseInt(element.getAttribute('data-delivery-time')) || 3;
-        
+
         if (deliveryTime > 0) {
           const today = new Date();
           const deliveryDate = new Date(today);
           deliveryDate.setDate(today.getDate() + deliveryTime);
-          
+
           // Format date as "Friday, 21 November"
           const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-          const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-          
+          const months = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December',
+          ];
+
           const dayOfWeek = daysOfWeek[deliveryDate.getDay()];
           const day = deliveryDate.getDate();
           const month = months[deliveryDate.getMonth()];
-          
+
           const formattedDate = `${dayOfWeek}, ${day} ${month}`;
           element.textContent = formattedDate;
         }
@@ -3181,4 +3427,6 @@
   });
 </script>
 
-{% render 'maison-kaching-edits' %}
+{% if section.settings.use_maison_kaching_edits %}
+  {% render 'maison-kaching-edits', section: section %}
+{% endif %}
