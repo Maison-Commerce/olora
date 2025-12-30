@@ -98,6 +98,26 @@
     }
   }
 
+  function swapPriceForPerItem() {
+    const bars = document.querySelectorAll('.kaching-bundles__bar-container');
+
+    for (let barindex = 0; barindex < bars.length; barindex++) {
+      const bar = bars[barindex];
+      const mainPrice = bar.querySelector('.kaching-bundles__bar-content').querySelector('.kaching-bundles__bar-price');
+      if (mainPrice.getAttribute('maison-editted')) continue;
+      const priceVal = mainPrice.textContent.trim().replace(/[^0-9\.]/g, '');
+      const float = parseFloat(priceVal);
+      const totalProducts = bar.querySelectorAll('.kaching-bundles__bundle-products__product').length;
+      const pricePerItem = float / totalProducts;
+      const formattedPrice = pricePerItem.toLocaleString(Shopify.locale, {
+        style: 'currency',
+        currency: Shopify.currency.active,
+      });
+      mainPrice.innerHTML = `${formattedPrice} / Item`;
+      mainPrice.setAttribute('maison-editted', 'true');
+    }
+  }
+
   setInterval(async () => {
     const COLOR_MAP = {
       SAND: '#E6D2C0',
@@ -110,5 +130,6 @@
     addNumbers();
     addSwatchFunctionality(COLOR_MAP);
     swapPricesForFree();
+    swapPriceForPerItem();
   }, 10);
 </script>
