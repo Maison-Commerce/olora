@@ -119,7 +119,9 @@
       mainPrice.setAttribute('maison-editted', 'true');
 
       if (addTotal === true) {
-        mainPrice.innerHTML = `${formattedPrice}/Item | <span style="font-weight: 400">Total: ${originalPrice}</span>`;
+        mainPrice.backgroundColor = 'transparent';
+        mainPrice.border = 'none';
+        mainPrice.innerHTML = `${formattedPrice}/Item | <span style="border: 1px solid var(--Color-Brand-1-1800, #F0D3CB); background: var(--Color-Brand-1-800, #F7E6E2); font-weight: 400">Total: ${originalPrice}</span>`;
       }
     }
   }
