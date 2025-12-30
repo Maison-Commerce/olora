@@ -119,8 +119,8 @@
       mainPrice.setAttribute('maison-editted', 'true');
 
       if (addTotal === true) {
-        mainPrice.style.backgroundColor = 'transparent';
-        mainPrice.style.border = 'none';
+        mainPrice.parentElement.style.backgroundColor = 'transparent';
+        mainPrice.parentElement.style.border = 'none';
         mainPrice.innerHTML = `${formattedPrice}/Item <span style="padding: 2px 6px; border-radius: 8px; border: 1px solid #F0D3CB; background: #F7E6E2; font-weight: 400">Total: ${originalPrice}</span>`;
       }
     }
