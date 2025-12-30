@@ -1,9 +1,16 @@
 <script>
-  {
+  async function waitForKaching() {
+    return new Promise(async (resolve) => {
+      if (document.querySelector('kaching-bundle')) resolve();
+      await new Promise((x) => setTimeout(x, 100));
+    });
+  }
+
+  async function addNumbers() {
+    await waitForKaching();
     const bars = document.querySelectorAll('.kaching-bundles__bar-container');
     for (const bar of bars) {
-
-      const containers = Array.from(bar.querySelectorAll('img')).map(img => img.parentElement);
+      const containers = Array.from(bar.querySelectorAll('img')).map((img) => img.parentElement);
 
       let i = 1;
       for (const container of containers) {
@@ -23,4 +30,6 @@
       }
     }
   }
+
+  addNumbers();
 </script>
