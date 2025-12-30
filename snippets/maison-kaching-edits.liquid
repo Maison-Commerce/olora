@@ -129,8 +129,9 @@
       const id = `fake-stock-${productindex}`;
       if (document.getElementById(id)) continue;
 
-      const content =product.querySelector('.kaching-bundles__bundle-products__content');
-
+      const content = product.querySelector('.kaching-bundles__bundle-products__content');
+      const price = product.querySelector('.kaching-bundles__bundle-products__pricing');
+      price.marginTop = '-10px';
 
       const div = document.createElement('div');
       div.id = id;
