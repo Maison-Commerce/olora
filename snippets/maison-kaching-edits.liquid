@@ -73,20 +73,23 @@
 
         console.log('[MAISON KACHING EDITS] added swatch functionality', `swatch-${select.id}`);
 
-        select.addEventListener('change', (e) => {
-          const div = document.getElementById(id);
-          div.style.backgroundColor = COLOR_MAP[e.target.value.toUpperCase()];
-        });
+        if (!select.getAttribute('maison-event-added')) {
+          select.setAttribute('maison-event-added', 'true');
+          select.addEventListener('change', (e) => {
+            const div = document.getElementById(id);
+            div.style.backgroundColor = COLOR_MAP[e.target.value.toUpperCase()];
+          });
+        }
       }
     }
   }
 
   setInterval(async () => {
     const COLOR_MAP = {
-      'SAND': '#E6D2C0',
-      'BLACK': '#000000',
-      'MOSS': '#78866B',
-      'COFFEE': '#6F4E37',
+      SAND: '#E6D2C0',
+      BLACK: '#000000',
+      MOSS: '#78866B',
+      COFFEE: '#6F4E37',
     };
 
     await waitForKaching();
