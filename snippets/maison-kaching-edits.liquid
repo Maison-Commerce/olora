@@ -93,7 +93,7 @@
       const val = price.textContent.trim().replace(/[^0-9]/g, '');
       if (parseInt(val) === 0) {
         price.textContent = 'FREE';
-        price.style.color = '#12B76A';
+        price.style.setProperty('color', '#12B76A', 'important');
       }
     }
   }
