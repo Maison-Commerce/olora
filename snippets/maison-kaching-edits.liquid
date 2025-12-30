@@ -206,10 +206,13 @@
       flex-direction: column !important;
       align-items: flex-start !important;
     }
-
-    .kaching-bundles__bar-price[maison-editted] {
-      display: flex;
-      flex-direction: column;
-    }
   }
 </style>
+
+<script>
+  if (window.innerWidth < 750) {
+    document.querySelector('.kaching-bundles__bar-content-left').style.display = 'flex';
+    document.querySelector('.kaching-bundles__bar-content-left').style.setProperty('flex-direction', 'column', 'important');
+    document.querySelector('.kaching-bundles__bar-content-left').style.setProperty('align-items', 'flex-start', 'important');
+  }
+</script>
