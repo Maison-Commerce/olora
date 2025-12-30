@@ -178,7 +178,7 @@
     {% if section.settings.enable_swap_price_for_free %}
       swapPricesForFree();
     {% endif %}
-    {% if section.settings.swap_price_for_per_item %}
+    {% if section.settings.enable_swap_price_for_per_item %}
       swapPriceForPerItem({{ section.settings.enable_add_total_price }});
     {% endif %}
     {% if section.settings.enable_add_fake_stock %}
