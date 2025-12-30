@@ -127,13 +127,13 @@
       product.style.position = 'relative';
 
       const id = `fake-stock-${productindex}`;
-      if (document.getElementById(id)) continue;
+      let div = document.getElementById(id);
 
       const content = product.querySelector('.kaching-bundles__bundle-products__content');
       const price = product.querySelector('.kaching-bundles__bundle-products__pricing');
       price.transform = 'translateY(-10px)';
 
-      const div = document.createElement('div');
+      if (!div) div = document.createElement('div');
       div.id = id;
       div.style.position = 'absolute';
       div.style.bottom = '10px';
