@@ -179,10 +179,10 @@
       swapPricesForFree();
     {% endif %}
     {% if section.settings.enable_add_total_price %}
-      swapPriceForPerItem({{ section.settings.enable_add_total_price }} === true);
+      swapPriceForPerItem({{ section.settings.enable_add_total_price }});
     {% endif %}
     {% if section.settings.enable_add_fake_stock %}
-      addFakeStock(section.settings.fake_stock_color, section.settings.fake_stock_number, section.settings.fake_stock_percentage);
+      addFakeStock();
     {% endif %}
   }, 10);
 </script>
