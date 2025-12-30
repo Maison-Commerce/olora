@@ -87,6 +87,17 @@
     }
   }
 
+  function swapPricesForFree() {
+    const prices = document.querySelectorAll('.kaching-bundles__bundle-products__price');
+    for (const price of prices) {
+      const val = price.textContent.trim().replace(/[^0-9]/g, '');
+      if (parseInt(val) === 0) {
+        price.textContent = 'FREE';
+        price.style.color = '#12B76A';
+      }
+    }
+  }
+
   setInterval(async () => {
     const COLOR_MAP = {
       SAND: '#E6D2C0',
@@ -98,5 +109,6 @@
     await waitForKaching();
     addNumbers();
     addSwatchFunctionality(COLOR_MAP);
+    swapPricesForFree();
   }, 10);
 </script>
