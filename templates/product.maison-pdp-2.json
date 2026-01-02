@@ -13,8 +13,9 @@
     "main",
     "related-products",
     "featured_collection_J47NfA",
-    "custom_liquid_k9iqLd",
+    "instant_2i_k2_l3b_j9qq6p_lx9_trFLGH",
     "17309335580d75643f",
+    "custom_liquid_k9iqLd",
     "17315167440fd9a629"
   ],
   "sections": {
@@ -503,6 +504,27 @@
         "padding_bottom": 0
       }
     },
+    "instant_2i_k2_l3b_j9qq6p_lx9_trFLGH": {
+      "type": "instant-2iK2L3bJ9qq6pLx9",
+      "name": "Maison | Features",
+      "settings": {
+        "text_5HGcqyTVwlfT2WdR": "<p>The #1 Anxiety Relief Device of 2024</p>",
+        "text_Bw5a9cqy4fcE4UCw": "<p>Deeper sleep &amp; relieved anxiety</p><p>when things get stressful.</p>",
+        "text_AgXRKdNrzMjc33R8": "<p>When life&apos;s challenges leave you feeling overwhelmed, the Koala is here to provide the comfort and support you need to relax, unwind, and drift into peaceful sleep.</p>",
+        "text_3iDrckjXLNVrk2JY": "<p>The top 4 features &amp; benefits...</p>",
+        "text_AgXRKdNrzMjc33R8m": "<p>When life&apos;s challenges leave you feeling overwhelmed, the Koala is here to provide the comfort and support you need to relax, unwind, and drift into peaceful sleep.</p>",
+        "text_Lx6NiGj5OrkoK1MI": "<p>Stress Relief </p><p>and Calming Presence</p>",
+        "text_o23XxVmmUAlW2j8g": "<p>Unwind and relax with The Relief Koala&apos;s soothing breathing rhythm, designed to match your natural frequency and promote relaxation.</p>",
+        "text_Q1k86ppNQPIswxL5": "<p>Better Sleep, </p><p>Every Night</p>",
+        "text_Ngf7ePrf2tSHySTZ": "<p>Drift off into your deepest sleep with sleep features, including a moving chest, heartbeat sounds, and a soft nightlight.</p>",
+        "text_Ti7fo26I1b6W3D9w": "<p>Your Emotional Support</p>",
+        "text_gEw5NfxOy78LiKTZ": "<p>Find comfort and relief when life challenges you with The Relief Koala by your side, providing a calming presence whenever you need it most.</p>",
+        "text_smAIqrmygTtf344e": "<p>Made by experts,</p><p>Science-Backed</p>",
+        "text_jWmq0xvYhvdL2e10": "<p>Trust in the effectiveness, as its anxiety-relieving features are the result of research and development by our team of experts.</p>",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "custom_liquid_k9iqLd": {
       "type": "custom-liquid",
       "settings": {
@@ -516,6 +538,17 @@
     },
     "17309335580d75643f": {
       "type": "apps",
+      "blocks": {
+        "reelup_shoppable_videos_reels_reelup_playlist_qnze8V": {
+          "type": "shopify://apps/reelup-shoppable-videos-reels/blocks/reelup_playlist/a8ec9e4d-d192-44f7-9c23-595f9ee7dd5b",
+          "settings": {
+            "playlist_id": ""
+          }
+        }
+      },
+      "block_order": [
+        "reelup_shoppable_videos_reels_reelup_playlist_qnze8V"
+      ],
       "settings": {
         "include_margins": true
       }
