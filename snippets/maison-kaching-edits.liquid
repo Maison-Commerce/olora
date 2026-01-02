@@ -107,7 +107,7 @@
       bar.querySelector('.kaching-bundles__bar-full-price').style.display = 'none';
       if (mainPrice.getAttribute('maison-editted')) continue;
       const originalPrice = mainPrice.textContent;
-      const priceVal = originalPrice.trim().replace(',', '').replace(/[^0-9\.]/g, '');
+      const priceVal = originalPrice.trim().replace(',', '.').replace(/[^0-9\.]/g, '');
       const float = parseFloat(priceVal);
       const totalProducts = bar.querySelectorAll('.kaching-bundles__bundle-products__product').length;
       const pricePerItem = float / totalProducts;
