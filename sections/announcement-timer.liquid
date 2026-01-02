@@ -465,14 +465,11 @@
         const difference = endDate.getTime() - now;
 
         if (difference <= 0) {
-          // Якщо таймер добіг кінця (наприклад, настала північ)
-          // Можна або обнулити, або автоматично оновити на наступну добу
-          location.reload(); // Перезавантаження оновить таймер на новий день
+          location.reload();
           return;
         }
 
-        // Розрахунок часу (враховуємо дні, якщо раптом забажаєте додати їх у верстку)
-        const hours = Math.floor((difference / (1000 * 60 * 60))); // Рахуємо всі години, що залишились
+        const hours = Math.floor((difference / (1000 * 60 * 60)));
         const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
@@ -480,7 +477,6 @@
         const minutesStr = String(minutes).padStart(2, '0');
         const secondsStr = String(seconds).padStart(2, '0');
 
-        // Оновлюємо DOM
         const updateDigit = (type, val) => {
           const tens = document.querySelector(`[data-digit="${type}-tens"]`);
           const ones = document.querySelector(`[data-digit="${type}-ones"]`);
@@ -496,7 +492,6 @@
       updateTimer();
       const intervalId = setInterval(updateTimer, 1000);
 
-      // Очистка при видаленні секції в редакторі
       if (Shopify.designMode) {
         document.addEventListener('shopify:section:unload', (e) => {
           if (e.detail.sectionId === '{{ section.id }}') clearInterval(intervalId);
