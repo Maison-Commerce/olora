@@ -18,6 +18,7 @@
     "comparision_tble_HtwY3h",
     "rich_text_zBiWPP",
     "instant_5_e18_bz_p_uj_hv5z_mtt_DzgLKC",
+    "instant_w_bgsosa_qf360_bef8_DbpXHb",
     "custom_liquid_k9iqLd",
     "17315167440fd9a629"
   ],
@@ -658,6 +659,33 @@
         "text_QY0ueHp6YnB5Zl4f2": "<p>4</p>",
         "text_LGfdGnvEjnDG2Jbm2": "<p>Seamless</p>",
         "text_M0qzzoJsFcPr4sow": "<p>Olora: the  invisble thong that let’s you focus on your day, not your underwear.</p>",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "instant_w_bgsosa_qf360_bef8_DbpXHb": {
+      "type": "instant-WBgsosaQf360Bef8",
+      "name": "Reviews Section",
+      "settings": {
+        "text_FWPgM4qR9XbbpETD": "<p>5,841+ women are #oloraproof</p>",
+        "text_aBmWpv1NK4cQhAdK": "<p>Join thousands of women around the world who no longer worry about camel toe, visible panty lines or embarrassing sweat patches.</p>",
+        "text_BJJg7oVwJda6CZN2": "<p>\"Hands down the best underwear\"</p>",
+        "text_Xqqq19a9H6TASSPf": "<p>These are hands down the best underwear to wear under any leggings. I no longer feel exposed! Super comfy and don’t show any seam lines. Off to buy some more!</p>",
+        "text_jUyj6RpUbfHHq7N1": "<p>Rachel D.</p>",
+        "text_Q9KdoGgPtKR0Hgdm": "<p>Verified buyer</p>",
+        "text_Q0HzSybJu5jsJlfW": "<p>\"Exactly as they say they are!\"</p>",
+        "text_Mu0T9EYLg0ylvKXN": "<p>These are exactly as they say they are! I wear them daily to the gym and have no more camel toe!</p>",
+        "text_fTgKmpxipMG0GwKX": "<p>Daniela A.</p>",
+        "text_YySPEJxlq5tayFBM": "<p>Verified buyer</p>",
+        "text_4bPDg1CobMM7ZsIC": "<p>\"I feel so much more confident and comfortable\"</p>",
+        "text_518AsPUfDDqFOcyO": "<p>I feel so much more confident and comfortable in these. Would definitely recommend. Oh and I love not having to do gusset checks anymore!!</p>",
+        "text_4cMGo0Rg7sy9qZzM": "<p>Gracie J.</p>",
+        "text_vqPLfZHiK5hiZs9l": "<p>Verified buyer</p>",
+        "text_iYtV28IPIlPLTcAt": "<p>Camel Toe Proof</p>",
+        "text_ksLQiUxxyymTHSdu": "<p>Invisible Fit</p>",
+        "text_MnKBt1u79XXl7Fke": "<p>Sweat-Wicking</p>",
+        "text_9kLhEIMlqP9r5wYa": "<p>High Rise</p>",
+        "text_xaK3N8fZVeBCl4Tl": "<p>Seamless Comfort</p>",
         "padding_top": 0,
         "padding_bottom": 0
       }
