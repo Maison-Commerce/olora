@@ -16,6 +16,7 @@
     "instant_2i_k2_l3b_j9qq6p_lx9_trFLGH",
     "17309335580d75643f",
     "comparision_tble_HtwY3h",
+    "rich_text_zBiWPP",
     "custom_liquid_k9iqLd",
     "17315167440fd9a629"
   ],
@@ -601,6 +602,36 @@
       "settings": {
         "section_heading": "Spot The Difference! ",
         "subheading": "Discover the difference between Olora vs regular underwear or going pantyless"
+      }
+    },
+    "rich_text_zBiWPP": {
+      "type": "rich-text",
+      "blocks": {
+        "button_3knLMF": {
+          "type": "button",
+          "settings": {
+            "button_label": "Claim Offer",
+            "button_link": "#shopify-section-template--24875526816070__instant_xvon_p_fp_wu5_g_vk9o_v_f7NHLC",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "button_3knLMF"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "custom_liquid_k9iqLd": {
