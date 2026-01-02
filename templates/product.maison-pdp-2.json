@@ -601,7 +601,9 @@
       "name": "Coffee Comparison Section",
       "settings": {
         "section_heading": "Spot The Difference! ",
-        "subheading": "Discover the difference between Olora vs regular underwear or going pantyless"
+        "subheading": "Discover the difference between Olora vs regular underwear or going pantyless",
+        "left_image": "shopify://shop_images/5_2.png",
+        "right_image": "shopify://shop_images/BEFORE_1.png"
       }
     },
     "rich_text_zBiWPP": {
