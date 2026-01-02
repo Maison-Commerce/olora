@@ -448,70 +448,65 @@
       const timerElement = document.querySelector('.maison_commerce_announcement_timer__timer');
       if (!timerElement) return;
 
-      const endDateStr = timerElement.getAttribute('data-end-date');
-      if (!endDateStr) return;
+      let endDate;
+      const settingDate = timerElement.getAttribute('data-end-date');
 
-      // Parse end date (format: YYYY-MM-DD HH:MM:SS)
-      const endDate = new Date(endDateStr.replace(' ', 'T'));
+      if (settingDate && settingDate.trim() !== "") {
+        // Якщо дата вказана в кастомайзері — використовуємо її
+        endDate = new Date(settingDate.replace(' ', 'T'));
+      } else {
+        // АВТО-ЛОГІКА: Встановлюємо на 00:00:00 завтрашнього дня
+        endDate = new Date();
+        endDate.setDate(endDate.getDate() + 1);
+        endDate.setHours(0, 0, 0, 0); 
+      }
+
       if (isNaN(endDate.getTime())) {
-        console.error('Invalid end date format. Use: YYYY-MM-DD HH:MM:SS');
+        console.error('Invalid date');
         return;
       }
 
       function updateTimer() {
         const now = new Date().getTime();
-        const end = endDate.getTime();
-        const difference = end - now;
+        const difference = endDate.getTime() - now;
 
         if (difference <= 0) {
-          // Timer expired
-          document.querySelector('[data-digit="hours-tens"]').textContent = '0';
-          document.querySelector('[data-digit="hours-ones"]').textContent = '0';
-          document.querySelector('[data-digit="minutes-tens"]').textContent = '0';
-          document.querySelector('[data-digit="minutes-ones"]').textContent = '0';
-          document.querySelector('[data-digit="seconds-tens"]').textContent = '0';
-          document.querySelector('[data-digit="seconds-ones"]').textContent = '0';
+          // Якщо таймер добіг кінця (наприклад, настала північ)
+          // Можна або обнулити, або автоматично оновити на наступну добу
+          location.reload(); // Перезавантаження оновить таймер на новий день
           return;
         }
 
-        // Calculate time remaining
-        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        // Розрахунок часу (враховуємо дні, якщо раптом забажаєте додати їх у верстку)
+        const hours = Math.floor((difference / (1000 * 60 * 60))); // Рахуємо всі години, що залишились
         const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-        // Format with leading zeros and split into tens/ones
         const hoursStr = String(hours).padStart(2, '0');
         const minutesStr = String(minutes).padStart(2, '0');
         const secondsStr = String(seconds).padStart(2, '0');
 
-        // Update hours
-        document.querySelector('[data-digit="hours-tens"]').textContent = hoursStr[0];
-        document.querySelector('[data-digit="hours-ones"]').textContent = hoursStr[1];
+        // Оновлюємо DOM
+        const updateDigit = (type, val) => {
+          const tens = document.querySelector(`[data-digit="${type}-tens"]`);
+          const ones = document.querySelector(`[data-digit="${type}-ones"]`);
+          if(tens) tens.textContent = val[0];
+          if(ones) ones.textContent = val[1];
+        };
 
-        // Update minutes
-        document.querySelector('[data-digit="minutes-tens"]').textContent = minutesStr[0];
-        document.querySelector('[data-digit="minutes-ones"]').textContent = minutesStr[1];
-
-        // Update seconds
-        document.querySelector('[data-digit="seconds-tens"]').textContent = secondsStr[0];
-        document.querySelector('[data-digit="seconds-ones"]').textContent = secondsStr[1];
+        updateDigit('hours', hoursStr);
+        updateDigit('minutes', minutesStr);
+        updateDigit('seconds', secondsStr);
       }
 
-      // Update immediately
       updateTimer();
-
-      // Update every second
       const intervalId = setInterval(updateTimer, 1000);
 
-      // Cleanup on section removal (if using section groups)
-      if (timerElement.closest('.shopify-section')) {
-        const observer = new MutationObserver(function(mutations) {
-          if (!document.body.contains(timerElement)) {
-            clearInterval(intervalId);
-            observer.disconnect();
-          }
+      // Очистка при видаленні секції в редакторі
+      if (Shopify.designMode) {
+        document.addEventListener('shopify:section:unload', (e) => {
+          if (e.detail.sectionId === '{{ section.id }}') clearInterval(intervalId);
         });
-        observer.observe(document.body, { childList: true, subtree: true });
       }
     }
 
