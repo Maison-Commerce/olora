@@ -20,7 +20,6 @@
 
   .facets__form .product-count {
     grid-column-start: 3;
-    align-self: flex-start;
   }
 }
 
@@ -47,9 +46,12 @@
 
 .facet-filters__label {
   display: block;
-  color: var(--color-foreground-85);
-  font-size: 1.4rem;
   margin: 0 2rem 0 0;
+  color: var(--Text-Primary, #151515);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 21px;
 }
 
 .facet-filters__summary {
@@ -112,7 +114,7 @@
 }
 
 .facet-filters__sort + .icon-caret {
-  right: 0;
+  right: 12px;
 }
 
 @media screen and (forced-colors: active) {
@@ -187,9 +189,12 @@
 
 .facets__heading {
   display: block;
-  color: rgba(var(--color-foreground), 0.85);
-  font-size: 1.4rem;
-  margin: -1.5rem 2rem 0 0;
+  margin: 0rem 2rem 0 0;
+  color: var(--Text-Primary, #151515);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 21px;
 }
 
 .facets__reset {
@@ -204,7 +209,7 @@
   color: rgba(var(--color-foreground), 0.9);
   font-size: 1.4rem;
   padding: 0 1.75rem 0 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
 }
 
 .facets__disclosure fieldset {
@@ -241,7 +246,7 @@
 }
 
 .facets__summary .icon-caret {
-  right: 0;
+  right: 12px;
 }
 
 .facets__display {
@@ -935,6 +940,7 @@ input.mobile-facets__checkbox {
 
 .product-count__text {
   font-size: 1.4rem;
+  font-weight: 500;
   line-height: calc(1 + 0.5 / var(--font-body-scale));
   margin: 0;
 }

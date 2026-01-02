@@ -1,0 +1,535 @@
+{% schema %}
+{
+  "name": "Announcement Timer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "announcement_text",
+      "label": "Announcement Text",
+      "default": "OFFER ENDS TONIGHT"
+    },
+    {
+      "type": "text",
+      "id": "end_date",
+      "label": "End Date & Time",
+      "info": "Format: YYYY-MM-DD HH:MM:SS (e.g., 2024-12-31 23:59:59)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Left (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Right (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Left (Mobile)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Right (Mobile)",
+      "default": 80
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#F0D3CB"
+    },
+    {
+      "type": "range",
+      "id": "text_font_size_desktop",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Announcement Text Font Size (Desktop)",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "text_font_size_mobile",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Announcement Text Font Size (Mobile)",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#151515"
+    },
+    {
+      "type": "range",
+      "id": "timer_font_size_desktop",
+      "min": 12,
+      "max": 48,
+      "step": 1,
+      "unit": "px",
+      "label": "Timer Font Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "timer_font_size_mobile",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Timer Font Size (Mobile)",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "timer_digit_color",
+      "label": "Timer Digit Color",
+      "default": "#151515"
+    },
+    {
+      "type": "color",
+      "id": "timer_box_bg_color",
+      "label": "Timer Box Background Color",
+      "default": "#FFFEFE"
+    },
+    {
+      "type": "range",
+      "id": "label_font_size_desktop",
+      "min": 6,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Label Font Size (Desktop)",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "label_font_size_mobile",
+      "min": 6,
+      "max": 14,
+      "step": 1,
+      "unit": "px",
+      "label": "Label Font Size (Mobile)",
+      "default": 8
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label Color",
+      "default": "rgba(21,21,21,0.75)"
+    },
+    {
+      "type": "color",
+      "id": "colon_color",
+      "label": "Colon Separator Color",
+      "default": "#D5BBB4"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement Timer"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="maison_commerce_announcement_timer">
+  <div class="maison_commerce_announcement_timer__container">
+    <div class="maison_commerce_announcement_timer__content">
+      {% if section.settings.announcement_text %}
+        <div class="maison_commerce_announcement_timer__text-wrapper">
+          <p class="maison_commerce_announcement_timer__text">
+            {{ section.settings.announcement_text }}
+          </p>
+        </div>
+      {% endif %}
+
+      <div class="maison_commerce_announcement_timer__timer-wrapper">
+        <div class="maison_commerce_announcement_timer__timer" data-end-date="{{ section.settings.end_date }}">
+          <div class="maison_commerce_announcement_timer__timer-group">
+            <div class="maison_commerce_announcement_timer__counter">
+              <div class="maison_commerce_announcement_timer__digit-box">
+                <div class="maison_commerce_announcement_timer__digit" data-digit="hours-tens">0</div>
+              </div>
+              <div class="maison_commerce_announcement_timer__digit-box">
+                <div class="maison_commerce_announcement_timer__digit" data-digit="hours-ones">0</div>
+              </div>
+            </div>
+          </div>
+          <div class="maison_commerce_announcement_timer__colon">
+            <svg preserveAspectRatio="none" width="2" height="12" viewBox="0 0 2 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="1" cy="1" r="1" fill="{{ section.settings.colon_color }}"/>
+              <circle cx="1" cy="11" r="1" fill="{{ section.settings.colon_color }}"/>
+            </svg>
+          </div>
+          <div class="maison_commerce_announcement_timer__timer-group">
+            <div class="maison_commerce_announcement_timer__counter">
+              <div class="maison_commerce_announcement_timer__digit-box">
+                <div class="maison_commerce_announcement_timer__digit" data-digit="minutes-tens">0</div>
+              </div>
+              <div class="maison_commerce_announcement_timer__digit-box">
+                <div class="maison_commerce_announcement_timer__digit" data-digit="minutes-ones">0</div>
+              </div>
+            </div>
+          </div>
+          <div class="maison_commerce_announcement_timer__colon">
+            <svg preserveAspectRatio="none" width="2" height="12" viewBox="0 0 2 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="1" cy="1" r="1" fill="{{ section.settings.colon_color }}"/>
+              <circle cx="1" cy="11" r="1" fill="{{ section.settings.colon_color }}"/>
+            </svg>
+          </div>
+          <div class="maison_commerce_announcement_timer__timer-group">
+            <div class="maison_commerce_announcement_timer__counter">
+              <div class="maison_commerce_announcement_timer__digit-box">
+                <div class="maison_commerce_announcement_timer__digit" data-digit="seconds-tens">0</div>
+              </div>
+              <div class="maison_commerce_announcement_timer__digit-box">
+                <div class="maison_commerce_announcement_timer__digit" data-digit="seconds-ones">0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="maison_commerce_announcement_timer__labels">
+          <p class="maison_commerce_announcement_timer__label">HRS</p>
+          <p class="maison_commerce_announcement_timer__label">MIN</p>
+          <p class="maison_commerce_announcement_timer__label">SEC</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Section Container */
+  .maison_commerce_announcement_timer {
+    background-color: {{ section.settings.section_bg_color }};
+    padding-top: {{ section.settings.padding_top_desktop }}px;
+    padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    padding-left: {{ section.settings.padding_left_desktop }}px;
+    padding-right: {{ section.settings.padding_right_desktop }}px;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_announcement_timer {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+      padding-left: {{ section.settings.padding_left_mobile }}px;
+      padding-right: {{ section.settings.padding_right_mobile }}px;
+    }
+  }
+
+  /* Container */
+  .maison_commerce_announcement_timer__container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Content Wrapper */
+  .maison_commerce_announcement_timer__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_announcement_timer__content {
+      gap: 16px;
+    }
+  }
+
+  /* Text Wrapper */
+  .maison_commerce_announcement_timer__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* Announcement Text */
+  .maison_commerce_announcement_timer__text {
+    font-weight: 600;
+    font-size: {{ section.settings.text_font_size_desktop }}px;
+    line-height: 1.5;
+    color: {{ section.settings.text_color }};
+    margin: 0;
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_announcement_timer__text {
+      font-size: {{ section.settings.text_font_size_mobile }}px;
+    }
+  }
+
+  /* Timer Wrapper */
+  .maison_commerce_announcement_timer__timer-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    flex-shrink: 0;
+  }
+
+  /* Timer */
+  .maison_commerce_announcement_timer__timer {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  /* Timer Group */
+  .maison_commerce_announcement_timer__timer-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* Counter */
+  .maison_commerce_announcement_timer__counter {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+    width: 42px;
+    height: 100%;
+  }
+
+  /* Digit Box */
+  .maison_commerce_announcement_timer__digit-box {
+    background-color: {{ section.settings.timer_box_bg_color }};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+
+  /* Digit */
+  .maison_commerce_announcement_timer__digit {
+    font-weight: 600;
+    font-size: {{ section.settings.timer_font_size_desktop }}px;
+    line-height: 0;
+    color: {{ section.settings.timer_digit_color }};
+    text-align: center;
+    height: {{ section.settings.timer_font_size_desktop }}px;
+    width: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_announcement_timer__digit {
+      font-size: {{ section.settings.timer_font_size_mobile }}px;
+      height: {{ section.settings.timer_font_size_mobile }}px;
+    }
+  }
+
+  /* Colon Separator */
+  .maison_commerce_announcement_timer__colon {
+    height: 12px;
+    width: 2px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .maison_commerce_announcement_timer__colon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* Labels */
+  .maison_commerce_announcement_timer__labels {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Label */
+  .maison_commerce_announcement_timer__label {
+    font-weight: 600;
+    font-size: {{ section.settings.label_font_size_desktop }}px;
+    line-height: 1.5;
+    color: {{ section.settings.label_color }};
+    opacity: 0.8;
+    margin: 0;
+    text-align: center;
+    width: 42px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_announcement_timer__label {
+      font-size: {{ section.settings.label_font_size_mobile }}px;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    function initAnnouncementTimer() {
+      const timerElement = document.querySelector('.maison_commerce_announcement_timer__timer');
+      if (!timerElement) return;
+
+      const endDateStr = timerElement.getAttribute('data-end-date');
+      if (!endDateStr) return;
+
+      // Parse end date (format: YYYY-MM-DD HH:MM:SS)
+      const endDate = new Date(endDateStr.replace(' ', 'T'));
+      if (isNaN(endDate.getTime())) {
+        console.error('Invalid end date format. Use: YYYY-MM-DD HH:MM:SS');
+        return;
+      }
+
+      function updateTimer() {
+        const now = new Date().getTime();
+        const end = endDate.getTime();
+        const difference = end - now;
+
+        if (difference <= 0) {
+          // Timer expired
+          document.querySelector('[data-digit="hours-tens"]').textContent = '0';
+          document.querySelector('[data-digit="hours-ones"]').textContent = '0';
+          document.querySelector('[data-digit="minutes-tens"]').textContent = '0';
+          document.querySelector('[data-digit="minutes-ones"]').textContent = '0';
+          document.querySelector('[data-digit="seconds-tens"]').textContent = '0';
+          document.querySelector('[data-digit="seconds-ones"]').textContent = '0';
+          return;
+        }
+
+        // Calculate time remaining
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        // Format with leading zeros and split into tens/ones
+        const hoursStr = String(hours).padStart(2, '0');
+        const minutesStr = String(minutes).padStart(2, '0');
+        const secondsStr = String(seconds).padStart(2, '0');
+
+        // Update hours
+        document.querySelector('[data-digit="hours-tens"]').textContent = hoursStr[0];
+        document.querySelector('[data-digit="hours-ones"]').textContent = hoursStr[1];
+
+        // Update minutes
+        document.querySelector('[data-digit="minutes-tens"]').textContent = minutesStr[0];
+        document.querySelector('[data-digit="minutes-ones"]').textContent = minutesStr[1];
+
+        // Update seconds
+        document.querySelector('[data-digit="seconds-tens"]').textContent = secondsStr[0];
+        document.querySelector('[data-digit="seconds-ones"]').textContent = secondsStr[1];
+      }
+
+      // Update immediately
+      updateTimer();
+
+      // Update every second
+      const intervalId = setInterval(updateTimer, 1000);
+
+      // Cleanup on section removal (if using section groups)
+      if (timerElement.closest('.shopify-section')) {
+        const observer = new MutationObserver(function(mutations) {
+          if (!document.body.contains(timerElement)) {
+            clearInterval(intervalId);
+            observer.disconnect();
+          }
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+      }
+    }
+
+    // Initialize on DOM ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAnnouncementTimer);
+    } else {
+      initAnnouncementTimer();
+    }
+
+    // Re-initialize if section is loaded dynamically (e.g., via AJAX)
+    if (typeof Shopify !== 'undefined' && Shopify.designMode) {
+      document.addEventListener('shopify:section:load', function(event) {
+        if (event.detail.sectionId === '{{ section.id }}') {
+          initAnnouncementTimer();
+        }
+      });
+    }
+  })();
+</script>
+

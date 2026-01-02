@@ -72,10 +72,10 @@
   );
 }
 
-.card--card .card__inner .card__media {
+/* .card--card .card__inner .card__media {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
-}
+} */
 
 .card--standard.card--text {
   background-color: transparent;
@@ -120,7 +120,7 @@
 .card__content {
   display: grid;
   grid-template-rows: minmax(0, 1fr) max-content minmax(0, 1fr);
-  padding: 1rem;
+  padding: 12px 20px;
   width: 100%;
   flex-grow: 1;
 }
@@ -131,18 +131,11 @@
 
 .card__information {
   grid-row-start: 2;
-  padding: 1.3rem 1rem;
+  padding: 0;
 }
 
 .card:not(.ratio) > .card__content {
   grid-template-rows: max-content minmax(0, 1fr) max-content auto;
-}
-
-@media screen and (min-width: 750px) {
-  .card__information {
-    padding-bottom: 1.7rem;
-    padding-top: 1.7rem;
-  }
 }
 
 .card__badge {
@@ -431,4 +424,132 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
+}
+
+.maison-pd-card .card__information a{
+  overflow: hidden;
+  color: var(--Text-Primary, #151515);
+  text-overflow: ellipsis;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  text-decoration: none;
+  text-align: left;
+}
+
+.maison-card-pd-specifications-text{
+  text-align: left;
+  margin: 0;
+  overflow: hidden;
+  color: var(--Text-Secondary, rgba(21, 21, 21, 0.75));
+  text-overflow: ellipsis;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.maison-card-inform-wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.maison-pd-card .vtl-pr-review-stars-snippet-container{
+  display: none!important;
+}
+
+.maison-pd-card .card__information{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.maison-pd-card .card__information .price .price__container{
+  text-align: left;
+}
+
+.maison-pd-card .card__information .price .price__container .price__compare-price s{
+  color: var(--Text-Primary, #151515);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  text-decoration-line: line-through;
+  opacity: 0.5;
+}
+
+.maison-pd-card .card__information .price .price__container .price__regular .price-item--regular, .maison-pd-card .card__information .price .price__container .price-item--last{
+  color: var(--Text-Primary, #151515);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.maison-pd-card .card__information .price .price__sale{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.maison-card-variant-colors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.maison-card-variant-colors .swatch-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  display: block;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.maison-card-variant-colors .swatch-circle.active{
+  border-color: #151515;
+}
+
+.maison-card-variant-colors .swatch-circle:hover {
+  border-color: #151515;
+}
+
+@media(max-width: 750px){
+  .maison-pd-card .card__information a{
+    font-size: 12px;
+  }
+
+  .maison-card-variant-colors .swatch-circle{
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid transparent;
+  }
+
+  .maison-card-pd-specifications-text{
+    font-size: 10px;
+  }
+
+  .maison-pd-card .card__information .price .price__container .price__compare-price s{
+    font-size: 10px;
+  }
+
+  .maison-pd-card .card__information .price .price__container .price__regular .price-item--regular, .maison-pd-card .card__information .price .price__container .price-item--last{
+    font-size: 12px;
+  }
+
+  .maison-pd-card .card__information{
+    gap: 8px;
+    padding: 0!important;
+  }
+
+  .maison-pd-card .card__content{
+    padding: 12px;
+  }
 }

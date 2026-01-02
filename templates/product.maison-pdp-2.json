@@ -9,6 +9,7 @@
  */
 {
   "order": [
+    "maison_pd_bundle_zHD7Rn",
     "main",
     "related-products",
     "17309335580d75643f",
@@ -17,6 +18,239 @@
     "17315167440fd9a629"
   ],
   "sections": {
+    "maison_pd_bundle_zHD7Rn": {
+      "type": "maison-pd-bundle",
+      "blocks": {
+        "sticky_atc_JXhjka": {
+          "type": "sticky_atc",
+          "settings": {
+            "show_sticky_atc": true
+          }
+        },
+        "feature_Vqtd78": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Odor Control"
+          }
+        },
+        "feature_n6mNjC": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Sweat Control"
+          }
+        },
+        "feature_hLhcQW": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Wide Comfy Gusset"
+          }
+        },
+        "feature_mngC8z": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Seamless"
+          }
+        },
+        "kaching_bundles_app_block_tHVXgm": {
+          "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
+          "settings": {
+            "product": "{{product}}",
+            "manual_deal_block_id": ""
+          }
+        },
+        "buy_buttons_AeNAVc": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "skip_cart": false,
+            "uppercase_text": true,
+            "display_price": false,
+            "enable_custom_color": false,
+            "custom_color": "#dd1d1d",
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
+        },
+        "review_hzCjd9": {
+          "type": "review",
+          "settings": {
+            "reviewer_name": "Rachel D.",
+            "review_text": "<p>These are hands down the best underwear to wear under any leggings. I no longer feel exposed! Super comfy and don't show any seam lines. Off to buy some more!</p>",
+            "rating": 5,
+            "rating_text": "Rated Excellent 4.6/5 stars",
+            "reviewer_avatar": "shopify://shop_images/652e1ff39043c8367f8a55fe96e5761c83a5d3c3.png",
+            "source": "Trustpilot"
+          }
+        },
+        "review_8JctkQ": {
+          "type": "review",
+          "settings": {
+            "reviewer_name": "Gracie J.",
+            "review_text": "<p>I feel so much more confident and comfortable in these. Would definitely recommend. Oh and I love not having to do gusset checks anymore!!</p>",
+            "rating": 5,
+            "rating_text": "Rated Excellent 4.8/5 stars",
+            "reviewer_avatar": "shopify://shop_images/87e2bfe95e0cf72094d4f27b77741c5b32edea9d.png",
+            "source": "Trustpilot"
+          }
+        },
+        "review_3H3LnN": {
+          "type": "review",
+          "settings": {
+            "reviewer_name": "Daniela G.",
+            "review_text": "<p>These are exactly as they say they are! I wear them daily to the gym and have no more camel toe!</p>",
+            "rating": 5,
+            "rating_text": "Rated Excellent 4.6/5 stars",
+            "reviewer_avatar": "shopify://shop_images/gempages_510135694635565882-7632b7ac-1fae-43f8-b916-168a6e3ee05d.webp",
+            "source": "Trustpilot"
+          }
+        },
+        "faq_nmKPCF": {
+          "type": "faq",
+          "settings": {
+            "question": "Product Details",
+            "answer": "<ul><li>Fabric: 76/24% Premium Nylon/Spandex</li><li>3\" High Rise</li><li>Camel toe proof technology</li><li>Wide gusset</li><li>Seamless (No VPL)</li><li>Breathable</li><li>Moisture wicking</li><li>Lays flat & conforms to the body</li><li>No tags</li></ul>"
+          }
+        },
+        "faq_bCF9rg": {
+          "type": "faq",
+          "settings": {
+            "question": "Free Returns",
+            "answer": "<p>To keep you 100% protected we offer a 90 day free fit exchange and money-back guarantee. So if you need a different size, we’ll send you an exchange completely free, and if you aren’t fully satisfied with your order for whatever reason within 90 days, we’ll offer you a full refund. To qualify for the 90-day money-back guarantee, you’ll just have to fill out a quick feedback form, which helps us improve our product!</p>"
+          }
+        },
+        "faq_kzaqf4": {
+          "type": "faq",
+          "settings": {
+            "question": "Shipping & Delivery",
+            "answer": "<p>Due to the influx of orders from our ongoing sale, there will be a slight delay in order fulfillment. Rest assured, all orders will be shipped within 24-48 hours.</p><p>Depending on your geographic location, delivery typically takes 5-12 business days.</p><p>We also offer a premium international insured shipping option, which we highly recommend for prioritized fulfillment and faster delivery.</p>"
+          }
+        },
+        "faq_A83QpP": {
+          "type": "faq",
+          "settings": {
+            "question": "How Does Your Camel Toe, Sweat Proof & Seamless Technology Work?",
+            "answer": "<p><strong>Camel Toe Proof Technology</strong><br/>Our thong contains a comfy, breathable, padded insert that’s perfectly fitted and stitched into the gusset, resulting in no movement whilst exercising, no camel toe and no sweaty crotch.<br/><br/><strong>Sweat Proof Technology</strong><br/>We've designed our thong with breathable, moisture-wicking fabric to keep you dry and comfortable all day long. The high-performance fabric actively pulls moisture away from your skin, allowing it to evaporate quickly. This prevents sweat from pooling or seeping through your clothing, keeping you fresh and dry.<br/><br/><strong>Seamless Technology</strong><br/>Our invisible stitching method creates a completely seamless look and our insert is specifically designed to be thinner in certain areas, which stops the material around the gusset from bunching up.</p>"
+          }
+        },
+        "faq_pQtngB": {
+          "type": "faq",
+          "settings": {
+            "question": "How Do I Get The Perfect Size So They Don’t Ride/Bunch Up?",
+            "answer": "<p>Underwear that’s too tight will ride up and underwear that’s too loose will bunch up. Luckily Olora has sizes from xs - xxxl and a size calculator to help you find the perfect size based on your dimensions so they stay in place throughout your entire workout.</p>"
+          }
+        },
+        "faq_9ramnm": {
+          "type": "faq",
+          "settings": {
+            "question": "How Long Will They Last?",
+            "answer": "<p>Provided the proper care is applied, our thongs will keep their quality for up to 1 year, or even longer, however, for hygiene reasons (especially with regular use when exercising) we would recommend replacing your underwear draw at least every 6 months.<br/><br/>For more info on how to properly care for your Olora thongs, see our FAQ section at the bottom of this page.</p>"
+          }
+        },
+        "customer_image_tk3f9M": {
+          "type": "customer_image",
+          "settings": {
+            "image": "shopify://shop_images/08c9db8ab037cc86ea267c4d38d6e4433b1084cd.png"
+          }
+        },
+        "customer_image_Wc68MK": {
+          "type": "customer_image",
+          "settings": {
+            "image": "shopify://shop_images/ee84cc20a2a52567740f6e03f49d25d3f1923fa0.png"
+          }
+        },
+        "customer_image_6LhQpK": {
+          "type": "customer_image",
+          "settings": {
+            "image": "shopify://shop_images/2ab7c3e48bc72de838617773dee6918a8b937e78.png"
+          }
+        },
+        "customer_image_caRVfF": {
+          "type": "customer_image",
+          "settings": {
+            "image": "shopify://shop_images/87e2bfe95e0cf72094d4f27b77741c5b32edea9d.png"
+          }
+        }
+      },
+      "block_order": [
+        "sticky_atc_JXhjka",
+        "feature_Vqtd78",
+        "feature_n6mNjC",
+        "feature_hLhcQW",
+        "feature_mngC8z",
+        "kaching_bundles_app_block_tHVXgm",
+        "buy_buttons_AeNAVc",
+        "review_hzCjd9",
+        "review_8JctkQ",
+        "review_3H3LnN",
+        "faq_nmKPCF",
+        "faq_bCF9rg",
+        "faq_kzaqf4",
+        "faq_A83QpP",
+        "faq_pQtngB",
+        "faq_9ramnm",
+        "customer_image_tk3f9M",
+        "customer_image_Wc68MK",
+        "customer_image_6LhQpK",
+        "customer_image_caRVfF"
+      ],
+      "name": "Product Bundle",
+      "settings": {
+        "use_maison_kaching_edits": true,
+        "enable_numbers": true,
+        "enable_swap_price_for_per_item": true,
+        "enable_add_total_price": false,
+        "enable_swatches": true,
+        "color_map": "{ \"SAND\": \"#E6D2C0\", \"BLACK\": \"#000000\", \"MOSS\": \"#04808f\", \"COFFEE\": \"#723329\" }",
+        "enable_swap_price_for_free": true,
+        "enable_add_fake_stock": true,
+        "fake_stock_color": "#fec84b",
+        "fake_stock_number": 35,
+        "fake_stock_percentage": 25,
+        "gallery_badge_text": "BUY 3, GET 3 FREE",
+        "gallery_badge_subtext": "Add at least 6 items to your cart. Discount applied automatically.",
+        "price_badge_text": "BUY 3, GET 3 FREE",
+        "features_text": "",
+        "protection_title": "Your order is protected by",
+        "protection_heading": "90 Day Fit Exchange & Money Back Guarantee",
+        "protection_description": "<p>If you need to exchange for a different size, or don't like our thong for any reason, we'll send you a new size for free or a full refund.</p>",
+        "protection_icon": "shopify://shop_images/Rectangle_177426.png",
+        "loved_by_heading": "Loved by By 5,800+ Happy Customers",
+        "metafield_rating_key": "custom.rating",
+        "manual_rating_text": "4.8/5 Stars By 5,841 Happy Customers",
+        "metafield_rating_count_key": "custom.rating_count",
+        "section_bg_color": "#fcf5f4",
+        "badge_bg_color": "#f7e6e2",
+        "badge_border_color": "#f0d3cb",
+        "price_badge_bg_color": "#12b76a",
+        "price_badge_text_color": "#f6fef9",
+        "protection_bg_color": "#f7e6e2",
+        "protection_border_color": "#f0d3cb",
+        "show_delivery_info": true,
+        "delivery_time": "3",
+        "delivery_prefix": "Delivered on",
+        "delivery_suffix": "with Express Shipping",
+        "show_payment_methods": true,
+        "show_visa": true,
+        "show_unionpay": true,
+        "show_shoppay": true,
+        "show_mastercard": true,
+        "show_maestro": true,
+        "show_googlepay": true,
+        "show_discover": true,
+        "show_dinersclub": true,
+        "show_applepay": true,
+        "show_amex": true,
+        "show_shipping_info": true,
+        "show_free_shipping": true,
+        "free_shipping_text": "FREE Worldwide Shipping",
+        "show_money_back": true,
+        "money_back_text": "90-Day Money-Back Guarantee",
+        "bundle_heading_text": "SELECT QUANTITY:",
+        "size_guide_text": "Size Guide",
+        "size_guide_url": "shopify://pages/reviews",
+        "size_guide_icon": "shopify://shop_images/c0ebbffd60f0a1828f227c21e7071b584eb97405.png"
+      }
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -189,6 +423,7 @@
         "description_X8pEHM",
         "collapsible_tab_6HVi9U"
       ],
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "enable_sticky_info": true,
@@ -310,6 +545,7 @@
         "kiwi_size_chart_recommender_kiwi_sizing_Fgepx4": {
           "type": "shopify://apps/kiwi-size-chart-recommender/blocks/kiwiSizing/b7369922-bf15-44ce-a121-a22a8fcbc4b0",
           "settings": {
+            "fallbackToBlockPosition": false,
             "waitForElementSelector": "",
             "waitForElementDelay": 5
           }

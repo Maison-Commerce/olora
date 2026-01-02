@@ -1,0 +1,300 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "order": [
+    "image_banner_garaYC",
+    "main-collection-banner",
+    "maison_collection_banner_mkrWrK",
+    "maison_collection_usps_wh3c8H",
+    "maison_collection_categories_V3iBKT",
+    "main-collection-product-grid",
+    "newsletter"
+  ],
+  "sections": {
+    "image_banner_garaYC": {
+      "type": "image-banner",
+      "disabled": true,
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "image": "shopify://shop_images/Desktop.jpg",
+        "image_1_visibility": "mobile-hidden",
+        "image_2": "shopify://shop_images/Mobile_2.jpg",
+        "image_2_visibility": "desktop-hidden",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "url": "",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "transparent_container_color": "white",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
+    "main-collection-banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "maison_collection_banner_mkrWrK": {
+      "type": "maison-collection-banner",
+      "blocks": {
+        "feature_K3rakH": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Camel Toe Proof Technology"
+          }
+        },
+        "feature_iPh6BL": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Seamless"
+          }
+        },
+        "feature_6BKA8U": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Wide Absorbent Gusset"
+          }
+        },
+        "feature_KNKnFR": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "High Rise"
+          }
+        }
+      },
+      "block_order": [
+        "feature_K3rakH",
+        "feature_iPh6BL",
+        "feature_6BKA8U",
+        "feature_KNKnFR"
+      ],
+      "name": "Collection Banner",
+      "settings": {
+        "badge_text": "Special Sale",
+        "heading": "Autumn Sale is here!",
+        "subheading": "Buy 3, Get 3 Free",
+        "rating_value": "4.8",
+        "rating_max": "5",
+        "customer_count": "5,841",
+        "background_image": "shopify://shop_images/Hero_Banner.png",
+        "models_image": "shopify://shop_images/8b9b5c9885fe9f7f24317b7d5b499bcb770266e8.png",
+        "padding_top_desktop": 90,
+        "padding_bottom_desktop": 90,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 0,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "section_bg_color_start": "#fcf5f4",
+        "section_bg_color_end": "#f0d3cb",
+        "badge_bg_color": "#f7e6e2",
+        "badge_border_color": "#f0d3cb",
+        "heading_font_size_desktop": 32,
+        "heading_font_size_mobile": 24,
+        "subheading_color": "#c4858e",
+        "badge_font_size_desktop": 18,
+        "snowflake_border_image": "shopify://shop_images/Vector.svg",
+        "checkmark_color": "#c4858e",
+        "checkmark_size_desktop": 24,
+        "checkmark_size_mobile": 20,
+        "heading_color": "#151515",
+        "rating_text_font_size_desktop": 12,
+        "rating_text_font_size_mobile": 10,
+        "rating_text_color": "#151515",
+        "star_color": "#fec84b",
+        "star_size_desktop": 16,
+        "star_size_mobile": 12,
+        "features_font_size_desktop": 18,
+        "features_font_size_mobile": 14,
+        "features_color": "#151515bf"
+      }
+    },
+    "maison_collection_usps_wh3c8H": {
+      "type": "maison-collection-usps",
+      "blocks": {
+        "usp_HgYtCY": {
+          "type": "usp",
+          "settings": {
+            "usp_text": "Camel Toe Proof Technology"
+          }
+        },
+        "usp_RPN4FV": {
+          "type": "usp",
+          "settings": {
+            "usp_text": "Wide Absorbent Gusset"
+          }
+        },
+        "usp_tQnraz": {
+          "type": "usp",
+          "settings": {
+            "usp_text": "FREE Worldwide Shipping"
+          }
+        }
+      },
+      "block_order": [
+        "usp_HgYtCY",
+        "usp_RPN4FV",
+        "usp_tQnraz"
+      ],
+      "disabled": true,
+      "name": "Collection USPs",
+      "settings": {
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 20,
+        "padding_left_desktop": 40,
+        "padding_right_desktop": 40,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "padding_left_mobile": 40,
+        "padding_right_mobile": 40,
+        "section_bg_color": "#fcf5f4",
+        "icon_bg_color": "#fbf3f1",
+        "icon_border_color": "#c4858e",
+        "checkmark_color": "#c4858e",
+        "text_font_size_desktop": 16,
+        "text_font_size_mobile": 14,
+        "text_color": "#151515",
+        "icon_size_desktop": 16,
+        "icon_size_mobile": 20,
+        "gap_desktop": 16,
+        "gap_mobile": 24,
+        "autoplay_delay": 3000
+      }
+    },
+    "maison_collection_categories_V3iBKT": {
+      "type": "maison-collection-categories",
+      "blocks": {
+        "category_QyXJzt": {
+          "type": "category",
+          "settings": {
+            "collection": "all",
+            "custom_image": "shopify://shop_images/a7f90ec77214a9a530ff1f78967f2e697a72dbe4.png",
+            "custom_name": ""
+          }
+        },
+        "category_VapVEH": {
+          "type": "category",
+          "settings": {
+            "collection": "underwear",
+            "custom_name": ""
+          }
+        },
+        "category_KWX3ia": {
+          "type": "category",
+          "settings": {
+            "collection": "activewear",
+            "custom_name": ""
+          }
+        },
+        "category_c6wjat": {
+          "type": "category",
+          "settings": {
+            "collection": "accessories",
+            "custom_name": ""
+          }
+        }
+      },
+      "block_order": [
+        "category_QyXJzt",
+        "category_VapVEH",
+        "category_KWX3ia",
+        "category_c6wjat"
+      ],
+      "name": "Collection Categories",
+      "settings": {
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 0,
+        "padding_left_desktop": 80,
+        "padding_right_desktop": 80,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 0,
+        "padding_left_mobile": 20,
+        "padding_right_mobile": 20,
+        "section_bg_color": "#ffffff",
+        "border_color_inactive": "#00000014",
+        "border_color_active": "#151515",
+        "gap_desktop": 20,
+        "gap_mobile": 4,
+        "image_size": 80,
+        "text_font_size": 14,
+        "text_color": "#151515"
+      }
+    },
+    "main-collection-product-grid": {
+      "type": "main-collection-product-grid",
+      "custom_css": [],
+      "settings": {
+        "products_per_page": 20,
+        "columns_desktop": 4,
+        "stretch_cards": true,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "badges": "regular",
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 100
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe to our emails",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Join our email list for exclusive offers and the latest news. </p>"
+          }
+        },
+        "email-form": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading",
+        "paragraph",
+        "email-form"
+      ],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "button_type": "solid",
+        "button_label": "Sign up",
+        "button_style_secondary": false,
+        "color_scheme": "background-2",
+        "full_width": true,
+        "padding_top": 68,
+        "padding_bottom": 52
+      }
+    }
+  }
+}

@@ -1,0 +1,462 @@
+{% schema %}
+{
+  "name": "Collection USPs",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Left (Desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Right (Desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Left (Mobile)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Right (Mobile)",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#FCF5F4"
+    },
+    {
+      "type": "color",
+      "id": "icon_bg_color",
+      "label": "Icon Background Color",
+      "default": "#FBF3F1"
+    },
+    {
+      "type": "color",
+      "id": "icon_border_color",
+      "label": "Icon Border Color",
+      "default": "#C4858E"
+    },
+    {
+      "type": "color",
+      "id": "checkmark_color",
+      "label": "Checkmark Color",
+      "default": "#C4858E"
+    },
+    {
+      "type": "range",
+      "id": "text_font_size_desktop",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Text Font Size (Desktop)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "text_font_size_mobile",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Text Font Size (Mobile)",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#151515"
+    },
+    {
+      "type": "range",
+      "id": "icon_size_desktop",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon Size (Desktop)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "icon_size_mobile",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon Size (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "gap_desktop",
+      "min": 8,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Gap Between Items (Desktop)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "gap_mobile",
+      "min": 8,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Gap Between Items (Mobile)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "autoplay_delay",
+      "min": 2000,
+      "max": 9500,
+      "step": 500,
+      "unit": "ms",
+      "label": "Autoplay Delay (Mobile)",
+      "default": 3000,
+      "info": "Time between slides in milliseconds"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "usp",
+      "name": "USP Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "usp_text",
+          "label": "USP Text",
+          "default": "Camel Toe Proof Technology"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection USPs",
+      "blocks": [
+        {
+          "type": "usp",
+          "settings": {
+            "usp_text": "Camel Toe Proof Technology"
+          }
+        },
+        {
+          "type": "usp",
+          "settings": {
+            "usp_text": "Wide Absorbent Gusset"
+          }
+        },
+        {
+          "type": "usp",
+          "settings": {
+            "usp_text": "FREE Worldwide Shipping"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<section class="maison_commerce_collection_usps">
+  <div class="maison_commerce_collection_usps__container">
+    <!-- Desktop Layout -->
+    <div class="maison_commerce_collection_usps__items">
+      {% for block in section.blocks %}
+        {% if block.type == 'usp' %}
+          {% if block.settings.usp_text != blank %}
+            <div class="maison_commerce_collection_usps__item" {{ block.shopify_attributes }}>
+              <div class="maison_commerce_collection_usps__icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" class="maison_commerce_collection_usps__checkmark" width="{{ section.settings.icon_size_desktop }}" height="auto" viewBox="0 0 18 13" fill="none">
+                    <path d="M16.75 0.75L5.75 11.75L0.75 6.75" stroke="{{ section.settings.checkmark_color }}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <p class="maison_commerce_collection_usps__text">
+                {{ block.settings.usp_text }}
+              </p>
+            </div>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!-- Mobile Swiper -->
+    <div class="swiper maison_commerce_collection_usps__swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+          {% if block.type == 'usp' %}
+            {% if block.settings.usp_text != blank %}
+              <div class="swiper-slide maison_commerce_collection_usps__slide" {{ block.shopify_attributes }}>
+                <div class="maison_commerce_collection_usps__item">
+                  <div class="maison_commerce_collection_usps__icon-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="maison_commerce_collection_usps__checkmark" width="{{ section.settings.icon_size_mobile }}" height="auto" viewBox="0 0 18 13" fill="none">
+                        <path d="M16.75 0.75L5.75 11.75L0.75 6.75" stroke="{{ section.settings.checkmark_color }}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <p class="maison_commerce_collection_usps__text">
+                    {{ block.settings.usp_text }}
+                  </p>
+                </div>
+              </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Section Container */
+  .maison_commerce_collection_usps {
+    background-color: {{ section.settings.section_bg_color }};
+    padding-top: {{ section.settings.padding_top_desktop }}px;
+    padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    padding-left: {{ section.settings.padding_left_desktop }}px;
+    padding-right: {{ section.settings.padding_right_desktop }}px;
+    overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_collection_usps {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+      padding-left: {{ section.settings.padding_left_mobile }}px;
+      padding-right: {{ section.settings.padding_right_mobile }}px;
+    }
+  }
+
+  /* Container */
+  .maison_commerce_collection_usps__container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  /* Items Container - Desktop */
+  .maison_commerce_collection_usps__items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 1000px) {
+    .maison_commerce_collection_usps__items {
+      display: none;
+    }
+  }
+
+  /* Item */
+  .maison_commerce_collection_usps__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: {{ section.settings.gap_desktop }}px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_collection_usps__item {
+      gap: 12px;
+    }
+  }
+
+  /* Icon Wrapper */
+  .maison_commerce_collection_usps__icon-wrapper {
+    background-color: {{ section.settings.icon_bg_color }};
+    border: 1px dashed {{ section.settings.icon_border_color }};
+    border-radius: 999px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_collection_usps__icon-wrapper {
+        width: 36px;
+        height: 36px;
+    }
+  }
+
+  /* Checkmark Icon */
+  .maison_commerce_collection_usps__checkmark {
+    width: {{ section.settings.icon_size_desktop }}px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_collection_usps__checkmark {
+      width: {{ section.settings.icon_size_mobile }}px;
+      height: {{ section.settings.icon_size_mobile }}px;
+    }
+  }
+
+  /* Text */
+  .maison_commerce_collection_usps__text {
+    font-weight: 500;
+    font-size: {{ section.settings.text_font_size_desktop }}px;
+    line-height: 1.5;
+    color: {{ section.settings.text_color }};
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_collection_usps__text {
+      font-size: {{ section.settings.text_font_size_mobile }}px;
+    }
+  }
+
+  /* Swiper - Mobile */
+  .maison_commerce_collection_usps__swiper {
+    display: none;
+  }
+
+  @media (max-width: 1000px) {
+    .maison_commerce_collection_usps__swiper {
+      display: block;
+      overflow: visible;
+    }
+  }
+
+  .maison_commerce_collection_usps__slide {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .maison_commerce_collection_usps__container .swiper-wrapper{
+    display: flex;
+    width: fit-content;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_collection_usps__item {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  (function() {
+    let swiperInstance = null;
+    
+    function initSwiper() {
+      const swiperContainer = document.querySelector('.maison_commerce_collection_usps__swiper');
+      
+      if (!swiperContainer) return;
+      
+      // Destroy existing swiper if it exists
+      if (swiperInstance) {
+        swiperInstance.destroy(true, true);
+        swiperInstance = null;
+      }
+      
+      // Only initialize on mobile
+      if (window.innerWidth <= 1000) {
+        swiperInstance = new Swiper('.maison_commerce_collection_usps__swiper', {
+          slidesPerView: 'auto',
+          spaceBetween: {{ section.settings.gap_mobile | default: 12 }},
+          loop: true,
+          autoplay: {
+            delay: {{ section.settings.autoplay_delay | default: 3000 }},
+            disableOnInteraction: false,
+          },
+          speed: 500,
+          allowTouchMove: true,
+        });
+      }
+    }
+    
+    // Initialize on DOM ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initSwiper);
+    } else {
+      initSwiper();
+    }
+    
+    // Reinitialize on window resize (debounced)
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(initSwiper, 250);
+    });
+  })();
+</script>
+

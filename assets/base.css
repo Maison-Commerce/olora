@@ -793,9 +793,9 @@ body {
 summary {
   position: relative;
 }
-::selection {
+/* ::selection {
   background-color: rgba(var(--color-foreground), 0.2);
-}
+} */
 .text-body {
   font-size: 1.5rem;
   letter-spacing: 0.06rem;
@@ -3306,7 +3306,7 @@ details[open] > .header__submenu {
 .header__menu-item {
   padding: 1.2rem;
   text-decoration: none;
-  color: rgba(var(--color-foreground), 0.9);
+  color: #151515;
 }
 .header__active-menu-item,
 details[open] > .header__menu-item {
@@ -8526,9 +8526,6 @@ fieldset.product-form__input .form__label {
 .product-form__submit {
   margin-bottom: 1rem;
   font-size: 1.9rem;
-}
-.product-form__buttons--uppercase .product-form__submit {
-  text-transform: uppercase;
 }
 .shopify-payment-button__button {
   letter-spacing: 0.1rem;
@@ -15667,4 +15664,93 @@ noscript .localization-selector.link {
 div#gI0R9VRYf5
   .hero-banner-bg-parallax.gp-hero-banner-image-background.gp_lazybg {
   background-color: #fff !important;
+}
+
+.facet-filters .facet-filters__field .select{
+  border-radius: var(--12, 12px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: var(--White, #FFF);
+  padding: 8px 16px;
+}
+
+.facets__wrapper .facets__disclosure .facets__summary{
+  border-radius: var(--12, 12px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: var(--White, #FFF);
+  padding: 8px 32px 8px 16px;
+}
+
+.quick-add{
+  position: relative;
+  z-index: 2!important;
+  grid-column-end: 3;
+}
+
+.quick-add .quick-add__submit{
+  width: 36px;
+  min-width: auto;
+  padding: var(--8, 8px);
+  min-height: auto;
+  height: 36px;
+  border-radius: var(--8, 8px);
+  background-color: var(--Color-Brand-3-1800, #151515)!important;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.quick-add .quick-add__submit:hover{
+  background-color: rgba(21, 21, 21, 0.7)!important;
+}
+
+.quick-add .quick-add__submit::after, .quick-add .quick-add__submit::before{
+  box-shadow: none!important;
+  background-color: transparent!important;
+}
+
+.maison-add-to-cart-button{
+  display: flex;
+}
+
+.maison-card-pd-offer-tag{
+  border-radius: var(--8, 8px);
+  border: 1px solid var(--Color-Brand-1-1800, #F0D3CB);
+  background: var(--Color-Brand-1-800, #F7E6E2);
+  padding: var(--4, 4px) var(--12, 12px);
+  color: var(--Text-Primary, #151515);
+  leading-trim: both;
+  text-edge: cap;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  width: fit-content;
+  height: fit-content;
+  grid-row-start: 1;
+}
+
+@media(max-width: 768px){
+  .maison-card-pd-offer-tag{
+    font-size: 10px;
+    height: 20px;
+    padding: var(--4, 4px) var(--8, 8px);
+    line-height: 10px;
+  }
+}
+
+.maison-quick-add-form-wrapper{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.kaching-bundles .kaching-bundles__bar-radio{
+  box-shadow: 0 0 0 2px #D0D5DD!important;
+}
+
+.kaching-bundles .kaching-bundles__bar--selected .kaching-bundles__bar-radio{
+  background: #D5BBB4!important;
+  box-shadow: 0 0 0 2px #D5BBB4!important;#D0D5DD
+}
+
+.Vtl-SizeChartButtonWrapper{
+  display: none!important;
 }

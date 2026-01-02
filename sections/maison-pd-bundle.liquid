@@ -1,0 +1,3432 @@
+{%- assign product_has_bogo_tag = false -%}
+{%- if product.tags contains 'buy-1-get-free' -%}
+  {%- assign product_has_bogo_tag = true -%}
+{%- endif -%}
+
+{%- comment -%} Get rating from metafield {%- endcomment -%}
+{%- assign rating_metafield_key = section.settings.metafield_rating_key | default: 'custom.rating' -%}
+{%- assign rating_count_metafield_key = section.settings.metafield_rating_count_key | default: 'custom.rating_count' -%}
+{%- assign rating_parts = rating_metafield_key | split: '.' -%}
+{%- assign count_parts = rating_count_metafield_key | split: '.' -%}
+{%- if rating_parts.size == 2 -%}
+  {%- assign product_rating = product.metafields[rating_parts[0]][rating_parts[1]] | default: 0 | times: 1 -%}
+{%- else -%}
+  {%- assign product_rating = 0 -%}
+{%- endif -%}
+{%- if count_parts.size == 2 -%}
+  {%- assign product_rating_count = product.metafields[count_parts[0]][count_parts[1]] | default: '0' -%}
+{%- else -%}
+  {%- assign product_rating_count = '0' -%}
+{%- endif -%}
+
+<script>
+  console.log('rating', {{ product.metafields.custom.rating.value | json }})
+</script>
+
+{% schema %}
+{
+  "name": "Product Bundle",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Maison Kaching Edits"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_maison_kaching_edits",
+      "label": "Use Maison Kaching Edits",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_numbers",
+      "label": "Enable Numbers",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_swap_price_for_per_item",
+      "label": "Enable Swap Price for Per Item",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_add_total_price",
+      "label": "Add Total Price",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_swatches",
+      "label": "Enable Swatches",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "color_map",
+      "label": "Color Map",
+      "info": "Make sure to use UPPERCASE for the keys",
+      "default": "{ \"SAND\": \"#E6D2C0\", \"BLACK\": \"#000000\", \"MOSS\": \"#78866B\", \"COFFEE\": \"#6F4E37\" }"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_swap_price_for_free",
+      "label": "Enable Swap Price for Free",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_add_fake_stock",
+      "label": "Enable Add Fake Stock",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "fake_stock_color",
+      "label": "Stock Color",
+      "default": "#12B76A"
+    },
+    {
+      "type": "number",
+      "id": "fake_stock_number",
+      "label": "Stock Number",
+      "default": 35
+    },
+    {
+      "type": "number",
+      "id": "fake_stock_percentage",
+      "label": "Stock Percentage",
+      "default": 25
+    },
+    {
+      "type": "header",
+      "content": "Other settings"
+    },
+    {
+      "type": "text",
+      "id": "gallery_badge_text",
+      "label": "Gallery Badge Text",
+      "default": "BUY 1, GET 1 FREE",
+      "info": "Badge shown in product gallery"
+    },
+    {
+      "type": "text",
+      "id": "gallery_badge_subtext",
+      "label": "Gallery Badge Subtext",
+      "default": "Add at least 2 items to your cart. Discount applied automatically.",
+      "info": "Smaller text below badge"
+    },
+    {
+      "type": "text",
+      "id": "price_badge_text",
+      "label": "Price Badge Text",
+      "default": "BUY 1, GET 1 FREE",
+      "info": "Badge shown next to price"
+    },
+    {
+      "type": "text",
+      "id": "features_text",
+      "label": "Features Text",
+      "default": "Camel Toe Proof Technology | Seamless | Wide Absorbent Gusset | High Rise"
+    },
+    {
+      "type": "text",
+      "id": "protection_title",
+      "label": "Protection Block Title",
+      "default": "Your order is protected by"
+    },
+    {
+      "type": "text",
+      "id": "protection_heading",
+      "label": "Protection Block Heading",
+      "default": "90 Day Fit Exchange & Money Back Guarantee"
+    },
+    {
+      "type": "richtext",
+      "id": "protection_description",
+      "label": "Protection Block Description",
+      "default": "<p>If you need to exchange for a different size, or don't like our thong for any reason, we'll send you a new size for free or a full refund.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "protection_icon",
+      "label": "Protection Block Icon"
+    },
+    {
+      "type": "text",
+      "id": "loved_by_heading",
+      "label": "Loved By Heading",
+      "default": "Loved by By 5,800+ Happy Customers"
+    },
+    {
+      "type": "text",
+      "id": "metafield_rating_key",
+      "label": "Rating Metafield Key",
+      "default": "custom.rating",
+      "info": "Product metafield namespace.key for rating (e.g., custom.rating)"
+    },
+    {
+      "type": "text",
+      "id": "manual_rating_text",
+      "label": "Manual Rating Text",
+      "default": "4.8/5 Stars By 5,841 Happy Customers",
+      "info": "Show if rating = 0"
+    },
+    {
+      "type": "text",
+      "id": "metafield_rating_count_key",
+      "label": "Rating Count Metafield Key",
+      "default": "custom.rating_count",
+      "info": "Product metafield namespace.key for rating count"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#FCF5F4"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "Badge Background Color",
+      "default": "#F7E6E2"
+    },
+    {
+      "type": "color",
+      "id": "badge_border_color",
+      "label": "Badge Border Color",
+      "default": "#F0D3CB"
+    },
+    {
+      "type": "color",
+      "id": "price_badge_bg_color",
+      "label": "Price Badge Background Color",
+      "default": "#12B76A"
+    },
+    {
+      "type": "color",
+      "id": "price_badge_text_color",
+      "label": "Price Badge Text Color",
+      "default": "#F6FEF9"
+    },
+    {
+      "type": "color",
+      "id": "protection_bg_color",
+      "label": "Protection Block Background Color",
+      "default": "#F7E6E2"
+    },
+    {
+      "type": "color",
+      "id": "protection_border_color",
+      "label": "Protection Block Border Color",
+      "default": "#F0D3CB"
+    },
+    {
+      "type": "header",
+      "content": "Delivery Information"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_delivery_info",
+      "label": "Show Delivery Information",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "delivery_time",
+      "label": "Delivery Time (days)",
+      "info": "Number of days for delivery (1-30)",
+      "default": "3"
+    },
+    {
+      "type": "text",
+      "id": "delivery_prefix",
+      "label": "Delivery Text Prefix",
+      "default": "Delivered on "
+    },
+    {
+      "type": "text",
+      "id": "delivery_suffix",
+      "label": "Delivery Text Suffix",
+      "default": " with Express Shipping"
+    },
+    {
+      "type": "header",
+      "content": "Payment Methods"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_methods",
+      "label": "Show Payment Methods",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_visa",
+      "label": "Show Visa",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_unionpay",
+      "label": "Show UnionPay",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shoppay",
+      "label": "Show Shop Pay",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_mastercard",
+      "label": "Show Mastercard",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_maestro",
+      "label": "Show Maestro",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_googlepay",
+      "label": "Show Google Pay",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_discover",
+      "label": "Show Discover",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dinersclub",
+      "label": "Show Diners Club",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_applepay",
+      "label": "Show Apple Pay",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_amex",
+      "label": "Show American Express",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Shipping Information"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shipping_info",
+      "label": "Show Shipping Information",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_free_shipping",
+      "label": "Show Free Shipping",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "free_shipping_text",
+      "label": "Free Shipping Text",
+      "default": "FREE Worldwide Shipping"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_money_back",
+      "label": "Show Money-Back Guarantee",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "money_back_text",
+      "label": "Money-Back Guarantee Text",
+      "default": "14-Day Money-Back Guarantee"
+    },
+    {
+      "type": "header",
+      "content": "Bundle Heading"
+    },
+    {
+      "type": "text",
+      "id": "bundle_heading_text",
+      "label": "Bundle Heading Text",
+      "default": "SELECT YOUR COLORS AND SIZES:"
+    },
+    {
+      "type": "text",
+      "id": "size_guide_text",
+      "label": "Size Guide Text",
+      "default": "Size Guide"
+    },
+    {
+      "type": "url",
+      "id": "size_guide_url",
+      "label": "Size Guide Link URL",
+      "info": "Link to the size guide page"
+    },
+    {
+      "type": "image_picker",
+      "id": "size_guide_icon",
+      "label": "Size guide icon"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "buy_buttons",
+      "name": "t:sections.main-product.blocks.buy_buttons.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "General"
+        },
+        {
+          "type": "paragraph",
+          "content": "IMPORTANT: Variant selectors in Quantity breaks do NOT work with dynamic checkout buttons."
+        },
+        {
+          "type": "checkbox",
+          "id": "show_dynamic_checkout",
+          "default": false,
+          "label": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.label",
+          "info": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.info"
+        },
+        {
+          "type": "checkbox",
+          "id": "skip_cart",
+          "label": "Skip cart",
+          "default": false,
+          "info": "Your customers will be sent directly to checkout after click the Add to Cart button."
+        },
+        {
+          "type": "header",
+          "content": "Button"
+        },
+        {
+          "type": "checkbox",
+          "id": "uppercase_text",
+          "label": "Uppercase button labels",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "display_price",
+          "label": "Display price inside the button",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_custom_color",
+          "label": "Enable custom button color",
+          "default": false
+        },
+        {
+          "type": "color",
+          "id": "custom_color",
+          "default": "#dd1d1d",
+          "label": "Button custom color",
+          "info": "Applied when Enable custom button color is checked."
+        },
+        {
+          "type": "header",
+          "content": "Block margin"
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 45,
+          "step": 3,
+          "unit": "px",
+          "label": "Top margin",
+          "default": 24
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 45,
+          "step": 3,
+          "unit": "px",
+          "label": "Bottom margin",
+          "default": 24
+        }
+      ]
+    },
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "text",
+          "id": "reviewer_name",
+          "label": "Reviewer Name",
+          "default": "Rachel D."
+        },
+        {
+          "type": "richtext",
+          "id": "review_text",
+          "label": "Review Text",
+          "default": "<p>These are hands down the best underwear to wear under any leggings. I no longer feel exposed! Super comfy and don't show any seam lines. Off to buy some more!</p>"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 1,
+          "max": 5,
+          "step": 0.1,
+          "label": "Rating",
+          "default": 4.6
+        },
+        {
+          "type": "text",
+          "id": "rating_text",
+          "label": "Rating Text",
+          "default": "Rated Excellent 4.6/5 stars"
+        },
+        {
+          "type": "image_picker",
+          "id": "reviewer_avatar",
+          "label": "Reviewer Avatar"
+        },
+        {
+          "type": "text",
+          "id": "source",
+          "label": "Review Source",
+          "default": "Trustpilot",
+          "info": "e.g., Trustpilot, Google Reviews"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Product Details"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    },
+    {
+      "type": "customer_image",
+      "name": "Customer Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "feature_text",
+          "label": "Feature Text",
+          "default": "Feature"
+        }
+      ]
+    },
+    {
+      "type": "sticky_atc",
+      "name": "Sticky Add to Cart",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_sticky_atc",
+          "label": "Show Sticky Add to Cart",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Bundle"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="maison_commerce_pd_bundle" x-data="maison_commerce_pd_bundle_init()">
+  <div class="maison_commerce_pd_bundle__container">
+    <!-- Product Gallery -->
+    <div class="maison_commerce_pd_bundle__gallery">
+      <div class="maison_commerce_pd_bundle__main-image">
+        {% if product.featured_image %}
+          <div class="maison_commerce_pd_bundle__main-image-wrapper">
+            <img
+              src="{{ product.featured_image | image_url: width: 1200 }}"
+              alt="{{ product.title | escape }}"
+              loading="eager"
+              class="maison_commerce_pd_bundle__main-img maison_commerce_pd_bundle__main-img--active"
+              id="maison-pd-main-image"
+            >
+            <div class="maison_commerce_pd_bundle__image-loader" id="maison-pd-image-loader">
+              <div class="maison_commerce_pd_bundle__loader-spinner"></div>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if product_has_bogo_tag %}
+          <div class="maison_commerce_pd_bundle__gallery-badge">
+            <p class="maison_commerce_pd_bundle__gallery-badge-text">
+              {{ section.settings.gallery_badge_text }}
+            </p>
+            <p class="maison_commerce_pd_bundle__gallery-badge-subtext">
+              {{ section.settings.gallery_badge_subtext }}
+            </p>
+          </div>
+        {% endif %}
+      </div>
+
+      {% comment %} Preload all product images {% endcomment %}
+      {% if product.images.size > 1 %}
+        <div style="display: none;">
+          {% for image in product.images %}
+            {% unless forloop.first %}
+              <link rel="preload" as="image" href="{{ image | image_url: width: 1200 }}">
+            {% endunless %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if product.images.size > 1 %}
+        <div class="maison-pd-gallery-slider-wrapper">
+          <div class="swiper-button-prev maison_commerce_pd_bundle__thumb-prev maison-pd-gallery-buttons">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M12.5 15L7.5 10L12.5 5" stroke="#151515" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="swiper maison_commerce_pd_bundle__thumbnails">
+            <div class="swiper-wrapper maison-pd-gallery-slider">
+              {% for image in product.images %}
+                <div class="swiper-slide maison_commerce_pd_bundle__thumbnail-slide">
+                  <button
+                    type="button"
+                    class="maison_commerce_pd_bundle__thumbnail {% if forloop.first %}maison_commerce_pd_bundle__thumbnail--active{% endif %}"
+                    data-image-index="{{ forloop.index0 }}"
+                    data-image-url="{{ image | image_url: width: 1200 }}"
+                    @click="changeMainImage('{{ image | image_url: width: 1200 }}', {{ forloop.index0 }})"
+                  >
+                    <img
+                      src="{{ image | image_url: width: 160 }}"
+                      alt="{{ product.title | escape }} - Image {{ forloop.index }}"
+                      loading="lazy"
+                    >
+                  </button>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="swiper-button-next maison_commerce_pd_bundle__thumb-next maison-pd-gallery-buttons">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M7.5 15L12.5 10L7.5 5" stroke="#151515" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Product Info -->
+    <div class="maison_commerce_pd_bundle__info">
+      <div class="maison_commerce_pd_bundle__info-general">
+        <div class="maison_commerce_pd_bundle__info-main">
+          {% if product_rating > 0 %}
+            <div class="maison_commerce_pd_bundle__rating">
+              <div class="maison_commerce_pd_bundle__stars">
+                {% assign full_stars = product_rating | floor %}
+                {% assign has_half_star = product_rating | modulo: 1 | times: 1 %}
+                {% assign next_star_index = full_stars | plus: 1 %}
+                {% for i in (1..5) %}
+                  {% if i <= full_stars %}
+                    <svg
+                      class="maison_commerce_pd_bundle__star"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#FEC84B"/>
+                    </svg>
+                  {% else %}
+                    {% assign is_half_star = false %}
+                    {% if i == next_star_index %}
+                      {% if has_half_star >= 0.5 %}
+                        {% assign is_half_star = true %}
+                      {% endif %}
+                    {% endif %}
+                    {% if is_half_star %}
+                      <svg
+                        class="maison_commerce_pd_bundle__star"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#FEC84B" opacity="0.5"/>
+                      </svg>
+                    {% else %}
+                      <svg
+                        class="maison_commerce_pd_bundle__star"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#FEC84B" opacity="0.2"/>
+                      </svg>
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <p class="maison_commerce_pd_bundle__rating-text">
+                {{ product_rating }}/5 Stars By {{ product_rating_count }} Happy Customers
+              </p>
+            </div>
+          {% else %}
+            <div class="maison_commerce_pd_bundle__rating">
+              <div class="maison_commerce_pd_bundle__stars">
+                {% for i in (1..5) %}
+                  <svg
+                    class="maison_commerce_pd_bundle__star"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M8 0L9.798 5.527L15.608 5.527L10.905 8.946L12.703 14.473L8 11.054L3.297 14.473L5.095 8.946L0.392 5.527L6.202 5.527L8 0Z" fill="#FEC84B"/>
+                  </svg>
+                {% endfor %}
+              </div>
+              <p class="maison_commerce_pd_bundle__rating-text">
+                {{ section.settings.manual_rating_text }}
+              </p>
+            </div>
+          {% endif %}
+
+          <h1 class="maison_commerce_pd_bundle__title">
+            {{ product.title }}
+          </h1>
+
+          {% comment %} Feature Blocks {% endcomment %}
+          {% assign feature_blocks = section.blocks | where: 'type', 'feature' %}
+          {% if feature_blocks.size > 0 %}
+            <div class="maison_commerce_pd_bundle__features-grid">
+              {% for block in feature_blocks %}
+                <div class="maison_commerce_pd_bundle__feature-item" {{ block.shopify_attributes }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M13.3334 4L6.00008 11.3333L2.66675 8" stroke="#BFA8A1" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <p class="maison_commerce_pd_bundle__feature-text">{{ block.settings.feature_text }}</p>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          {% if section.settings.features_text != blank %}
+            <p class="maison_commerce_pd_bundle__features">
+              {{ section.settings.features_text }}
+            </p>
+          {% endif %}
+        </div>
+
+        {% comment %}
+          <div class="maison_commerce_pd_bundle__price">
+            {% if product.compare_at_price > product.price %}
+              <span class="maison_commerce_pd_bundle__compare-price">
+                {{ product.compare_at_price | money }}
+              </span>
+            {% endif %}
+            <span class="maison_commerce_pd_bundle__current-price">
+              {{ product.price | money }}
+            </span>
+            {% if product_has_bogo_tag %}
+              <span class="maison_commerce_pd_bundle__price-badge">
+                {{ section.settings.price_badge_text }}
+              </span>
+            {% endif %}
+          </div>
+        {% endcomment %}
+      </div>
+
+      <!-- Bundle Section Placeholder (for app integration) -->
+      <div class="maison_commerce_pd_bundle__bundle-placeholder">
+        <div class="maison_commerce_pd_bundle__bundle-placeholder-heading-wrapp">
+          <p class="maison_commerce_pd_bundle__bundle-note">{{ section.settings.bundle_heading_text }}</p>
+          <!-- START KiwiSizing code ! -->
+          <div id="KiwiSizingChart"></div>
+          {% render 'kiwiSizing' %}
+          <!-- END KiwiSizing code ! -->
+        </div>
+        <div id="maison-bundle-app-container">
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when '@app' -%}
+                {% render block %}
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+
+        <!-- Delivery Information -->
+        {% if section.settings.show_delivery_info %}
+          {%- comment -%} Auto-detect country flag {%- endcomment -%}
+          {%- assign country_code = '' -%}
+          {%- if localization.country.iso_code != blank -%}
+            {%- assign country_code = localization.country.iso_code -%}
+            <script>
+              console.log('country_code', {{ country_code | json }})
+            </script>
+          {%- endif -%}
+
+          {%- assign country_flags = 'US:🇺🇸,GB:🇬🇧,CA:🇨🇦,AU:🇦🇺,DE:🇩🇪,FR:🇫🇷,IT:🇮🇹,ES:🇪🇸,NL:🇳🇱,BE:🇧🇪,CH:🇨🇭,AT:🇦🇹,SE:🇸🇪,NO:🇳🇴,DK:🇩🇰,FI:🇫🇮,PL:🇵🇱,CZ:🇨🇿,HU:🇭🇺,RO:🇷🇴,GR:🇬🇷,PT:🇵🇹,IE:🇮🇪,NZ:🇳🇿,JP:🇯🇵,KR:🇰🇷,CN:🇨🇳,IN:🇮🇳,BR:🇧🇷,MX:🇲🇽,AR:🇦🇷,CL:🇨🇱,CO:🇨🇴,PE:🇵🇪,ZA:🇿🇦,AE:🇦🇪,SA:🇸🇦,IL:🇮🇱,TR:🇹🇷,RU:🇷🇺,UA:🇺🇦,SG:🇸🇬,MY:🇲🇾,TH:🇹🇭,VN:🇻🇳,PH:🇵🇭,ID:🇮🇩,HK:🇭🇰,TW:🇹🇼,LU:🇱🇺,IS:🇮🇸,MT:🇲🇹,CY:🇨🇾,EE:🇪🇪,LV:🇱🇻,LT:🇱🇹,SK:🇸🇰,SI:🇸🇮,BG:🇧🇬,HR:🇭🇷,RS:🇷🇸,ME:🇲🇪,MK:🇲🇰,AL:🇦🇱,BY:🇧🇾,MD:🇲🇩,GE:🇬🇪,AM:🇦🇲,AZ:🇦🇿,KZ:🇰🇿'
+            | split: ','
+          -%}
+          {%- assign auto_flag = '' -%}
+          {%- if country_code != blank -%}
+            {%- for flag_pair in country_flags -%}
+              {%- assign flag_data = flag_pair | split: ':' -%}
+              {%- if flag_data[0] == country_code -%}
+                {%- assign auto_flag = flag_data[1] -%}
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+          {%- if auto_flag == '' -%}
+            {%- assign auto_flag = '🇺🇸' -%}
+          {%- endif -%}
+
+          {%- comment -%} Use manual flag if set, otherwise use auto-detected flag {%- endcomment -%}
+          {%- assign display_flag = section.settings.delivery_flag | default: auto_flag -%}
+
+          <div class="maison_commerce_pd_bundle__delivery-info">
+            <p class="maison_commerce_pd_bundle__delivery-text">
+              {% if display_flag != blank %}
+                <span
+                  class="maison_commerce_pd_bundle__delivery-flag"
+                  {% if country_code != blank %}
+                    data-country-code="{{ country_code }}"
+                  {% endif %}
+                  {% if section.settings.delivery_flag == blank %}
+                    data-auto-detect="true"
+                  {% endif %}
+                >
+                  {{- display_flag -}}
+                </span>
+              {% endif %}
+              <span>{{ section.settings.delivery_prefix }}</span>
+              <span
+                class="maison_commerce_pd_bundle__delivery-date"
+                {% if section.settings.delivery_time != blank %}
+                  data-delivery-time="{{ section.settings.delivery_time }}"
+                {% endif %}
+              >
+              </span>
+              <span>{{ section.settings.delivery_suffix }}</span>
+            </p>
+          </div>
+        {% endif %}
+
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'buy_buttons' -%}
+              {%- render 'buy-buttons',
+                block: block,
+                product: product,
+                product_form_id: product_form_id,
+                section_id: section.id,
+                show_pickup_availability: true,
+                main_product: true,
+                icon_maison: 'true'
+              -%}
+          {%- endcase -%}
+        {%- endfor -%}
+
+        <!-- Payment Methods -->
+        {% if section.settings.show_payment_methods %}
+          <div class="maison_commerce_pd_bundle__payment-methods">
+            {% if section.settings.show_visa %}
+              <div class="maison_commerce_pd_bundle__payment-method">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="16" viewBox="0 0 23 16" fill="none">
+                  <g clip-path="url(#clip0_4001_3156)">
+                    <rect width="23" height="16" rx="2.5" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.02515 10.8388H5.6318L4.58695 6.79488C4.53736 6.60886 4.43206 6.4444 4.27717 6.36689C3.89062 6.17211 3.46466 6.0171 2.99998 5.93891V5.78322H5.24457C5.55435 5.78322 5.78669 6.0171 5.82542 6.28871L6.36754 9.20572L7.76022 5.78322H9.11485L7.02515 10.8388ZM9.88931 10.8388H8.5734L9.65697 5.78322H10.9729L9.88931 10.8388ZM12.6753 7.18377C12.7141 6.91148 12.9464 6.75579 13.2175 6.75579C13.6434 6.7167 14.1074 6.79488 14.4947 6.98899L14.727 5.9005C14.3398 5.74481 13.9138 5.66663 13.5273 5.66663C12.2501 5.66663 11.3207 6.3669 11.3207 7.33879C11.3207 8.07815 11.979 8.46636 12.4437 8.70024C12.9464 8.93344 13.14 9.08913 13.1013 9.32233C13.1013 9.67212 12.7141 9.82782 12.3275 9.82782C11.8628 9.82782 11.3982 9.71122 10.9729 9.51643L10.7405 10.6056C11.2052 10.7997 11.7079 10.8779 12.1726 10.8779C13.6047 10.9163 14.4947 10.2167 14.4947 9.16664C14.4947 7.84427 12.6753 7.76677 12.6753 7.18377ZM19.1 10.8388L18.0552 5.78322H16.9329C16.7005 5.78322 16.4682 5.93891 16.3907 6.17211L14.4559 10.8388H15.8106L16.0809 10.1001H17.7454L17.9003 10.8388H19.1ZM17.1265 7.14468L17.513 9.05004H16.4294L17.1265 7.14468Z" fill="#172B85"/>
+                  </g>
+                  <rect x="0.5" y="0.5" width="22" height="15" rx="3.5" stroke="black" stroke-opacity="0.08"/>
+                  <defs>
+                    <clipPath id="clip0_4001_3156">
+                      <rect width="23" height="16" rx="4" fill="white"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            {% endif %}
+            {% if section.settings.show_unionpay %}
+              <div class="maison_commerce_pd_bundle__payment-method">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="16" viewBox="0 0 23 16" fill="none">
+                  <g clip-path="url(#clip0_4001_3157)">
+                  <rect width="23" height="16" rx="2.5" fill="white"/>
+                  <path d="M7.11537 3.33496H10.74C11.246 3.33496 11.5607 3.75335 11.4427 4.26835L9.75512 11.6186C9.63603 12.1318 9.12944 12.5506 8.62312 12.5506H4.99882C4.49355 12.5506 4.17815 12.1318 4.29618 11.6186L5.98443 4.26835C6.10246 3.75335 6.60878 3.33496 7.11537 3.33496Z" fill="#E21836"/>
+                  <path d="M10.4382 3.33337H14.6065C15.1124 3.33337 14.8842 3.75176 14.7652 4.26676L13.078 11.617C12.9596 12.1302 12.9965 12.549 12.4896 12.549H8.32131C7.81437 12.549 7.50064 12.1302 7.61974 11.617L9.30692 4.26676C9.42672 3.75176 9.93198 3.33337 10.4382 3.33337Z" fill="#00447C"/>
+                  <path d="M14.4412 3.33337H18.0659C18.5725 3.33337 18.8872 3.75176 18.7682 4.26676L17.081 11.617C16.9619 12.1302 16.4549 12.549 15.9483 12.549H12.3254C11.8184 12.549 11.504 12.1302 11.6227 11.617L13.3103 4.26676C13.4283 3.75176 13.9343 3.33337 14.4412 3.33337Z" fill="#007B84"/>
+                  <path d="M8.06182 5.68888C7.68908 5.69274 7.579 5.68888 7.54384 5.68046C7.53032 5.74562 7.27879 6.92271 7.27809 6.92369C7.22393 7.16183 7.18453 7.33159 7.05068 7.44121C6.9747 7.50493 6.886 7.53567 6.78316 7.53567C6.61786 7.53567 6.52156 7.45241 6.5054 7.29448L6.5023 7.24026C6.5023 7.24026 6.55266 6.92127 6.55266 6.91948C6.55266 6.91948 6.81665 5.84681 6.86391 5.70501C6.86639 5.69695 6.86709 5.69274 6.86771 5.68888C6.35388 5.69345 6.26279 5.68888 6.25652 5.68046C6.25307 5.69202 6.24035 5.75852 6.24035 5.75852L5.9708 6.96752L5.94765 7.07005L5.90286 7.40544C5.90286 7.50493 5.92212 7.58613 5.96047 7.65479C6.08327 7.8725 6.43357 7.90512 6.63173 7.90512C6.88706 7.90512 7.12657 7.85009 7.28842 7.74962C7.56937 7.58121 7.64288 7.31797 7.70843 7.08404L7.73882 6.96402C7.73882 6.96402 8.01076 5.84994 8.05696 5.70501C8.05873 5.69695 8.05944 5.69274 8.06182 5.68888ZM8.98706 6.58762C8.92151 6.58762 8.80171 6.60375 8.6941 6.65726C8.65505 6.67761 8.61812 6.70109 8.57916 6.72448L8.61432 6.59569L8.59506 6.574C8.36686 6.62087 8.3158 6.62715 8.105 6.65726L8.08733 6.66918C8.06286 6.87506 8.04112 7.02985 7.95039 7.43452C7.91584 7.58366 7.87998 7.73424 7.84402 7.88302L7.85374 7.90193C8.06975 7.89037 8.1353 7.89037 8.32304 7.89351L8.33824 7.87675C8.36209 7.75279 8.36518 7.72375 8.41801 7.4727C8.44284 7.35367 8.49461 7.09214 8.52015 6.99902C8.56706 6.97697 8.61335 6.95528 8.65753 6.95528C8.76275 6.95528 8.74994 7.0484 8.74587 7.08551C8.74137 7.1478 8.70303 7.35125 8.66371 7.52594L8.63747 7.63869C8.61918 7.72196 8.59913 7.80289 8.58084 7.88544L8.58879 7.90193C8.80171 7.89037 8.86665 7.89037 9.04847 7.89351L9.06985 7.87675C9.10271 7.68315 9.11234 7.63134 9.17065 7.34946L9.19998 7.21995C9.25697 6.96648 9.28559 6.83795 9.24248 6.73327C9.19689 6.61594 9.08752 6.58762 8.98706 6.58762ZM10.0207 6.853C9.90749 6.87505 9.83531 6.88975 9.76357 6.89925C9.69245 6.91081 9.6231 6.9213 9.51372 6.93671L9.50507 6.94469L9.49711 6.95106C9.48572 7.03369 9.47777 7.10513 9.46266 7.18911C9.44985 7.27596 9.43015 7.37464 9.39808 7.51643C9.37325 7.62497 9.36044 7.66279 9.3463 7.70098C9.33252 7.73916 9.31733 7.77626 9.28941 7.88301L9.29595 7.89287L9.30142 7.90192C9.40364 7.89699 9.47052 7.8935 9.53926 7.89287C9.6079 7.89036 9.67902 7.89287 9.78911 7.8935L9.79874 7.88552L9.80907 7.87674C9.82497 7.78048 9.82736 7.75457 9.83708 7.70761C9.84671 7.65724 9.86332 7.58751 9.90405 7.40126C9.92331 7.31378 9.94477 7.22657 9.96474 7.1373C9.9855 7.04839 10.0072 6.96082 10.0279 6.87335L10.0248 6.86277L10.0207 6.853ZM10.0231 6.49519C9.92024 6.43361 9.73974 6.45315 9.61827 6.53821C9.49714 6.62156 9.48336 6.73987 9.58584 6.80225C9.68691 6.86213 9.86811 6.84429 9.98853 6.75852C10.1094 6.67337 10.1245 6.55613 10.0231 6.49519ZM10.645 7.92122C10.8531 7.92122 11.0663 7.86305 11.2269 7.69043C11.3504 7.55043 11.407 7.34213 11.4266 7.25636C11.4905 6.97205 11.4408 6.83932 11.3783 6.75847C11.2834 6.63523 11.1157 6.59571 10.9418 6.59571C10.8372 6.59571 10.588 6.60619 10.3934 6.78823C10.2536 6.91953 10.189 7.09771 10.1501 7.26855C10.1108 7.4426 10.0655 7.75594 10.3496 7.87255C10.4372 7.91073 10.5635 7.92122 10.645 7.92122ZM10.6287 7.28154C10.6767 7.06625 10.7334 6.88556 10.8779 6.88556C10.9911 6.88556 10.9994 7.02001 10.949 7.23601C10.94 7.28396 10.8986 7.46223 10.8427 7.53815C10.8037 7.59417 10.7575 7.62813 10.7064 7.62813C10.6912 7.62813 10.6008 7.62813 10.5994 7.49199C10.5987 7.42477 10.6122 7.35611 10.6287 7.28154ZM11.9467 7.89353L11.963 7.87677C11.986 7.75282 11.9898 7.72369 12.0409 7.47273C12.0664 7.3537 12.1193 7.09217 12.1441 6.99904C12.1911 6.9769 12.2366 6.95521 12.2822 6.95521C12.3867 6.95521 12.374 7.04834 12.3698 7.08544C12.366 7.14783 12.3277 7.35119 12.2877 7.52588L12.2628 7.63863C12.2438 7.72198 12.2232 7.80283 12.2049 7.88547L12.2128 7.90196C12.4265 7.8904 12.4889 7.8904 12.6718 7.89353L12.6939 7.87677C12.726 7.68309 12.7346 7.63128 12.7947 7.34949L12.8233 7.21989C12.8806 6.96642 12.9095 6.83798 12.8671 6.73329C12.8202 6.61597 12.7101 6.58765 12.6111 6.58765C12.5455 6.58765 12.425 6.60369 12.318 6.65729C12.2798 6.67763 12.2415 6.70103 12.2038 6.72451L12.2366 6.59571L12.219 6.57393C11.9909 6.6209 11.9388 6.62717 11.7282 6.65729L11.7121 6.66921C11.6865 6.87509 11.6658 7.02978 11.575 7.43455C11.5405 7.58369 11.5046 7.73426 11.4688 7.88305L11.4784 7.90196C11.6948 7.8904 11.7593 7.8904 11.9467 7.89353ZM13.5163 7.90191C13.5297 7.83541 13.6095 7.44122 13.6102 7.44122C13.6102 7.44122 13.6781 7.15199 13.6823 7.14151C13.6823 7.14151 13.7037 7.11139 13.725 7.09947H13.7565C14.0532 7.09947 14.3884 7.09947 14.651 6.90345C14.8297 6.76901 14.9519 6.57048 15.0064 6.3292C15.0206 6.27005 15.031 6.19969 15.031 6.12933C15.031 6.03693 15.0127 5.94551 14.9599 5.87407C14.8259 5.68397 14.5592 5.68047 14.2513 5.67904C14.2504 5.67904 14.0995 5.68047 14.0995 5.68047C13.7054 5.6854 13.5474 5.68397 13.4824 5.6759C13.477 5.70503 13.4666 5.75684 13.4666 5.75684C13.4666 5.75684 13.3254 6.42063 13.3254 6.4217C13.3254 6.4217 12.9876 7.83299 12.9717 7.89949C13.3158 7.89528 13.4569 7.89528 13.5163 7.90191ZM13.7779 6.72276C13.7779 6.72276 13.928 6.06032 13.9273 6.06283L13.9321 6.02886L13.9342 6.00296L13.9942 6.00923C13.9942 6.00923 14.3038 6.03621 14.311 6.03693C14.4332 6.08488 14.4836 6.20848 14.4484 6.36981C14.4164 6.51724 14.3221 6.6412 14.201 6.70107C14.1012 6.7518 13.979 6.75601 13.8531 6.75601H13.7717L13.7779 6.72276ZM14.7124 7.29381C14.6728 7.46536 14.6272 7.7787 14.9098 7.89038C14.9999 7.92928 15.0807 7.94084 15.1628 7.93663C15.2494 7.93188 15.3297 7.88778 15.4041 7.82432C15.3974 7.8504 15.3907 7.87649 15.384 7.90266L15.3968 7.91942C15.6001 7.91072 15.6632 7.91072 15.8834 7.91243L15.9034 7.89701C15.9355 7.70521 15.9658 7.51896 16.0494 7.15202C16.0901 6.97626 16.1308 6.8022 16.1726 6.62716L16.166 6.60789C15.9386 6.65064 15.8778 6.65978 15.6591 6.69124L15.6425 6.70495C15.6403 6.72279 15.638 6.73991 15.6359 6.75703C15.6018 6.70128 15.5525 6.65369 15.4765 6.62402C15.3792 6.58521 15.1507 6.63522 14.9543 6.81663C14.8163 6.94614 14.7501 7.12361 14.7124 7.29381ZM15.1901 7.3043C15.2387 7.09287 15.2947 6.91397 15.4396 6.91397C15.5312 6.91397 15.5794 6.99974 15.5696 7.14601C15.5618 7.18249 15.5534 7.22094 15.5434 7.26441C15.529 7.32724 15.5132 7.38953 15.4979 7.45192C15.4824 7.49458 15.4643 7.53482 15.4444 7.56162C15.4071 7.61522 15.3184 7.64847 15.2674 7.64847C15.2529 7.64847 15.1635 7.64847 15.1604 7.51475C15.1597 7.44815 15.1732 7.37959 15.1901 7.3043ZM17.6842 6.60617L17.6666 6.58583C17.4416 6.63208 17.4008 6.63943 17.1941 6.66775L17.1789 6.68316C17.1782 6.68567 17.1776 6.68953 17.1765 6.69302L17.1758 6.68953C17.0219 7.04974 17.0264 6.97204 16.9011 7.25562C16.9004 7.24271 16.9004 7.23465 16.8997 7.22093L16.8684 6.60617L16.8487 6.58583C16.6129 6.63208 16.6074 6.63943 16.3897 6.66775L16.3727 6.68316C16.3703 6.69051 16.3703 6.69858 16.3689 6.70736L16.3703 6.7105C16.3976 6.85158 16.391 6.82012 16.4183 7.04275C16.431 7.15201 16.448 7.26189 16.4607 7.36981C16.4822 7.55041 16.4942 7.63932 16.5204 7.91493C16.3734 8.16105 16.3386 8.25417 16.1971 8.47018L16.1981 8.47233L16.0984 8.63222C16.087 8.64907 16.0767 8.66064 16.0622 8.66557C16.0463 8.67354 16.0256 8.67498 15.9969 8.67498H15.9417L15.8596 8.95193L16.1412 8.95686C16.3065 8.95614 16.4104 8.87772 16.4663 8.77231L16.6433 8.46453H16.6405L16.6592 8.44284C16.7782 8.18274 17.6842 6.60617 17.6842 6.60617ZM14.7124 10.2435H14.593L15.0351 8.76008H15.1817L15.2283 8.60726L15.2328 8.7772C15.2273 8.88224 15.3088 8.97537 15.5228 8.95995H15.7702L15.8554 8.6743H15.7623C15.7087 8.6743 15.6839 8.66059 15.687 8.63119L15.6825 8.4583H15.2242V8.4592C15.0761 8.46233 14.6336 8.47363 14.544 8.49783C14.4356 8.52615 14.3214 8.6095 14.3214 8.6095L14.3663 8.45651H13.9376L13.8483 8.76008L13.4003 10.2662H13.3134L13.2281 10.5498H14.0819L14.0533 10.6443H14.474L14.5019 10.5498H14.6199L14.7124 10.2435ZM14.3621 9.0615C14.2935 9.08077 14.1657 9.13921 14.1657 9.13921L14.2794 8.76008H14.6199L14.5378 9.03631C14.5378 9.03631 14.4326 9.04259 14.3621 9.0615ZM14.3687 9.60312C14.3687 9.60312 14.2617 9.61675 14.1913 9.63288C14.1219 9.65421 13.9919 9.72143 13.9919 9.72143L14.1092 9.32689H14.4515L14.3687 9.60312ZM14.1778 10.247H13.8362L13.9352 9.91404H14.2758L14.1778 10.247ZM15.0006 9.32689H15.493L15.4223 9.55938H14.9233L14.8484 9.81357H15.285L14.9544 10.2858C14.9312 10.3205 14.9105 10.3328 14.8874 10.3426C14.8643 10.3545 14.8339 10.3685 14.7987 10.3685H14.6776L14.5944 10.6468H14.9112C15.0759 10.6468 15.1731 10.5708 15.245 10.4711L15.4717 10.1563L15.5203 10.4759C15.5307 10.5358 15.5731 10.5708 15.6018 10.5845C15.6335 10.6006 15.6663 10.6283 15.7126 10.6324C15.7622 10.6346 15.7981 10.6363 15.822 10.6363H15.9776L16.0711 10.3247H16.0097C15.9745 10.3247 15.9138 10.3187 15.9034 10.3075C15.8931 10.2939 15.8931 10.2729 15.8875 10.241L15.8381 9.92068H15.6359L15.7246 9.81357H16.2226L16.2992 9.55938H15.8381L15.91 9.32689H16.3696L16.4549 9.04017H15.0844L15.0006 9.32689ZM10.8413 10.3118L10.9563 9.92384H11.4287L11.515 9.63533H11.0421L11.1143 9.39656H11.5764L11.662 9.11718H10.5059L10.422 9.39656H10.6847L10.6146 9.63533H10.3513L10.264 9.92877H10.5265L10.3734 10.442C10.3527 10.5099 10.3831 10.5358 10.4023 10.5674C10.422 10.5981 10.442 10.6185 10.4869 10.63C10.5332 10.6405 10.5649 10.6468 10.608 10.6468H11.1406L11.2354 10.3272L10.9994 10.3601C10.9538 10.3601 10.8275 10.3545 10.8413 10.3118ZM10.8955 8.45476L10.7758 8.67426C10.7502 8.72221 10.7271 8.75197 10.7064 8.76568C10.6881 8.77724 10.6518 8.78208 10.5994 8.78208H10.5369L10.4534 9.06289H10.6609C10.7606 9.06289 10.8372 9.02578 10.8738 9.00723C10.9131 8.9859 10.9234 8.99809 10.9538 8.96833L11.0239 8.90675H11.6717L11.7576 8.61439H11.2834L11.3662 8.45476H10.8955ZM11.8518 10.3174C11.8408 10.3013 11.8487 10.2728 11.8656 10.2137L12.0427 9.61918H12.6725C12.7643 9.61784 12.8305 9.61676 12.8737 9.61363C12.92 9.6087 12.9703 9.59194 13.0252 9.56182C13.0818 9.53027 13.1108 9.49702 13.1353 9.45884C13.1626 9.42075 13.2064 9.33739 13.244 9.20887L13.4666 8.45652L12.813 8.46038C12.813 8.46038 12.6117 8.49049 12.5231 8.52375C12.4337 8.56085 12.3059 8.66446 12.3059 8.66446L12.365 8.45823H11.9612L11.396 10.3601C11.3759 10.4339 11.3625 10.4875 11.3594 10.5197C11.3583 10.5544 11.4025 10.5887 11.4311 10.6146C11.465 10.6405 11.515 10.6363 11.5629 10.6405C11.6134 10.6444 11.6851 10.6468 11.7842 10.6468H12.0944L12.1897 10.3205L11.9119 10.3471C11.8822 10.3471 11.8608 10.331 11.8518 10.3174ZM12.1569 9.21765H12.8184L12.7764 9.35137C12.7705 9.35451 12.7563 9.34474 12.689 9.35281H12.1162L12.1569 9.21765ZM12.2894 8.76915H12.9565L12.9086 8.93021C12.9086 8.93021 12.5941 8.92707 12.5438 8.93648C12.3222 8.97538 12.1928 9.09549 12.1928 9.09549L12.2894 8.76915ZM12.7912 9.79918C12.7857 9.81917 12.7771 9.83136 12.765 9.8405C12.7515 9.84929 12.7298 9.85242 12.6974 9.85242H12.6031L12.6087 9.68957H12.2166L12.2007 10.4857C12.2001 10.5432 12.2055 10.5764 12.247 10.6031C12.2884 10.6363 12.4161 10.6405 12.5879 10.6405H12.8336L12.9223 10.3425L12.7084 10.3544L12.6373 10.3586C12.6276 10.3544 12.6183 10.3506 12.608 10.3401C12.599 10.331 12.5838 10.3366 12.5862 10.2791L12.5879 10.0751L12.8122 10.0656C12.9333 10.0656 12.9851 10.0257 13.0293 9.98758C13.0714 9.9511 13.0852 9.90916 13.1011 9.85242L13.1388 9.67173H12.8305L12.7912 9.79918Z" fill="#FEFEFE"/>
+                  </g>
+                  <rect x="0.5" y="0.5" width="22" height="15" rx="3.5" stroke="black" stroke-opacity="0.08"/>
+                  <defs>
+                  <clipPath id="clip0_4001_3157">
+                  <rect width="23" height="16" rx="4" fill="white"/>
+                  </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            {% endif %}
+            {% if section.settings.show_shoppay %}
+              <div class="maison_commerce_pd_bundle__payment-method">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="16" viewBox="0 0 23 16" fill="none">
+                  <g clip-path="url(#clip0_4001_3158)">
+                    <rect width="23" height="16" rx="2.5" fill="#5A31F4"/>
+                    <path d="M12.9486 7.3742C12.9486 8.40093 12.2391 9.13387 11.2475 9.13387H10.3134C10.3031 9.13387 10.2928 9.13594 10.2833 9.13996C10.2738 9.14397 10.2652 9.14986 10.2579 9.15727C10.2506 9.16469 10.2448 9.17349 10.2409 9.18317C10.237 9.19285 10.235 9.20322 10.2351 9.21368V10.5631C10.2351 10.5842 10.2268 10.6045 10.2122 10.6194C10.1975 10.6344 10.1776 10.6428 10.1568 10.6429H9.50311C9.48757 10.6429 9.4724 10.6381 9.45948 10.6294C9.44657 10.6206 9.4365 10.6081 9.43052 10.5936C9.42658 10.5841 9.42451 10.5738 9.42444 10.5635V5.69395C9.42439 5.68349 9.42638 5.67312 9.43029 5.66344C9.4342 5.65376 9.43996 5.64496 9.44724 5.63754C9.45451 5.63012 9.46316 5.62424 9.47268 5.62022C9.48221 5.61621 9.49242 5.61414 9.50273 5.61414H11.2517C12.2391 5.61298 12.9486 6.34592 12.9486 7.3742ZM12.1334 7.3742C12.1334 6.78392 11.7366 6.35248 11.1985 6.35248H10.3134C10.3031 6.35248 10.2928 6.35455 10.2833 6.35856C10.2738 6.36258 10.2652 6.36846 10.2579 6.37588C10.2506 6.38329 10.2448 6.3921 10.2409 6.40178C10.237 6.41146 10.235 6.42183 10.2351 6.43229V8.31149C10.2351 8.33255 10.2433 8.35275 10.258 8.36765C10.2727 8.38254 10.2926 8.39091 10.3134 8.39091H11.1985C11.7366 8.39477 12.1334 7.96294 12.1334 7.3742ZM13.1424 9.70874C13.1357 9.55127 13.1678 9.39458 13.2359 9.2529C13.304 9.11123 13.4059 8.98907 13.5324 8.89753C13.7874 8.70282 14.1861 8.60219 14.7713 8.58137L15.3946 8.55901V8.3724C15.3946 7.99841 15.1476 7.84034 14.7508 7.84034C14.354 7.84034 14.1024 7.98299 14.0447 8.21625C14.04 8.23266 14.03 8.24701 14.0164 8.25706C14.0028 8.26711 13.9863 8.27228 13.9694 8.27177H13.3538C13.3424 8.27209 13.3311 8.26986 13.3208 8.26526C13.3104 8.26065 13.3011 8.25378 13.2936 8.24513C13.2861 8.23648 13.2806 8.22626 13.2775 8.2152C13.2744 8.20415 13.2737 8.19253 13.2755 8.18117C13.3667 7.62828 13.8201 7.20803 14.7789 7.20803C15.799 7.20803 16.1672 7.68997 16.1672 8.60991V10.5631C16.167 10.5844 16.1585 10.6048 16.1436 10.6197C16.1286 10.6347 16.1084 10.643 16.0874 10.6429H15.4668C15.446 10.6429 15.4261 10.6346 15.4113 10.6198C15.4041 10.6124 15.3983 10.6036 15.3944 10.594C15.3905 10.5843 15.3885 10.574 15.3885 10.5635V10.4174C15.3887 10.4053 15.3854 10.3935 15.3788 10.3834C15.3723 10.3733 15.3628 10.3654 15.3518 10.3609C15.3408 10.3563 15.3287 10.3553 15.317 10.3579C15.3054 10.3605 15.2948 10.3666 15.2867 10.3754C15.1004 10.5809 14.7998 10.7293 14.3183 10.7293C13.6099 10.7293 13.1424 10.3553 13.1424 9.70874ZM15.3946 9.2854V9.13387L14.5874 9.17706C14.1621 9.19903 13.9147 9.37832 13.9147 9.68021C13.9147 9.95318 14.1416 10.1043 14.538 10.1043C15.0765 10.1043 15.3946 9.80937 15.3946 9.2854ZM16.7905 12.1188V11.5528C16.7906 11.541 16.7933 11.5293 16.7984 11.5186C16.8035 11.5079 16.8108 11.4985 16.8199 11.4909C16.8289 11.4834 16.8395 11.4781 16.8509 11.4752C16.8622 11.4723 16.874 11.4719 16.8855 11.4742C16.9805 11.4923 17.0775 11.5016 17.1744 11.502C17.341 11.5102 17.5055 11.4615 17.6416 11.3636C17.7776 11.2657 17.8774 11.1244 17.925 10.9622L17.9652 10.8319C17.9711 10.8144 17.9711 10.7954 17.9652 10.7779L16.6719 7.40813C16.6673 7.39591 16.6656 7.38273 16.667 7.36971C16.6685 7.35669 16.673 7.34422 16.6803 7.33337C16.6875 7.32253 16.6973 7.31363 16.7087 7.30745C16.7201 7.30126 16.7328 7.29797 16.7457 7.29786H17.3728C17.3888 7.29803 17.4044 7.30308 17.4175 7.31236C17.4307 7.32165 17.4408 7.33473 17.4465 7.34991L18.3248 9.72647C18.3303 9.74226 18.3405 9.75593 18.3539 9.7656C18.3674 9.77527 18.3835 9.78046 18.4 9.78046C18.4165 9.78046 18.4326 9.77527 18.4461 9.7656C18.4596 9.75593 18.4698 9.74226 18.4753 9.72647L19.238 7.35647C19.2433 7.34027 19.2535 7.32617 19.2672 7.3162C19.2808 7.30623 19.2972 7.30089 19.314 7.30095H19.9628C19.9758 7.30103 19.9886 7.30429 20 7.31047C20.0115 7.31665 20.0214 7.32555 20.0287 7.33642C20.0361 7.34729 20.0407 7.35981 20.0423 7.3729C20.0438 7.38599 20.0422 7.39927 20.0376 7.4116L18.6543 11.1538C18.3358 12.0236 17.7897 12.2461 17.1884 12.2461C17.0744 12.2492 16.9604 12.2353 16.8502 12.2048C16.8319 12.1999 16.8158 12.1886 16.8049 12.1729C16.794 12.1571 16.7889 12.138 16.7905 12.1188ZM5.22378 5.33346C4.39987 5.3275 3.60504 5.6421 3.00278 6.21252C2.97703 6.23645 2.96097 6.26925 2.95774 6.30453C2.95451 6.3398 2.96433 6.37504 2.9853 6.40337L3.35813 6.92002C3.37021 6.93722 3.38587 6.95152 3.40399 6.96193C3.42211 6.97233 3.44226 6.97858 3.46302 6.98023C3.48378 6.98189 3.50464 6.97891 3.52414 6.9715C3.54365 6.96409 3.56131 6.95244 3.5759 6.93737C3.79245 6.71773 4.04998 6.54408 4.33345 6.42658C4.61691 6.30907 4.92062 6.25007 5.22682 6.25301C6.5053 6.25301 7.17304 7.22923 7.17304 8.19312C7.17304 9.24106 6.47148 9.97824 5.46321 9.99289C4.68411 9.99289 4.09694 9.46892 4.09694 8.77685C4.09775 8.60201 4.1368 8.42953 4.21126 8.27185C4.28572 8.11417 4.39374 7.97522 4.52753 7.86501C4.55582 7.84104 4.5737 7.80677 4.57732 7.76956C4.58095 7.73235 4.57003 7.69519 4.54692 7.66607L4.15509 7.16407C4.14324 7.14889 4.12851 7.13627 4.11177 7.12696C4.09504 7.11765 4.07663 7.11183 4.05765 7.10986C4.03866 7.10788 4.01947 7.10978 4.00122 7.11545C3.98297 7.12112 3.96602 7.13044 3.95138 7.14287C3.71074 7.33956 3.51655 7.58839 3.38305 7.87114C3.24956 8.15388 3.18014 8.46335 3.17989 8.77685C3.17989 9.96822 4.17789 10.9028 5.45637 10.9105H5.47347C6.99138 10.8905 8.08896 9.74999 8.08896 8.19119C8.08896 6.80705 7.08411 5.33346 5.22416 5.33346H5.22378Z" fill="white"/>
+                  </g>
+                  <rect x="0.5" y="0.5" width="22" height="15" rx="3.5" stroke="black" stroke-opacity="0.08"/>
+                  <defs>
+                    <clipPath id="clip0_4001_3158">
+                      <rect width="23" height="16" rx="4" fill="white"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            {% endif %}
+            {% if section.settings.show_mastercard %}
+              <div class="maison_commerce_pd_bundle__payment-method">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="16" viewBox="0 0 23 16" fill="none">
+                  <g clip-path="url(#clip0_4001_3159)">
+                  <rect width="23" height="16" rx="2.5" fill="white"/>
+                  <path d="M14.9745 2.99243C17.75 2.99256 19.9999 5.206 19.9999 7.93579C19.9996 10.6654 17.7499 12.878 14.9745 12.8782C13.73 12.8782 12.5915 12.4325 11.7138 11.6956C10.8361 12.4321 9.69824 12.8782 8.45401 12.8782C5.67853 12.878 3.42862 10.6646 3.42862 7.93481C3.42888 5.20528 5.67869 2.99262 8.45401 2.99243C9.69801 2.99243 10.8362 3.43772 11.7138 4.17407C12.5915 3.43741 13.7302 2.99243 14.9745 2.99243Z" fill="#ED0006"/>
+                  <path d="M14.9741 2.99243C17.7497 2.99243 20.0004 5.20592 20.0004 7.93579C20.0002 10.6654 17.7495 12.8782 14.9741 12.8782C13.7295 12.8781 12.592 12.4315 11.7143 11.6946C12.794 10.7881 13.4798 9.44139 13.4799 7.93579C13.4799 6.42977 12.7944 5.08166 11.7143 4.17505C12.592 3.43834 13.7298 2.99247 14.9741 2.99243Z" fill="#F9A000"/>
+                  <path d="M11.7142 4.17419C12.7945 5.08073 13.4797 6.42884 13.4798 7.93494C13.4798 9.44101 12.7943 10.7891 11.7142 11.6957C10.6341 10.7891 9.94856 9.44093 9.94856 7.93494C9.94868 6.42892 10.634 5.08073 11.7142 4.17419Z" fill="#FF5E00"/>
+                  </g>
+                  <rect x="0.5" y="0.5" width="22" height="15" rx="3.5" stroke="black" stroke-opacity="0.08"/>
+                  <defs>
+                  <clipPath id="clip0_4001_3159">
+                  <rect width="23" height="16" rx="4" fill="white"/>
+                  </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            {% endif %}
+            {% if section.settings.show_maestro %}
+              <div class="maison_commerce_pd_bundle__payment-method">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="16" viewBox="0 0 23 16" fill="none">
+                  <g clip-path="url(#clip0_4001_3160)">
+                  <rect width="23" height="16" rx="2.5" fill="white"/>
+                  <path d="M8.38867 3C11.0882 3.00023 13.2764 5.21441 13.2764 7.94531C13.2762 10.6761 11.0881 12.8894 8.38867 12.8896C5.68907 12.8896 3.50017 10.6762 3.5 7.94531C3.5 5.21426 5.68896 3 8.38867 3Z" fill="#ED0006"/>
+                  <path d="M14.7302 3C17.4297 3.00023 19.6179 5.21441 19.6179 7.94531C19.6177 10.6761 17.4296 12.8894 14.7302 12.8896C12.0306 12.8896 9.84169 10.6762 9.84152 7.94531C9.84152 5.21426 12.0305 3 14.7302 3Z" fill="#0099DF"/>
+                  <path d="M11.5584 4.18323C12.6091 5.09023 13.2762 6.43815 13.2762 7.94495C13.2762 9.45151 12.6088 10.7987 11.5584 11.7057C10.5084 10.7987 9.84159 9.45113 9.84158 7.94495C9.84158 6.43853 10.5082 5.09022 11.5584 4.18323Z" fill="#6C6BBD"/>
+                  </g>
+                  <rect x="0.5" y="0.5" width="22" height="15" rx="3.5" stroke="black" stroke-opacity="0.08"/>
+                  <defs>
+                  <clipPath id="clip0_4001_3160">
+                  <rect width="23" height="16" rx="4" fill="white"/>
+                  </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            {% endif %}
+            {% if section.settings.show_googlepay %}
+              <div class="maison_commerce_pd_bundle__payment-method">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="16" viewBox="0 0 23 16" fill="none">
+                  <g clip-path="url(#clip0_4001_3161)">
+                  <rect width="23" height="16" rx="2.5" fill="white"/>
+                  <path d="M18.0696 9.54565H18.0814L19.0403 7.10425H19.7142L17.6419 11.9998H17.0023L17.7728 10.2869L16.4134 7.10425H17.0872L18.0696 9.54565ZM14.8265 6.99292C15.2847 6.99296 15.6467 7.12015 15.9124 7.36987C16.178 7.6196 16.3089 7.96808 16.3089 8.40796V10.5056H15.7161V10.0339H15.6888C15.4307 10.4222 15.0918 10.616 14.6644 10.616C14.3023 10.6159 13.9939 10.505 13.7513 10.283C13.5127 10.0768 13.3784 9.77184 13.386 9.45093C13.386 9.09809 13.5166 8.82023 13.7747 8.61011C14.0328 8.40005 14.3795 8.29663 14.8109 8.29663C15.1806 8.29663 15.4812 8.36887 15.72 8.50366V8.3562C15.7199 8.13844 15.6276 7.93243 15.4661 7.78979C15.3005 7.63914 15.088 7.55542 14.8685 7.55542C14.5219 7.55546 14.2484 7.70636 14.0482 8.00757L13.5013 7.65503C13.794 7.21497 14.2371 6.99292 14.8265 6.99292ZM11.887 5.53394C12.2837 5.52601 12.6693 5.68021 12.9505 5.96558C13.5129 6.50474 13.5475 7.41307 13.0198 7.99585L12.9505 8.06714C12.6616 8.34862 12.3069 8.49097 11.887 8.49097H10.8626V10.5056H10.2425V5.53394H11.887ZM14.9075 8.81226C14.6572 8.81226 14.4452 8.87593 14.2757 8.99878C14.11 9.12168 14.0247 9.27631 14.0247 9.46265C14.0247 9.62915 14.1027 9.78352 14.2298 9.87866C14.3685 9.98958 14.538 10.0496 14.7112 10.0457C14.9731 10.0456 15.2237 9.93801 15.4085 9.7478C15.6124 9.54971 15.7161 9.31597 15.7161 9.04663C15.5235 8.88809 15.2542 8.80832 14.9075 8.81226ZM10.8626 7.88062H11.9026C12.1338 7.88854 12.357 7.79324 12.515 7.6228C12.8385 7.27797 12.8313 6.72342 12.4964 6.39038C12.3384 6.2318 12.1261 6.14429 11.9026 6.14429H10.8626V7.88062Z" fill="#3C4043"/>
+                  <path d="M8.72165 8.05526C8.72165 7.861 8.70624 7.66674 8.67542 7.47644H6.06V8.57461H7.55838C7.49675 8.92745 7.29645 9.24461 7.00371 9.44284V10.1564H7.89734C8.4212 9.66088 8.72165 8.92745 8.72165 8.05526Z" fill="#4285F4"/>
+                  <path d="M6.06013 10.8463C6.8074 10.8463 7.43911 10.5926 7.89748 10.1565L7.00384 9.44285C6.75347 9.61729 6.43377 9.7164 6.06013 9.7164C5.33598 9.7164 4.72353 9.21291 4.50397 8.53894H3.58337V9.27634C4.0533 10.2397 5.01242 10.8463 6.06013 10.8463Z" fill="#34A853"/>
+                  <path d="M4.50409 8.53894C4.38851 8.1861 4.38851 7.80154 4.50409 7.44474V6.7113H3.58334C3.18653 7.5161 3.18653 8.46758 3.58334 9.27238L4.50409 8.53894Z" fill="#FBBC04"/>
+                  <path d="M6.06013 6.26726C6.45688 6.25934 6.83821 6.41395 7.12325 6.69543L7.91674 5.87874C7.41214 5.39507 6.74962 5.12945 6.06013 5.13738C5.01242 5.13738 4.0533 5.74791 3.58337 6.71129L4.50397 7.44869C4.72353 6.77076 5.33598 6.26726 6.06013 6.26726Z" fill="#EA4335"/>
+                  </g>
+                  <rect x="0.5" y="0.5" width="22" height="15" rx="3.5" stroke="black" stroke-opacity="0.08"/>
+                  <defs>
+                  <clipPath id="clip0_4001_3161">
+                  <rect width="23" height="16" rx="4" fill="white"/>
+                  </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            {% endif %}
+            {% if section.settings.show_discover %}
+              <div class="maison_commerce_pd_bundle__payment-method">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="16" viewBox="0 0 23 16" fill="none">
+                  <g clip-path="url(#clip0_4001_3162)">
+                  <rect width="23" height="16" rx="2.5" fill="white"/>
+                  <path d="M9.34998 15.0333L22.0166 11.2V13.4833C22.0166 14.3393 21.3227 15.0333 20.4666 15.0333H9.34998Z" fill="#FD6020"/>
+                  <path d="M9.45602 6.07361C9.69993 6.07361 9.97939 6.11002 10.1884 6.2533V6.96912C10.0142 6.75421 9.73477 6.61072 9.45602 6.61072C8.89885 6.64672 8.44588 7.1483 8.48044 7.72107V7.79333C8.48053 8.36631 8.93378 8.79623 9.49118 8.79626C9.76993 8.79626 10.0142 8.65277 10.1884 8.43787V9.15466C9.94462 9.26208 9.70048 9.33333 9.42184 9.33337C8.55083 9.33337 7.85359 8.58127 7.85349 7.68591C7.85349 6.75479 8.5503 6.00223 9.45602 6.07361ZM14.9267 8.22302L15.7627 6.07361H16.3906L15.1006 9.33337H14.7871L13.498 6.07361H14.125L14.9267 8.22302ZM6.66891 6.00232C6.9825 6.00232 7.29611 6.14581 7.54001 6.36072L7.22653 6.79041C7.08716 6.64713 6.91247 6.53943 6.73825 6.53943C6.52937 6.50391 6.3551 6.68306 6.32028 6.89783C6.32033 7.0768 6.4252 7.14819 6.77341 7.29138C7.47027 7.57793 7.64481 7.79321 7.67966 8.22302V8.33044C7.64481 8.90353 7.19125 9.33306 6.63376 9.29724C6.21583 9.29712 5.79787 9.08261 5.58884 8.68884L5.97165 8.29431C6.07618 8.54504 6.32083 8.724 6.59958 8.724H6.63376C6.84272 8.724 7.0525 8.50973 7.0527 8.25916C7.0527 8.11594 6.98235 8.00853 6.8779 7.93689C6.73853 7.86525 6.5993 7.79302 6.45993 7.7572C5.9025 7.57813 5.72852 7.32757 5.72849 6.89783V6.86169C5.76343 6.36036 6.1812 5.96653 6.66891 6.00232ZM3.04489 6.07361C3.88087 6.10942 4.54317 6.82565 4.50876 7.68494C4.50876 8.1505 4.29948 8.58134 3.95114 8.90369C3.6376 9.15429 3.25424 9.29692 2.87106 9.26111H1.99997V6.07361H3.04489ZM5.3447 9.26208H4.7529V6.07361H5.3447V9.26208ZM18.3418 6.61072H17.2617V7.32751H18.3066V7.86462H17.2617V8.724H18.3418V9.26208H16.6689V6.07361H18.3418V6.61072ZM19.5957 6.07361C20.2924 6.07361 20.6756 6.39653 20.6758 7.00525C20.7104 7.47072 20.3965 7.8643 19.9785 7.93591L20.9199 9.26111H20.1884L19.3867 7.97205H19.3174V9.26111H18.7246V6.07361H19.5957ZM2.76657 6.61072H2.59274V8.724H2.76657C3.04531 8.75981 3.35928 8.65211 3.56833 8.47302C3.77699 8.25822 3.88176 7.97179 3.88181 7.64978C3.88173 7.36345 3.77715 7.0765 3.56833 6.86169C3.3593 6.6827 3.04522 6.57495 2.76657 6.61072ZM19.3174 7.54236H19.4912C19.8744 7.54234 20.0488 7.36275 20.0488 7.04041C20.0486 6.75422 19.8742 6.57558 19.4912 6.57556H19.3174V7.54236Z" fill="black"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M11.9651 6C11.094 6 10.3623 6.71636 10.3623 7.64763C10.3623 8.54308 11.0592 9.29525 11.9651 9.33107C12.871 9.36689 13.5679 8.61471 13.6027 7.68344C13.5679 6.75218 12.871 6 11.9651 6V6Z" fill="#FD6020"/>
+                  </g>
+                  <rect x="0.5" y="0.5" width="22" height="15" rx="3.5" stroke="black" stroke-opacity="0.08"/>
+                  <defs>
+                  <clipPath id="clip0_4001_3162">
+                  <rect width="23" height="16" rx="4" fill="white"/>
+                  </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            {% endif %}
+            {% if section.settings.show_dinersclub %}
+              <div class="maison_commerce_pd_bundle__payment-method">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="16" viewBox="0 0 23 16" fill="none">
+                  <g clip-path="url(#clip0_4001_3163)">
+                  <rect width="23" height="16" rx="2.5" fill="white"/>
+                  <path d="M12.6364 12.9999C15.3061 13.013 17.7429 10.7708 17.7429 8.04325C17.7429 5.06072 15.3061 2.99889 12.6364 3H10.3387C7.63723 2.99889 5.41336 5.06128 5.41336 8.04325C5.41336 10.7714 7.63723 13.013 10.3387 12.9999H12.6364Z" fill="#0079BE"/>
+                  <path d="M10.3497 3.41333C7.88086 3.41417 5.88058 5.46264 5.87976 7.99094C5.88058 10.519 7.88086 12.5674 10.3497 12.5683C12.8189 12.5674 14.82 10.519 14.8202 7.99094C14.82 5.46264 12.8191 3.41417 10.3497 3.41333ZM7.51653 7.99094C7.51601 7.40638 7.68933 6.83525 8.01384 6.3522C8.33836 5.86915 8.79896 5.49666 9.33546 5.2834V10.6982C8.79892 10.4851 8.33826 10.1127 8.01373 9.62965C7.6892 9.14663 7.51591 8.5755 7.51653 7.99094ZM11.3637 10.6993V5.28312C11.9006 5.49608 12.3616 5.86854 12.6864 6.35175C13.0111 6.83496 13.1845 7.40639 13.1838 7.99122C13.1844 8.57603 13.011 9.14741 12.6862 9.63059C12.3615 10.1138 11.9006 10.4863 11.3637 10.6993Z" fill="white"/>
+                  <path d="M12.6364 12.9999C15.3061 13.013 17.7429 10.7708 17.7429 8.04325C17.7429 5.06072 15.3061 2.99889 12.6364 3H10.3387C7.63723 2.99889 5.41336 5.06128 5.41336 8.04325C5.41336 10.7714 7.63723 13.013 10.3387 12.9999H12.6364Z" fill="#0079BE"/>
+                  <path d="M10.3497 3.41333C7.88086 3.41417 5.88058 5.46264 5.87976 7.99094C5.88058 10.519 7.88086 12.5674 10.3497 12.5683C12.8189 12.5674 14.82 10.519 14.8202 7.99094C14.82 5.46264 12.8191 3.41417 10.3497 3.41333ZM7.51653 7.99094C7.51601 7.40638 7.68933 6.83525 8.01384 6.3522C8.33836 5.86915 8.79896 5.49666 9.33546 5.2834V10.6982C8.79892 10.4851 8.33826 10.1127 8.01373 9.62965C7.6892 9.14663 7.51591 8.5755 7.51653 7.99094ZM11.3637 10.6993V5.28312C11.9006 5.49608 12.3616 5.86854 12.6864 6.35175C13.0111 6.83496 13.1845 7.40639 13.1838 7.99122C13.1844 8.57603 13.011 9.14741 12.6862 9.63059C12.3615 10.1138 11.9006 10.4863 11.3637 10.6993Z" fill="white"/>
+                  </g>
+                  <rect x="0.5" y="0.5" width="22" height="15" rx="3.5" stroke="black" stroke-opacity="0.08"/>
+                  <defs>
+                  <clipPath id="clip0_4001_3163">
+                  <rect width="23" height="16" rx="4" fill="white"/>
+                  </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            {% endif %}
+            {% if section.settings.show_applepay %}
+              <div class="maison_commerce_pd_bundle__payment-method">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="16" viewBox="0 0 23 16" fill="none">
+                  <g clip-path="url(#clip0_4001_3164)">
+                    <rect width="23" height="16" rx="2.5" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.48463 5.95527C5.79352 5.9817 6.1024 5.79666 6.29545 5.56206C6.48529 5.32086 6.61077 4.99705 6.5786 4.66663C6.3051 4.67984 5.96726 4.85166 5.77421 5.09287C5.59725 5.30103 5.44602 5.63806 5.48463 5.95527ZM9.15908 10.2111V5.05982H11.0413C12.013 5.05982 12.6919 5.7471 12.6919 6.75157C12.6919 7.75605 12.0002 8.44993 11.0156 8.44993H9.93772V10.2111H9.15908ZM6.57536 6.01806C6.30324 6.00197 6.05494 6.1021 5.85439 6.18297C5.72532 6.23502 5.61603 6.27909 5.53288 6.27909C5.43957 6.27909 5.32577 6.23266 5.19799 6.18053C5.03056 6.11223 4.83914 6.03413 4.6384 6.03788C4.1783 6.04449 3.75036 6.31213 3.51548 6.73837C3.03285 7.59086 3.39 8.85306 3.85654 9.54694C4.08499 9.89058 4.35848 10.2673 4.71884 10.254C4.87738 10.2479 4.99142 10.1982 5.10945 10.1468C5.24533 10.0876 5.38648 10.0261 5.60688 10.0261C5.81965 10.0261 5.95463 10.086 6.0842 10.1435C6.2074 10.1981 6.32572 10.2507 6.50136 10.2474C6.8746 10.2408 7.10948 9.90379 7.33792 9.56016C7.58445 9.19134 7.69279 8.83139 7.70923 8.77677L7.71116 8.77045C7.71076 8.77005 7.70774 8.76863 7.70241 8.76613L7.70235 8.7661L7.70234 8.76609C7.61993 8.72735 6.99003 8.43121 6.98399 7.63711C6.97793 6.97058 7.48361 6.63288 7.56321 6.57972L7.56322 6.57971L7.56323 6.57971C7.56807 6.57648 7.57133 6.5743 7.5728 6.57316C7.25105 6.08414 6.74911 6.03127 6.57536 6.01806ZM14.1141 10.2507C14.6032 10.2507 15.0569 9.99628 15.2628 9.59317H15.2789V10.2111H15.9996V7.647C15.9996 6.90355 15.4204 6.42444 14.5292 6.42444C13.7023 6.42444 13.0909 6.91016 13.0684 7.57761H13.7698C13.8278 7.2604 14.1141 7.05224 14.5067 7.05224C14.9829 7.05224 15.2499 7.28023 15.2499 7.69986V7.98402L14.2782 8.0435C13.3741 8.09967 12.885 8.47965 12.885 9.14049C12.885 9.80794 13.3902 10.2507 14.1141 10.2507ZM14.3232 9.63944C13.9082 9.63944 13.6443 9.43458 13.6443 9.12068C13.6443 8.79687 13.8985 8.60853 14.3844 8.57879L15.2499 8.52262V8.81339C15.2499 9.2958 14.8509 9.63944 14.3232 9.63944ZM18.3902 10.4126C18.0781 11.3147 17.721 11.612 16.9616 11.612C16.9037 11.612 16.7107 11.6054 16.6656 11.5922V10.9743C16.7139 10.9809 16.8329 10.9876 16.8941 10.9876C17.2383 10.9876 17.4314 10.8389 17.5504 10.4523L17.6212 10.2243L16.302 6.47402H17.1161L18.0331 9.51719H18.0492L18.9662 6.47402H19.7577L18.3902 10.4126ZM9.93765 5.73389H10.8353C11.511 5.73389 11.8971 6.10396 11.8971 6.75489C11.8971 7.40581 11.511 7.77919 10.8321 7.77919H9.93765V5.73389Z" fill="black"/>
+                  </g>
+                  <rect x="0.5" y="0.5" width="22" height="15" rx="3.5" stroke="black" stroke-opacity="0.08"/>
+                  <defs>
+                    <clipPath id="clip0_4001_3164">
+                      <rect width="23" height="16" rx="4" fill="white"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            {% endif %}
+            {% if section.settings.show_amex %}
+              <div class="maison_commerce_pd_bundle__payment-method">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="16" viewBox="0 0 23 16" fill="none">
+                  <g clip-path="url(#clip0_4001_3165)">
+                    <rect width="23" height="16" rx="2.5" fill="#1F72CD"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.1443 5.62036L2 10.576H4.56703L4.88527 9.78586H5.61269L5.93093 10.576H8.75651V9.97294L9.00828 10.576H10.4699L10.7217 9.9602V10.576H16.5981L17.3127 9.80638L17.9817 10.576L21 10.5824L18.8489 8.11201L21 5.62036H18.0285L17.333 6.37575L16.685 5.62036H10.2922L9.74322 6.89945L9.18139 5.62036H6.61972V6.2029L6.33475 5.62036H4.1443ZM12.9196 6.32407H16.2941L17.3262 7.48836L18.3916 6.32407H19.4237L17.8555 8.11131L19.4237 9.87796H18.3448L17.3127 8.70015L16.2419 9.87796H12.9196V6.32407ZM13.7529 7.70948V7.06034V7.05972H15.8585L16.7773 8.09787L15.8178 9.14169H13.7529V8.43301H15.5939V7.70948H13.7529ZM4.64098 6.32407H5.89227L7.31459 9.68451V6.32407H8.68533L9.7839 8.73349L10.7964 6.32407H12.1603V9.88006H11.3304L11.3236 7.09361L10.1137 9.88006H9.3713L8.15461 7.09361V9.88006H6.44733L6.12366 9.08285H4.37499L4.05199 9.87936H3.13725L4.64098 6.32407ZM4.67359 8.34589L5.2497 6.92573L5.82515 8.34589H4.67359Z" fill="white"/>
+                  </g>
+                  <rect x="0.5" y="0.5" width="22" height="15" rx="3.5" stroke="black" stroke-opacity="0.08"/>
+                  <defs>
+                    <clipPath id="clip0_4001_3165">
+                      <rect width="23" height="16" rx="4" fill="white"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        <!-- Shipping Info -->
+        {% if section.settings.show_shipping_info %}
+          <div class="maison_commerce_pd_bundle__shipping-info">
+            {% if section.settings.show_free_shipping %}
+              <div class="maison_commerce_pd_bundle__shipping-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M9.33334 12.0001V4.00008C9.33334 3.64646 9.19286 3.30732 8.94281 3.05727C8.69276 2.80722 8.35362 2.66675 8 2.66675H2.66667C2.31305 2.66675 1.97391 2.80722 1.72386 3.05727C1.47381 3.30732 1.33334 3.64646 1.33334 4.00008V11.3334C1.33334 11.5102 1.40357 11.6798 1.5286 11.8048C1.65362 11.9298 1.82319 12.0001 2 12.0001H3.33334M3.33334 12.0001C3.33334 12.7365 3.93029 13.3334 4.66667 13.3334C5.40305 13.3334 6 12.7365 6 12.0001M3.33334 12.0001C3.33334 11.2637 3.93029 10.6667 4.66667 10.6667C5.40305 10.6667 6 11.2637 6 12.0001M10 12.0001H6M10 12.0001C10 12.7365 10.597 13.3334 11.3333 13.3334C12.0697 13.3334 12.6667 12.7365 12.6667 12.0001M10 12.0001C10 11.2637 10.597 10.6667 11.3333 10.6667C12.0697 10.6667 12.6667 11.2637 12.6667 12.0001M12.6667 12.0001H14C14.1768 12.0001 14.3464 11.9298 14.4714 11.8048C14.5964 11.6798 14.6667 11.5102 14.6667 11.3334V8.90008C14.6664 8.74879 14.6147 8.60209 14.52 8.48408L12.2 5.58408C12.1377 5.506 12.0585 5.44294 11.9685 5.39955C11.8785 5.35616 11.7799 5.33356 11.68 5.33341H9.33334" stroke="#151515" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p class="maison_commerce_pd_bundle__shipping-text">{{ section.settings.free_shipping_text }}</p>
+              </div>
+            {% endif %}
+            {% if section.settings.show_money_back %}
+              <div class="maison_commerce_pd_bundle__shipping-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M8 14.6667V8.00008M8 8.00008C7.76673 8.00008 7.53758 7.93903 7.33537 7.82275L2.20003 4.66675M8 8.00008C8.23327 8.00008 8.46248 7.93903 8.6647 7.82275L13.8 4.66675M5 2.84676L11 6.28009M7.33333 14.4867C7.53603 14.6037 7.76595 14.6653 8 14.6653C8.23405 14.6653 8.46397 14.6037 8.66667 14.4867L13.3333 11.82C13.5358 11.7031 13.704 11.535 13.821 11.3326C13.938 11.1301 13.9998 10.9005 14 10.6667V5.33335C13.9998 5.09953 13.938 4.86989 13.821 4.66746C13.704 4.46503 13.5358 4.29692 13.3333 4.18002L8.66667 1.51335C8.46397 1.39633 8.23405 1.33472 8 1.33472C7.76595 1.33472 7.53603 1.39633 7.33333 1.51335L2.66667 4.18002C2.46418 4.29692 2.29599 4.46503 2.17897 4.66746C2.06196 4.86989 2.00024 5.09953 2 5.33335V10.6667C2.00024 10.9005 2.06196 11.1301 2.17897 11.3326C2.29599 11.535 2.46418 11.7031 2.66667 11.82L7.33333 14.4867Z" stroke="#151515" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p class="maison_commerce_pd_bundle__shipping-text">{{ section.settings.money_back_text }}</p>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Protection Block -->
+      {% if section.settings.protection_title != blank %}
+        <div class="maison_commerce_pd_bundle__protection">
+          {% if section.settings.protection_icon %}
+            <img
+              src="{{ section.settings.protection_icon | image_url: width: 56 }}"
+              alt=""
+              class="maison_commerce_pd_bundle__protection-icon"
+            >
+          {% endif %}
+          <div class="maison_commerce_pd_bundle__protection-content">
+            <p class="maison_commerce_pd_bundle__protection-title">
+              {{ section.settings.protection_title }}
+            </p>
+            <p class="maison_commerce_pd_bundle__protection-heading">
+              {{ section.settings.protection_heading }}
+            </p>
+            <div class="maison_commerce_pd_bundle__protection-description">
+              {{ section.settings.protection_description }}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      <!-- Reviews Slider -->
+      {% assign review_blocks = section.blocks | where: 'type', 'review' %}
+      {% if review_blocks.size > 0 %}
+        <div class="maison-pd-reviews-slider-wrapper">
+          <div class="swiper maison_commerce_pd_bundle__reviews">
+            <div class="swiper-wrapper maison-pd-review-slider">
+              {% for block in review_blocks %}
+                <div class="swiper-slide maison_commerce_pd_bundle__review-slide" {{ block.shopify_attributes }}>
+                  <div class="maison_commerce_pd_bundle__review">
+                    {% if block.settings.reviewer_avatar %}
+                      <img
+                        src="{{ block.settings.reviewer_avatar | image_url: width: 96 }}"
+                        alt="{{ block.settings.reviewer_name | escape }}"
+                        class="maison_commerce_pd_bundle__review-avatar"
+                      >
+                    {% endif %}
+                    <div class="maison_commerce_pd_bundle__review-content">
+                      <div class="maison_commerce_pd_bundle__review-header">
+                        <div class="maison_commerce_pd_bundle__review-stars">
+                          {% assign review_rating = block.settings.rating | times: 1.0 %}
+                          {% assign full_stars = review_rating | floor %}
+                          {% assign decimal_part = review_rating | minus: full_stars %}
+
+                          {% for i in (1..5) %}
+                            {% if i <= full_stars %}
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="12"
+                                height="12"
+                                viewBox="0 0 12 12"
+                                fill="none"
+                              >
+                                <rect width="12" height="12" fill="#00B67A"/>
+                                <path d="M6 8.10063L7.7381 7.63522L8.46429 10L6 8.10063ZM10 5.04402H6.94048L6 2L5.05952 5.04402H2L4.47619 6.93082L3.53571 9.97484L6.01191 8.08805L7.53571 6.93082L10 5.04402Z" fill="white"/>
+                              </svg>
+                            {% elsif i > full_stars and decimal_part >= 0.5 and decimal_part <= 0.9 %}
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="12"
+                                height="12"
+                                viewBox="0 0 12 12"
+                                fill="none"
+                              >
+                                <rect width="12" height="12" fill="#00B67A"/>
+                                <rect x="6" width="6" height="12" fill="#EAECF0"/>
+                                <path d="M6 8.10063L7.7381 7.63522L8.46429 10L6 8.10063ZM10 5.04402H6.94048L6 2L5.05952 5.04402H2L4.47619 6.93082L3.53571 9.97484L6.01191 8.08805L7.53571 6.93082L10 5.04402Z" fill="white"/>
+                              </svg>
+                            {% else %}
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="12"
+                                height="12"
+                                viewBox="0 0 12 12"
+                                fill="none"
+                              >
+                                <rect width="12" height="12" fill="#00B67A"/>
+                                <path d="M0 0H12V12H0V0Z" fill="#EAECF0"/>
+                                <path d="M6 8.10063L7.7381 7.63522L8.46429 10L6 8.10063ZM10 5.04403H6.94048L6 2L5.05952 5.04403H2L4.47619 6.93082L3.53571 9.97484L6.01191 8.08805L7.53571 6.93082L10 5.04403Z" fill="white"/>
+                              </svg>
+                            {% endif %}
+                          {% endfor %}
+                        </div>
+                        <p class="maison_commerce_pd_bundle__review-rating-text">
+                          {{ block.settings.rating_text }}
+                        </p>
+                      </div>
+                      <div class="maison_commerce_pd_bundle__review-text">
+                        {{ block.settings.review_text }}
+                      </div>
+                      <div class="maison_commerce_pd_bundle__review-footer">
+                        <p class="maison_commerce_pd_bundle__review-name">
+                          {{ block.settings.reviewer_name }}
+                        </p>
+                        {% if block.settings.source != blank %}
+                          <div class="maison_commerce_pd_bundle__review-source">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="14"
+                              height="14"
+                              viewBox="0 0 14 14"
+                              fill="none"
+                            >
+                              <path d="M7 10.6761L10.0417 9.86164L11.3125 14L7 10.6761ZM14 5.32704H8.64583L7 0L5.35417 5.32704H0L4.33334 8.62893L2.6875 13.956L7.02083 10.6541L9.6875 8.62893L14 5.32704Z" fill="#00B67A"/>
+                            </svg>
+                            <span>{{ block.settings.source }}</span>
+                          </div>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="swiper-pagination maison_commerce_pd_bundle__reviews-pagination"></div>
+        </div>
+      {% endif %}
+
+      <!-- FAQs Accordion -->
+      {% assign faq_blocks = section.blocks | where: 'type', 'faq' %}
+      {% if faq_blocks.size > 0 %}
+        <div class="maison_commerce_pd_bundle__faqs">
+          {% for block in faq_blocks %}
+            <div class="maison_commerce_pd_bundle__faq" {{ block.shopify_attributes }}>
+              <button
+                type="button"
+                class="maison_commerce_pd_bundle__faq-button"
+                @click="toggleFaq({{ forloop.index0 }})"
+                :aria-expanded="openFaq === {{ forloop.index0 }}"
+              >
+                <span class="maison_commerce_pd_bundle__faq-question">
+                  {{ block.settings.question }}
+                </span>
+                <span
+                  class="maison_commerce_pd_bundle__faq-icon"
+                  :class="{ 'maison_commerce_pd_bundle__faq-icon--open': openFaq === {{ forloop.index0 }} }"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12H19M12 5V19" stroke="#151515" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+              <div
+                class="maison_commerce_pd_bundle__faq-answer"
+                x-show="openFaq === {{ forloop.index0 }}"
+                x-transition
+              >
+                {{ block.settings.answer }}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <!-- Customer Images Slider -->
+      {% assign image_blocks = section.blocks | where: 'type', 'customer_image' %}
+      {% if image_blocks.size > 0 %}
+        <div class="maison_commerce_pd_bundle__customer-images">
+          <div class="maison_commerce_pd_bundle__customer-images-header">
+            <h2 class="maison_commerce_pd_bundle__customer-images-heading">
+              {{ section.settings.loved_by_heading }}
+            </h2>
+            <div class="maison_commerce_pd_bundle__customer-images-nav">
+              <button class="maison_commerce_pd_bundle__customer-images-prev maison-pd-image-slider-btns" type="button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 18L9 12L15 6" stroke="#151515" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <button class="maison_commerce_pd_bundle__customer-images-next maison-pd-image-slider-btns" type="button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 18L15 12L9 6" stroke="#151515" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="swiper maison_commerce_pd_bundle__customer-images-swiper">
+            <div class="swiper-wrapper maison-pd-image-slider">
+              {% for block in image_blocks %}
+                {% if block.settings.image %}
+                  <div
+                    class="swiper-slide maison_commerce_pd_bundle__customer-image-slide"
+                    {{ block.shopify_attributes }}
+                  >
+                    <img
+                      src="{{ block.settings.image | image_url: width: 400 }}"
+                      alt="Customer image {{ forloop.index }}"
+                      loading="lazy"
+                      class="maison_commerce_pd_bundle__customer-image"
+                    >
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {% comment %} Sticky Add to Cart Button {% endcomment %}
+  {% assign sticky_atc_block = section.blocks | where: 'type', 'sticky_atc' | first %}
+  {% if sticky_atc_block and sticky_atc_block.settings.show_sticky_atc %}
+    <div class="maison_commerce_pd_bundle__sticky-atc" id="maison-sticky-atc">
+      {% if product.featured_image %}
+        <img
+          src="{{ product.featured_image | image_url: width: 160 }}"
+          alt="{{ product.title | escape }}"
+          class="maison_commerce_pd_bundle__sticky-atc-image"
+          loading="lazy"
+        >
+      {% endif %}
+      <div class="maison_commerce_pd_bundle__sticky-atc-content">
+        <div class="maison_commerce_pd_bundle__sticky-atc-info">
+          <p class="maison_commerce_pd_bundle__sticky-atc-title">{{ product.title }}</p>
+          <div class="maison_commerce_pd_bundle__sticky-atc-price">
+            {% if product.compare_at_price > product.price %}
+              <span class="maison_commerce_pd_bundle__sticky-atc-compare-price">
+                {{ product.compare_at_price | money }}
+              </span>
+            {% endif %}
+            <span class="maison_commerce_pd_bundle__sticky-atc-current-price">
+              {{ product.price | money }}
+            </span>
+            {% if product_has_bogo_tag %}
+              <span class="maison_commerce_pd_bundle__sticky-atc-badge">
+                {{ section.settings.price_badge_text }}
+              </span>
+            {% endif %}
+          </div>
+        </div>
+        <form
+          action="/cart/add"
+          method="post"
+          enctype="multipart/form-data"
+          class="maison_commerce_pd_bundle__sticky-atc-form"
+        >
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+          <button type="submit" class="maison_commerce_pd_bundle__sticky-atc-button">
+            <span>Add to Cart</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.5 2.5H4.16667L5.83333 13.3333H15.8333L17.5 6.66667H6.66667" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M7.5 17.5C8.19036 17.5 8.75 16.9404 8.75 16.25C8.75 15.5596 8.19036 15 7.5 15C6.80964 15 6.25 15.5596 6.25 16.25C6.25 16.9404 6.80964 17.5 7.5 17.5Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M15.8333 17.5C16.5237 17.5 17.0833 16.9404 17.0833 16.25C17.0833 15.5596 16.5237 15 15.8333 15C15.143 15 14.5833 15.5596 14.5833 16.25C14.5833 16.9404 15.143 17.5 15.8333 17.5Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  {% endif %}
+</section>
+
+<style>
+  .maison_commerce_pd_bundle {
+    background-color: {{ section.settings.section_bg_color }};
+    border-top: 1px solid {{ section.settings.badge_border_color }};
+    border-bottom: 1px solid {{ section.settings.badge_border_color }};
+    padding: 40px 80px;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle {
+      padding: 20px!important;
+    }
+  }
+
+  .maison-pd-gallery-slider{
+    display: flex;
+  }
+
+  .maison_commerce_pd_bundle__bundle-placeholder .product-form__submit{
+    padding: var(--16, 16px) var(--32, 32px);
+    border-radius: var(--12, 12px);
+    background: var(--Color-Brand-3-1800, #151515)!important;
+    color: var(--White, #FFF);
+    text-align: center;
+    leading-trim: both;
+    text-edge: cap;
+    font-size: 16px;
+    gap: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    box-shadow: none;
+    border: none;
+    transition: all 0.3s ease;
+  }
+
+  .maison_commerce_pd_bundle__bundle-placeholder .product-form__submit:hover{
+    background: rgba(21, 21, 21, 0.7)!important;
+    color: #FFF!important;
+  }
+
+  .maison_commerce_pd_bundle__bundle-placeholder .product-form__submit::after, .maison_commerce_pd_bundle__bundle-placeholder .product-form__submit::before{
+    display: none!important;
+  }
+
+  .maison-form-add-to-cart{
+    display: flex;
+  }
+
+  .maison_commerce_pd_bundle__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: flex-start;
+  }
+
+  .kaching-bundles .kaching-bundles__bar-container{
+    box-shadow: none!important;
+    background: transparent!important;
+  }
+
+  .maison-pd-image-slider{
+    display: flex;
+    width: fit-content;
+  }
+
+  .maison-pd-gallery-slider-wrapper{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  @media (max-width: 1250px) {
+    .maison_commerce_pd_bundle__container {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .maison_commerce_pd_bundle{
+      padding: 40px;
+    }
+
+    .maison-form-add-to-cart svg{
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  /* Gallery */
+  .maison_commerce_pd_bundle__gallery {
+    width: 100%;
+    max-width: 600px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+  }
+
+  .maison-pd-reviews-slider-wrapper{
+    display: grid;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .maison_commerce_pd_bundle__info-main{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .maison_commerce_pd_bundle__info-general{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .maison-pd-review-slider{
+    display: flex;
+    width: fit-content;
+  }
+
+  .maison-pd-review-slider .maison_commerce_pd_bundle__review{
+    width: 100%;
+    height: 100%;
+  }
+
+  .maison-pd-image-slider-btns{
+    transition: all 0.3s ease;
+  }
+
+  .maison-pd-image-slider-btns:hover{
+    background: rgba(255,255,255, 0.2);
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__gallery {
+      width: 100%;
+      position: static;
+    }
+  }
+
+  .maison_commerce_pd_bundle__main-image {
+    width: 100%;
+    height: 600px;
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__main-image {
+      height: auto;
+      aspect-ratio: 1;
+    }
+  }
+
+  .maison_commerce_pd_bundle__main-image-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #f5f5f5;
+  }
+
+  .maison_commerce_pd_bundle__main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s ease;
+  }
+
+  .maison_commerce_pd_bundle__image-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(245, 245, 245, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 10;
+    border-radius: 24px;
+  }
+
+  .maison_commerce_pd_bundle__image-loader--active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .maison_commerce_pd_bundle__loader-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(21, 21, 21, 0.1);
+    border-top-color: #151515;
+    border-radius: 50%;
+    animation: maison-pd-spin 0.8s linear infinite;
+  }
+
+  @keyframes maison-pd-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .maison_commerce_pd_bundle__gallery-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: {{ section.settings.badge_bg_color }};
+    border: 1px solid {{ section.settings.badge_border_color }};
+    border-radius: 16px;
+    padding: 8px;
+    max-width: 180px;
+  }
+
+  .maison_commerce_pd_bundle__gallery-badge-text {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #151515;
+    margin: 0 0 4px 0;
+  }
+
+  .maison_commerce_pd_bundle__gallery-badge-subtext {
+    font-size: 10px;
+    line-height: 1.5;
+    color: rgba(21, 21, 21, 0.75);
+    margin: 0;
+  }
+
+  /* Thumbnails */
+  .maison_commerce_pd_bundle__thumbnails {
+    position: relative;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    overflow: hidden;
+    flex: 1;
+  }
+
+  .maison_commerce_pd_bundle__thumbnail-slide {
+    width: auto;
+  }
+
+  .maison_commerce_pd_bundle__thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    border: 2px solid transparent;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+  }
+
+  @media(max-width: 1050px){
+    .maison_commerce_pd_bundle__thumbnail{
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__thumbnail--active {
+    border-color: #151515;
+  }
+
+  .maison_commerce_pd_bundle__thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .maison_commerce_pd_bundle__thumb-prev,
+  .maison_commerce_pd_bundle__thumb-next {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 999px;
+    margin-top: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .maison_commerce_pd_bundle__thumb-prev {
+    left: -20px;
+  }
+
+  .maison_commerce_pd_bundle__thumb-next {
+    right: -20px;
+  }
+
+  /* Product Info */
+  .maison_commerce_pd_bundle__info {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .ks-chart-container{
+    line-height: 1!important;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__info {
+      gap: 20px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__rating {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    height: 20px;
+  }
+
+  .maison_commerce_pd_bundle__stars {
+    display: flex;
+    gap: 0;
+  }
+
+  .maison_commerce_pd_bundle__star {
+    width: 16px;
+    height: 16px;
+  }
+
+  .maison_commerce_pd_bundle__rating-text {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #151515;
+    margin: 0;
+  }
+
+  .maison_commerce_pd_bundle__title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.3;
+    color: #151515;
+    margin: 0;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__title {
+      font-size: 20px;
+      line-height: 1.4;
+    }
+  }
+
+  /* Features Grid */
+  .maison_commerce_pd_bundle__features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .maison_commerce_pd_bundle__feature-item {
+    background: white;
+    border: 1px solid #F0D3CB;
+    border-radius: 999px;
+    padding: 6px 12px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .maison_commerce_pd_bundle__feature-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .maison_commerce_pd_bundle__feature-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #151515;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__features-grid {
+      gap: 4px;
+    }
+
+    .maison_commerce_pd_bundle__feature-item {
+      padding: 6px 12px;
+      gap: 4px;
+    }
+
+    .maison_commerce_pd_bundle__feature-icon {
+      width: 12px;
+      height: 12px;
+    }
+
+    .maison_commerce_pd_bundle__feature-text {
+      font-size: 10px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__features {
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(21, 21, 21, 0.75);
+    margin: 0;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__features {
+      font-size: 12px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__price {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .maison_commerce_pd_bundle__compare-price {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #151515;
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__compare-price {
+      font-size: 14px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__current-price {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.4;
+    color: #151515;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__current-price {
+      font-size: 20px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__price-badge {
+    background-color: {{ section.settings.price_badge_bg_color }};
+    color: {{ section.settings.price_badge_text_color }};
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 4px 12px;
+    border-radius: 8px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Bundle Placeholder */
+  .maison_commerce_pd_bundle__bundle-placeholder {
+    background: white;
+    border: 1px solid {{ section.settings.badge_border_color }};
+    border-radius: 16px;
+    padding: 20px;
+  }
+
+  .maison_commerce_pd_bundle__bundle-placeholder-heading-wrapp {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .maison_commerce_pd_bundle__bundle-placeholder-heading-wrapp .ks-chart-modal-link.sizing-chart-modal-link.with-icon{
+    margin: 0!important;
+  }
+
+  .maison_commerce_pd_bundle__bundle-placeholder-heading-wrapp .ks-chart-modal-link.sizing-chart-modal-link.with-icon span{
+    display: flex;
+  }
+
+  .maison_commerce_pd_bundle__bundle-placeholder-heading-wrapp ._ks_text{
+    color: var(--Text-Primary, #151515)!important;
+    font-size: 12px!important;
+    font-style: normal;
+    font-weight: 600!important;
+    line-height: 18px!important;
+    text-decoration-line: underline!important;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+  }
+
+
+  .kaching-bundles .kaching-bundles__block{
+    margin-top: 12px!important;
+    margin-bottom: 20px!important;
+  }
+
+  .kaching-bundles .kaching-bundles__bar, .kaching-bundles .kaching-bundles__bundle-products--vertical{
+    margin: 0!important;
+  }
+
+  .maison_commerce_pd_bundle__bundle-note {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #151515;
+    opacity: 0.5;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__bundle-note {
+      font-size: 10px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__size-guide-link {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .maison_commerce_pd_bundle__size-guide-link:hover {
+    opacity: 0.7;
+  }
+
+  .maison_commerce_pd_bundle__size-guide-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    display: block;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__size-guide-icon {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__size-guide-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #151515;
+    text-decoration: underline;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__size-guide-text {
+      font-size: 10px;
+    }
+  }
+
+  /* Delivery Information */
+  .maison_commerce_pd_bundle__delivery-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 16px;
+  }
+
+  .kaching-bundles .kaching-bundles__bar-wrapper{
+    padding: 0!important;
+  }
+
+  .kaching-bundles .kaching-bundles__bundle-products{
+    border: none!important;
+  }
+
+  .kaching-bundles__bundle-products__divider{
+    display: none!important;
+  }
+
+  .kaching-bundles__bars{
+    gap: 16px;
+  }
+
+  .kaching-bundles .kaching-bundles__bar{
+    padding: var(--16, 16px) var(--16, 16px) var(--16, 16px) var(--16, 16px);
+    border-radius: var(--12, 12px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: #FFF;
+  }
+
+  .kaching-bundles .kaching-bundles__bar.kaching-bundles__bar--selected{
+    border: 2px solid var(--Color-Brand-1-1800, #F0D3CB);
+    background: #FDFAFA;
+  }
+
+  .kaching-bundles .kaching-bundles__bundle-products--vertical .kaching-bundles__bundle-products__product{
+    border-top: 1px dashed rgba(0, 0, 0, 0.08);
+  }
+
+  .kaching-bundles .kaching-bundles__free-gift__main{
+    justify-content: center;
+  }
+
+  .kaching-bundles .kaching-bundles__bar-content-left{
+    flex-direction: row!important;
+    align-items: center!important;
+    gap: 16px;
+  }
+
+  .kaching-bundles .kaching-bundles__bar-subtitle{
+    padding: var(--4, 4px) var(--12, 12px);
+    border-radius: var(--8, 8px);
+    background: var(--Success-600, #12B76A);
+    color: var(--Success-50, #F6FEF9)!important;
+    leading-trim: both;
+    text-edge: cap;
+    font-size: 12px!important;
+    font-style: normal;
+    font-weight: 500!important;
+    line-height: 18px;
+    height: 24px;
+  }
+
+  .kaching-bundles .kaching-bundles__bar-title{
+    color: var(--Text-Primary, #1A1A1A)!important;
+    font-size: 14px!important;
+    font-style: normal;
+    font-weight: 500!important;
+    line-height: 21px;
+  }
+
+  .kaching-bundles .kaching-bundles__bar .kaching-bundles__bundle-products{
+    display: none;
+  }
+
+  .kaching-bundles .kaching-bundles__bar{
+    padding-bottom: 42px!important;
+  }
+
+  .kaching-bundles .kaching-bundles__bar.kaching-bundles__bar--selected{
+    padding-bottom: 32px!important;
+  }
+
+  .kaching-bundles .kaching-bundles__bar.kaching-bundles__bar--selected .kaching-bundles__bundle-products{
+    display: flex;
+  }
+
+  .kaching-bundles .kaching-bundles__free-gift__main .kaching-bundles__free-gift__link{
+    width: 19px!important;
+    height: 19px!important;
+  }
+
+  .kaching-bundles .kaching-bundles__bar{
+    overflow: hidden;
+  }
+
+  .kaching-bundles .kaching-bundles__bar-container{
+    position: static!important;
+  }
+
+  .kaching-bundles .kaching-bundles__free-gift:last-child{
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+    right: 0;
+    width: 100%;
+  }
+
+  .kaching-bundles .kaching-bundles__bar.kaching-bundles__bar--selected .kaching-bundles__free-gift:last-child{
+    bottom: -2px;
+    left: -2px;
+  }
+
+  @media(max-width: 1050px){
+    .kaching-bundles .kaching-bundles__bar-title{
+      font-size: 12px!important;
+    }
+  }
+
+  .kaching-bundles .kaching-bundles__bar-pricing, .kaching-bundles__bundle-products__pricing{
+    flex-direction: row-reverse!important;
+    align-items: center!important;
+    gap: 8px!important;
+  }
+
+  .kaching-bundles .kaching-bundles__bar-full-price{
+    color: var(--Text-Primary, #151515)!important;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500!important;
+    line-height: 21px;
+    text-decoration-line: line-through;
+    opacity: 0.5;
+  }
+
+  .kaching-bundles .kaching-bundles__bar-price{
+    color: var(--Text-Primary, #151515)!important;
+    font-size: 14px!important;
+    font-style: normal;
+    font-weight: 600!important;
+    line-height: 21px;
+  }
+
+  .kaching-bundles__free-gift__content{
+    width: fit-content;
+    flex: none!important;
+  }
+
+  .kaching-bundles .kaching-bundles__bundle-products__full-price{
+    color: var(--Text-Primary, #151515)!important;
+    font-size: 14px!important;
+    font-style: normal;
+    font-weight: 500!important;
+    line-height: 21px;
+    text-decoration-line: line-through;
+    opacity: 0.5;
+  }
+
+  .kaching-bundles .kaching-bundles__bar--selected .kaching-bundles__bar-variants, .kaching-bundles .kaching-bundles__bundle-products--vertical{
+    margin-top: 12px!important;
+  }
+
+  .kaching-bundles .kaching-bundles__bar-main{
+    min-height: 24px!important;
+  }
+
+  .kaching-bundles .kaching-bundles__bar-variant-names{
+    display: none!important;
+  }
+
+  .kaching-bundles .kaching-bundles__bar-pricing{
+    border-radius: var(--8, 8px);
+    border: 1px solid var(--Color-Brand-1-1800, #F0D3CB);
+    background: var(--Color-Brand-1-800, #F7E6E2);
+    padding: var(--4, 4px) var(--12, 12px);
+  }
+
+  .maison_commerce_pd_bundle__bundle-placeholder-heading-wrapp. ks-chart-container{
+    line-height: 1!important;
+  }
+
+  @media(max-width: 1250px){
+    .kaching-bundles .kaching-bundles__bar-pricing{
+      padding: 2px 8px;
+      gap: 4px!important;
+    }
+
+    .kaching-bundles .kaching-bundles__bundle-products__product{
+      flex-direction: column!important;
+      align-items: end!important;
+    }
+
+    .kaching-bundles .kaching-bundles__bar-content-left{
+      gap: 5px!important;
+    }
+
+    .kaching-bundles .kaching-bundles__bar-pricing div{
+      font-size: 10px!important;
+    }
+  }
+
+  @media(max-width: 750px){
+    .kaching-bundles .kaching-bundles__bar-pricing{
+      padding: 2px 8px;
+      gap: 4px!important;
+    }
+
+    .kaching-bundles .kaching-bundles__bundle-products__product{
+      flex-direction: column!important;
+      align-items: end!important;
+    }
+
+    .kaching-bundles .kaching-bundles__bar-content-left{
+      gap: 5px!important;
+    }
+
+    .kaching-bundles .kaching-bundles__bar-pricing div{
+      font-size: 10px!important;
+    }
+  }
+
+  .kaching-bundles .kaching-bundles__bundle-products__price{
+    color: var(--Text-Primary, #151515)!important;
+    font-size: 14px!important;
+    font-style: normal;
+    font-weight: 600!important;
+    line-height: 21px;
+  }
+
+  /* Sticky Add to Cart */
+  .maison_commerce_pd_bundle__sticky-atc {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    padding: 12px 16px 12px 12px;
+    box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    z-index: 1000;
+    max-width: 580px;
+    min-width: 580px;
+    width: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease, display 0.3s ease;
+  }
+
+  .maison_commerce_pd_bundle__sticky-atc--visible {
+    display: flex;
+    opacity: 1;
+  }
+
+  .maison_commerce_pd_bundle__sticky-atc-content {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .maison_commerce_pd_bundle__sticky-atc-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .maison_commerce_pd_bundle__sticky-atc-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .maison_commerce_pd_bundle__sticky-atc-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #151515;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .maison_commerce_pd_bundle__sticky-atc-price {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .maison_commerce_pd_bundle__sticky-atc-compare-price {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #151515;
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+
+  .maison_commerce_pd_bundle__sticky-atc-current-price {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #151515;
+  }
+
+  .maison_commerce_pd_bundle__sticky-atc-badge {
+    background-color: #12B76A;
+    color: #F6FEF9;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 4px 12px;
+    border-radius: 8px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .maison_commerce_pd_bundle__sticky-atc-form {
+    flex-shrink: 0;
+  }
+
+  .maison_commerce_pd_bundle__sticky-atc-button {
+    background: #151515;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+    transition: opacity 0.3s ease;
+  }
+
+  .maison_commerce_pd_bundle__sticky-atc-button:hover {
+    opacity: 0.9;
+  }
+
+  .maison_commerce_pd_bundle__sticky-atc-button svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__sticky-atc {
+      bottom: 0;
+      right: 0;
+      left: 0;
+      border-radius: 12px 12px 0 0;
+      padding: 8px;
+      max-width: none;
+      width: 100%;
+      min-width: 0px;
+    }
+
+    .kaching-bundles .kaching-bundles__bundle-products__full-price{
+      font-size: 10px!important;
+    }
+
+    .kaching-bundles .kaching-bundles__bundle-products__price{
+      font-size: 12px!important;
+    }
+
+    .maison_commerce_pd_bundle__sticky-atc-content {
+      gap: 8px;
+    }
+
+    .maison_commerce_pd_bundle__sticky-atc-image {
+      width: 64px;
+      height: 64px;
+      border-radius: 8px;
+    }
+
+    .maison_commerce_pd_bundle__sticky-atc-title {
+      font-size: 12px;
+      -webkit-line-clamp: 1;
+    }
+
+    .maison_commerce_pd_bundle__sticky-atc-compare-price {
+      font-size: 10px;
+    }
+
+    .maison_commerce_pd_bundle__sticky-atc-current-price {
+      font-size: 12px;
+    }
+
+    .maison_commerce_pd_bundle__sticky-atc-badge {
+      font-size: 10px;
+      padding: 4px 12px;
+      height: 20px;
+      border-radius: 4px;
+    }
+
+    .maison_commerce_pd_bundle__sticky-atc-button {
+      font-size: 12px;
+      padding: 8px 16px;
+      height: 36px;
+      width: 100%;
+    }
+
+    .maison_commerce_pd_bundle__sticky-atc-button svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__delivery-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #151515;
+    text-align: center;
+    margin: 0;
+  }
+
+  .maison_commerce_pd_bundle__delivery-date {
+    text-decoration: underline;
+    text-underline-position: from-font;
+    font-weight: 700;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__delivery-info {
+      padding: 0 24px;
+    }
+
+    .maison_commerce_pd_bundle__delivery-text {
+      font-size: 10px;
+    }
+  }
+
+  /* Payment Methods */
+  .maison_commerce_pd_bundle__payment-methods {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__payment-methods {
+      gap: 8px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__payment-method {
+    width: 23px;
+    height: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .maison_commerce_pd_bundle__payment-method svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Shipping Info */
+  .maison_commerce_pd_bundle__shipping-info {
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 8px;
+    padding: 8px 16px;
+    margin-top: 16px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__shipping-info {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__shipping-item {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .maison_commerce_pd_bundle__shipping-item svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .maison_commerce_pd_bundle__shipping-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #151515;
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__shipping-text {
+      font-size: 10px;
+    }
+  }
+
+  /* Protection Block */
+  .maison_commerce_pd_bundle__protection {
+    background-color: {{ section.settings.protection_bg_color }};
+    border: 1px solid {{ section.settings.protection_border_color }};
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .maison_commerce_pd_bundle__protection-icon {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__protection-icon {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__protection-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .maison_commerce_pd_bundle__protection-title {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #C4858E;
+    margin: 0;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__protection-title {
+      font-size: 10px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__protection-heading {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #151515;
+    margin: 0;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__protection-heading {
+      font-size: 12px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__protection-description {
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(21, 21, 21, 0.75);
+    margin: 0;
+  }
+
+  .maison_commerce_pd_bundle__protection-description p{
+    margin: 0;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__protection-description {
+      font-size: 10px;
+    }
+  }
+
+  /* Reviews */
+  .maison_commerce_pd_bundle__reviews {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .maison_commerce_pd_bundle__review {
+    background: white;
+    border: 1px solid {{ section.settings.badge_border_color }};
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+  }
+
+  .maison_commerce_pd_bundle__review-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 999px;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__review-avatar {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__review-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .maison_commerce_pd_bundle__review-header {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .maison_commerce_pd_bundle__review-stars {
+    display: flex;
+    gap: 2px;
+  }
+
+  .maison_commerce_pd_bundle__review-rating-text {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #151515;
+    margin: 0;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__review-rating-text {
+      font-size: 12px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__review-text {
+    font-size: 12px;
+    line-height: 1.5;
+    color: rgba(21, 21, 21, 0.75);
+  }
+
+  .maison_commerce_pd_bundle__review-text p{
+     margin: 0;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__review-text {
+      font-size: 10px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__review-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 4px;
+  }
+
+  .maison_commerce_pd_bundle__review-name {
+    font-style: italic;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #151515;
+    opacity: 0.5;
+    margin: 0;
+    border-top: 1px solid #D0D5DD;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__review-name {
+      font-size: 10px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__review-source {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    font-weight: 500;
+    font-size: 12px;
+    color: #151515;
+    line-height: 14px;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__review-source {
+      font-size: 10px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__reviews-pagination {
+    position: static;
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .maison_commerce_pd_bundle__reviews-pagination .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: #151515;
+    opacity: 0.2;
+    border-radius: 999px;
+  }
+
+  .maison_commerce_pd_bundle__reviews-pagination .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+
+  /* FAQs */
+  .maison_commerce_pd_bundle__faqs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .maison_commerce_pd_bundle__faq {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .maison_commerce_pd_bundle__faq:last-child {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .maison_commerce_pd_bundle__faq-button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 12px;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__faq-button {
+      padding: 12px 0;
+    }
+  }
+
+  .maison_commerce_pd_bundle__faq-question {
+    font-weight: 600;
+    font-size: 14px;
+    font-family: var(--font-body-family);
+    line-height: 1.5;
+    color: #151515;
+    text-align: left;
+    flex: 1;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__faq-question {
+      font-size: 12px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__faq-icon {
+    font-size: 24px;
+    font-weight: bold;
+    color: #151515;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .maison_commerce_pd_bundle__faq-icon--open {
+    transform: rotate(45deg);
+  }
+
+  .maison_commerce_pd_bundle__faq-answer {
+    padding-bottom: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(21, 21, 21, 0.75);
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__faq-answer {
+      font-size: 12px;
+      padding-bottom: 12px;
+    }
+  }
+
+  .kaching-bundles .kaching-bundles__free-gift__text{
+    font-size: 12px!important;
+    font-style: normal;
+    font-weight: 600!important;
+    line-height: 18px;
+  }
+
+  .kaching-bundles .kaching-bundles__bundle-products--vertical .kaching-bundles__bundle-products__title{
+    overflow: hidden;
+    color: var(--Text-Primary, #151515)!important;
+    text-overflow: ellipsis;
+    font-size: 14px!important;
+    font-style: normal;
+    font-weight: 600!important;
+    line-height: 21px;
+  }
+
+  @media(max-width: 1050px){
+    .kaching-bundles .kaching-bundles__bundle-products--vertical .kaching-bundles__bundle-products__title{
+      font-size: 12px!important;
+    }
+
+    .kaching-bundles .kaching-bundles__bar-variant-select{
+      font-size: 12px!important;
+    }
+
+    .kaching-bundles .kaching-bundles__bar-subtitle{
+      font-size: 10px!important;
+    }
+  }
+
+  /* Customer Images */
+  .maison_commerce_pd_bundle__customer-images {
+    display: grid;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .maison_commerce_pd_bundle__customer-images-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .maison_commerce_pd_bundle__customer-images-heading {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.4;
+    color: #151515;
+    margin: 0;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__customer-images-heading {
+      font-size: 18px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__customer-images-nav {
+    display: flex;
+    gap: 8px;
+  }
+
+  .maison_commerce_pd_bundle__customer-images-prev,
+  .maison_commerce_pd_bundle__customer-images-next {
+    width: 32px;
+    height: 32px;
+    background: white;
+    border: 1px solid {{ section.settings.badge_border_color }};
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__customer-images-prev,
+    .maison_commerce_pd_bundle__customer-images-next {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .maison_commerce_pd_bundle__customer-images-swiper {
+    overflow: hidden;
+  }
+
+  .maison_commerce_pd_bundle__customer-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__customer-image {
+      height: 160px;
+    }
+  }
+
+  .maison-pd-gallery-buttons{
+    position: relative!important;
+    top: auto!important;
+    left: auto!important;
+    right: auto!important;
+    bottom: auto!important;
+    transform: none!important;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .maison-pd-gallery-buttons.maison-pd-gallery-buttons--visible {
+    display: flex;
+  }
+
+  .maison-pd-gallery-buttons:hover{
+    background: rgba(255,255,255, 0.2);
+  }
+
+  @media(max-width: 950px){
+    .maison_commerce_pd_bundle__container{
+      display: flex;
+    }
+
+    .maison_commerce_pd_bundle__gallery, .maison_commerce_pd_bundle__info{
+      max-width: none;
+    }
+  }
+
+  .kaching-bundles .kaching-bundles__bar--selected .kaching-bundles__bar-container{
+    box-shadow: none!important;
+  }
+
+  .kaching-bundles .kaching-bundles__bundle-products--vertical .kaching-bundles__bundle-products__product{
+    padding-left: 0!important;
+    padding-right: 0!important;
+  }
+
+  .kaching-bundles .kaching-bundles__bundle-products--vertical .kaching-bundles__bundle-products__image{
+    width: 80px!important;
+    height: 98px!important;
+    border-radius: var(--12, 12px)!important;
+    object-fit: cover!important;
+  }
+
+  .kaching-bundles .kaching-bundles__bar-variant-select{
+    padding: var(--8, 8px) var(--12, 20px) var(--8, 8px) var(--16, 16px)!important;
+    border-radius: var(--12, 12px)!important;
+    border: 1px solid rgba(0, 0, 0, 0.08)!important;
+    background: var(--White, #FFF)!important;
+    box-shadow: none!important;
+  }
+
+  @media (max-width: 1050px) {
+    .maison_commerce_pd_bundle__bundle-placeholder .product-form__submit{
+      padding: var(--12, 12px) var(--24, 24px);
+      font-size: 14px;
+      line-height: 21px;
+      min-height: 44px!important;
+    }
+
+    .kaching-bundles .kaching-bundles__bundle-products--vertical .kaching-bundles__bundle-products__image{
+      width: 48px!important;
+      height: 64px!important;
+      border-radius: 8px!important;
+    }
+  }
+
+  @media(max-width: 1050px){
+    .maison_commerce_pd_bundle__thumb-prev, .maison_commerce_pd_bundle__thumb-next{
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .maison_commerce_pd_bundle__sticky-atc--visible{
+      align-items: flex-start;
+    }
+
+    .maison_commerce_pd_bundle__sticky-atc-content{
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .maison_commerce_pd_bundle__sticky-atc-content form{
+      width: 100%;
+    }
+  }
+
+  @media(max-width: 1250px){
+    .maison_commerce_pd_bundle__main-image{
+      height: 500px;
+    }
+
+    .maison_commerce_pd_bundle__gallery{
+      max-width: 500px;
+    }
+
+    .kaching-bundles .kaching-bundles__bundle-products__wrapper{
+      width: 100%;
+    }
+
+    .maison_commerce_pd_bundle__container{
+      grid-template-columns: auto 1fr;
+    }
+  }
+
+  @media(max-width: 950px){
+    .maison_commerce_pd_bundle__gallery{
+      max-width: 100%;
+    }
+
+    .maison_commerce_pd_bundle__main-image{
+      height: auto;
+    }
+  }
+</style>
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  function maison_commerce_pd_bundle_init() {
+    return {
+      openFaq: null,
+
+      toggleFaq(index) {
+        this.openFaq = this.openFaq === index ? null : index;
+      },
+
+      changeMainImage(imageUrl, index) {
+        const mainImg = document.getElementById('maison-pd-main-image');
+        const loader = document.getElementById('maison-pd-image-loader');
+
+        if (!mainImg) return;
+
+        // Show loader
+        if (loader) {
+          loader.classList.add('maison_commerce_pd_bundle__image-loader--active');
+        }
+
+        // Preload the new image
+        const newImg = new Image();
+        newImg.onload = function () {
+          // Image loaded, update src
+          mainImg.src = imageUrl;
+
+          // Hide loader after a brief moment for smooth transition
+          setTimeout(() => {
+            if (loader) {
+              loader.classList.remove('maison_commerce_pd_bundle__image-loader--active');
+            }
+          }, 100);
+        };
+
+        newImg.onerror = function () {
+          // If image fails to load, still hide loader
+          if (loader) {
+            loader.classList.remove('maison_commerce_pd_bundle__image-loader--active');
+          }
+        };
+
+        // Start loading
+        newImg.src = imageUrl;
+
+        // Update active thumbnail
+        document.querySelectorAll('.maison_commerce_pd_bundle__thumbnail').forEach((thumb, i) => {
+          if (i === index) {
+            thumb.classList.add('maison_commerce_pd_bundle__thumbnail--active');
+          } else {
+            thumb.classList.remove('maison_commerce_pd_bundle__thumbnail--active');
+          }
+        });
+      },
+    };
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Preload all product images in the background
+    const thumbnailButtons = document.querySelectorAll('.maison_commerce_pd_bundle__thumbnail[data-image-url]');
+    thumbnailButtons.forEach((button) => {
+      const imageUrl = button.getAttribute('data-image-url');
+      if (imageUrl) {
+        const img = new Image();
+        img.src = imageUrl;
+      }
+    });
+
+    // Thumbnail Swiper
+    const thumbnailSwiper = document.querySelector('.maison_commerce_pd_bundle__thumbnails');
+    const thumbPrevBtn = document.querySelector('.maison_commerce_pd_bundle__thumb-prev');
+    const thumbNextBtn = document.querySelector('.maison_commerce_pd_bundle__thumb-next');
+
+    if (thumbnailSwiper) {
+      const swiperInstance = new Swiper('.maison_commerce_pd_bundle__thumbnails', {
+        slidesPerView: 'auto',
+        spaceBetween: 8,
+        navigation: {
+          nextEl: '.maison_commerce_pd_bundle__thumb-next',
+          prevEl: '.maison_commerce_pd_bundle__thumb-prev',
+        },
+        on: {
+          init: function () {
+            checkThumbnailNavigation(this);
+          },
+          resize: function () {
+            checkThumbnailNavigation(this);
+          },
+          slideChange: function () {
+            checkThumbnailNavigation(this);
+          },
+        },
+      });
+
+      function checkThumbnailNavigation(swiper) {
+        // Check if all slides fit in the container
+        const containerWidth = swiper.width;
+        let totalSlidesWidth = 0;
+
+        swiper.slides.forEach((slide, index) => {
+          totalSlidesWidth += slide.offsetWidth;
+          if (index < swiper.slides.length - 1) {
+            totalSlidesWidth += 8; // spaceBetween
+          }
+        });
+
+        const needsNavigation = totalSlidesWidth > containerWidth;
+
+        if (thumbPrevBtn) {
+          if (needsNavigation) {
+            thumbPrevBtn.classList.add('maison-pd-gallery-buttons--visible');
+          } else {
+            thumbPrevBtn.classList.remove('maison-pd-gallery-buttons--visible');
+          }
+        }
+        if (thumbNextBtn) {
+          if (needsNavigation) {
+            thumbNextBtn.classList.add('maison-pd-gallery-buttons--visible');
+          } else {
+            thumbNextBtn.classList.remove('maison-pd-gallery-buttons--visible');
+          }
+        }
+      }
+    }
+
+    // Reviews Swiper
+    const reviewsSwiper = document.querySelector('.maison_commerce_pd_bundle__reviews');
+    if (reviewsSwiper) {
+      new Swiper('.maison_commerce_pd_bundle__reviews', {
+        slidesPerView: 1,
+        spaceBetween: 12,
+        pagination: {
+          el: '.maison_commerce_pd_bundle__reviews-pagination',
+          clickable: true,
+        },
+        breakpoints: {
+          950: {
+            slidesPerView: 1.3,
+          },
+        },
+      });
+    }
+
+    // Customer Images Swiper
+    const customerImagesSwiper = document.querySelector('.maison_commerce_pd_bundle__customer-images-swiper');
+    if (customerImagesSwiper) {
+      const swiper = new Swiper('.maison_commerce_pd_bundle__customer-images-swiper', {
+        slidesPerView: 3,
+        spaceBetween: 12,
+      });
+
+      // Custom navigation
+      const prevBtn = document.querySelector('.maison_commerce_pd_bundle__customer-images-prev');
+      const nextBtn = document.querySelector('.maison_commerce_pd_bundle__customer-images-next');
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => swiper.slidePrev());
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => swiper.slideNext());
+      }
+    }
+
+    // Sticky Add to Cart visibility control
+    const stickyAtc = document.getElementById('maison-sticky-atc');
+    const bundlePlaceholder = document.querySelector('.maison_commerce_pd_bundle__bundle-placeholder');
+
+    if (stickyAtc && bundlePlaceholder) {
+      // Use Intersection Observer to detect when bundle placeholder is fully scrolled past
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            // When the bundle placeholder is completely out of view (scrolled past)
+            // entry.boundingClientRect.bottom < 0 means the element is above the viewport
+            if (entry.boundingClientRect.bottom < 0) {
+              stickyAtc.classList.add('maison_commerce_pd_bundle__sticky-atc--visible');
+            } else {
+              stickyAtc.classList.remove('maison_commerce_pd_bundle__sticky-atc--visible');
+            }
+          });
+        },
+        {
+          root: null, // viewport
+          rootMargin: '0px',
+          threshold: 0, // Trigger when any part of the element leaves the viewport
+        }
+      );
+
+      observer.observe(bundlePlaceholder);
+    }
+
+    // Sticky Add to Cart form handler
+    const stickyAtcForm = document.querySelector('.maison_commerce_pd_bundle__sticky-atc-form');
+    if (stickyAtcForm) {
+      stickyAtcForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+        const variantId = formData.get('id');
+
+        if (!variantId) {
+          console.error('No variant ID found');
+          return;
+        }
+
+        // Add to cart using Shopify Cart API
+        fetch('/cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            id: variantId,
+            quantity: 1,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            // Trigger cart drawer update if available
+            if (typeof window.theme !== 'undefined' && window.theme.cartDrawer) {
+              window.theme.cartDrawer.open();
+            } else {
+              // Fallback: redirect to cart page
+            }
+          })
+          .catch((error) => {
+            console.error('Error adding to cart:', error);
+            alert('There was an error adding the product to your cart. Please try again.');
+          });
+      });
+    }
+
+    // Country to flag emoji mapping
+    const countryFlags = {
+      US: '🇺🇸',
+      GB: '🇬🇧',
+      CA: '🇨🇦',
+      AU: '🇦🇺',
+      DE: '🇩🇪',
+      FR: '🇫🇷',
+      IT: '🇮🇹',
+      ES: '🇪🇸',
+      NL: '🇳🇱',
+      BE: '🇧🇪',
+      CH: '🇨🇭',
+      AT: '🇦🇹',
+      SE: '🇸🇪',
+      NO: '🇳🇴',
+      DK: '🇩🇰',
+      FI: '🇫🇮',
+      PL: '🇵🇱',
+      CZ: '🇨🇿',
+      HU: '🇭🇺',
+      RO: '🇷🇴',
+      GR: '🇬🇷',
+      PT: '🇵🇹',
+      IE: '🇮🇪',
+      NZ: '🇳🇿',
+      JP: '🇯🇵',
+      KR: '🇰🇷',
+      CN: '🇨🇳',
+      IN: '🇮🇳',
+      BR: '🇧🇷',
+      MX: '🇲🇽',
+      AR: '🇦🇷',
+      CL: '🇨🇱',
+      CO: '🇨🇴',
+      PE: '🇵🇪',
+      ZA: '🇿🇦',
+      AE: '🇦🇪',
+      SA: '🇸🇦',
+      IL: '🇮🇱',
+      TR: '🇹🇷',
+      RU: '🇷🇺',
+      UA: '🇺🇦',
+      SG: '🇸🇬',
+      MY: '🇲🇾',
+      TH: '🇹🇭',
+      VN: '🇻🇳',
+      PH: '🇵🇭',
+      ID: '🇮🇩',
+      HK: '🇭🇰',
+      TW: '🇹🇼',
+      NO: '🇳🇴',
+      IE: '🇮🇪',
+      LU: '🇱🇺',
+      IS: '🇮🇸',
+      MT: '🇲🇹',
+      CY: '🇨🇾',
+      EE: '🇪🇪',
+      LV: '🇱🇻',
+      LT: '🇱🇹',
+      SK: '🇸🇰',
+      SI: '🇸🇮',
+      BG: '🇧🇬',
+      HR: '🇭🇷',
+      RS: '🇷🇸',
+      ME: '🇲🇪',
+      MK: '🇲🇰',
+      AL: '🇦🇱',
+      BY: '🇧🇾',
+      MD: '🇲🇩',
+      GE: '🇬🇪',
+      AM: '🇦🇲',
+      AZ: '🇦🇿',
+      KZ: '🇰🇿',
+    };
+
+    // Auto-detect country flag if not set manually
+    (function () {
+      const flagElements = document.querySelectorAll(
+        '.maison_commerce_pd_bundle__delivery-flag[data-auto-detect="true"]'
+      );
+
+      flagElements.forEach(function (element) {
+        const countryCode = element.getAttribute('data-country-code');
+
+        // If country code is already set from server-side, use it
+        if (countryCode && countryFlags[countryCode.toUpperCase()]) {
+          element.textContent = countryFlags[countryCode.toUpperCase()];
+          return;
+        }
+
+        // Try to get country from Shopify localization if available
+        if (typeof window.Shopify !== 'undefined' && window.Shopify.locale) {
+          const locale = window.Shopify.locale;
+          const detectedCountry = locale.split('-')[1] || locale.split('_')[1];
+          if (detectedCountry && countryFlags[detectedCountry.toUpperCase()]) {
+            element.textContent = countryFlags[detectedCountry.toUpperCase()];
+            return;
+          }
+        }
+
+        // Fallback: try to detect from browser language
+        const browserLang = navigator.language || navigator.userLanguage;
+        if (browserLang) {
+          const langCode = browserLang.split('-')[1] || browserLang.split('_')[1];
+          if (langCode && countryFlags[langCode.toUpperCase()]) {
+            element.textContent = countryFlags[langCode.toUpperCase()];
+            return;
+          }
+        }
+
+        // Final fallback: try to detect from timezone
+        try {
+          const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+          const timezoneCountryMap = {
+            'America/New_York': 'US',
+            'America/Los_Angeles': 'US',
+            'America/Chicago': 'US',
+            'America/Denver': 'US',
+            'America/Phoenix': 'US',
+            'America/Anchorage': 'US',
+            'Europe/London': 'GB',
+            'Europe/Paris': 'FR',
+            'Europe/Berlin': 'DE',
+            'Europe/Rome': 'IT',
+            'Europe/Madrid': 'ES',
+            'Europe/Amsterdam': 'NL',
+            'Europe/Brussels': 'BE',
+            'Europe/Zurich': 'CH',
+            'Europe/Vienna': 'AT',
+            'Europe/Stockholm': 'SE',
+            'Europe/Oslo': 'NO',
+            'Europe/Copenhagen': 'DK',
+            'Europe/Helsinki': 'FI',
+            'Europe/Warsaw': 'PL',
+            'Europe/Prague': 'CZ',
+            'Europe/Budapest': 'HU',
+            'Europe/Bucharest': 'RO',
+            'Europe/Athens': 'GR',
+            'Europe/Lisbon': 'PT',
+            'Europe/Dublin': 'IE',
+            'Asia/Tokyo': 'JP',
+            'Asia/Seoul': 'KR',
+            'Asia/Shanghai': 'CN',
+            'Asia/Hong_Kong': 'HK',
+            'Asia/Taipei': 'TW',
+            'Asia/Singapore': 'SG',
+            'Asia/Kuala_Lumpur': 'MY',
+            'Asia/Bangkok': 'TH',
+            'Asia/Ho_Chi_Minh': 'VN',
+            'Asia/Manila': 'PH',
+            'Asia/Jakarta': 'ID',
+            'Australia/Sydney': 'AU',
+            'Australia/Melbourne': 'AU',
+            'Pacific/Auckland': 'NZ',
+            'America/Toronto': 'CA',
+            'America/Vancouver': 'CA',
+            'America/Mexico_City': 'MX',
+            'America/Sao_Paulo': 'BR',
+            'America/Buenos_Aires': 'AR',
+            'America/Santiago': 'CL',
+            'America/Bogota': 'CO',
+            'America/Lima': 'PE',
+            'Africa/Johannesburg': 'ZA',
+            'Asia/Dubai': 'AE',
+            'Asia/Riyadh': 'SA',
+            'Asia/Jerusalem': 'IL',
+            'Europe/Istanbul': 'TR',
+            'Europe/Moscow': 'RU',
+            'Europe/Kiev': 'UA',
+          };
+
+          if (timezoneCountryMap[timezone] && countryFlags[timezoneCountryMap[timezone]]) {
+            element.textContent = countryFlags[timezoneCountryMap[timezone]];
+          }
+        } catch (e) {
+          // If timezone detection fails, keep default flag
+        }
+      });
+    })();
+
+    // Calculate delivery date based on delivery_time
+    (function () {
+      const deliveryDateElements = document.querySelectorAll(
+        '.maison_commerce_pd_bundle__delivery-date[data-delivery-time]'
+      );
+
+      deliveryDateElements.forEach(function (element) {
+        const deliveryTime = parseInt(element.getAttribute('data-delivery-time')) || 3;
+
+        if (deliveryTime > 0) {
+          const today = new Date();
+          const deliveryDate = new Date(today);
+          deliveryDate.setDate(today.getDate() + deliveryTime);
+
+          // Format date as "Friday, 21 November"
+          const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+          const months = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December',
+          ];
+
+          const dayOfWeek = daysOfWeek[deliveryDate.getDay()];
+          const day = deliveryDate.getDate();
+          const month = months[deliveryDate.getMonth()];
+
+          const formattedDate = `${dayOfWeek}, ${day} ${month}`;
+          element.textContent = formattedDate;
+        }
+      });
+    })();
+  });
+</script>
+
+{% if section.settings.use_maison_kaching_edits %}
+  {% render 'maison-kaching-edits', section: section %}
+{% endif %}

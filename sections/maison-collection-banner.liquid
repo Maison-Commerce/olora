@@ -1,0 +1,766 @@
+{% schema %}
+{
+  "name": "Collection Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "Special Sale"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Autumn Sale is here!"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Buy 1, Get 1 Free"
+    },
+    {
+      "type": "text",
+      "id": "rating_value",
+      "label": "Rating Value",
+      "default": "4.8",
+      "info": "Rating number (e.g., 4.8)"
+    },
+    {
+      "type": "text",
+      "id": "rating_max",
+      "label": "Rating Maximum",
+      "default": "5",
+      "info": "Maximum rating (e.g., 5)"
+    },
+    {
+      "type": "text",
+      "id": "customer_count",
+      "label": "Customer Count",
+      "default": "5,841",
+      "info": "Number of customers (e.g., 5,841)"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image",
+      "info": "Background image for desktop view"
+    },
+    {
+      "type": "image_picker",
+      "id": "models_image",
+      "label": "Models Image",
+      "info": "Image showing the three models"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top (Desktop)",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom (Desktop)",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_left_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Left (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_right_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Right (Desktop)",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Top (Mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Bottom (Mobile)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_left_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Left (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_right_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding Right (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color_start",
+      "label": "Section Background Color (Start)",
+      "default": "#FCF5F4",
+      "info": "Gradient start color"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color_end",
+      "label": "Section Background Color (End)",
+      "default": "#F0D3CB",
+      "info": "Gradient end color"
+    },
+    {
+      "type": "color",
+      "id": "badge_bg_color",
+      "label": "Badge Background Color",
+      "default": "#F7E6E2"
+    },
+    {
+      "type": "color",
+      "id": "badge_border_color",
+      "label": "Badge Border Color",
+      "default": "#F0D3CB"
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_desktop",
+      "min": 16,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Desktop)",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "heading_font_size_mobile",
+      "min": 16,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading Font Size (Mobile)",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading Color",
+      "default": "#C4858E"
+    },
+    {
+      "type": "range",
+      "id": "badge_font_size_desktop",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Badge Font Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "image_picker",
+      "id": "snowflake_border_image",
+      "label": "Snowflake Border Image",
+      "info": "Decorative border image for the bottom of the section"
+    },
+    {
+      "type": "color",
+      "id": "checkmark_color",
+      "label": "Checkmark Color",
+      "default": "#C4858E"
+    },
+    {
+      "type": "range",
+      "id": "checkmark_size_desktop",
+      "min": 16,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Checkmark Size (Desktop)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "checkmark_size_mobile",
+      "min": 16,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Checkmark Size (Mobile)",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#151515"
+    },
+    {
+      "type": "range",
+      "id": "rating_text_font_size_desktop",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Rating Text Font Size (Desktop)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "rating_text_font_size_mobile",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Rating Text Font Size (Mobile)",
+      "default": 10
+    },
+    {
+      "type": "color",
+      "id": "rating_text_color",
+      "label": "Rating Text Color",
+      "default": "#151515"
+    },
+    {
+      "type": "color",
+      "id": "star_color",
+      "label": "Star Color",
+      "default": "#FEC84B"
+    },
+    {
+      "type": "range",
+      "id": "star_size_desktop",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Star Size (Desktop)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "star_size_mobile",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Star Size (Mobile)",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "features_font_size_desktop",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Features Font Size (Desktop)",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "features_font_size_mobile",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Features Font Size (Mobile)",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "features_color",
+      "label": "Features Text Color",
+      "default": "rgba(21,21,21,0.75)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "feature_text",
+          "label": "Feature Text",
+          "default": "Camel Toe Proof Technology"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Banner",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Camel Toe Proof Technology"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Seamless"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Wide Absorbent Gusset"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "feature_text": "High Rise"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<section class="maison_commerce_collection_banner" style="background-color: {{ section.settings.section_bg_color_start }}; background-image: linear-gradient(to left, {{ section.settings.section_bg_color_end }}, {{ section.settings.section_bg_color_start }});">
+  <div class="maison_commerce_collection_banner__bg">
+    {% if section.settings.background_image %}
+      <div class="maison_commerce_collection_banner__bg-image">
+        <img src="{{ section.settings.background_image | image_url: width: 1440 }}" alt="" loading="lazy">
+      </div>
+    {% endif %}
+    {% if section.settings.snowflake_border_image %}
+      <div class="maison_commerce_collection_banner__snowflake-border">
+        <img src="{{ section.settings.snowflake_border_image | image_url: width: 1440 }}" alt="" loading="lazy">
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="maison_commerce_collection_banner__container">
+    <div class="maison_commerce_collection_banner__content">
+      <div class="maison_commerce_collection_banner__text">
+        {% if section.settings.badge_text != blank %}
+          <div class="maison_commerce_collection_banner__badge">
+            {{ section.settings.badge_text }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.heading != blank %}
+          <h2 class="maison_commerce_collection_banner__heading">
+            {{ section.settings.heading }}
+            {% if section.settings.subheading != blank %}
+              <br><span class="maison_commerce_collection_banner__subheading">{{ section.settings.subheading }}</span>
+            {% endif %}
+          </h2>
+        {% endif %}
+
+        {% if section.settings.rating_value != blank %}
+          <div class="maison_commerce_collection_banner__rating">
+            <div class="maison_commerce_collection_banner__stars">
+              {% for i in (1..5) %}
+                <svg xmlns="http://www.w3.org/2000/svg" class="maison_commerce_collection_banner__star" width="{{ section.settings.star_size_desktop }}" height="{{ section.settings.star_size_desktop }}" viewBox="0 0 16 16" fill="none">
+                    <path d="M7.68335 1.52997C7.71257 1.47094 7.7577 1.42126 7.81365 1.38652C7.86961 1.35178 7.93416 1.33337 8.00002 1.33337C8.06588 1.33337 8.13043 1.35178 8.18639 1.38652C8.24234 1.42126 8.28747 1.47094 8.31669 1.52997L9.85669 4.6493C9.95814 4.85461 10.1079 5.03224 10.2931 5.16694C10.4783 5.30164 10.6934 5.38938 10.92 5.42264L14.364 5.92664C14.4293 5.93609 14.4906 5.96362 14.541 6.0061C14.5914 6.04859 14.629 6.10434 14.6494 6.16704C14.6698 6.22975 14.6722 6.29691 14.6564 6.36093C14.6406 6.42495 14.6072 6.48327 14.56 6.5293L12.0694 8.95464C11.9051 9.1147 11.7822 9.31229 11.7112 9.53039C11.6403 9.74849 11.6234 9.98056 11.662 10.2066L12.25 13.6333C12.2615 13.6985 12.2545 13.7657 12.2297 13.8271C12.2049 13.8885 12.1633 13.9417 12.1097 13.9806C12.0561 14.0196 11.9927 14.0426 11.9266 14.0472C11.8605 14.0518 11.7945 14.0378 11.736 14.0066L8.65735 12.388C8.4545 12.2815 8.22881 12.2258 7.99969 12.2258C7.77057 12.2258 7.54487 12.2815 7.34202 12.388L4.26402 14.0066C4.20557 14.0376 4.13962 14.0515 4.07365 14.0468C4.00769 14.0421 3.94437 14.019 3.89088 13.9801C3.8374 13.9412 3.79591 13.8881 3.77112 13.8268C3.74634 13.7655 3.73926 13.6984 3.75069 13.6333L4.33802 10.2073C4.37682 9.98112 4.36001 9.7489 4.28905 9.53067C4.21808 9.31243 4.09509 9.11474 3.93069 8.95464L1.44002 6.52997C1.39242 6.48399 1.35868 6.42557 1.34266 6.36135C1.32664 6.29714 1.32898 6.22971 1.34941 6.16676C1.36983 6.10381 1.40753 6.04786 1.4582 6.00529C1.50888 5.96272 1.57049 5.93524 1.63602 5.92597L5.07935 5.42264C5.30619 5.38964 5.52161 5.30201 5.70708 5.16729C5.89254 5.03258 6.04249 4.85482 6.14402 4.6493L7.68335 1.52997Z" fill="{{ section.settings.star_color }}" stroke="{{ section.settings.star_color }}" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              {% endfor %}
+            </div>
+            <p class="maison_commerce_collection_banner__rating-text">
+              {{ section.settings.rating_value }}/{{ section.settings.rating_max }} Stars By {{ section.settings.customer_count }} Happy Customers
+            </p>
+          </div>
+        {% endif %}
+      </div>
+
+      {% if section.blocks.size > 0 %}
+        <div class="maison_commerce_collection_banner__features">
+          {% for block in section.blocks %}
+            {% if block.type == 'feature' %}
+              {% if block.settings.feature_text != blank %}
+                <div class="maison_commerce_collection_banner__feature-item">
+                  <svg width="{{ section.settings.checkmark_size_desktop }}" height="{{ section.settings.checkmark_size_desktop }}" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="maison_commerce_collection_banner__checkmark">
+                    <path d="M13.3334 4L6.00008 11.3333L2.66675 8" stroke="{{ section.settings.checkmark_color }}" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <span class="maison_commerce_collection_banner__feature-text">{{ block.settings.feature_text }}</span>
+                </div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    {% if section.settings.models_image %}
+      <div class="maison_commerce_collection_banner__models">
+        <img src="{{ section.settings.models_image | image_url: width: 1440 }}" alt="" loading="lazy">
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  /* Section Container */
+  .maison_commerce_collection_banner {
+    position: relative;
+    overflow: hidden;
+    padding-top: {{ section.settings.padding_top_desktop }}px;
+    padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    padding-left: {{ section.settings.padding_left_desktop }}px;
+    padding-right: {{ section.settings.padding_right_desktop }}px;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_collection_banner {
+      background-image: none !important;
+      background-color: {{ section.settings.section_bg_color_start }};
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
+
+  /* Background */
+  .maison_commerce_collection_banner__bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .maison_commerce_collection_banner__bg-image {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .maison_commerce_collection_banner__bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    max-width: none;
+  }
+
+  .maison_commerce_collection_banner__snowflake-border {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 40px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .maison_commerce_collection_banner__snowflake-border img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_collection_banner__bg {
+      display: block;
+    }
+
+    .maison_commerce_collection_banner__bg-image {
+      display: none;
+    }
+
+    .maison_commerce_collection_banner__snowflake-border {
+      height: 20px;
+    }
+  }
+
+  /* Container */
+  .maison_commerce_collection_banner__container {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_collection_banner__container {
+      flex-direction: column;
+      gap: 32px;
+      align-items: center;
+    }
+  }
+
+  /* Content */
+  .maison_commerce_collection_banner__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+    max-width: 600px;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_collection_banner__content {
+      width: 100%;
+      align-items: center;
+      gap: 20px;
+      padding-left: {{ section.settings.padding_left_mobile }}px;
+      padding-right: {{ section.settings.padding_right_mobile }}px;
+    }
+  }
+
+  /* Text Container */
+  .maison_commerce_collection_banner__text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_collection_banner__text {
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  /* Badge */
+  .maison_commerce_collection_banner__badge {
+    background-color: {{ section.settings.badge_bg_color }};
+    border: 1px solid {{ section.settings.badge_border_color }};
+    border-radius: 8px;
+    padding: 4px 12px;
+    height: 35px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: {{ section.settings.badge_font_size_desktop }}px;
+    line-height: 1.5;
+    color: #151515;
+    white-space: nowrap;
+    width: fit-content;
+    letter-spacing: 0;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_collection_banner__badge {
+      margin: 0 auto;
+      font-size: 12px;
+      height: 24px;
+    }
+  }
+
+  /* Heading */
+  .maison_commerce_collection_banner__heading {
+    font-weight: 700;
+    font-size: {{ section.settings.heading_font_size_desktop }}px;
+    line-height: 1.2;
+    color: {{ section.settings.heading_color }};
+    margin: 0;
+  }
+
+  .maison_commerce_collection_banner__subheading {
+    color: {{ section.settings.subheading_color }};
+    text-decoration: underline;
+    text-underline-position: from-font;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_collection_banner__heading {
+      font-size: {{ section.settings.heading_font_size_mobile }}px;
+      line-height: 1.4;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  /* Rating */
+  .maison_commerce_collection_banner__rating {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    height: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_collection_banner__rating {
+      justify-content: center;
+    }
+  }
+
+  /* Stars */
+  .maison_commerce_collection_banner__stars {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .maison_commerce_collection_banner__star {
+    width: {{ section.settings.star_size_desktop }}px;
+    height: {{ section.settings.star_size_desktop }}px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_collection_banner__star {
+      width: {{ section.settings.star_size_mobile }}px;
+      height: {{ section.settings.star_size_mobile }}px;
+    }
+  }
+
+  /* Rating Text */
+  .maison_commerce_collection_banner__rating-text {
+    font-weight: 500;
+    font-size: {{ section.settings.rating_text_font_size_desktop }}px;
+    line-height: 1.5;
+    color: {{ section.settings.rating_text_color }};
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_collection_banner__rating-text {
+      font-size: {{ section.settings.rating_text_font_size_mobile }}px;
+    }
+  }
+
+  /* Features */
+  .maison_commerce_collection_banner__features {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_collection_banner__features {
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  .maison_commerce_collection_banner__feature-item {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    width: 100%;
+  }
+
+  .maison_commerce_collection_banner__checkmark {
+    width: {{ section.settings.checkmark_size_desktop }}px;
+    height: {{ section.settings.checkmark_size_desktop }}px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_collection_banner__checkmark {
+      width: {{ section.settings.checkmark_size_mobile }}px;
+      height: {{ section.settings.checkmark_size_mobile }}px;
+    }
+  }
+
+  .maison_commerce_collection_banner__feature-text {
+    font-weight: 400;
+    font-size: {{ section.settings.features_font_size_desktop }}px;
+    line-height: 1.5;
+    color: {{ section.settings.features_color }};
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_collection_banner__feature-text {
+      font-size: {{ section.settings.features_font_size_mobile }}px;
+      text-align: center;
+    }
+  }
+
+  /* Models Image */
+  .maison_commerce_collection_banner__models {
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+  }
+
+  .maison_commerce_collection_banner__models img {
+    width: 100%;
+    height: auto;
+    max-width: none;
+    object-fit: cover;
+    object-position: 50% 50%;
+    display: block;
+  }
+
+  @media (min-width: 769px) {
+    .maison_commerce_collection_banner__models {
+      width: auto;
+      height: 479px;
+      display: none;
+    }
+
+    .maison_commerce_collection_banner__models img {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .maison_commerce_collection_banner__models {
+      width: 100%;
+      max-width: 375px;
+      height: 214px;
+      border-radius: 0px;
+      overflow: hidden;
+    }
+
+    .maison_commerce_collection_banner__models img {
+      width: 174.84%;
+      height: 100%;
+      margin-left: -73.15%;
+      object-fit: cover;
+    }
+  }
+</style>
+

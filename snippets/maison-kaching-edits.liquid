@@ -1,0 +1,228 @@
+<!-- MAISON KACHING EDITS -->
+<script>
+  async function waitForKaching() {
+    return new Promise(async (resolve) => {
+      let el;
+      while (!el) {
+        el = document.querySelector('.kaching-bundles__bar-container');
+        await new Promise((x) => setTimeout(x, 10));
+      }
+
+      resolve();
+    });
+  }
+
+  function addNumbers() {
+    const bars = document.querySelectorAll('.kaching-bundles__bar-container');
+    for (let barindex = 0; barindex < bars.length; barindex++) {
+      const bar = bars[barindex];
+      const containers = Array.from(bar.querySelectorAll('img.kaching-bundles__bundle-products__image')).map((img) => img.parentElement);
+
+      for (let containerindex = 0; containerindex < containers.length; containerindex++) {
+        const container = containers[containerindex];
+        container.style.position = 'relative';
+
+        const id = `bar-${barindex}-container-${containerindex}`;
+        if (document.getElementById(id)) continue;
+
+        const div = document.createElement('div');
+        div.id = id;
+        div.innerText = (containerindex + 1).toString();
+        div.style.position = 'absolute';
+        div.style.top = '0';
+        div.style.left = '0';
+        div.style.backgroundColor = 'white';
+        div.style.color = 'black';
+        div.style.padding = '4px 8px';
+        div.style.borderRadius = '8px 0 8px 0';
+        div.style.fontSize = '12px';
+
+        container.appendChild(div);
+
+        console.log('[MAISON KACHING EDITS] added number', id);
+      }
+    }
+  }
+
+  function addSwatchFunctionality(COLOR_MAP) {
+    const bars = document.querySelectorAll('.kaching-bundles__bar-container');
+    for (let barindex = 0; barindex < bars.length; barindex++) {
+      const bar = bars[barindex];
+
+      const selects = bar.querySelectorAll('.kaching-bundles__bar-variant-select[data-name="Color"]');
+
+      for (let selectindex = 0; selectindex < selects.length; selectindex++) {
+        const select = selects[selectindex];
+        select.style.setProperty('padding-left', '30px', 'important');
+        const container = select.parentElement;
+        container.style.position = 'relative';
+
+        const id = `bar-${barindex}-select-${selectindex}`;
+        if (document.getElementById(id)) continue;
+
+        const div = document.createElement('div');
+        div.id = id;
+        div.style.display = 'flex';
+        div.style.position = 'absolute';
+        div.style.top = '7px';
+        div.style.left = select.offsetLeft + 6 + 'px';
+        div.style.width = '20px';
+        div.style.height = '20px';
+        div.style.backgroundColor = COLOR_MAP[select.value.toUpperCase()];
+        div.style.borderRadius = '100%';
+        div.style.zIndex = '4';
+
+        container.appendChild(div);
+
+        console.log('[MAISON KACHING EDITS] added swatch functionality', `swatch-${select.id}`);
+
+        if (!select.getAttribute('maison-event-added')) {
+          select.setAttribute('maison-event-added', 'true');
+          select.addEventListener('change', (e) => {
+            const div = document.getElementById(id);
+            div.style.backgroundColor = COLOR_MAP[e.target.value.toUpperCase()];
+          });
+        }
+      }
+    }
+  }
+
+  function swapPricesForFree() {
+    const prices = document.querySelectorAll('.kaching-bundles__bundle-products__price');
+    for (const price of prices) {
+      const val = price.textContent.trim().replace(/[^0-9]/g, '');
+      if (parseInt(val) === 0) {
+        price.textContent = 'FREE';
+        price.style.setProperty('color', '#12B76A', 'important');
+      }
+    }
+  }
+
+  function swapPriceForPerItem(addTotal = false) {
+    const bars = document.querySelectorAll('.kaching-bundles__bar-container');
+
+    for (let barindex = 0; barindex < bars.length; barindex++) {
+      const bar = bars[barindex];
+      const mainPrice = bar.querySelector('.kaching-bundles__bar-content').querySelector('.kaching-bundles__bar-price');
+      bar.querySelector('.kaching-bundles__bar-full-price').style.display = 'none';
+      if (mainPrice.getAttribute('maison-editted')) continue;
+      const originalPrice = mainPrice.textContent;
+      const priceVal = originalPrice.trim().replace(/[^0-9\.]/g, '');
+      const float = parseFloat(priceVal);
+      const totalProducts = bar.querySelectorAll('.kaching-bundles__bundle-products__product').length;
+      const pricePerItem = float / totalProducts;
+      const formattedPrice = pricePerItem.toLocaleString(Shopify.locale, {
+        style: 'currency',
+        currency: Shopify.currency.active,
+      });
+      mainPrice.innerHTML = `${formattedPrice}/Item`;
+      mainPrice.setAttribute('maison-editted', 'true');
+
+      if (addTotal === true) {
+        mainPrice.parentElement.style.backgroundColor = 'transparent';
+        mainPrice.parentElement.style.border = 'none';
+        mainPrice.parentElement.style.padding = '0';
+        mainPrice.innerHTML = `${formattedPrice}/Item <span style="padding: 2px 6px; border-radius: 8px; border: 1px solid #F0D3CB; background: #F7E6E2; font-weight: 400">Total: ${originalPrice}</span>`;
+      }
+    }
+  }
+
+  function addFakeStock() {
+    const bars = document.querySelectorAll('.kaching-bundles__bar-container');
+
+    for (let barindex = 0; barindex < bars.length; barindex++) {
+      const bar = bars[barindex];
+      const products = bar.querySelectorAll('.kaching-bundles__bundle-products__product');
+
+      for (let productindex = 0; productindex < products.length; productindex++) {
+        const product = products[productindex];
+        product.style.position = 'relative';
+
+        const id = `bar-${barindex}-product-${productindex}-stock`;
+        let div = document.getElementById(id);
+
+        const content = product.querySelector('.kaching-bundles__bundle-products__content');
+        const price = product.querySelector('.kaching-bundles__bundle-products__pricing');
+        price.style.transform = 'translateY(-12px)';
+
+        if (!div) div = document.createElement('div');
+        div.id = id;
+        div.style.position = 'absolute';
+        div.style.bottom = '10px';
+        div.style.left = content.offsetLeft + 'px';
+        div.style.right = '0';
+        /* div.style.width = '80%'; */
+        div.style.display = 'flex';
+        div.style.alignItems = 'center';
+        div.style.flexDirection = 'row';
+        div.style.gap = '8px';
+        div.innerHTML = `
+      <span style="white-space: nowrap; font-size: 12px; color: #000000;">Only {{ section.settings.fake_stock_number }} left in stock</span>
+      <div style="width: 100%; height: 8px; background-color: rgba(0, 0, 0, 0.1); border-radius: 999px; position: relative;">
+        <div style="width: {{ section.settings.fake_stock_percentage }}%; height: 100%; background-color: {{ section.settings.fake_stock_color }}; border-radius: 999px; position: absolute; top: 0; left: 0;">
+        </div>
+      </div>
+      `;
+        if (!div.parentElement) product.appendChild(div);
+        break;
+      }
+    }
+  }
+
+  setInterval(async () => {
+    const COLOR_MAP = {{ section.settings.color_map }};
+
+    await waitForKaching();
+    {%  if section.settings.enable_numbers %}
+      addNumbers();
+    {% endif %}
+    {% if section.settings.enable_swatches %}
+      addSwatchFunctionality(COLOR_MAP);
+    {% endif %}
+    {% if section.settings.enable_swap_price_for_free %}
+      swapPricesForFree();
+    {% endif %}
+    {% if section.settings.enable_swap_price_for_per_item %}
+      swapPriceForPerItem({{ section.settings.enable_add_total_price }});
+    {% endif %}
+    {% if section.settings.enable_add_fake_stock %}
+      addFakeStock();
+    {% endif %}
+  }, 10);
+</script>
+
+<style>
+  /* .kaching-bundles__bundle-products__product {
+    padding-bottom: 10px !important;
+  } */
+
+  @media (max-width: 750px) {
+    .kaching-bundles .kaching-bundles__bar-pricing div {
+      font-size: 12px !important;
+    }
+
+    .kaching-bundles__bar-price[maison-editted] {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+</style>
+
+<script>
+  setInterval(() => {
+    const lefts = document.querySelectorAll('.kaching-bundles__bar-content-left');
+    if (window.innerWidth < 750) {
+      lefts.forEach((left) => {
+        left.style.setProperty('display', 'flex', 'important');
+        left.style.setProperty('flex-direction', 'column', 'important');
+        left.style.setProperty('align-items', 'flex-start', 'important');
+      });
+    } else {
+      lefts.forEach((left) => {
+        left.style.removeProperty('display');
+        left.style.removeProperty('flex-direction');
+        left.style.removeProperty('align-items');
+      });
+    }
+  }, 10);
+</script>
