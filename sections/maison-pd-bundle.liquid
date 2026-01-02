@@ -3169,7 +3169,7 @@
         e.preventDefault();
 
         // Find the main product form
-        const mainProductForm = document.querySelector('form[is="product-form"]');
+        const mainProductForm = document.querySelector('form[data-type="add-to-cart-form"]');
         
         if (!mainProductForm) {
           console.error('Main product form not found');
