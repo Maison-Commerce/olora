@@ -15,6 +15,7 @@
     "featured_collection_J47NfA",
     "instant_2i_k2_l3b_j9qq6p_lx9_trFLGH",
     "17309335580d75643f",
+    "comparision_tble_HtwY3h",
     "custom_liquid_k9iqLd",
     "17315167440fd9a629"
   ],
@@ -525,17 +526,6 @@
         "padding_bottom": 0
       }
     },
-    "custom_liquid_k9iqLd": {
-      "type": "custom-liquid",
-      "settings": {
-        "display_id": false,
-        "visibility": "always-display",
-        "custom_liquid": "<style>\n  .reviews-container-mep {\n    padding: 20px;\n    max-width: 350px;\n    margin: -40px auto;\n    text-align: center;\n  }\n\n  .title-mep {\n    font-size: 1.2em;\n    \n    margin-bottom: 1.5em;\n    color: black;\n  }\n\n  .review-section-mep {\n    margin-bottom: 1.5em;\n  }\n\n  .label-mep {\n    font-size: 1.1em;\n    margin-bottom: 0.5em;\n    text-align: left;\n  }\n\n  .scale-mep {\n    position: relative;\n    height: 8px;\n    background-color: white;\n    border-radius: 4px;\n    margin: 5px 0 10px;\n    border: 1px solid #F0D3CD !important;\n  }\n\n  .scale-bar-mep {\n   display:block !important;\n    height: 100%;\n    background-color: #F0D3CD !important;\n  }\n\n  .pointer-mep {\n   display:block !important;\n    position: absolute;\n    top: 50%;\n    transform: translateY(-50%);\n    height: 20px;\n    width: 0;\n    border: 1px solid #F0D3CD !important;\n  }\n\n  /* Comfort pointer */\n  .pointer-comfort-mep {\n    right: 16px;\n  }\n\n  /* Effectiveness pointer */\n  .pointer-effectiveness-mep {\n    right: 30px;\n  }\n\n  /* Sizing pointer */\n  .pointer-sizing-mep {\n  display:block !important;\n    left: 48%;\n  }\n\n  .pointer-center-mep {\n    left: 48%;\n    width: 20px;\n    height: 8px;\n    background: #F0D3CD !important;\n  }\n\n  .pointer-right-mep {\n    left: 54%;\n    width: 1.2px;\n    height: 15px;\n    background: #F0D3CD !important;\n  }\n\n  .scale-labels-mep {\n    display: flex;\n    justify-content: space-between;\n    font-size: 0.9em;\n    color: #555;\n  }\n</style>\n\n<div class=\"reviews-container-mep\">\n\n<h1 style=\"font-weight:600; font-size:26px; margin-bottom:20px;    font-family: Poppins, sans-serif;\n\">45k+ Women are <br>#oloraproof</h1>\n  <!-- Title -->\n  <div class=\"title-mep\">Based on 5,841 reviews</div>\n\n  <!-- Comfort -->\n  <div class=\"review-section-mep\">\n    <div class=\"label-mep\">Comfort</div>\n    <div class=\"scale-mep\">\n      <div class=\"scale-bar-mep\" style=\"width: 95%;\"></div>\n      <div class=\"pointer-mep pointer-comfort-mep\"></div>\n    </div>\n    <div class=\"scale-labels-mep\">\n      <span>Poor</span>\n      <span>Excellent</span>\n    </div>\n  </div>\n\n  <!-- Effectiveness -->\n  <div class=\"review-section-mep\">\n    <div class=\"label-mep\">Effectiveness</div>\n    <div class=\"scale-mep\">\n      <div class=\"scale-bar-mep\" style=\"width: 90%;\"></div>\n      <div class=\"pointer-mep pointer-effectiveness-mep\"></div>\n    </div>\n    <div class=\"scale-labels-mep\">\n      <span>Poor</span>\n      <span>Excellent</span>\n    </div>\n  </div>\n\n  <!-- Sizing -->\n  <div class=\"review-section-mep\">\n    <div class=\"label-mep\">Sizing</div>\n    <div class=\"scale-mep\">\n      <div class=\"pointer-mep pointer-sizing-mep\"></div>\n      <div class=\"pointer-mep pointer-center-mep\"></div>\n      <div class=\"pointer-mep pointer-right-mep\"></div>\n    </div>\n    <div class=\"scale-labels-mep\">\n      <span>Runs Small</span>\n      <span>True to Size</span>\n      <span>Runs Large</span>\n    </div>\n  </div>\n</div>",
-        "color_scheme": "background-1",
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
-    },
     "17309335580d75643f": {
       "type": "apps",
       "blocks": {
@@ -551,6 +541,25 @@
       ],
       "settings": {
         "include_margins": true
+      }
+    },
+    "comparision_tble_HtwY3h": {
+      "type": "comparision-tble",
+      "name": "Coffee Comparison Section",
+      "settings": {
+        "section_heading": "Spot The Difference! ",
+        "subheading": "Discover the difference between Olora vs regular underwear or going pantyless"
+      }
+    },
+    "custom_liquid_k9iqLd": {
+      "type": "custom-liquid",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "custom_liquid": "<style>\n  .reviews-container-mep {\n    padding: 20px;\n    max-width: 350px;\n    margin: -40px auto;\n    text-align: center;\n  }\n\n  .title-mep {\n    font-size: 1.2em;\n    \n    margin-bottom: 1.5em;\n    color: black;\n  }\n\n  .review-section-mep {\n    margin-bottom: 1.5em;\n  }\n\n  .label-mep {\n    font-size: 1.1em;\n    margin-bottom: 0.5em;\n    text-align: left;\n  }\n\n  .scale-mep {\n    position: relative;\n    height: 8px;\n    background-color: white;\n    border-radius: 4px;\n    margin: 5px 0 10px;\n    border: 1px solid #F0D3CD !important;\n  }\n\n  .scale-bar-mep {\n   display:block !important;\n    height: 100%;\n    background-color: #F0D3CD !important;\n  }\n\n  .pointer-mep {\n   display:block !important;\n    position: absolute;\n    top: 50%;\n    transform: translateY(-50%);\n    height: 20px;\n    width: 0;\n    border: 1px solid #F0D3CD !important;\n  }\n\n  /* Comfort pointer */\n  .pointer-comfort-mep {\n    right: 16px;\n  }\n\n  /* Effectiveness pointer */\n  .pointer-effectiveness-mep {\n    right: 30px;\n  }\n\n  /* Sizing pointer */\n  .pointer-sizing-mep {\n  display:block !important;\n    left: 48%;\n  }\n\n  .pointer-center-mep {\n    left: 48%;\n    width: 20px;\n    height: 8px;\n    background: #F0D3CD !important;\n  }\n\n  .pointer-right-mep {\n    left: 54%;\n    width: 1.2px;\n    height: 15px;\n    background: #F0D3CD !important;\n  }\n\n  .scale-labels-mep {\n    display: flex;\n    justify-content: space-between;\n    font-size: 0.9em;\n    color: #555;\n  }\n</style>\n\n<div class=\"reviews-container-mep\">\n\n<h1 style=\"font-weight:600; font-size:26px; margin-bottom:20px;    font-family: Poppins, sans-serif;\n\">45k+ Women are <br>#oloraproof</h1>\n  <!-- Title -->\n  <div class=\"title-mep\">Based on 5,841 reviews</div>\n\n  <!-- Comfort -->\n  <div class=\"review-section-mep\">\n    <div class=\"label-mep\">Comfort</div>\n    <div class=\"scale-mep\">\n      <div class=\"scale-bar-mep\" style=\"width: 95%;\"></div>\n      <div class=\"pointer-mep pointer-comfort-mep\"></div>\n    </div>\n    <div class=\"scale-labels-mep\">\n      <span>Poor</span>\n      <span>Excellent</span>\n    </div>\n  </div>\n\n  <!-- Effectiveness -->\n  <div class=\"review-section-mep\">\n    <div class=\"label-mep\">Effectiveness</div>\n    <div class=\"scale-mep\">\n      <div class=\"scale-bar-mep\" style=\"width: 90%;\"></div>\n      <div class=\"pointer-mep pointer-effectiveness-mep\"></div>\n    </div>\n    <div class=\"scale-labels-mep\">\n      <span>Poor</span>\n      <span>Excellent</span>\n    </div>\n  </div>\n\n  <!-- Sizing -->\n  <div class=\"review-section-mep\">\n    <div class=\"label-mep\">Sizing</div>\n    <div class=\"scale-mep\">\n      <div class=\"pointer-mep pointer-sizing-mep\"></div>\n      <div class=\"pointer-mep pointer-center-mep\"></div>\n      <div class=\"pointer-mep pointer-right-mep\"></div>\n    </div>\n    <div class=\"scale-labels-mep\">\n      <span>Runs Small</span>\n      <span>True to Size</span>\n      <span>Runs Large</span>\n    </div>\n  </div>\n</div>",
+        "color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 0
       }
     },
     "17315167440fd9a629": {
