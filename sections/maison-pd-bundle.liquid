@@ -3162,44 +3162,30 @@
       observer.observe(bundlePlaceholder);
     }
 
-    // Sticky Add to Cart form handler
+    // Sticky Add to Cart form handler - duplicate click on main product form button
     const stickyAtcForm = document.querySelector('.maison_commerce_pd_bundle__sticky-atc-form');
     if (stickyAtcForm) {
       stickyAtcForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        const formData = new FormData(this);
-        const variantId = formData.get('id');
-
-        if (!variantId) {
-          console.error('No variant ID found');
+        // Find the main product form
+        const mainProductForm = document.querySelector('form[is="product-form"]');
+        
+        if (!mainProductForm) {
+          console.error('Main product form not found');
           return;
         }
 
-        // Add to cart using Shopify Cart API
-        fetch('/cart/add.js', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            id: variantId,
-            quantity: 1,
-          }),
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            // Trigger cart drawer update if available
-            if (typeof window.theme !== 'undefined' && window.theme.cartDrawer) {
-              window.theme.cartDrawer.open();
-            } else {
-              // Fallback: redirect to cart page
-            }
-          })
-          .catch((error) => {
-            console.error('Error adding to cart:', error);
-            alert('There was an error adding the product to your cart. Please try again.');
-          });
+        // Find the submit button in the main product form
+        const mainSubmitButton = mainProductForm.querySelector('button[type="submit"]');
+        
+        if (mainSubmitButton) {
+          // Trigger click on the main product form button
+          mainSubmitButton.click();
+        } else {
+          // Fallback: try to submit the form directly
+          mainProductForm.requestSubmit();
+        }
       });
     }
 
