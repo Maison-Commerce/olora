@@ -12,9 +12,8 @@
     "maison_pd_bundle_zHD7Rn",
     "main",
     "related-products",
+    "featured_collection_J47NfA",
     "17309335580d75643f",
-    "rich_text_qaMD9z",
-    "featured_collection_Y7EJc6",
     "17315167440fd9a629"
   ],
   "sections": {
@@ -472,71 +471,41 @@
         "padding_bottom": 24
       }
     },
-    "17309335580d75643f": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "rich_text_qaMD9z": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_UhUyHt": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>Limited Time Offer!</p>",
-            "heading_size": "h0"
-          }
-        }
-      },
-      "block_order": [
-        "heading_UhUyHt"
-      ],
-      "custom_css": [
-        "strong {font-weight: 600 !important; letter-spacing: -2px; font-size: 32px; text-decoration: underline;}",
-        "h1,h2 {letter-spacing: -2px; margin: 0px; font-weight: 600; font-size: 28px;}",
-        "@media screen and (max-width: 340px) {strong {font-size: 25px; } h3 {font-size: 25px; }}"
-      ],
-      "settings": {
-        "display_id": false,
-        "visibility": "always-display",
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
-    },
-    "featured_collection_Y7EJc6": {
+    "featured_collection_J47NfA": {
       "type": "featured-collection",
       "settings": {
         "display_id": false,
         "visibility": "always-display",
-        "title": "",
-        "heading_size": "h1",
+        "title": "Top Sale Picks",
+        "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "underwear",
-        "products_to_show": 4,
-        "columns_desktop": 4,
+        "collection": "you-may-also-like",
+        "products_to_show": 25,
+        "columns_desktop": 5,
         "stretch_cards": true,
-        "full_width": false,
-        "show_view_all": false,
+        "full_width": true,
+        "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
+        "enable_desktop_slider": true,
         "color_scheme": "background-1",
         "image_ratio": "square",
-        "show_secondary_image": false,
-        "badges": "custom",
+        "show_secondary_image": true,
+        "badges": "regular",
         "show_vendor": false,
         "show_rating": false,
-        "enable_quick_add": true,
-        "columns_mobile": "1",
+        "enable_quick_add": false,
+        "columns_mobile": "2",
         "swipe_on_mobile": true,
-        "padding_top": 12,
-        "padding_bottom": 36
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "17309335580d75643f": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
       }
     },
     "17315167440fd9a629": {
