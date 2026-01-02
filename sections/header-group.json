@@ -16,7 +16,13 @@
       "disabled": true,
       "settings": {
         "section_preload": "off_lazy_script",
-        "checksum": ""
+        "checksum": "",
+        "ggoQTbFkNbE_text": "<span style=\"color:#000000;font-size:12px;\"><strong>OFFER ENDS TONIGHT</strong></span>",
+        "ggFU-TzI-eW_dayLabel": "Days",
+        "ggFU-TzI-eW_hourLabel": "HRS",
+        "ggFU-TzI-eW_minuteLabel": "MIN",
+        "ggFU-TzI-eW_secondLabel": "SEC",
+        "ggFU-TzI-eW_weekLabel": "Weeks"
       }
     },
     "gp_global_section_546733385976906976_7JqD4a": {
@@ -39,7 +45,7 @@
       "name": "Announcement Timer",
       "settings": {
         "announcement_text": "OFFER ENDS TONIGHT",
-        "end_date": "2025-12-28 23:59:59",
+        "end_date": "2026-01-03 23:59:59",
         "padding_top_desktop": 12,
         "padding_bottom_desktop": 12,
         "padding_left_desktop": 80,
