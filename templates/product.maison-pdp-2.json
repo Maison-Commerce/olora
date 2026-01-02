@@ -545,6 +545,58 @@
     },
     "comparision_tble_HtwY3h": {
       "type": "comparision-tble",
+      "blocks": {
+        "comparison_block_4H8wQx": {
+          "type": "comparison_block",
+          "settings": {
+            "left_comparison": "No Camel Toe",
+            "right_comparison": "Camel Toe"
+          }
+        },
+        "comparison_block_hfFLFy": {
+          "type": "comparison_block",
+          "settings": {
+            "left_comparison": "No Visible Panty Lines",
+            "right_comparison": "Visible Panty Lines"
+          }
+        },
+        "comparison_block_g6wNmC": {
+          "type": "comparison_block",
+          "settings": {
+            "left_comparison": "Wide Gusset",
+            "right_comparison": "Narrow Gusset"
+          }
+        },
+        "comparison_block_wqE8be": {
+          "type": "comparison_block",
+          "settings": {
+            "left_comparison": "Absorbent",
+            "right_comparison": "Not Absorbent"
+          }
+        },
+        "comparison_block_keMBx3": {
+          "type": "comparison_block",
+          "settings": {
+            "left_comparison": "High Quality Fabric",
+            "right_comparison": "Low Quality Fabric"
+          }
+        },
+        "comparison_block_HPnBbj": {
+          "type": "comparison_block",
+          "settings": {
+            "left_comparison": "Lifetime Warranty",
+            "right_comparison": "No Lifetime Warranty"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_block_4H8wQx",
+        "comparison_block_hfFLFy",
+        "comparison_block_g6wNmC",
+        "comparison_block_wqE8be",
+        "comparison_block_keMBx3",
+        "comparison_block_HPnBbj"
+      ],
       "name": "Coffee Comparison Section",
       "settings": {
         "section_heading": "Spot The Difference! ",
