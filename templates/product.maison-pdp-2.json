@@ -17,6 +17,7 @@
     "17309335580d75643f",
     "comparision_tble_HtwY3h",
     "rich_text_zBiWPP",
+    "instant_5_e18_bz_p_uj_hv5z_mtt_DzgLKC",
     "custom_liquid_k9iqLd",
     "17315167440fd9a629"
   ],
@@ -637,6 +638,26 @@
         "content_alignment": "center",
         "color_scheme": "background-1",
         "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "instant_5_e18_bz_p_uj_hv5z_mtt_DzgLKC": {
+      "type": "instant-5E18BzPUjHV5zMTT",
+      "name": "Design Section",
+      "settings": {
+        "text_ns0RuTYPCPx1ogJw": "<p>How it works...</p>",
+        "text_Dg8CjI0j7kq78hBQ": "<p>Cutting-Edge Design</p>",
+        "text_nOJfdjGunhKuk5wo": "<p>After immense input from our real customers, we've created what we believe to be the best thong for active girls on the market.</p>",
+        "text_v774Bb9K3QQspPj9": "<p>1</p>",
+        "text_BShyI1KAhv59SldF": "<p>How it works step 1</p>",
+        "text_BUyqaN4TrQBhRYHH": "<p>2</p>",
+        "text_Qnw5ojpXcnPiN2Vm": "<p>How it works step 2</p>",
+        "text_QY0ueHp6YnB5Zl4f": "<p>3</p>",
+        "text_LGfdGnvEjnDG2Jbm": "<p>How it works step 3</p>",
+        "text_QY0ueHp6YnB5Zl4f2": "<p>4</p>",
+        "text_LGfdGnvEjnDG2Jbm2": "<p>Many fitgirls face this daily struggle. That’s why we founded Aura: activewear that let’s you focus on your workout, not your underwear.</p>",
+        "text_M0qzzoJsFcPr4sow": "",
         "padding_top": 0,
         "padding_bottom": 0
       }
