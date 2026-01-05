@@ -157,7 +157,7 @@
         const id = `bar-${barindex}-product-${productindex}-stock`;
 
         const sizeSelector = product.querySelector('[data-name=Size]');
-        let stockAmount = sizeSelector ? STOCK_MAP[sizeSelector.value.toUpperCase()] || 0 : 0;
+        let stockAmount = STOCK_MAP['XS'];
         if (sizeSelector && !sizeSelector.getAttribute('maison-event-added')) {
           sizeSelector.setAttribute('maison-event-added', 'true');
 
