@@ -127,6 +127,22 @@
     }
   }
 
+  const MAX = 100;
+  let STOCK_MAP = JSON.parse(sessionStorage.getItem('maison-kaching-edits-stock-map') || null);
+  if (!STOCK_MAP) {
+    STOCK_MAP = {
+      'XS': Math.floor(Math.random() * 8) + 4,     // 4-11
+      'S': Math.floor(Math.random() * 8) + 6,      // 6-13
+      'M': Math.floor(Math.random() * 10) + 10,    // 10-19
+      'L': Math.floor(Math.random() * 12) + 15,    // 15-26
+      'XL': Math.floor(Math.random() * 10) + 10,   // 10-19
+      'XXL': Math.floor(Math.random() * 8) + 6,    // 6-13
+      'XXXL': Math.floor(Math.random() * 6) + 3,   // 3-8
+    };
+
+    sessionStorage.setItem('maison-kaching-edits-stock-map', JSON.stringify(STOCK_MAP));
+  }
+
   function addFakeStock() {
     const bars = document.querySelectorAll('.kaching-bundles__bar-container');
 
@@ -139,6 +155,17 @@
         product.style.position = 'relative';
 
         const id = `bar-${barindex}-product-${productindex}-stock`;
+
+        const sizeSelector = product.querySelector('[data-name=Size]');
+        sizeSelector.addEventListener('change', (e) => {
+          const fakeStock = document.getElementById(id)
+          if (!fakeStock) return;
+          const stock = STOCK_MAP[e.target.value.toUpperCase()];
+
+          fakeStock.querySelector('.fake-stock-text').textContent = `Only ${stock} left in stock`;
+          fakeStock.querySelector('.fake-stock-bar').style.width = `${(stock / MAX) * 100}%`;
+        });
+
         let div = document.getElementById(id);
 
         const content = product.querySelector('.kaching-bundles__bundle-products__content');
@@ -157,9 +184,9 @@
         div.style.flexDirection = 'row';
         div.style.gap = '8px';
         div.innerHTML = `
-      <span style="white-space: nowrap; font-size: 12px; color: #000000;">Only {{ section.settings.fake_stock_number }} left in stock</span>
+      <span class="fake-stock-text" style="white-space: nowrap; font-size: 12px; color: #000000;">Only {{ section.settings.fake_stock_number }} left in stock</span>
       <div style="width: 100%; height: 8px; background-color: rgba(0, 0, 0, 0.1); border-radius: 999px; position: relative;">
-        <div style="width: {{ section.settings.fake_stock_percentage }}%; height: 100%; background-color: {{ section.settings.fake_stock_color }}; border-radius: 999px; position: absolute; top: 0; left: 0;">
+        <div class="fake-stock-bar" style="width: {{ section.settings.fake_stock_percentage }}%; height: 100%; background-color: {{ section.settings.fake_stock_color }}; border-radius: 999px; position: absolute; top: 0; left: 0;">
         </div>
       </div>
       `;
