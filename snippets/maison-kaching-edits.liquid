@@ -157,7 +157,7 @@
         const id = `bar-${barindex}-product-${productindex}-stock`;
 
         const sizeSelector = product.querySelector('[data-name=Size]');
-        let stockAmount = STOCK_MAP[sizeSelector?.value?.toUpperCase() || 'XS'];
+        const stockAmount = STOCK_MAP[sizeSelector?.value?.toUpperCase() || 'XS'];
 
         let div = document.getElementById(id);
 
