@@ -45,7 +45,6 @@
       "name": "Announcement Timer",
       "settings": {
         "announcement_text": "OFFER ENDS TONIGHT",
-        "end_date": "",
         "padding_top_desktop": 12,
         "padding_bottom_desktop": 12,
         "padding_left_desktop": 80,
@@ -72,7 +71,7 @@
       "type": "maison-announcement-bar",
       "name": "Maison Announcement Bar",
       "settings": {
-        "announcement_text": "🎉 WE'VE REBRANDED TO OLORA -",
+        "announcement_text": "🎉 NEW YEARS SALE -",
         "highlighted_text": "BUY 3 GET 3 FREE!",
         "announcement_link": "",
         "padding_top_desktop": 8,
