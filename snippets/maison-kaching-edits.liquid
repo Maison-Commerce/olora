@@ -160,6 +160,7 @@
         if (sizeSelector && !sizeSelector.getAttribute('maison-event-added')) {
           sizeSelector.setAttribute('maison-event-added', 'true');
 
+          console.log('[MAISON KACHING EDITS] added event listener to size selector', sizeSelector);
           sizeSelector.addEventListener('change', (e) => {
             const fakeStock = document.getElementById(id)
             if (!fakeStock) return;
