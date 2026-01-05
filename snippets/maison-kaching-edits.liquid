@@ -157,6 +157,7 @@
         const id = `bar-${barindex}-product-${productindex}-stock`;
 
         const sizeSelector = product.querySelector('[data-name=Size]');
+        if (sizeSelector) {
         sizeSelector.addEventListener('change', (e) => {
           const fakeStock = document.getElementById(id)
           if (!fakeStock) return;
@@ -165,6 +166,7 @@
           fakeStock.querySelector('.fake-stock-text').textContent = `Only ${stock} left in stock`;
           fakeStock.querySelector('.fake-stock-bar').style.width = `${(stock / MAX) * 100}%`;
         });
+      }
 
         let div = document.getElementById(id);
 
