@@ -157,15 +157,7 @@
         const id = `bar-${barindex}-product-${productindex}-stock`;
 
         const sizeSelector = product.querySelector('[data-name=Size]');
-        let stockAmount = STOCK_MAP['XS'];
-        // Shopify isn't updating again its 1600! :DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDd
-        if (sizeSelector && !sizeSelector.getAttribute('maison-event-added')) {
-          sizeSelector.setAttribute('maison-event-added', 'true');
-
-          sizeSelector.addEventListener('change', (e) => {
-            stockAmount = STOCK_MAP[e.target.value.toUpperCase()];
-          });
-        }
+        let stockAmount = STOCK_MAP[sizeSelector?.value?.toUpperCase() || 'XS'];
 
         let div = document.getElementById(id);
 
