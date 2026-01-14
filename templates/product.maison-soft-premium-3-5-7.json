@@ -1,0 +1,562 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "order": [
+    "maison_pd_bundle_zHD7Rn",
+    "main",
+    "related-products",
+    "17309335580d75643f",
+    "rich_text_qaMD9z",
+    "featured_collection_Y7EJc6",
+    "17315167440fd9a629"
+  ],
+  "sections": {
+    "maison_pd_bundle_zHD7Rn": {
+      "type": "maison-pd-bundle",
+      "blocks": {
+        "sticky_atc_JXhjka": {
+          "type": "sticky_atc",
+          "settings": {
+            "show_sticky_atc": true
+          }
+        },
+        "feature_Vqtd78": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Odor Control"
+          }
+        },
+        "feature_n6mNjC": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Sweat Control"
+          }
+        },
+        "feature_hLhcQW": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Wide Comfy Gusset"
+          }
+        },
+        "feature_mngC8z": {
+          "type": "feature",
+          "settings": {
+            "feature_text": "Seamless"
+          }
+        },
+        "kaching_bundles_app_block_tHVXgm": {
+          "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
+          "settings": {
+            "product": "{{product}}",
+            "manual_deal_block_id": ""
+          }
+        },
+        "buy_buttons_AeNAVc": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "skip_cart": false,
+            "uppercase_text": true,
+            "display_price": false,
+            "enable_custom_color": false,
+            "custom_color": "#dd1d1d",
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
+        },
+        "review_hzCjd9": {
+          "type": "review",
+          "settings": {
+            "reviewer_name": "Rachel D.",
+            "review_text": "<p>These are hands down the best underwear to wear under any leggings. I no longer feel exposed! Super comfy and don't show any seam lines. Off to buy some more!</p>",
+            "rating": 5,
+            "rating_text": "Rated Excellent 4.6/5 stars",
+            "reviewer_avatar": "shopify://shop_images/652e1ff39043c8367f8a55fe96e5761c83a5d3c3.png",
+            "source": "Trustpilot"
+          }
+        },
+        "review_8JctkQ": {
+          "type": "review",
+          "settings": {
+            "reviewer_name": "Gracie J.",
+            "review_text": "<p>I feel so much more confident and comfortable in these. Would definitely recommend. Oh and I love not having to do gusset checks anymore!!</p>",
+            "rating": 5,
+            "rating_text": "Rated Excellent 4.8/5 stars",
+            "reviewer_avatar": "shopify://shop_images/87e2bfe95e0cf72094d4f27b77741c5b32edea9d.png",
+            "source": "Trustpilot"
+          }
+        },
+        "review_3H3LnN": {
+          "type": "review",
+          "settings": {
+            "reviewer_name": "Daniela G.",
+            "review_text": "<p>These are exactly as they say they are! I wear them daily to the gym and have no more camel toe!</p>",
+            "rating": 5,
+            "rating_text": "Rated Excellent 4.6/5 stars",
+            "reviewer_avatar": "shopify://shop_images/gempages_510135694635565882-7632b7ac-1fae-43f8-b916-168a6e3ee05d.webp",
+            "source": "Trustpilot"
+          }
+        },
+        "faq_nmKPCF": {
+          "type": "faq",
+          "settings": {
+            "question": "Product Details",
+            "answer": "<ul><li>Fabric: 76/24% Premium Nylon/Spandex</li><li>3\" High Rise</li><li>Camel toe proof technology</li><li>Wide gusset</li><li>Seamless (No VPL)</li><li>Breathable</li><li>Moisture wicking</li><li>Lays flat & conforms to the body</li><li>No tags</li></ul>"
+          }
+        },
+        "faq_bCF9rg": {
+          "type": "faq",
+          "settings": {
+            "question": "Free Returns",
+            "answer": "<p>To keep you 100% protected we offer a 90 day free fit exchange and money-back guarantee. So if you need a different size, we’ll send you an exchange completely free, and if you aren’t fully satisfied with your order for whatever reason within 90 days, we’ll offer you a full refund. To qualify for the 90-day money-back guarantee, you’ll just have to fill out a quick feedback form, which helps us improve our product!</p>"
+          }
+        },
+        "faq_kzaqf4": {
+          "type": "faq",
+          "settings": {
+            "question": "Shipping & Delivery",
+            "answer": "<p>Due to the influx of orders from our ongoing sale, there will be a slight delay in order fulfillment. Rest assured, all orders will be shipped within 24-48 hours.</p><p>Depending on your geographic location, delivery typically takes 5-12 business days.</p><p>We also offer a premium international insured shipping option, which we highly recommend for prioritized fulfillment and faster delivery.</p>"
+          }
+        },
+        "faq_A83QpP": {
+          "type": "faq",
+          "settings": {
+            "question": "How Does Your Camel Toe, Sweat Proof & Seamless Technology Work?",
+            "answer": "<p><strong>Camel Toe Proof Technology</strong><br/>Our thong contains a comfy, breathable, padded insert that’s perfectly fitted and stitched into the gusset, resulting in no movement whilst exercising, no camel toe and no sweaty crotch.<br/><br/><strong>Sweat Proof Technology</strong><br/>We've designed our thong with breathable, moisture-wicking fabric to keep you dry and comfortable all day long. The high-performance fabric actively pulls moisture away from your skin, allowing it to evaporate quickly. This prevents sweat from pooling or seeping through your clothing, keeping you fresh and dry.<br/><br/><strong>Seamless Technology</strong><br/>Our invisible stitching method creates a completely seamless look and our insert is specifically designed to be thinner in certain areas, which stops the material around the gusset from bunching up.</p>"
+          }
+        },
+        "faq_pQtngB": {
+          "type": "faq",
+          "settings": {
+            "question": "How Do I Get The Perfect Size So They Don’t Ride/Bunch Up?",
+            "answer": "<p>Underwear that’s too tight will ride up and underwear that’s too loose will bunch up. Luckily Olora has sizes from xs - xxxl and a size calculator to help you find the perfect size based on your dimensions so they stay in place throughout your entire workout.</p>"
+          }
+        },
+        "faq_9ramnm": {
+          "type": "faq",
+          "settings": {
+            "question": "How Long Will They Last?",
+            "answer": "<p>Provided the proper care is applied, our thongs will keep their quality for up to 1 year, or even longer, however, for hygiene reasons (especially with regular use when exercising) we would recommend replacing your underwear draw at least every 6 months.<br/><br/>For more info on how to properly care for your Olora thongs, see our FAQ section at the bottom of this page.</p>"
+          }
+        },
+        "customer_image_tk3f9M": {
+          "type": "customer_image",
+          "settings": {
+            "image": "shopify://shop_images/08c9db8ab037cc86ea267c4d38d6e4433b1084cd.png"
+          }
+        },
+        "customer_image_Wc68MK": {
+          "type": "customer_image",
+          "settings": {
+            "image": "shopify://shop_images/ee84cc20a2a52567740f6e03f49d25d3f1923fa0.png"
+          }
+        },
+        "customer_image_6LhQpK": {
+          "type": "customer_image",
+          "settings": {
+            "image": "shopify://shop_images/2ab7c3e48bc72de838617773dee6918a8b937e78.png"
+          }
+        },
+        "customer_image_caRVfF": {
+          "type": "customer_image",
+          "settings": {
+            "image": "shopify://shop_images/87e2bfe95e0cf72094d4f27b77741c5b32edea9d.png"
+          }
+        }
+      },
+      "block_order": [
+        "sticky_atc_JXhjka",
+        "feature_Vqtd78",
+        "feature_n6mNjC",
+        "feature_hLhcQW",
+        "feature_mngC8z",
+        "kaching_bundles_app_block_tHVXgm",
+        "buy_buttons_AeNAVc",
+        "review_hzCjd9",
+        "review_8JctkQ",
+        "review_3H3LnN",
+        "faq_nmKPCF",
+        "faq_bCF9rg",
+        "faq_kzaqf4",
+        "faq_A83QpP",
+        "faq_pQtngB",
+        "faq_9ramnm",
+        "customer_image_tk3f9M",
+        "customer_image_Wc68MK",
+        "customer_image_6LhQpK",
+        "customer_image_caRVfF"
+      ],
+      "name": "Product Bundle",
+      "settings": {
+        "use_maison_kaching_edits": true,
+        "enable_numbers": true,
+        "enable_swap_price_for_per_item": true,
+        "enable_add_total_price": true,
+        "enable_swatches": true,
+        "color_map": "{ \"SAND\": \"#E6D2C0\", \"BLACK\": \"#000000\", \"MOSS\": \"#04808f\", \"COFFEE\": \"#723329\" }",
+        "enable_swap_price_for_free": true,
+        "enable_add_fake_stock": true,
+        "fake_stock_color": "#fec84b",
+        "fake_stock_number": 35,
+        "fake_stock_percentage": 25,
+        "gallery_badge_text": "BUY 5, GET 5 FREE",
+        "gallery_badge_subtext": "Add at least 10 items to your cart. Discount applied automatically.",
+        "price_badge_text": "BUY 5, GET 5 FREE",
+        "features_text": "",
+        "protection_title": "Your order is protected by",
+        "protection_heading": "90 Day Fit Exchange & Money Back Guarantee",
+        "protection_description": "<p>If you need to exchange for a different size, or don't like our thong for any reason, we'll send you a new size for free or a full refund.</p>",
+        "protection_icon": "shopify://shop_images/Rectangle_177426.png",
+        "loved_by_heading": "Loved by By 5,800+ Happy Customers",
+        "metafield_rating_key": "custom.rating",
+        "manual_rating_text": "4.8/5 Stars By 5,841 Happy Customers",
+        "metafield_rating_count_key": "custom.rating_count",
+        "section_bg_color": "#fcf5f4",
+        "badge_bg_color": "#f7e6e2",
+        "badge_border_color": "#f0d3cb",
+        "price_badge_bg_color": "#12b76a",
+        "price_badge_text_color": "#f6fef9",
+        "protection_bg_color": "#f7e6e2",
+        "protection_border_color": "#f0d3cb",
+        "show_delivery_info": true,
+        "delivery_time": "3",
+        "delivery_prefix": "Delivered on",
+        "delivery_suffix": "with Express Shipping",
+        "show_payment_methods": true,
+        "show_visa": true,
+        "show_unionpay": true,
+        "show_shoppay": true,
+        "show_mastercard": true,
+        "show_maestro": true,
+        "show_googlepay": true,
+        "show_discover": true,
+        "show_dinersclub": true,
+        "show_applepay": true,
+        "show_amex": true,
+        "show_shipping_info": true,
+        "show_free_shipping": true,
+        "free_shipping_text": "FREE Worldwide Shipping",
+        "show_money_back": true,
+        "money_back_text": "90-Day Money-Back Guarantee",
+        "bundle_heading_text": "SELECT QUANTITY:",
+        "size_guide_text": "Size Guide",
+        "size_guide_url": "shopify://pages/reviews",
+        "size_guide_icon": "shopify://shop_images/c0ebbffd60f0a1828f227c21e7071b584eb97405.png"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "text_size": "h1",
+            "title_alignment": "left",
+            "uppercase_title": false,
+            "margin_top": 6,
+            "margin_bottom": 0
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "layout": "price_first",
+            "price_color": "accent-1",
+            "compare_price_color": "text",
+            "hide_sale_badge": false,
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        },
+        "a6eb81db-40e4-43e0-972f-32db010a4a56": {
+          "type": "rating_stars",
+          "disabled": true,
+          "settings": {
+            "rating": 4.4,
+            "star_color": "#ffcc00",
+            "bg_stars_style": "full",
+            "bg_star_color": "#ececec",
+            "label": "(xxxx Reviews)",
+            "size": 16,
+            "alignment": "flex-start",
+            "scroll_id": "",
+            "margin_top": 0,
+            "margin_bottom": 9
+          }
+        },
+        "5fcc0428-e768-4cb7-bea3-eb0274198dd1": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_types": "Swatches,pills",
+            "custom_labels": "[name] - [selected]",
+            "swatches_size": "large",
+            "swatches_border_radius": 20,
+            "swatches_custom_colors": "disabled",
+            "swatches_custom_colors_list": "#000000, #6D388B, #0000FF, #FFCC00",
+            "full_width_dropdowns": false,
+            "breaks_style": "normal",
+            "breaks_headline": "BUNDLE & SAVE",
+            "breaks_color_scheme": "accent-1",
+            "breaks_badges": "[empty], Most popular, [empty]",
+            "breaks_displayed_images": "variant_images",
+            "breaks_custom_images": "",
+            "breaks_image_width": 70,
+            "breaks_space_images": true,
+            "breaks_labels": "[name], [name], [name]",
+            "breaks_benefits": "[empty], Free Shipping, Free Shipping",
+            "breaks_captions": "Variant 1 caption, Variant 2 caption, Variant 3 caption",
+            "breaks_price_texts": "[price], [price], [price]",
+            "breaks_compare_price_texts": "[compare_price], [compare_price], [compare_price]",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "04ba004e-2f54-4936-8b1c-8bcadf6573f6": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {
+            "enable_quantity_discounts": false,
+            "style": "normal",
+            "headline": "OFFER ENDS TONIGHT",
+            "preselected": "option_1",
+            "enable_variant_selectors": false,
+            "enable_variant_selectors_on_quantity_of_1": false,
+            "hide_pickers_overlay": true,
+            "image_width": 70,
+            "space_images": true,
+            "color_scheme": "accent-1",
+            "option_1_quantity": 2,
+            "option_1_badge": "",
+            "option_1_label": "Buy 1 & Get 1 FREE",
+            "option_1_benefit": "",
+            "option_1_caption": "2 Months Supply",
+            "option_1_percentage_off_text": "50",
+            "option_1_fixed_amount_off": "0",
+            "option_1_price_text": "[price]",
+            "option_1_compare_price": "compare_price",
+            "option_1_compare_price_text": "[compare_price]",
+            "option_2_quantity": 0,
+            "option_2_badge": "",
+            "option_2_label": "Buy [quantity]",
+            "option_2_benefit": "",
+            "option_2_caption": "You save [amount_saved]",
+            "option_2_percentage_off_text": "0",
+            "option_2_fixed_amount_off": "0",
+            "option_2_price_text": "[price]",
+            "option_2_compare_price": "compare_price",
+            "option_2_compare_price_text": "[compare_price]",
+            "option_3_quantity": 0,
+            "option_3_badge": "",
+            "option_3_label": "Buy [quantity]",
+            "option_3_benefit": "",
+            "option_3_caption": "You save [amount_saved]",
+            "option_3_percentage_off_text": "0",
+            "option_3_fixed_amount_off": "0",
+            "option_3_price_text": "[price]",
+            "option_3_compare_price": "compare_price",
+            "option_3_compare_price_text": "[compare_price]",
+            "option_4_quantity": 0,
+            "option_4_badge": "",
+            "option_4_label": "Buy [quantity]",
+            "option_4_benefit": "",
+            "option_4_caption": "You save [amount_saved]",
+            "option_4_percentage_off_text": "0",
+            "option_4_fixed_amount_off": "0",
+            "option_4_price_text": "[price]",
+            "option_4_compare_price": "compare_price",
+            "option_4_compare_price_text": "[compare_price]",
+            "margin_top": 15,
+            "margin_bottom": 15
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "skip_cart": false,
+            "uppercase_text": true,
+            "display_price": false,
+            "enable_custom_color": false,
+            "custom_color": "#53af01",
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
+        },
+        "description_X8pEHM": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "margin_top": 24,
+            "margin_bottom": 24
+          }
+        },
+        "collapsible_tab_6HVi9U": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "What's included",
+            "heading_size": "medium",
+            "icon": "Check Circle",
+            "filled_icon": true,
+            "collapse_icon": "plus",
+            "display_top_border": true,
+            "content": "<p><strong>The #oloraproof Starter Kit</strong></p><ul><li>6 x thongs</li><li>Nipple covers</li><li>Thigh bands</li></ul>",
+            "page": "",
+            "margin_top": 24,
+            "margin_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "a6eb81db-40e4-43e0-972f-32db010a4a56",
+        "5fcc0428-e768-4cb7-bea3-eb0274198dd1",
+        "04ba004e-2f54-4936-8b1c-8bcadf6573f6",
+        "buy_buttons",
+        "description_X8pEHM",
+        "collapsible_tab_6HVi9U"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "enable_sticky_info": true,
+        "display_variant_image_first": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "desktop_thumbnails_count": 5,
+        "mobile_thumbnails": "show",
+        "mobile_media_corner_radius": 0,
+        "mobile_spacing": false,
+        "mobile_preview_media": false,
+        "mobile_thumbnails_count": 5,
+        "mobile_pagination": "dots_overlay",
+        "hide_arrows": true,
+        "dots_color_scheme": "inverse",
+        "trust_badge_position": "top-right",
+        "trust_badge_size": "medium",
+        "mobile_padding_top": 0,
+        "mobile_padding_bottom": 16,
+        "desktop_padding_top": 36,
+        "desktop_padding_bottom": 36
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "display_id": false,
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 24
+      }
+    },
+    "17309335580d75643f": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "rich_text_qaMD9z": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_UhUyHt": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Limited Time Offer!</p>",
+            "heading_size": "h0"
+          }
+        }
+      },
+      "block_order": [
+        "heading_UhUyHt"
+      ],
+      "custom_css": [
+        "strong {font-weight: 600 !important; letter-spacing: -2px; font-size: 32px; text-decoration: underline;}",
+        "h1,h2 {letter-spacing: -2px; margin: 0px; font-weight: 600; font-size: 28px;}",
+        "@media screen and (max-width: 340px) {strong {font-size: 25px; } h3 {font-size: 25px; }}"
+      ],
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection_Y7EJc6": {
+      "type": "featured-collection",
+      "settings": {
+        "display_id": false,
+        "visibility": "always-display",
+        "title": "",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "underwear",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "stretch_cards": true,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "show_secondary_image": false,
+        "badges": "custom",
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 12,
+        "padding_bottom": 36
+      }
+    },
+    "17315167440fd9a629": {
+      "type": "apps",
+      "blocks": {
+        "kiwi_size_chart_recommender_kiwi_sizing_Fgepx4": {
+          "type": "shopify://apps/kiwi-size-chart-recommender/blocks/kiwiSizing/b7369922-bf15-44ce-a121-a22a8fcbc4b0",
+          "settings": {
+            "fallbackToBlockPosition": false,
+            "waitForElementSelector": "",
+            "waitForElementDelay": 5
+          }
+        }
+      },
+      "block_order": [
+        "kiwi_size_chart_recommender_kiwi_sizing_Fgepx4"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  }
+}
