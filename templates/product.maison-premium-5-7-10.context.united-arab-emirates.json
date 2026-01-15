@@ -12,8 +12,8 @@
     "maison_pd_bundle_zHD7Rn": {
       "settings": {
         "enable_numbers": true,
-        "enable_add_total_price": false,
-        "enable_swap_price_for_per_item": false
+        "enable_swap_price_for_per_item": true,
+        "enable_add_total_price": true
       },
       "blocks": {}
     }
