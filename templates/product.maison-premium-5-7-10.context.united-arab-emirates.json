@@ -1,0 +1,25 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "maison_pd_bundle_zHD7Rn": {
+      "settings": {
+        "enable_numbers": true,
+        "enable_swap_price_for_per_item": true,
+        "enable_add_total_price": true
+      },
+      "blocks": {}
+    }
+  },
+  "context": {
+    "market": "united-arab-emirates"
+  },
+  "parent": "product.maison-premium-5-7-10.json"
+}
