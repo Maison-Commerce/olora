@@ -32,7 +32,7 @@
       "type": "background-video",
       "settings": {
         "video_url": "https://cdn.shopify.com/videos/c/o/v/a0b07272da6d46c287af30eed9ad71ff.mov",
-        "button_url": "shopify://products/olora-invisible-camel-toe-thong-high-rise-dev",
+        "button_url": "https://oloraofficial.com/products/olora-invisible-camel-toe-thong-high-rise-promo",
         "heading": "",
         "button_text": "Shop Now"
       }
@@ -135,7 +135,7 @@
           "type": "button",
           "settings": {
             "button_label": "Shop Now",
-            "button_link": "shopify://products/olora-invisible-camel-toe-thong-high-rise-dev",
+            "button_link": "https://oloraofficial.com/products/olora-invisible-camel-toe-thong-high-rise-promo",
             "button_style_secondary": false,
             "button_label_2": "",
             "button_link_2": "",

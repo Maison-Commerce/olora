@@ -211,8 +211,6 @@
         "enable_swap_price_for_free": true,
         "enable_add_fake_stock": true,
         "fake_stock_color": "#fec84b",
-        "fake_stock_number": 35,
-        "fake_stock_percentage": 25,
         "gallery_badge_text": "BUY 3, GET 3 FREE",
         "gallery_badge_subtext": "Add at least 6 items to your cart. Discount applied automatically.",
         "price_badge_text": "BUY 3, GET 3 FREE",
