@@ -117,8 +117,6 @@
       const productsElements = bar.querySelectorAll('.kaching-bundles__bundle-products__product');
       const totalProducts = productsElements.length;
 
-      // ЛОГІКА: Якщо товарів 0 (ще не провантажились), ділимо на 1, щоб уникнути Infinity
-      // Але НЕ ставимо атрибут 'maison-editted', щоб скрипт міг перерахувати ціну, коли товари з'являться
       const divisor = totalProducts > 0 ? totalProducts : 1;
       const pricePerItem = float / divisor;
 
@@ -136,11 +134,7 @@
         mainPrice.innerHTML = `${formattedPrice}/Item`;
       }
 
-      // ВАЖЛИВО: позначаємо як "відредаговано" тільки якщо ми реально знайшли товари
-      // Це дозволить коду "перемалювати" ціну з правильним дільником, коли Kaching довантажить DOM
-
-        mainPrice.setAttribute('maison-editted', 'true');
-
+      mainPrice.setAttribute('maison-editted', 'true');
     }
   }
 
