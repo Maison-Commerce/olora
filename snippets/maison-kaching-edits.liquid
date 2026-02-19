@@ -111,15 +111,19 @@
       if (fullPriceEl) fullPriceEl.style.display = 'none';
 
       const originalPrice = mainPrice.textContent;
+      // Очищуємо ціну від символів валют та пробілів, залишаючи цифри та крапку/кому
       const priceVal = originalPrice.trim().replace(',', '.').replace(/[^0-9.]/g, '');
       const float = parseFloat(priceVal);
       
+      // Рахуємо кількість продуктів
       const totalProducts = bar.querySelectorAll('.kaching-bundles__bundle-products__product').length;
 
+      // ГАРД-КЛАУЗ: Якщо продуктів 0 або ціна не розпізнана, використовуємо базову ціну (originalPrice)
       let pricePerItem;
       if (totalProducts > 0 && !isNaN(float)) {
         pricePerItem = float / totalProducts;
       } else {
+        // Якщо товарів немає в DOM, виходимо з ітерації, щоб не ставити "maison-editted" завчасно
         if (totalProducts === 0) continue; 
         pricePerItem = float;
       }
