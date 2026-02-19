@@ -103,27 +103,42 @@
 
     for (let barindex = 0; barindex < bars.length; barindex++) {
       const bar = bars[barindex];
-      const mainPrice = bar.querySelector('.kaching-bundles__bar-content').querySelector('.kaching-bundles__bar-price');
-      bar.querySelector('.kaching-bundles__bar-full-price').style.display = 'none';
-      if (mainPrice.getAttribute('maison-editted')) continue;
+      const mainPrice = bar.querySelector('.kaching-bundles__bar-content')?.querySelector('.kaching-bundles__bar-price');
+      
+      if (!mainPrice || mainPrice.getAttribute('maison-editted')) continue;
+
+      const fullPriceEl = bar.querySelector('.kaching-bundles__bar-full-price');
+      if (fullPriceEl) fullPriceEl.style.display = 'none';
+
       const originalPrice = mainPrice.textContent;
-      const priceVal = originalPrice.trim().replace('Dhs.', '').replace(',', '.').replace(/[^0-9\.]/g, '');
+      const priceVal = originalPrice.trim().replace(',', '.').replace(/[^0-9.]/g, '');
       const float = parseFloat(priceVal);
+      
       const totalProducts = bar.querySelectorAll('.kaching-bundles__bundle-products__product').length;
-      const pricePerItem = float / totalProducts;
+
+      let pricePerItem;
+      if (totalProducts > 0 && !isNaN(float)) {
+        pricePerItem = float / totalProducts;
+      } else {
+        if (totalProducts === 0) continue; 
+        pricePerItem = float;
+      }
+
       const formattedPrice = pricePerItem.toLocaleString(Shopify.locale, {
         style: 'currency',
         currency: Shopify.currency.active,
       });
-      mainPrice.innerHTML = `${formattedPrice}/Item`;
-      mainPrice.setAttribute('maison-editted', 'true');
 
       if (addTotal === true) {
         mainPrice.parentElement.style.backgroundColor = 'transparent';
         mainPrice.parentElement.style.border = 'none';
         mainPrice.parentElement.style.padding = '0';
         mainPrice.innerHTML = `${formattedPrice}/Item <span style="padding: 2px 6px; border-radius: 8px; border: 1px solid #F0D3CB; background: #F7E6E2; font-weight: 400">Total: ${originalPrice}</span>`;
+      } else {
+        mainPrice.innerHTML = `${formattedPrice}/Item`;
       }
+
+      mainPrice.setAttribute('maison-editted', 'true');
     }
   }
 
