@@ -99,52 +99,53 @@
   }
 
   function swapPriceForPerItem(addTotal = false) {
-    const bars = document.querySelectorAll('.kaching-bundles__bar-container');
+  const bars = document.querySelectorAll('.kaching-bundles__bar-container');
 
-    for (let barindex = 0; barindex < bars.length; barindex++) {
-      const bar = bars[barindex];
-      const mainPrice = bar.querySelector('.kaching-bundles__bar-content')?.querySelector('.kaching-bundles__bar-price');
-      
-      if (!mainPrice || mainPrice.getAttribute('maison-editted')) continue;
+  for (let barindex = 0; barindex < bars.length; barindex++) {
+    const bar = bars[barindex];
+    const mainPrice = bar.querySelector('.kaching-bundles__bar-content')?.querySelector('.kaching-bundles__bar-price');
+    
+    // Якщо ціни немає або вже відредаговано — пропускаємо
+    if (!mainPrice || mainPrice.getAttribute('maison-editted')) continue;
 
-      const fullPriceEl = bar.querySelector('.kaching-bundles__bar-full-price');
-      if (fullPriceEl) fullPriceEl.style.display = 'none';
+    const fullPriceEl = bar.querySelector('.kaching-bundles__bar-full-price');
+    if (fullPriceEl) fullPriceEl.style.display = 'none';
 
-      const originalPrice = mainPrice.textContent;
-      // Очищуємо ціну від символів валют та пробілів, залишаючи цифри та крапку/кому
-      const priceVal = originalPrice.trim().replace(',', '.').replace(/[^0-9.]/g, '');
-      const float = parseFloat(priceVal);
-      
-      // Рахуємо кількість продуктів
-      const totalProducts = bar.querySelectorAll('.kaching-bundles__bundle-products__product').length;
+    const originalPrice = mainPrice.textContent;
+    // Очищуємо ціну: замінюємо кому на крапку і видаляємо все, крім цифр та крапки
+    const priceVal = originalPrice.trim().replace(',', '.').replace(/[^0-9.]/g, '');
+    const float = parseFloat(priceVal);
+    
+    // Рахуємо кількість продуктів
+    const productsElements = bar.querySelectorAll('.kaching-bundles__bundle-products__product');
+    const totalProducts = productsElements.length;
 
-      // ГАРД-КЛАУЗ: Якщо продуктів 0 або ціна не розпізнана, використовуємо базову ціну (originalPrice)
-      let pricePerItem;
-      if (totalProducts > 0 && !isNaN(float)) {
-        pricePerItem = float / totalProducts;
-      } else {
-        // Якщо товарів немає в DOM, виходимо з ітерації, щоб не ставити "maison-editted" завчасно
-        if (totalProducts === 0) continue; 
-        pricePerItem = float;
-      }
+    // ЛОГІКА: Якщо товарів 0 (ще не провантажились), ділимо на 1, щоб уникнути Infinity
+    // Але НЕ ставимо атрибут 'maison-editted', щоб скрипт міг перерахувати ціну, коли товари з'являться
+    const divisor = totalProducts > 0 ? totalProducts : 1;
+    const pricePerItem = float / divisor;
 
-      const formattedPrice = pricePerItem.toLocaleString(Shopify.locale, {
-        style: 'currency',
-        currency: Shopify.currency.active,
-      });
+    const formattedPrice = pricePerItem.toLocaleString(Shopify.locale, {
+      style: 'currency',
+      currency: Shopify.currency.active,
+    });
 
-      if (addTotal === true) {
-        mainPrice.parentElement.style.backgroundColor = 'transparent';
-        mainPrice.parentElement.style.border = 'none';
-        mainPrice.parentElement.style.padding = '0';
-        mainPrice.innerHTML = `${formattedPrice}/Item <span style="padding: 2px 6px; border-radius: 8px; border: 1px solid #F0D3CB; background: #F7E6E2; font-weight: 400">Total: ${originalPrice}</span>`;
-      } else {
-        mainPrice.innerHTML = `${formattedPrice}/Item`;
-      }
+    if (addTotal === true) {
+      mainPrice.parentElement.style.backgroundColor = 'transparent';
+      mainPrice.parentElement.style.border = 'none';
+      mainPrice.parentElement.style.padding = '0';
+      mainPrice.innerHTML = `${formattedPrice}/Item <span style="padding: 2px 6px; border-radius: 8px; border: 1px solid #F0D3CB; background: #F7E6E2; font-weight: 400">Total: ${originalPrice}</span>`;
+    } else {
+      mainPrice.innerHTML = `${formattedPrice}/Item`;
+    }
 
+    // ВАЖЛИВО: позначаємо як "відредаговано" тільки якщо ми реально знайшли товари
+    // Це дозволить коду "перемалювати" ціну з правильним дільником, коли Kaching довантажить DOM
+    if (totalProducts > 0) {
       mainPrice.setAttribute('maison-editted', 'true');
     }
   }
+}
 
   const MAX = 100;
   let STOCK_MAP = JSON.parse(sessionStorage.getItem('maison-kaching-edits-stock-map') || null);
