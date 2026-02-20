@@ -200,12 +200,54 @@
     }
   }
 
+  function addProductTitle() {
+    const bars = document.querySelectorAll('.kaching-bundles__bar-container');
+
+    // Get the product title from a multi-item bar's product card
+    let productTitle = '';
+    for (const bar of bars) {
+      const titleEl = bar.querySelector('.kaching-bundles__bundle-products__title span');
+      if (titleEl) {
+        productTitle = titleEl.textContent.trim();
+        break;
+      }
+    }
+    if (!productTitle) return;
+
+    for (let barindex = 0; barindex < bars.length; barindex++) {
+      const bar = bars[barindex];
+
+      // Only target single-item bars (no expanded product cards section)
+      if (bar.querySelector('.kaching-bundles__bundle-products')) continue;
+
+      const variantsContainer = bar.querySelector('.kaching-bundles__bar-variants');
+      if (!variantsContainer) continue;
+
+      const id = `bar-${barindex}-product-title`;
+      if (document.getElementById(id)) continue;
+
+      const div = document.createElement('div');
+      div.id = id;
+      div.textContent = productTitle;
+      div.style.fontSize = '14px';
+      div.style.fontWeight = '600';
+      div.style.marginBottom = '8px';
+
+      variantsContainer.insertBefore(div, variantsContainer.firstChild);
+
+      console.log('[MAISON KACHING EDITS] added product title', id);
+    }
+  }
+
   setInterval(async () => {
     const COLOR_MAP = {{ section.settings.color_map }};
 
     await waitForKaching();
     {%  if section.settings.enable_numbers %}
       addNumbers();
+    {% endif %}
+    {% if section.settings.enable_product_title %}
+      addProductTitle();
     {% endif %}
     {% if section.settings.enable_swatches %}
       addSwatchFunctionality(COLOR_MAP);
